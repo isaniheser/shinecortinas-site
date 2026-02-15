@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Acervo Técnico ShineCortinas. Artigos profundos sobre engenharia de cortinas, automação residencial e design de luxo.">
+    <meta name="theme-color" content="#000000">
+    <title>Acervo Técnico | ShineCortinas</title>
+    
+    <!-- Mesmas Fontes e Estilos da Home para manter a identidade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Cinzel:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap');
+        
+        body { font-family: 'Montserrat', sans-serif; background-color: #F8F9FA; }
+        .font-logo { font-family: 'Cinzel', serif; } 
+        .font-luxury { font-family: 'Playfair Display', serif; }
+        
+        .text-gold { color: #C6A868; }
+        .bg-gold { background-color: #C6A868; }
+        .border-gold { border-color: #C6A868; }
+        
+        ::selection { background: #C6A868; color: black; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVBAR SIMPLIFICADA (Foco em voltar para a conversão) -->
+    <nav class="w-full bg-black py-6 border-b border-[#333]">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#C6A868] bg-black shadow-md group-hover:scale-105 transition">
+                    <span class="font-logo text-lg font-bold text-[#C6A868] pt-0.5">S</span>
+                </div>
+                <span class="text-xl font-logo font-bold text-white tracking-widest group-hover:text-[#C6A868] transition">SHINE</span>
+            </a>
+            
+            <!-- Botão Voltar -->
+            <a href="index.html" class="text-xs font-bold text-gray-400 hover:text-white uppercase tracking-widest transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Site
+            </a>
+        </div>
+    </nav>
+
+    <!-- HEADER DA BIBLIOTECA -->
+    <header class="bg-black text-white py-24 px-6 text-center border-b-4 border-[#C6A868]">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-[#C6A868] font-bold tracking-[0.3em] uppercase text-xs mb-6">Conhecimento é Poder</p>
+            <h1 class="text-4xl md:text-6xl font-luxury font-black mb-8 leading-tight">
+                ACERVO <span class="text-[#C6A868] italic">TÉCNICO</span>
+            </h1>
+            <p class="text-gray-400 text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed">
+                Aqui revelamos o que as lojas comuns escondem. Engenharia têxtil, automação de verdade e a ciência do conforto.
+            </p>
+        </div>
+    </header>
+
+    <!-- GRID DE ARTIGOS (A BIBLIOTECA) -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <!-- CARD 1: MOTORIZAÇÃO -->
+            <article class="bg-white group hover:-translate-y-2 transition duration-500 shadow-xl rounded-sm overflow-hidden flex flex-col h-full border border-transparent hover:border-[#C6A868]">
+                <a href="artigo-motorizacao.html" class="block aspect-[4/3] overflow-hidden relative">
+                    <img src="automacao.avif" alt="Motorização IoT" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Tecnologia</div>
+                </a>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h2 class="text-2xl font-bold mb-4 font-luxury leading-tight group-hover:text-[#C6A868] transition">
+                        <a href="artigo-motorizacao.html">A Era da Casa Conectada</a>
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
+                        Motores de 7ª Geração e o Sistema IoT. Por que a automação ultrapassou o simples controle remoto e virou necessidade.
+                    </p>
+                    <a href="artigo-motorizacao.html" class="text-xs font-black uppercase tracking-widest border-b-2 border-black pb-1 group-hover:border-[#C6A868] w-fit">
+                        Ler Estudo Completo
+                    </a>
+                </div>
+            </article>
+
+            <!-- CARD 2: BLACKOUT -->
+            <article class="bg-white group hover:-translate-y-2 transition duration-500 shadow-xl rounded-sm overflow-hidden flex flex-col h-full border border-transparent hover:border-[#C6A868]">
+                <a href="artigo-blackout.html" class="block aspect-[4/3] overflow-hidden relative">
+                    <img src="blackout.avif" alt="Blackout Técnico" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Biologia</div>
+                </a>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h2 class="text-2xl font-bold mb-4 font-luxury leading-tight group-hover:text-[#C6A868] transition">
+                        <a href="artigo-blackout.html">O Escuro Biológico</a>
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
+                        Blackout não é apenas tecido grosso. Entenda a engenharia de vedação real e como ela afeta sua produção de melatonina.
+                    </p>
+                    <a href="artigo-blackout.html" class="text-xs font-black uppercase tracking-widest border-b-2 border-black pb-1 group-hover:border-[#C6A868] w-fit">
+                        Ler Estudo Completo
+                    </a>
+                </div>
+            </article>
+
+            <!-- CARD 3: LINHO -->
+            <article class="bg-white group hover:-translate-y-2 transition duration-500 shadow-xl rounded-sm overflow-hidden flex flex-col h-full border border-transparent hover:border-[#C6A868]">
+                <a href="artigo-linho.html" class="block aspect-[4/3] overflow-hidden relative">
+                    <img src="linha-puro.avif" alt="Linho Puro" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Estética</div>
+                </a>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h2 class="text-2xl font-bold mb-4 font-luxury leading-tight group-hover:text-[#C6A868] transition">
+                        <a href="artigo-linho.html">A Memória do Tecido</a>
+                    </h2>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
+                        Por que algumas cortinas de linho parecem 'sacos de batata' com o tempo e como a tecnologia Shine mantém a forma perfeita.
+                    </p>
+                    <a href="artigo-linho.html" class="text-xs font-black uppercase tracking-widest border-b-2 border-black pb-1 group-hover:border-[#C6A868] w-fit">
+                        Ler Estudo Completo
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-black text-white py-12 border-t border-[#333]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 border border-[#C6A868] rounded-full flex items-center justify-center bg-black">
+                    <span class="font-logo text-sm font-bold text-[#C6A868] pt-0.5">S</span>
+                </div>
+                <span class="text-lg font-logo font-bold text-white tracking-widest">SHINE</span>
+            </div>
+            <p class="text-xs text-gray-500 uppercase tracking-widest">© 2026 ShineCortinas.com</p>
+            <div class="flex gap-4">
+                <a href="https://www.instagram.com" target="_blank" class="text-gray-400 hover:text-[#C6A868] transition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                <a href="https://wa.me/5524993298763" target="_blank" class="text-gray-400 hover:text-[#C6A868] transition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

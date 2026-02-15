@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#000000">
+
+    <!-- ========================================== -->
+    <!--     VERSÃO: 7.0 (AUTORIDADE MÁXIMA)        -->
+    <!--     STATUS: BLINDADO + NOVAS SEÇÕES        -->
+    <!-- ========================================== -->
+
+    <title>ShineCortinas | Alfaiataria para sua Casa</title>
+    <meta name="description" content="ShineCortinas: A autoridade técnica em cortinas e persianas de luxo. Engenharia de precisão, automação IoT e lavanderia especializada em Volta Redonda e Região.">
+    <meta name="keywords" content="Cortinas Volta Redonda, Persianas Laranjal, Automação IoT, Lavagem de Cortinas, Isani Oliveira, Decoração de Luxo RJ, Blackout 100%">
+    <meta name="author" content="Isani Oliveira">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.shinecortinas.com">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="ShineCortinas | Alfaiataria para sua Casa">
+    <meta property="og:description" content="O padrão ouro em cortinas e automação. Atendimento exclusivo em Volta Redonda e Região.">
+    <meta property="og:image" content="https://www.shinecortinas.com/logo-shine.avif">
+    <meta property="og:url" content="https://www.shinecortinas.com">
+    
+    <!-- PERFORMANCE -->
+    <link rel="preload" as="image" href="hero.avif" fetchpriority="high">
+    <link rel="preload" as="image" href="logo-shine.avif" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- RASTREAMENTO (Gatilho Humano) -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T725VG0NZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3T725VG0NZ'); 
+      gtag('config', 'AW-628717241'); 
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '6127327264052084');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=6127327264052084&ev=PageView&noscript=1"/></noscript>
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "HomeGoodsStore",
+        "name": "ShineCortinas",
+        "slogan": "Alfaiataria para sua casa",
+        "image": "https://www.shinecortinas.com/logo-shine.avif",
+        "telephone": "+5524993298763",
+        "address": { "@type": "PostalAddress", "addressLocality": "Volta Redonda", "addressRegion": "RJ", "addressCountry": "BR" },
+        "founder": { "@type": "Person", "name": "Isani Oliveira", "jobTitle": "CEO" }
+      }
+    ]
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Cinzel:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap');
+        
+        body { font-family: 'Montserrat', sans-serif; }
+        .font-logo { font-family: 'Cinzel', serif; } 
+        .font-luxury { font-family: 'Playfair Display', serif; }
+        .font-tech { font-family: 'Montserrat', sans-serif; }
+        
+        .text-gold { color: #C6A868; }
+        .bg-gold { background-color: #C6A868; }
+        .border-gold { border-color: #C6A868; }
+        
+        .gold-gradient { background: linear-gradient(135deg, #DFBD69 0%, #FFF0C6 50%, #B89648 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-bg-gradient { background: linear-gradient(135deg, #DFBD69 0%, #FFF0C6 50%, #B89648 100%); }
+
+        .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        ::selection { background: #C6A868; color: black; }
+        
+        .accordion-content { transition: max-height 0.3s ease-out, padding 0.3s ease; max-height: 0; overflow: hidden; }
+        .accordion-content.active { max-height: 800px; } /* Aumentei para caber as respostas longas */
+        .rotate-icon { transition: transform 0.3s ease; }
+        .rotate-icon.active { transform: rotate(180deg); color: #C6A868; }
+
+        .modal { visibility: hidden; opacity: 0; transition: all 0.3s ease-in-out; }
+        .modal.active { visibility: visible; opacity: 1; }
+        
+        .mobile-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 1rem; }
+        .mobile-scroll::-webkit-scrollbar { height: 4px; }
+        .mobile-scroll::-webkit-scrollbar-thumb { background: #C6A868; border-radius: 4px; }
+        
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 1000; animation: pulse 2s infinite; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+        
+        /* Logos Cliente Grayscale para Elegância */
+        .client-logo { filter: grayscale(100%) opacity(0.7); transition: all 0.3s; }
+        .client-logo:hover { filter: grayscale(0%) opacity(1); transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 md:py-6" aria-label="Menu Principal">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div id="nav-logo" class="opacity-0 transition-opacity duration-300 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <div class="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#C6A868] bg-black shadow-md">
+                    <span class="font-logo text-lg font-bold text-[#C6A868] pt-0.5">S</span>
+                </div>
+                <span class="text-xl font-logo font-bold text-white tracking-widest">SHINE</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 font-tech font-bold text-[11px] uppercase tracking-[0.2em] text-white items-center">
+                <a href="#comparativo" class="text-[#C6A868] hover:text-white transition">Diferencial</a>
+                <a href="#solucoes" class="hover:text-[#C6A868] transition">Soluções</a>
+                <a href="#clientes" class="hover:text-[#C6A868] transition">Clientes</a>
+                <a href="#blog" class="hover:text-[#C6A868] transition">Acervo</a>
+                <a href="#galeria" class="hover:text-[#C6A868] transition">Projetos</a>
+                <a href="https://wa.me/5524993298763" target="_blank" class="border border-[#C6A868] text-[#C6A868] px-6 py-2 hover:bg-[#C6A868] hover:text-black transition duration-300" onclick="return gtag_report_conversion(this.href);">Orçamento VIP</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2" aria-label="Abrir Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-t border-gray-800 p-6 flex flex-col gap-6 text-white uppercase font-bold text-sm tracking-widest shadow-2xl h-screen md:h-auto">
+            <a href="#comparativo" class="text-[#C6A868] block py-2 border-b border-gray-800">Por que Shine?</a>
+            <a href="#solucoes" class="block py-2 border-b border-gray-800">Soluções</a>
+            <a href="#clientes" class="block py-2 border-b border-gray-800">Grandes Clientes</a>
+            <a href="#blog" class="block py-2 border-b border-gray-800">Acervo Técnico</a>
+            <a href="#galeria" class="block py-2 border-b border-gray-800">Projetos</a>
+            <a href="#ceo" class="block py-2 border-b border-gray-800">O CEO</a>
+            <a href="#arquitetos" class="block py-2 border-b border-gray-800">Para Arquitetos</a>
+            <a href="https://wa.me/5524993298763" class="bg-[#C6A868] text-black text-center py-4 rounded-sm mt-4" onclick="return gtag_report_conversion(this.href);">Falar com Especialista</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative h-screen flex flex-col items-center justify-center bg-black font-tech overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="hero.avif" alt="Cortinas de Luxo Shine" class="w-full h-full object-cover opacity-60 scale-105" width="1920" height="1080" fetchpriority="high" decoding="async" />
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 animate-fade-in-up w-full max-w-4xl flex flex-col items-center">
+            <div class="mb-4 transform hover:scale-105 transition duration-700 cursor-pointer">
+                <img src="logo-shine.avif" alt="Logo Shine Cortinas 3D" width="400" height="400" fetchpriority="high" class="w-64 md:w-96 h-auto drop-shadow-2xl mx-auto" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+                <div id="logo-fallback" style="display:none;"><h1 class="font-logo text-5xl md:text-8xl text-[#C6A868]">SHINE</h1></div>
+            </div>
+            <div class="h-px w-16 md:w-24 bg-[#C6A868] mx-auto mb-4 opacity-50 shadow-[0_0_10px_#C6A868]"></div>
+            <h2 class="font-luxury italic text-[#C6A868] text-xl md:text-4xl mb-6 tracking-wide drop-shadow-lg">Alfaiataria para sua casa.</h2>
+            <p class="text-white text-xs md:text-sm font-bold tracking-[0.2em] uppercase max-w-xs md:max-w-xl mx-auto mb-8 md:mb-10 leading-relaxed drop-shadow-md opacity-90">A Única Autoridade em <span class="text-[#C6A868]">Cortinas de Alto Padrão</span>.</p>
+            <a href="https://wa.me/5524993298763" target="_blank" class="gold-bg-gradient text-black text-sm md:text-base font-black px-8 py-4 md:px-10 md:py-5 rounded-sm hover:scale-105 transition shadow-xl flex items-center justify-center gap-3 w-11/12 md:w-fit" onclick="return gtag_report_conversion(this.href);">Acionar Especialista <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg></a>
+        </div>
+    </section>
+
+    <!-- COMPARATIVO -->
+    <section id="comparativo" class="py-16 md:py-24 bg-white font-tech">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-10 md:mb-16"><span class="text-xs font-bold uppercase tracking-widest text-[#C6A868] mb-2 block">Verdade Nua e Crua</span><h2 class="text-2xl md:text-4xl font-luxury font-black text-black">POR QUE <span class="text-[#C6A868]">SHINE</span>?</h2></div>
+            <div class="mobile-scroll border border-gray-200 shadow-2xl rounded-sm">
+                <table class="w-full text-left border-collapse min-w-[600px] md:min-w-0">
+                    <thead><tr class="bg-black text-white uppercase text-xs tracking-widest"><th class="p-4 md:p-6 w-1/3 sticky left-0 bg-black z-10">Critério</th><th class="p-4 md:p-6 w-1/3 bg-[#C6A868] text-black font-black border-b-4 border-white">Padrão Shine</th><th class="p-4 md:p-6 w-1/3 text-gray-500">Mercado</th></tr></thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-100"><td class="p-4 md:p-6 font-bold sticky left-0 bg-white border-r">Motorização</td><td class="p-4 md:p-6 bg-yellow-50 font-bold text-[#C6A868]">7ª Geração (IoT)</td><td class="p-4 md:p-6 text-gray-600">Genérica</td></tr>
+                        <tr class="border-b border-gray-100"><td class="p-4 md:p-6 font-bold sticky left-0 bg-white border-r">Acabamento</td><td class="p-4 md:p-6 bg-yellow-50 font-bold text-[#C6A868]">Memory & Barra Dupla</td><td class="p-4 md:p-6 text-gray-600">Simples</td></tr>
+                        <tr><td class="p-4 md:p-6 font-bold sticky left-0 bg-white border-r">Garantia</td><td class="p-4 md:p-6 bg-yellow-50 font-bold text-[#C6A868]">5 Anos Real</td><td class="p-4 md:p-6 text-gray-600">3 Meses</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROTOCOLO SHINE -->
+    <section id="metodo" class="py-16 md:py-24 bg-black text-white font-tech border-b border-[#222]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-4xl font-luxury font-black mb-12">O PROTOCOLO <span class="text-[#C6A868]">SHINE</span></h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="group"><div class="w-14 h-14 md:w-16 md:h-16 border border-[#C6A868] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-[#C6A868] text-xl md:text-2xl font-bold group-hover:bg-[#C6A868] group-hover:text-black transition">1</div><h3 class="text-white font-bold text-lg mb-2">Consultoria</h3><p class="text-xs text-gray-500">Análise técnica.</p></div>
+                <div class="group"><div class="w-14 h-14 md:w-16 md:h-16 border border-[#C6A868] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-[#C6A868] text-xl md:text-2xl font-bold group-hover:bg-[#C6A868] group-hover:text-black transition">2</div><h3 class="text-white font-bold text-lg mb-2">Laser</h3><p class="text-xs text-gray-500">Medição milimétrica.</p></div>
+                <div class="group"><div class="w-14 h-14 md:w-16 md:h-16 border border-[#C6A868] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-[#C6A868] text-xl md:text-2xl font-bold group-hover:bg-[#C6A868] group-hover:text-black transition">3</div><h3 class="text-white font-bold text-lg mb-2">Confecção</h3><p class="text-xs text-gray-500">Barra dupla & Memory.</p></div>
+                <div class="group"><div class="w-14 h-14 md:w-16 md:h-16 border border-[#C6A868] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-[#C6A868] text-xl md:text-2xl font-bold group-hover:bg-[#C6A868] group-hover:text-black transition">4</div><h3 class="text-white font-bold text-lg mb-2">White-Glove</h3><p class="text-xs text-gray-500">Instalação limpa.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUÇÕES (MODALS CORRIGIDOS) -->
+    <section id="solucoes" class="py-16 md:py-24 px-6 bg-[#F8F9FA] font-tech">
+        <div class="max-w-7xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-luxury font-black text-black">SOLUÇÕES <span class="italic text-[#C6A868] font-serif">DE ELITE</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="relative group bg-black h-[400px] shadow-2xl overflow-hidden rounded-sm cursor-pointer" onclick="openModal('modal-persiana')">
+                <img src="persiana-motorizada.avif" alt="Persianas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full"><h3 class="text-2xl font-bold text-white uppercase mb-2">Persianas Motorizadas</h3><span class="text-[#C6A868] text-xs font-bold uppercase tracking-widest border-b border-[#C6A868] pb-1">Ver Detalhes</span></div>
+            </div>
+            <div class="relative group bg-black h-[400px] shadow-2xl overflow-hidden rounded-sm cursor-pointer" onclick="openModal('modal-cortina')">
+                <img src="cortina-sob-medida.avif" alt="Cortinas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full"><h3 class="text-2xl font-bold text-white uppercase mb-2">Cortinas sob Medida</h3><span class="text-[#C6A868] text-xs font-bold uppercase tracking-widest border-b border-[#C6A868] pb-1">Ver Detalhes</span></div>
+            </div>
+            <div class="relative group bg-black h-[400px] shadow-2xl overflow-hidden rounded-sm cursor-pointer" onclick="openModal('modal-blackout')">
+                <img src="blackouts-tecnicos.avif" alt="Blackout" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full"><h3 class="text-2xl font-bold text-white uppercase mb-2">Blackouts Técnicos</h3><span class="text-[#C6A868] text-xs font-bold uppercase tracking-widest border-b border-[#C6A868] pb-1">Ver Detalhes</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTES (NOVA SEÇÃO) -->
+    <section id="clientes" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mb-12">Empresas que exigem excelência</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-80">
+                <!-- Se não tiver as imagens, aparecerá o texto em caixa cinza -->
+                <div class="flex justify-center"><img src="cliente-unimed.png" alt="Unimed" class="client-logo h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><span class="hidden text-sm font-bold text-gray-400 border p-2">UNIMED VR</span></div>
+                <div class="flex justify-center"><img src="cliente-vw.png" alt="Volkswagen" class="client-logo h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><span class="hidden text-sm font-bold text-gray-400 border p-2">VOLKSWAGEN</span></div>
+                <div class="flex justify-center"><img src="cliente-csn.png" alt="CSN" class="client-logo h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><span class="hidden text-sm font-bold text-gray-400 border p-2">FUNDAÇÃO CSN</span></div>
+                <div class="flex justify-center"><img src="cliente-bb.png" alt="Banco do Brasil" class="client-logo h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><span class="hidden text-sm font-bold text-gray-400 border p-2">BANCO DO BRASIL</span></div>
+                <div class="flex justify-center"><img src="cliente-sicredi.png" alt="Sicredi" class="client-logo h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><span class="hidden text-sm font-bold text-gray-400 border p-2">SICREDI</span></div>
+                <div class="flex justify-center"><img src="cliente-oab.png" alt="OAB" class="client-logo h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><span class="hidden text-sm font-bold text-gray-400 border p-2">OAB</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACERVO TÉCNICO -->
+    <section id="blog" class="py-16 md:py-24 bg-[#F8F9FA] border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="mb-6 md:mb-0"><span class="text-xs font-bold uppercase tracking-widest text-[#C6A868] mb-2 block">A Palavra do Especialista</span><h2 class="text-3xl md:text-5xl font-luxury font-black text-black">ACERVO <span class="text-[#C6A868]">TÉCNICO</span></h2><p class="text-gray-500 mt-4 text-sm max-w-lg">Conteúdo profundo para quem não aceita o superficial.</p></div>
+                <a href="blog.html" class="flex items-center gap-2 bg-black text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#C6A868] hover:text-black transition">Ver Biblioteca Completa <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="artigo-motorizacao.html" class="group block bg-white hover:shadow-2xl transition duration-500 border hover:border-[#C6A868]"><div class="aspect-video bg-gray-200 relative overflow-hidden"><img src="automacao.avif" alt="Automação" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"><div class="absolute top-4 left-4 bg-[#C6A868] text-black text-[10px] font-bold px-3 py-1 uppercase">IoT & Tech</div></div><div class="p-8"><h3 class="text-xl font-bold mb-3 font-luxury group-hover:text-[#C6A868] transition">A Era da Casa Conectada</h3><p class="text-gray-500 text-sm mb-6 line-clamp-3">Motores de 7ª Geração e o Sistema IoT.</p><span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2">Ler Artigo <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></div></a>
+                <a href="artigo-blackout.html" class="group block bg-white hover:shadow-2xl transition duration-500 border hover:border-[#C6A868]"><div class="aspect-video bg-gray-200 relative overflow-hidden"><img src="blackout.avif" alt="Blackout" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"><div class="absolute top-4 left-4 bg-[#C6A868] text-black text-[10px] font-bold px-3 py-1 uppercase">Técnico</div></div><div class="p-8"><h3 class="text-xl font-bold mb-3 font-luxury group-hover:text-[#C6A868] transition">O Escuro Biológico</h3><p class="text-gray-500 text-sm mb-6 line-clamp-3">Blackout não é apenas tecido grosso.</p><span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2">Ler Artigo <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></div></a>
+                <a href="artigo-linho.html" class="group block bg-white hover:shadow-2xl transition duration-500 border hover:border-[#C6A868]"><div class="aspect-video bg-gray-200 relative overflow-hidden"><img src="linha-puro.avif" alt="Linho" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"><div class="absolute top-4 left-4 bg-[#C6A868] text-black text-[10px] font-bold px-3 py-1 uppercase">Têxtil</div></div><div class="p-8"><h3 class="text-xl font-bold mb-3 font-luxury group-hover:text-[#C6A868] transition">A Memória do Tecido</h3><p class="text-gray-500 text-sm mb-6 line-clamp-3">Por que as cortinas da Shine mantêm a forma.</p><span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2">Ler Artigo <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></div></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="py-16 md:py-24 bg-[#0a0a0a] text-white">
+        <div class="max-w-7xl mx-auto px-6 mb-8 md:mb-12 flex flex-col md:flex-row justify-between items-end">
+            <div><h2 class="text-2xl md:text-5xl font-luxury font-black mb-2">O PADRÃO <span class="text-[#C6A868]">SHINE</span></h2><p class="text-gray-400 font-tech uppercase text-xs md:text-sm">Projetos entregues. Sem filtros.</p></div>
+            <a href="https://instagram.com" target="_blank" class="hidden md:flex items-center gap-2 text-[#C6A868] font-bold uppercase text-xs hover:text-white transition">Ver Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 px-2 md:px-0">
+            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="automacao.avif" alt="Automação" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Alphaville</p><h3 class="text-white font-luxury text-sm italic">Automação</h3></div></div>
+            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="linha-puro.avif" alt="Linho" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Laranjal</p><h3 class="text-white font-luxury text-sm italic">Linho Puro</h3></div></div>
+            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="blackout.avif" alt="Blackout" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Jardins</p><h3 class="text-white font-luxury text-sm italic">Blackout</h3></div></div>
+            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="duplo.avif" alt="Duplo" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Bela Vista</p><h3 class="text-white font-luxury text-sm italic">Duplo</h3></div></div>
+            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="tela-solar.avif" alt="Tela Solar" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Vila Santa</p><h3 class="text-white font-luxury text-sm italic">Tela Solar</h3></div></div>
+            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="madeira.avif" alt="Madeira" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Fazenda</p><h3 class="text-white font-luxury text-sm italic">Madeira</h3></div></div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS (GOOGLE REVIEW STYLE - MANUAL) -->
+    <section id="depoimentos" class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+             <div class="flex items-center gap-4 mb-8">
+                 <div class="bg-[#C6A868] p-3 rounded-full text-black"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                 <div>
+                     <h3 class="text-xl font-bold font-luxury text-black">Excelência Reconhecida</h3>
+                     <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Avaliação 5.0 Google Reviews</p>
+                 </div>
+             </div>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                 <!-- Depoimento 1 -->
+                 <div class="bg-[#F8F9FA] p-6 rounded-sm border border-gray-200">
+                     <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">A</div>
+                         <div><p class="font-bold text-sm">Ana Paula Vilela</p><p class="text-[10px] text-gray-400">Arquiteta | Via Google</p></div>
+                     </div>
+                     <div class="flex text-[#C6A868] mb-3 text-xs">★★★★★</div>
+                     <p class="text-gray-600 text-sm leading-relaxed">"Como arquiteta, sou exigente. A Shine é a única empresa que indico de olhos fechados. O alinhamento das barras é perfeito e a motorização nunca deu problema."</p>
+                 </div>
+                 <!-- Depoimento 2 -->
+                 <div class="bg-[#F8F9FA] p-6 rounded-sm border border-gray-200">
+                     <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">R</div>
+                         <div><p class="font-bold text-sm">Dr. Ricardo Mendes</p><p class="text-[10px] text-gray-400">Médico | Via Google</p></div>
+                     </div>
+                     <div class="flex text-[#C6A868] mb-3 text-xs">★★★★★</div>
+                     <p class="text-gray-600 text-sm leading-relaxed">"Precisava de escuridão total pós-plantão. O blackout técnico que o Isani desenhou foi a única solução que resolveu 100%. Acabamento nível Europa."</p>
+                 </div>
+                 <!-- Depoimento 3 -->
+                 <div class="bg-[#F8F9FA] p-6 rounded-sm border border-gray-200">
+                     <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">J</div>
+                         <div><p class="font-bold text-sm">Juliana & Marcelo</p><p class="text-[10px] text-gray-400">Empresários | Via Google</p></div>
+                     </div>
+                     <div class="flex text-[#C6A868] mb-3 text-xs">★★★★★</div>
+                     <p class="text-gray-600 text-sm leading-relaxed">"Não foi uma venda, foi uma consultoria. Entenderam que queríamos privacidade sem perder a vista da varanda. A lavagem vertical também é fantástica."</p>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- CEO -->
+    <section id="ceo" class="py-16 bg-[#F8F9FA]"><div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"><div class="order-2 md:order-1"><h2 class="text-4xl font-luxury font-black mb-6">"DEUS NÃO CRIOU O HOMEM PARA SER POBRE."</h2><p class="text-gray-600">Minha missão é garantir engenharia e cuidado para sua família.</p><div class="mt-6 font-bold">ISANI OLIVEIRA <span class="text-gray-400 font-normal">| CEO</span></div></div><div class="order-1 md:order-2"><img src="ceo-shine.avif" alt="CEO" class="w-full h-auto grayscale hover:grayscale-0 transition shadow-2xl" onerror="this.src='ceo-shine.jpg'" width="900" height="1200" decoding="async" loading="lazy"></div></div></section>
+    
+    <!-- FAQ REESCRITO (RESPOSTAS EXATAS DO ISANI) -->
+    <section class="py-16 md:py-20 bg-white font-tech border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-black uppercase mb-8 md:mb-10 text-center">Dúvidas Frequentes</h2>
+            <div class="space-y-4" id="faq-container">
+                <div class="border border-gray-200 rounded-sm overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Vocês atendem fora de Volta Redonda?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><p class="text-gray-600 leading-relaxed border-t border-gray-100 p-4 md:p-6 pt-4 text-sm md:text-base">Sim. Atendemos toda a região Sul Fluminense e Costa Verde. Nossas equipes vão frequentemente a Volta Redonda, Barra Mansa, Pinheiral, Barra do Piraí, Piraí, Valença, Vassouras, Miguel Pereira, Porto Real, Resende, Itatiaia, Penedo, Visconde de Mauá e Maromba.</p></div></div>
+                <div class="border border-gray-200 rounded-sm overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Qual a garantia dos motores?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><p class="text-gray-600 leading-relaxed border-t border-gray-100 p-4 md:p-6 pt-4 text-sm md:text-base">Utilizamos tecnologia de 7ª Geração (Sistema IoT) e oferecemos <strong>até 5 anos de garantia total</strong> em nossos motores, dependendo do modelo escolhido.</p></div></div>
+                <div class="border border-gray-200 rounded-sm overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">O blackout veda 100% da luz mesmo?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><p class="text-gray-600 leading-relaxed border-t border-gray-100 p-4 md:p-6 pt-4 text-sm md:text-base">Sim. Nossa linha Blackout Técnico utiliza tecido com película de silicone que bloqueia raios UVA/UVB e reduz ruído. Com as guias laterais (Sistema Box), garantimos 100% de vedação luminosa.</p></div></div>
+                <div class="border border-gray-200 rounded-sm overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Como funciona a instalação e garantia?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><p class="text-gray-600 leading-relaxed border-t border-gray-100 p-4 md:p-6 pt-4 text-sm md:text-base">Temos técnicos especializados e usamos presilhas de alta performance. A garantia parte de 1 ano na instalação, estendendo-se até 5 anos para cortinas e até 8 anos se incluir motorização.</p></div></div>
+                <div class="border border-gray-200 rounded-sm overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Vocês lavam cortinas?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><p class="text-gray-600 leading-relaxed border-t border-gray-100 p-4 md:p-6 pt-4 text-sm md:text-base">Sim. Diferente de lavanderias comuns, nós retiramos a cortina (mesmo em pé direito alto), lavamos, fazemos a manutenção dos trilhos/lubrificação e usamos um <strong>Sistema de Secagem Vertical</strong> que mantém as ondas perfeitas do tecido. Devolvemos e instalamos.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER BLINDADO (PRÊMIOS E SELOS) -->
+    <footer id="contato" class="bg-black pt-16 pb-24 md:pt-20 md:pb-10 px-6 border-t-4 border-[#C6A868]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-12 mb-12">
+            <div class="md:w-1/3">
+                <div class="flex items-center gap-3">
+                    <div class="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#C6A868] bg-black shadow-md"><span class="font-logo text-lg font-bold text-[#C6A868] pt-0.5">S</span></div>
+                    <span class="font-logo text-2xl md:text-3xl text-white tracking-widest">SHINE</span>
+                </div>
+                <p class="mt-4 text-gray-500 text-xs md:text-sm leading-relaxed">Volta Redonda, RJ. <br> A engenharia que a sua casa exige.</p>
+                <div class="mt-6 flex gap-4 text-[#C6A868] text-xs font-bold uppercase tracking-widest">
+                    <span>★ Empresa Diamante</span>
+                    <span>★ Top of Mind Região Sul</span>
+                </div>
+            </div>
+            <div class="md:w-1/3"><h4 class="text-white font-bold uppercase tracking-widest mb-6 border-b border-[#333] pb-2 text-sm">Contato VIP</h4><a href="https://wa.me/5524993298763" class="flex items-center gap-3 text-white text-base md:text-lg font-bold hover:text-[#C6A868] transition mb-2" onclick="return gtag_report_conversion(this.href);"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (24) 99329-8763</a><p class="text-gray-500 text-xs flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (24) 3338-3069</p></div>
+            <div class="md:w-1/3 bg-[#111] p-6 border border-[#333] hover:border-[#C6A868] transition group"><p class="text-[#C6A868] font-luxury italic text-base md:text-lg mb-4 group-hover:text-white transition">"A excelência não é um ato, mas um hábito."</p><p class="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest">- Aristóteles</p></div>
+        </div>
+        <!-- BARRA DE CONFIANÇA -->
+        <div class="max-w-6xl mx-auto border-t border-[#222] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <p class="text-gray-600 text-[10px] uppercase tracking-widest">© 2026 ShineCortinas.com | Site Seguro & Blindado</p>
+            <div class="flex gap-4 opacity-50">
+               <!-- Ícones de Segurança (SVG Simples) -->
+               <svg class="h-6 w-auto text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 11h8"/><path d="M12 11v4"/></svg>
+               <span class="text-[10px] text-gray-500 uppercase flex items-center">SSL Certificado</span>
+               <span class="text-[10px] text-gray-500 uppercase flex items-center">Google 5.0 ★★★★★</span>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Float (Botão Flutuante Grande para Mobile) -->
+    <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20quero%20o%20Padr%C3%A3o%20Shine%20na%20minha%20casa." target="_blank" class="whatsapp-float bg-[#25D366] text-white rounded-full shadow-lg p-3 flex items-center justify-center" onclick="return gtag_report_conversion(this.href);" aria-label="Falar no WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+
+    <!-- MODAIS COM CONTEÚDO EXPANDIDO E TÉCNICO -->
+    <div id="modal-persiana" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-lg p-8 relative rounded-sm shadow-2xl">
+            <button onclick="closeModal('modal-persiana')" class="absolute top-4 right-4 font-bold p-2 text-2xl hover:text-[#C6A868]">&times;</button>
+            <h3 class="text-2xl font-bold font-luxury mb-2">Persianas Motorizadas</h3>
+            <p class="text-[#C6A868] text-xs font-bold uppercase tracking-widest mb-6">Especificação Técnica</p>
+            <ul class="space-y-3 text-sm text-gray-600 mb-8 border-t border-gray-100 pt-4">
+                <li class="flex justify-between"><span>Motor:</span> <span class="font-bold text-black">7ª Geração (IoT Nativo)</span></li>
+                <li class="flex justify-between"><span>Ruído:</span> <span class="font-bold text-black">Ultra-Silencioso (<35dB)</span></li>
+                <li class="flex justify-between"><span>Conexão:</span> <span class="font-bold text-black">Alexa, Google Home, Control4</span></li>
+                <li class="flex justify-between"><span>Garantia:</span> <span class="font-bold text-black">Até 8 Anos (Motor)</span></li>
+            </ul>
+            <a href="https://wa.me/5524993298763" class="bg-black text-white px-6 py-4 block text-center font-bold uppercase tracking-widest hover:bg-[#C6A868] hover:text-black transition" onclick="return gtag_report_conversion(this.href);">Solicitar Vistoria Técnica</a>
+        </div>
+    </div>
+    
+    <div id="modal-cortina" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-lg p-8 relative rounded-sm shadow-2xl">
+            <button onclick="closeModal('modal-cortina')" class="absolute top-4 right-4 font-bold p-2 text-2xl hover:text-[#C6A868]">&times;</button>
+            <h3 class="text-2xl font-bold font-luxury mb-2">Cortinas sob Medida</h3>
+            <p class="text-[#C6A868] text-xs font-bold uppercase tracking-widest mb-6">Engenharia Têxtil</p>
+            <ul class="space-y-3 text-sm text-gray-600 mb-8 border-t border-gray-100 pt-4">
+                <li class="flex justify-between"><span>Tecido:</span> <span class="font-bold text-black">Linho Puro / Veludo Italiano</span></li>
+                <li class="flex justify-between"><span>Confecção:</span> <span class="font-bold text-black">Barra Dupla Alta</span></li>
+                <li class="flex justify-between"><span>Acabamento:</span> <span class="font-bold text-black">Efeito Memory (Não deforma)</span></li>
+                <li class="flex justify-between"><span>Trilho:</span> <span class="font-bold text-black">Suíço (Deslizamento Zero Atrito)</span></li>
+            </ul>
+            <a href="https://wa.me/5524993298763" class="bg-black text-white px-6 py-4 block text-center font-bold uppercase tracking-widest hover:bg-[#C6A868] hover:text-black transition" onclick="return gtag_report_conversion(this.href);">Agendar Medição a Laser</a>
+        </div>
+    </div>
+    
+    <div id="modal-blackout" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-lg p-8 relative rounded-sm shadow-2xl">
+            <button onclick="closeModal('modal-blackout')" class="absolute top-4 right-4 font-bold p-2 text-2xl hover:text-[#C6A868]">&times;</button>
+            <h3 class="text-2xl font-bold font-luxury mb-2">Blackout Técnico</h3>
+            <p class="text-[#C6A868] text-xs font-bold uppercase tracking-widest mb-6">Vedação Absoluta</p>
+            <ul class="space-y-3 text-sm text-gray-600 mb-8 border-t border-gray-100 pt-4">
+                <li class="flex justify-between"><span>Vedação Luz:</span> <span class="font-bold text-black">100% (Garantido)</span></li>
+                <li class="flex justify-between"><span>Proteção UV:</span> <span class="font-bold text-black">Bloqueio Total UVA/UVB</span></li>
+                <li class="flex justify-between"><span>Material:</span> <span class="font-bold text-black">Fibra de Vidro + PVC (Não resseca)</span></li>
+                <li class="flex justify-between"><span>Sistema:</span> <span class="font-bold text-black">Box com Guias Laterais</span></li>
+            </ul>
+            <a href="https://wa.me/5524993298763" class="bg-black text-white px-6 py-4 block text-center font-bold uppercase tracking-widest hover:bg-[#C6A868] hover:text-black transition" onclick="return gtag_report_conversion(this.href);">Garantir Escuridão Total</a>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        const navbar = document.getElementById('navbar');
+        const navLogo = document.getElementById('nav-logo');
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('bg-black/95', 'backdrop-blur-sm', 'py-4', 'border-b', 'border-[#333]');
+                        navbar.classList.remove('bg-transparent', 'py-6');
+                        navLogo.classList.remove('opacity-0');
+                    } else {
+                        navbar.classList.remove('bg-black/95', 'backdrop-blur-sm', 'py-4', 'border-b', 'border-[#333]');
+                        navbar.classList.add('bg-transparent', 'py-6');
+                        navLogo.classList.add('opacity-0');
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                content.classList.toggle('active');
+                const icon = this.querySelector('.rotate-icon');
+                icon.classList.toggle('active');
+            });
+        });
+
+        function openModal(modalId) { document.getElementById(modalId).classList.add('active'); }
+        function closeModal(modalId) { document.getElementById(modalId).classList.remove('active'); }
+        window.onclick = function(event) { if (event.target.classList.contains('modal')) event.target.classList.remove('active'); }
+
+        function gtag_report_conversion(url) {
+          var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } };
+          gtag('event', 'conversion', { 'send_to': 'AW-628717241/dXn1COOb2_gbELnt5asC', 'value': 1.0, 'currency': 'BRL', 'event_callback': callback });
+          return false;
+        }
+    </script>
+</body>
+</html>
