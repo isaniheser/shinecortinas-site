@@ -151,6 +151,7 @@
         
         .badge-img { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); transition: transform 0.3s; }
         .badge-img:hover { transform: scale(1.1); }
+        .badge-img-diamond { background: #000; border: 1px solid #C6A868; padding: 3px; border-radius: 9999px; clip-path: circle(47% at 50% 50%); }
         .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 1000px; }
     </style>
 </head>
@@ -378,7 +379,7 @@
                     <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 items-end">
                         <!-- Brasão 1: Diamante -->
                         <div class="flex flex-col items-center group">
-                            <img src="selo-diamante.avif" alt="Empresa Diamante" class="badge-img" loading="lazy" decoding="async">
+                            <img src="selo-diamante.avif" alt="Empresa Diamante" class="badge-img badge-img-diamond" loading="lazy" decoding="async">
                             <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Diamante</span>
                         </div>
                         <!-- Brasão 2: Região do Aço (Bigorna) -->
