@@ -149,8 +149,11 @@
         .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 1000; animation: pulse 2s infinite; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
         
+        .badge-item { display: flex; flex-direction: column; align-items: center; }
+        .badge-icon-wrap { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; }
         .badge-img { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); transition: transform 0.3s; }
-        .badge-img:hover { transform: scale(1.1); }
+        .badge-item:hover .badge-img { transform: scale(1.1); }
+        .badge-label { min-height: 20px; display: block; line-height: 1.2; }
         .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 1000px; }
     </style>
 </head>
@@ -361,36 +364,48 @@
                 <p class="mt-4 text-gray-500 text-xs md:text-sm leading-relaxed">Volta Redonda, RJ. <br> A engenharia que a sua casa exige.</p>
                 <div class="mt-6">
                     <p class="text-[#333] text-[10px] font-bold uppercase tracking-widest mb-4">Autoridade & Segurança</p>
-                    <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 items-end">
+                    <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 items-start">
                         <!-- Brasão 1: Diamante -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-diamante.avif" alt="Empresa Diamante" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Diamante</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-diamante.avif" alt="Empresa Diamante" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Diamante</span>
                         </div>
                         <!-- Brasão 2: Região do Aço (Bigorna) -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-aco.avif" alt="Top of Mind Sul" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Top of Mind</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-aco.avif" alt="Top of Mind Sul" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Top of Mind</span>
                         </div>
                          <!-- Brasão 3: Prêmio Melhor Loja (NOVO) -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-premio.avif" alt="Melhor Loja Região Sul" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Melhor Loja</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-premio.avif" alt="Melhor Loja Região Sul" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Melhor Loja</span>
                         </div>
                         <!-- Brasão 4: Blindado -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-blindado.avif" alt="Site Blindado" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Site Seguro</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-blindado.avif" alt="Site Blindado" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Site Seguro</span>
                         </div>
                         <!-- Brasão 5: Facebook -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-facebook.avif" alt="Facebook 5 Estrelas" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-facebook.avif" alt="Facebook 5 Estrelas" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
                         </div>
                         <!-- Brasão 6: Google -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-google.avif" alt="Google 5 Estrelas" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-google.avif" alt="Google 5 Estrelas" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
                         </div>
                     </div>
                 </div>
