@@ -27,3 +27,24 @@ git push -u origin chore/<tarefa-curta>
 
 - Mudanças de layout em `index.html` devem ser separadas de mudanças de infra (deploy/preview/workflows).
 - Não misturar SEO, design e automação de deploy no mesmo PR.
+
+## Identidade de commit obrigatória (Netlify)
+
+Para evitar bloqueio de contributor não reconhecido no Netlify, **todo commit e push** deve usar obrigatoriamente:
+
+- `user.name`: `isaniheser`
+- `user.email`: `isani.heser@gmail.com`
+
+Comandos (no repositório):
+
+```bash
+git config user.name "isaniheser"
+git config user.email "isani.heser@gmail.com"
+```
+
+Validação antes de commitar:
+
+```bash
+git config --get user.name
+git config --get user.email
+```
