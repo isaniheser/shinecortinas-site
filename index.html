@@ -16,10 +16,16 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.shinecortinas.com">
     
-    <meta property="og:type" content="business.business">
-    <meta property="og:title" content="ShineCortinas | Alfaiataria para sua Casa">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="ShineCortinas | Cortinas e Persianas Sob Medida no Sul Fluminense">
+    <meta property="og:description" content="Loja referência em cortinas e persianas sob medida, motorização e automação residencial em Volta Redonda e região Sul-Fluminense.">
     <meta property="og:image" content="https://www.shinecortinas.com/logo-shine.avif">
     <meta property="og:url" content="https://www.shinecortinas.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ShineCortinas | Cortinas e Persianas Sob Medida no Sul Fluminense">
+    <meta name="twitter:description" content="Especialistas em cortinas, persianas e automação residencial em Volta Redonda e região Sul-Fluminense.">
+    <meta name="twitter:image" content="https://www.shinecortinas.com/logo-shine.avif">
     
     <!-- PERFORMANCE -->
     <link rel="preload" as="image" href="hero.avif" fetchpriority="high">
@@ -48,17 +54,67 @@
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=6127327264052084&ev=PageView&noscript=1"/></noscript>
 
     <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "HomeGoodsStore",
-        "name": "ShineCortinas",
-        "image": "https://www.shinecortinas.com/logo-shine.avif",
-        "telephone": "+5524993298763",
-        "address": { "@type": "PostalAddress", "addressLocality": "Volta Redonda", "addressRegion": "RJ", "addressCountry": "BR" },
-        "founder": { "@type": "Person", "name": "Isani Oliveira", "jobTitle": "CEO" }
-      }
-    ]
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "HomeGoodsStore",
+          "@id": "https://www.shinecortinas.com/#store",
+          "name": "ShineCortinas",
+          "image": "https://www.shinecortinas.com/logo-shine.avif",
+          "url": "https://www.shinecortinas.com",
+          "telephone": "+55 24 99329-8763",
+          "priceRange": "$$$",
+          "areaServed": ["Volta Redonda", "Barra Mansa", "Resende", "Sul Fluminense", "Costa Verde"],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Volta Redonda",
+            "addressRegion": "RJ",
+            "addressCountry": "BR"
+          },
+          "founder": {
+            "@type": "Person",
+            "name": "Isani Oliveira",
+            "jobTitle": "CEO"
+          }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Cortinas e persianas sob medida com automação",
+          "provider": {"@id": "https://www.shinecortinas.com/#store"},
+          "areaServed": "Sul Fluminense"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Vocês atendem fora de Volta Redonda?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Atendemos toda a região Sul Fluminense e Costa Verde, incluindo Volta Redonda, Barra Mansa, Resende, Itatiaia e cidades vizinhas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qual a garantia dos motores?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Utilizamos motores com tecnologia IoT e oferecemos até 5 anos de garantia total, conforme o modelo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Vocês lavam cortinas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Realizamos retirada, lavagem especializada, manutenção e reinstalação com secagem vertical para preservar o caimento."
+              }
+            }
+          ]
+        }
+      ]
+    }
     </script>
 
     <style>
