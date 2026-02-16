@@ -164,13 +164,13 @@
                 <span class="text-xl font-logo font-bold text-white tracking-widest">SHINE</span>
             </div>
             <div class="hidden md:flex gap-8 font-tech font-bold text-[11px] uppercase tracking-[0.2em] text-white items-center">
-                <a href="#comparativo" class="text-[#C6A868] hover:text-white transition">Diferencial</a><a href="#solucoes" class="hover:text-[#C6A868] transition">Soluções</a><a href="#clientes" class="hover:text-[#C6A868] transition">Clientes</a><a href="#cidades" class="hover:text-[#C6A868] transition">Cidades</a><a href="#blog" class="hover:text-[#C6A868] transition">Acervo</a><a href="#galeria" class="hover:text-[#C6A868] transition">Projetos</a><a href="#ceo" class="hover:text-[#C6A868] transition">CEO</a>
+
                 <a href="https://wa.me/5524993298763" target="_blank" class="border border-[#C6A868] text-[#C6A868] px-6 py-2 hover:bg-[#C6A868] hover:text-black transition duration-300" onclick="return gtag_report_conversion(this.href);">Orçamento VIP</a>
             </div>
-            <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2" aria-label="Abrir Menu"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg></button>
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2" aria-label="Abrir Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg></button>
         </div>
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-t border-gray-800 p-6 flex flex-col gap-6 text-white uppercase font-bold text-sm tracking-widest shadow-2xl h-screen md:h-auto">
-            <a href="#comparativo" class="text-[#C6A868] block py-2 border-b border-gray-800">Por que Shine?</a><a href="#solucoes" class="block py-2 border-b border-gray-800">Soluções</a><a href="#clientes" class="block py-2 border-b border-gray-800">Grandes Clientes</a><a href="#cidades" class="block py-2 border-b border-gray-800">Cidades Atendidas</a><a href="#blog" class="block py-2 border-b border-gray-800">Acervo Técnico</a><a href="#galeria" class="block py-2 border-b border-gray-800">Projetos</a><a href="#ceo" class="block py-2 border-b border-gray-800">O CEO</a><a href="#arquitetos" class="block py-2 border-b border-gray-800">Para Arquitetos</a>
+
             <a href="https://wa.me/5524993298763" class="bg-[#C6A868] text-black text-center py-4 rounded-sm mt-4" onclick="return gtag_report_conversion(this.href);">Falar com Especialista</a>
         </div>
     </nav>
@@ -309,7 +309,7 @@
     <section id="ceo" class="cv-auto py-16 bg-[#F8F9FA]"><div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"><div class="order-2 md:order-1"><h2 class="text-4xl font-luxury font-black mb-6">"DEUS NÃO CRIOU O HOMEM PARA SER POBRE."</h2><p class="text-gray-600">Minha missão é garantir engenharia e cuidado para sua família.</p><div class="mt-6 font-bold">ISANI OLIVEIRA <span class="text-gray-400 font-normal">| CEO</span></div></div><div class="order-1 md:order-2"><img src="ceo-shine.avif" alt="CEO" class="w-full h-auto grayscale hover:grayscale-0 transition shadow-2xl" onerror="this.src='ceo-shine.jpg'" width="900" height="1200" decoding="async" loading="lazy"></div></div></section>
     
     <!-- FAQ -->
-    <section class="py-16 md:py-20 bg-white font-tech border-t border-gray-100">
+    <section id="faq" class="cv-auto py-16 md:py-20 bg-white font-tech border-t border-gray-100">
         <div class="max-w-3xl mx-auto px-6">
             <h2 class="text-2xl md:text-3xl font-black uppercase mb-8 md:mb-10 text-center">Dúvidas Frequentes</h2>
             <div class="space-y-4" id="faq-container">
@@ -516,8 +516,14 @@
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
+    });
+    mobileLinks.forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
   }
 
   const navbar = document.getElementById('navbar');
