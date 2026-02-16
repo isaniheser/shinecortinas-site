@@ -149,9 +149,11 @@
         .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 1000; animation: pulse 2s infinite; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
         
+        .badge-item { display: flex; flex-direction: column; align-items: center; }
+        .badge-icon-wrap { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; }
         .badge-img { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); transition: transform 0.3s; }
-        .badge-img:hover { transform: scale(1.1); }
-        .badge-img-diamond { border-radius: 9999px; border: 1px solid #C6A868; }
+        .badge-item:hover .badge-img { transform: scale(1.1); }
+        .badge-label { min-height: 20px; display: block; line-height: 1.2; }
         .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 1000px; }
     </style>
 </head>
@@ -280,7 +282,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div class="mb-6 md:mb-0"><span class="text-xs font-bold uppercase tracking-widest text-[#C6A868] mb-2 block">A Palavra do Especialista</span><h2 class="text-3xl md:text-5xl font-luxury font-black text-black">ACERVO <span class="text-[#C6A868]">TÉCNICO</span></h2><p class="text-gray-500 mt-4 text-sm max-w-lg">Conteúdo profundo para quem não aceita o superficial.</p></div>
-                <a href="Blog.html" class="flex items-center gap-2 bg-black text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#C6A868] hover:text-black transition">Ver Biblioteca Completa <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                <a href="blog.html" class="flex items-center gap-2 bg-black text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#C6A868] hover:text-black transition">Ver Biblioteca Completa <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <a href="artigo-motorizacao.html" class="group block bg-[#F8F9FA] hover:shadow-2xl transition duration-500 border hover:border-[#C6A868]"><div class="aspect-video bg-gray-200 relative overflow-hidden"><img src="automacao.avif" alt="Automação" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" width="800" height="600" decoding="async" loading="lazy"><div class="absolute top-4 left-4 bg-[#C6A868] text-black text-[10px] font-bold px-3 py-1 uppercase">IoT & Tech</div></div><div class="p-8"><h3 class="text-xl font-bold mb-3 font-luxury group-hover:text-[#C6A868] transition">A Era da Casa Conectada</h3><p class="text-gray-500 text-sm mb-6 line-clamp-3">Motores de 7ª Geração e o Sistema IoT.</p><span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2">Ler Artigo <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></div></a>
@@ -362,36 +364,48 @@
                 <p class="mt-4 text-gray-500 text-xs md:text-sm leading-relaxed">Volta Redonda, RJ. <br> A engenharia que a sua casa exige.</p>
                 <div class="mt-6">
                     <p class="text-[#333] text-[10px] font-bold uppercase tracking-widest mb-4">Autoridade & Segurança</p>
-                    <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 items-end">
+                    <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 items-start">
                         <!-- Brasão 1: Diamante -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-diamante.avif" alt="Empresa Diamante" class="badge-img badge-img-diamond">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Diamante</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-diamante.avif" alt="Empresa Diamante" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Diamante</span>
                         </div>
                         <!-- Brasão 2: Região do Aço (Bigorna) -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-aco.avif" alt="Top of Mind Sul" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Top of Mind</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-aco.avif" alt="Top of Mind Sul" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Top of Mind</span>
                         </div>
                          <!-- Brasão 3: Prêmio Melhor Loja (NOVO) -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-premio.avif" alt="Melhor Loja Região Sul" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Melhor Loja</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-premio.avif" alt="Melhor Loja Região Sul" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Melhor Loja</span>
                         </div>
                         <!-- Brasão 4: Blindado -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-blindado.avif" alt="Site Blindado" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Site Seguro</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-blindado.avif" alt="Site Blindado" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">Site Seguro</span>
                         </div>
                         <!-- Brasão 5: Facebook -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-facebook.avif" alt="Facebook 5 Estrelas" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-facebook.avif" alt="Facebook 5 Estrelas" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
                         </div>
                         <!-- Brasão 6: Google -->
-                        <div class="flex flex-col items-center group">
-                            <img src="selo-google.avif" alt="Google 5 Estrelas" class="badge-img" loading="lazy" decoding="async">
-                            <span class="text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
+                        <div class="badge-item group">
+                            <div class="badge-icon-wrap">
+                                <img src="selo-google.avif" alt="Google 5 Estrelas" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
+                            </div>
+                            <span class="badge-label text-[8px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
                         </div>
                     </div>
                 </div>
