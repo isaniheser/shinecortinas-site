@@ -1,0 +1,41 @@
+name: PR Preview Artifact
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build static preview bundle
+        run: |
+          mkdir -p preview
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            ./ preview/
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview-pr-${{ github.event.pull_request.number }}
+          path: preview
+          retention-days: 7
+
+      - name: Preview instructions
+        run: |
+          {
+            echo "## Preview gerado ✅"
+            echo ""
+            echo "Baixe o artifact **site-preview-pr-${{ github.event.pull_request.number }}** nesta execução para pré-visualizar o site localmente."
+            echo ""
+            echo "Link da execução: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          } >> "$GITHUB_STEP_SUMMARY"
