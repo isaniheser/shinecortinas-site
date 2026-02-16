@@ -2,32 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.shinecortinas.com/</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/index.html</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.shinecortinas.com/blog.html</loc>
-    <lastmod>2026-02-14</lastmod>
+    <loc>https://www.shinecortinas.com/Blog.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/artigo-blackout.html</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/artigo-motorizacao.html</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/artigo-linho.html</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/cidades-atendidas.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <priority>0.85</priority>
   </url>
 </urlset>
