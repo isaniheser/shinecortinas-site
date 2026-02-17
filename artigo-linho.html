@@ -50,46 +50,158 @@
         .prose th, .prose td { border: 1px solid #d1d5db; padding: 0.8rem; text-align: left; }
         .prose th { background: #111827; color: #fff; }
     </style>
-    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@type": "Organization",
+      "@id": "https://www.shinecortinas.com/#organization",
+      "name": "ShineCortinas",
+      "url": "https://www.shinecortinas.com",
+      "logo": "https://www.shinecortinas.com/logo-shine.avif",
+      "telephone": "+55-24-99329-8763",
+      "slogan": "Alfaiataria para sua casa",
+      "areaServed": [
+        "Itatiaia",
+        "Resende",
+        "Penedo",
+        "Visconde de Mauá",
+        "Maromba",
+        "Porto Real",
+        "Barra Mansa",
+        "Volta Redonda",
+        "Pinheiral",
+        "Piraí",
+        "Barra do Piraí",
+        "Valença",
+        "Vassouras",
+        "Paulo de Frontin",
+        "Miguel Pereira",
+        "Sul Fluminense",
+        "Costa Verde"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.shinecortinas.com/#localbusiness",
+      "name": "ShineCortinas",
+      "url": "https://www.shinecortinas.com",
+      "image": "https://www.shinecortinas.com/logo-shine.avif",
+      "telephone": "+55-24-99329-8763",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Volta Redonda",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      },
+      "areaServed": [
+        "Itatiaia",
+        "Resende",
+        "Penedo",
+        "Visconde de Mauá",
+        "Maromba",
+        "Porto Real",
+        "Barra Mansa",
+        "Volta Redonda",
+        "Pinheiral",
+        "Piraí",
+        "Barra do Piraí",
+        "Valença",
+        "Vassouras",
+        "Paulo de Frontin",
+        "Miguel Pereira",
+        "Sul Fluminense",
+        "Costa Verde"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Isani Oliveira"
+      },
+      "brand": {
+        "@id": "https://www.shinecortinas.com/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.shinecortinas.com/artigo-linho.html#article",
+      "headline": "A Memória do Tecido",
+      "mainEntityOfPage": "https://www.shinecortinas.com/artigo-linho.html",
+      "author": {
+        "@type": "Person",
+        "name": "Isani Oliveira"
+      },
+      "publisher": {
+        "@id": "https://www.shinecortinas.com/#organization"
+      },
+      "image": [
+        "https://www.shinecortinas.com/linha-puro.avif"
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Cortinas sob medida em linho técnico",
+      "serviceType": "Cortinas sob medida em linho técnico",
+      "provider": {
+        "@id": "https://www.shinecortinas.com/#localbusiness"
+      },
+      "areaServed": [
+        "Itatiaia",
+        "Resende",
+        "Penedo",
+        "Visconde de Mauá",
+        "Maromba",
+        "Porto Real",
+        "Barra Mansa",
+        "Volta Redonda",
+        "Pinheiral",
+        "Piraí",
+        "Barra do Piraí",
+        "Valença",
+        "Vassouras",
+        "Paulo de Frontin",
+        "Miguel Pereira",
+        "Sul Fluminense",
+        "Costa Verde"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {
-          "@type": "Question",
-          "name": "Linho natural é sempre melhor que linho técnico?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nem sempre. Linho técnico pode oferecer aparência sofisticada com mais estabilidade dimensional, menos amassado e manutenção mais simples."
-          }
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.shinecortinas.com/"
         },
         {
-          "@type": "Question",
-          "name": "Como evitar cortina de linho murcha com o tempo?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "É essencial combinar tecido de qualidade, cálculo de franzimento, barra com peso adequado e trilho alinhado ao vão."
-          }
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Acervo Técnico",
+          "item": "https://www.shinecortinas.com/blog.html"
         },
         {
-          "@type": "Question",
-          "name": "Linho funciona em pé-direito alto?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sim, desde que a modelagem e o acionamento sejam especificados para grandes alturas, evitando deformações no caimento."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Qual a melhor opção para wave com forro?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O ideal é um tecido principal com memória de forma e forro compatível em peso, para manter ondas regulares e proteger o acabamento."
-          }
+          "@type": "ListItem",
+          "position": 3,
+          "name": "A Memória do Tecido",
+          "item": "https://www.shinecortinas.com/artigo-linho.html"
         }
       ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "A Memória do Tecido | ShineCortinas",
+      "description": "Conteúdo técnico ShineCortinas em formato de vídeo sobre cortinas sob medida em linho técnico.",
+      "thumbnailUrl": "https://www.shinecortinas.com/linha-puro.avif",
+      "uploadDate": "2026-01-20",
+      "contentUrl": "https://www.shinecortinas.com/artigo-linho.html",
+      "embedUrl": "https://www.shinecortinas.com/artigo-linho.html",
+      "duration": "PT2M30S"
     }
-    </script>
+  ]
+}
+</script>
 </head>
 <body>
     <nav class="w-full bg-black py-4 border-b border-[#333]"><div class="max-w-4xl mx-auto px-6 flex justify-between items-center"><a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 border border-[#C6A868] rounded-full flex items-center justify-center bg-black"><span class="font-logo text-sm font-bold text-[#C6A868] pt-0.5">S</span></div><span class="text-lg font-logo font-bold text-white tracking-widest">SHINE</span></a><a href="index.html" class="text-xs text-gray-400 hover:text-white uppercase tracking-widest">← Voltar</a></div></nav>
@@ -129,16 +241,15 @@
             <li>Ignorar cálculo de barra para o pé-direito do ambiente.</li>
             <li>Instalar sem ajuste fino de trilho e nivelamento.</li>
         </ul>
+        <h3>Respeito ao Pé Direito</h3>
+        <p>Medimos a altura com laser. Sua cortina não vai "varrer o chão" (acumulando ácaros) nem ficar "pula brejo". Ela flutua a exatos 1cm do piso. Perfeição cirúrgica.</p>
+        <div class="my-12 bg-black p-8 text-center rounded-sm shadow-2xl"><h4 class="text-white font-luxury text-2xl mb-4">Sua casa merece essa elegância?</h4><a href="https://wa.me/5524993298763" class="bg-[#C6A868] text-black px-8 py-3 font-bold uppercase tracking-widest hover:bg-white transition inline-block">Falar no WhatsApp</a></div>
 
-        <h2>FAQ — dúvidas reais sobre linho</h2>
-        <h3>Linho natural é sempre superior?</h3>
-        <p>Não. O linho técnico pode entregar visual premium com maior estabilidade no uso diário.</p>
-        <h3>Como evitar cortina murcha?</h3>
-        <p>Com boa composição, wave correto, barra calculada e instalação precisa.</p>
-        <h3>Linho funciona em pé-direito alto?</h3>
-        <p>Funciona, desde que especificado para o peso e altura do vão.</p>
-        <h3>Qual tecido usar para wave com forro?</h3>
-        <p>Tecido com memória de forma e forro com peso compatível para preservar o desenho da onda.</p>
+        <section class="my-10 p-6 border border-gray-200 bg-white">
+            <h3 class="text-lg font-bold mb-2">Leia o HUB principal deste tema</h3>
+            <p class="text-sm text-gray-600 mb-3">Este artigo é um spoke técnico. Para o mapa completo de decisão, acesse o HUB central da ShineCortinas.</p>
+            <a href="/cortinas" class="text-sm font-bold uppercase tracking-widest border-b border-black">Ir para /cortinas</a>
+        </section>
     </article>
     <footer class="bg-gray-100 py-10 text-center border-t border-gray-200"><p class="text-xs text-gray-500 uppercase tracking-widest">© 2026 ShineCortinas.com</p></footer>
 </body>
