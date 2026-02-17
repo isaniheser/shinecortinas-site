@@ -335,12 +335,14 @@
         .badge-item:hover .badge-img { transform: scale(1.1); }
         .badge-label { min-height: 20px; display: block; line-height: 1.2; }
         .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 1000px; }
+        section[id] { scroll-margin-top: 110px; }
+        .hero-safe-top { padding-top: clamp(7rem, 12vh, 10rem); }
     </style>
 </head>
 <body class="bg-white text-gray-900 antialiased overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 md:py-6" aria-label="Menu Principal">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-black/35 backdrop-blur-sm py-4 border-b border-white/10" aria-label="Menu Principal">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div id="nav-logo" class="opacity-0 transition-opacity duration-300 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)" role="button">
                 <div class="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#C6A868] bg-black shadow-md"><span class="font-logo text-lg font-bold text-[#C6A868] pt-0.5">S</span></div>
@@ -359,7 +361,7 @@
     </nav>
 
     <!-- HERO -->
-    <section class="relative h-screen flex flex-col items-center justify-center bg-black font-tech overflow-hidden">
+    <section class="relative min-h-[100svh] flex flex-col items-center justify-start md:justify-center bg-black font-tech overflow-hidden hero-safe-top pb-14 md:pb-20">
         <div class="absolute inset-0 z-0"><img src="hero.avif" alt="Cortinas de Luxo Shine" class="w-full h-full object-cover opacity-60 scale-105" width="1920" height="1080" fetchpriority="high" decoding="async" /><div class="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black"></div></div>
         <div class="relative z-10 text-center px-4 animate-fade-in-up w-full max-w-4xl flex flex-col items-center">
             <div class="mb-4 transform hover:scale-105 transition duration-700 cursor-pointer"><img src="logo-shine.avif" alt="Logo Shine Cortinas 3D" width="400" height="400" fetchpriority="high" class="w-64 md:w-96 h-auto drop-shadow-2xl mx-auto" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';"><div id="logo-fallback" style="display:none;"><span class="font-logo text-5xl md:text-8xl text-[#C6A868]">SHINE</span></div></div>
@@ -367,12 +369,21 @@
             <h1 class="font-luxury text-white text-3xl md:text-5xl font-black mb-4 md:mb-5 leading-tight drop-shadow-lg">ShineCortinas: Cortinas e Persianas Sob Medida no Sul Fluminense</h1>
             <h2 class="font-luxury italic text-[#C6A868] text-xl md:text-4xl mb-6 tracking-wide drop-shadow-lg">Alfaiataria para sua casa</h2>
             <p class="text-white text-sm md:text-base font-semibold max-w-xs md:max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed drop-shadow-md opacity-95">Se você busca <span class="text-[#C6A868]">privacidade</span>, conforto térmico e controle de luz sem abrir mão da estética, escolher a solução errada custa caro: mau caimento, instalação frágil e retrabalho. Na ShineCortinas, cada projeto é feito sob medida para proteger seu ambiente e elevar o acabamento.</p>
-            <a href="https://wa.me/5524993298763" target="_blank" class="gold-bg-gradient text-black text-sm md:text-base font-black px-8 py-4 md:px-10 md:py-5 rounded-sm hover:scale-105 transition shadow-xl flex items-center justify-center gap-3 w-11/12 md:w-fit" onclick="return gtag_report_conversion(this.href);">Acionar Especialista <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg></a>
+            <a href="https://wa.me/5524993298763" target="_blank" class="gold-bg-gradient text-black text-sm md:text-base font-black px-8 py-4 md:px-10 md:py-5 rounded-sm hover:scale-105 transition shadow-xl flex items-center justify-center gap-3 w-11/12 md:w-fit" onclick="return gtag_report_conversion(this.href);">Agendar avaliação técnica <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg></a>
+            <p class="text-[11px] md:text-xs uppercase tracking-[0.18em] text-gray-300 mt-4">Decisão sem risco: visite os guias técnicos da ShineCortinas</p>
+            <div class="flex flex-wrap items-center justify-center gap-2 mt-3 text-[10px] md:text-xs uppercase tracking-wider">
+                <a href="/cortinas" class="border border-white/25 px-3 py-1 text-white hover:border-[#C6A868] hover:text-[#C6A868] transition">/cortinas</a>
+                <a href="/persianas" class="border border-white/25 px-3 py-1 text-white hover:border-[#C6A868] hover:text-[#C6A868] transition">/persianas</a>
+                <a href="/cortina-wave" class="border border-white/25 px-3 py-1 text-white hover:border-[#C6A868] hover:text-[#C6A868] transition">/cortina-wave</a>
+                <a href="/cortina-motorizada" class="border border-white/25 px-3 py-1 text-white hover:border-[#C6A868] hover:text-[#C6A868] transition">/cortina-motorizada</a>
+                <a href="/blackout-e-forros" class="border border-white/25 px-3 py-1 text-white hover:border-[#C6A868] hover:text-[#C6A868] transition">/blackout-e-forros</a>
+                <a href="/trilhos-e-acionamentos" class="border border-white/25 px-3 py-1 text-white hover:border-[#C6A868] hover:text-[#C6A868] transition">/trilhos-e-acionamentos</a>
+            </div>
         </div>
     </section>
 
     <!-- COMPARATIVO -->
-    <section id="comparativo" class="py-16 md:py-24 bg-white font-tech">
+    <section id="comparativo" class="relative z-10 py-16 md:py-24 bg-white font-tech">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-10 md:mb-16"><span class="text-xs font-bold uppercase tracking-widest text-[#C6A868] mb-2 block">Verdade Nua e Crua</span><h2 class="text-2xl md:text-4xl font-luxury font-black text-black">POR QUE <span class="text-[#C6A868]">SHINE</span>?</h2></div>
             <div class="mobile-scroll border border-gray-200 shadow-2xl rounded-sm">
@@ -761,11 +772,11 @@
       window.requestAnimationFrame(() => {
         if (window.scrollY > 50) {
           navbar.classList.add('bg-black/95', 'backdrop-blur-sm', 'py-4', 'border-b', 'border-[#333]');
-          navbar.classList.remove('bg-transparent', 'py-6');
+          navbar.classList.remove('bg-black/35', 'border-white/10');
           navLogo.classList.remove('opacity-0');
         } else {
-          navbar.classList.remove('bg-black/95', 'backdrop-blur-sm', 'py-4', 'border-b', 'border-[#333]');
-          navbar.classList.add('bg-transparent', 'py-6');
+          navbar.classList.remove('bg-black/95', 'border-[#333]');
+          navbar.classList.add('bg-black/35', 'border-white/10');
           navLogo.classList.add('opacity-0');
         }
         ticking = false;
