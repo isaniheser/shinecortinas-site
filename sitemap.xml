@@ -2,31 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.shinecortinas.com/</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <priority>1.00</priority>
   </url>
+  <url>
     <loc>https://www.shinecortinas.com/blog.html</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.shinecortinas.com/artigo-blackout.html</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.shinecortinas.com/artigo-motorizacao.html</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.shinecortinas.com/artigo-linho.html</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades-atendidas.html</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>0.85</priority>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/artigo-blackout.html</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/artigo-motorizacao.html</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/artigo-linho.html</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/cortinas</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/persianas</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/cortina-wave</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/cortina-motorizada</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blackout-e-forros</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/trilhos-e-acionamentos</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/portfolio</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/metodo</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/sobre</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/faq</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/contato</loc>
+    <lastmod>2026-02-17</lastmod>
+    <priority>0.80</priority>
   </url>
 </urlset>
