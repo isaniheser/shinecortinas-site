@@ -30,9 +30,8 @@
     <!-- PERFORMANCE -->
     <link rel="preload" as="image" href="hero.avif" fetchpriority="high">
     <link rel="preload" as="image" href="logo-shine.avif" fetchpriority="high">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preload" href="assets/tailwind.generated.css" as="style">
+    <link rel="stylesheet" href="assets/tailwind.generated.css">
     
     <!-- RASTREAMENTO -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T725VG0NZ"></script>
@@ -43,15 +42,6 @@
       gtag('config', 'G-3T725VG0NZ'); 
       gtag('config', 'AW-628717241'); 
     </script>
-    <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '6127327264052084');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=6127327264052084&ev=PageView&noscript=1"/></noscript>
 
     <script type="application/ld+json">
 {
@@ -419,17 +409,17 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="relative group bg-black h-[400px] shadow-2xl overflow-hidden rounded-sm cursor-pointer" onclick="openModal('modal-persiana')">
-                <img src="persiana-motorizada.avif" alt="Persianas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async">
+                <img src="persiana-motorizada.avif" alt="Persianas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-8 w-full"><h3 class="text-2xl font-bold text-white uppercase mb-2">Persianas Motorizadas</h3><span class="text-[#C6A868] text-xs font-bold uppercase tracking-widest border-b border-[#C6A868] pb-1">Ver Detalhes</span></div>
             </div>
             <div class="relative group bg-black h-[400px] shadow-2xl overflow-hidden rounded-sm cursor-pointer" onclick="openModal('modal-cortina')">
-                <img src="cortina-sob-medida.avif" alt="Cortinas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async">
+                <img src="cortina-sob-medida.avif" alt="Cortinas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-8 w-full"><h3 class="text-2xl font-bold text-white uppercase mb-2">Cortinas sob Medida</h3><span class="text-[#C6A868] text-xs font-bold uppercase tracking-widest border-b border-[#C6A868] pb-1">Ver Detalhes</span></div>
             </div>
             <div class="relative group bg-black h-[400px] shadow-2xl overflow-hidden rounded-sm cursor-pointer" onclick="openModal('modal-blackout')">
-                <img src="blackouts-tecnicos.avif" alt="Blackout" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async">
+                <img src="blackouts-tecnicos.avif" alt="Blackout" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-8 w-full"><h3 class="text-2xl font-bold text-white uppercase mb-2">Blackouts Técnicos</h3><span class="text-[#C6A868] text-xs font-bold uppercase tracking-widest border-b border-[#C6A868] pb-1">Ver Detalhes</span></div>
             </div>
