@@ -1,3 +1,23 @@
 http://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 https://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
+
+/index.html / 301!
+
+/persianas/ /persianas 301!
+/cortinas/ /cortinas 301!
+/cortina-wave/ /cortina-wave 301!
+/cortina-motorizada/ /cortina-motorizada 301!
+/blackout-e-forros/ /blackout-e-forros 301!
+/trilhos-e-acionamentos/ /trilhos-e-acionamentos 301!
+/portfolio/ /portfolio 301!
+/metodo/ /metodo 301!
+/sobre/ /sobre 301!
+/faq/ /faq 301!
+/contato/ /contato 301!
+
+/post/* /blog.html 301
+/categories/* 410
+/category/* 410
+/tag/* 410
+/portfolio-collections/* 410
