@@ -41,6 +41,9 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /sobre-n%C3%B3s /sobre 301!
 /portfolio-collections/* /portfolio 301!
 
+/artigo-blackout.html /blog/o-que-e-blackout 301!
+/artigo-motorizacao.html /blog/por-que-escolher-cortina-motorizada 301!
+/artigo-linho.html /blog/linho-para-cortinas 301!
 /blog.html /blog 301!
 /blog /blog 200
 /index.html / 301!
