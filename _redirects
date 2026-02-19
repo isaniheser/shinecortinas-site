@@ -49,7 +49,7 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /index.html / 301!
 
 
-/categories/* 410
-/category/* 410
-/tag/* 410
+/categories/* / 410
+/category/* / 410
+/tag/* / 410
 /post/* /blog 301!
