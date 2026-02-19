@@ -2,162 +2,217 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.shinecortinas.com/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://www.shinecortinas.com/blog.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.80</priority>
+    <loc>https://www.shinecortinas.com/blog</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades-atendidas.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.shinecortinas.com/artigo-blackout.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.shinecortinas.com/artigo-motorizacao.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.shinecortinas.com/artigo-linho.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cortinas</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/persianas</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cortina-wave</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cortina-motorizada</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/blackout-e-forros</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/trilhos-e-acionamentos</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/portfolio</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/metodo</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/sobre</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/faq</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/contato</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/altura-ideal-da-cortina</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/tipos-de-forro-para-cortina</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/bainha-de-cortina</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/o-que-e-blackout</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/quantidade-de-tecido-para-cortina-wave</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/persiana-para-dividir-ambientes</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/como-escurecer-quarto-sala-tv</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/persiana-ideal-para-cada-ambiente</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/por-que-escolher-cortina-motorizada</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/cortina-ou-persiana-na-cozinha</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/como-funciona-persiana-motorizada</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/persiana-vertical-ou-horizontal</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/qual-cortina-escolher-para-sala</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.shinecortinas.com/blog/varao-para-cortina</loc>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/itatiaia/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/resende/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/penedo/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/visconde-de-maua/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/maromba/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/porto-real/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/barra-mansa/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/volta-redonda/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/pinheiral/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/pirai/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/barra-do-pirai/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/valenca/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/vassouras/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/paulo-de-frontin/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.shinecortinas.com/cidades/miguel-pereira/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <priority>0.75</priority>
   </url>
 </urlset>

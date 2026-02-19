@@ -1,3 +1,49 @@
 http://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 https://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
+
+/post/qual-a-altura-ideal-de-uma-cortina /blog/altura-ideal-da-cortina 301!
+/post/7-tipos-de-forro-para-cortina-escolha-o-ideal-para-o-seu-ambiente /blog/tipos-de-forro-para-cortina 301!
+/post/bainha-de-cortina /blog/bainha-de-cortina 301!
+/post/qual-a-altura-ideal-da-cortina-no-ch%C3%A3o-guia-completo-para-escolher-a-melhor-op%C3%A7%C3%A3o /blog/altura-ideal-da-cortina 301!
+/post/o-que-%C3%A9-blackout-tudo-o-que-voc%C3%AA-precisa-saber-sobre-cortinas-blackout /blog/o-que-e-blackout 301!
+/post/a-quantidade-certa-de-tecido-pode-fazer-toda-a-diferen%C3%A7a-na-decora%C3%A7%C3%A3o-saiba-como-escolher-para-suas /blog/quantidade-de-tecido-para-cortina-wave 301!
+/post/a-persiana-pode-ser-usada-para-dividir-ambientes /blog/persiana-para-dividir-ambientes 301!
+/post/como-escurecer-o-meu-quarto-ou-sala-de-tv /blog/como-escurecer-quarto-sala-tv 301!
+/post/qual-o-modelo-de-persiana-ideal-para-cada-ambiente-da-sua-casa /blog/persiana-ideal-para-cada-ambiente 301!
+/post/por-que-escolher-uma-cortina-motorizada /blog/por-que-escolher-cortina-motorizada 301!
+/post/cortina-ou-persiana-na-cozinha-descubra-a-melhor-op%C3%A7%C3%A3o-para-cada-tipo-de-ambiente /blog/cortina-ou-persiana-na-cozinha 301!
+/post/como-funciona-as-persianas-motorizadas /blog/como-funciona-persiana-motorizada 301!
+/post/qual-persiana-escolher-vertical-ou-horizontal /blog/persiana-vertical-ou-horizontal 301!
+/post/qual-cortina-escolher-para-sala /blog/qual-cortina-escolher-para-sala 301!
+/post/var%C3%A3o-para-cortina-guia-completo-para-escolher-instalar-e-valorizar-seu-ambiente /blog/varao-para-cortina 301!
+/post/o-que-%C3%A9-cortina-blackout-blecaute /blog/o-que-e-blackout 301!
+
+/cortinas-persianas-resende /cidades/resende 301!
+/cortinas-volta-redonda /cidades/volta-redonda 301!
+/produtos /portfolio 301!
+/cortina /cortinas 301!
+/entre-em-contato /contato 301!
+/sobre-n%C3%B3s /sobre 301!
+/portfolio-collections/* /portfolio 301!
+
+/blog.html /blog 301!
+/blog /blog 200
+/index.html / 301!
+
+/persianas/ /persianas 301!
+/cortinas/ /cortinas 301!
+/cortina-wave/ /cortina-wave 301!
+/cortina-motorizada/ /cortina-motorizada 301!
+/blackout-e-forros/ /blackout-e-forros 301!
+/trilhos-e-acionamentos/ /trilhos-e-acionamentos 301!
+/portfolio/ /portfolio 301!
+/metodo/ /metodo 301!
+/sobre/ /sobre 301!
+/faq/ /faq 301!
+/contato/ /contato 301!
+
+/categories/* 410
+/category/* 410
+/tag/* 410
+/post/* /blog 301!
