@@ -1,32 +1,45 @@
 # Diagnóstico de tracking (Meta Pixel + Google Tags)
 
-## Resumo objetivo
+## Resumo executivo
 
-A base de código local contém **Meta Pixel + Google tag (GA4 + Ads)** em todas as páginas HTML.
+Com base no comportamento observado no Tag Assistant, o cenário mais provável é:
 
-Porém, na home em produção (`https://www.shinecortinas.com/`) foi identificado que o **Meta Pixel não está presente no HTML servido**, enquanto as tags do Google estão presentes.
+1. **Tag do Google existe no código**, mas não está sendo registrada na sessão de debug por contexto de execução (domínio de preview `pages.dev` + bloqueio no navegador + sessão de debug).
+2. **Meta Pixel** pode variar por ambiente publicado (deploy diferente entre domínio final e preview).
 
-## Evidências técnicas
+Em termos práticos: o problema não é apenas “snippet ausente”, e sim **diferença de ambiente + sessão de depuração**.
 
-- No código local, todas as páginas HTML têm:
-  - `fbq('init', '6127327264052084')`
-  - `gtag('config', 'G-3T725VG0NZ')`
-  - `gtag('config', 'AW-628717241')`
-- Na home de produção:
-  - Google tag encontrada
-  - Google Ads encontrada
-  - Meta Pixel **não encontrado**
+## Evidências do repositório
 
-## Causa provável
+- O snippet de Google e Meta está padronizado nas páginas HTML.
+- Existe disparo de conversão no CTA de WhatsApp via Google Ads (`send_to`).
+- Não há duplicação explícita de `gtag` no mesmo arquivo.
 
-1. **Descompasso entre repositório e produção**: a versão atualmente publicada da home não contém o snippet do Meta Pixel.
-2. Para Google, em ambientes de teste com bloqueadores/rastreadores anti-tracking, é comum aparecer somente o `gtag.js` sem exibir os requests de coleta nos inspectores.
+## Leitura do print enviado
 
-## Ação recomendada
+No print, o Tag Assistant mostra ao mesmo tempo:
 
-1. Rodar `./scripts/audit-tracking.sh` antes de deploy.
-2. Garantir que o deploy use exatamente a branch/commit com os snippets completos.
-3. Validar em produção com:
-   - Meta Pixel Helper (sem adblock)
-   - Tag Assistant / GA4 DebugView (com URL de produção)
+- **“Tag do Google encontrada”** (script base detectado);
+- **“Nenhuma tag encontrada”** no resumo (nenhuma tag/ID depurável ativa naquela sessão).
 
+Esse padrão costuma ocorrer quando:
+
+- a sessão foi aberta em URL/ambiente diferente do principal (ex.: `shinecortinas-site.pages.dev`),
+- há extensão de privacidade/adblock interferindo,
+- ou a conexão de debug não foi “reativada” após reload com a aba correta conectada.
+
+## Como validar sem falso negativo
+
+1. Rodar auditoria na URL exata:
+   - `./scripts/audit-tracking.sh https://www.shinecortinas.com/`
+   - `./scripts/audit-tracking.sh https://shinecortinas-site.pages.dev/`
+2. Testar Tag Assistant em janela anônima sem extensões.
+3. Confirmar eventos em GA4 DebugView (com `debug_mode`) e Google Ads Tag Diagnostics.
+4. Validar Meta com Pixel Helper na mesma URL da campanha.
+
+## Próximo passo recomendado
+
+Padronizar validação pré-deploy com o script de auditoria e aprovar publicação somente quando:
+
+- domínio final e preview retornarem os snippets esperados;
+- Tag Assistant (sem bloqueadores) mostrar o ID GA4 e/ou AW ativos na sessão.
