@@ -1,45 +1,46 @@
-# Diagnóstico de tracking (Meta Pixel + Google Tags)
+# Diagnóstico de tracking (Google Tags + Meta Pixel)
 
-## Resumo executivo
+## Conclusão prática
 
-Com base no comportamento observado no Tag Assistant, o cenário mais provável é:
+O problema de “tag não reconhecida” no Tag Assistant é fortemente ligado a **contexto de host/sessão**:
 
-1. **Tag do Google existe no código**, mas não está sendo registrada na sessão de debug por contexto de execução (domínio de preview `pages.dev` + bloqueio no navegador + sessão de debug).
-2. **Meta Pixel** pode variar por ambiente publicado (deploy diferente entre domínio final e preview).
+- o site canônico usa `https://www.shinecortinas.com`;
+- `https://shinecortinas.com` redireciona para `www`;
+- URLs de preview (`*.pages.dev`) podem ter comportamento diferente na depuração.
 
-Em termos práticos: o problema não é apenas “snippet ausente”, e sim **diferença de ambiente + sessão de depuração**.
+Se a sessão do Tag Assistant for iniciada em um host e o carregamento efetivo ocorrer em outro, você pode ver “Tag do Google encontrada” mas sem tag depurável ativa no resumo.
 
-## Evidências do repositório
+## Sobre www vs sem www
 
-- O snippet de Google e Meta está padronizado nas páginas HTML.
-- Existe disparo de conversão no CTA de WhatsApp via Google Ads (`send_to`).
-- Não há duplicação explícita de `gtag` no mesmo arquivo.
+Este ponto é real e precisa ser tratado na validação:
 
-## Leitura do print enviado
+1. O teste deve iniciar no mesmo host final (`www`), sem mudança de domínio durante a sessão.
+2. O canônico do projeto está em `www` nas páginas principais.
+3. Testes em `pages.dev` devem ser considerados apenas para preview técnico, não para validar produção.
 
-No print, o Tag Assistant mostra ao mesmo tempo:
+## Sobre o Meta Pixel aparecer só em algumas páginas
 
-- **“Tag do Google encontrada”** (script base detectado);
-- **“Nenhuma tag encontrada”** no resumo (nenhuma tag/ID depurável ativa naquela sessão).
+Pelos seus prints, o Pixel está ativo em páginas internas. O alerta do Meta Pixel Helper (“No pixels have fired on current page...”) pode acontecer por heurística da extensão/sessão, mesmo quando o pixel base está carregado.
 
-Esse padrão costuma ocorrer quando:
+O que importa para validar de forma objetiva:
 
-- a sessão foi aberta em URL/ambiente diferente do principal (ex.: `shinecortinas-site.pages.dev`),
-- há extensão de privacidade/adblock interferindo,
-- ou a conexão de debug não foi “reativada” após reload com a aba correta conectada.
+- presença de `fbq('init', '6127327264052084')` no HTML da URL testada;
+- presença de request para `connect.facebook.net/en_US/fbevents.js`;
+- evento `PageView` (ou outro evento) no carregamento.
 
-## Como validar sem falso negativo
+## Fluxo correto de validação
 
-1. Rodar auditoria na URL exata:
-   - `./scripts/audit-tracking.sh https://www.shinecortinas.com/`
-   - `./scripts/audit-tracking.sh https://shinecortinas-site.pages.dev/`
-2. Testar Tag Assistant em janela anônima sem extensões.
-3. Confirmar eventos em GA4 DebugView (com `debug_mode`) e Google Ads Tag Diagnostics.
-4. Validar Meta com Pixel Helper na mesma URL da campanha.
+1. Rodar auditoria multi-página no host final:
+   - `./scripts/audit-tracking.sh https://www.shinecortinas.com`
+2. Rodar auditoria no host sem `www` para confirmar redirecionamento:
+   - `./scripts/audit-tracking.sh https://shinecortinas.com`
+3. No navegador:
+   - abrir anônima sem extensões;
+   - iniciar Tag Assistant diretamente em `https://www.shinecortinas.com`;
+   - recarregar a página conectada;
+   - validar GA4/AW no resumo da sessão.
 
-## Próximo passo recomendado
+## Diagnóstico atual do repositório
 
-Padronizar validação pré-deploy com o script de auditoria e aprovar publicação somente quando:
-
-- domínio final e preview retornarem os snippets esperados;
-- Tag Assistant (sem bloqueadores) mostrar o ID GA4 e/ou AW ativos na sessão.
+- Snippets de GA4, Google Ads e Meta Pixel estão presentes nos HTMLs locais.
+- O risco principal é validação em host/ambiente diferente do canônico, gerando falso negativo na depuração.

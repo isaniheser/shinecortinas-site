@@ -7,7 +7,16 @@ cd "$ROOT_DIR"
 GA_ID="G-3T725VG0NZ"
 ADS_ID="AW-628717241"
 META_PIXEL_ID="6127327264052084"
-TARGET_URL="${1:-https://www.shinecortinas.com/}"
+TARGET_BASE="${1:-https://www.shinecortinas.com}"
+
+PATHS=(
+  "/"
+  "/cidades-atendidas"
+  "/cidades/penedo/"
+  "/cortinas"
+  "/persianas"
+  "/contato"
+)
 
 printf "== Auditoria local (arquivos HTML) ==\n"
 missing=0
@@ -32,51 +41,76 @@ else
   printf "ERRO: %s arquivo(s) com tracking incompleto.\n" "$missing"
 fi
 
-printf "\n== Auditoria remota (%s) ==\n" "$TARGET_URL"
-if [[ "$TARGET_URL" == *"pages.dev"* ]]; then
-  printf "ALERTA: você está auditando um domínio pages.dev (preview).\n"
-  printf "        Tag Assistant pode não reproduzir o mesmo comportamento do domínio final.\n"
+if [[ "$TARGET_BASE" == */ ]]; then
+  TARGET_BASE="${TARGET_BASE%/}"
 fi
 
-remote_html=""
-remote_headers=""
-if ! remote_headers="$(curl -sSIL "$TARGET_URL")"; then
-  printf "ERRO: não foi possível ler headers de %s\n" "$TARGET_URL"
-  exit 1
-fi
-if ! remote_html="$(curl -fsSL "$TARGET_URL")"; then
-  printf "ERRO: não foi possível ler HTML de %s\n" "$TARGET_URL"
-  exit 1
+printf "\n== Auditoria remota (base: %s) ==\n" "$TARGET_BASE"
+if [[ "$TARGET_BASE" == *"pages.dev"* ]]; then
+  printf "ALERTA: domínio preview pages.dev detectado (resultado pode divergir do domínio final).\n"
 fi
 
-check_contains() {
-  local needle="$1"
-  local ok_msg="$2"
-  local err_msg="$3"
-  if [[ "$remote_html" == *"$needle"* ]]; then
-    printf "OK: %s\n" "$ok_msg"
+check_url() {
+  local url="$1"
+  printf "\n-- URL: %s\n" "$url"
+
+  local headers html final_url csp_line
+  if ! headers="$(curl -sSIL "$url")"; then
+    printf "ERRO: falha ao ler headers.\n"
+    return
+  fi
+  if ! html="$(curl -fsSL "$url")"; then
+    printf "ERRO: falha ao ler HTML.\n"
+    return
+  fi
+
+  final_url="$(curl -sSL -o /dev/null -w '%{url_effective}' "$url")"
+  printf "Final URL: %s\n" "$final_url"
+
+  if [[ "$html" == *"gtag('config', '$GA_ID')"* ]]; then
+    printf "OK: GA4 encontrada.\n"
   else
-    printf "ERRO: %s\n" "$err_msg"
+    printf "ERRO: GA4 não encontrada.\n"
+  fi
+
+  if [[ "$html" == *"gtag('config', '$ADS_ID')"* ]]; then
+    printf "OK: Google Ads encontrada.\n"
+  else
+    printf "ERRO: Google Ads não encontrada.\n"
+  fi
+
+  if [[ "$html" == *"fbq('init', '$META_PIXEL_ID')"* ]]; then
+    printf "OK: Meta Pixel encontrado.\n"
+  else
+    printf "ERRO: Meta Pixel não encontrado.\n"
+  fi
+
+  csp_line="$(printf '%s\n' "$headers" | awk 'BEGIN{IGNORECASE=1}/^content-security-policy:/{sub(/^content-security-policy:[[:space:]]*/,"",$0); print; exit}')"
+  if [[ -n "$csp_line" ]]; then
+    printf "CSP: %s\n" "$csp_line"
   fi
 }
 
-check_contains "gtag('config', '$GA_ID')" "Google tag (GA4) encontrada" "Google tag (GA4) NÃO encontrada"
-check_contains "gtag('config', '$ADS_ID')" "Google Ads encontrada" "Google Ads NÃO encontrada"
-check_contains "fbq('init', '$META_PIXEL_ID')" "Meta Pixel encontrado" "Meta Pixel NÃO encontrado"
+for path in "${PATHS[@]}"; do
+  check_url "${TARGET_BASE}${path}"
+done
 
-csp_line="$(printf '%s\n' "$remote_headers" | awk 'BEGIN{IGNORECASE=1}/^content-security-policy:/{sub(/^content-security-policy:[[:space:]]*/,"",$0); print; exit}')"
-if [[ -n "$csp_line" ]]; then
-  printf "\nCSP detectado: %s\n" "$csp_line"
-  if [[ "$csp_line" != *"googletagmanager.com"* && "$csp_line" != *"https:"* ]]; then
-    printf "ALERTA: CSP pode bloquear googletagmanager.com\n"
-  fi
-  if [[ "$csp_line" != *"google-analytics.com"* && "$csp_line" != *"https:"* ]]; then
-    printf "ALERTA: CSP pode bloquear google-analytics.com\n"
-  fi
+printf "\n== Checagem de host canônico (www x sem www) ==\n"
+if [[ "$TARGET_BASE" == *"www."* ]]; then
+  base_no_www="${TARGET_BASE/https:\/\/www./https://}"
+  base_www="$TARGET_BASE"
+else
+  base_no_www="$TARGET_BASE"
+  base_www="${TARGET_BASE/https:\/\//https://www.}"
 fi
 
-printf "\n== Guia rápido para Tag Assistant ==\n"
-printf "1) Teste preferencialmente no domínio final (www.shinecortinas.com).\n"
-printf "2) Abra janela anônima SEM extensões de bloqueio (adblock, anti-tracker, privacy).\n"
-printf "3) Conecte o Tag Assistant e recarregue a página uma vez.\n"
-printf "4) Se ainda falhar, rode novamente este script com a URL exata analisada.\n"
+for b in "$base_no_www" "$base_www"; do
+  effective="$(curl -sSL -o /dev/null -w '%{url_effective}' "$b/")"
+  printf "%s/ -> %s\n" "$b" "$effective"
+done
+
+printf "\n== Interpretação para Tag Assistant ==\n"
+printf "1) Inicie a sessão no MESMO host final (se redireciona para www, inicie com www).\n"
+printf "2) Não use preview randômico (ex.: hash.pages.dev) para validar produção.\n"
+printf "3) Teste em janela anônima sem extensões de bloqueio.\n"
+printf "4) Recarregue após conectar o Tag Assistant.\n"
