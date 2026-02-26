@@ -1,6 +1,24 @@
 http://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 https://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
+# TRAILING SLASH CANONICAL
+/blog /blog/ 301!
+/cidades-atendidas /cidades-atendidas/ 301!
+/cortinas /cortinas/ 301!
+/faq /faq/ 301!
+/persianas /persianas/ 301!
+/portfolio /portfolio/ 301!
+/contato /contato/ 301!
+/sobre /sobre/ 301!
+/metodo /metodo/ 301!
+/cortina-wave /cortina-wave/ 301!
+/cortina-motorizada /cortina-motorizada/ 301!
+/blackout-e-forros /blackout-e-forros/ 301!
+/trilhos-e-acionamentos /trilhos-e-acionamentos/ 301!
+/videos /videos/ 301!
+/cidades/:cidade /cidades/:cidade/ 301!
+/blog.html /blog/ 301!
+
 
 /post/qual-a-altura-ideal-de-uma-cortina /blog/altura-ideal-da-cortina 301!
 /post/7-tipos-de-forro-para-cortina-escolha-o-ideal-para-o-seu-ambiente /blog/tipos-de-forro-para-cortina 301!
@@ -44,8 +62,6 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /artigo-blackout.html /blog/o-que-e-blackout 301!
 /artigo-motorizacao.html /blog/por-que-escolher-cortina-motorizada 301!
 /artigo-linho.html /blog/linho-para-cortinas 301!
-/blog.html /blog 301!
-/blog /blog 200
 /index.html / 301!
 
 
