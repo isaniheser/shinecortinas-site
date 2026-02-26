@@ -52,7 +52,7 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /categories/* / 410
 /category/* / 410
 /tag/* / 410
-/post/* /blog 301!
+/post/*  /blog/:splat  301
 
 # CIDADES - SEO LOCAL
 /produtos-cidade/cortina-em-barra-mansa /cidades/barra-mansa/ 301
