@@ -1,3 +1,10 @@
+/produtos-cidade/cortina-em-resende  /cidades/resende/  301
+/produtos-cidade/persiana-rolo-em-resende  /cidades/resende/  301
+/produtos-cidade/cortina-romana-em-resende  /cidades/resende/  301
+/produtos-cidade/persiana-vertical-em-barra-mansa  /cidades/barra-mansa/  301
+/produtos-cidade/cortina-em-vassouras  /cidades/vassouras/  301
+/produtos-cidade/*  /cidades-atendidas/  301
+
 http://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 https://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
@@ -52,7 +59,7 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /categories/* / 410
 /category/* / 410
 /tag/* / 410
-/post/* /blog 301!
+/post/*  /blog/:splat/  301
 
 # CIDADES - SEO LOCAL
 /produtos-cidade/cortina-em-barra-mansa /cidades/barra-mansa/ 301
