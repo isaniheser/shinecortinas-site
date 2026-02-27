@@ -45,17 +45,20 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.shinecortinas.com/#organization",
+      "@id": "https://www.shinecortinas.com/#org",
       "name": "ShineCortinas",
       "url": "https://www.shinecortinas.com",
       "logo": "https://www.shinecortinas.com/logo-shine.avif",
-      "telephone": "+55-24-99329-8763",
-      "slogan": "Alfaiataria para sua casa",
       "sameAs": [
-        "https://www.instagram.com/shinecortinas/",
-        "https://www.facebook.com/shinecortinas/",
-        "https://www.tiktok.com/@shinecortinas",
-        "https://www.youtube.com/@shinecortinas"
+        "https://www.instagram.com/shinecortinas/"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+5524993298763",
+          "contactType": "customer service",
+          "availableLanguage": "pt-BR"
+        }
       ],
       "areaServed": [
         "Itatiaia",
@@ -79,12 +82,11 @@
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://www.shinecortinas.com/#localbusiness",
+      "@id": "https://www.shinecortinas.com/#biz",
       "name": "ShineCortinas",
       "url": "https://www.shinecortinas.com",
       "image": "https://www.shinecortinas.com/logo-shine.avif",
-      "telephone": "+55-24-99329-8763",
-      "priceRange": "$$$",
+      "telephone": "+5524993298763",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Volta Redonda",
@@ -110,12 +112,8 @@
         "Sul Fluminense",
         "Costa Verde"
       ],
-      "founder": {
-        "@type": "Person",
-        "name": "Isani Oliveira"
-      },
-      "brand": {
-        "@id": "https://www.shinecortinas.com/#organization"
+      "parentOrganization": {
+        "@id": "https://www.shinecortinas.com/#org"
       }
     },
     {
@@ -124,7 +122,7 @@
       "url": "https://www.shinecortinas.com",
       "name": "ShineCortinas",
       "publisher": {
-        "@id": "https://www.shinecortinas.com/#organization"
+        "@id": "https://www.shinecortinas.com/#org"
       }
     },
     {
@@ -133,7 +131,7 @@
       "name": "Cortina motorizada sob medida",
       "serviceType": "Cortina motorizada",
       "provider": {
-        "@id": "https://www.shinecortinas.com/#localbusiness"
+        "@id": "https://www.shinecortinas.com/#biz"
       },
       "areaServed": [
         "Itatiaia",
@@ -162,7 +160,7 @@
       "name": "Blackout e forros técnicos",
       "serviceType": "Blackout e forros",
       "provider": {
-        "@id": "https://www.shinecortinas.com/#localbusiness"
+        "@id": "https://www.shinecortinas.com/#biz"
       },
       "areaServed": [
         "Itatiaia",
@@ -191,7 +189,7 @@
       "name": "Trilhos e acionamentos para cortinas",
       "serviceType": "Trilhos e acionamentos",
       "provider": {
-        "@id": "https://www.shinecortinas.com/#localbusiness"
+        "@id": "https://www.shinecortinas.com/#biz"
       },
       "areaServed": [
         "Itatiaia",
