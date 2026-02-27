@@ -1,3 +1,5 @@
+/faq      /faq/  301
+/faq.html /faq/  301
 /portfolio  /portfolio/  301
 /portfolio.html  /portfolio/  301
 /portfolio-collections/*  /portfolio/  301
@@ -222,7 +224,6 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /cortina /cortinas/ 301
 /produtos /portfolio/ 301
 /cortinas-volta-redonda /cidades/volta-redonda/ 301
-/faq /faq/ 301
 /persiana-vertical /persianas/ 301
 /cópia-construção / 301
 /cortinas-sob-medida-sul-fluminense /cortinas/ 301
