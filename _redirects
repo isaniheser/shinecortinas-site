@@ -1,3 +1,14 @@
+/portfolio  /portfolio/  301
+/portfolio.html  /portfolio/  301
+/portfolio-collections/*  /portfolio/  301
+
+/produtos-cidade/cortina-em-resende  /cidades/resende/  301
+/produtos-cidade/persiana-rolo-em-resende  /cidades/resende/  301
+/produtos-cidade/cortina-romana-em-resende  /cidades/resende/  301
+/produtos-cidade/persiana-vertical-em-barra-mansa  /cidades/barra-mansa/  301
+/produtos-cidade/cortina-em-vassouras  /cidades/vassouras/  301
+/produtos-cidade/*  /cidades-atendidas/  301
+
 http://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 https://shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
@@ -39,7 +50,6 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /cortina /cortinas 301!
 /entre-em-contato /contato 301!
 /sobre-n%C3%B3s /sobre 301!
-/portfolio-collections/* /portfolio 301!
 
 /artigo-blackout.html /blog/o-que-e-blackout 301!
 /artigo-motorizacao.html /blog/por-que-escolher-cortina-motorizada 301!
@@ -204,7 +214,6 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /blog/categories/* /blog/ 301
 
 # PORTFÓLIO E INSTITUCIONAL
-/portfolio-collections/* /portfolio/ 301
 /cortina-rolo /persianas/ 301
 /bio /sobre/ 301
 /persiana-horizontal /persianas/ 301
