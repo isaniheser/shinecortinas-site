@@ -50,7 +50,6 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /cortina /cortinas 301!
 /entre-em-contato /contato 301!
 /sobre-n%C3%B3s /sobre 301!
-/portfolio-collections/* /portfolio 301!
 
 /artigo-blackout.html /blog/o-que-e-blackout 301!
 /artigo-motorizacao.html /blog/por-que-escolher-cortina-motorizada 301!
@@ -215,7 +214,6 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301!
 /blog/categories/* /blog/ 301
 
 # PORTFÓLIO E INSTITUCIONAL
-/portfolio-collections/* /portfolio/ 301
 /cortina-rolo /persianas/ 301
 /bio /sobre/ 301
 /persiana-horizontal /persianas/ 301
