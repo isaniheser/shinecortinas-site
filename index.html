@@ -324,6 +324,10 @@
         .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 1000px; }
         section[id] { scroll-margin-top: 110px; }
         .hero-safe-top { padding-top: clamp(7rem, 12vh, 10rem); }
+        .shine-timeline-item { position: relative; display: flex; gap: 1.5rem; align-items: flex-start; padding-bottom: 2.5rem; }
+        .shine-timeline-item:not(:last-child)::after { content: ''; position: absolute; left: 24px; top: 50px; bottom: 0; width: 2px; background: linear-gradient(to bottom, #C6A868 0%, rgba(198,168,104,0.15) 100%); }
+        .shine-timeline-num { flex-shrink: 0; width: 50px; height: 50px; background: #C6A868; color: #000; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; z-index: 1; font-family: 'Montserrat', sans-serif; line-height: 1; }
+        .shine-timeline-body { padding-top: 0.75rem; }
     </style>
 
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -374,7 +378,7 @@
             <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 17 Anos de Experiência</span>
             <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Leve em até 12x no Cartão</span>
             <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Consultoria 100% Gratuita em Casa</span>
-            <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Agenda de Abril Preenchendo</span>
+            <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Agenda Com Vagas Limitadas</span>
         </div>
     </div>
 
@@ -398,15 +402,57 @@
         </div>
     </section>
 
-    <!-- PROTOCOLO SHINE -->
-    <section id="metodo" class="py-16 md:py-24 bg-black text-white font-tech border-b border-[#222]">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-2xl md:text-4xl font-luxury font-black mb-12">O PROTOCOLO <span class="text-[#C6A868]">SHINE</span></h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="group"><div class="w-14 h-14 md:w-16 md:h-16 border border-[#C6A868] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-[#C6A868] text-xl md:text-2xl font-bold group-hover:bg-[#C6A868] group-hover:text-black transition">1</div><h3 class="text-white font-bold text-lg mb-2">Consultoria</h3><p class="text-xs text-gray-500">Análise técnica.</p></div>
-                <div class="group"><div class="w-14 h-14 md:w-16 md:h-16 border border-[#C6A868] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-[#C6A868] text-xl md:text-2xl font-bold group-hover:bg-[#C6A868] group-hover:text-black transition">2</div><h3 class="text-white font-bold text-lg mb-2">Laser</h3><p class="text-xs text-gray-500">Medição milimétrica.</p></div>
-                <div class="group"><div class="w-14 h-14 md:w-16 md:h-16 border border-[#C6A868] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-[#C6A868] text-xl md:text-2xl font-bold group-hover:bg-[#C6A868] group-hover:text-black transition">3</div><h3 class="text-white font-bold text-lg mb-2">Confecção</h3><p class="text-xs text-gray-500">Barra dupla & Memory.</p></div>
-                <div class="group"><div class="w-14 h-14 md:w-16 md:h-16 border border-[#C6A868] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-[#C6A868] text-xl md:text-2xl font-bold group-hover:bg-[#C6A868] group-hover:text-black transition">4</div><h3 class="text-white font-bold text-lg mb-2">Instalação</h3><p class="text-xs text-gray-500">Entrega limpa e sem rastro.</p></div>
+    <!-- COMO FUNCIONA -->
+    <section id="metodo" class="cv-auto py-16 md:py-24 bg-black text-white font-tech border-b border-[#222]">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#C6A868] mb-3 block">Simples. Transparente. Sem Surpresa.</span>
+                <h2 class="text-2xl md:text-4xl font-luxury font-black">COMO FUNCIONA<br><span class="text-[#C6A868] italic">O Atendimento Shine</span></h2>
+            </div>
+            <div>
+                <div class="shine-timeline-item">
+                    <div class="shine-timeline-num">1</div>
+                    <div class="shine-timeline-body">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Você entra em contato</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">WhatsApp, Instagram ou telefone — em minutos você fala com um consultor de verdade. Sem robô, sem formulário, sem espera.</p>
+                    </div>
+                </div>
+                <div class="shine-timeline-item">
+                    <div class="shine-timeline-num">2</div>
+                    <div class="shine-timeline-body">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Agendamos a visita gratuita</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Nosso consultor vai até a sua casa em Volta Redonda, Barra Mansa, Resende ou onde você estiver — no dia e horário que funcionar pra você.</p>
+                    </div>
+                </div>
+                <div class="shine-timeline-item">
+                    <div class="shine-timeline-num">3</div>
+                    <div class="shine-timeline-body">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Medição milimétrica a laser</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Com equipamento profissional, medimos cada ambiente com precisão absoluta. Zero erro. Zero retrabalho. Zero surpresa no resultado final.</p>
+                    </div>
+                </div>
+                <div class="shine-timeline-item">
+                    <div class="shine-timeline-num">4</div>
+                    <div class="shine-timeline-body">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Projeto + aprovação</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Montamos o projeto completo com os materiais, cores e modelos que você escolheu. Você aprova cada detalhe antes de assinar qualquer coisa.</p>
+                    </div>
+                </div>
+                <div class="shine-timeline-item">
+                    <div class="shine-timeline-num">5</div>
+                    <div class="shine-timeline-body">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Confecção sob medida</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Sua cortina ou persiana é fabricada exclusivamente para o seu ambiente — sem peça genérica, sem adaptação. Feita do zero, para o seu espaço.</p>
+                    </div>
+                </div>
+                <div class="shine-timeline-item">
+                    <div class="shine-timeline-num">6</div>
+                    <div class="shine-timeline-body">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Instalação pela nossa equipe</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Chegamos, instalamos, e saímos deixando o ambiente perfeito — limpo, organizado, sem entulho. Na maioria dos projetos, tudo no mesmo dia.</p>
+                        <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-[#C6A868] text-black font-bold text-sm uppercase tracking-widest px-6 py-3 hover:bg-white transition">Quero Começar Agora →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
