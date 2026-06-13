@@ -1,0 +1,82 @@
+/* ==========================================================================
+   ShineCortinas — Utilitários complementares para as páginas de cidade
+   Estas classes NÃO existem no assets/tailwind.generated.css (congelado).
+   Definidas aqui para que o layout das páginas de cidade renderize correto.
+   ========================================================================== */
+
+/* Tamanhos / dimensões */
+.w-6{width:1.5rem}
+.w-20{width:5rem}
+.h-20{height:5rem}
+.max-w-xl{max-width:36rem}
+.min-h-\[340px\]{min-height:340px}
+.aspect-\[4\/5\]{aspect-ratio:4/5}
+.leading-\[1\.05\]{line-height:1.05}
+
+/* Espaçamentos */
+.gap-0{gap:0}
+.gap-14{gap:3.5rem}
+.mb-7{margin-bottom:1.75rem}
+.mb-9{margin-bottom:2.25rem}
+.mb-14{margin-bottom:3.5rem}
+.mb-16{margin-bottom:4rem}
+.mt-5{margin-top:1.25rem}
+.ml-4{margin-left:1rem}
+.pb-6{padding-bottom:1.5rem}
+.pt-5{padding-top:1.25rem}
+.px-9{padding-left:2.25rem;padding-right:2.25rem}
+.px-10{padding-left:2.5rem;padding-right:2.5rem}
+.px-12{padding-left:3rem;padding-right:3rem}
+
+/* Posicionamento */
+.bottom-8{bottom:2rem}
+.left-1\/2{left:50%}
+.right-0{right:0}
+.-translate-x-1\/2{transform:translateX(-50%)}
+
+/* Display / flex */
+.inline-flex{display:inline-flex}
+.items-stretch{align-items:stretch}
+
+/* Cores e opacidade */
+.opacity-20{opacity:.2}
+.text-gray-200{color:#e5e7eb}
+.text-black\/70{color:rgba(0,0,0,.7)}
+.bg-black\/70{background-color:rgba(0,0,0,.7)}
+.bg-black\/90{background-color:rgba(0,0,0,.9)}
+.border-\[\#C6A868\]\/30{border-color:rgba(198,168,104,.3)}
+.border-\[\#C6A868\]\/40{border-color:rgba(198,168,104,.4)}
+
+/* Gradientes (stops com opacidade) */
+.from-black\/70{--tw-gradient-from:rgba(0,0,0,.7);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,rgba(0,0,0,0))}
+.from-black\/90{--tw-gradient-from:rgba(0,0,0,.9);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to,rgba(0,0,0,0))}
+.via-black\/30{--tw-gradient-stops:var(--tw-gradient-from),rgba(0,0,0,.3),var(--tw-gradient-to,rgba(0,0,0,0))}
+
+/* Hover */
+.hover\:bg-gray-50:hover{background-color:#f9fafb}
+
+/* Animação */
+@keyframes scbounce{0%,100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,.2,1)}}
+.animate-bounce{animation:scbounce 1s infinite}
+
+/* Responsivo — md (>=768px) */
+@media (min-width:768px){
+  .md\:block{display:block}
+  .md\:gap-6{gap:1.5rem}
+  .md\:gap-12{gap:3rem}
+  .md\:gap-16{gap:4rem}
+  .md\:gap-20{gap:5rem}
+  .md\:px-16{padding-left:4rem;padding-right:4rem}
+  .md\:py-28{padding-top:7rem;padding-bottom:7rem}
+  .md\:py-32{padding-top:8rem;padding-bottom:8rem}
+  .md\:pb-12{padding-bottom:3rem}
+  .md\:text-xl{font-size:1.25rem;line-height:1.75rem}
+  .md\:min-h-\[560px\]{min-height:560px}
+}
+
+/* Responsivo — lg (>=1024px) */
+@media (min-width:1024px){
+  .lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}
+  .lg\:text-5xl{font-size:3rem;line-height:1}
+  .lg\:text-7xl{font-size:4.5rem;line-height:1}
+}
