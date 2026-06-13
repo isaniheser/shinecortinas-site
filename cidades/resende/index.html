@@ -102,7 +102,7 @@
 <body class="bg-white text-gray-900 antialiased overflow-x-hidden">
 
   <!-- NAVBAR -->
-  <nav id="navbar" class="fixed w-full z-50 bg-black/30 backdrop-blur-md transition-colors py-4 border-b border-[#C6A868]/30" aria-label="Menu Principal">
+  <nav id="navbar" class="fixed w-full z-50 bg-black/10 backdrop-blur-lg transition-colors py-4 border-b border-[#C6A868]/30" aria-label="Menu Principal">
     <div class="max-w-7xl mx-auto px-6 md:px-10 flex justify-between items-center">
       <a href="/" class="flex items-center gap-3">
         <div class="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#C6A868] bg-black shadow-md"><span class="font-logo text-lg font-bold text-[#C6A868] pt-0.5">S</span></div>
@@ -385,8 +385,8 @@
       // Navbar: vidro fosco translúcido no topo, sólido ao rolar (mantém o texto legível)
       var nav = document.getElementById('navbar');
       function onScroll(){
-        if(window.scrollY > 60){ nav.classList.add('nav-scrolled'); nav.classList.remove('bg-black/30'); }
-        else { nav.classList.remove('nav-scrolled'); nav.classList.add('bg-black/30'); }
+        if(window.scrollY > 60){ nav.classList.add('nav-scrolled'); nav.classList.remove('bg-black/10'); }
+        else { nav.classList.remove('nav-scrolled'); nav.classList.add('bg-black/10'); }
       }
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
