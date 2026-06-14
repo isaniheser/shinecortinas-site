@@ -328,6 +328,8 @@
         .shine-timeline-item:not(:last-child)::after { content: ''; position: absolute; left: 24px; top: 50px; bottom: 0; width: 2px; background: linear-gradient(to bottom, #C6A868 0%, rgba(198,168,104,0.15) 100%); }
         .shine-timeline-num { flex-shrink: 0; width: 50px; height: 50px; background: #C6A868; color: #000; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; z-index: 1; font-family: 'Montserrat', sans-serif; line-height: 1; }
         .shine-timeline-body { padding-top: 0.75rem; }
+        .nav-glass { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-color: rgba(198,168,104,0.30); }
+        .nav-solid { background: rgba(0,0,0,0.90); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: rgba(51,51,51,1); }
     </style>
 
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -340,7 +342,7 @@
 <body class="bg-white text-gray-900 antialiased overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-black/35 backdrop-blur-sm py-4 border-b border-white/10" aria-label="Menu Principal">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 nav-glass py-4 border-b" aria-label="Menu Principal">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div id="nav-logo" class="opacity-0 transition-opacity duration-300 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)" role="button">
                 <div class="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#C6A868] bg-black shadow-md"><span class="font-logo text-lg font-bold text-[#C6A868] pt-0.5">S</span></div>
@@ -360,7 +362,7 @@
 
     <!-- HERO -->
     <section class="relative min-h-[100svh] flex flex-col items-center justify-start md:justify-center bg-black font-tech overflow-hidden hero-safe-top pb-14 md:pb-20">
-        <div class="absolute inset-0 z-0"><img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover object-center opacity-90 scale-105" width="1920" height="1080" fetchpriority="high" decoding="async" /><div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/90"></div></div>
+        <div class="absolute inset-0 z-0"><img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover object-center opacity-90 scale-105" width="1920" height="1080" fetchpriority="high" decoding="async" /><div class="absolute inset-0 bg-gradient-to-b from-black/65 via-black/75 to-black/95"></div></div>
         <div class="relative z-10 text-center px-4 animate-fade-in-up w-full max-w-4xl flex flex-col items-center">
             <div class="mb-4 transform hover:scale-105 transition duration-700 cursor-pointer"><img src="logo-shine.avif" alt="Logo Shine Cortinas 3D" width="400" height="400" fetchpriority="high" class="w-64 md:w-96 h-auto drop-shadow-2xl mx-auto" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';"><div id="logo-fallback" style="display:none;"><span class="font-logo text-5xl md:text-8xl text-[#C6A868]">SHINE</span></div></div>
             <div class="h-px w-16 md:w-24 bg-[#C6A868] mx-auto mb-4 opacity-50 shadow-[0_0_10px_#C6A868]"></div>
@@ -886,12 +888,12 @@
     if (!ticking) {
       window.requestAnimationFrame(() => {
         if (window.scrollY > 50) {
-          navbar.classList.add('bg-black/95', 'backdrop-blur-sm', 'py-4', 'border-b', 'border-[#333]');
-          navbar.classList.remove('bg-black/35', 'border-white/10');
+          navbar.classList.add('nav-solid');
+          navbar.classList.remove('nav-glass');
           navLogo.classList.remove('opacity-0');
         } else {
-          navbar.classList.remove('bg-black/95', 'border-[#333]');
-          navbar.classList.add('bg-black/35', 'border-white/10');
+          navbar.classList.remove('nav-solid');
+          navbar.classList.add('nav-glass');
           navLogo.classList.add('opacity-0');
         }
         ticking = false;
