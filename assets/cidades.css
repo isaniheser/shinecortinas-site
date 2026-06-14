@@ -73,6 +73,10 @@
 .fade-up h1{text-shadow:0 2px 14px rgba(0,0,0,1),0 1px 4px rgba(0,0,0,.95)}
 .fade-up>p{text-shadow:0 1px 10px rgba(0,0,0,.9),0 2px 8px rgba(0,0,0,.7)}
 
+/* Escurecimento extra do hero — imagem clara demais */
+section.min-h-\[100svh\]>div:first-child>img{opacity:.60!important}
+section.min-h-\[100svh\]>div:first-child::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.45);pointer-events:none}
+
 /* Hover */
 .hover\:bg-gray-50:hover{background-color:#f9fafb}
 
