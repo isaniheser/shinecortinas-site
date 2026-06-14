@@ -99,6 +99,9 @@ section.min-h-\[100svh\]>div:first-child::after{content:'';position:absolute;ins
   .md\:min-h-\[560px\]{min-height:560px}
 }
 
+/* Breadcrumb mobile — tamanho mínimo legível */
+nav[aria-label="Breadcrumb"] ol{font-size:.75rem}
+
 /* Responsivo — lg (>=1024px) */
 @media (min-width:1024px){
   .lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}
