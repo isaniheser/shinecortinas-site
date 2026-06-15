@@ -69,14 +69,17 @@
 .to-black\/80{--tw-gradient-to:rgba(0,0,0,.8)}
 .to-black\/85{--tw-gradient-to:rgba(0,0,0,.85) var(--tw-gradient-to-position)}
 
-/* Sombra de texto no hero — legibilidade sobre imagem clara */
+/* Sombra de texto no hero — legibilidade sobre fundo escuro */
 .fade-up h1{text-shadow:0 2px 14px rgba(0,0,0,1),0 1px 4px rgba(0,0,0,.95)}
 .fade-up>p{text-shadow:0 1px 10px rgba(0,0,0,.9),0 2px 8px rgba(0,0,0,.7)}
 
-/* Escurecimento do hero — overlay equilibrado: mostra a sala, mantém leitura.
-   Fica acima da imagem (z-0) e abaixo do conteúdo (z-10). */
-section.min-h-\[100svh\]>div:first-child>img{opacity:.96!important}
-section.min-h-\[100svh\]::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(0,0,0,.09),rgba(0,0,0,.15) 50%,rgba(0,0,0,.24));pointer-events:none}
+/* Hero: foto 100% clara + backdrop escuro só em volta do texto */
+section.min-h-\[100svh\]>div:first-child>img{opacity:1!important}
+section.min-h-\[100svh\]::before{display:none}
+section.min-h-\[100svh\]>div:first-child>div:last-child{background:transparent!important}
+section.min-h-\[100svh\] .fade-up{background:rgba(0,0,0,.42);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);border-radius:1.25rem;padding:2rem 1.5rem;max-width:calc(100vw - 2rem)}
+@media(min-width:768px){section.min-h-\[100svh\] .fade-up{padding:2.5rem 4rem;max-width:52rem}}
+@media(min-width:1024px){section.min-h-\[100svh\] .fade-up{max-width:64rem}}
 
 /* Hover */
 .hover\:bg-gray-50:hover{background-color:#f9fafb}
