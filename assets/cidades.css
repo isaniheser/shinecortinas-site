@@ -81,6 +81,13 @@ section.min-h-\[100svh\] .fade-up{background:rgba(0,0,0,.42);-webkit-backdrop-fi
 @media(min-width:768px){section.min-h-\[100svh\] .fade-up{padding:2.5rem 4rem;max-width:52rem}}
 @media(min-width:1024px){section.min-h-\[100svh\] .fade-up{max-width:64rem}}
 
+/* Nome da cidade no hero — dourado luminoso e uniforme (sem ponta escura) */
+section.min-h-\[100svh\] .fade-up h1 .gold-text-gradient{
+  background:linear-gradient(135deg,#F6D67E 0%,#FFF3CC 48%,#EAC56A 100%)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;color:transparent!important;
+  text-shadow:none!important;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
+
 /* Hover */
 .hover\:bg-gray-50:hover{background-color:#f9fafb}
 
