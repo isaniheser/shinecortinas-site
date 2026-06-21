@@ -349,6 +349,20 @@
         .hover\:underline:hover { text-decoration-line: underline; }
         @media (min-width: 768px) { .md\:gap-14 { gap: 3.5rem; } }
         .max-w-xl { max-width: 36rem; }
+        /* Galeria Instagram — masonry (Pinterest-style, tamanhos naturais) */
+        .ig-masonry { columns: 2; column-gap: 8px; }
+        @media (min-width: 768px) { .ig-masonry { columns: 3; column-gap: 16px; } }
+        .ig-item { position: relative; display: block; overflow: hidden; border-radius: 12px; background: #111; break-inside: avoid; margin-bottom: 8px; box-shadow: 0 8px 22px rgba(0,0,0,0.45); }
+        @media (min-width: 768px) { .ig-item { margin-bottom: 16px; border-radius: 14px; } }
+        .ig-item img { width: 100%; display: block; transition: transform 700ms cubic-bezier(.22,.61,.36,1); }
+        @media (hover: hover) { .ig-item:hover img { transform: scale(1.06); } }
+        .ig-cap { position: absolute; inset-inline: 0; bottom: 0; padding: 1.4rem 0.85rem 0.7rem; background: linear-gradient(transparent, rgba(0,0,0,0.82)); color: #fff; font-size: 0.72rem; line-height: 1.35; transform: translateY(101%); transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
+        @media (hover: hover) { .ig-item:hover .ig-cap { transform: translateY(0); } }
+        @media (hover: none) { .ig-cap { display: none; } }
+        .ig-play { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+        .ig-skel { display: block; width: 100%; border-radius: 12px; margin-bottom: 8px; break-inside: avoid; background: linear-gradient(100deg, #141414 30%, #1f1f1f 50%, #141414 70%); background-size: 200% 100%; animation: igShim 1.3s linear infinite; }
+        @media (min-width: 768px) { .ig-skel { margin-bottom: 16px; border-radius: 14px; } }
+        @keyframes igShim { to { background-position: -200% 0; } }
         .hero-cta { width: 91.666667%; font-size: clamp(0.875rem,1.2vw,1rem); padding: clamp(1rem,1.5vw,1.25rem) clamp(2rem,3.5vw,2.5rem); }
         @media (min-width: 640px) { .hero-cta { width: fit-content; } }
         .hero-gradient { background: linear-gradient(to right, rgba(8,8,8,0.94) 0%, rgba(8,8,8,0.86) 30%, rgba(8,8,8,0.55) 58%, rgba(8,8,8,0.05) 82%, rgba(8,8,8,0) 100%); }
@@ -576,13 +590,13 @@
             <div><h2 class="text-2xl md:text-5xl font-luxury font-black mb-2">O PADRÃO <span class="text-[#C6A868]">SHINE</span></h2><p class="text-gray-400 font-tech uppercase text-xs md:text-sm">Projetos entregues. Sem filtros.</p></div>
             <a href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me" class="hidden md:flex items-center gap-2 text-[#C6A868] font-bold uppercase text-xs hover:text-white transition">Ver Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></a>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 px-2 md:px-0">
-            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="automacao.avif" alt="Automação" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080" decoding="async"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Alphaville</p><h3 class="text-white font-luxury text-sm italic">Automação</h3></div></div>
-            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="linha-puro.avif" alt="Linho" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080" decoding="async"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Laranjal</p><h3 class="text-white font-luxury text-sm italic">Linho Puro</h3></div></div>
-            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="blackout.avif" alt="Blackout" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080" decoding="async"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Jardins</p><h3 class="text-white font-luxury text-sm italic">Blackout</h3></div></div>
-            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="duplo.avif" alt="Duplo" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080" decoding="async"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Bela Vista</p><h3 class="text-white font-luxury text-sm italic">Duplo</h3></div></div>
-            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="tela-solar.avif" alt="Tela Solar" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080" decoding="async"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Vila Santa</p><h3 class="text-white font-luxury text-sm italic">Tela Solar</h3></div></div>
-            <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-900"><img src="madeira.avif" alt="Madeira" class="w-full h-full object-cover transition opacity-90 group-hover:opacity-100" loading="lazy" width="1080" height="1080" decoding="async"><div class="absolute bottom-2 left-2"><p class="text-[#C6A868] text-[10px] font-bold uppercase">Fazenda</p><h3 class="text-white font-luxury text-sm italic">Madeira</h3></div></div>
+        <div id="ig-masonry" class="ig-masonry max-w-7xl mx-auto px-2 md:px-6">
+            <span class="ig-skel" style="height:240px"></span>
+            <span class="ig-skel" style="height:340px"></span>
+            <span class="ig-skel" style="height:200px"></span>
+            <span class="ig-skel" style="height:300px"></span>
+            <span class="ig-skel" style="height:180px"></span>
+            <span class="ig-skel" style="height:280px"></span>
         </div>
     </section>
 
@@ -977,6 +991,49 @@
       syncBodyScrollLock();
     }
   });
+
+  // Galeria do Instagram (masonry) — puxa os posts reais via /api/instagram.
+  // Se a API falhar, cai para fotos do próprio repositório (nunca fica vazio).
+  (function loadInstaHome() {
+    var box = document.getElementById('ig-masonry');
+    if (!box) return;
+    var IG = 'https://www.instagram.com/shinecortinas/';
+    var fallback = [
+      { image: 'automacao.avif', permalink: IG, caption: 'Automação', type: 'IMAGE' },
+      { image: 'linha-puro.avif', permalink: IG, caption: 'Linho Puro', type: 'IMAGE' },
+      { image: 'blackout.avif', permalink: IG, caption: 'Blackout', type: 'IMAGE' },
+      { image: 'duplo.avif', permalink: IG, caption: 'Cortina Duplo', type: 'IMAGE' },
+      { image: 'tela-solar.avif', permalink: IG, caption: 'Tela Solar', type: 'IMAGE' },
+      { image: 'madeira.avif', permalink: IG, caption: 'Persiana de Madeira', type: 'IMAGE' }
+    ];
+    function firstLine(t) {
+      t = (t || '').split('\n')[0].trim();
+      return t.length > 90 ? t.slice(0, 87) + '…' : t;
+    }
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+    function render(items) {
+      box.innerHTML = items.map(function (m) {
+        if (!m.image) return '';
+        var play = m.type === 'VIDEO' ? '<span class="ig-play">▶</span>' : '';
+        var line = firstLine(m.caption);
+        var cap = line ? '<span class="ig-cap">' + esc(line) + '</span>' : '';
+        return '<a class="ig-item" href="' + esc(m.permalink) + '" target="_blank" rel="noopener noreferrer me">'
+          + '<img src="' + esc(m.image) + '" loading="lazy" decoding="async" alt="Projeto Shine Cortinas">'
+          + play + cap + '</a>';
+      }).join('');
+    }
+    fetch('/api/instagram')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d.items || !d.items.length) throw new Error('vazio');
+        render(d.items);
+      })
+      .catch(function () { render(fallback); });
+  })();
 
 </script>
     
