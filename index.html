@@ -363,6 +363,35 @@
         .ig-skel { display: block; width: 100%; border-radius: 12px; margin-bottom: 8px; break-inside: avoid; background: linear-gradient(100deg, #141414 30%, #1f1f1f 50%, #141414 70%); background-size: 200% 100%; animation: igShim 1.3s linear infinite; }
         @media (min-width: 768px) { .ig-skel { margin-bottom: 16px; border-radius: 14px; } }
         @keyframes igShim { to { background-position: -200% 0; } }
+        .ig-item { cursor: pointer; }
+        /* Lightbox da galeria */
+        .ig-lb { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 3vh 3vw; }
+        .ig-lb.open { display: flex; }
+        .ig-lb-back { position: absolute; inset: 0; background: rgba(5,5,5,0.9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+        .ig-lb-dialog { position: relative; z-index: 1; display: flex; flex-direction: column; max-width: 980px; width: 100%; max-height: 94vh; background: #0e0e0e; border: 1px solid rgba(198,168,104,0.25); border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.65); animation: igLbIn .3s cubic-bezier(.22,.61,.36,1); }
+        @media (min-width: 860px) { .ig-lb-dialog { flex-direction: row; } }
+        @keyframes igLbIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+        .ig-lb-media { background: #000; display: flex; align-items: center; justify-content: center; flex: 1 1 58%; min-height: 0; }
+        .ig-lb-media img { width: 100%; height: 100%; max-height: 94vh; object-fit: contain; display: block; }
+        .ig-lb-panel { flex: 1 1 42%; display: flex; flex-direction: column; padding: 1.5rem 1.4rem; min-width: 0; }
+        @media (min-width: 860px) { .ig-lb-panel { max-width: 360px; } }
+        .ig-lb-head { display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem; }
+        .ig-lb-avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: contain; background:#000; border: 1.5px solid #C6A868; padding:3px; }
+        .ig-lb-user { color: #fff; font-weight: 700; font-size: .85rem; text-decoration: none; }
+        .ig-lb-user:hover { color: #C6A868; }
+        .ig-lb-caption { color: #cfc7b8; font-size: .82rem; line-height: 1.55; overflow-y: auto; flex: 1; white-space: pre-line; margin-bottom: 1rem; min-height: 60px; }
+        .ig-lb-actions { display: flex; flex-direction: column; gap: .55rem; }
+        .ig-lb-btn { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .7rem 1rem; border-radius: 10px; font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; text-decoration: none; cursor: pointer; border: 1px solid rgba(198,168,104,0.4); background: transparent; color: #fff; transition: border-color .25s, background .25s, color .25s; font-family: inherit; }
+        .ig-lb-btn:hover { border-color: #C6A868; background: rgba(198,168,104,0.1); }
+        .ig-lb-btn.primary { background: linear-gradient(135deg,#DFBD69,#B89648); color: #000; border: none; }
+        .ig-lb-btn.primary:hover { filter: brightness(1.07); }
+        .ig-lb-btn svg { flex-shrink: 0; }
+        .ig-lb-like.liked { color: #ff4d6d; border-color: rgba(255,77,109,0.55); }
+        .ig-lb-like.liked svg { fill: #ff4d6d; stroke: #ff4d6d; }
+        .ig-lb-like.pop svg { animation: igHeart .45s ease; }
+        @keyframes igHeart { 0%{transform:scale(1);} 35%{transform:scale(1.35);} 70%{transform:scale(.9);} 100%{transform:scale(1);} }
+        .ig-lb-close { position: absolute; top: 12px; right: 14px; z-index: 3; width: 38px; height: 38px; border-radius: 50%; border: none; background: rgba(0,0,0,0.55); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+        .ig-lb-close:hover { background: rgba(198,168,104,0.9); color: #000; }
         .hero-cta { width: 91.666667%; font-size: clamp(0.875rem,1.2vw,1rem); padding: clamp(1rem,1.5vw,1.25rem) clamp(2rem,3.5vw,2.5rem); }
         @media (min-width: 640px) { .hero-cta { width: fit-content; } }
         .hero-gradient { background: linear-gradient(to right, rgba(8,8,8,0.94) 0%, rgba(8,8,8,0.86) 30%, rgba(8,8,8,0.55) 58%, rgba(8,8,8,0.05) 82%, rgba(8,8,8,0) 100%); }
@@ -1021,11 +1050,25 @@
         var play = m.type === 'VIDEO' ? '<span class="ig-play">▶</span>' : '';
         var line = firstLine(m.caption);
         var cap = line ? '<span class="ig-cap">' + esc(line) + '</span>' : '';
-        return '<a class="ig-item" href="' + esc(m.permalink) + '" target="_blank" rel="noopener noreferrer me">'
+        return '<a class="ig-item" href="' + esc(m.permalink) + '" target="_blank" rel="noopener noreferrer me"'
+          + ' data-id="' + esc(m.id || m.permalink) + '" data-img="' + esc(m.image) + '"'
+          + ' data-perma="' + esc(m.permalink) + '" data-cap="' + esc(m.caption || '') + '">'
           + '<img src="' + esc(m.image) + '" loading="lazy" decoding="async" alt="Projeto Shine Cortinas">'
           + play + cap + '</a>';
       }).join('');
     }
+    // Clique abre o lightbox (em vez de pular direto pro Instagram)
+    box.addEventListener('click', function (e) {
+      var a = e.target.closest('.ig-item');
+      if (!a) return;
+      e.preventDefault();
+      openIgLightbox({
+        id: a.getAttribute('data-id'),
+        image: a.getAttribute('data-img'),
+        permalink: a.getAttribute('data-perma'),
+        caption: a.getAttribute('data-cap')
+      });
+    });
     fetch('/api/instagram')
       .then(function (r) { return r.json(); })
       .then(function (d) {
@@ -1035,7 +1078,90 @@
       .catch(function () { render(fallback); });
   })();
 
+  // Lightbox da galeria: foto ampliada + legenda + curtir (local) + ir ao Instagram
+  function openIgLightbox(item) {
+    var lb = document.getElementById('ig-lightbox');
+    if (!lb) return;
+    var img = document.getElementById('ig-lb-img');
+    var cap = document.getElementById('ig-lb-caption');
+    var open = document.getElementById('ig-lb-open');
+    var like = document.getElementById('ig-lb-like');
+    img.src = item.image;
+    cap.textContent = item.caption || '';
+    open.href = item.permalink || 'https://www.instagram.com/shinecortinas/';
+    // estado da curtida (salvo no aparelho)
+    var likes = {};
+    try { likes = JSON.parse(localStorage.getItem('ig-likes') || '{}'); } catch (e) {}
+    var liked = !!likes[item.id];
+    like.classList.toggle('liked', liked);
+    like.setAttribute('aria-pressed', String(liked));
+    like.onclick = function () {
+      liked = !liked;
+      likes[item.id] = liked;
+      if (!liked) delete likes[item.id];
+      try { localStorage.setItem('ig-likes', JSON.stringify(likes)); } catch (e) {}
+      like.classList.toggle('liked', liked);
+      like.setAttribute('aria-pressed', String(liked));
+      if (liked) { like.classList.add('pop'); setTimeout(function () { like.classList.remove('pop'); }, 460); }
+    };
+    lb.classList.add('open');
+    document.body.classList.add('overflow-hidden');
+  }
+  function closeIgLightbox() {
+    var lb = document.getElementById('ig-lightbox');
+    if (!lb) return;
+    lb.classList.remove('open');
+    document.body.classList.remove('overflow-hidden');
+    var img = document.getElementById('ig-lb-img');
+    if (img) img.src = '';
+  }
+  function bindLightbox() {
+    var lb = document.getElementById('ig-lightbox');
+    if (!lb) return;
+    lb.querySelector('.ig-lb-back').addEventListener('click', closeIgLightbox);
+    lb.querySelector('.ig-lb-close').addEventListener('click', closeIgLightbox);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeIgLightbox();
+    });
+  }
+  // O HTML do lightbox vem depois deste script; garante que já exista no DOM.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindLightbox);
+  } else {
+    bindLightbox();
+  }
+
 </script>
-    
+
+    <!-- Lightbox da galeria do Instagram -->
+    <div id="ig-lightbox" class="ig-lb" aria-hidden="true">
+      <div class="ig-lb-back"></div>
+      <div class="ig-lb-dialog" role="dialog" aria-modal="true" aria-label="Projeto Shine Cortinas">
+        <button class="ig-lb-close" type="button" aria-label="Fechar">&times;</button>
+        <div class="ig-lb-media"><img id="ig-lb-img" src="" alt="Projeto Shine Cortinas"></div>
+        <div class="ig-lb-panel">
+          <div class="ig-lb-head">
+            <img class="ig-lb-avatar" src="logo-shine.avif" alt="Shine Cortinas" width="38" height="38">
+            <a class="ig-lb-user" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">@shinecortinas</a>
+          </div>
+          <p id="ig-lb-caption" class="ig-lb-caption"></p>
+          <div class="ig-lb-actions">
+            <button id="ig-lb-like" class="ig-lb-btn ig-lb-like" type="button" aria-pressed="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span>Curtir</span>
+            </button>
+            <a id="ig-lb-open" class="ig-lb-btn primary" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+              Ver no Instagram
+            </a>
+            <a class="ig-lb-btn" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Seguir @shinecortinas
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>
