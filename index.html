@@ -341,6 +341,9 @@
         .mb-1 { margin-bottom: 0.25rem; }
         .hover\:underline:hover { text-decoration-line: underline; }
         @media (min-width: 768px) { .md\:gap-14 { gap: 3.5rem; } }
+        .max-w-xl { max-width: 36rem; }
+        .hero-cta { width: 91.666667%; font-size: clamp(0.875rem,1.2vw,1rem); padding: clamp(1rem,1.5vw,1.25rem) clamp(2rem,3.5vw,2.5rem); }
+        @media (min-width: 640px) { .hero-cta { width: fit-content; } }
     </style>
 
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -371,39 +374,25 @@
         </div>
     </nav>
 
-    <!-- HERO EDITORIAL (SCRIM LATERAL) -->
-    <section class="relative min-h-[100svh] flex items-center bg-black overflow-hidden font-tech">
-      <!-- Imagem full-bleed (a foto inteira; respira à direita) -->
-      <div class="absolute inset-0 z-0">
-        <img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover" style="object-position:center right;" width="1920" height="1080" fetchpriority="high" decoding="async">
-        <!-- Degradê lateral suave (mais transparente): escurece só o canto esquerdo p/ legibilidade -->
-        <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(8,8,8,0.72) 0%, rgba(8,8,8,0.58) 26%, rgba(10,10,10,0.32) 50%, rgba(10,10,10,0.08) 74%, rgba(10,10,10,0) 100%);"></div>
-        <!-- Escurecimento topo/base bem leve para o menu -->
-        <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 20%, transparent 82%, rgba(0,0,0,0.18) 100%);"></div>
-      </div>
-
-      <!-- Texto alinhado à esquerda sobre a faixa escura -->
-      <div class="relative z-10 w-full max-w-7xl mx-auto" style="padding-left:clamp(1.5rem,5vw,4rem);padding-right:1.5rem;">
-        <div class="max-w-lg animate-fade-in-up" style="padding-top:clamp(5rem,9vh,7rem);">
-          <!-- Linha dourada + localidade -->
-          <div class="flex items-center gap-4 mb-6">
-            <span style="width:42px;height:1px;background:#C6A868;opacity:0.75;flex-shrink:0;display:block;"></span>
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.24em;color:#C6A868;text-transform:uppercase;">Volta Redonda · Sul Fluminense</span>
-          </div>
-          <!-- H1 -->
-          <h1 class="font-luxury text-white font-black leading-tight mb-6" style="font-size:clamp(2.1rem,4.4vw,3.6rem);">
-            O Seu Ambiente Ainda Não É O Que Você <span class="gold-gradient" style="font-style:italic;">Imaginou.</span>
-          </h1>
-          <!-- Subtítulo italic dourado -->
-          <p class="font-luxury italic mb-6 leading-relaxed" style="color:#D9C18A;font-size:clamp(1.05rem,1.7vw,1.35rem);">A Shine é a referência em cortinas e persianas — e transforma qualquer ambiente em exatamente o que você merece.</p>
-          <!-- Corpo -->
-          <p class="leading-relaxed" style="color:#e5e7eb;font-size:clamp(0.9rem,1.1vw,1.05rem);max-width:30rem;margin-bottom:2.25rem;">Vamos até a sua casa, medimos com precisão milimétrica e entregamos uma transformação que você sente todo dia — sem esforço, sem surpresa.</p>
-          <!-- CTA -->
-          <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="gold-bg-gradient text-black font-black px-8 py-4 md:px-10 hover:scale-105 transition shadow-xl" style="display:inline-flex;align-items:center;gap:0.6rem;font-size:0.92rem;letter-spacing:0.03em;">Consultoria Gratuita →</a>
-          <!-- Selo -->
-          <p style="margin-top:1.5rem;font-size:10px;color:#C6A868;text-transform:uppercase;letter-spacing:0.2em;">&#9670; Sem compromisso · No seu tempo</p>
+    <!-- HERO -->
+    <section class="relative min-h-[100svh] flex items-center bg-black font-tech overflow-hidden hero-safe-top">
+        <div class="absolute inset-0 z-0">
+            <img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover scale-105" style="object-position:center;" width="1920" height="1080" fetchpriority="high" decoding="async" />
+            <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(8,8,8,0.94) 0%, rgba(8,8,8,0.86) 30%, rgba(8,8,8,0.55) 58%, rgba(8,8,8,0.05) 82%, rgba(8,8,8,0) 100%);"></div>
         </div>
-      </div>
+        <div class="relative z-10 w-full max-w-3xl text-left animate-fade-in-up" style="padding-left:clamp(1.5rem,5.5vw,4rem);padding-right:1.5rem;">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="h-px w-12 bg-[#C6A868]" style="box-shadow:0 0 8px #C6A868;"></span>
+                <span class="font-logo text-[#C6A868]" style="font-size:clamp(0.75rem,1vw,0.875rem);text-transform:uppercase;letter-spacing:0.32em;">Volta Redonda · Sul Fluminense</span>
+            </div>
+            <h1 class="font-luxury text-white font-black drop-shadow-lg mb-5" style="font-size:clamp(1.875rem,5vw,3.75rem);line-height:1.05;">O Seu Ambiente Ainda Não É O Que Você <span class="italic text-[#C6A868]">Imaginou.</span></h1>
+            <h2 class="font-luxury italic text-[#C6A868] tracking-wide max-w-2xl" style="font-size:clamp(1.125rem,2.5vw,1.875rem);margin-bottom:1.75rem;">A Shine é a Referência em Cortinas e Persianas no Sul Fluminense — e Transforma Qualquer Ambiente Em Exatamente O Que Você Merece.</h2>
+            <p class="max-w-xl drop-shadow-md leading-relaxed" style="color:#e5e7eb;font-size:clamp(0.875rem,1.2vw,1rem);font-weight:500;margin-bottom:2.25rem;">A Shine vai até a sua casa em Volta Redonda, Barra Mansa, Resende e em toda a região Sul Fluminense, mede com precisão milimétrica, apresenta as opções certas para o seu ambiente e entrega uma <span class="text-[#C6A868]">transformação</span> que você vai sentir todo dia — sem esforço, sem preocupação, sem surpresa.</p>
+            <div class="flex flex-col items-start gap-4">
+                <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="gold-bg-gradient text-black font-black rounded hover:scale-105 transition shadow-xl flex items-center justify-center gap-3 hero-cta">Quero Minha Consultoria Gratuita →</a>
+                <span class="flex items-center gap-2 text-gray-300 uppercase" style="font-size:11px;letter-spacing:0.18em;white-space:nowrap;"><span class="rounded-full bg-[#C6A868]" style="width:0.375rem;height:0.375rem;display:inline-block;flex-shrink:0;box-shadow:0 0 6px #C6A868;"></span>Sem compromisso · no seu tempo</span>
+            </div>
+        </div>
     </section>
 
     <!-- FAIXA DE CONFIANÇA -->
