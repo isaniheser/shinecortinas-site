@@ -368,18 +368,39 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="relative min-h-[100svh] flex flex-col items-center justify-start md:justify-center bg-black font-tech overflow-hidden hero-safe-top pb-14 md:pb-20">
-        <div class="absolute inset-0 z-0"><img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover object-center opacity-90 scale-105" width="1920" height="1080" fetchpriority="high" decoding="async" /><div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.41), rgba(0,0,0,0.47) 55%, rgba(0,0,0,0.57));"></div></div>
-        <div class="relative z-10 text-center px-4 animate-fade-in-up w-full max-w-4xl flex flex-col items-center">
-            <div class="mb-4 transform hover:scale-105 transition duration-700 cursor-pointer"><img src="logo-shine.avif" alt="Logo Shine Cortinas 3D" width="400" height="400" fetchpriority="high" decoding="async" class="w-64 md:w-96 h-auto drop-shadow-2xl mx-auto" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';"><div id="logo-fallback" style="display:none;"><span class="font-logo text-5xl md:text-8xl text-[#C6A868]">SHINE</span></div></div>
-            <div class="h-px w-16 md:w-24 bg-[#C6A868] mx-auto mb-4 opacity-50 shadow-[0_0_10px_#C6A868]"></div>
-            <h1 class="font-luxury text-white text-3xl md:text-5xl font-black mb-4 md:mb-5 leading-tight drop-shadow-lg">O Seu Ambiente Ainda Não É O Que Você Imaginou.</h1>
-            <h2 class="font-luxury italic text-[#C6A868] text-xl md:text-4xl mb-6 tracking-wide">A Shine é a Referência em Cortinas e Persianas no Sul Fluminense — e Transforma Qualquer Ambiente Em Exatamente O Que Você Merece.</h2>
-            <p class="text-white text-sm md:text-base font-semibold max-w-xs md:max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed drop-shadow-md opacity-95">Cada ambiente conta uma história. Quando a cortina é errada — o sol invade, os móveis desbotam, o espaço perde vida. A Shine vai até a sua casa em Volta Redonda, Barra Mansa, Resende e em toda a região Sul Fluminense, mede com precisão milimétrica, apresenta as opções certas para o seu ambiente e entrega uma <span class="text-[#C6A868]">transformação</span> que você vai sentir todo dia — sem esforço, sem preocupação, sem surpresa.</p>
-            <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="gold-bg-gradient text-black text-sm md:text-base font-black px-8 py-4 md:px-10 md:py-5 rounded hover:scale-105 transition shadow-xl flex items-center justify-center gap-3 w-11/12 md:w-fit">Quero Minha Consultoria Gratuita →</a>
-            <p class="text-[11px] md:text-xs uppercase tracking-[0.18em] text-gray-300 mt-4">Um consultor especialista vai até a sua casa — sem compromisso, sem pressão, no seu tempo.</p>
+    <!-- HERO EDITORIAL (SCRIM LATERAL) -->
+    <section class="relative min-h-[100svh] grid md:grid-cols-2 bg-black overflow-hidden">
+      <!-- COLUNA ESQUERDA: scrim escuro + texto -->
+      <div class="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-20 pt-32 md:pt-0 pb-16 md:pb-0" style="background:rgba(0,0,0,0.82);">
+        <!-- Linha dourada + badge -->
+        <div class="flex items-center gap-4 mb-7">
+          <div style="width:40px;height:1px;background:#C6A868;opacity:0.7;flex-shrink:0;"></div>
+          <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;color:#C6A868;text-transform:uppercase;">Volta Redonda · Sul Fluminense</span>
         </div>
+        <!-- H1 -->
+        <h1 class="font-luxury text-white font-black leading-tight mb-6" style="font-size:clamp(2rem,4vw,3.5rem);">
+          O Seu Ambiente<br>Ainda Não É O Que<br>Você <em class="gold-gradient not-italic">Imaginou.</em>
+        </h1>
+        <!-- Subtítulo italic -->
+        <p class="font-luxury italic mb-5 leading-relaxed" style="color:#C6A868;font-size:clamp(1rem,1.6vw,1.2rem);">A Shine é a referência em cortinas e persianas — e transforma qualquer ambiente em exatamente o que você merece.</p>
+        <!-- Corpo -->
+        <p class="text-gray-300 mb-9 leading-relaxed" style="font-size:clamp(0.85rem,1.1vw,1rem);">Vamos até a sua casa, medimos com precisão milimétrica e entregamos uma transformação que você sente todo dia — sem esforço, sem surpresa.</p>
+        <!-- CTA -->
+        <div class="flex flex-col items-start gap-4">
+          <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="gold-bg-gradient text-black font-black px-10 py-4 hover:scale-105 transition shadow-xl" style="font-size:0.9rem;letter-spacing:0.04em;">Consultoria Gratuita →</a>
+          <p style="font-size:10px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.18em;">&#9632; Sem compromisso · No seu tempo</p>
+        </div>
+      </div>
+      <!-- COLUNA DIREITA: imagem que respira -->
+      <div class="relative min-h-[340px] md:min-h-0">
+        <img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida - ShineCortinas" class="absolute inset-0 w-full h-full object-cover" style="object-position:center;" width="1920" height="1080" fetchpriority="high" decoding="async">
+        <!-- Logo sobreposto à foto (canto superior direito) -->
+        <div class="absolute top-8 right-8 z-10">
+          <img src="logo-shine.avif" alt="Logo ShineCortinas" width="200" height="200" decoding="async" class="w-24 md:w-32 h-auto drop-shadow-2xl" onerror="this.style.display='none'">
+        </div>
+        <!-- Gradiente sutil esquerda da foto para fundir com scrim -->
+        <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(0,0,0,0.35) 0%,transparent 40%);"></div>
+      </div>
     </section>
 
     <!-- FAIXA DE CONFIANÇA -->
