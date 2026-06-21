@@ -344,6 +344,8 @@
         .max-w-xl { max-width: 36rem; }
         .hero-cta { width: 91.666667%; font-size: clamp(0.875rem,1.2vw,1rem); padding: clamp(1rem,1.5vw,1.25rem) clamp(2rem,3.5vw,2.5rem); }
         @media (min-width: 640px) { .hero-cta { width: fit-content; } }
+        .hero-gradient { background: linear-gradient(to right, rgba(8,8,8,0.94) 0%, rgba(8,8,8,0.86) 30%, rgba(8,8,8,0.55) 58%, rgba(8,8,8,0.05) 82%, rgba(8,8,8,0) 100%); }
+        @media (max-width: 767px) { .hero-gradient { background: linear-gradient(to right, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.94) 50%, rgba(8,8,8,0.78) 73%, rgba(8,8,8,0.35) 90%, rgba(8,8,8,0.08) 100%); } }
     </style>
 
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -377,8 +379,8 @@
     <!-- HERO -->
     <section class="relative min-h-[100svh] flex items-center bg-black font-tech overflow-hidden hero-safe-top">
         <div class="absolute inset-0 z-0">
-            <img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover scale-105" style="object-position:center;" width="1920" height="1080" fetchpriority="high" decoding="async" />
-            <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(8,8,8,0.94) 0%, rgba(8,8,8,0.86) 30%, rgba(8,8,8,0.55) 58%, rgba(8,8,8,0.05) 82%, rgba(8,8,8,0) 100%);"></div>
+            <img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover" style="object-position:right center;" width="1920" height="1080" fetchpriority="high" decoding="async" />
+            <div class="absolute inset-0 hero-gradient"></div>
         </div>
         <div class="relative z-10 w-full max-w-3xl text-left animate-fade-in-up" style="padding-left:clamp(1.5rem,5.5vw,4rem);padding-right:1.5rem;">
             <div class="flex items-center gap-3 mb-6">
