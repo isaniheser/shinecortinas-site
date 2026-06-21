@@ -32,8 +32,12 @@ html,body{height:100%;overflow:hidden;font-family:'Montserrat',sans-serif;backgr
 .app-lb-avatar{width:34px;height:34px;border-radius:50%;object-fit:contain;background:#000;border:1.5px solid #C6A868;padding:2px;}
 .app-lb-user{color:#fff;font-weight:700;font-size:14px;text-decoration:none;flex:1;}
 .app-lb-close{width:34px;height:34px;border-radius:50%;border:none;background:rgba(255,255,255,0.08);color:#fff;font-size:22px;line-height:1;cursor:pointer;}
-.app-lb-media{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;padding:0 10px;}
-.app-lb-media img{max-width:100%;max-height:100%;object-fit:contain;border-radius:14px;}
+.app-lb-media{position:relative;flex:1;display:flex;align-items:center;justify-content:center;min-height:0;padding:0 10px;}
+#app-lb-stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center;min-height:0;}
+.app-lb-media img,.app-lb-media video{max-width:100%;max-height:100%;object-fit:contain;border-radius:14px;background:#000;}
+.app-lb-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:38px;height:38px;border-radius:50%;border:none;background:rgba(0,0,0,0.5);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
+.app-lb-arrow.prev{left:6px;}.app-lb-arrow.next{right:6px;}
+.app-lb-count{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
 .app-lb-cap{color:#cfc7b8;font-size:13px;line-height:1.55;white-space:pre-line;max-height:22vh;overflow-y:auto;padding:14px 18px 4px;}
 .app-lb-actions{display:flex;gap:10px;padding:10px 16px calc(env(safe-area-inset-bottom) + 16px);}
 .app-lb-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:13px;border-radius:12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;cursor:pointer;border:1px solid rgba(198,168,104,0.4);background:transparent;color:#fff;font-family:inherit;}
@@ -637,6 +641,7 @@ function igEsc(s) {
     return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c];
   });
 }
+var appItems = [];
 function loadInstagram() {
   var grid = document.getElementById('ig-grid');
   if (!grid) return;
@@ -644,24 +649,22 @@ function loadInstagram() {
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (!data.items || !data.items.length) throw new Error('vazio');
-      grid.innerHTML = data.items.map(function(m, i) {
-        var play = m.type === 'VIDEO'
+      appItems = data.items;
+      grid.innerHTML = appItems.map(function(m, i) {
+        var badge = m.type === 'VIDEO'
           ? '<span class="ig-cell-play"><svg width="9" height="9" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>'
-          : '';
+          : (m.type === 'CAROUSEL_ALBUM'
+            ? '<span class="ig-cell-play"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="7" y="7" width="13" height="13" rx="2"/><path d="M4 16V5a1 1 0 0 1 1-1h11"/></svg></span>'
+            : '');
         var featured = i === 0 ? ' featured' : '';
-        return '<button type="button" class="ig-cell ig-cell-styled' + featured + '" data-id="' + igEsc(m.id || m.permalink) + '" data-img="' + igEsc(m.image) + '" data-perma="' + igEsc(m.permalink) + '" data-cap="' + igEsc(m.caption || '') + '" style="border:none;padding:0;cursor:pointer;background:#1c1915;width:100%;text-align:left;">'
+        return '<button type="button" class="ig-cell ig-cell-styled' + featured + '" data-idx="' + i + '" style="border:none;padding:0;cursor:pointer;background:#1c1915;width:100%;text-align:left;">'
           + '<img src="' + igEsc(m.image) + '" alt="Projeto Shine Cortinas" loading="lazy">'
           + '<div class="ig-cell-glow"></div>'
-          + play + '</button>';
+          + badge + '</button>';
       }).join('');
       grid.querySelectorAll('.ig-cell').forEach(function(cell) {
         cell.addEventListener('click', function() {
-          openAppLightbox({
-            id: cell.getAttribute('data-id'),
-            image: cell.getAttribute('data-img'),
-            permalink: cell.getAttribute('data-perma'),
-            caption: cell.getAttribute('data-cap')
-          });
+          openAppLightbox(parseInt(cell.getAttribute('data-idx'), 10));
         });
       });
     })
@@ -675,10 +678,44 @@ function loadInstagram() {
 }
 loadInstagram();
 
-function openAppLightbox(item) {
+var appSlides = [], appSlide = 0;
+function appStopVideos() {
+  var st = document.getElementById('app-lb-stage');
+  if (st) st.querySelectorAll('video').forEach(function(v){ try { v.pause(); } catch(e) {} });
+}
+function appRenderSlide() {
+  var st = document.getElementById('app-lb-stage');
+  if (!st) return;
+  var s = appSlides[appSlide] || {};
+  if (s.type === 'VIDEO' && s.video) {
+    st.innerHTML = '<video src="' + igEsc(s.video) + '" poster="' + igEsc(s.image || '') + '" controls autoplay playsinline preload="metadata"></video>';
+    var v = st.querySelector('video'); if (v) v.play().catch(function(){});
+  } else {
+    st.innerHTML = '<img id="app-lb-img" src="' + igEsc(s.image || '') + '" alt="Projeto Shine Cortinas">';
+  }
+  var multi = appSlides.length > 1;
+  document.getElementById('app-lb-prev').style.display = multi ? '' : 'none';
+  document.getElementById('app-lb-next').style.display = multi ? '' : 'none';
+  var cnt = document.getElementById('app-lb-count');
+  cnt.style.display = multi ? '' : 'none';
+  cnt.textContent = (appSlide + 1) + ' / ' + appSlides.length;
+}
+function appGo(d) {
+  if (appSlides.length < 2) return;
+  appStopVideos();
+  appSlide = (appSlide + d + appSlides.length) % appSlides.length;
+  appRenderSlide();
+}
+function openAppLightbox(idx) {
+  var item = appItems[idx];
+  if (!item) return;
   var lb = document.getElementById('app-lb');
   if (!lb) return;
-  document.getElementById('app-lb-img').src = item.image;
+  appSlides = (item.type === 'CAROUSEL_ALBUM' && item.children && item.children.length)
+    ? item.children
+    : [{ type: item.type, image: item.image, video: item.video }];
+  appSlide = 0;
+  appRenderSlide();
   document.getElementById('app-lb-cap').textContent = item.caption || '';
   document.getElementById('app-lb-open').href = item.permalink || 'https://www.instagram.com/shinecortinas/';
   var like = document.getElementById('app-lb-like');
@@ -701,20 +738,26 @@ function openAppLightbox(item) {
 function closeAppLightbox() {
   var lb = document.getElementById('app-lb');
   if (!lb) return;
+  appStopVideos();
   lb.classList.remove('open');
-  document.getElementById('app-lb-img').src = '';
+  var st = document.getElementById('app-lb-stage'); if (st) st.innerHTML = '';
 }
-// Fecha o lightbox tocando fora dos botões (na foto/fundo) ou com Esc
+// Setas do carrossel + fechar tocando no fundo/foto ou com Esc
 (function bindAppLb() {
   var lb = document.getElementById('app-lb');
   if (!lb) return;
+  document.getElementById('app-lb-prev').addEventListener('click', function(e){ e.stopPropagation(); appGo(-1); });
+  document.getElementById('app-lb-next').addEventListener('click', function(e){ e.stopPropagation(); appGo(1); });
   lb.addEventListener('click', function(e) {
-    if (e.target === lb || e.target.classList.contains('app-lb-media') || e.target.id === 'app-lb-img') {
+    if (e.target === lb || e.target.classList.contains('app-lb-media') || e.target.classList.contains('app-lb-stage') || e.target.id === 'app-lb-img') {
       closeAppLightbox();
     }
   });
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && lb.classList.contains('open')) closeAppLightbox();
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeAppLightbox();
+    else if (e.key === 'ArrowRight') appGo(1);
+    else if (e.key === 'ArrowLeft') appGo(-1);
   });
 })();
 
@@ -729,7 +772,12 @@ showTab('inicio');
     <a class="app-lb-user" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener me">@shinecortinas</a>
     <button class="app-lb-close" type="button" aria-label="Fechar" onclick="closeAppLightbox()">&times;</button>
   </div>
-  <div class="app-lb-media"><img id="app-lb-img" src="" alt="Projeto Shine Cortinas"></div>
+  <div class="app-lb-media">
+    <div id="app-lb-stage"></div>
+    <button id="app-lb-prev" class="app-lb-arrow prev" type="button" aria-label="Anterior" style="display:none">‹</button>
+    <button id="app-lb-next" class="app-lb-arrow next" type="button" aria-label="Próximo" style="display:none">›</button>
+    <span id="app-lb-count" class="app-lb-count" style="display:none"></span>
+  </div>
   <p id="app-lb-cap" class="app-lb-cap"></p>
   <div class="app-lb-actions">
     <button id="app-lb-like" class="app-lb-btn app-lb-like" type="button">
