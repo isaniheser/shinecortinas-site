@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shine Cortinas</title>
+<link rel="manifest" href="/app/manifest.json">
+<meta name="theme-color" content="#15130e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Shine">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;font-family:'Montserrat',sans-serif;background:#15130e;}
+.scroll::-webkit-scrollbar{display:none;}
+.scroll{scrollbar-width:none;-ms-overflow-style:none;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes storyIn{from{opacity:0;transform:scale(1.04);}to{opacity:1;transform:scale(1);}}
+@keyframes ringPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.06);}}
+
+#app{position:fixed;inset:0;overflow:hidden;}
+#bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,#322d22 0%,#15130e 80%);z-index:0;pointer-events:none;}
+
+/* Header */
+#header{
+  position:absolute;top:0;left:0;right:0;
+  height:calc(100px + env(safe-area-inset-top));
+  z-index:45;
+  background:rgba(30,28,25,0.40);
+  backdrop-filter:blur(36px) saturate(180%);
+  -webkit-backdrop-filter:blur(36px) saturate(180%);
+  border-bottom:1px solid rgba(255,255,255,0.16);
+  border-radius:0 0 28px 28px;
+  box-shadow:0 18px 38px rgba(0,0,0,0.55),inset 0 -1px 0 rgba(255,255,255,0.08),inset 0 1px 0 rgba(255,255,255,0.12);
+  display:flex;align-items:flex-end;justify-content:center;
+  padding-bottom:14px;padding-top:env(safe-area-inset-top);
+}
+#header img{height:44px;width:auto;opacity:0.97;filter:drop-shadow(0 2px 8px rgba(198,168,104,0.4));}
+
+/* Content */
+#content{
+  position:absolute;top:0;left:0;right:0;
+  bottom:calc(76px + env(safe-area-inset-bottom));
+  overflow-y:auto;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+  z-index:1;
+}
+.tab-page{
+  display:none;
+  animation:fadeUp 0.35s ease both;
+  padding:calc(112px + env(safe-area-inset-top)) 16px 24px;
+  min-height:100%;
+}
+.tab-page.active{display:block;}
+
+/* Bottom tab bar */
+#tabbar{
+  position:absolute;left:12px;right:12px;
+  bottom:calc(12px + env(safe-area-inset-bottom));
+  height:64px;
+  background:rgba(22,21,19,0.55);
+  backdrop-filter:blur(30px) saturate(180%);
+  -webkit-backdrop-filter:blur(30px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:28px;
+  display:flex;align-items:center;padding:0 4px;
+  z-index:40;
+  box-shadow:0 16px 40px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.14);
+}
+.tab-btn{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;border:none;background:transparent;cursor:pointer;
+  color:#8a8478;padding:6px 2px 4px;border-radius:14px;
+  font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.02em;
+  transition:background 0.2s,color 0.2s;
+}
+.tab-btn.active{
+  color:#E7CE92;
+  background:rgba(198,168,104,0.16);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* WA FAB */
+#wa-fab{
+  position:absolute;right:18px;
+  bottom:calc(90px + env(safe-area-inset-bottom));
+  width:52px;height:52px;border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  z-index:45;
+  box-shadow:0 12px 28px rgba(37,211,102,0.45);
+  text-decoration:none;
+}
+
+/* Reusable */
+.gold-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(135deg,#DFBD69 0%,#FFF0C6 50%,#B89648 100%);
+  color:#1a1a1a;font-size:14px;font-weight:900;
+  padding:16px;border-radius:14px;text-decoration:none;
+  box-shadow:0 14px 30px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.5);
+  width:100%;
+}
+.glass-card{
+  background:linear-gradient(160deg,rgba(255,255,255,0.1),rgba(255,255,255,0.03));
+  backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:18px;
+  box-shadow:0 18px 34px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.section-label{
+  display:block;
+  font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;
+  text-transform:uppercase;color:#C3B289;margin-bottom:6px;
+}
+.section-h1{
+  font-family:'Playfair Display',serif;color:#fff;
+  font-size:28px;font-weight:900;margin-bottom:20px;
+}
+.section-h1 em{font-style:italic;color:#C3B289;}
+
+.trust-chip{
+  flex:1;
+  background:linear-gradient(160deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04));
+  border:1px solid rgba(255,255,255,0.2);border-radius:16px;
+  padding:12px 6px 13px;text-align:center;
+  backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:0 12px 26px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.35),inset 0 -1px 0 rgba(0,0,0,0.25);
+}
+.trust-label{color:#C3B289;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;}
+.trust-num{font-family:'Playfair Display',serif;color:#C3B289;font-size:21px;font-weight:900;line-height:1.1;}
+.trust-sub{color:#8d877c;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;}
+
+.product-card{
+  position:relative;border-radius:20px;overflow:hidden;
+  background-size:cover;background-position:center;
+  box-shadow:0 12px 26px rgba(0,0,0,0.5);
+}
+.product-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent 55%);}
+.product-info{position:absolute;left:14px;right:14px;bottom:12px;}
+
+.step-num{
+  flex:none;width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,#FFF0C6,#C3B289 55%,#9C7C3C);
+  color:#1a1a1a;font-weight:900;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  z-index:2;
+  box-shadow:0 0 0 5px #19140d,0 6px 14px rgba(198,168,104,0.4);
+}
+
+.app-input{
+  background:#161513;border:1px solid rgba(198,168,104,0.25);
+  border-radius:13px;padding:15px;color:#fff;
+  font-size:14px;font-family:'Montserrat',sans-serif;
+  outline:none;width:100%;
+}
+.app-input::placeholder{color:#6b6660;}
+
+/* Story overlay */
+#story-overlay{
+  position:fixed;inset:0;z-index:80;background:#000;
+  display:none;
+}
+#story-overlay.active{display:block;animation:storyIn 0.28s ease both;}
+#story-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+#story-scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.55) 0%,transparent 22%,transparent 50%,rgba(0,0,0,0.92) 100%);}
+#story-progress-bg{
+  position:absolute;
+  top:calc(56px + env(safe-area-inset-top));
+  left:14px;right:14px;height:3px;border-radius:2px;
+  background:rgba(255,255,255,0.3);z-index:3;
+}
+#story-bar{height:100%;border-radius:2px;background:#fff;width:0;}
+#story-close{
+  position:absolute;
+  top:calc(68px + env(safe-area-inset-top));
+  right:16px;z-index:4;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.22);
+  color:#fff;font-size:16px;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+#story-info{
+  position:absolute;left:14px;right:14px;bottom:calc(26px + env(safe-area-inset-bottom));
+  z-index:3;padding:20px;
+  background:rgba(18,16,14,0.4);
+  backdrop-filter:blur(26px) saturate(170%);
+  -webkit-backdrop-filter:blur(26px) saturate(170%);
+  border:1px solid rgba(255,255,255,0.16);border-radius:22px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.18),0 16px 36px rgba(0,0,0,0.5);
+}
+
+/* Story ring */
+.s-ring{
+  width:66px;height:66px;border-radius:50%;
+  padding:2.5px;
+  background:linear-gradient(135deg,#FFF0C6,#DFBD69 40%,#9C7C3C);
+  box-shadow:0 6px 16px rgba(198,168,104,0.3);
+  cursor:pointer;
+}
+.s-ring.pulse{animation:ringPulse 2.6s ease-in-out infinite;}
+.s-inner{
+  width:100%;height:100%;border-radius:50%;
+  border:2.5px solid #19140d;
+  background-size:cover;background-position:center;
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="bg"></div>
+
+  <!-- Glass header -->
+  <div id="header">
+    <img src="/logo-shine.avif" alt="Shine Cortinas" loading="eager">
+  </div>
+
+  <!-- Content -->
+  <div id="content" class="scroll">
+
+    <!-- ══ INÍCIO ══ -->
+    <div id="tab-inicio" class="tab-page">
+      <!-- Stories strip -->
+      <div class="scroll" style="display:flex;gap:14px;overflow-x:auto;padding-bottom:14px;">
+        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(0)">
+          <div class="s-ring pulse"><div class="s-inner" style="background-image:url('/hero-sala.avif');"></div></div>
+          <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Destaques</div>
+        </div>
+        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(1)">
+          <div class="s-ring"><div class="s-inner" style="background-image:url('/automacao.avif');"></div></div>
+          <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Motorizada</div>
+        </div>
+        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(2)">
+          <div class="s-ring"><div class="s-inner" style="background-image:url('/madeira.avif');"></div></div>
+          <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Madeira</div>
+        </div>
+        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(3)">
+          <div class="s-ring"><div class="s-inner" style="background-image:url('/blackout.avif');"></div></div>
+          <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Blackout</div>
+        </div>
+        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(4)">
+          <div class="s-ring"><div class="s-inner" style="background-image:url('/linha-puro.avif');"></div></div>
+          <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Linha Puro</div>
+        </div>
+        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(5)">
+          <div class="s-ring"><div class="s-inner" style="background-image:url('/cortina-sob-medida.avif');"></div></div>
+          <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Antes/Depois</div>
+        </div>
+      </div>
+
+      <!-- Hero card -->
+      <div style="position:relative;height:440px;border-radius:24px;overflow:hidden;background-image:url('/hero-sala.avif');background-size:cover;background-position:center;box-shadow:0 24px 50px rgba(0,0,0,0.5);">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.18) 38%,rgba(8,8,9,0.96) 100%);"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:0 22px 26px;">
+          <div class="section-label" style="margin-bottom:12px;">Cortinas &amp; Persianas Sob Medida</div>
+          <h1 style="font-family:'Playfair Display',serif;font-weight:900;color:#fff;font-size:28px;line-height:1.12;margin:0 0 10px;text-shadow:0 2px 16px rgba(0,0,0,0.5);">O Seu Ambiente Ainda Não É O Que Você <span style="font-style:italic;color:#DCCBA4;">Imaginou.</span></h1>
+          <p style="color:#ece8df;font-size:12.5px;line-height:1.55;margin:0 0 18px;">A referência em cortinas e persianas no Sul Fluminense. A Shine vai até você e transforma cada ambiente.</p>
+          <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20app%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener" class="gold-btn">Quero Minha Consultoria Gratuita →</a>
+        </div>
+      </div>
+
+      <!-- Trust chips -->
+      <div style="display:flex;gap:10px;padding-top:18px;">
+        <div class="trust-chip">
+          <div class="trust-label">Experiência</div>
+          <div class="trust-num">17</div>
+          <div class="trust-sub">Anos</div>
+        </div>
+        <div class="trust-chip">
+          <div class="trust-label">Até</div>
+          <div class="trust-num">12x</div>
+          <div class="trust-sub">No cartão</div>
+        </div>
+        <div class="trust-chip">
+          <div class="trust-label">Até</div>
+          <div class="trust-num">5</div>
+          <div class="trust-sub">Anos garantia</div>
+        </div>
+      </div>
+
+      <!-- Social proof --><!-- PLACEHOLDER: atualizar com notas reais do Google e Facebook -->
+      <div style="display:flex;gap:10px;padding-top:12px;">
+        <div class="glass-card" style="flex:1;display:flex;align-items:center;gap:10px;padding:9px 12px;">
+          <img src="/selo-google.avif" alt="Google" style="width:38px;height:38px;flex:none;" loading="lazy">
+          <div>
+            <div style="color:#DCCBA4;font-size:15px;font-weight:900;font-family:'Playfair Display',serif;line-height:1;">4,9 ★</div>
+            <div style="color:#9a948a;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">no Google</div>
+          </div>
+        </div>
+        <div class="glass-card" style="flex:1;display:flex;align-items:center;gap:10px;padding:9px 12px;">
+          <img src="/selo-facebook.avif" alt="Facebook" style="width:38px;height:38px;flex:none;" loading="lazy">
+          <div>
+            <div style="color:#DCCBA4;font-size:15px;font-weight:900;font-family:'Playfair Display',serif;line-height:1;">4,8 ★</div>
+            <div style="color:#9a948a;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">no Facebook</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solutions preview -->
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin:22px 0 14px;">
+        <h2 style="font-family:'Playfair Display',serif;color:#fff;font-size:21px;font-weight:900;margin:0;">Nossas <em style="font-style:italic;color:#C3B289;">Soluções</em></h2>
+        <span onclick="showTab('solucoes')" style="color:#C3B289;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;">Ver tudo</span>
+      </div>
+      <div class="scroll" style="display:flex;gap:14px;overflow-x:auto;padding-bottom:16px;">
+        <div class="product-card" style="flex:none;width:222px;height:170px;background-image:url('/persiana-motorizada.avif');box-shadow:0 36px 58px rgba(0,0,0,0.7),0 14px 24px rgba(0,0,0,0.45);">
+          <div class="product-scrim"></div>
+          <div class="product-info"><div style="color:#fff;font-size:14px;font-weight:800;text-shadow:0 1px 8px rgba(0,0,0,0.6);">Persianas Motorizadas</div><div style="color:#DCCBA4;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">7ª geração · IoT</div></div>
+        </div>
+        <div class="product-card" style="flex:none;width:222px;height:170px;background-image:url('/cortina-sob-medida.avif');box-shadow:0 36px 58px rgba(0,0,0,0.7),0 14px 24px rgba(0,0,0,0.45);">
+          <div class="product-scrim"></div>
+          <div class="product-info"><div style="color:#fff;font-size:14px;font-weight:800;text-shadow:0 1px 8px rgba(0,0,0,0.6);">Cortinas sob Medida</div><div style="color:#DCCBA4;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">Memory · barra dupla</div></div>
+        </div>
+        <div class="product-card" style="flex:none;width:222px;height:170px;background-image:url('/blackout.avif');box-shadow:0 36px 58px rgba(0,0,0,0.7),0 14px 24px rgba(0,0,0,0.45);">
+          <div class="product-scrim"></div>
+          <div class="product-info"><div style="color:#fff;font-size:14px;font-weight:800;text-shadow:0 1px 8px rgba(0,0,0,0.6);">Blackouts Técnicos</div><div style="color:#DCCBA4;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">Escuridão total</div></div>
+        </div>
+      </div>
+
+      <!-- Blog teaser -->
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px;">
+        <h2 style="font-family:'Playfair Display',serif;color:#fff;font-size:21px;font-weight:900;margin:0;">Do nosso <em style="font-style:italic;color:#C3B289;">Blog</em></h2>
+        <span onclick="showTab('blog')" style="color:#C3B289;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;">Ver tudo</span>
+      </div>
+      <div onclick="showTab('blog')" class="glass-card" style="display:flex;gap:14px;padding:12px;cursor:pointer;">
+        <div style="flex:none;width:92px;height:92px;border-radius:14px;background-image:url('/automacao.avif');background-size:cover;background-position:center;"></div>
+        <div style="display:flex;flex-direction:column;justify-content:center;">
+          <div style="color:#C3B289;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px;">Guia · Automação</div>
+          <h3 style="color:#fff;font-size:14px;font-weight:800;line-height:1.3;margin:0 0 5px;">Persianas motorizadas valem a pena?</h3>
+          <div style="color:#8d877c;font-size:11px;">Leitura de 4 min</div>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="glass-card" style="margin-top:18px;margin-bottom:30px;padding:22px;">
+        <div style="color:#C3B289;font-size:15px;letter-spacing:2px;margin-bottom:10px;">★★★★★</div>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;color:#ece8df;font-size:15px;line-height:1.5;margin:0 0 14px;">"Mediram tudo com precisão e instalaram no mesmo dia. A casa virou outra. Atendimento impecável."</p>
+        <div style="color:#8d877c;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Ana Paula · Volta Redonda</div>
+      </div>
+    </div>
+
+    <!-- ══ SOLUÇÕES ══ -->
+    <div id="tab-solucoes" class="tab-page">
+      <span class="section-label">Catálogo</span>
+      <h1 class="section-h1">Nossas <em>Soluções</em></h1>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="product-card" style="height:180px;background-image:url('/persiana-motorizada.avif');"><div class="product-scrim"></div><div class="product-info"><div style="color:#fff;font-size:13px;font-weight:800;">Persianas Motorizadas</div><div style="color:#C3B289;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">7ª geração · IoT</div></div></div>
+        <div class="product-card" style="height:180px;background-image:url('/cortina-sob-medida.avif');"><div class="product-scrim"></div><div class="product-info"><div style="color:#fff;font-size:13px;font-weight:800;">Cortinas sob Medida</div><div style="color:#C3B289;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">Memory · barra dupla</div></div></div>
+        <div class="product-card" style="height:180px;background-image:url('/blackouts-tecnicos.avif');"><div class="product-scrim"></div><div class="product-info"><div style="color:#fff;font-size:13px;font-weight:800;">Blackouts Técnicos</div><div style="color:#C3B289;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">Escuridão total</div></div></div>
+        <div class="product-card" style="height:180px;background-image:url('/linha-puro.avif');"><div class="product-scrim"></div><div class="product-info"><div style="color:#fff;font-size:13px;font-weight:800;">Linha Puro</div><div style="color:#C3B289;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">Tecidos selecionados</div></div></div>
+        <div class="product-card" style="height:180px;background-image:url('/madeira.avif');"><div class="product-scrim"></div><div class="product-info"><div style="color:#fff;font-size:13px;font-weight:800;">Persianas de Madeira</div><div style="color:#C3B289;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">Toque natural</div></div></div>
+        <div class="product-card" style="height:180px;background-image:url('/duplo.avif');"><div class="product-scrim"></div><div class="product-info"><div style="color:#fff;font-size:13px;font-weight:800;">Cortina Duplo Visão</div><div style="color:#C3B289;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;">Luz na medida</div></div></div>
+      </div>
+      <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20vim%20do%20app%20e%20quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Shine." target="_blank" rel="noopener" class="gold-btn" style="margin-top:24px;">Quero um Projeto Exclusivo →</a>
+    </div>
+
+    <!-- ══ PROCESSO ══ -->
+    <div id="tab-como" class="tab-page">
+      <span class="section-label">Simples · Transparente</span>
+      <h1 class="section-h1">Como <em>Funciona</em></h1>
+      <div style="position:relative;padding-left:8px;">
+        <div style="position:absolute;left:27px;top:14px;bottom:14px;width:2px;background:linear-gradient(to bottom,#C3B289,rgba(198,168,104,0.15));"></div>
+        <div style="position:relative;display:flex;gap:18px;margin-bottom:22px;"><div class="step-num">1</div><div style="padding-top:4px;"><h3 style="color:#fff;font-size:15px;font-weight:800;margin:0 0 4px;">Você entra em contato</h3><p style="color:#948e84;font-size:12.5px;line-height:1.5;margin:0;">WhatsApp, Instagram ou telefone — fala com um consultor de verdade em minutos.</p></div></div>
+        <div style="position:relative;display:flex;gap:18px;margin-bottom:22px;"><div class="step-num">2</div><div style="padding-top:4px;"><h3 style="color:#fff;font-size:15px;font-weight:800;margin:0 0 4px;">Visita gratuita agendada</h3><p style="color:#948e84;font-size:12.5px;line-height:1.5;margin:0;">Nosso consultor vai até a sua casa no dia e horário que funcionar pra você.</p></div></div>
+        <div style="position:relative;display:flex;gap:18px;margin-bottom:22px;"><div class="step-num">3</div><div style="padding-top:4px;"><h3 style="color:#fff;font-size:15px;font-weight:800;margin:0 0 4px;">Medição milimétrica a laser</h3><p style="color:#948e84;font-size:12.5px;line-height:1.5;margin:0;">Precisão absoluta em cada ambiente. Zero erro, zero retrabalho, zero surpresa.</p></div></div>
+        <div style="position:relative;display:flex;gap:18px;margin-bottom:22px;"><div class="step-num">4</div><div style="padding-top:4px;"><h3 style="color:#fff;font-size:15px;font-weight:800;margin:0 0 4px;">Projeto + aprovação</h3><p style="color:#948e84;font-size:12.5px;line-height:1.5;margin:0;">Você aprova materiais, cores e modelos antes de assinar qualquer coisa.</p></div></div>
+        <div style="position:relative;display:flex;gap:18px;margin-bottom:22px;"><div class="step-num">5</div><div style="padding-top:4px;"><h3 style="color:#fff;font-size:15px;font-weight:800;margin:0 0 4px;">Confecção sob medida</h3><p style="color:#948e84;font-size:12.5px;line-height:1.5;margin:0;">Fabricada do zero, exclusivamente para o seu espaço.</p></div></div>
+        <div style="position:relative;display:flex;gap:18px;"><div class="step-num">6</div><div style="padding-top:4px;"><h3 style="color:#fff;font-size:15px;font-weight:800;margin:0 0 4px;">Instalação pela nossa equipe</h3><p style="color:#948e84;font-size:12.5px;line-height:1.5;margin:0;">Instalamos e saímos com o ambiente perfeito — na maioria, no mesmo dia.</p></div></div>
+      </div>
+      <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20vim%20do%20app%20e%20quero%20come%C3%A7ar%20meu%20projeto%20com%20a%20Shine." target="_blank" rel="noopener" class="gold-btn" style="margin-top:28px;">Quero Começar Agora →</a>
+    </div>
+
+    <!-- ══ PROJETOS ══ -->
+    <div id="tab-projetos" class="tab-page">
+      <span class="section-label">Portfólio</span>
+      <h1 class="section-h1">Projetos <em>Reais</em></h1>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <img src="/hero-sala.avif" style="width:100%;border-radius:16px;display:block;box-shadow:0 10px 22px rgba(0,0,0,0.4);" alt="Projeto 1" loading="lazy">
+        <img src="/resende-projeto-1.avif" style="width:100%;border-radius:16px;display:block;box-shadow:0 10px 22px rgba(0,0,0,0.4);" alt="Projeto 2" loading="lazy">
+        <img src="/resende-projeto-2.avif" style="width:100%;border-radius:16px;display:block;box-shadow:0 10px 22px rgba(0,0,0,0.4);" alt="Projeto 3" loading="lazy">
+        <img src="/cortina-sob-medida.avif" style="width:100%;border-radius:16px;display:block;box-shadow:0 10px 22px rgba(0,0,0,0.4);" alt="Projeto 4" loading="lazy">
+        <img src="/madeira.avif" style="width:100%;border-radius:16px;display:block;box-shadow:0 10px 22px rgba(0,0,0,0.4);" alt="Projeto 5" loading="lazy">
+        <img src="/persiana-motorizada.avif" style="width:100%;border-radius:16px;display:block;box-shadow:0 10px 22px rgba(0,0,0,0.4);" alt="Projeto 6" loading="lazy">
+      </div>
+    </div>
+
+    <!-- ══ BLOG ══ -->
+    <div id="tab-blog" class="tab-page">
+      <span class="section-label">Dicas &amp; Guias</span>
+      <h1 class="section-h1">Nosso <em>Blog</em></h1>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="glass-card" style="overflow:hidden;">
+          <div style="height:150px;background-image:url('/automacao.avif');background-size:cover;background-position:center;"></div>
+          <div style="padding:16px;">
+            <div style="color:#C3B289;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Guia · Automação · 4 min</div>
+            <h3 style="color:#fff;font-size:16px;font-weight:800;line-height:1.3;margin:0 0 6px;">Persianas motorizadas valem a pena? O guia completo</h3>
+            <p style="color:#948e84;font-size:12px;line-height:1.5;margin:0;">Conforto, economia e tecnologia 7ª geração: tudo o que muda no dia a dia.</p>
+          </div>
+        </div>
+        <div class="glass-card" style="display:flex;gap:14px;padding:12px;">
+          <div style="flex:none;width:92px;height:92px;border-radius:14px;background-image:url('/blackout.avif');background-size:cover;background-position:center;"></div>
+          <div style="display:flex;flex-direction:column;justify-content:center;">
+            <div style="color:#C3B289;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px;">Quarto · 3 min</div>
+            <h3 style="color:#fff;font-size:14px;font-weight:800;line-height:1.3;margin:0 0 5px;">Blackout no quarto: durma como nunca</h3>
+            <div style="color:#8d877c;font-size:11px;">Por que o escuro total muda seu sono.</div>
+          </div>
+        </div>
+        <div class="glass-card" style="display:flex;gap:14px;padding:12px;">
+          <div style="flex:none;width:92px;height:92px;border-radius:14px;background-image:url('/cortina-sob-medida.avif');background-size:cover;background-position:center;"></div>
+          <div style="display:flex;flex-direction:column;justify-content:center;">
+            <div style="color:#C3B289;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px;">Decoração · 5 min</div>
+            <h3 style="color:#fff;font-size:14px;font-weight:800;line-height:1.3;margin:0 0 5px;">Cortina ou persiana? Qual escolher por ambiente</h3>
+            <div style="color:#8d877c;font-size:11px;">Um guia rápido sala a sala.</div>
+          </div>
+        </div>
+        <div class="glass-card" style="display:flex;gap:14px;padding:12px;margin-bottom:10px;">
+          <div style="flex:none;width:92px;height:92px;border-radius:14px;background-image:url('/madeira.avif');background-size:cover;background-position:center;"></div>
+          <div style="display:flex;flex-direction:column;justify-content:center;">
+            <div style="color:#C3B289;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px;">Medição · 3 min</div>
+            <h3 style="color:#fff;font-size:14px;font-weight:800;line-height:1.3;margin:0 0 5px;">Como medir sua janela sem errar</h3>
+            <div style="color:#8d877c;font-size:11px;">O passo a passo que evita retrabalho.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ CONTATO ══ -->
+    <div id="tab-contato" class="tab-page">
+      <span class="section-label">Fale com a Shine</span>
+      <h1 class="section-h1">Orçamento <em>Gratuito</em></h1>
+      <p style="color:#948e84;font-size:13px;line-height:1.55;margin:0 0 22px;">Conte o que você precisa — um consultor responde em minutos, sem compromisso.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <input id="inp-nome" class="app-input" placeholder="Seu nome" type="text">
+        <input id="inp-cidade" class="app-input" placeholder="Cidade (Volta Redonda, Barra Mansa…)" type="text">
+        <textarea id="inp-ambiente" class="app-input" placeholder="Qual ambiente? (sala, quarto, escritório…)" rows="3" style="resize:none;"></textarea>
+        <button onclick="sendWA()" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#07351a;font-size:14px;font-weight:900;padding:16px;border-radius:14px;border:none;cursor:pointer;width:100%;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#07351a"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.488-.927z"/></svg>
+          Enviar pelo WhatsApp
+        </button>
+      </div>
+      <div style="margin-top:24px;background:#131210;border:1px solid rgba(198,168,104,0.18);border-radius:16px;padding:18px;">
+        <div style="color:#C3B289;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Atendemos</div>
+        <p style="color:#cfc9bc;font-size:13px;line-height:1.6;margin:0;">Volta Redonda · Barra Mansa · Resende · Pinheiral · Barra do Piraí e toda a região Sul Fluminense.</p>
+      </div>
+
+      <div style="margin-top:32px;text-align:center;padding-bottom:8px;">
+        <button onclick="localStorage.setItem('prefer-desktop','1');window.location.href='/';" style="background:none;border:none;color:rgba(195,178,137,0.5);font-size:11px;font-family:inherit;letter-spacing:0.08em;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Ver site completo</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Story overlay -->
+  <div id="story-overlay">
+    <div id="story-bg"></div>
+    <div id="story-scrim"></div>
+    <div id="story-progress-bg"><div id="story-bar"></div></div>
+    <button id="story-close" onclick="closeStory()">✕</button>
+    <div id="story-info">
+      <div id="story-cat" class="section-label"></div>
+      <h2 id="story-title" style="font-family:'Playfair Display',serif;color:#fff;font-size:22px;font-weight:900;line-height:1.15;margin:0 0 8px;"></h2>
+      <p id="story-desc" style="color:#e2ddd2;font-size:13px;line-height:1.55;margin:0 0 16px;"></p>
+      <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20vi%20um%20projeto%20no%20app%20da%20Shine%20e%20quero%20algo%20assim%20na%20minha%20casa." target="_blank" rel="noopener" class="gold-btn">Quero algo assim na minha casa →</a>
+    </div>
+  </div>
+
+  <!-- WhatsApp FAB -->
+  <a id="wa-fab" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20app%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.488-.927z"/></svg>
+  </a>
+
+  <!-- Bottom tab bar -->
+  <div id="tabbar">
+    <button id="tbtn-inicio" class="tab-btn active" onclick="showTab('inicio')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+      <span>Início</span>
+    </button>
+    <button id="tbtn-solucoes" class="tab-btn" onclick="showTab('solucoes')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      <span>Soluções</span>
+    </button>
+    <button id="tbtn-como" class="tab-btn" onclick="showTab('como')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="6" r="2.2"/><circle cx="18.5" cy="18" r="2.2"/><path d="M7.7 6h6.3a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3H10a3 3 0 0 0-3 3v0a3 3 0 0 0 3 3h6.3"/></svg>
+      <span>Processo</span>
+    </button>
+    <button id="tbtn-projetos" class="tab-btn" onclick="showTab('projetos')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m21 16-5-5L5 20"/></svg>
+      <span>Projetos</span>
+    </button>
+    <button id="tbtn-contato" class="tab-btn" onclick="showTab('contato')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      <span>Contato</span>
+    </button>
+  </div>
+</div>
+
+<script>
+const TABS = ['inicio','solucoes','como','projetos','blog','contato'];
+
+function showTab(name) {
+  TABS.forEach(function(t) {
+    var page = document.getElementById('tab-' + t);
+    var btn  = document.getElementById('tbtn-' + t);
+    if (page) page.classList.toggle('active', t === name);
+    if (btn)  btn.classList.toggle('active',  t === name);
+  });
+  document.getElementById('content').scrollTop = 0;
+}
+
+const STORIES = [
+  { img:'/hero-sala.avif',         cat:'Sala de estar · Volta Redonda',    title:'Cortina de linho sob medida',       desc:'Linho natural com blackout embutido: aconchego durante o dia e escuridão total à noite, sem perder o caimento elegante.' },
+  { img:'/automacao.avif',         cat:'Automação · 7ª geração',           title:'Persiana motorizada inteligente',   desc:'Controle pelo app ou por voz. Sobe e desce no horário que você programar — conforto sem levantar do sofá.' },
+  { img:'/madeira.avif',           cat:'Escritório · Persiana de madeira', title:'Ripas de madeira natural',          desc:'Toque quente e ripas que filtram a luz com sofisticação. Perfeita para home office e ambientes de trabalho.' },
+  { img:'/blackout.avif',          cat:'Quarto · Blackout técnico',        title:'Escuridão total para dormir',       desc:'Tecido técnico que bloqueia 100% da luz — durma melhor mesmo de dia, com privacidade absoluta.' },
+  { img:'/linha-puro.avif',        cat:'Linha Puro · Tecidos selecionados',title:'Tecidos nobres, caimento impecável',desc:'A nossa linha mais sofisticada: materiais selecionados com acabamento de alto padrão para ambientes refinados.' },
+  { img:'/cortina-sob-medida.avif',cat:'Antes & Depois',                   title:'O mesmo ambiente, transformado',    desc:'A cortina certa muda tudo: mais aconchego, móveis protegidos do sol e um espaço que finalmente parece completo.' }
+];
+
+var _storyTimer = null;
+
+function openStory(idx) {
+  var s = STORIES[idx];
+  document.getElementById('story-bg').style.backgroundImage = "url('" + s.img + "')";
+  document.getElementById('story-cat').textContent  = s.cat;
+  document.getElementById('story-title').textContent = s.title;
+  document.getElementById('story-desc').textContent  = s.desc;
+  document.getElementById('story-overlay').classList.add('active');
+  var bar = document.getElementById('story-bar');
+  bar.style.transition = 'none';
+  bar.style.width = '0%';
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      bar.style.transition = 'width 5s linear';
+      bar.style.width = '100%';
+    });
+  });
+  if (_storyTimer) clearTimeout(_storyTimer);
+  _storyTimer = setTimeout(closeStory, 5200);
+}
+
+function closeStory() {
+  document.getElementById('story-overlay').classList.remove('active');
+  if (_storyTimer) { clearTimeout(_storyTimer); _storyTimer = null; }
+}
+
+function sendWA() {
+  var nome     = document.getElementById('inp-nome').value.trim();
+  var cidade   = document.getElementById('inp-cidade').value.trim();
+  var ambiente = document.getElementById('inp-ambiente').value.trim();
+  var msg = 'Olá, vim do app da Shine.';
+  if (nome)     msg += ' Me chamo ' + nome + '.';
+  if (cidade)   msg += ' Minha cidade é ' + cidade + '.';
+  if (ambiente) msg += ' Ambiente: ' + ambiente + '.';
+  msg += ' Quero um orçamento gratuito.';
+  window.open('https://wa.me/5524993298763?text=' + encodeURIComponent(msg), '_blank');
+}
+
+// PWA service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/app/sw.js', { scope: '/app/' }).catch(function(){});
+  });
+}
+
+// Init
+showTab('inicio');
+</script>
+</body>
+</html>
