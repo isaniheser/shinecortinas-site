@@ -208,10 +208,17 @@ html,body{height:100%;overflow:hidden;font-family:'Montserrat',sans-serif;backgr
 #story-progress-bg{
   position:absolute;
   top:calc(56px + env(safe-area-inset-top));
-  left:14px;right:14px;height:3px;border-radius:2px;
-  background:rgba(255,255,255,0.3);z-index:3;
+  left:14px;right:14px;height:3px;z-index:4;
+  display:flex;gap:4px;
 }
-#story-bar{height:100%;border-radius:2px;background:#fff;width:0;}
+.sseg{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,0.3);overflow:hidden;}
+.sseg>i{display:block;height:100%;width:0;background:#fff;border-radius:2px;}
+.sseg.done>i{width:100%;}
+.sseg.active>i{animation:ssegFill 5s linear forwards;}
+@keyframes ssegFill{from{width:0;}to{width:100%;}}
+.story-nav{position:absolute;top:0;bottom:0;width:38%;z-index:3;}
+.story-nav.prev{left:0;}
+.story-nav.next{right:0;}
 #story-close{
   position:absolute;
   top:calc(68px + env(safe-area-inset-top));
@@ -504,7 +511,9 @@ html,body{height:100%;overflow:hidden;font-family:'Montserrat',sans-serif;backgr
   <div id="story-overlay">
     <div id="story-bg"></div>
     <div id="story-scrim"></div>
-    <div id="story-progress-bg"><div id="story-bar"></div></div>
+    <div class="story-nav prev" onclick="storyPrev()"></div>
+    <div class="story-nav next" onclick="storyNext()"></div>
+    <div id="story-progress-bg"></div>
     <button id="story-close" onclick="closeStory()">✕</button>
     <div id="story-info">
       <div id="story-cat" class="section-label"></div>
@@ -567,26 +576,36 @@ const STORIES = [
 ];
 
 var _storyTimer = null;
+var _storyIdx = 0;
 
-function openStory(idx) {
+function renderStorySegments() {
+  var bg = document.getElementById('story-progress-bg');
+  bg.innerHTML = STORIES.map(function(_, i) {
+    var cls = i < _storyIdx ? 'sseg done' : (i === _storyIdx ? 'sseg active' : 'sseg');
+    return '<div class="' + cls + '"><i></i></div>';
+  }).join('');
+}
+
+function showStorySlide(idx) {
+  if (idx < 0) idx = 0;
+  if (idx >= STORIES.length) { closeStory(); return; }
+  _storyIdx = idx;
   var s = STORIES[idx];
   document.getElementById('story-bg').style.backgroundImage = "url('" + s.img + "')";
-  document.getElementById('story-cat').textContent  = s.cat;
+  document.getElementById('story-cat').textContent   = s.cat;
   document.getElementById('story-title').textContent = s.title;
   document.getElementById('story-desc').textContent  = s.desc;
-  document.getElementById('story-overlay').classList.add('active');
-  var bar = document.getElementById('story-bar');
-  bar.style.transition = 'none';
-  bar.style.width = '0%';
-  requestAnimationFrame(function() {
-    requestAnimationFrame(function() {
-      bar.style.transition = 'width 5s linear';
-      bar.style.width = '100%';
-    });
-  });
+  renderStorySegments();
   if (_storyTimer) clearTimeout(_storyTimer);
-  _storyTimer = setTimeout(closeStory, 5200);
+  _storyTimer = setTimeout(function() { showStorySlide(_storyIdx + 1); }, 5000);
 }
+
+function openStory(idx) {
+  document.getElementById('story-overlay').classList.add('active');
+  showStorySlide(idx);
+}
+function storyNext() { showStorySlide(_storyIdx + 1); }
+function storyPrev() { showStorySlide(_storyIdx - 1); }
 
 function closeStory() {
   document.getElementById('story-overlay').classList.remove('active');
