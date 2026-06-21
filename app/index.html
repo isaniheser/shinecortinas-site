@@ -41,6 +41,22 @@ html,body{height:100%;overflow:hidden;font-family:'Montserrat',sans-serif;backgr
 .app-lb-like.liked{color:#ff4d6d;border-color:rgba(255,77,109,0.5);}
 .app-lb-like.liked svg{fill:#ff4d6d;stroke:#ff4d6d;}
 .app-lb-like.pop svg{animation:igHeart .45s ease;}
+/* Aba Projetos — estilo premium com camadas */
+.proj-header{background:linear-gradient(160deg,rgba(198,168,104,0.14),rgba(198,168,104,0.03));border:1px solid rgba(198,168,104,0.25);border-radius:20px;padding:18px 16px 14px;margin-bottom:20px;position:relative;overflow:hidden;}
+.proj-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(198,168,104,0.18),transparent 65%);pointer-events:none;}
+.proj-header-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#C3B289;margin-bottom:6px;display:block;}
+.proj-header-title{font-family:'Playfair Display',serif;color:#fff;font-size:24px;font-weight:900;line-height:1.15;margin:0 0 6px;}
+.proj-header-title em{font-style:italic;color:#C3B289;}
+.proj-header-sub{color:#948e84;font-size:11.5px;line-height:1.5;margin:0;}
+.proj-header-sub a{color:#C3B289;text-decoration:none;}
+.proj-ig-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(198,168,104,0.12);border:1px solid rgba(198,168,104,0.3);border-radius:50px;padding:5px 12px 5px 8px;margin-top:10px;color:#C3B289;font-size:10.5px;font-weight:700;text-decoration:none;letter-spacing:0.03em;}
+.proj-ig-badge svg{opacity:0.8;}
+.ig-grid-styled{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ig-grid-styled .ig-cell-styled{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.06);}
+.ig-grid-styled .ig-cell-styled img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1;}
+.ig-cell-styled .ig-cell-glow{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,0.7));pointer-events:none;}
+.ig-cell-styled .ig-cell-play{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
+.ig-cell-styled.featured{grid-column:span 2;}
 
 #app{position:fixed;inset:0;overflow:hidden;}
 #bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,#322d22 0%,#15130e 80%);z-index:0;pointer-events:none;}
@@ -398,13 +414,23 @@ html,body{height:100%;overflow:hidden;font-family:'Montserrat',sans-serif;backgr
 
     <!-- ══ PROJETOS ══ -->
     <div id="tab-projetos" class="tab-page">
-      <span class="section-label">Direto do Instagram</span>
-      <h1 class="section-h1">Projetos <em>Reais</em></h1>
-      <p style="color:#948e84;font-size:12.5px;line-height:1.5;margin:-6px 0 18px;">Atualizado automaticamente a cada novo post <a href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener" style="color:#C3B289;">@shinecortinas</a>.</p>
-      <div id="ig-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <!-- Header com camadas/glass dourado -->
+      <div class="proj-header">
+        <span class="proj-header-label">Acervo de Projetos</span>
+        <h1 class="proj-header-title">Projetos <em>Reais</em></h1>
+        <p class="proj-header-sub">Atualizado automaticamente a cada novo post.</p>
+        <a class="proj-ig-badge" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener me">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          @shinecortinas · Seguir
+        </a>
+      </div>
+      <div id="ig-grid" class="ig-grid-styled">
         <!-- preenchido via /api/instagram -->
-        <div class="ig-skeleton"></div><div class="ig-skeleton"></div>
-        <div class="ig-skeleton"></div><div class="ig-skeleton"></div>
+        <div class="ig-skeleton" style="aspect-ratio:1;border-radius:14px;grid-column:span 2;"></div>
+        <div class="ig-skeleton" style="aspect-ratio:1;border-radius:14px;"></div>
+        <div class="ig-skeleton" style="aspect-ratio:1;border-radius:14px;"></div>
+        <div class="ig-skeleton" style="aspect-ratio:1;border-radius:14px;"></div>
+        <div class="ig-skeleton" style="aspect-ratio:1;border-radius:14px;"></div>
       </div>
     </div>
 
@@ -599,12 +625,14 @@ function loadInstagram() {
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (!data.items || !data.items.length) throw new Error('vazio');
-      grid.innerHTML = data.items.map(function(m) {
+      grid.innerHTML = data.items.map(function(m, i) {
         var play = m.type === 'VIDEO'
-          ? '<span style="position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>'
+          ? '<span class="ig-cell-play"><svg width="9" height="9" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>'
           : '';
-        return '<button type="button" class="ig-cell" data-id="' + igEsc(m.id || m.permalink) + '" data-img="' + igEsc(m.image) + '" data-perma="' + igEsc(m.permalink) + '" data-cap="' + igEsc(m.caption || '') + '" style="position:relative;display:block;border:none;padding:0;border-radius:16px;overflow:hidden;box-shadow:0 10px 22px rgba(0,0,0,0.4);aspect-ratio:1;cursor:pointer;background:#1c1915;">'
-          + '<img src="' + igEsc(m.image) + '" alt="Projeto Shine Cortinas" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">'
+        var featured = i === 0 ? ' featured' : '';
+        return '<button type="button" class="ig-cell ig-cell-styled' + featured + '" data-id="' + igEsc(m.id || m.permalink) + '" data-img="' + igEsc(m.image) + '" data-perma="' + igEsc(m.permalink) + '" data-cap="' + igEsc(m.caption || '') + '" style="border:none;padding:0;cursor:pointer;background:#1c1915;width:100%;text-align:left;">'
+          + '<img src="' + igEsc(m.image) + '" alt="Projeto Shine Cortinas" loading="lazy">'
+          + '<div class="ig-cell-glow"></div>'
           + play + '</button>';
       }).join('');
       grid.querySelectorAll('.ig-cell').forEach(function(cell) {

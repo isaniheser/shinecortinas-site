@@ -349,19 +349,27 @@
         .hover\:underline:hover { text-decoration-line: underline; }
         @media (min-width: 768px) { .md\:gap-14 { gap: 3.5rem; } }
         .max-w-xl { max-width: 36rem; }
-        /* Galeria Instagram — masonry (Pinterest-style, tamanhos naturais) */
-        .ig-masonry { columns: 2; column-gap: 8px; }
-        @media (min-width: 768px) { .ig-masonry { columns: 3; column-gap: 16px; } }
-        .ig-item { position: relative; display: block; overflow: hidden; border-radius: 12px; background: #111; break-inside: avoid; margin-bottom: 8px; box-shadow: 0 8px 22px rgba(0,0,0,0.45); }
-        @media (min-width: 768px) { .ig-item { margin-bottom: 16px; border-radius: 14px; } }
+        /* Galeria Instagram — masonry compacto (5 colunas desktop) + carousel com dots */
+        .ig-masonry { columns: 3; column-gap: 6px; }
+        @media (min-width: 768px) { .ig-masonry { columns: 5; column-gap: 10px; } }
+        .ig-item { position: relative; display: block; overflow: hidden; border-radius: 8px; background: #111; break-inside: avoid; margin-bottom: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+        @media (min-width: 768px) { .ig-item { margin-bottom: 10px; border-radius: 10px; } }
         .ig-item img { width: 100%; display: block; transition: transform 700ms cubic-bezier(.22,.61,.36,1); }
         @media (hover: hover) { .ig-item:hover img { transform: scale(1.06); } }
-        .ig-cap { position: absolute; inset-inline: 0; bottom: 0; padding: 1.4rem 0.85rem 0.7rem; background: linear-gradient(transparent, rgba(0,0,0,0.82)); color: #fff; font-size: 0.72rem; line-height: 1.35; transform: translateY(101%); transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
+        .ig-cap { position: absolute; inset-inline: 0; bottom: 0; padding: 1rem 0.65rem 0.5rem; background: linear-gradient(transparent, rgba(0,0,0,0.82)); color: #fff; font-size: 0.68rem; line-height: 1.35; transform: translateY(101%); transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
         @media (hover: hover) { .ig-item:hover .ig-cap { transform: translateY(0); } }
         @media (hover: none) { .ig-cap { display: none; } }
-        .ig-play { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
-        .ig-skel { display: block; width: 100%; border-radius: 12px; margin-bottom: 8px; break-inside: avoid; background: linear-gradient(100deg, #141414 30%, #1f1f1f 50%, #141414 70%); background-size: 200% 100%; animation: igShim 1.3s linear infinite; }
-        @media (min-width: 768px) { .ig-skel { margin-bottom: 16px; border-radius: 14px; } }
+        .ig-play { position: absolute; top: 7px; right: 7px; width: 22px; height: 22px; border-radius: 50%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 9px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+        .ig-skel { display: block; width: 100%; border-radius: 8px; margin-bottom: 6px; break-inside: avoid; background: linear-gradient(100deg, #141414 30%, #1f1f1f 50%, #141414 70%); background-size: 200% 100%; animation: igShim 1.3s linear infinite; }
+        @media (min-width: 768px) { .ig-skel { margin-bottom: 10px; border-radius: 10px; } }
+        /* Carousel / dots */
+        .ig-carousel { overflow: hidden; }
+        .ig-pages { display: flex; transition: transform .5s cubic-bezier(.22,.61,.36,1); }
+        .ig-page { flex: 0 0 100%; }
+        .ig-dots { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 20px; }
+        .ig-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.2); border: none; cursor: pointer; padding: 0; transition: background .3s, transform .3s; }
+        .ig-dot.active { background: #C6A868; transform: scale(1.3); }
+        .ig-dot:hover:not(.active) { background: rgba(198,168,104,0.5); }
         @keyframes igShim { to { background-position: -200% 0; } }
         .ig-item { cursor: pointer; }
         /* Lightbox da galeria */
@@ -615,17 +623,32 @@
 
     <!-- GALERIA -->
     <section id="galeria" class="cv-auto py-16 md:py-24 bg-[#0a0a0a] text-white">
-        <div class="max-w-7xl mx-auto px-6 mb-8 md:mb-12 flex flex-col md:flex-row justify-between items-end">
+        <div class="max-w-7xl mx-auto px-6 mb-6 md:mb-10 flex flex-col md:flex-row justify-between items-end">
             <div><h2 class="text-2xl md:text-5xl font-luxury font-black mb-2">O PADRÃO <span class="text-[#C6A868]">SHINE</span></h2><p class="text-gray-400 font-tech uppercase text-xs md:text-sm">Projetos entregues. Sem filtros.</p></div>
-            <a href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me" class="hidden md:flex items-center gap-2 text-[#C6A868] font-bold uppercase text-xs hover:text-white transition">Ver Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></a>
+            <a href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me" class="hidden md:flex items-center gap-2 text-[#C6A868] font-bold uppercase text-xs hover:text-white transition">Ver no Instagram <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
         </div>
-        <div id="ig-masonry" class="ig-masonry max-w-7xl mx-auto px-2 md:px-6">
-            <span class="ig-skel" style="height:240px"></span>
-            <span class="ig-skel" style="height:340px"></span>
-            <span class="ig-skel" style="height:200px"></span>
-            <span class="ig-skel" style="height:300px"></span>
-            <span class="ig-skel" style="height:180px"></span>
-            <span class="ig-skel" style="height:280px"></span>
+        <!-- Dots de navegação (stories) -->
+        <div id="ig-dots" class="ig-dots" aria-label="Navegar pelos projetos">
+            <button class="ig-dot active" data-page="0" aria-label="Página 1"></button>
+            <button class="ig-dot" data-page="1" aria-label="Página 2"></button>
+            <button class="ig-dot" data-page="2" aria-label="Página 3"></button>
+        </div>
+        <!-- Carousel -->
+        <div class="ig-carousel max-w-7xl mx-auto px-2 md:px-6 mt-4">
+            <div id="ig-pages" class="ig-pages">
+                <div id="ig-masonry" class="ig-page ig-masonry">
+                    <span class="ig-skel" style="height:160px"></span>
+                    <span class="ig-skel" style="height:220px"></span>
+                    <span class="ig-skel" style="height:130px"></span>
+                    <span class="ig-skel" style="height:180px"></span>
+                    <span class="ig-skel" style="height:150px"></span>
+                    <span class="ig-skel" style="height:190px"></span>
+                    <span class="ig-skel" style="height:120px"></span>
+                    <span class="ig-skel" style="height:200px"></span>
+                </div>
+                <div id="ig-masonry-2" class="ig-page ig-masonry"></div>
+                <div id="ig-masonry-3" class="ig-page ig-masonry"></div>
+            </div>
         </div>
     </section>
 
@@ -1044,31 +1067,64 @@
         return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
       });
     }
-    function render(items) {
-      box.innerHTML = items.map(function (m) {
-        if (!m.image) return '';
-        var play = m.type === 'VIDEO' ? '<span class="ig-play">▶</span>' : '';
-        var line = firstLine(m.caption);
-        var cap = line ? '<span class="ig-cap">' + esc(line) + '</span>' : '';
-        return '<a class="ig-item" href="' + esc(m.permalink) + '" target="_blank" rel="noopener noreferrer me"'
-          + ' data-id="' + esc(m.id || m.permalink) + '" data-img="' + esc(m.image) + '"'
-          + ' data-perma="' + esc(m.permalink) + '" data-cap="' + esc(m.caption || '') + '">'
-          + '<img src="' + esc(m.image) + '" loading="lazy" decoding="async" alt="Projeto Shine Cortinas">'
-          + play + cap + '</a>';
-      }).join('');
+    var PAGE_SIZE = 8;
+    var currentPage = 0;
+    var allItems = [];
+
+    function buildItem(m) {
+      if (!m.image) return '';
+      var play = m.type === 'VIDEO' ? '<span class="ig-play">▶</span>' : '';
+      var line = firstLine(m.caption);
+      var cap = line ? '<span class="ig-cap">' + esc(line) + '</span>' : '';
+      return '<a class="ig-item" href="' + esc(m.permalink) + '" target="_blank" rel="noopener noreferrer me"'
+        + ' data-id="' + esc(m.id || m.permalink) + '" data-img="' + esc(m.image) + '"'
+        + ' data-perma="' + esc(m.permalink) + '" data-cap="' + esc(m.caption || '') + '">'
+        + '<img src="' + esc(m.image) + '" loading="lazy" decoding="async" alt="Projeto Shine Cortinas">'
+        + play + cap + '</a>';
     }
-    // Clique abre o lightbox (em vez de pular direto pro Instagram)
-    box.addEventListener('click', function (e) {
-      var a = e.target.closest('.ig-item');
-      if (!a) return;
-      e.preventDefault();
-      openIgLightbox({
-        id: a.getAttribute('data-id'),
-        image: a.getAttribute('data-img'),
-        permalink: a.getAttribute('data-perma'),
-        caption: a.getAttribute('data-cap')
+
+    function fillPage(pageEl, items) {
+      if (!pageEl) return;
+      pageEl.innerHTML = items.map(buildItem).join('');
+    }
+
+    function render(items) {
+      allItems = items;
+      var p1 = items.slice(0, PAGE_SIZE);
+      var p2 = items.slice(PAGE_SIZE, PAGE_SIZE * 2);
+      var p3 = items.slice(PAGE_SIZE * 2, PAGE_SIZE * 3);
+      fillPage(document.getElementById('ig-masonry'), p1);
+      fillPage(document.getElementById('ig-masonry-2'), p2);
+      fillPage(document.getElementById('ig-masonry-3'), p3);
+      // mostra/oculta dots conforme número de páginas disponíveis
+      var dots = document.querySelectorAll('#ig-dots .ig-dot');
+      dots[1].style.display = p2.length ? '' : 'none';
+      dots[2].style.display = p3.length ? '' : 'none';
+      // ativa delegação de clique nos itens
+      ['ig-masonry','ig-masonry-2','ig-masonry-3'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('click', function(e) {
+          var a = e.target.closest('.ig-item');
+          if (!a) return;
+          e.preventDefault();
+          openIgLightbox({ id: a.getAttribute('data-id'), image: a.getAttribute('data-img'), permalink: a.getAttribute('data-perma'), caption: a.getAttribute('data-cap') });
+        });
       });
+    }
+
+    // Navegação por dots (stories)
+    function goToPage(n) {
+      var pages = document.getElementById('ig-pages');
+      if (!pages) return;
+      currentPage = n;
+      pages.style.transform = 'translateX(-' + (n * 100) + '%)';
+      document.querySelectorAll('#ig-dots .ig-dot').forEach(function(d, i) { d.classList.toggle('active', i === n); });
+    }
+    document.querySelectorAll('#ig-dots .ig-dot').forEach(function(dot) {
+      dot.addEventListener('click', function() { goToPage(parseInt(this.getAttribute('data-page'))); });
     });
+
+    // Clique no container original (delegação já adicionada no render)
     fetch('/api/instagram')
       .then(function (r) { return r.json(); })
       .then(function (d) {
