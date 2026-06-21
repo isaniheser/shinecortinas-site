@@ -400,8 +400,14 @@
         .ig-lb-dialog { position: relative; z-index: 1; display: flex; flex-direction: column; max-width: 980px; width: 100%; max-height: 94vh; background: #0e0e0e; border: 1px solid rgba(198,168,104,0.25); border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.65); animation: igLbIn .3s cubic-bezier(.22,.61,.36,1); }
         @media (min-width: 860px) { .ig-lb-dialog { flex-direction: row; } }
         @keyframes igLbIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
-        .ig-lb-media { background: #000; display: flex; align-items: center; justify-content: center; flex: 1 1 58%; min-height: 0; }
-        .ig-lb-media img { width: 100%; height: 100%; max-height: 94vh; object-fit: contain; display: block; }
+        .ig-lb-media { position: relative; background: #000; display: flex; align-items: center; justify-content: center; flex: 1 1 58%; min-height: 0; }
+        .ig-lb-stage { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; min-height: 0; }
+        .ig-lb-stage img, .ig-lb-stage video { width: 100%; height: 100%; max-height: 94vh; object-fit: contain; display: block; background: #000; }
+        .ig-lb-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 4; width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(0,0,0,0.5); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; }
+        .ig-lb-arrow:hover { background: rgba(198,168,104,0.9); color: #000; }
+        .ig-lb-arrow.prev { left: 10px; } .ig-lb-arrow.next { right: 10px; }
+        .ig-lb-count { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 4; background: rgba(0,0,0,0.55); color: #fff; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+        .ig-multi { font-size: 11px; }
         .ig-lb-panel { flex: 1 1 42%; display: flex; flex-direction: column; padding: 1.5rem 1.4rem; min-width: 0; }
         @media (min-width: 860px) { .ig-lb-panel { max-width: 360px; } }
         .ig-lb-head { display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem; }
@@ -1052,6 +1058,7 @@
 
   // Galeria do Instagram (masonry) — puxa os posts reais via /api/instagram.
   // Se a API falhar, cai para fotos do próprio repositório (nunca fica vazio).
+  var igAllItems = [];
   (function loadInstaHome() {
     var box = document.getElementById('ig-masonry');
     if (!box) return;
@@ -1074,16 +1081,17 @@
       });
     }
     function render(items) {
-      box.innerHTML = items.slice(0, 18).map(function (m) {
+      igAllItems = items.slice(0, 18);
+      box.innerHTML = igAllItems.map(function (m, i) {
         if (!m.image) return '';
-        var play = m.type === 'VIDEO' ? '<span class="ig-play">▶</span>' : '';
+        // marca ícone: vídeo (▶) ou carrossel (▢)
+        var badge = m.type === 'VIDEO' ? '<span class="ig-play">▶</span>'
+          : (m.type === 'CAROUSEL_ALBUM' ? '<span class="ig-play ig-multi">▢</span>' : '');
         var line = firstLine(m.caption);
         var cap = line ? '<span class="ig-cap">' + esc(line) + '</span>' : '';
-        return '<a class="ig-item" href="' + esc(m.permalink) + '" target="_blank" rel="noopener noreferrer me"'
-          + ' data-id="' + esc(m.id || m.permalink) + '" data-img="' + esc(m.image) + '"'
-          + ' data-perma="' + esc(m.permalink) + '" data-cap="' + esc(m.caption || '') + '">'
+        return '<a class="ig-item" href="' + esc(m.permalink) + '" target="_blank" rel="noopener noreferrer me" data-idx="' + i + '">'
           + '<img src="' + esc(m.image) + '" loading="lazy" decoding="async" alt="Projeto Shine Cortinas">'
-          + play + cap + '</a>';
+          + badge + cap + '</a>';
       }).join('');
       buildStories(items);
     }
@@ -1092,7 +1100,7 @@
       var a = e.target.closest('.ig-item');
       if (!a) return;
       e.preventDefault();
-      openIgLightbox({ id: a.getAttribute('data-id'), image: a.getAttribute('data-img'), permalink: a.getAttribute('data-perma'), caption: a.getAttribute('data-cap') });
+      openIgLightbox(parseInt(a.getAttribute('data-idx'), 10));
     });
 
     // ── Destaques / Stories ──
@@ -1176,14 +1184,52 @@
   })();
 
   // Lightbox da galeria: foto ampliada + legenda + curtir (local) + ir ao Instagram
-  function openIgLightbox(item) {
+  var lbSlides = [];
+  var lbSlide = 0;
+  function lbStopVideos() {
+    var stage = document.querySelector('#ig-lightbox .ig-lb-stage');
+    if (stage) stage.querySelectorAll('video').forEach(function (v) { try { v.pause(); } catch (e) {} });
+  }
+  function lbEsc(s) { return String(s == null ? '' : s).replace(/"/g, '&quot;'); }
+  function lbRenderSlide() {
+    var stage = document.querySelector('#ig-lightbox .ig-lb-stage');
+    if (!stage) return;
+    var s = lbSlides[lbSlide] || {};
+    if (s.type === 'VIDEO' && s.video) {
+      stage.innerHTML = '<video src="' + lbEsc(s.video) + '" poster="' + lbEsc(s.image) + '" controls autoplay playsinline preload="metadata"></video>';
+      var v = stage.querySelector('video');
+      if (v) v.play().catch(function () {});
+    } else {
+      stage.innerHTML = '<img src="' + lbEsc(s.image) + '" alt="Projeto Shine Cortinas">';
+    }
+    var multi = lbSlides.length > 1;
+    var prev = document.querySelector('#ig-lightbox .ig-lb-arrow.prev');
+    var next = document.querySelector('#ig-lightbox .ig-lb-arrow.next');
+    var count = document.querySelector('#ig-lightbox .ig-lb-count');
+    if (prev) prev.style.display = multi ? '' : 'none';
+    if (next) next.style.display = multi ? '' : 'none';
+    if (count) { count.style.display = multi ? '' : 'none'; count.textContent = (lbSlide + 1) + ' / ' + lbSlides.length; }
+  }
+  function lbGo(d) {
+    if (lbSlides.length < 2) return;
+    lbStopVideos();
+    lbSlide = (lbSlide + d + lbSlides.length) % lbSlides.length;
+    lbRenderSlide();
+  }
+  function openIgLightbox(idx) {
+    var item = igAllItems[idx];
+    if (!item) return;
     var lb = document.getElementById('ig-lightbox');
     if (!lb) return;
-    var img = document.getElementById('ig-lb-img');
     var cap = document.getElementById('ig-lb-caption');
     var open = document.getElementById('ig-lb-open');
     var like = document.getElementById('ig-lb-like');
-    img.src = item.image;
+    // Carrossel: usa os filhos; senão, um único slide (foto ou vídeo)
+    lbSlides = (item.type === 'CAROUSEL_ALBUM' && item.children && item.children.length)
+      ? item.children
+      : [{ type: item.type, image: item.image, video: item.video }];
+    lbSlide = 0;
+    lbRenderSlide();
     cap.textContent = item.caption || '';
     open.href = item.permalink || 'https://www.instagram.com/shinecortinas/';
     // estado da curtida (salvo no aparelho)
@@ -1208,19 +1254,27 @@
   function closeIgLightbox() {
     var lb = document.getElementById('ig-lightbox');
     if (!lb) return;
+    lbStopVideos();
     lb.classList.remove('open');
     lb.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('overflow-hidden');
-    var img = document.getElementById('ig-lb-img');
-    if (img) img.src = '';
+    var stage = lb.querySelector('.ig-lb-stage');
+    if (stage) stage.innerHTML = '';
   }
   function bindLightbox() {
     var lb = document.getElementById('ig-lightbox');
     if (!lb) return;
     lb.querySelector('.ig-lb-back').addEventListener('click', closeIgLightbox);
     lb.querySelector('.ig-lb-close').addEventListener('click', closeIgLightbox);
+    var prev = lb.querySelector('.ig-lb-arrow.prev');
+    var next = lb.querySelector('.ig-lb-arrow.next');
+    if (prev) prev.addEventListener('click', function () { lbGo(-1); });
+    if (next) next.addEventListener('click', function () { lbGo(1); });
     document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
       if (e.key === 'Escape') closeIgLightbox();
+      else if (e.key === 'ArrowRight') lbGo(1);
+      else if (e.key === 'ArrowLeft') lbGo(-1);
     });
   }
   // O HTML do lightbox vem depois deste script; garante que já exista no DOM.
@@ -1237,7 +1291,12 @@
       <div class="ig-lb-back"></div>
       <div class="ig-lb-dialog" role="dialog" aria-modal="true" aria-label="Projeto Shine Cortinas">
         <button class="ig-lb-close" type="button" aria-label="Fechar">&times;</button>
-        <div class="ig-lb-media"><img id="ig-lb-img" src="" alt="Projeto Shine Cortinas"></div>
+        <div class="ig-lb-media">
+          <div class="ig-lb-stage"></div>
+          <button class="ig-lb-arrow prev" type="button" aria-label="Anterior" style="display:none">‹</button>
+          <button class="ig-lb-arrow next" type="button" aria-label="Próximo" style="display:none">›</button>
+          <span class="ig-lb-count" style="display:none"></span>
+        </div>
         <div class="ig-lb-panel">
           <div class="ig-lb-head">
             <img class="ig-lb-avatar" src="logo-shine.avif" alt="Shine Cortinas" width="38" height="38">
