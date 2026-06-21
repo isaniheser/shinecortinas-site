@@ -362,6 +362,36 @@
         .ig-play { position: absolute; top: 6px; right: 6px; width: 20px; height: 20px; border-radius: 50%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 8px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
         .ig-skel { aspect-ratio: 1; border-radius: 8px; background: linear-gradient(100deg, #141414 30%, #1f1f1f 50%, #141414 70%); background-size: 200% 100%; animation: igShim 1.3s linear infinite; }
         @keyframes igShim { to { background-position: -200% 0; } }
+        /* Círculos de story (destaques) */
+        .ig-stories { display: flex; gap: 18px; overflow-x: auto; padding: 0 24px 6px; max-width: 80rem; margin: 0 auto 30px; scrollbar-width: none; }
+        .ig-stories::-webkit-scrollbar { display: none; }
+        .ig-story-c { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; width: 76px; background: none; border: none; padding: 0; }
+        .ig-story-ring { width: 72px; height: 72px; border-radius: 50%; padding: 2.5px; background: linear-gradient(135deg, #DFBD69, #FFF0C6, #B89648); flex-shrink: 0; transition: transform .25s; }
+        .ig-story-c:hover .ig-story-ring { transform: scale(1.06); }
+        .ig-story-c.seen .ig-story-ring { background: #3a3a3a; }
+        .ig-story-ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid #0a0a0a; display: block; }
+        .ig-story-label { font-size: 0.62rem; color: #cfc7b8; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 76px; }
+        /* Visualizador de story (tela cheia) */
+        .sv { position: fixed; inset: 0; z-index: 3000; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.93); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+        .sv.open { display: flex; }
+        .sv-card { position: relative; width: min(420px, 94vw); height: min(92vh, 740px); border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
+        .sv-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .sv-scrim { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 20%, transparent 52%, rgba(0,0,0,0.92) 100%); }
+        .sv-bars { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; gap: 4px; z-index: 5; }
+        .sv-bar { flex: 1; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.3); overflow: hidden; }
+        .sv-bar > i { display: block; height: 100%; width: 0; background: #fff; }
+        .sv-bar.done > i { width: 100%; }
+        .sv-bar.active > i { animation: svFill 5s linear forwards; }
+        @keyframes svFill { from { width: 0; } to { width: 100%; } }
+        .sv-head { position: absolute; top: 24px; left: 14px; right: 14px; z-index: 5; display: flex; align-items: center; gap: 10px; }
+        .sv-avatar { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid #C6A868; padding: 2px; background: #000; object-fit: contain; }
+        .sv-user { color: #fff; font-weight: 700; font-size: 0.8rem; flex: 1; text-decoration: none; }
+        .sv-close { width: 34px; height: 34px; border-radius: 50%; border: none; background: rgba(0,0,0,0.45); color: #fff; font-size: 20px; cursor: pointer; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+        .sv-cap { position: absolute; left: 16px; right: 16px; bottom: 72px; z-index: 3; color: #fff; font-size: 0.82rem; line-height: 1.5; max-height: 28%; overflow-y: auto; text-shadow: 0 1px 6px rgba(0,0,0,0.7); pointer-events: none; }
+        .sv-cta { position: absolute; left: 16px; right: 16px; bottom: 18px; z-index: 5; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 12px; background: linear-gradient(135deg,#DFBD69,#B89648); color: #000; font-weight: 700; font-size: 0.74rem; text-transform: uppercase; letter-spacing: .04em; text-decoration: none; }
+        .sv-nav { position: absolute; top: 60px; bottom: 64px; width: 38%; z-index: 4; cursor: pointer; }
+        .sv-prev { left: 0; }
+        .sv-next { right: 0; }
         .ig-item { cursor: pointer; }
         /* Lightbox da galeria */
         .ig-lb { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 3vh 3vw; }
@@ -618,6 +648,8 @@
             <div><h2 class="text-2xl md:text-5xl font-luxury font-black mb-2">O PADRÃO <span class="text-[#C6A868]">SHINE</span></h2><p class="text-gray-400 font-tech uppercase text-xs md:text-sm">Projetos entregues. Sem filtros.</p></div>
             <a href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me" class="hidden md:flex items-center gap-2 text-[#C6A868] font-bold uppercase text-xs hover:text-white transition">Ver no Instagram <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
         </div>
+        <!-- Destaques (stories) -->
+        <div id="ig-stories" class="ig-stories" aria-label="Destaques"></div>
         <div id="ig-masonry" class="ig-grid-uniform max-w-7xl mx-auto px-4 md:px-6">
             <span class="ig-skel"></span><span class="ig-skel"></span><span class="ig-skel"></span>
             <span class="ig-skel"></span><span class="ig-skel"></span><span class="ig-skel"></span>
@@ -1053,6 +1085,7 @@
           + '<img src="' + esc(m.image) + '" loading="lazy" decoding="async" alt="Projeto Shine Cortinas">'
           + play + cap + '</a>';
       }).join('');
+      buildStories(items);
     }
     // Clique abre o lightbox (delegação)
     box.addEventListener('click', function (e) {
@@ -1061,6 +1094,77 @@
       e.preventDefault();
       openIgLightbox({ id: a.getAttribute('data-id'), image: a.getAttribute('data-img'), permalink: a.getAttribute('data-perma'), caption: a.getAttribute('data-cap') });
     });
+
+    // ── Destaques / Stories ──
+    var storyItems = [];
+    var svIndex = 0, svTimer = null;
+    function buildStories(items) {
+      var row = document.getElementById('ig-stories');
+      if (!row) return;
+      storyItems = items.slice(0, 10);
+      if (!storyItems.length) { row.style.display = 'none'; return; }
+      row.innerHTML = storyItems.map(function (m, i) {
+        var label = firstLine(m.caption) || 'Projeto';
+        label = label.length > 14 ? label.slice(0, 13) + '…' : label;
+        return '<button type="button" class="ig-story-c" data-idx="' + i + '">'
+          + '<span class="ig-story-ring"><img src="' + esc(m.image) + '" alt="" loading="lazy"></span>'
+          + '<span class="ig-story-label">' + esc(label) + '</span></button>';
+      }).join('');
+      row.querySelectorAll('.ig-story-c').forEach(function (b) {
+        b.addEventListener('click', function () { openStory(parseInt(b.getAttribute('data-idx'))); });
+      });
+    }
+    function renderBars() {
+      var bars = document.getElementById('sv-bars');
+      if (!bars) return;
+      bars.innerHTML = storyItems.map(function (_, i) {
+        var cls = i < svIndex ? 'sv-bar done' : (i === svIndex ? 'sv-bar active' : 'sv-bar');
+        return '<div class="' + cls + '"><i></i></div>';
+      }).join('');
+    }
+    function showStory(i) {
+      if (i < 0) i = 0;
+      if (i >= storyItems.length) { closeStory(); return; }
+      svIndex = i;
+      var m = storyItems[i];
+      document.getElementById('sv-img').src = m.image;
+      document.getElementById('sv-cap').textContent = (m.caption || '').split('\n')[0] || '';
+      document.getElementById('sv-cta').href = m.permalink || IG;
+      renderBars();
+      var c = document.querySelector('.ig-story-c[data-idx="' + i + '"]');
+      if (c) c.classList.add('seen');
+      if (svTimer) clearTimeout(svTimer);
+      svTimer = setTimeout(function () { showStory(svIndex + 1); }, 5000);
+    }
+    function openStory(i) {
+      var sv = document.getElementById('story-viewer');
+      if (!sv) return;
+      sv.classList.add('open');
+      document.body.classList.add('overflow-hidden');
+      showStory(i);
+    }
+    function closeStory() {
+      var sv = document.getElementById('story-viewer');
+      if (sv) sv.classList.remove('open');
+      document.body.classList.remove('overflow-hidden');
+      if (svTimer) { clearTimeout(svTimer); svTimer = null; }
+    }
+    function bindStory() {
+      var sv = document.getElementById('story-viewer');
+      if (!sv) return;
+      document.getElementById('sv-close').addEventListener('click', closeStory);
+      document.getElementById('sv-next').addEventListener('click', function () { showStory(svIndex + 1); });
+      document.getElementById('sv-prev').addEventListener('click', function () { showStory(svIndex - 1); });
+      document.addEventListener('keydown', function (e) {
+        if (!sv.classList.contains('open')) return;
+        if (e.key === 'Escape') closeStory();
+        else if (e.key === 'ArrowRight') showStory(svIndex + 1);
+        else if (e.key === 'ArrowLeft') showStory(svIndex - 1);
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindStory);
+    else bindStory();
+
     fetch('/api/instagram')
       .then(function (r) { return r.json(); })
       .then(function (d) {
@@ -1152,6 +1256,27 @@
             </a>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Visualizador de Story (destaques) -->
+    <div id="story-viewer" class="sv" aria-hidden="true">
+      <div class="sv-card">
+        <img id="sv-img" class="sv-img" src="" alt="Projeto Shine Cortinas">
+        <div class="sv-scrim"></div>
+        <div class="sv-nav sv-prev" id="sv-prev" aria-label="Anterior"></div>
+        <div class="sv-nav sv-next" id="sv-next" aria-label="Próximo"></div>
+        <div class="sv-bars" id="sv-bars"></div>
+        <div class="sv-head">
+          <img class="sv-avatar" src="logo-shine.avif" alt="Shine Cortinas" width="34" height="34">
+          <a class="sv-user" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">shinecortinas</a>
+          <button class="sv-close" id="sv-close" type="button" aria-label="Fechar">&times;</button>
+        </div>
+        <p id="sv-cap" class="sv-cap"></p>
+        <a id="sv-cta" class="sv-cta" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          Ver no Instagram
+        </a>
       </div>
     </div>
 
