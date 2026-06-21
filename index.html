@@ -368,18 +368,39 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="relative min-h-[100svh] flex flex-col items-center justify-start md:justify-center bg-black font-tech overflow-hidden hero-safe-top pb-14 md:pb-20">
-        <div class="absolute inset-0 z-0"><img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover object-center opacity-90 scale-105" width="1920" height="1080" fetchpriority="high" decoding="async" /><div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.41), rgba(0,0,0,0.47) 55%, rgba(0,0,0,0.57));"></div></div>
-        <div class="relative z-10 text-center px-4 animate-fade-in-up w-full max-w-4xl flex flex-col items-center">
-            <div class="mb-4 transform hover:scale-105 transition duration-700 cursor-pointer"><img src="logo-shine.avif" alt="Logo Shine Cortinas 3D" width="400" height="400" fetchpriority="high" decoding="async" class="w-64 md:w-96 h-auto drop-shadow-2xl mx-auto" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';"><div id="logo-fallback" style="display:none;"><span class="font-logo text-5xl md:text-8xl text-[#C6A868]">SHINE</span></div></div>
-            <div class="h-px w-16 md:w-24 bg-[#C6A868] mx-auto mb-4 opacity-50 shadow-[0_0_10px_#C6A868]"></div>
-            <h1 class="font-luxury text-white text-3xl md:text-5xl font-black mb-4 md:mb-5 leading-tight drop-shadow-lg">O Seu Ambiente Ainda Não É O Que Você Imaginou.</h1>
-            <h2 class="font-luxury italic text-[#C6A868] text-xl md:text-4xl mb-6 tracking-wide">A Shine é a Referência em Cortinas e Persianas no Sul Fluminense — e Transforma Qualquer Ambiente Em Exatamente O Que Você Merece.</h2>
-            <p class="text-white text-sm md:text-base font-semibold max-w-xs md:max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed drop-shadow-md opacity-95">Cada ambiente conta uma história. Quando a cortina é errada — o sol invade, os móveis desbotam, o espaço perde vida. A Shine vai até a sua casa em Volta Redonda, Barra Mansa, Resende e em toda a região Sul Fluminense, mede com precisão milimétrica, apresenta as opções certas para o seu ambiente e entrega uma <span class="text-[#C6A868]">transformação</span> que você vai sentir todo dia — sem esforço, sem preocupação, sem surpresa.</p>
-            <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="gold-bg-gradient text-black text-sm md:text-base font-black px-8 py-4 md:px-10 md:py-5 rounded hover:scale-105 transition shadow-xl flex items-center justify-center gap-3 w-11/12 md:w-fit">Quero Minha Consultoria Gratuita →</a>
-            <p class="text-[11px] md:text-xs uppercase tracking-[0.18em] text-gray-300 mt-4">Um consultor especialista vai até a sua casa — sem compromisso, sem pressão, no seu tempo.</p>
+    <!-- HERO EDITORIAL (SCRIM LATERAL) -->
+    <section class="relative min-h-[100svh] grid md:grid-cols-2 bg-black overflow-hidden">
+      <!-- COLUNA ESQUERDA: scrim escuro + texto -->
+      <div class="relative z-10 flex flex-col justify-center px-8 md:px-14 lg:px-20 pt-32 md:pt-0 pb-16 md:pb-0" style="background:rgba(0,0,0,0.82);">
+        <!-- Linha dourada + badge -->
+        <div class="flex items-center gap-4 mb-7">
+          <div style="width:40px;height:1px;background:#C6A868;opacity:0.7;flex-shrink:0;"></div>
+          <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;color:#C6A868;text-transform:uppercase;">Volta Redonda · Sul Fluminense</span>
         </div>
+        <!-- H1 -->
+        <h1 class="font-luxury text-white font-black leading-tight mb-6" style="font-size:clamp(2rem,4vw,3.5rem);">
+          O Seu Ambiente<br>Ainda Não É O Que<br>Você <em class="gold-gradient not-italic">Imaginou.</em>
+        </h1>
+        <!-- Subtítulo italic -->
+        <p class="font-luxury italic mb-5 leading-relaxed" style="color:#C6A868;font-size:clamp(1rem,1.6vw,1.2rem);">A Shine é a referência em cortinas e persianas — e transforma qualquer ambiente em exatamente o que você merece.</p>
+        <!-- Corpo -->
+        <p class="text-gray-300 mb-9 leading-relaxed" style="font-size:clamp(0.85rem,1.1vw,1rem);">Vamos até a sua casa, medimos com precisão milimétrica e entregamos uma transformação que você sente todo dia — sem esforço, sem surpresa.</p>
+        <!-- CTA -->
+        <div class="flex flex-col items-start gap-4">
+          <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="gold-bg-gradient text-black font-black px-10 py-4 hover:scale-105 transition shadow-xl" style="font-size:0.9rem;letter-spacing:0.04em;">Consultoria Gratuita →</a>
+          <p style="font-size:10px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.18em;">&#9632; Sem compromisso · No seu tempo</p>
+        </div>
+      </div>
+      <!-- COLUNA DIREITA: imagem que respira -->
+      <div class="relative min-h-[340px] md:min-h-0">
+        <img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida - ShineCortinas" class="absolute inset-0 w-full h-full object-cover" style="object-position:center;" width="1920" height="1080" fetchpriority="high" decoding="async">
+        <!-- Logo sobreposto à foto (canto superior direito) -->
+        <div class="absolute top-8 right-8 z-10">
+          <img src="logo-shine.avif" alt="Logo ShineCortinas" width="200" height="200" decoding="async" class="w-24 md:w-32 h-auto drop-shadow-2xl" onerror="this.style.display='none'">
+        </div>
+        <!-- Gradiente sutil esquerda da foto para fundir com scrim -->
+        <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(0,0,0,0.35) 0%,transparent 40%);"></div>
+      </div>
     </section>
 
     <!-- FAIXA DE CONFIANÇA -->
@@ -577,7 +598,7 @@
         <div class="max-w-3xl mx-auto px-6">
             <h2 class="text-2xl md:text-3xl font-black uppercase mb-8 md:mb-10 text-center">Dúvidas Frequentes</h2>
             <div class="space-y-4" id="faq-container">
-                <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Deve ser caro demais pra mim...</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">A maioria dos nossos clientes pensou exatamente isso antes de nos contatar — e se surpreendeu. Trabalhamos para que seu projeto caiba na sua realidade. Você pode levar agora e dividir em até 12x no cartão. O melhor: a consultoria na sua casa é completamente gratuita e sem compromisso. Você só decide se quiser.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Quero ver como fica no meu orçamento</a></div></div></div>
+                <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Como funciona o investimento num projeto sob medida?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">Cada projeto é único, então não há tabela de preços fixa — o valor depende do ambiente, dos tecidos escolhidos e do tipo de instalação. Na consultoria em domicílio (totalmente gratuita), o Isani apresenta as opções e as condições, incluindo a comodidade de parcelar em até 12x. Você decide com calma, sem compromisso.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Agendar minha consultoria gratuita</a></div></div></div>
                 <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Vocês atendem na minha cidade?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">Sim. Atendemos toda a região Sul Fluminense — Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Paulo de Frontin e Miguel Pereira. Nosso consultor vai até você.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Agendar visita na minha cidade</a></div></div></div>
                 <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Quanto tempo leva para instalar?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">Na grande maioria dos projetos, a instalação é concluída no mesmo dia. Nossa equipe chega, trabalha com limpeza e sai deixando seu ambiente transformado — sem entulho, sem rastro, sem preocupação.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Quero agendar minha consultoria</a></div></div></div>
                 <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">O blackout realmente bloqueia 100% da luz?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">Sim. Nossa linha Blackout Técnico utiliza tecido com película de silicone que bloqueia raios UVA/UVB e reduz ruído. Com as guias laterais (Sistema Box), garantimos 100% de vedação luminosa — escuridão real, não aproximada.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Quero conhecer o Blackout Técnico</a></div></div></div>
@@ -618,7 +639,7 @@
                             <div class="bg-[#F8F9FA] p-8 border border-gray-200 rounded">
                                 <div class="flex items-center gap-3 mb-5"><div class="w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600 text-lg">C</div><div><p class="font-bold text-sm">Camila & Rafael</p><p class="text-[10px] text-gray-400">Professores | Via Google</p></div></div>
                                 <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Achei que ia ser caro demais, fui lá sem expectativa. Parcelei, ficou dentro do orçamento e o resultado foi melhor do que eu imaginava. O Isani foi em casa, mediu tudo, não tive que me preocupar com nada."</p>
+                                <p class="text-gray-600 text-base leading-relaxed">"Tínhamos reforma em andamento e não queríamos mais um fornecedor que gerasse retrabalho. O Isani veio em casa, mediu com calma, indicou o tecido certo para a luz da sala — e o resultado superou o que havíamos imaginado. Dividimos em 10x e não nos preocupamos com mais nada."</p>
                             </div>
                         </div>
 
@@ -627,7 +648,7 @@
                                 <p class="text-[#C6A868] text-[10px] font-black uppercase tracking-widest mb-3">⭐ Depoimento em Destaque</p>
                                 <div class="flex items-center gap-3 mb-5"><div class="w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600 text-lg">F</div><div><p class="font-bold text-sm">Fernanda Costa</p><p class="text-[10px] text-gray-400">Funcionária Pública | Via Google</p></div></div>
                                 <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Fiquei semanas olhando o site sem coragem de mandar mensagem — como não tinha preço, imaginei que era caro demais pra mim. Me enganei completamente. Parcelei, coube no meu bolso e o resultado me deixou sem palavras. Não devia ter esperado tanto tempo."</p>
+                                <p class="text-gray-600 text-base leading-relaxed">"Fiquei semanas admirando os projetos no site antes de entrar em contato. O Isani veio em casa, o mostruário de tecidos me encantou logo de cara e o resultado ficou além do que eu imaginava. Parcelei com tranquilidade e só me arrependi de não ter agendado antes."</p>
                             </div>
                         </div>
 
@@ -635,7 +656,7 @@
                             <div class="bg-[#F8F9FA] p-8 border border-gray-200 rounded">
                                 <div class="flex items-center gap-3 mb-5"><div class="w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600 text-lg">T</div><div><p class="font-bold text-sm">Thiago & Bruna</p><p class="text-[10px] text-gray-400">Via Google</p></div></div>
                                 <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Minha sala ficou igual às casas que a gente vê em novela, pagando muito menos do que eu esperava. O Isani veio em casa, trouxe o mostruário, a gente escolheu tudo com calma. Foi atendimento VIP do começo ao fim — e eu nunca me senti tratado como cliente pequeno."</p>
+                                <p class="text-gray-600 text-base leading-relaxed">"A sala passou a ter aquele acabamento que a gente vê em projetos de arquitetura — luz na medida, tecido com caimento perfeito, sem uma ruga. O Isani veio em casa, trouxe o mostruário e a gente escolheu tudo com calma. Atendimento atencioso e cuidadoso do começo ao fim."</p>
                             </div>
                         </div>
 

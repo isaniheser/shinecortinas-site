@@ -43,9 +43,21 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
 - **WhatsApp (CTA padrão):**
   `https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.`
   Telefones: (24) 99329-8763 (WhatsApp) e (24) 3338-3069.
-- **Linguagem:** evitar termos elitistas/excludentes ("alto padrão", "premium"
-  no texto visível, "diagnóstico técnico" como CTA). Tom acolhedor: bom ambiente
-  para qualquer bolso, consultoria gratuita, sem pressão, sem robô.
+- **Linguagem — tom refinado e seletivo (DEMONSTRAR, não anunciar):** o público
+  é a família que pode investir num projeto sob medida (não cortina de prateleira).
+  A seleção é feita pela **estética e pelo vocabulário**, jamais por filtro de renda
+  explícito no texto (péssimo para marca e SEO). Marca sofisticada **mostra** o
+  alto padrão — quase nunca escreve a palavra "luxo".
+  - ✅ **Elevar:** "sob medida", "projeto exclusivo", "tecidos selecionados",
+    "curadoria", "acabamento impecável", "caimento perfeito", "requinte",
+    "sofisticação", "rigor", "exclusividade", "investimento que valoriza o imóvel".
+  - ⚠️ **Com parcimônia (no máx. 1x/página):** "alto padrão", "refinado".
+  - ❌ **Proibido (brega/barateia ou excludente):** "premium", "VIP", "de luxo",
+    "white-glove", "status", "elite"; e o enquadramento "povão" — "cabe no bolso",
+    "qualquer bolso", "caro demais", "muito mais barato", "casa de novela".
+  - **Parcelamento (12x): discreto, como conforto.** Entra como comodidade
+    ("a comodidade de parcelar em até 12x"), nunca como argumento de "é baratinho".
+  - Manter: consultoria gratuita, sem pressão, sem robô (acolhimento ≠ povão).
 
 ## Página de referência (template aprovado)
 
