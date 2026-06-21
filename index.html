@@ -19,7 +19,7 @@
     <!-- ========================================== -->
 
     <title>Loja de Cortinas e Persianas em Volta Redonda | ShineCortinas</title>
-    <meta name="description" content="Loja de cortinas e persianas sob medida em Volta Redonda e toda a região Sul Fluminense. A Shine vai até sua casa, mede com precisão e instala. Consultoria gratuita, parcele em até 12x.">
+    <meta name="description" content="Cortinas e persianas sob medida em Volta Redonda e todo o Sul Fluminense. A Shine vai à sua casa, mede com precisão e instala. Consultoria gratuita.">
     <meta name="author" content="Isani Oliveira">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.shinecortinas.com/">
@@ -1140,12 +1140,13 @@
       var sv = document.getElementById('story-viewer');
       if (!sv) return;
       sv.classList.add('open');
+      sv.setAttribute('aria-hidden', 'false');
       document.body.classList.add('overflow-hidden');
       showStory(i);
     }
     function closeStory() {
       var sv = document.getElementById('story-viewer');
-      if (sv) sv.classList.remove('open');
+      if (sv) { sv.classList.remove('open'); sv.setAttribute('aria-hidden', 'true'); }
       document.body.classList.remove('overflow-hidden');
       if (svTimer) { clearTimeout(svTimer); svTimer = null; }
     }
@@ -1201,12 +1202,14 @@
       if (liked) { like.classList.add('pop'); setTimeout(function () { like.classList.remove('pop'); }, 460); }
     };
     lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
     document.body.classList.add('overflow-hidden');
   }
   function closeIgLightbox() {
     var lb = document.getElementById('ig-lightbox');
     if (!lb) return;
     lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('overflow-hidden');
     var img = document.getElementById('ig-lb-img');
     if (img) img.src = '';

@@ -5,6 +5,7 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 /cortinas-volta-redonda  /cidades/volta-redonda/  301
 /faq      /faq/  301
 /faq.html /faq/  301
+/cidades-atendidas/  /cidades-atendidas.html  301
 /portfolio  /portfolio/  301
 /portfolio.html  /portfolio/  301
 /portfolio-collections/*  /portfolio/  301
@@ -14,7 +15,7 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 /produtos-cidade/cortina-romana-em-resende  /cidades/resende/  301
 /produtos-cidade/persiana-vertical-em-barra-mansa  /cidades/barra-mansa/  301
 /produtos-cidade/cortina-em-vassouras  /cidades/vassouras/  301
-/produtos-cidade/*  /cidades-atendidas/  301
+/produtos-cidade/*  /cidades-atendidas.html  301
 
 
 /post/qual-a-altura-ideal-de-uma-cortina /blog/altura-ideal-da-cortina 301!

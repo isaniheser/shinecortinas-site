@@ -265,30 +265,30 @@ html,body{height:100%;overflow:hidden;font-family:'Montserrat',sans-serif;backgr
     <div id="tab-inicio" class="tab-page">
       <!-- Stories strip -->
       <div class="scroll" style="display:flex;gap:14px;overflow-x:auto;padding-bottom:14px;">
-        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(0)">
+        <button type="button" aria-label="Abrir destaque Destaques" style="flex:none;width:70px;text-align:center;background:none;border:none;padding:0;cursor:pointer;" onclick="openStory(0)">
           <div class="s-ring pulse"><div class="s-inner" style="background-image:url('/hero-sala.avif');"></div></div>
           <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Destaques</div>
-        </div>
-        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(1)">
+        </button>
+        <button type="button" aria-label="Abrir destaque Motorizada" style="flex:none;width:70px;text-align:center;background:none;border:none;padding:0;cursor:pointer;" onclick="openStory(1)">
           <div class="s-ring"><div class="s-inner" style="background-image:url('/automacao.avif');"></div></div>
           <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Motorizada</div>
-        </div>
-        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(2)">
+        </button>
+        <button type="button" aria-label="Abrir destaque Madeira" style="flex:none;width:70px;text-align:center;background:none;border:none;padding:0;cursor:pointer;" onclick="openStory(2)">
           <div class="s-ring"><div class="s-inner" style="background-image:url('/madeira.avif');"></div></div>
           <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Madeira</div>
-        </div>
-        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(3)">
+        </button>
+        <button type="button" aria-label="Abrir destaque Blackout" style="flex:none;width:70px;text-align:center;background:none;border:none;padding:0;cursor:pointer;" onclick="openStory(3)">
           <div class="s-ring"><div class="s-inner" style="background-image:url('/blackout.avif');"></div></div>
           <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Blackout</div>
-        </div>
-        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(4)">
+        </button>
+        <button type="button" aria-label="Abrir destaque Linha Puro" style="flex:none;width:70px;text-align:center;background:none;border:none;padding:0;cursor:pointer;" onclick="openStory(4)">
           <div class="s-ring"><div class="s-inner" style="background-image:url('/linha-puro.avif');"></div></div>
           <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Linha Puro</div>
-        </div>
-        <div style="flex:none;width:70px;text-align:center;" onclick="openStory(5)">
+        </button>
+        <button type="button" aria-label="Abrir destaque Antes e Depois" style="flex:none;width:70px;text-align:center;background:none;border:none;padding:0;cursor:pointer;" onclick="openStory(5)">
           <div class="s-ring"><div class="s-inner" style="background-image:url('/cortina-sob-medida.avif');"></div></div>
           <div style="color:#cfc9bc;font-size:10px;font-weight:600;margin-top:6px;">Antes/Depois</div>
-        </div>
+        </button>
       </div>
 
       <!-- Hero card -->
@@ -667,12 +667,14 @@ function openAppLightbox(item) {
   try { likes = JSON.parse(localStorage.getItem('ig-likes') || '{}'); } catch (e) {}
   var liked = !!likes[item.id];
   like.classList.toggle('liked', liked);
+  like.setAttribute('aria-pressed', String(liked));
   like.onclick = function() {
     liked = !liked;
     likes[item.id] = liked;
     if (!liked) delete likes[item.id];
     try { localStorage.setItem('ig-likes', JSON.stringify(likes)); } catch (e) {}
     like.classList.toggle('liked', liked);
+    like.setAttribute('aria-pressed', String(liked));
     if (liked) { like.classList.add('pop'); setTimeout(function() { like.classList.remove('pop'); }, 460); }
   };
   lb.classList.add('open');
@@ -683,6 +685,19 @@ function closeAppLightbox() {
   lb.classList.remove('open');
   document.getElementById('app-lb-img').src = '';
 }
+// Fecha o lightbox tocando fora dos botões (na foto/fundo) ou com Esc
+(function bindAppLb() {
+  var lb = document.getElementById('app-lb');
+  if (!lb) return;
+  lb.addEventListener('click', function(e) {
+    if (e.target === lb || e.target.classList.contains('app-lb-media') || e.target.id === 'app-lb-img') {
+      closeAppLightbox();
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lb.classList.contains('open')) closeAppLightbox();
+  });
+})();
 
 // Init
 showTab('inicio');
