@@ -328,6 +328,9 @@
         .shine-timeline-item:not(:last-child)::after { content: ''; position: absolute; left: 24px; top: 50px; bottom: 0; width: 2px; background: linear-gradient(to bottom, #C6A868 0%, rgba(198,168,104,0.15) 100%); }
         .shine-timeline-num { flex-shrink: 0; width: 50px; height: 50px; background: #C6A868; color: #000; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; z-index: 1; font-family: 'Montserrat', sans-serif; line-height: 1; }
         .shine-timeline-body { padding-top: 0.75rem; }
+        .step-card { position: relative; background: #0e0e0e; border: 1px solid rgba(198,168,104,0.22); border-radius: 18px; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
+        .step-card:hover { border-color: rgba(198,168,104,0.65); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+        .step-card-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(198,168,104,0.55); }
         .nav-glass { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-color: rgba(198,168,104,0.30); }
         .nav-solid { background: rgba(0,0,0,0.65); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-color: rgba(51,51,51,0.8); }
         /* Utilitários ausentes no Tailwind congelado (home) */
@@ -373,15 +376,10 @@
       <!-- Imagem full-bleed (a foto inteira; respira à direita) -->
       <div class="absolute inset-0 z-0">
         <img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover" style="object-position:center right;" width="1920" height="1080" fetchpriority="high" decoding="async">
-        <!-- Degradê lateral: escurece a esquerda, deixa a foto respirar à direita -->
-        <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(8,8,8,0.93) 0%, rgba(8,8,8,0.88) 28%, rgba(10,10,10,0.60) 52%, rgba(10,10,10,0.20) 76%, rgba(10,10,10,0.05) 100%);"></div>
-        <!-- Leve escurecimento topo/base para o menu e o rodapé do hero -->
-        <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, transparent 22%, transparent 78%, rgba(0,0,0,0.30) 100%);"></div>
-      </div>
-
-      <!-- Marca d'água: logo dourado no canto superior direito -->
-      <div class="absolute z-10 hidden md:flex" style="top:7rem;right:3.5rem;">
-        <img src="logo-shine.avif" alt="" aria-hidden="true" width="220" height="220" decoding="async" class="h-auto drop-shadow-2xl" style="width:clamp(7rem,9vw,11rem);opacity:0.96;" onerror="this.style.display='none'">
+        <!-- Degradê lateral suave (mais transparente): escurece só o canto esquerdo p/ legibilidade -->
+        <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(8,8,8,0.72) 0%, rgba(8,8,8,0.58) 26%, rgba(10,10,10,0.32) 50%, rgba(10,10,10,0.08) 74%, rgba(10,10,10,0) 100%);"></div>
+        <!-- Escurecimento topo/base bem leve para o menu -->
+        <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 20%, transparent 82%, rgba(0,0,0,0.18) 100%);"></div>
       </div>
 
       <!-- Texto alinhado à esquerda sobre a faixa escura -->
@@ -440,55 +438,64 @@
 
     <!-- COMO FUNCIONA -->
     <section id="metodo" class="cv-auto py-16 md:py-24 bg-black text-white font-tech border-b border-[#222]">
-        <div class="max-w-3xl mx-auto px-6">
+        <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-12 md:mb-16">
                 <span class="text-xs font-bold uppercase tracking-widest text-[#C6A868] mb-3 block">Simples. Transparente. Sem Surpresa.</span>
                 <h2 class="text-2xl md:text-4xl font-luxury font-black">COMO FUNCIONA<br><span class="text-[#C6A868] italic">O Atendimento Shine</span></h2>
             </div>
-            <div>
-                <div class="shine-timeline-item">
-                    <div class="shine-timeline-num">1</div>
-                    <div class="shine-timeline-body">
-                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Você entra em contato</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">WhatsApp, Instagram ou telefone — em minutos você fala com um consultor de verdade. Sem robô, sem formulário, sem espera.</p>
+            <!-- Passos em grade de cards arredondados: 1→2→3 / 4→5→6 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="step-card p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="shine-timeline-num">1</div>
+                        <span class="step-card-tag">Passo 01</span>
                     </div>
+                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Você entra em contato</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">WhatsApp, Instagram ou telefone — em minutos você fala com um consultor de verdade. Sem robô, sem formulário, sem espera.</p>
                 </div>
-                <div class="shine-timeline-item">
-                    <div class="shine-timeline-num">2</div>
-                    <div class="shine-timeline-body">
-                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Agendamos a visita gratuita</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Nosso consultor vai até a sua casa em Volta Redonda, Barra Mansa, Resende ou onde você estiver — no dia e horário que funcionar pra você.</p>
+                <div class="step-card p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="shine-timeline-num">2</div>
+                        <span class="step-card-tag">Passo 02</span>
                     </div>
+                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Agendamos a visita gratuita</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Nosso consultor vai até a sua casa em Volta Redonda, Barra Mansa, Resende ou onde você estiver — no dia e horário que funcionar pra você.</p>
                 </div>
-                <div class="shine-timeline-item">
-                    <div class="shine-timeline-num">3</div>
-                    <div class="shine-timeline-body">
-                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Medição milimétrica a laser</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Com equipamento profissional, medimos cada ambiente com precisão absoluta. Zero erro. Zero retrabalho. Zero surpresa no resultado final.</p>
+                <div class="step-card p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="shine-timeline-num">3</div>
+                        <span class="step-card-tag">Passo 03</span>
                     </div>
+                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Medição milimétrica a laser</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Com equipamento profissional, medimos cada ambiente com precisão absoluta. Zero erro. Zero retrabalho. Zero surpresa no resultado final.</p>
                 </div>
-                <div class="shine-timeline-item">
-                    <div class="shine-timeline-num">4</div>
-                    <div class="shine-timeline-body">
-                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Projeto + aprovação</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Montamos o projeto completo com os materiais, cores e modelos que você escolheu. Você aprova cada detalhe antes de assinar qualquer coisa.</p>
+                <div class="step-card p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="shine-timeline-num">4</div>
+                        <span class="step-card-tag">Passo 04</span>
                     </div>
+                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Projeto + aprovação</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Montamos o projeto completo com os materiais, cores e modelos que você escolheu. Você aprova cada detalhe antes de assinar qualquer coisa.</p>
                 </div>
-                <div class="shine-timeline-item">
-                    <div class="shine-timeline-num">5</div>
-                    <div class="shine-timeline-body">
-                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Confecção sob medida</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Sua cortina ou persiana é fabricada exclusivamente para o seu ambiente — sem peça genérica, sem adaptação. Feita do zero, para o seu espaço.</p>
+                <div class="step-card p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="shine-timeline-num">5</div>
+                        <span class="step-card-tag">Passo 05</span>
                     </div>
+                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Confecção sob medida</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Sua cortina ou persiana é fabricada exclusivamente para o seu ambiente — sem peça genérica, sem adaptação. Feita do zero, para o seu espaço.</p>
                 </div>
-                <div class="shine-timeline-item">
-                    <div class="shine-timeline-num">6</div>
-                    <div class="shine-timeline-body">
-                        <h3 class="text-white font-bold text-base md:text-lg mb-1">Instalação pela nossa equipe</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Chegamos, instalamos, e saímos deixando o ambiente perfeito — limpo, organizado, sem entulho. Na maioria dos projetos, tudo no mesmo dia.</p>
-                        <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-[#C6A868] text-black font-bold text-sm uppercase tracking-widest px-6 py-3 hover:bg-white transition">Quero Começar Agora →</a>
+                <div class="step-card p-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="shine-timeline-num">6</div>
+                        <span class="step-card-tag">Passo 06</span>
                     </div>
+                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Instalação pela nossa equipe</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Chegamos, instalamos e saímos deixando o ambiente perfeito — limpo, organizado, sem entulho. Na maioria dos projetos, tudo no mesmo dia.</p>
                 </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="inline-block bg-[#C6A868] text-black font-bold text-sm uppercase tracking-widest px-8 py-4 hover:bg-white transition" style="border-radius:9999px;">Quero Começar Agora →</a>
             </div>
         </div>
     </section>
