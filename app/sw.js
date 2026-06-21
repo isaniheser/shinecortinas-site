@@ -1,4 +1,4 @@
-const CACHE = 'shine-app-v1';
+const CACHE = 'shine-app-v2';
 const PRECACHE = [
   '/app/',
   '/app/index.html',
@@ -34,6 +34,8 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+  // A galeria do Instagram sempre busca da rede (dados frescos), nunca do cache.
+  if (new URL(e.request.url).pathname.startsWith('/api/')) return;
   e.respondWith(
     caches.match(e.request).then(cached => {
       if (cached) return cached;
