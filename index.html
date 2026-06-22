@@ -321,6 +321,8 @@
         .rotate-icon.active { transform: rotate(180deg); color: #C6A868; }
         .modal { visibility: hidden; opacity: 0; transition: all 0.3s ease-in-out; }
         .modal.active { visibility: visible; opacity: 1; }
+        /* iOS: garante que o toque caia no card clicável (e não na camada decorativa por cima) */
+        #solucoes .group > * { pointer-events: none; }
         .mobile-menu-panel { position: fixed; top: 72px; left: 0; width: 100%; max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; }
         @media (min-width: 768px) { .mobile-menu-panel { position: static; max-height: none; overflow: visible; } }
         .mobile-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 1rem; }
