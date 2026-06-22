@@ -1,4 +1,4 @@
-const CACHE = 'shine-app-v7';
+const CACHE = 'shine-app-v8';
 const PRECACHE = [
   '/app/',
   '/app/index.html',
