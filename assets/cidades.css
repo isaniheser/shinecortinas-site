@@ -54,7 +54,7 @@
 .backdrop-blur-md{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .backdrop-blur-lg{-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
 .transition-colors{transition-property:background-color,border-color,color;transition-duration:.35s;transition-timing-function:ease}
-.nav-scrolled{background-color:rgba(0,0,0,.6)}
+.nav-scrolled{background-color:rgba(21,19,14,.68)}
 .border-\[\#C6A868\]\/30{border-color:rgba(198,168,104,.3)}
 .border-\[\#C6A868\]\/40{border-color:rgba(198,168,104,.4)}
 
@@ -109,6 +109,10 @@ section.min-h-\[100svh\] .fade-up h1 .gold-text-gradient{
   .md\:text-xl{font-size:1.25rem;line-height:1.75rem}
   .md\:min-h-\[560px\]{min-height:560px}
 }
+
+/* Tom de marca: preto quente âmbar (mesmo dos orçamentos/pedidos). Só superfícies — overlays e botões seguem pretos puros. */
+.bg-\[#0a0a0a\]{background-color:#15130e}
+section.bg-black,footer.bg-black{background-color:#15130e}
 
 /* Breadcrumb mobile — tamanho mínimo legível */
 nav[aria-label="Breadcrumb"] ol{font-size:.75rem}
