@@ -62,13 +62,6 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 /artigo-motorizacao /blog/por-que-escolher-cortina-motorizada/ 301!
 /artigo-linho.html /blog/linho-para-cortinas/ 301!
 /artigo-linho /blog/linho-para-cortinas/ 301!
-
-# PWA /app aposentado — manda o app de volta pro site.
-# (não redirecionar /app/sw.js nem /app/manifest.json: o sw.js precisa ser
-#  alcançável para se autodesinstalar nos aparelhos que já instalaram o app.)
-/app / 301!
-/app/ / 301!
-/app/index.html / 301!
 /blog.html /blog/ 301
 /blog /blog/ 301
 /index.html / 301!
