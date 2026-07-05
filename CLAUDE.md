@@ -80,5 +80,9 @@ visconde-de-maua, volta-redonda.
   (tom âmbar escuro + API v2 do Instagram com vídeo/carrossel) — não apagar
   sem decisão do Isani.
 - Deploy: merge na `main` → Cloudflare Pages publica em 1–2 min.
-- O site NÃO tem rastreamento (GA4/Meta Pixel) desde a reescrita v12 —
-  reinstalar exige confirmar os IDs atuais com o Isani antes.
+- **Rastreamento (IMPORTANTE — não "consertar"):** o HTML NÃO tem tags de
+  GA4/Meta Pixel/Google Ads **de propósito**. Os IDs de rastreamento são
+  gerenciados na camada do **Cloudflare** (injetados por lá). Não adicionar
+  tags inline — isso já causou duplicidade no passado e foi removido
+  deliberadamente (fev/2026, PR #42). A ausência de `gtag`/`fbq` no código
+  NÃO significa que o site está sem medição.
