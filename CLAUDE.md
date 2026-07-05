@@ -75,6 +75,10 @@ visconde-de-maua, volta-redonda.
 
 ## Git / Deploy
 
-- Branch de trabalho atual: `claude/audit-website-errors-NmMfH`.
+- Branch de trabalho atual: `claude/awesome-turing-clhtty`.
+- A branch `claude/audit-website-errors-NmMfH` guarda trabalho NÃO publicado
+  (tom âmbar escuro + API v2 do Instagram com vídeo/carrossel) — não apagar
+  sem decisão do Isani.
 - Deploy: merge na `main` → Cloudflare Pages publica em 1–2 min.
-- Não criar PR sem o usuário pedir.
+- O site NÃO tem rastreamento (GA4/Meta Pixel) desde a reescrita v12 —
+  reinstalar exige confirmar os IDs atuais com o Isani antes.
