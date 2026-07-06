@@ -388,10 +388,19 @@ html,body{height:100%;overflow:hidden;font-family:'Montserrat',sans-serif;backgr
       </div>
 
       <!-- Testimonial -->
-      <div class="glass-card" style="margin-top:18px;margin-bottom:30px;padding:22px;">
+      <div id="depo-card" class="glass-card" style="margin-top:18px;margin-bottom:30px;padding:22px;cursor:pointer;" role="button" aria-label="Próxima avaliação">
         <div style="color:#C3B289;font-size:15px;letter-spacing:2px;margin-bottom:10px;">★★★★★</div>
-        <p style="font-family:'Playfair Display',serif;font-style:italic;color:#ece8df;font-size:15px;line-height:1.5;margin:0 0 14px;">"Trabalho de excelência, pontuais e ótimos profissionais. Fiquei muito satisfeita, recomendo."</p>
-        <div style="color:#8d877c;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Vitória Fernandes · Avaliação real no Google</div>
+        <div id="depo-body" style="transition:opacity .35s ease;">
+          <p id="depo-text" style="font-family:'Playfair Display',serif;font-style:italic;color:#ece8df;font-size:15px;line-height:1.5;margin:0 0 14px;">"Trabalho de excelência, pontuais e ótimos profissionais. Fiquei muito satisfeita, recomendo."</p>
+          <div id="depo-name" style="color:#8d877c;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Vitória Fernandes · Avaliação real no Google</div>
+        </div>
+        <div id="depo-dots" style="display:flex;gap:6px;margin-top:14px;">
+          <span style="width:14px;height:5px;border-radius:3px;background:#C3B289;transition:all .3s;"></span>
+          <span style="width:5px;height:5px;border-radius:3px;background:rgba(195,178,137,0.3);transition:all .3s;"></span>
+          <span style="width:5px;height:5px;border-radius:3px;background:rgba(195,178,137,0.3);transition:all .3s;"></span>
+          <span style="width:5px;height:5px;border-radius:3px;background:rgba(195,178,137,0.3);transition:all .3s;"></span>
+          <span style="width:5px;height:5px;border-radius:3px;background:rgba(195,178,137,0.3);transition:all .3s;"></span>
+        </div>
       </div>
     </div>
 
@@ -793,5 +802,37 @@ showTab('inicio');
     </a>
   </div>
 </div>
+<script>
+(function(){
+  var DEPOS=[
+    {t:'"Trabalho de excelência, pontuais e ótimos profissionais. Fiquei muito satisfeita, recomendo."',n:'Vitória Fernandes · Avaliação real no Google'},
+    {t:'"Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis."',n:'Marcio Soares · Avaliação real no Google'},
+    {t:'"EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência."',n:'Amanda Rocha da Silva · Avaliação real no Google'},
+    {t:'"Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados."',n:'Luan Ferreira · Avaliação real no Google'},
+    {t:'"Atendimento ágil, entrega rápida e cortinas impecáveis. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!"',n:'Marcio Rocha · Avaliação real no Google'}
+  ];
+  var i=0, card=document.getElementById('depo-card'), body=document.getElementById('depo-body');
+  var txt=document.getElementById('depo-text'), name=document.getElementById('depo-name');
+  var dots=document.getElementById('depo-dots');
+  if(!card||!body||!txt||!name) return;
+  function paint(){
+    var ds=dots?dots.children:[];
+    for(var k=0;k<ds.length;k++){
+      ds[k].style.width=(k===i?'14px':'5px');
+      ds[k].style.background=(k===i?'#C3B289':'rgba(195,178,137,0.3)');
+    }
+  }
+  function show(next){
+    body.style.opacity='0';
+    setTimeout(function(){
+      i=(next+DEPOS.length)%DEPOS.length;
+      txt.textContent=DEPOS[i].t; name.textContent=DEPOS[i].n;
+      paint(); body.style.opacity='1';
+    },350);
+  }
+  var timer=setInterval(function(){show(i+1);},6000);
+  card.addEventListener('click',function(){clearInterval(timer);show(i+1);timer=setInterval(function(){show(i+1);},6000);});
+})();
+</script>
 </body>
 </html>
