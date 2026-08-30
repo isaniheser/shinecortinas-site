@@ -6,7 +6,8 @@ const SITE_ROOT = 'https://www.shinecortinas.com';
 const BUILD_DIR = process.argv[2] ? path.resolve(process.argv[2]) : process.cwd();
 const REDIRECTS_PATH = path.join(BUILD_DIR, '_redirects');
 
-const EXCLUDED_PATH_PREFIXES = ['/post/', '/produtos-cidade/', '/portfolio-collections/'];
+// /lp/ = landings de tráfego pago (Meta/Google Ads): páginas de conversão, não de busca orgânica.
+const EXCLUDED_PATH_PREFIXES = ['/post/', '/produtos-cidade/', '/portfolio-collections/', '/lp/'];
 const EXCLUDED_EXACT_PATHS = new Set(['/404.html']);
 
 function walk(dir) {
