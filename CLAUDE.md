@@ -80,6 +80,11 @@ visconde-de-maua, volta-redonda.
   (tom âmbar escuro + API v2 do Instagram com vídeo/carrossel) — não apagar
   sem decisão do Isani.
 - Deploy: merge na `main` → Cloudflare Pages publica em 1–2 min.
+- **Landings de tráfego pago (`/lp/`)**: páginas de anúncio (Meta/Google Ads).
+  Ficam FORA do sitemap e com `noindex` — são conversão, não busca orgânica.
+  Têm paleta própria (verde `#16302A` + dourado da marca) e não usam o Tailwind
+  congelado. Regras e armadilhas: `docs/landing-pages-trafego-pago.md`.
+  A primeira é `/lp/anuncio-d/` ("Ferir e Curar").
 - **Rastreamento (IMPORTANTE — não "consertar"):** o HTML NÃO tem tags de
   GA4/Meta Pixel/Google Ads **de propósito**. Os IDs de rastreamento são
   gerenciados na camada do **Cloudflare** (injetados por lá). Não adicionar

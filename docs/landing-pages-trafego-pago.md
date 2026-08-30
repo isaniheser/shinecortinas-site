@@ -70,16 +70,49 @@ Para a **conversão** (clique no WhatsApp), a landing empurra um evento e o
 Cloudflare traduz para o `Lead` do Meta. Sem `fbq` inline:
 
 ```js
-document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) {
-  a.addEventListener('click', function () {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'lead_whatsapp', lp: 'anuncio-d' });
-  });
-});
+// Helper único da landing. O try/catch importa: se o Zaraz não carregar
+// (bloqueador de anúncio, rede ruim), a página não pode quebrar junto.
+function track(evento, dados) {
+  try {
+    if (window.zaraz && typeof window.zaraz.track === 'function') window.zaraz.track(evento, dados);
+  } catch (e) {}
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(Object.assign({ event: evento }, dados));
+}
 ```
 
-No Cloudflare (Zaraz), criar um trigger no evento `lead_whatsapp` e mapear para
-`Lead` no Meta Pixel. O campo `lp` separa a performance de cada variante.
+Eventos que a landing dispara:
+
+| Momento | Evento | Tipo |
+|---|---|---|
+| Página carrega | `ViewContent` | padrão Meta |
+| Formulário começa | `lp_form_inicio` | custom |
+| Cada passo concluído | `lp_form_passo` | custom |
+| Formulário concluído | `Lead` | **padrão Meta** |
+| Clique no WhatsApp | `Contact` | **padrão Meta** |
+
+`Lead` e `Contact` são nomes **padrão** da Meta de propósito: as otimizações
+dela são treinadas neles. Evento inventado serve para relatório, mas não
+alimenta o algoritmo igual. Os `lp_*` existem só para ver onde a pessoa desiste.
+
+Junto do `Lead` vão `event_id` (para a Meta deduplicar navegador × servidor),
+`cidade`, `ambiente`, as UTMs e o `fbclid`. Antes dele, `zaraz.set()` manda os
+campos de correspondência avançada — telefone normalizado (`55DDDNÚMERO`),
+primeiro nome, cidade e país.
+
+**O que ligar no painel do Cloudflare** (não dá para fazer pelo código):
+
+1. Zaraz → Tools → Meta Pixel → Triggers: um trigger por evento nomeado,
+   escutando `Lead` e `Contact`
+2. Mapear os campos de correspondência avançada e o `event_id`
+3. Conferir no Gerenciador de Eventos da Meta, com um clique real, que o `Lead`
+   chega e que a qualidade da correspondência sobe
+
+### LGPD — pendência aberta
+
+A landing envia telefone e nome à Meta para fins de publicidade. Isso precisa
+constar na política de privacidade do site. Não bloqueia o deploy, mas está em
+aberto desde `/lp/anuncio-d/`.
 
 ### Atribuição no WhatsApp
 
