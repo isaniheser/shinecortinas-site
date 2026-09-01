@@ -87,6 +87,8 @@ Eventos que a landing dispara:
 | Momento | Evento | Tipo |
 |---|---|---|
 | Página carrega | `ViewContent` | padrão Meta |
+| Vídeo começa pela primeira vez | `lp_video_inicio` | custom |
+| Vídeo chega ao final | `lp_video_completo` | custom |
 | Formulário começa | `lp_form_inicio` | custom |
 | Cada passo concluído | `lp_form_passo` | custom |
 | Página de agradecimento válida após o formulário | `Lead` | **padrão Meta** |
