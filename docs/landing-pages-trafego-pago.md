@@ -66,8 +66,9 @@ Regra do projeto (`CLAUDE.md`): **nenhuma tag de GA4/Meta Pixel inline no HTML**
 Os IDs são injetados na camada do Cloudflare. Isso já vale para `/lp/*` — o
 Pixel cobre o domínio inteiro, então a landing é rastreada sem tocar no código.
 
-Para a **conversão** (clique no WhatsApp), a landing empurra um evento e o
-Cloudflare traduz para o `Lead` do Meta. Sem `fbq` inline:
+Para a **conversão**, a landing salva a qualificação na sessão e redireciona
+para a página de agradecimento. Essa página dispara o `Lead` uma única vez; o
+único botão de WhatsApp dispara `Contact`. Sem `fbq` inline:
 
 ```js
 // Helper único da landing. O try/catch importa: se o Zaraz não carregar
@@ -88,16 +89,22 @@ Eventos que a landing dispara:
 | Página carrega | `ViewContent` | padrão Meta |
 | Formulário começa | `lp_form_inicio` | custom |
 | Cada passo concluído | `lp_form_passo` | custom |
-| Formulário concluído | `Lead` | **padrão Meta** |
+| Página de agradecimento válida após o formulário | `Lead` | **padrão Meta** |
 | Clique no WhatsApp | `Contact` | **padrão Meta** |
 
 `Lead` e `Contact` são nomes **padrão** da Meta de propósito: as otimizações
 dela são treinadas neles. Evento inventado serve para relatório, mas não
 alimenta o algoritmo igual. Os `lp_*` existem só para ver onde a pessoa desiste.
 
+O formulário não libera o WhatsApp e não dispara `Lead` diretamente. Ele grava
+os dados em `sessionStorage` (sem colocar dados pessoais na URL) e abre
+`/lp/anuncio-d/obrigado/`. A confirmação só considera válida a chegada com esse
+registro e usa uma chave associada ao `event_id` para não contar novamente ao
+recarregar a página.
+
 Junto do `Lead` vão `event_id` (para a Meta deduplicar navegador × servidor),
-`ambiente`, as UTMs e o `fbclid`. Os campos de correspondência avançada seguem
-no próprio evento com os nomes reconhecidos pelo componente do Facebook:
+`ambiente`, `bairro`, `intencao`, as UTMs e o `fbclid`. Os campos de
+correspondência avançada seguem no próprio evento com os nomes reconhecidos pelo componente do Facebook:
 telefone normalizado em `ph` (`55DDDNÚMERO`), primeiro nome em `fn`, cidade em
 `ct` e país em `country`. O componente aplica SHA-256 no servidor e move essas
 chaves para `user_data`; telefone e nome em texto aberto não devem ir para
@@ -110,8 +117,8 @@ chaves para `user_data`; telefone e nome em texto aberto não devem ir para
 2. Manter `Include Event Properties` habilitado para que `ph`, `fn`, `ct`,
    `country` e `event_id` cheguem ao componente; não remapear esses valores para
    aliases em texto aberto
-3. Conferir no Gerenciador de Eventos da Meta, com um clique real, que o `Lead`
-   chega e que a qualidade da correspondência sobe
+3. Conferir no Gerenciador de Eventos da Meta, concluindo o formulário de teste,
+   que apenas um `Lead` chega e que a qualidade da correspondência sobe
 
 ### LGPD — pendência aberta
 
@@ -122,14 +129,12 @@ aberto desde `/lp/anuncio-d/`.
 ### Atribuição no WhatsApp
 
 Não anexar UTM na mensagem que o cliente envia — fica poluído e destoa do tom da
-marca. Em vez disso, cada landing usa um texto próprio e natural, que já entrega
-a origem para quem atende:
+marca. A landing não deve ter atalhos diretos para o WhatsApp: o único link fica
+na página de agradecimento, depois da qualificação. A mensagem inclui, em texto
+natural, nome, localização, ambiente e intenção para orientar quem atende.
 
-```
-https://wa.me/5524993298763?text=Ol%C3%A1%2C%20vim%20do%20an%C3%BAncio%20da%20Shine%20e%20quero%20agendar%20minha%20consultoria%20gratuita%20em%20casa.
-```
-
-("vim do anúncio", contra "vim do site" das páginas orgânicas.)
+A frase “vim do anúncio” preserva a atribuição operacional sem expor UTMs ao
+cliente nem ao atendimento.
 
 ## Publicação
 
