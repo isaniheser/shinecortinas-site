@@ -96,15 +96,20 @@ dela são treinadas neles. Evento inventado serve para relatório, mas não
 alimenta o algoritmo igual. Os `lp_*` existem só para ver onde a pessoa desiste.
 
 Junto do `Lead` vão `event_id` (para a Meta deduplicar navegador × servidor),
-`cidade`, `ambiente`, as UTMs e o `fbclid`. Antes dele, `zaraz.set()` manda os
-campos de correspondência avançada — telefone normalizado (`55DDDNÚMERO`),
-primeiro nome, cidade e país.
+`ambiente`, as UTMs e o `fbclid`. Os campos de correspondência avançada seguem
+no próprio evento com os nomes reconhecidos pelo componente do Facebook:
+telefone normalizado em `ph` (`55DDDNÚMERO`), primeiro nome em `fn`, cidade em
+`ct` e país em `country`. O componente aplica SHA-256 no servidor e move essas
+chaves para `user_data`; telefone e nome em texto aberto não devem ir para
+`custom_data`.
 
 **O que ligar no painel do Cloudflare** (não dá para fazer pelo código):
 
 1. Zaraz → Tools → Meta Pixel → Triggers: um trigger por evento nomeado,
    escutando `Lead` e `Contact`
-2. Mapear os campos de correspondência avançada e o `event_id`
+2. Manter `Include Event Properties` habilitado para que `ph`, `fn`, `ct`,
+   `country` e `event_id` cheguem ao componente; não remapear esses valores para
+   aliases em texto aberto
 3. Conferir no Gerenciador de Eventos da Meta, com um clique real, que o `Lead`
    chega e que a qualidade da correspondência sobe
 

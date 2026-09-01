@@ -435,14 +435,6 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
     window.dataLayer.push(d);
   }
 
-  function identifica(campos) {
-    try {
-      if (window.zaraz && typeof window.zaraz.set === 'function') {
-        for (var k in campos) if (Object.prototype.hasOwnProperty.call(campos, k)) window.zaraz.set(k, campos[k]);
-      }
-    } catch (e) {}
-  }
-
   function uuid() {
     try { if (window.crypto && crypto.randomUUID) return crypto.randomUUID(); } catch (e) {}
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -471,7 +463,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
   var TOTAL = PASSOS.length;
   var st = { i: 0, nome: '', tel: '', cidade: '', ambiente: '' };
   var iniciou = false;
-  var eventId = null;
+  var contactEventId = null;
 
   var COPY = {
     nome: { titulo: 'Como você se chama?', ajuda: 'Para o consultor te chamar pelo nome.', placeholder: 'Seu nome', tipo: 'text', modo: 'text' },
@@ -487,6 +479,23 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
   function digitos(s) { return String(s).replace(/\D/g, ''); }
+
+  // A Meta exige dados de correspondência normalizados antes de aplicar o
+  // SHA-256. O componente do Facebook no Zaraz faz o hash no servidor.
+  function textoMeta(s) {
+    var v = String(s || '').toLowerCase();
+    try { v = v.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); } catch (e) {}
+    return v.replace(/[^a-z0-9]/g, '');
+  }
+
+  function correspondenciaMeta() {
+    return {
+      ph: '55' + digitos(st.tel),
+      fn: textoMeta(primeiroNome()),
+      ct: textoMeta(st.cidade),
+      country: 'br'
+    };
+  }
 
   function mascaraTel(v) {
     var d = digitos(v).slice(0, 11);
@@ -664,22 +673,12 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
   }
 
   function concluir() {
-    eventId = uuid();
-    // Correspondência avançada: é o que permite a Meta casar o evento com a
-    // pessoa real. Sem telefone, a qualidade da correspondência fica fraca.
-    identifica({
-      ph: '55' + digitos(st.tel),
-      fn: primeiroNome().toLowerCase(),
-      ct: st.cidade.toLowerCase(),
-      country: 'br'
-    });
-    track('Lead', com({
-      event_id: eventId,
-      cidade: st.cidade,
-      ambiente: st.ambiente,
-      telefone: '55' + digitos(st.tel),
-      nome: st.nome
-    }));
+    var dados = correspondenciaMeta();
+    dados.event_id = uuid();
+    dados.ambiente = st.ambiente;
+    // ph/fn/ct/country são reconhecidos pelo componente do Facebook, que os
+    // move para user_data, aplica hash e os remove de custom_data.
+    track('Lead', com(dados));
   }
 
   /* ---------- eventos de página ---------- */
@@ -688,7 +687,12 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
     if (!a) return;
-    track('Contact', com({ event_id: eventId || uuid(), origem_link: a.id === 'sc-wa' ? 'formulario' : 'link_direto' }));
+    var formulario = a.id === 'sc-wa';
+    var dados = formulario ? correspondenciaMeta() : {};
+    contactEventId = contactEventId || uuid();
+    dados.event_id = contactEventId;
+    dados.origem_link = formulario ? 'formulario' : 'link_direto';
+    track('Contact', com(dados));
   });
 
   track('ViewContent', origem());
