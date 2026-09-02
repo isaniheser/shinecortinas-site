@@ -191,9 +191,15 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
 <section id="resolve" style="padding:clamp(52px,12vw,72px) 22px 0">
   <span style="display:block;color:#C6A868;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;margin-bottom:12px">A solução</span>
   <h2 style="font-family:'Playfair Display',serif;font-weight:500;color:#16302A;font-size:clamp(27px,7.4vw,38px);line-height:1.16;margin:0 0 18px;text-wrap:pretty">Na Shine, a medida não é problema seu.</h2>
-  <p style="color:#5A605A;font-size:clamp(16px,4.4vw,19px);line-height:1.7;margin:0 0 26px;text-wrap:pretty">O consultor vai à sua casa, mede a laser e assume a medida. Você toca nos tecidos, sente o caimento e vê o projeto montado antes de decidir qualquer coisa.</p>
-  <div style="position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5">
-    <img src="/hero-sala.avif" alt="Sala com cortina sob medida instalada pela ShineCortinas" width="1920" height="1071" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+  <p style="color:#5A605A;font-size:clamp(16px,4.4vw,19px);line-height:1.7;margin:0 0 26px;text-wrap:pretty">O consultor vai à sua casa, faz a medição técnica e assume a medida. Você toca nos tecidos, sente o caimento e vê o projeto montado antes de decidir qualquer coisa.</p>
+  <div style="position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;background:#16302A">
+    <video id="video-medicao" muted loop playsinline preload="metadata" poster="/assets/lp/anuncio-d/medicao-consultor-poster.avif" aria-label="Consultor da Shine realizando a medição técnica de uma janela" style="width:100%;height:100%;object-fit:cover;object-position:center 46%;display:block;background:#16302A">
+      <source src="/assets/lp/anuncio-d/medicao-consultor.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;gap:9px;padding:10px 12px;background:rgba(11,25,22,0.82);backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,0.14);border-radius:3px;pointer-events:none">
+      <span style="width:7px;height:7px;border-radius:9999px;background:#DFBD69;box-shadow:0 0 0 4px rgba(223,189,105,0.14);flex-shrink:0"></span>
+      <span style="color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.13em;line-height:1.5">Medição técnica realizada no local</span>
+    </div>
   </div>
   <p style="font-family:'Playfair Display',serif;color:#16302A;font-size:clamp(20px,5.4vw,26px);line-height:1.45;margin:26px 0 26px;text-wrap:pretty">Você escolhe o modelo e o tecido. <span style="color:#C6A868">Medida, confecção, trilho e instalação são por nossa conta.</span></p>
   <div style="background:#F3F1EB;border-left:2px solid #C6A868;padding:17px 18px;margin:0 0 22px">
@@ -213,7 +219,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
           <span style="color:#8A8F88;font-size:13px;line-height:1.55;display:block">Você mede sozinho</span>
         </div>
         <div style="padding:16px 14px;border-bottom:1px solid #EFECE4;background:#FCFBF8">
-          <span style="color:#16302A;font-size:13px;line-height:1.55;font-weight:600;display:block">Medição a laser feita por nós</span>
+          <span style="color:#16302A;font-size:13px;line-height:1.55;font-weight:600;display:block">Medição técnica feita por nós</span>
         </div>
       
         <div style="padding:16px 14px;border-bottom:1px solid #EFECE4;border-right:1px solid #EFECE4">
@@ -277,7 +283,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
       <div style="width:34px;height:34px;border-radius:9999px;background:#16302A;color:#DFBD69;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>
       <div>
         <h3 style="font-size:15px;font-weight:600;color:#16302A;margin:0 0 6px">Se fizer sentido, fazemos a visita e o orçamento final</h3>
-        <p style="color:#6B7069;font-size:14px;line-height:1.7;margin:0">O especialista mede a laser, leva amostras e finaliza o projeto. Você não assume o risco da medida — essa responsabilidade é da Shine.</p>
+        <p style="color:#6B7069;font-size:14px;line-height:1.7;margin:0">O especialista faz a medição técnica, leva amostras e finaliza o projeto. Você não assume o risco da medida — essa responsabilidade é da Shine.</p>
       </div>
     </div>
     <div style="display:flex;gap:16px;align-items:flex-start">
@@ -730,6 +736,22 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
       render();
     });
   });
+
+  var videoMedicao = document.getElementById('video-medicao');
+  if (videoMedicao) {
+    var movimentoReduzido = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!movimentoReduzido && 'IntersectionObserver' in window) {
+      var observadorVideo = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (entrada) {
+          if (entrada.isIntersecting) videoMedicao.play().catch(function () {});
+          else videoMedicao.pause();
+        });
+      }, { rootMargin: '120px 0px', threshold: 0.15 });
+      observadorVideo.observe(videoMedicao);
+    } else if (!movimentoReduzido) {
+      videoMedicao.play().catch(function () {});
+    }
+  }
 
   var video = document.getElementById('sc-video');
   var videoIniciou = false;
