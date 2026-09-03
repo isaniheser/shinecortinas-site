@@ -467,6 +467,59 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
   }
 
   var qs = new URLSearchParams(window.location.search);
+
+  /* ---------- identidade do evento ----------
+     A Meta descarta para atribuicao e otimizacao todo evento de servidor que
+     chega sem nenhuma chave de user_data. Sem formulario nesta pagina, nao ha
+     telefone nem e-mail para enviar, entao mandamos duas chaves que nao expoem
+     nada de pessoal:
+
+       external_id  identificador aleatorio e estavel por navegador
+       fbc          identificacao do clique no anuncio, no formato exigido
+                    fb.1.<timestamp>.<fbclid>, com o fbclid intacto (a Meta
+                    acusa erro quando o valor chega truncado ou em minusculas)
+
+     zaraz.set(chave, valor) vira user_data.<chave> no envio pela API de
+     Conversoes, e o Zaraz persiste o valor no proprio navegador. */
+
+  var ARMAZEM_ID = 'sc_visitante_id';
+  var ARMAZEM_FBC = 'sc_fbc';
+
+  function guardado(chave) {
+    try { return window.localStorage.getItem(chave); } catch (e) { return null; }
+  }
+  function guardar(chave, valor) {
+    try { window.localStorage.setItem(chave, valor); } catch (e) {}
+  }
+
+  function identificaVisitante() {
+    var id = guardado(ARMAZEM_ID);
+    if (!id) { id = uuid(); guardar(ARMAZEM_ID, id); }
+
+    var fbclid = qs.get('fbclid');
+    var fbc = guardado(ARMAZEM_FBC);
+    if (fbclid) {
+      // Reconstroi sempre que o clique e novo, sem alterar o fbclid recebido.
+      fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+      guardar(ARMAZEM_FBC, fbc);
+    }
+
+    var tentativas = 0;
+    (function aplica() {
+      tentativas += 1;
+      if (window.zaraz && typeof window.zaraz.set === 'function') {
+        try {
+          window.zaraz.set('external_id', id);
+          if (fbc) window.zaraz.set('fbc', fbc);
+        } catch (e) {}
+        return;
+      }
+      if (tentativas < 20) window.setTimeout(aplica, 250);
+    })();
+  }
+
+  identificaVisitante();
+
   function origem() {
     var o = { lp: LP };
     ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function (k) {
