@@ -32,8 +32,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
   a { color: #1E3A32; text-decoration: none; }
   a:hover { color: #2F5248; }
   ::selection { background: #C6A868; color: #16302A; }
-  input, button { font-family: 'Montserrat', sans-serif; }
-  input:focus { outline: none; border-color: #1E3A32 !important; }
+  a:focus-visible { outline: 3px solid #C6A868; outline-offset: 4px; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes cue { 0%,100% { transform: translateY(0); opacity: 0.55; } 50% { transform: translateY(5px); opacity: 1; } }
   video { max-width: 100%; }
@@ -269,7 +268,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
       <div style="width:34px;height:34px;border-radius:9999px;background:#16302A;color:#DFBD69;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>
       <div>
         <h3 style="font-size:15px;font-weight:600;color:#16302A;margin:0 0 6px">Você conta o que precisa</h3>
-        <p style="color:#6B7069;font-size:14px;line-height:1.7;margin:0">Informe a cidade, o ambiente e o seu momento. Se preferir, depois envie fotos e medidas aproximadas.</p>
+        <p style="color:#6B7069;font-size:14px;line-height:1.7;margin:0">Na conversa pelo WhatsApp, conte a cidade, o ambiente e o que você procura. Se preferir, envie fotos e medidas aproximadas.</p>
       </div>
     </div>
     <div style="display:flex;gap:16px;align-items:flex-start">
@@ -402,32 +401,27 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
         <span style="border:1px solid #E7E3DA;border-radius:9999px;padding:8px 14px;color:#16302A;font-size:12px;font-weight:500;background:#FBFAF7">Itatiaia</span>
       
     </div>
-    <p style="color:#6B7069;font-size:13px;line-height:1.7;margin:0;text-wrap:pretty">Não achou a sua cidade? Escolha “Outra cidade” no formulário. A equipe confirma se consegue atender a sua região.</p>
+    <p style="color:#6B7069;font-size:13px;line-height:1.7;margin:0;text-wrap:pretty">Não achou a sua cidade? Conte à equipe pelo WhatsApp. Confirmamos se conseguimos atender a sua região.</p>
   </div>
 </section>
 
-<section id="agendar" style="margin:clamp(52px,12vw,72px) 0 0;background:#16302A;padding:clamp(46px,11vw,64px) 22px">
-  <div style="text-align:center;margin-bottom:26px">
-    <h2 style="font-family:'Playfair Display',serif;font-weight:500;color:#fff;font-size:clamp(26px,7vw,36px);line-height:1.15;margin:0 0 12px;text-wrap:pretty">Fale com um especialista e receba uma estimativa inicial</h2>
-    <p style="color:rgba(255,255,255,0.6);font-size:15px;line-height:1.65;margin:0">Conte o básico do projeto em quatro etapas. Nome e WhatsApp ficam para o final.</p>
-  </div>
-
-  <div style="background:#FBFAF7;border-radius:4px;padding:clamp(24px,6vw,32px)">
-    <div id="sc-form"></div>
+<section style="padding:clamp(40px,9vw,56px) 22px 0">
+  <div style="border:1px solid #E7E3DA;border-left:2px solid #C6A868;border-radius:0 3px 3px 0;padding:24px 22px;background:#fff">
+    <span style="display:block;color:#C6A868;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:10px">Quer começar sem visita?</span>
+    <h3 style="font-family:'Playfair Display',serif;color:#16302A;font-weight:600;font-size:clamp(18px,4.8vw,23px);line-height:1.3;margin:0 0 12px;text-wrap:pretty">Envie fotos e medidas aproximadas para uma estimativa inicial.</h3>
+    <p style="color:#6B7069;font-size:14px;line-height:1.75;margin:0 0 14px;text-wrap:pretty">Na conversa pelo WhatsApp, você pode enviar fotos ou um vídeo do ambiente. O especialista orienta sobre modelos, materiais e uma estimativa para planejamento.</p>
+    <p style="color:#16302A;font-size:13px;line-height:1.75;margin:0;font-weight:600;text-wrap:pretty">A estimativa não é o orçamento final. Se ela fizer sentido, a visita técnica confirma medidas, materiais e o valor antes da produção.</p>
   </div>
 </section>
 
-
-  <section style="padding:clamp(40px,9vw,56px) 22px">
-    <div style="border:1px solid #E7E3DA;border-left:2px solid #C6A868;border-radius:0 3px 3px 0;padding:24px 22px;background:#fff">
-      <span style="display:block;color:#C6A868;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:10px">Quer começar sem visita?</span>
-      <h3 style="font-family:'Playfair Display',serif;color:#16302A;font-weight:600;font-size:clamp(18px,4.8vw,23px);line-height:1.3;margin:0 0 12px;text-wrap:pretty">Envie fotos e medidas aproximadas para uma estimativa inicial.</h3>
-      <p style="color:#6B7069;font-size:14px;line-height:1.75;margin:0 0 14px;text-wrap:pretty">Depois da qualificação, a conversa abre pronta para você enviar fotos ou um vídeo. O especialista orienta sobre modelos, materiais e uma estimativa para planejamento.</p>
-      <p style="color:#16302A;font-size:13px;line-height:1.75;margin:0 0 20px;font-weight:600;text-wrap:pretty">A estimativa não é o orçamento final. Se ela fizer sentido, a visita técnica confirma medidas, materiais e o valor antes da produção.</p>
-      <a href="#agendar" data-intencao="fotos" style="display:inline-block;color:#16302A;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;border-bottom:1px solid #C6A868;padding-bottom:3px">Quero começar pelas fotos →</a>
-    </div>
-  </section>
-
+<section id="agendar" aria-labelledby="sc-contato-titulo" style="margin:clamp(40px,9vw,56px) 0 0;background:#16302A;padding:clamp(46px,11vw,64px) 22px;text-align:center">
+  <span style="display:block;color:#DFBD69;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:14px">Agora, vamos falar do seu ambiente</span>
+  <h2 id="sc-contato-titulo" style="font-family:'Playfair Display',serif;font-weight:500;color:#fff;font-size:clamp(26px,7vw,36px);line-height:1.15;margin:0 0 16px;text-wrap:pretty">Fale com um especialista e receba uma estimativa inicial</h2>
+  <p style="color:rgba(255,255,255,0.78);font-size:15px;line-height:1.75;margin:0 0 26px;text-wrap:pretty">Converse com a equipe pelo WhatsApp sobre o seu projeto. A visita só será agendada depois, se as opções fizerem sentido para você.</p>
+  <a id="sc-wa" href="https://wa.me/5524993298763?text=Ol%C3%A1!%20Vim%20do%20an%C3%BAncio%20da%20Shine%20e%20quero%20orienta%C3%A7%C3%A3o%20sobre%20cortinas%20e%20persianas%20sob%20medida%2C%20modelos%2C%20materiais%20e%20uma%20estimativa%20inicial." aria-describedby="sc-wa-instrucao" style="display:block;background:#25D366;color:#102B24;font-weight:700;font-size:16px;line-height:1.45;padding:20px 16px;border-radius:3px">Conversar no WhatsApp →</a>
+  <p id="sc-wa-instrucao" style="color:rgba(255,255,255,0.78);font-size:12px;line-height:1.7;margin:14px 0 0">No WhatsApp, confira a mensagem pronta e toque em enviar para iniciar o atendimento.</p>
+  <p id="sc-wa-ajuda" hidden role="status" style="color:rgba(255,255,255,0.78);font-size:12px;line-height:1.7;margin:18px 0 0">O aplicativo não abriu? <a id="sc-wa-alternativa" href="https://wa.me/5524993298763?text=Ol%C3%A1!%20Vim%20do%20an%C3%BAncio%20da%20Shine%20e%20quero%20orienta%C3%A7%C3%A3o%20sobre%20cortinas%20e%20persianas%20sob%20medida%2C%20modelos%2C%20materiais%20e%20uma%20estimativa%20inicial." style="color:#DFBD69;text-decoration:underline;text-underline-offset:3px">Tente pelo link alternativo do WhatsApp.</a></p>
+</section>
 
 <footer style="background:#F3F1EB;border-top:1px solid #E7E3DA;padding:34px 22px 30px">
   <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
@@ -449,15 +443,6 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
   'use strict';
 
   var LP = 'anuncio-d';
-  var STORAGE_KEY = 'shine_lp_anuncio_d_lead';
-  var CIDADES = ['Volta Redonda','Barra Mansa','Resende','Itatiaia','Penedo','Visconde de Mauá','Maromba','Porto Real','Pinheiral','Piraí','Barra do Piraí','Valença','Vassouras','Paulo de Frontin','Miguel Pereira','Outra cidade'];
-  var AMBIENTES = ['Sala','Quarto','Cozinha','Home office','Varanda ou sacada','A casa toda','Empresa ou comercial'];
-  var INTENCOES = [
-    { valor: 'orientacao', titulo: 'Quero orientação e uma estimativa inicial', texto: 'O especialista entende o projeto e explica as opções antes de qualquer visita.' },
-    { valor: 'fotos', titulo: 'Quero uma estimativa por fotos', texto: 'Serve para planejamento. Antes de produzir, a Shine confere as medidas no local.' },
-    { valor: 'pesquisa', titulo: 'Ainda estou pesquisando', texto: 'A equipe explica as opções sem tratar a conversa como pedido fechado.' }
-  ];
-
   /* ---------- rastreamento ----------
      Tudo sai por zaraz.track(), que o Zaraz envia pelo servidor. Sem fbq
      inline: os IDs são gerenciados na camada do Cloudflare. */
@@ -495,247 +480,39 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
     return o;
   }
 
-  /* ---------- estado ---------- */
+  /* ---------- contato direto, apenas no fim da página ----------
+     O link HTTPS no HTML funciona sem JavaScript.
+     No celular, tentamos o app a partir do toque, sem temporizadores.
+     O sistema pode pedir confirmação; a mensagem nunca é enviada sozinha.
+     A alternativa HTTPS fica disponível se o app não abrir. */
 
-  var PASSOS = ['localizacao', 'projeto', 'intencao', 'contato'];
-  var TOTAL = PASSOS.length;
-  var st = { i: 0, cidade: '', bairro: '', ambiente: '', intencao: '', nome: '', tel: '', eventId: '' };
-  var iniciou = false;
+  var wa = document.getElementById('sc-wa');
+  var alternativa = document.getElementById('sc-wa-alternativa');
+  var ajuda = document.getElementById('sc-wa-ajuda');
+  var celular = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var contatoRegistrado = false;
 
-  var COPY = {
-    localizacao: { titulo: 'Onde fica o projeto?', ajuda: 'Cidade e bairro confirmam se a consultoria em domicílio atende a sua região.' },
-    projeto: { titulo: 'Qual ambiente você quer transformar?', ajuda: 'Isso ajuda o consultor a chegar à conversa entendendo o seu projeto.' },
-    intencao: { titulo: 'O que você precisa agora?', ajuda: 'Escolha sem compromisso. A equipe responde de acordo com o seu momento.' },
-    contato: { titulo: 'Como a equipe fala com você?', ajuda: 'Seus dados ficam para o final e serão usados somente para responder sobre o projeto.' }
-  };
-
-  /* ---------- utilitários ---------- */
-
-  function esc(s) {
-    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-  }
-  function digitos(s) { return String(s).replace(/\D/g, ''); }
-
-  function mascaraTel(v) {
-    var d = digitos(v).slice(0, 11);
-    if (!d) return '';
-    if (d.length <= 2) return '(' + d;
-    if (d.length <= 6) return '(' + d.slice(0, 2) + ') ' + d.slice(2);
-    if (d.length <= 10) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
-    return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
+  function registraContato(destino) {
+    if (contatoRegistrado) return;
+    contatoRegistrado = true;
+    // Contact mede o clique. Não comprova abertura do app nem mensagem enviada.
+    track('Contact', com({ event_id: uuid(), origem_link: 'final_landing', destino: destino }));
   }
 
-  // Telefone quebrado não casa na Meta e não serve para ligar.
-  function telOk(v) { var n = digitos(v).length; return n === 10 || n === 11; }
-
-  function preenchido(chave) {
-    if (chave === 'localizacao') return !!st.cidade && st.bairro.trim().length > 1;
-    if (chave === 'projeto') return !!st.ambiente;
-    if (chave === 'intencao') return !!st.intencao;
-    if (chave === 'contato') return st.nome.trim().length > 1 && telOk(st.tel);
-    return false;
-  }
-
-  /* ---------- renderização ---------- */
-
-  var raiz = document.getElementById('sc-form');
-  if (!raiz) return;
-
-  function render() {
-    raiz.innerHTML = htmlPasso();
-    ligaPasso();
-  }
-
-  function htmlPasso() {
-    var chave = PASSOS[st.i];
-    var c = COPY[chave];
-    var ok = preenchido(chave);
-    var ultimo = st.i === TOTAL - 1;
-    var progresso = Math.round(((st.i + 1) / TOTAL) * 100) + '%';
-
-    var h = '<div>' +
-      '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">' +
-        '<span style="color:#16302A;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em">Passo ' + (st.i + 1) + ' de ' + TOTAL + '</span>' +
-        '<span style="color:#A8ACA5;font-size:9px;text-transform:uppercase;letter-spacing:0.14em">Gratuito</span>' +
-      '</div>' +
-      '<div style="height:3px;background:#E7E3DA;border-radius:9999px;overflow:hidden;margin-bottom:28px">' +
-        '<div style="height:100%;background:#C6A868;transition:width 0.45s cubic-bezier(0.16,1,0.3,1);width:' + progresso + '"></div>' +
-      '</div>' +
-      '<h3 style="font-family:\'Playfair Display\',serif;color:#16302A;font-weight:600;font-size:clamp(21px,5.8vw,27px);line-height:1.25;margin:0 0 8px;text-wrap:pretty">' + esc(c.titulo) + '</h3>' +
-      '<p style="color:#8A8F88;font-size:13px;line-height:1.6;margin:0 0 24px">' + esc(c.ajuda) + '</p>';
-
-    if (chave === 'localizacao') h += htmlLocalizacao();
-    if (chave === 'projeto') h += htmlOpcoes(AMBIENTES, 'ambiente', st.ambiente);
-    if (chave === 'intencao') h += htmlIntencoes();
-    if (chave === 'contato') h += htmlContato();
-
-    h += '<button type="button" id="sc-avancar"' + (ok ? '' : ' disabled') +
-      ' style="width:100%;background:' + (ok ? '#16302A' : '#EFECE4') + ';color:' + (ok ? '#fff' : '#A8ACA5') +
-      ';border:none;font-weight:700;font-size:16px;padding:19px;border-radius:3px;cursor:' + (ok ? 'pointer' : 'not-allowed') +
-      ';transition:all 0.2s">' + (ultimo ? 'Concluir e continuar' : 'Continuar') + '</button>';
-
-    if (st.i > 0) {
-      h += '<button type="button" id="sc-voltar" style="width:100%;background:none;border:none;color:#A8ACA5;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;padding:15px 0 0;cursor:pointer">← Voltar</button>';
-    }
-
-    h += '<p style="color:#A8ACA5;font-size:11px;line-height:1.7;margin:20px 0 0;text-align:center">Sem ligação automática. Sem robô. Sem compromisso.</p></div>';
-    return h;
-  }
-
-  function htmlLocalizacao() {
-    return htmlOpcoes(CIDADES, 'cidade', st.cidade) +
-      '<label for="sc-bairro" style="display:block;color:#16302A;font-size:12px;font-weight:700;margin:0 0 8px">Bairro</label>' +
-      '<input id="sc-bairro" type="text" value="' + esc(st.bairro) + '" placeholder="Ex.: Aterrado" autocomplete="address-level3" aria-label="Bairro" style="width:100%;background:#fff;border:1px solid #DDD8CC;border-radius:3px;color:#16302A;font-size:16px;padding:16px;margin-bottom:24px">';
-  }
-
-  function htmlOpcoes(lista, campo, valorAtual) {
-    var h = '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">';
-    lista.forEach(function (label) {
-      var ativo = valorAtual === label;
-      h += '<button type="button" class="sc-opcao" data-campo="' + campo + '" data-valor="' + esc(label) + '" style="background:' +
-        (ativo ? '#16302A' : '#fff') + ';border:1px solid ' + (ativo ? '#16302A' : '#DDD8CC') + ';color:' +
-        (ativo ? '#fff' : '#4A504A') + ';font-size:13px;font-weight:600;padding:12px 15px;border-radius:9999px;cursor:pointer;transition:all 0.18s">' +
-        esc(label) + '</button>';
-    });
-    return h + '</div>';
-  }
-
-  function htmlIntencoes() {
-    var h = '<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">';
-    INTENCOES.forEach(function (opcao) {
-      var ativo = st.intencao === opcao.valor;
-      h += '<button type="button" class="sc-intencao" data-valor="' + opcao.valor + '" style="width:100%;text-align:left;background:' +
-        (ativo ? '#16302A' : '#fff') + ';border:1px solid ' + (ativo ? '#16302A' : '#DDD8CC') + ';border-radius:3px;padding:16px;cursor:pointer">' +
-        '<span style="display:block;color:' + (ativo ? '#fff' : '#16302A') + ';font-size:14px;font-weight:700;line-height:1.45;margin-bottom:5px">' + esc(opcao.titulo) + '</span>' +
-        '<span style="display:block;color:' + (ativo ? 'rgba(255,255,255,0.68)' : '#7B807A') + ';font-size:12px;line-height:1.55">' + esc(opcao.texto) + '</span>' +
-      '</button>';
-    });
-    return h + '</div>';
-  }
-
-  function htmlContato() {
-    return '<label for="sc-nome" style="display:block;color:#16302A;font-size:12px;font-weight:700;margin:0 0 8px">Nome</label>' +
-      '<input id="sc-nome" type="text" value="' + esc(st.nome) + '" placeholder="Seu nome" autocomplete="name" aria-label="Nome" style="width:100%;background:#fff;border:1px solid #DDD8CC;border-radius:3px;color:#16302A;font-size:16px;padding:16px;margin-bottom:18px">' +
-      '<label for="sc-tel" style="display:block;color:#16302A;font-size:12px;font-weight:700;margin:0 0 8px">WhatsApp</label>' +
-      '<input id="sc-tel" type="tel" inputmode="tel" value="' + esc(st.tel) + '" placeholder="(24) 90000-0000" autocomplete="tel" aria-label="WhatsApp" style="width:100%;background:#fff;border:1px solid #DDD8CC;border-radius:3px;color:#16302A;font-size:16px;padding:16px;margin-bottom:24px">';
-  }
-
-  /* ---------- comportamento ---------- */
-
-  function atualizaBotao() {
-    var b = document.getElementById('sc-avancar');
-    if (!b) return;
-    var ok = preenchido(PASSOS[st.i]);
-    b.disabled = !ok;
-    b.style.background = ok ? '#16302A' : '#EFECE4';
-    b.style.color = ok ? '#fff' : '#A8ACA5';
-    b.style.cursor = ok ? 'pointer' : 'not-allowed';
-  }
-
-  function ligaPasso() {
-    var chave = PASSOS[st.i];
-
-    Array.prototype.forEach.call(document.querySelectorAll('.sc-opcao'), function (b) {
-      b.addEventListener('click', function () {
-        st[b.getAttribute('data-campo')] = b.getAttribute('data-valor');
-        marcaInicio();
-        render();
-      });
-    });
-
-    Array.prototype.forEach.call(document.querySelectorAll('.sc-intencao'), function (b) {
-      b.addEventListener('click', function () {
-        st.intencao = b.getAttribute('data-valor');
-        marcaInicio();
-        render();
-      });
-    });
-
-    ligaInput('sc-bairro', 'bairro');
-    ligaInput('sc-nome', 'nome');
-    ligaInput('sc-tel', 'tel', true);
-
-    var av = document.getElementById('sc-avancar');
-    if (av) av.addEventListener('click', function () { if (preenchido(chave)) avancar(); });
-
-    var vt = document.getElementById('sc-voltar');
-    if (vt) vt.addEventListener('click', function () { st.i = Math.max(0, st.i - 1); render(); });
-  }
-
-  function ligaInput(id, campo, telefone) {
-    var input = document.getElementById(id);
-    if (!input) return;
-    input.addEventListener('input', function (e) {
-      var v = e.target.value;
-      if (telefone) {
-        v = mascaraTel(v);
-        if (v !== e.target.value) e.target.value = v;
-      }
-      st[campo] = v;
-      marcaInicio();
-      atualizaBotao();
-    });
-    input.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' && preenchido(PASSOS[st.i])) { e.preventDefault(); avancar(); }
+  if (wa) {
+    var texto = new URL(wa.href).searchParams.get('text') || '';
+    var parametros = 'phone=5524993298763&text=' + encodeURIComponent(texto);
+    wa.href = celular ? 'whatsapp://send?' + parametros : 'https://web.whatsapp.com/send?' + parametros;
+    wa.addEventListener('click', function () {
+      if (celular && ajuda) ajuda.hidden = false;
+      // Não impedir nem atrasar a navegação nativa: o toque deve chegar ao app.
+      registraContato(celular ? 'app' : 'web');
     });
   }
-
-  function marcaInicio() {
-    if (iniciou) return;
-    iniciou = true;
-    track('lp_form_inicio', origem());
+  if (alternativa) {
+    alternativa.addEventListener('click', function () { registraContato('link_alternativo'); });
   }
-
-  function avancar() {
-    if (st.i >= TOTAL) return;
-    track('lp_form_passo', com({ passo: st.i + 1, campo: PASSOS[st.i] }));
-    if (st.i === TOTAL - 1) {
-      concluir();
-      return;
-    }
-    st.i += 1;
-    render();
-  }
-
-  function concluir() {
-    var payload = {
-      versao: 1,
-      criado_em: new Date().toISOString(),
-      event_id: st.eventId || uuid(),
-      origem: origem(),
-      nome: st.nome.trim(),
-      tel: st.tel,
-      cidade: st.cidade,
-      bairro: st.bairro.trim(),
-      ambiente: st.ambiente,
-      intencao: st.intencao
-    };
-    st.eventId = payload.event_id;
-    try {
-      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-      window.location.href = 'obrigado/';
-    } catch (e) {
-      raiz.insertAdjacentHTML('afterbegin', '<p role="alert" style="background:#F8EDE8;color:#743C2D;font-size:13px;line-height:1.6;padding:12px 14px;border-radius:3px;margin:0 0 18px">Não foi possível concluir neste navegador. Recarregue a página e tente novamente.</p>');
-    }
-  }
-
-  function restauraParaCorrecao() {
-    if (qs.get('corrigir') !== '1') return;
-    try {
-      var salvo = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || 'null');
-      if (!salvo || salvo.versao !== 1) return;
-      ['cidade','bairro','ambiente','intencao','nome','tel'].forEach(function (k) { st[k] = salvo[k] || ''; });
-      st.eventId = salvo.event_id || '';
-    } catch (e) {}
-  }
-
-  Array.prototype.forEach.call(document.querySelectorAll('[data-intencao="fotos"]'), function (a) {
-    a.addEventListener('click', function () {
-      st.intencao = 'fotos';
-      render();
-    });
-  });
 
   var videoMedicao = document.getElementById('video-medicao');
   if (videoMedicao) {
@@ -766,9 +543,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
     });
   }
 
-  restauraParaCorrecao();
   track('ViewContent', origem());
-  render();
 })();
 </script>
 </body>
