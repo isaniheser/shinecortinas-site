@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/shine-leve.css?v=3">
+  <link rel="stylesheet" href="/assets/shine-leve.css?v=4">
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -277,7 +277,7 @@
 <meta name="geo.region" content="BR-RJ">
 <meta name="geo.placename" content="Barra do Piraí, RJ, Brasil">
 </head>
-<body>
+<body data-wa-context="a página de Barra do Piraí">
 
   <header class="sl-header">
     <div class="sl-wrap sl-header__in">
@@ -289,7 +289,7 @@
         <a href="/cidades-atendidas.html" aria-current="true">Cidades</a>
         <a href="/portfolio/">Projetos</a>
         <a href="/blog/">Blog</a>
-        <a class="sl-btn" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Agendar consultoria</a>
+        <a class="sl-btn" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Falar com um consultor</a>
       </nav>
       <button class="sl-menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
@@ -297,7 +297,7 @@
     </div>
     <div class="sl-wrap"><nav id="mobile-menu" class="sl-menu" aria-label="Menu">
       <a href="/">Início</a><a href="/cortinas/">Cortinas</a><a href="/persianas/">Persianas</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas.html">Cidades atendidas</a><a href="/portfolio/">Projetos</a><a href="/blog/">Blog</a>
-      <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Agendar consultoria gratuita →</a>
+      <a data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Falar com um consultor →</a>
     </nav></div>
   </header>
 
@@ -313,10 +313,16 @@
       <h1 class="sl-h1">Cortinas e Persianas Sob Medida em <em>Barra do Piraí</em></h1>
       <div class="sl-hero__rule"></div>
       <p class="sl-lede">Da casa nova ao sobrado antigo de pé-direito alto, nosso consultor vai até você, mede com precisão milimétrica e veste cada janela com a sua cara.</p>
-      <a class="sl-btn" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Agendar consultoria gratuita →</a>
-      <p class="sl-note">Em domicílio · Sem compromisso · Resposta em minutos</p>
+      <a class="sl-btn" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Falar com um consultor →</a>
+      <p class="sl-note">Sem compromisso · Resposta em minutos · Você decide o próximo passo</p>
     </div></div>
   </section>
+
+  <div class="sl-citybar"><div class="sl-wrap"><span class="sl-chip" data-city-chip>
+    <span data-city-label>Atendendo em Barra do Piraí</span>
+    <button type="button" class="sl-chip__btn" popovertarget="city-pop">trocar</button>
+    <div id="city-pop" popover class="sl-citypop"><p>Escolha a sua cidade</p><div class="sl-citypop__list" data-city-list></div></div>
+  </span></div></div>
 
   <div class="sl-strip"><div class="sl-wrap sl-strip__in">
     <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>17 anos no Sul Fluminense</span>
@@ -332,7 +338,7 @@
         <p class="sl-kicker">Imagine só</p>
         <h2 class="sl-h2">Imagine a luz da Cidade das Três Estações entrando do jeito certo na sua sala.</h2>
         <p>As manhãs em Barra do Piraí pedem uma cortina que filtre a claridade sem fechar a casa. Imagine chegar e ver o ambiente com o caimento perfeito, o tecido certo, aquela sensação de casa pronta. É isso que a Shine entrega aqui há 17 anos.</p>
-        <a class="sl-btn sl-btn--green" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Quero esse resultado na minha casa →</a>
+        <a class="sl-btn sl-btn--green" data-wa="estimativa" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Quero esse resultado na minha casa →</a>
       </div>
     </div></section>
 
@@ -343,7 +349,7 @@
         <h2 class="sl-h2">Sobrado antigo ou casa nova: a janela certa pede a cortina certa.</h2>
         <p>Muita casa em Barra do Piraí tem janelão alto e ambiente amplo — e é aí que a cortina sob medida faz diferença de verdade. Cada projeto é medido a laser e confeccionado com tecidos selecionados, para um caimento impecável mesmo no pé-direito alto.</p>
         <p>A Shine atende <strong>Barra do Piraí</strong> com medição a laser, tecido durável, instalação no dia combinado e a comodidade de parcelar em até 12x — do bairro Centro ao Califórnia.</p>
-        <a class="sl-btn sl-btn--ghost" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Quero meu projeto sob medida →</a>
+        <a class="sl-btn sl-btn--ghost" data-wa="estimativa" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Receber uma estimativa para o meu ambiente →</a>
       </div>
     </div></section>
 
@@ -378,7 +384,7 @@
         <figure><div class="sl-media"><img src="/tela-solar-sq.avif" alt="Tela solar para controle de luminosidade sem perder a vista" width="800" height="800" loading="lazy" decoding="async"></div><figcaption><span>Tela Solar</span><p>Vista Livre, Sol Controlado</p></figcaption></figure>
         <figure><div class="sl-media"><img src="/madeira-sq.avif" alt="Persiana horizontal de madeira em ambiente aconchegante" width="800" height="800" loading="lazy" decoding="async"></div><figcaption><span>Madeira</span><p>Persiana de Madeira</p></figcaption></figure>
       </div>
-      <div class="sl-center" style="margin-top:34px"><a class="sl-btn sl-btn--ghost" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Quero um Projeto Assim em Barra do Piraí →</a></div>
+      <div class="sl-center" style="margin-top:34px"><a class="sl-btn sl-btn--ghost" data-wa="estimativa" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Quero um Projeto Assim em Barra do Piraí →</a></div>
     </div></section>
 
     <section class="sl-section"><div class="sl-wrap">
@@ -434,8 +440,8 @@
       <p class="sl-kicker sl-kicker--center">Consultoria em domicílio · Barra do Piraí</p>
       <h2 class="sl-h2">Pronto para transformar o seu ambiente em Barra do Piraí?</h2>
       <p class="sl-sub" style="margin:0 auto 26px">A consultoria é gratuita, vai até a sua casa, e você não precisa decidir nada na hora. Sem pressão.</p>
-      <a class="sl-btn" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Agendar consultoria gratuita →</a>
-      <p class="sl-note">Resposta em minutos · (24) 99329-8763</p>
+      <a class="sl-btn" data-wa="agendar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Agendar consultoria em casa →</a>
+      <p class="sl-note">Gratuita · Sem compromisso · (24) 99329-8763</p>
     </div></section>
 
     <section class="sl-section sl-section--tight"><div class="sl-wrap">
@@ -457,7 +463,7 @@
       </div>
       <div>
         <h4>Fale conosco</h4>
-        <a class="sl-footer__phone" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.">(24) 99329-8763</a>
+        <a class="sl-footer__phone" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.">(24) 99329-8763</a>
         <p>(24) 3338-3069</p>
         <p style="margin-top:10px">Na visita você conhece o projeto, os tecidos e as condições, inclusive o parcelamento em até 12x.</p>
       </div>
@@ -469,11 +475,15 @@
     <div class="sl-footer__bottom"><span>© 2026 ShineCortinas</span><span>Google 5.0 ★★★★★ · 292 avaliações</span></div>
   </div></footer>
 
-  <a class="sl-wa" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <a class="sl-wa" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
   <div class="sl-bar">
-    <a class="sl-btn" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Agendar consultoria gratuita pelo WhatsApp</a>
+    <a class="sl-btn" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Falar com um consultor pelo WhatsApp</a>
   </div>
 
+  <script src="/assets/shine-wa.js?v=1" defer></script>
+  <script type="speculationrules">
+  {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}
+  </script>
   <script>
     (function(){
       var btn=document.getElementById('menu-btn'),menu=document.getElementById('mobile-menu');

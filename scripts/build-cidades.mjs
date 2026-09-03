@@ -10,7 +10,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(readFileSync(join(ROOT, 'cidades', 'cidades.json'), 'utf8'));
 const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
-const CSS_V = '3';
+const CSS_V = '4';
 
 const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;');
 
@@ -40,13 +40,13 @@ function body(d) {
         <a href="/cidades-atendidas.html" aria-current="true">Cidades</a>
         <a href="/portfolio/">Projetos</a>
         <a href="/blog/">Blog</a>
-        <a class="sl-btn" href="${WA}" target="_blank" rel="noopener noreferrer">Agendar consultoria</a>
+        <a class="sl-btn" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">Falar com um consultor</a>
       </nav>`;
   const gallery = d.gallery.map((g) => `        <figure><div class="sl-media"><img src="${g.src}" alt="${esc(g.alt)}" width="800" height="800" loading="lazy" decoding="async"></div><figcaption><span>${g.tag}</span><p>${g.cap}</p></figcaption></figure>`).join('\n');
   const steps = d.steps.map((s, i) => `        <div class="sl-step"><div class="sl-step__n">${i + 1}</div><h3>${s.h}</h3><p>${s.p}</p></div>`).join('\n');
   const faq = d.faq.map((f) => `        <details><summary>${f.q}</summary><div>${f.a}</div></details>`).join('\n');
   const nearby = d.nearby.map(([slug, name]) => `<a href="/cidades/${slug}/">${name}</a>`).join('');
-  return `<body>
+  return `<body data-wa-context="a página de ${d.city}">
 
   <header class="sl-header">
     <div class="sl-wrap sl-header__in">
@@ -57,7 +57,7 @@ function body(d) {
     </div>
     <div class="sl-wrap"><nav id="mobile-menu" class="sl-menu" aria-label="Menu">
       <a href="/">Início</a><a href="/cortinas/">Cortinas</a><a href="/persianas/">Persianas</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas.html">Cidades atendidas</a><a href="/portfolio/">Projetos</a><a href="/blog/">Blog</a>
-      <a href="${WA}" target="_blank" rel="noopener noreferrer">Agendar consultoria gratuita →</a>
+      <a data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">Falar com um consultor →</a>
     </nav></div>
   </header>
 
@@ -73,10 +73,16 @@ function body(d) {
       <h1 class="sl-h1">${d.h1_pre} <em>${d.h1_em}</em></h1>
       <div class="sl-hero__rule"></div>
       <p class="sl-lede">${d.hero_p}</p>
-      <a class="sl-btn" href="${WA}" target="_blank" rel="noopener noreferrer">Agendar consultoria gratuita →</a>
-      <p class="sl-note">Em domicílio · Sem compromisso · Resposta em minutos</p>
+      <a class="sl-btn" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">Falar com um consultor →</a>
+      <p class="sl-note">Sem compromisso · Resposta em minutos · Você decide o próximo passo</p>
     </div></div>
   </section>
+
+  <div class="sl-citybar"><div class="sl-wrap"><span class="sl-chip" data-city-chip>
+    <span data-city-label>Atendendo em ${d.city}</span>
+    <button type="button" class="sl-chip__btn" popovertarget="city-pop">trocar</button>
+    <div id="city-pop" popover class="sl-citypop"><p>Escolha a sua cidade</p><div class="sl-citypop__list" data-city-list></div></div>
+  </span></div></div>
 
   <div class="sl-strip"><div class="sl-wrap sl-strip__in">
     <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>17 anos no Sul Fluminense</span>
@@ -92,7 +98,7 @@ function body(d) {
         <p class="sl-kicker">${d.imag_kicker}</p>
         <h2 class="sl-h2">${d.imag_h2}</h2>
         <p>${d.imag_p}</p>
-        <a class="sl-btn sl-btn--green" href="${WA}" target="_blank" rel="noopener noreferrer">Quero esse resultado na minha casa →</a>
+        <a class="sl-btn sl-btn--green" data-wa="estimativa" href="${WA}" target="_blank" rel="noopener noreferrer">Quero esse resultado na minha casa →</a>
       </div>
     </div></section>
 
@@ -103,7 +109,7 @@ function body(d) {
         <h2 class="sl-h2">${d.story_h2}</h2>
         <p>${d.story_p1}</p>
         <p>${d.story_p2}</p>
-        <a class="sl-btn sl-btn--ghost" href="${WA}" target="_blank" rel="noopener noreferrer">Quero meu projeto sob medida →</a>
+        <a class="sl-btn sl-btn--ghost" data-wa="estimativa" href="${WA}" target="_blank" rel="noopener noreferrer">Receber uma estimativa para o meu ambiente →</a>
       </div>
     </div></section>
 
@@ -133,7 +139,7 @@ function body(d) {
       <div class="sl-gallery">
 ${gallery}
       </div>
-      <div class="sl-center" style="margin-top:34px"><a class="sl-btn sl-btn--ghost" href="${WA}" target="_blank" rel="noopener noreferrer">${d.gal_cta}</a></div>
+      <div class="sl-center" style="margin-top:34px"><a class="sl-btn sl-btn--ghost" data-wa="estimativa" href="${WA}" target="_blank" rel="noopener noreferrer">${d.gal_cta}</a></div>
     </div></section>
 
     <section class="sl-section"><div class="sl-wrap">
@@ -182,8 +188,8 @@ ${faq}
       <p class="sl-kicker sl-kicker--center">Consultoria em domicílio · ${d.city}</p>
       <h2 class="sl-h2">${d.cta_h2}</h2>
       <p class="sl-sub" style="margin:0 auto 26px">${d.cta_p}</p>
-      <a class="sl-btn" href="${WA}" target="_blank" rel="noopener noreferrer">Agendar consultoria gratuita →</a>
-      <p class="sl-note">Resposta em minutos · (24) 99329-8763</p>
+      <a class="sl-btn" data-wa="agendar" href="${WA}" target="_blank" rel="noopener noreferrer">Agendar consultoria em casa →</a>
+      <p class="sl-note">Gratuita · Sem compromisso · (24) 99329-8763</p>
     </div></section>
 
     <section class="sl-section sl-section--tight"><div class="sl-wrap">
@@ -205,7 +211,7 @@ ${faq}
       </div>
       <div>
         <h4>Fale conosco</h4>
-        <a class="sl-footer__phone" href="${WA}">(24) 99329-8763</a>
+        <a class="sl-footer__phone" data-wa="conversar" href="${WA}">(24) 99329-8763</a>
         <p>(24) 3338-3069</p>
         <p style="margin-top:10px">Na visita você conhece o projeto, os tecidos e as condições, inclusive o parcelamento em até 12x.</p>
       </div>
@@ -217,11 +223,15 @@ ${faq}
     <div class="sl-footer__bottom"><span>© 2026 ShineCortinas</span><span>Google 5.0 ★★★★★ · 292 avaliações</span></div>
   </div></footer>
 
-  <a class="sl-wa" href="${WA}" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">${waIcon}</a>
+  <a class="sl-wa" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">${waIcon}</a>
   <div class="sl-bar">
-    <a class="sl-btn" href="${WA}" target="_blank" rel="noopener noreferrer">${waIconSmall}Agendar consultoria gratuita pelo WhatsApp</a>
+    <a class="sl-btn" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">${waIconSmall}Falar com um consultor pelo WhatsApp</a>
   </div>
 
+  <script src="/assets/shine-wa.js?v=1" defer></script>
+  <script type="speculationrules">
+  {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}
+  </script>
   <script>
     (function(){
       var btn=document.getElementById('menu-btn'),menu=document.getElementById('mobile-menu');
