@@ -66,77 +66,73 @@ Regra do projeto (`CLAUDE.md`): **nenhuma tag de GA4/Meta Pixel inline no HTML**
 Os IDs são injetados na camada do Cloudflare. Isso já vale para `/lp/*` — o
 Pixel cobre o domínio inteiro, então a landing é rastreada sem tocar no código.
 
-Para a **conversão**, a landing salva a qualificação na sessão e redireciona
-para a página de agradecimento. Essa página dispara o `Lead` uma única vez; o
-único botão de WhatsApp dispara `Contact`. Sem `fbq` inline:
+### Fluxo atual do anúncio D
 
-```js
-// Helper único da landing. O try/catch importa: se o Zaraz não carregar
-// (bloqueador de anúncio, rede ruim), a página não pode quebrar junto.
-function track(evento, dados) {
-  try {
-    if (window.zaraz && typeof window.zaraz.track === 'function') window.zaraz.track(evento, dados);
-  } catch (e) {}
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(Object.assign({ event: evento }, dados));
-}
-```
+A pedido do Isani, o formulário e a confirmação de qualificação foram retirados.
+O visitante percorre o conteúdo educativo, os vídeos e os projetos reais e
+encontra **um único CTA principal de WhatsApp no final**, antes do rodapé.
+Não há coleta de nome/telefone no site, gravação de respostas em sessão nem
+tela afirmando que a equipe recebeu um pedido.
 
-Eventos que a landing dispara:
+A rota antiga `/lp/anuncio-d/obrigado/` redireciona para o contato no final da
+landing, sem ler dados antigos nem disparar conversões. O fluxo novo não passa
+por essa rota.
 
-| Momento | Evento | Tipo |
+Eventos emitidos pelo código da landing, via `zaraz.track()` quando disponível,
+com espelho em `dataLayer`:
+
+| Momento | Evento | Significado |
 |---|---|---|
-| Página carrega | `ViewContent` | padrão Meta |
-| Vídeo começa pela primeira vez | `lp_video_inicio` | custom |
-| Vídeo chega ao final | `lp_video_completo` | custom |
-| Formulário começa | `lp_form_inicio` | custom |
-| Cada passo concluído | `lp_form_passo` | custom |
-| Página de agradecimento válida após o formulário | `Lead` | **padrão Meta** |
-| Clique no WhatsApp | `Contact` | **padrão Meta** |
+| Página carrega | `ViewContent` | Visualização da landing |
+| Vídeo começa pela primeira vez | `lp_video_inicio` | Início do vídeo educativo |
+| Vídeo chega ao final | `lp_video_completo` | Fim do vídeo educativo |
+| Clique no CTA final ou em sua alternativa | `Contact` | Intenção de contato, uma vez por carregamento |
 
-`Lead` e `Contact` são nomes **padrão** da Meta de propósito: as otimizações
-dela são treinadas neles. Evento inventado serve para relatório, mas não
-alimenta o algoritmo igual. Os `lp_*` existem só para ver onde a pessoa desiste.
+**Não há mais `Lead`, `lp_form_inicio` nem `lp_form_passo` neste fluxo.**
+`Contact` não comprova que o aplicativo abriu ou que a mensagem foi enviada,
+recebida ou atribuída a um anúncio. Recarregar a página inicia uma nova medição
+local de clique. UTMs e `fbclid` permanecem nos eventos, não na mensagem.
+Nenhum nome ou telefone de visitante é coletado por este código.
 
-O formulário não libera o WhatsApp e não dispara `Lead` diretamente. Ele grava
-os dados em `sessionStorage` (sem colocar dados pessoais na URL) e abre
-`/lp/anuncio-d/obrigado/`. A confirmação só considera válida a chegada com esse
-registro e usa uma chave associada ao `event_id` para não contar novamente ao
-recarregar a página.
+### Abertura do WhatsApp
 
-Junto do `Lead` vão `event_id` (para a Meta deduplicar navegador × servidor),
-`ambiente`, `bairro`, `intencao`, as UTMs e o `fbclid`. Os campos de
-correspondência avançada seguem no próprio evento com os nomes reconhecidos pelo componente do Facebook:
-telefone normalizado em `ph` (`55DDDNÚMERO`), primeiro nome em `fn`, cidade em
-`ct` e país em `country`. O componente aplica SHA-256 no servidor e move essas
-chaves para `user_data`; telefone e nome em texto aberto não devem ir para
-`custom_data`.
+- O HTML contém o link HTTPS oficial `wa.me`, que continua utilizável sem JS.
+- Em iPhone, iPad e Android, o script tenta `whatsapp://send?phone=...&text=...`
+  diretamente no toque. Não há `target="_blank"`, clique simulado nem timer.
+- Em computador, o CTA abre `web.whatsapp.com/send?phone=...&text=...`.
+- Após o toque mobile, um link HTTPS alternativo aparece no mesmo bloco caso
+  o navegador impeça a abertura do aplicativo. Não há redirecionamento automático
+  de fallback, que poderia disputar com a abertura do app.
+- O deep link precisa de validação em aparelhos reais, inclusive com WhatsApp
+  Business e nos navegadores internos do Instagram/Facebook. Não há garantia de
+  qual app será escolhido nem de ausência de confirmação do sistema.
+- A alternativa `wa.me` pode mostrar a página intermediária do próprio WhatsApp.
+  Não é possível controlar essa tela pelo código da Shine.
+- A mensagem é apenas preenchida. **O visitante ainda toca em enviar no WhatsApp.**
 
-**O que ligar no painel do Cloudflare** (não dá para fazer pelo código):
+Referências oficiais: [integração iOS do WhatsApp](https://faq.whatsapp.com/425247423114725/?cms_platform=iphone&locale=en_US)
+e [universal links da Apple](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content).
+A documentação do WhatsApp recomenda `wa.me` para o destinatário específico;
+o parâmetro `phone` no scheme direto não é documentado ali. Por isso a abertura
+direta é uma tentativa sujeita a validação, e o link HTTPS não foi removido.
 
-1. Zaraz → Tools → Meta Pixel → Triggers: um trigger por evento nomeado,
-   escutando `Lead` e `Contact`
-2. Manter `Include Event Properties` habilitado para que `ph`, `fn`, `ct`,
-   `country` e `event_id` cheguem ao componente; não remapear esses valores para
-   aliases em texto aberto
-3. Conferir no Gerenciador de Eventos da Meta, concluindo o formulário de teste,
-   que apenas um `Lead` chega e que a qualidade da correspondência sobe
+### Conferência antes de publicar
 
-### LGPD — pendência aberta
-
-A landing envia telefone e nome à Meta para fins de publicidade. Isso precisa
-constar na política de privacidade do site. Não bloqueia o deploy, mas está em
-aberto desde `/lp/anuncio-d/`.
+1. Confirmar o destino comercial: `5524993298763`.
+2. Testar o CTA no aparelho, sem disparar mensagem real inadvertidamente.
+3. Conferir `Contact` no Zaraz e no Gerenciador de Eventos separadamente.
+   Evento no `dataLayer` local não comprova processamento pela Meta.
+4. Revisar campanhas que ainda otimizam para `Lead`: esse evento não será mais
+   emitido pela landing. A mudança de otimização/configuração de conta exige
+   autorização separada; não renomear clique como lead recebido para compensar.
+5. Manter a política de privacidade compatível com o rastreamento ativo do
+   domínio. A retirada do formulário não desativa os serviços do Cloudflare.
 
 ### Atribuição no WhatsApp
 
-Não anexar UTM na mensagem que o cliente envia — fica poluído e destoa do tom da
-marca. A landing não deve ter atalhos diretos para o WhatsApp: o único link fica
-na página de agradecimento, depois da qualificação. A mensagem inclui, em texto
-natural, nome, localização, ambiente e intenção para orientar quem atende.
-
-A frase “vim do anúncio” preserva a atribuição operacional sem expor UTMs ao
-cliente nem ao atendimento.
+Não anexar UTMs à mensagem: a frase “vim do anúncio” dá contexto ao atendimento,
+sem afirmar qualificação concluída ou recebimento de dados. Fotos e medidas
+aproximadas podem ser enviadas pelo próprio cliente na conversa.
 
 ## Publicação
 
