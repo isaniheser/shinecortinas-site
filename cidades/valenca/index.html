@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#000000">
-  <title>Cortinas e Persianas em Valença | ShineCortinas</title>
+  <title>Loja de Cortinas e Persianas Sob Medida em Valença | ShineCortinas</title>
   <meta name="description" content="Cortinas e persianas sob medida em Valença. Cortinas que valorizam o casario do Vale do Café e o pé-direito alto. Consultoria gratuita em casa, em até 12x.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.shinecortinas.com/cidades/valenca/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Cortinas e Persianas em Valença | ShineCortinas">
+  <meta property="og:title" content="Loja de Cortinas e Persianas Sob Medida em Valença | ShineCortinas">
   <meta property="og:description" content="Cortinas e persianas sob medida em Valença. Cortinas que valorizam o casario do Vale do Café e o pé-direito alto. Consultoria gratuita em casa, em até 12x.">
   <meta property="og:url" content="https://www.shinecortinas.com/cidades/valenca/">
   <meta property="og:image" content="https://www.shinecortinas.com/hero-sala.avif">
@@ -31,14 +31,38 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="ShineCortinas" />
   <link rel="manifest" href="/site.webmanifest" />
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "name": "ShineCortinas",
       "url": "https://www.shinecortinas.com/",
-      "logo": "https://www.shinecortinas.com/logo-shine.avif"
+      "logo": "https://www.shinecortinas.com/logo-shine.avif",
+      "@id": "https://www.shinecortinas.com/#org",
+      "sameAs": [
+        "https://www.instagram.com/shinecortinas/",
+        "https://www.facebook.com/shinecortinas",
+        "https://www.tiktok.com/@shinecortinas",
+        "https://www.youtube.com/@shinecortinas",
+        "https://www.pinterest.com/shinecortinas"
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.shinecortinas.com/#isani",
+        "name": "Isani Oliveira",
+        "jobTitle": "CEO",
+        "url": "https://www.shinecortinas.com/sobre/"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+5524993298763",
+          "contactType": "customer service",
+          "availableLanguage": "pt-BR"
+        }
+      ]
     },
     {
       "@type": "LocalBusiness",
@@ -52,7 +76,22 @@
         "addressRegion": "RJ",
         "addressCountry": "BR"
       },
-      "areaServed": ["Valença", "Vale do Café", "Sul Fluminense"],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Valença",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Rio de Janeiro",
+            "sameAs": "https://pt.wikipedia.org/wiki/Rio_de_Janeiro_(estado)"
+          },
+          "sameAs": "https://pt.wikipedia.org/wiki/Valença_(Rio_de_Janeiro)"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Sul Fluminense"
+        }
+      ],
       "priceRange": "$$",
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -60,36 +99,183 @@
         "reviewCount": "292",
         "bestRating": "5",
         "worstRating": "1"
-      }
+      },
+      "@id": "https://www.shinecortinas.com/#biz",
+      "image": "https://www.shinecortinas.com/logo-shine.avif",
+      "sameAs": [
+        "https://www.instagram.com/shinecortinas/",
+        "https://www.facebook.com/shinecortinas",
+        "https://www.tiktok.com/@shinecortinas",
+        "https://www.youtube.com/@shinecortinas",
+        "https://www.pinterest.com/shinecortinas"
+      ],
+      "parentOrganization": {
+        "@id": "https://www.shinecortinas.com/#org"
+      },
+      "knowsAbout": [
+        "cortinas sob medida",
+        "persianas",
+        "cortina wave",
+        "cortina motorizada",
+        "blackout",
+        "persiana rolô",
+        "persiana romana",
+        "double vision"
+      ],
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Antônio Vianna"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Minha casa é antiga, com janelas enormes, e eu tinha medo de descaracterizar. A Shine entendeu na hora: mediu tudo, indicou o tecido certo e a cortina valorizou a arquitetura. Ficou de revista. Parcelei e o atendimento foi impecável.",
+          "itemReviewed": {
+            "@id": "https://www.shinecortinas.com/#biz"
+          }
+        }
+      ]
     },
     {
       "@type": "Service",
       "name": "Cortinas e persianas sob medida em Valença",
-      "serviceType": "Consultoria em domicílio, medição a laser, confecção e instalação",
-      "provider": {"@type": "LocalBusiness", "name": "ShineCortinas"},
-      "areaServed": ["Valença"]
+      "serviceType": "Cortinas e persianas sob medida",
+      "provider": {
+        "@id": "https://www.shinecortinas.com/#biz"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Valença",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Rio de Janeiro",
+            "sameAs": "https://pt.wikipedia.org/wiki/Rio_de_Janeiro_(estado)"
+          },
+          "sameAs": "https://pt.wikipedia.org/wiki/Valença_(Rio_de_Janeiro)"
+        }
+      ],
+      "url": "https://www.shinecortinas.com/cidades/valenca/",
+      "description": "Consultoria gratuita em domicílio, medição a laser, confecção e instalação de cortinas e persianas sob medida."
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Vocês fazem cortina para casarão antigo de pé-direito alto em Valença?", "acceptedAnswer": {"@type": "Answer", "text": "Fazemos — é uma das nossas especialidades. Medimos a laser para o caimento ficar perfeito nas janelas altas e largas dos casarões do Vale do Café, com trilho e tecido que valorizam a arquitetura."}},
-        {"@type": "Question", "name": "A ShineCortinas atende Valença com visita à domicílio?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Vamos até a sua casa em Valença para medir a laser, mostrar os tecidos e apresentar o projeto. Gratuito, sem compromisso."}},
-        {"@type": "Question", "name": "Posso parcelar as cortinas em Valença?", "acceptedAnswer": {"@type": "Answer", "text": "Pode. Em até 12x no cartão, e a consultoria em domicílio é totalmente gratuita."}},
-        {"@type": "Question", "name": "Qual a melhor loja de cortinas e persianas em Valença?", "acceptedAnswer": {"@type": "Answer", "text": "A ShineCortinas atende Valença e o Vale do Café com projetos especializados para a arquitetura histórica da região — casarões, janelões altos e ambientes com identidade própria. Consultoria gratuita em domicílio. Referência há 17 anos no Sul Fluminense."}},
-        {"@type": "Question", "name": "Como funciona o investimento em cortinas sob medida em Valença?", "acceptedAnswer": {"@type": "Answer", "text": "Casas históricas de Valença muitas vezes têm medidas fora do padrão, o que torna a cortina sob medida indispensável. Na consultoria gratuita, apresentamos todas as opções e condições de parcelamento em até 12x. Sem compromisso."}},
-        {"@type": "Question", "name": "Como escolher cortina para casarão com janelão em Valença?", "acceptedAnswer": {"@type": "Answer", "text": "Casarões de Valença pedem tecidos que respeitem a escala do ambiente — geralmente linho, veludo leve ou jacquard em cores neutras, com queda longa até o chão. A medição a laser garante que cada painel cubra o vão com exatidão, valorizando a arquitetura em vez de competir com ela."}}
+        {
+          "@type": "Question",
+          "name": "Vocês fazem cortina para casarão antigo de pé-direito alto em Valença?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fazemos — é uma das nossas especialidades. Medimos a laser para o caimento ficar perfeito nas janelas altas e largas dos casarões do Vale do Café, com trilho e tecido que valorizam a arquitetura."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A ShineCortinas atende Valença com visita à domicílio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Vamos até a sua casa em Valença para medir a laser, mostrar os tecidos e apresentar o projeto. Gratuito, sem compromisso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso parcelar as cortinas em Valença?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pode. Em até 12x no cartão, e a consultoria em domicílio é totalmente gratuita."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a melhor loja de cortinas e persianas em Valença?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A ShineCortinas atende Valença e o Vale do Café com projetos especializados para a arquitetura histórica da região — casarões, janelões altos e ambientes com identidade própria. Consultoria gratuita em domicílio. Referência há 17 anos no Sul Fluminense."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o investimento em cortinas sob medida em Valença?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Casas históricas de Valença muitas vezes têm medidas fora do padrão, o que torna a cortina sob medida indispensável. Na consultoria gratuita, apresentamos todas as opções e condições de parcelamento em até 12x. Sem compromisso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como escolher cortina para casarão com janelão em Valença?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Casarões de Valença pedem tecidos que respeitem a escala do ambiente — geralmente linho, veludo leve ou jacquard em cores neutras, com queda longa até o chão. A medição a laser garante que cada painel cubra o vão com exatidão, valorizando a arquitetura em vez de competir com ela."
+          }
+        }
       ]
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.shinecortinas.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Cidades", "item": "https://www.shinecortinas.com/cidades-atendidas/"},
-        {"@type": "ListItem", "position": 3, "name": "Valença", "item": "https://www.shinecortinas.com/cidades/valenca/"}
-      ]
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.shinecortinas.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cidades",
+          "item": "https://www.shinecortinas.com/cidades-atendidas.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Valença",
+          "item": "https://www.shinecortinas.com/cidades/valenca/"
+        }
+      ],
+      "@id": "https://www.shinecortinas.com/cidades/valenca/#breadcrumb"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.shinecortinas.com/#website",
+      "url": "https://www.shinecortinas.com",
+      "name": "ShineCortinas",
+      "publisher": {
+        "@id": "https://www.shinecortinas.com/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.shinecortinas.com/cidades/valenca/",
+      "url": "https://www.shinecortinas.com/cidades/valenca/",
+      "name": "Loja de Cortinas e Persianas Sob Medida em Valença | ShineCortinas",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.shinecortinas.com/#website"
+      },
+      "about": {
+        "@id": "https://www.shinecortinas.com/#biz"
+      },
+      "breadcrumb": {
+        "@id": "https://www.shinecortinas.com/cidades/valenca/#breadcrumb"
+      },
+      "dateModified": "2026-09-03",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/body//h1",
+          "/html/body//h1/following-sibling::p[1]"
+        ]
+      }
     }
   ]
-}</script>
+}
+</script>
   <style>
     body { font-family: 'Montserrat', sans-serif; }
     .font-logo { font-family: 'Cinzel', serif; }
@@ -108,6 +294,8 @@
     .hover-zoom img { transition: transform 0.8s cubic-bezier(0.16,1,0.3,1); }
     .hover-zoom:hover img { transform: scale(1.07); }
   </style>
+<meta name="geo.region" content="BR-RJ">
+<meta name="geo.placename" content="Valença, RJ, Brasil">
 </head>
 <body class="bg-white text-gray-900 antialiased overflow-x-hidden">
 

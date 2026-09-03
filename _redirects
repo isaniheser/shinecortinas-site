@@ -17,6 +17,11 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 /produtos-cidade/cortina-em-vassouras  /cidades/vassouras/  301
 /produtos-cidade/*  /cidades-atendidas.html  301
 
+# URL legada (indexada) que cobria 4 cidades numa página só -> consolida em Volta Redonda
+/produtos-de-cortinas-e-persianas-sob-medida-volta-redonda-resende-barra-mansa-e-barra-do-pira%C3%AD  /cidades/volta-redonda/  301
+/produtos-de-cortinas-e-persianas-sob-medida-volta-redonda-resende-barra-mansa-e-barra-do-piraí  /cidades/volta-redonda/  301
+/produtos-de-cortinas-e-persianas-sob-medida-volta-redonda-resende-barra-mansa-e-barra-do-pirai  /cidades/volta-redonda/  301
+
 
 /post/qual-a-altura-ideal-de-uma-cortina /blog/altura-ideal-da-cortina 301!
 /post/7-tipos-de-forro-para-cortina-escolha-o-ideal-para-o-seu-ambiente /blog/tipos-de-forro-para-cortina 301!

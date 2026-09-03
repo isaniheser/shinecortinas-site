@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#000000">
-  <title>Cortinas e Persianas em Vassouras | ShineCortinas</title>
+  <title>Loja de Cortinas e Persianas Sob Medida em Vassouras | ShineCortinas</title>
   <meta name="description" content="Cortinas e persianas sob medida em Vassouras. Elegância clássica para os casarões imperiais e janelões do Vale do Café. Consultoria gratuita em casa, em até 12x.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.shinecortinas.com/cidades/vassouras/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Cortinas e Persianas em Vassouras | ShineCortinas">
+  <meta property="og:title" content="Loja de Cortinas e Persianas Sob Medida em Vassouras | ShineCortinas">
   <meta property="og:description" content="Cortinas e persianas sob medida em Vassouras. Elegância clássica para os casarões imperiais e janelões do Vale do Café. Consultoria gratuita em casa, em até 12x.">
   <meta property="og:url" content="https://www.shinecortinas.com/cidades/vassouras/">
   <meta property="og:image" content="https://www.shinecortinas.com/hero-sala.avif">
@@ -31,14 +31,38 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="ShineCortinas" />
   <link rel="manifest" href="/site.webmanifest" />
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "name": "ShineCortinas",
       "url": "https://www.shinecortinas.com/",
-      "logo": "https://www.shinecortinas.com/logo-shine.avif"
+      "logo": "https://www.shinecortinas.com/logo-shine.avif",
+      "@id": "https://www.shinecortinas.com/#org",
+      "sameAs": [
+        "https://www.instagram.com/shinecortinas/",
+        "https://www.facebook.com/shinecortinas",
+        "https://www.tiktok.com/@shinecortinas",
+        "https://www.youtube.com/@shinecortinas",
+        "https://www.pinterest.com/shinecortinas"
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.shinecortinas.com/#isani",
+        "name": "Isani Oliveira",
+        "jobTitle": "CEO",
+        "url": "https://www.shinecortinas.com/sobre/"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+5524993298763",
+          "contactType": "customer service",
+          "availableLanguage": "pt-BR"
+        }
+      ]
     },
     {
       "@type": "LocalBusiness",
@@ -52,7 +76,22 @@
         "addressRegion": "RJ",
         "addressCountry": "BR"
       },
-      "areaServed": ["Vassouras", "Vale do Café", "Sul Fluminense"],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vassouras",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Rio de Janeiro",
+            "sameAs": "https://pt.wikipedia.org/wiki/Rio_de_Janeiro_(estado)"
+          },
+          "sameAs": "https://pt.wikipedia.org/wiki/Vassouras"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Sul Fluminense"
+        }
+      ],
       "priceRange": "$$",
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -60,36 +99,183 @@
         "reviewCount": "292",
         "bestRating": "5",
         "worstRating": "1"
-      }
+      },
+      "@id": "https://www.shinecortinas.com/#biz",
+      "image": "https://www.shinecortinas.com/logo-shine.avif",
+      "sameAs": [
+        "https://www.instagram.com/shinecortinas/",
+        "https://www.facebook.com/shinecortinas",
+        "https://www.tiktok.com/@shinecortinas",
+        "https://www.youtube.com/@shinecortinas",
+        "https://www.pinterest.com/shinecortinas"
+      ],
+      "parentOrganization": {
+        "@id": "https://www.shinecortinas.com/#org"
+      },
+      "knowsAbout": [
+        "cortinas sob medida",
+        "persianas",
+        "cortina wave",
+        "cortina motorizada",
+        "blackout",
+        "persiana rolô",
+        "persiana romana",
+        "double vision"
+      ],
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Beatriz Teixeira"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Moro num casarão tombado e queria cortinas à altura, sem agredir o estilo da casa. A Shine acertou em cheio: tecido elegante, caimento perfeito nos janelões. Virou o orgulho da sala. Atendimento atencioso e ainda consegui parcelar.",
+          "itemReviewed": {
+            "@id": "https://www.shinecortinas.com/#biz"
+          }
+        }
+      ]
     },
     {
       "@type": "Service",
       "name": "Cortinas e persianas sob medida em Vassouras",
-      "serviceType": "Consultoria em domicílio, medição a laser, confecção e instalação",
-      "provider": {"@type": "LocalBusiness", "name": "ShineCortinas"},
-      "areaServed": ["Vassouras"]
+      "serviceType": "Cortinas e persianas sob medida",
+      "provider": {
+        "@id": "https://www.shinecortinas.com/#biz"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vassouras",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Rio de Janeiro",
+            "sameAs": "https://pt.wikipedia.org/wiki/Rio_de_Janeiro_(estado)"
+          },
+          "sameAs": "https://pt.wikipedia.org/wiki/Vassouras"
+        }
+      ],
+      "url": "https://www.shinecortinas.com/cidades/vassouras/",
+      "description": "Consultoria gratuita em domicílio, medição a laser, confecção e instalação de cortinas e persianas sob medida."
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Vocês fazem cortina para casarão histórico e janelão alto em Vassouras?", "acceptedAnswer": {"@type": "Answer", "text": "Fazemos. Casarões e sobrados com janelas altas e largas são especialidade nossa — medimos a laser para o caimento ficar perfeito e indicamos tecidos elegantes que respeitam a arquitetura clássica de Vassouras."}},
-        {"@type": "Question", "name": "A ShineCortinas atende Vassouras com visita à domicílio?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Vamos até a sua casa em Vassouras para medir a laser, apresentar os tecidos e o projeto. Gratuito e sem compromisso."}},
-        {"@type": "Question", "name": "Posso parcelar as cortinas em Vassouras?", "acceptedAnswer": {"@type": "Answer", "text": "Pode. Em até 12x no cartão, e a consultoria em domicílio é 100% gratuita."}},
-        {"@type": "Question", "name": "Qual a melhor loja de cortinas e persianas em Vassouras?", "acceptedAnswer": {"@type": "Answer", "text": "A ShineCortinas atende Vassouras com projetos que respeitam a elegância da cidade-monumento do Vale do Café — casarões, sobrados e residências com arquitetura histórica. Consultoria gratuita em domicílio. Referência há 17 anos no Sul Fluminense."}},
-        {"@type": "Question", "name": "Como funciona o investimento em cortinas sob medida em Vassouras?", "acceptedAnswer": {"@type": "Answer", "text": "Em casarões com características históricas, o projeto exige atenção especial às medidas e aos materiais. Na consultoria gratuita em Vassouras, apresentamos tudo com transparência — incluindo parcelamento em até 12x no cartão."}},
-        {"@type": "Question", "name": "Vocês fazem cortina para casarão tombado em Vassouras?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Já realizamos projetos em imóveis históricos de Vassouras. Trabalhamos com cuidado para não intervir na estrutura original — usando sistemas de fixação reversíveis e tecidos alinhados ao padrão da arquitetura do Vale do Café."}}
+        {
+          "@type": "Question",
+          "name": "Vocês fazem cortina para casarão histórico e janelão alto em Vassouras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fazemos. Casarões e sobrados com janelas altas e largas são especialidade nossa — medimos a laser para o caimento ficar perfeito e indicamos tecidos elegantes que respeitam a arquitetura clássica de Vassouras."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A ShineCortinas atende Vassouras com visita à domicílio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Vamos até a sua casa em Vassouras para medir a laser, apresentar os tecidos e o projeto. Gratuito e sem compromisso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso parcelar as cortinas em Vassouras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pode. Em até 12x no cartão, e a consultoria em domicílio é 100% gratuita."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a melhor loja de cortinas e persianas em Vassouras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A ShineCortinas atende Vassouras com projetos que respeitam a elegância da cidade-monumento do Vale do Café — casarões, sobrados e residências com arquitetura histórica. Consultoria gratuita em domicílio. Referência há 17 anos no Sul Fluminense."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o investimento em cortinas sob medida em Vassouras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Em casarões com características históricas, o projeto exige atenção especial às medidas e aos materiais. Na consultoria gratuita em Vassouras, apresentamos tudo com transparência — incluindo parcelamento em até 12x no cartão."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês fazem cortina para casarão tombado em Vassouras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Já realizamos projetos em imóveis históricos de Vassouras. Trabalhamos com cuidado para não intervir na estrutura original — usando sistemas de fixação reversíveis e tecidos alinhados ao padrão da arquitetura do Vale do Café."
+          }
+        }
       ]
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.shinecortinas.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Cidades", "item": "https://www.shinecortinas.com/cidades-atendidas/"},
-        {"@type": "ListItem", "position": 3, "name": "Vassouras", "item": "https://www.shinecortinas.com/cidades/vassouras/"}
-      ]
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.shinecortinas.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cidades",
+          "item": "https://www.shinecortinas.com/cidades-atendidas.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Vassouras",
+          "item": "https://www.shinecortinas.com/cidades/vassouras/"
+        }
+      ],
+      "@id": "https://www.shinecortinas.com/cidades/vassouras/#breadcrumb"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.shinecortinas.com/#website",
+      "url": "https://www.shinecortinas.com",
+      "name": "ShineCortinas",
+      "publisher": {
+        "@id": "https://www.shinecortinas.com/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.shinecortinas.com/cidades/vassouras/",
+      "url": "https://www.shinecortinas.com/cidades/vassouras/",
+      "name": "Loja de Cortinas e Persianas Sob Medida em Vassouras | ShineCortinas",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.shinecortinas.com/#website"
+      },
+      "about": {
+        "@id": "https://www.shinecortinas.com/#biz"
+      },
+      "breadcrumb": {
+        "@id": "https://www.shinecortinas.com/cidades/vassouras/#breadcrumb"
+      },
+      "dateModified": "2026-09-03",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/body//h1",
+          "/html/body//h1/following-sibling::p[1]"
+        ]
+      }
     }
   ]
-}</script>
+}
+</script>
   <style>
     body { font-family: 'Montserrat', sans-serif; }
     .font-logo { font-family: 'Cinzel', serif; }
@@ -108,6 +294,8 @@
     .hover-zoom img { transition: transform 0.8s cubic-bezier(0.16,1,0.3,1); }
     .hover-zoom:hover img { transform: scale(1.07); }
   </style>
+<meta name="geo.region" content="BR-RJ">
+<meta name="geo.placename" content="Vassouras, RJ, Brasil">
 </head>
 <body class="bg-white text-gray-900 antialiased overflow-x-hidden">
 

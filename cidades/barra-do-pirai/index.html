@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#000000">
-  <title>Cortinas e Persianas em Barra do Piraí | ShineCortinas</title>
+  <title>Loja de Cortinas e Persianas Sob Medida em Barra do Piraí | ShineCortinas</title>
   <meta name="description" content="Cortinas e persianas sob medida em Barra do Piraí. A ShineCortinas vai até a sua casa, mede a laser e instala. Consultoria gratuita, em até 12x.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.shinecortinas.com/cidades/barra-do-pirai/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Cortinas e Persianas em Barra do Piraí | ShineCortinas">
+  <meta property="og:title" content="Loja de Cortinas e Persianas Sob Medida em Barra do Piraí | ShineCortinas">
   <meta property="og:description" content="Cortinas e persianas sob medida em Barra do Piraí. A ShineCortinas vai até a sua casa, mede a laser e instala. Consultoria gratuita, em até 12x.">
   <meta property="og:url" content="https://www.shinecortinas.com/cidades/barra-do-pirai/">
   <meta property="og:image" content="https://www.shinecortinas.com/hero-sala.avif">
@@ -31,14 +31,38 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="ShineCortinas" />
   <link rel="manifest" href="/site.webmanifest" />
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "name": "ShineCortinas",
       "url": "https://www.shinecortinas.com/",
-      "logo": "https://www.shinecortinas.com/logo-shine.avif"
+      "logo": "https://www.shinecortinas.com/logo-shine.avif",
+      "@id": "https://www.shinecortinas.com/#org",
+      "sameAs": [
+        "https://www.instagram.com/shinecortinas/",
+        "https://www.facebook.com/shinecortinas",
+        "https://www.tiktok.com/@shinecortinas",
+        "https://www.youtube.com/@shinecortinas",
+        "https://www.pinterest.com/shinecortinas"
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.shinecortinas.com/#isani",
+        "name": "Isani Oliveira",
+        "jobTitle": "CEO",
+        "url": "https://www.shinecortinas.com/sobre/"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+5524993298763",
+          "contactType": "customer service",
+          "availableLanguage": "pt-BR"
+        }
+      ]
     },
     {
       "@type": "LocalBusiness",
@@ -52,7 +76,22 @@
         "addressRegion": "RJ",
         "addressCountry": "BR"
       },
-      "areaServed": ["Barra do Piraí", "Vale do Café", "Sul Fluminense"],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Barra do Piraí",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Rio de Janeiro",
+            "sameAs": "https://pt.wikipedia.org/wiki/Rio_de_Janeiro_(estado)"
+          },
+          "sameAs": "https://pt.wikipedia.org/wiki/Barra_do_Piraí"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Sul Fluminense"
+        }
+      ],
       "priceRange": "$$",
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -60,36 +99,183 @@
         "reviewCount": "292",
         "bestRating": "5",
         "worstRating": "1"
-      }
+      },
+      "@id": "https://www.shinecortinas.com/#biz",
+      "image": "https://www.shinecortinas.com/logo-shine.avif",
+      "sameAs": [
+        "https://www.instagram.com/shinecortinas/",
+        "https://www.facebook.com/shinecortinas",
+        "https://www.tiktok.com/@shinecortinas",
+        "https://www.youtube.com/@shinecortinas",
+        "https://www.pinterest.com/shinecortinas"
+      ],
+      "parentOrganization": {
+        "@id": "https://www.shinecortinas.com/#org"
+      },
+      "knowsAbout": [
+        "cortinas sob medida",
+        "persianas",
+        "cortina wave",
+        "cortina motorizada",
+        "blackout",
+        "persiana rolô",
+        "persiana romana",
+        "double vision"
+      ],
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Cláudia Menezes"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Tenho um sobrado antigo com janelas enormes e achei que ninguém ia resolver. O consultor da Shine veio em casa, mediu tudo e a cortina ficou perfeita no pé-direito alto. Parcelei em 10x e o atendimento foi impecável.",
+          "itemReviewed": {
+            "@id": "https://www.shinecortinas.com/#biz"
+          }
+        }
+      ]
     },
     {
       "@type": "Service",
       "name": "Cortinas e persianas sob medida em Barra do Piraí",
-      "serviceType": "Consultoria em domicílio, medição a laser, confecção e instalação",
-      "provider": {"@type": "LocalBusiness", "name": "ShineCortinas"},
-      "areaServed": ["Barra do Piraí"]
+      "serviceType": "Cortinas e persianas sob medida",
+      "provider": {
+        "@id": "https://www.shinecortinas.com/#biz"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Barra do Piraí",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Rio de Janeiro",
+            "sameAs": "https://pt.wikipedia.org/wiki/Rio_de_Janeiro_(estado)"
+          },
+          "sameAs": "https://pt.wikipedia.org/wiki/Barra_do_Piraí"
+        }
+      ],
+      "url": "https://www.shinecortinas.com/cidades/barra-do-pirai/",
+      "description": "Consultoria gratuita em domicílio, medição a laser, confecção e instalação de cortinas e persianas sob medida."
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "A ShineCortinas atende Barra do Piraí com visita à domicílio?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Nossa equipe vai até a sua casa em Barra do Piraí para a consultoria completa — medição a laser, curadoria de tecidos e apresentação do projeto. Totalmente gratuito, sem compromisso."}},
-        {"@type": "Question", "name": "Vocês fazem cortina para janelão de sobrado antigo em Barra do Piraí?", "acceptedAnswer": {"@type": "Answer", "text": "Fazemos sim. Sobrados e casas com pé-direito alto são especialidade nossa — medimos a laser para o caimento ficar perfeito mesmo nas janelas mais altas, com trilho e tecido adequados a cada vão."}},
-        {"@type": "Question", "name": "Posso parcelar as cortinas em Barra do Piraí?", "acceptedAnswer": {"@type": "Answer", "text": "Pode. Em até 12x no cartão. A consultoria na sua casa em Barra do Piraí é gratuita — você só decide quando estiver seguro e confortável com o projeto."}},
-        {"@type": "Question", "name": "Qual a melhor loja de cortinas e persianas em Barra do Piraí?", "acceptedAnswer": {"@type": "Answer", "text": "A ShineCortinas atende Barra do Piraí há 17 anos com consultoria gratuita em domicílio, medição a laser e projetos entregues do Centro ao bairro Califórnia. Referência comprovada no Sul Fluminense."}},
-        {"@type": "Question", "name": "Como funciona o investimento em cortinas sob medida em Barra do Piraí?", "acceptedAnswer": {"@type": "Answer", "text": "O investimento varia conforme o ambiente, os tecidos e o sistema. Na consultoria em domicílio gratuita, apresentamos as opções e condições com transparência — incluindo a comodidade de parcelar em até 12x no cartão. Você decide sem compromisso."}},
-        {"@type": "Question", "name": "Vocês fazem cortina para pé-direito alto em Barra do Piraí?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Sobrados e casas antigas com pé-direito alto são projetos frequentes na região. Medimos a laser para garantir caimento impecável do teto ao chão, sem emenda e sem folga, mesmo em janelões com mais de 3 metros."}}
+        {
+          "@type": "Question",
+          "name": "A ShineCortinas atende Barra do Piraí com visita à domicílio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Nossa equipe vai até a sua casa em Barra do Piraí para a consultoria completa — medição a laser, curadoria de tecidos e apresentação do projeto. Totalmente gratuito, sem compromisso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês fazem cortina para janelão de sobrado antigo em Barra do Piraí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fazemos sim. Sobrados e casas com pé-direito alto são especialidade nossa — medimos a laser para o caimento ficar perfeito mesmo nas janelas mais altas, com trilho e tecido adequados a cada vão."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso parcelar as cortinas em Barra do Piraí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pode. Em até 12x no cartão. A consultoria na sua casa em Barra do Piraí é gratuita — você só decide quando estiver seguro e confortável com o projeto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a melhor loja de cortinas e persianas em Barra do Piraí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A ShineCortinas atende Barra do Piraí há 17 anos com consultoria gratuita em domicílio, medição a laser e projetos entregues do Centro ao bairro Califórnia. Referência comprovada no Sul Fluminense."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o investimento em cortinas sob medida em Barra do Piraí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O investimento varia conforme o ambiente, os tecidos e o sistema. Na consultoria em domicílio gratuita, apresentamos as opções e condições com transparência — incluindo a comodidade de parcelar em até 12x no cartão. Você decide sem compromisso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês fazem cortina para pé-direito alto em Barra do Piraí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Sobrados e casas antigas com pé-direito alto são projetos frequentes na região. Medimos a laser para garantir caimento impecável do teto ao chão, sem emenda e sem folga, mesmo em janelões com mais de 3 metros."
+          }
+        }
       ]
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.shinecortinas.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Cidades", "item": "https://www.shinecortinas.com/cidades-atendidas/"},
-        {"@type": "ListItem", "position": 3, "name": "Barra do Piraí", "item": "https://www.shinecortinas.com/cidades/barra-do-pirai/"}
-      ]
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.shinecortinas.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cidades",
+          "item": "https://www.shinecortinas.com/cidades-atendidas.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Barra do Piraí",
+          "item": "https://www.shinecortinas.com/cidades/barra-do-pirai/"
+        }
+      ],
+      "@id": "https://www.shinecortinas.com/cidades/barra-do-pirai/#breadcrumb"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.shinecortinas.com/#website",
+      "url": "https://www.shinecortinas.com",
+      "name": "ShineCortinas",
+      "publisher": {
+        "@id": "https://www.shinecortinas.com/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.shinecortinas.com/cidades/barra-do-pirai/",
+      "url": "https://www.shinecortinas.com/cidades/barra-do-pirai/",
+      "name": "Loja de Cortinas e Persianas Sob Medida em Barra do Piraí | ShineCortinas",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.shinecortinas.com/#website"
+      },
+      "about": {
+        "@id": "https://www.shinecortinas.com/#biz"
+      },
+      "breadcrumb": {
+        "@id": "https://www.shinecortinas.com/cidades/barra-do-pirai/#breadcrumb"
+      },
+      "dateModified": "2026-09-03",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/body//h1",
+          "/html/body//h1/following-sibling::p[1]"
+        ]
+      }
     }
   ]
-}</script>
+}
+</script>
   <style>
     body { font-family: 'Montserrat', sans-serif; }
     .font-logo { font-family: 'Cinzel', serif; }
@@ -108,6 +294,8 @@
     .hover-zoom img { transition: transform 0.8s cubic-bezier(0.16,1,0.3,1); }
     .hover-zoom:hover img { transform: scale(1.07); }
   </style>
+<meta name="geo.region" content="BR-RJ">
+<meta name="geo.placename" content="Barra do Piraí, RJ, Brasil">
 </head>
 <body class="bg-white text-gray-900 antialiased overflow-x-hidden">
 

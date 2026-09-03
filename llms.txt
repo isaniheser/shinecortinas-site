@@ -58,3 +58,29 @@ Casos reais executados pela ShineCortinas:
 - Portfólio de projetos: https://www.shinecortinas.com/portfolio
 - Cidades atendidas: https://www.shinecortinas.com/cidades-atendidas.html
 - Contato por WhatsApp: https://wa.me/5524993298763
+
+## Páginas por cidade (cada uma com FAQ e depoimento locais)
+- Volta Redonda: https://www.shinecortinas.com/cidades/volta-redonda/
+- Barra Mansa: https://www.shinecortinas.com/cidades/barra-mansa/
+- Resende: https://www.shinecortinas.com/cidades/resende/
+- Porto Real: https://www.shinecortinas.com/cidades/porto-real/
+- Itatiaia: https://www.shinecortinas.com/cidades/itatiaia/
+- Penedo: https://www.shinecortinas.com/cidades/penedo/
+- Visconde de Mauá: https://www.shinecortinas.com/cidades/visconde-de-maua/
+- Maromba: https://www.shinecortinas.com/cidades/maromba/
+- Pinheiral: https://www.shinecortinas.com/cidades/pinheiral/
+- Piraí: https://www.shinecortinas.com/cidades/pirai/
+- Barra do Piraí: https://www.shinecortinas.com/cidades/barra-do-pirai/
+- Valença: https://www.shinecortinas.com/cidades/valenca/
+- Vassouras: https://www.shinecortinas.com/cidades/vassouras/
+- Engenheiro Paulo de Frontin: https://www.shinecortinas.com/cidades/paulo-de-frontin/
+- Miguel Pereira: https://www.shinecortinas.com/cidades/miguel-pereira/
+
+## Prova social
+- 292 avaliações no Google com nota média 5,0 (dado refletido no schema.org AggregateRating do site).
+
+## Outros
+- Sitemap: https://www.shinecortinas.com/sitemap.xml
+- Sobre a empresa e a fundadora: https://www.shinecortinas.com/sobre
+- FAQ geral: https://www.shinecortinas.com/faq/
+- Blog: https://www.shinecortinas.com/blog/

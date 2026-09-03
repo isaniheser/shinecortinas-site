@@ -1,4 +1,25 @@
+# ShineCortinas — cortinas e persianas sob medida no Sul Fluminense (RJ)
+# Buscadores e assistentes de IA são bem-vindos a indexar e citar este site.
+
 User-agent: *
+Allow: /
+
+# Buscadores de IA / assistentes (indexação e citação explicitamente permitidas)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: Meta-ExternalAgent
+User-agent: DuckAssistBot
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://www.shinecortinas.com/sitemap.xml
