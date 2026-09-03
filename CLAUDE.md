@@ -34,9 +34,9 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
 ## Restrições técnicas (armadilhas conhecidas)
 
 - **Tailwind está CONGELADO** em `/assets/tailwind.generated.css` (pré-compilado).
-  Classes utilitárias novas NÃO existem nele. Qualquer classe nova usada nas
-  páginas de cidade precisa ser definida em **`/assets/cidades.css`** (já linkado
-  nessas páginas). Sempre validar que toda classe usada existe num dos dois CSS.
+  Classes utilitárias novas NÃO existem nele. Páginas ainda no Tailwind (home,
+  produto, blog): validar que toda classe existe no CSS gerado. As páginas de
+  cidade NÃO usam mais Tailwind — usam `/assets/shine-leve.css`.
 - **Bug do `</script>`:** ao gerar páginas via script, escrever a tag de
   fechamento como `</script>` literal. Nunca `<\/script>` — o navegador não
   reconhece e a página renderiza em branco.
@@ -59,13 +59,29 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     ("a comodidade de parcelar em até 12x"), nunca como argumento de "é baratinho".
   - Manter: consultoria gratuita, sem pressão, sem robô (acolhimento ≠ povão).
 
-## Página de referência (template aprovado)
+## Página de referência (template aprovado) — sistema visual "leve"
 
-`/cidades/resende/index.html` é o **padrão aprovado** para todas as páginas de
-cidade. Estrutura: navbar glass → hero cinematográfico (100svh, hero claro) →
-faixa de confiança → bloco "Imagine só" (projeção/PNL) → story → galeria de 6
-projetos → "Como Funciona" (3 círculos dourados) → depoimento → FAQ → CTA final
-→ links internos → footer → WhatsApp flutuante.
+Decisão do Isani (set/2026): o tom preto/dourado pesado foi substituído pelo
+**sistema visual leve**, derivado da landing `/lp/anuncio-d/`: chão areia
+`#FBFAF7`, verde profundo `#16302A` como faixa e voz, dourado `#C6A868` só em
+detalhes (kickers, hairlines, um botão). Playfair Display peso 500 (nunca 900),
+Montserrat no corpo, Cinzel só no logotipo. Header sólido verde (não mais vidro).
+**Celular primeiro:** no celular tudo centralizado, hero ocupa a tela, barra de
+ação fixa embaixo (`.sl-bar`); o desktop é derivado, nunca o contrário.
+
+- CSS do sistema: `/assets/shine-leve.css` (semântico, sem Tailwind).
+- **As 15 páginas de cidade são GERADAS**: conteúdo único de cada cidade em
+  `cidades/cidades.json`; template em `scripts/build-cidades.mjs`.
+  Para alterar copy de uma cidade: edite o JSON e rode
+  `node scripts/build-cidades.mjs`. Para alterar layout: edite o template.
+  Nunca edite `cidades/<slug>/index.html` à mão — o build sobrescreve.
+  O `<head>` (title, metas, canonical, JSON-LD) é preservado do arquivo.
+- Estrutura: header → hero (foto + degradê verde, breadcrumb, H1) → faixa de
+  confiança → "Imagine" (imagem + copy local) → story (imagem + copy local) →
+  prova (17 anos, 5.0/292, 9 mil ambientes, equipe própria) → galeria clara →
+  comparação "pela internet × com a Shine" → como funciona → depoimento (faixa
+  verde) → FAQ com as 6 perguntas do schema visíveis → CTA final (faixa verde)
+  → links internos + cidades próximas → rodapé claro → barra fixa (celular).
 
 ## Cidades atendidas (15)
 
@@ -75,7 +91,10 @@ visconde-de-maua, volta-redonda.
 
 ## Git / Deploy
 
-- Branch de trabalho atual: `claude/awesome-turing-clhtty`.
+- Branch de trabalho atual: `claude/cortinas-search-rio-cities-ntit7r` (SEO/GEO + sistema leve).
+- **Pendente (decidido, não feito):** home única e responsiva no sistema leve e
+  remoção do redirect JS de celular para `/app/` (a home que o Google indexa
+  hoje é o app: 411 palavras, 5 H1, sem links para as cidades).
 - A branch `claude/audit-website-errors-NmMfH` guarda trabalho NÃO publicado
   (tom âmbar escuro + API v2 do Instagram com vídeo/carrossel) — não apagar
   sem decisão do Isani.
