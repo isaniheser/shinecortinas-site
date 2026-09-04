@@ -53,30 +53,32 @@ const BLOG = [
 ];
 
 // Regras do simulador "qual cortina para o meu ambiente?" — validar com o Isani.
+// Regras do simulador. 5º campo: true = a foto mostra exatamente esse ambiente/solução;
+// false = foto de referência do modelo (outro ambiente) até termos a foto certa — ver docs/fotos-necessarias.md
 const SIM = {
   escurecer: {
-    quarto: ['Blackout técnico com Sistema Box', 'Guias laterais vedam a luz por completo. É o que resolve quem trabalha à noite ou tem bebê em casa.', '/blackouts-tecnicos.avif', '/blackout-e-forros/'],
-    sala: ['Cortina dupla: voil de dia, blackout à noite', 'Duas camadas no mesmo trilho. Leveza durante o dia e escuridão para o cinema em casa.', '/duplo.avif', '/blackout-e-forros/'],
-    escritorio: ['Persiana rolô blackout', 'Bloqueio total da luz no monitor e na tela de reunião, com acionamento discreto.', '/blackout.avif', '/persianas/'],
-    cozinha: ['Persiana rolô blackout', 'Bloqueio total quando precisar, com tecido fácil de limpar.', '/blackout.avif', '/persianas/'],
+    quarto: ['Blackout técnico com Sistema Box', 'Guias laterais vedam a luz por completo. É o que resolve quem trabalha à noite ou tem bebê em casa.', '/blackouts-tecnicos.avif', '/blackout-e-forros/', false],
+    sala: ['Blackout técnico para sala e home theater', 'Escuridão de cinema quando você quiser, com o acabamento de cortina.', '/blackouts-tecnicos.avif', '/blackout-e-forros/', true],
+    escritorio: ['Persiana rolô blackout', 'Bloqueio total da luz no monitor e na tela de reunião, com acionamento discreto.', '/blackouts-tecnicos.avif', '/persianas/', false],
+    cozinha: ['Persiana rolô blackout', 'Bloqueio total quando precisar, com tecido fácil de limpar.', '/blackouts-tecnicos.avif', '/persianas/', false],
   },
   privacidade: {
-    sala: ['Voil com blackout', 'O voil dá privacidade sem escurecer; o blackout fecha quando você quiser.', '/duplo.avif', '/cortinas/'],
-    quarto: ['Cortina dupla com forro', 'Privacidade total à noite e luz filtrada de manhã.', '/duplo.avif', '/cortinas/'],
-    escritorio: ['Persiana double vision', 'Faixas que abrem e fecham a visão de fora sem perder a luz.', '/persiana-motorizada.avif', '/persianas/'],
-    cozinha: ['Persiana de madeira', 'Lâminas que fecham a visão e resistem ao dia a dia da cozinha.', '/madeira.avif', '/persianas/'],
+    sala: ['Voil com cortina de linho', 'O voil dá privacidade sem escurecer; a segunda camada fecha quando você quiser.', '/duplo.avif', '/cortinas/', true],
+    quarto: ['Cortina dupla com forro', 'Privacidade total à noite e luz filtrada de manhã.', '/duplo.avif', '/cortinas/', false],
+    escritorio: ['Persiana double vision', 'Faixas que abrem e fecham a visão de fora sem perder a luz.', '/persiana-motorizada.avif', '/persianas/', false],
+    cozinha: ['Persiana de madeira', 'Lâminas que fecham a visão e resistem ao dia a dia da cozinha.', '/madeira.avif', '/persianas/', false],
   },
   sol: {
-    sala: ['Tela solar screen', 'Corta o calor e o reflexo sem esconder a vista da janela.', '/tela-solar.avif', '/persianas/'],
-    quarto: ['Screen com blackout', 'Screen para o dia, blackout para dormir: dois sistemas na mesma janela.', '/tela-solar.avif', '/persianas/'],
-    escritorio: ['Tela solar screen', 'Reflexo zero na tela e temperatura mais baixa, com a vista preservada.', '/tela-solar.avif', '/persianas/'],
-    cozinha: ['Persiana rolô screen', 'Sol controlado e limpeza simples.', '/tela-solar.avif', '/persianas/'],
+    sala: ['Tela solar screen', 'Corta o calor e o reflexo sem esconder a vista da janela.', '/tela-solar.avif', '/persianas/', true],
+    quarto: ['Screen com blackout', 'Screen para o dia, blackout para dormir: dois sistemas na mesma janela.', '/persiana-motorizada.avif', '/persianas/', false],
+    escritorio: ['Tela solar screen', 'Reflexo zero na tela e temperatura mais baixa, com a vista preservada.', '/persiana-motorizada.avif', '/persianas/', false],
+    cozinha: ['Persiana rolô screen', 'Sol controlado e limpeza simples.', '/persiana-motorizada.avif', '/persianas/', false],
   },
   decorar: {
-    sala: ['Cortina wave em linho', 'Ondas regulares do teto ao chão. É o acabamento de projeto de arquitetura.', '/linha-puro.avif', '/cortina-wave/'],
-    quarto: ['Cortina wave com forro', 'Caimento perfeito e o conforto do forro para dormir melhor.', '/cortina-sob-medida.avif', '/cortina-wave/'],
-    escritorio: ['Persiana de madeira', 'Toque natural e ar de biblioteca, com luz por lâminas.', '/madeira.avif', '/persianas/'],
-    cozinha: ['Persiana de madeira', 'Calor visual e praticidade na limpeza.', '/madeira.avif', '/persianas/'],
+    sala: ['Cortina wave em linho', 'Ondas regulares do teto ao chão. É o acabamento de projeto de arquitetura.', '/cortina-sob-medida.avif', '/cortina-wave/', true],
+    quarto: ['Cortina wave com forro', 'Caimento perfeito e o conforto do forro para dormir melhor.', '/cortina-sob-medida.avif', '/cortina-wave/', false],
+    escritorio: ['Persiana de madeira', 'Toque natural e ar de biblioteca, com luz por lâminas.', '/madeira.avif', '/persianas/', true],
+    cozinha: ['Persiana de madeira', 'Calor visual e praticidade na limpeza.', '/madeira.avif', '/persianas/', false],
   },
 };
 
@@ -142,7 +144,7 @@ ${cityChip(null)}${strip()}
           <label><input type="checkbox" name="motor" value="1"><span>Quero abrir pelo celular ou pela voz</span></label>
         </fieldset>
         <div class="sl-sim__result" data-sim-result aria-live="polite">
-          <div class="sl-media"><img data-sim-img src="/linha-puro.avif" alt="Sugestão de cortina para o seu ambiente" width="800" height="1000" loading="lazy" decoding="async"></div>
+          <div class="sl-media"><img data-sim-img src="/cortina-sob-medida.avif" alt="Sugestão de cortina para o seu ambiente" width="800" height="1000" loading="lazy" decoding="async"><span class="sl-sim__ref" data-sim-ref hidden>Referência do modelo, em outro ambiente</span></div>
           <div>
             <p class="sl-kicker">Nossa sugestão</p>
             <h3 data-sim-title>Cortina wave em linho</h3>
@@ -254,11 +256,11 @@ ${footer()}${waFloat()}${bar('tabs')}
     (function(){
       var SIM=${JSON.stringify(SIM)};
       var f=document.getElementById('sim'); if(!f) return;
-      var img=f.querySelector('[data-sim-img]'),tt=f.querySelector('[data-sim-title]'),tx=f.querySelector('[data-sim-text]'),mo=f.querySelector('[data-sim-motor]'),ln=f.querySelector('[data-sim-link]');
+      var img=f.querySelector('[data-sim-img]'),ref=f.querySelector('[data-sim-ref]'),tt=f.querySelector('[data-sim-title]'),tx=f.querySelector('[data-sim-text]'),mo=f.querySelector('[data-sim-motor]'),ln=f.querySelector('[data-sim-link]');
       var rooms={sala:'sala',quarto:'quarto',escritorio:'home office',cozinha:'cozinha'};
       function upd(){
         var c=f.comodo.value,o=f.objetivo.value,m=f.motor.checked,r=SIM[o][c];
-        tt.textContent=r[0]; tx.textContent=r[1]; img.src=r[2]; img.alt=r[0]; ln.href=r[3]; mo.hidden=!m;
+        tt.textContent=r[0]; tx.textContent=r[1]; img.src=r[2]; img.alt=r[0]; ln.href=r[3]; mo.hidden=!m; ref.hidden=!!r[4];
         document.body.setAttribute('data-wa-context','o simulador: '+rooms[c]+', '+f.objetivo.value+(m?', com motorização':'')+' → '+r[0]);
       }
       f.addEventListener('change',upd); upd();

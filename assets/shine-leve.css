@@ -330,3 +330,6 @@ p{margin:0;text-wrap:pretty}
 .sl-ceo .sl-quote-by small{color:var(--muted)}
 .sl-ceo .sl-quote-by a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:899px){.sl-ceo .sl-kicker{justify-content:center}}
+
+.sl-sim__result .sl-media{position:relative}
+.sl-sim__ref{position:absolute;left:8px;right:8px;bottom:8px;background:rgba(22,48,42,.82);color:#fff;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:6px 8px;border-radius:3px;text-align:center}
