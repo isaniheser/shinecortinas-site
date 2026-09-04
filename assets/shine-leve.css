@@ -232,3 +232,101 @@ p{margin:0;text-wrap:pretty}
 @view-transition{navigation:auto}
 @media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.22s}
+
+/* ===== Home: abas estilo app (celular) ===== */
+.sl-tabs{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--green);border-top:1px solid rgba(223,189,105,.25);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 4px calc(6px + env(safe-area-inset-bottom));box-shadow:0 -10px 30px rgba(22,48,42,.18)}
+.sl-tabs a{display:flex;flex-direction:column;align-items:center;gap:3px;color:rgba(255,255,255,.72);font-size:10px;font-weight:600;letter-spacing:.04em;padding:6px 2px;border-radius:6px}
+.sl-tabs a svg{width:22px;height:22px}
+.sl-tabs a[aria-current]{color:var(--gold-light)}
+.sl-tabs__wa{background:var(--gold);color:var(--green)!important;border-radius:8px}
+@media(min-width:900px){.sl-tabs{display:none}}
+@media(max-width:899px){body:has(.sl-tabs){padding-bottom:74px}}
+
+/* ===== cabeçalho que encolhe ao rolar (só CSS, onde suportado) ===== */
+@supports (animation-timeline: scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    .sl-header__in{animation:sl-shrink linear both;animation-timeline:scroll();animation-range:0 120px}
+    @keyframes sl-shrink{to{padding-top:8px;padding-bottom:8px}}
+  }
+}
+/* ===== revelação suave ao entrar na tela (só CSS, onde suportado) ===== */
+@supports (animation-timeline: view()){
+  @media(prefers-reduced-motion:no-preference){
+    .sl-reveal{animation:sl-reveal linear both;animation-timeline:view();animation-range:entry 0% entry 28%}
+    @keyframes sl-reveal{from{opacity:.25;transform:translateY(14px)}to{opacity:1;transform:none}}
+  }
+}
+
+/* ===== simulador ===== */
+.sl-sim{display:grid;gap:18px;max-width:900px;margin:0 auto}
+.sl-sim fieldset{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.sl-sim legend{width:100%;text-align:center;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);margin-bottom:8px}
+.sl-sim label{position:relative}
+.sl-sim input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.sl-sim label span{display:inline-block;border:1px solid var(--line-2);border-radius:9999px;padding:10px 16px;font-size:13.5px;font-weight:500;color:var(--green);background:#fff;transition:border-color .15s,background .15s}
+.sl-sim input:checked+span{background:var(--green);color:#fff;border-color:var(--green)}
+.sl-sim input:focus-visible+span{outline:3px solid var(--gold);outline-offset:3px}
+.sl-sim__result{display:grid;gap:18px;align-items:center;margin-top:8px;padding:18px;border:1px solid var(--line);border-radius:6px;background:#fff}
+@media(min-width:720px){.sl-sim__result{grid-template-columns:200px 1fr;padding:22px}}
+.sl-sim__result .sl-media img{aspect-ratio:4/5}
+.sl-sim__result h3{font-size:22px;margin-bottom:6px}
+.sl-sim__result p{color:var(--muted);font-size:14.5px}
+.sl-sim__motor{color:var(--green)!important;font-weight:500;margin-top:8px}
+.sl-sim__actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.sl-sim__actions .sl-btn{white-space:normal;text-align:center}
+@media(max-width:719px){.sl-sim__result{text-align:center}.sl-sim__result .sl-kicker{justify-content:center}.sl-sim__actions{justify-content:center}}
+
+/* ===== cards de soluções ===== */
+.sl-cards{display:grid;gap:16px}
+@media(min-width:640px){.sl-cards{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.sl-cards{grid-template-columns:repeat(3,1fr);gap:22px}}
+.sl-card{display:block;color:inherit;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff;transition:border-color .2s,transform .2s}
+.sl-card:hover{border-color:var(--gold);transform:translateY(-2px);color:inherit}
+.sl-card .sl-media{border-radius:0}
+.sl-card .sl-media img{aspect-ratio:4/3}
+.sl-card__body{padding:16px 18px 18px}
+.sl-card__body span{display:block;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+.sl-card__body h3{font-size:19px;margin-bottom:6px}
+.sl-card__body p{color:var(--muted);font-size:14px}
+.sl-card__body em{display:block;margin-top:10px;font-style:normal;font-size:12.5px;font-weight:600;color:var(--green)}
+@media(max-width:639px){.sl-card__body{text-align:center}}
+
+/* ===== clientes ===== */
+.sl-clients{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px}
+.sl-clients span{font-family:var(--serif);font-size:18px;color:var(--muted);letter-spacing:.04em}
+
+/* ===== seis passos ===== */
+@media(min-width:640px){.sl-steps--6{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.sl-steps--6{grid-template-columns:repeat(3,1fr)}}
+
+/* ===== avaliações: fileira com encaixe no celular ===== */
+.sl-quotes{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,360px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:22px 0 8px;scrollbar-width:none}
+.sl-quotes::-webkit-scrollbar{display:none}
+@media(min-width:900px){.sl-quotes{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible}}
+.sl-quotecard{margin:0;scroll-snap-align:start;background:rgba(255,255,255,.06);border:1px solid rgba(223,189,105,.22);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.sl-quotecard .sl-stars{margin:0;font-size:14px}
+.sl-quotecard blockquote{margin:0;font-family:var(--serif);font-style:italic;color:#fff;font-size:16px;line-height:1.55}
+.sl-quotecard figcaption{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-top:auto}
+.sl-quotecard figcaption small{display:block;color:rgba(255,255,255,.5);font-weight:500;letter-spacing:.04em;text-transform:none;font-size:11.5px}
+@media(max-width:899px){.sl-quotecard{text-align:left}}
+
+/* ===== posts ===== */
+.sl-posts{display:grid;gap:14px}
+@media(min-width:900px){.sl-posts{grid-template-columns:repeat(3,1fr);gap:22px}}
+.sl-post{display:block;color:inherit;border:1px solid var(--line);border-radius:6px;padding:18px 20px;background:#fff;transition:border-color .2s}
+.sl-post:hover{border-color:var(--gold);color:inherit}
+.sl-post span{display:block;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+.sl-post h3{font-size:19px;margin-bottom:6px}
+.sl-post p{color:var(--muted);font-size:14px}
+@media(max-width:899px){.sl-post{text-align:center}}
+
+/* ===== CEO ===== */
+.sl-ceo{display:grid;gap:22px;align-items:center;justify-items:center;text-align:center}
+@media(min-width:900px){.sl-ceo{grid-template-columns:220px 1fr;justify-items:start;text-align:left}}
+.sl-ceo img{width:180px;height:180px;border-radius:50%;object-fit:cover;border:3px solid var(--gold-light)}
+.sl-ceo__quote{margin:0 0 12px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,26px);line-height:1.4;color:var(--green)}
+.sl-ceo p{color:var(--muted);font-size:15px}
+.sl-ceo .sl-quote-by{color:var(--gold);}
+.sl-ceo .sl-quote-by small{color:var(--muted)}
+.sl-ceo .sl-quote-by a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:899px){.sl-ceo .sl-kicker{justify-content:center}}
