@@ -5,6 +5,25 @@ sediada em Volta Redonda (RJ), atendendo todo o **Sul Fluminense**.
 CEO: Isani Oliveira. Site estático hospedado no **Cloudflare Pages** (deploy
 automático ao dar merge na branch `main`).
 
+## ORDEM DE PRIORIDADE (decisão do Isani, set/2026) — desempate obrigatório
+
+Quando duas escolhas conflitarem, vence a de número menor. Sempre.
+
+1. **Ser encontrado em primeiro.** Google, Bing, Yandex e os mecanismos de
+   busca das IAs (ChatGPT, Perplexity, Gemini, Claude). Esta premissa não muda.
+   Nada que enfraqueça indexação, conteúdo único, schema, links internos ou
+   velocidade entra no site, por mais bonito que seja.
+2. **Converter, educar e selecionar.** O site explica com autoridade e leva à
+   conversa no WhatsApp com a escada de pedidos (conversar → estimativa →
+   agendar). A seleção do cliente é feita por vocabulário, estética e pelas
+   perguntas do próprio funil (cidade, ambiente, objetivo) — nunca por
+   hostilidade, preço na cara ou filtro de renda explícito (ver "Linguagem").
+   Quem não é cliente hoje se afasta sozinho; quem é, se sente em casa.
+3. **Beleza, sofisticação, tecnologia e inovação.** Sistema visual leve,
+   celular primeiro, recursos modernos (transições nativas, pré-carregamento,
+   simulador, popover) — sempre progressivos e leves. Inovação que custe
+   posição na busca ou peso na página é vetada pela premissa 1.
+
 ## PREMISSAS INEGOCIÁVEIS (não podem mudar)
 
 Toda alteração no site DEVE respeitar, simultaneamente, estas 5 premissas:
