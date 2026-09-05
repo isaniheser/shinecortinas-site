@@ -26,6 +26,13 @@
 - Trilhos e acionamentos.
 - Projetos corporativos para hotelaria, saúde, indústria e instituições.
 
+## Forros (fato validado pelo fundador, set/2026)
+O forro é a camada atrás do tecido decorativo e é ele que define luz e privacidade. Existem dois grupos:
+- **Forro translúcido:** dá privacidade, protege o tecido decorativo do sol e quebra parte da claridade. Tecidos que compõem esse grupo: gabardine (de algodão e de poliéster), tergal, tergal verão, cetim e gorgurinho.
+- **Forro blackout:** em duas versões. **70% (semi blackout)** deixa o ambiente em penumbra; **100%** entrega escuro total. Persianas também têm material blackout 100%.
+- Para quarto realmente escuro: cortina com forro blackout 100% resolve. O que define o resultado é o tipo de forro, não acessório.
+- A ShineCortinas não trabalha com rolô de guias laterais nem caixa box.
+
 ## Diferenciais técnicos
 - **Medição a laser** e confecção sob medida para caimento preciso.
 - **Automação IoT:** motores ocultos, baixo nível de ruído e compatibilidade com Alexa, Google Home e Apple Home.

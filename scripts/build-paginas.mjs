@@ -13,12 +13,12 @@ const BASE = 'https://www.shinecortinas.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const GALERIA = [
-  ['/automacao-sq.avif', 'Automação', 'Cortina motorizada', 'Cortina motorizada automatizada instalada pela ShineCortinas'],
-  ['/blackout-sq.avif', 'Blackout', 'Escuro no quarto', 'Cortina de blackout instalada em quarto pela ShineCortinas'],
-  ['/persiana-motorizada-sq.avif', 'Persiana', 'Persiana motorizada', 'Persiana motorizada em sala de estar'],
-  ['/duplo-sq.avif', 'Duplo', 'Voil + blackout', 'Cortina dupla com tecido voil e blackout'],
-  ['/tela-solar-sq.avif', 'Tela solar', 'Vista livre, sol controlado', 'Tela solar para controle de luminosidade sem perder a vista'],
-  ['/madeira-sq.avif', 'Madeira', 'Persiana de madeira', 'Persiana horizontal de madeira em ambiente aconchegante'],
+  ['/automacao-sq.avif', 'Automação', 'Cortina motorizada', 'Cortina motorizada em sala de estar, projeto ShineCortinas'],
+  ['/blackout-sq.avif', 'Blackout', 'Forro blackout 100%', 'Tecido blackout do mostruário ShineCortinas'],
+  ['/persiana-motorizada-sq.avif', 'Persiana', 'Persiana motorizada', 'Persiana rolô motorizada em sala de estar, projeto ShineCortinas'],
+  ['/duplo-sq.avif', 'Duplo', 'Voil + linho', 'Sala com cortina dupla de voil e linho, projeto ShineCortinas'],
+  ['/tela-solar-sq.avif', 'Tela solar', 'Vista livre, sol controlado', 'Sala envidraçada com rolô screen, projeto ShineCortinas'],
+  ['/madeira-sq.avif', 'Madeira', 'Persiana de madeira', 'Ambiente com persiana horizontal de madeira, projeto ShineCortinas'],
 ];
 
 const PASSOS = [
@@ -169,8 +169,12 @@ function ajustaHead(head, p) {
     };
     const i = g.findIndex((n) => n['@type'] === 'FAQPage');
     if (i >= 0) g[i] = faqNode; else g.push(faqNode);
-    const biz = g.find((n) => n['@type'] === 'LocalBusiness' && !n['@id']);
-    if (biz) biz['@id'] = `${BASE}/#biz`;
+    const biz = g.find((n) => n['@type'] === 'LocalBusiness');
+    if (biz) {
+      biz['@id'] = `${BASE}/#biz`;
+      if (!biz.priceRange) biz.priceRange = '$$';
+      if (biz.address && !biz.address.streetAddress) biz.address = { '@type': 'PostalAddress', streetAddress: 'Rua K, 60', ...biz.address };
+    }
     const org = g.find((n) => n['@type'] === 'Organization' && !n['@id']);
     if (org) org['@id'] = `${BASE}/#org`;
     const j = g.findIndex((n) => n['@type'] === 'WebPage');
