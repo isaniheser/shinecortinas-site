@@ -5,7 +5,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { WA, esc, cleanHead, header, cityChip, strip, footer, waFloat, bar, tail } from './partials.mjs';
+import { WA, CSS_V, esc, cleanHead, header, cityChip, strip, footer, waFloat, bar, tail } from './partials.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://www.shinecortinas.com';
@@ -183,13 +183,21 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
 
 // --------------------------------------------- posts do blog (visual apenas)
 // O texto atual é mantido; a reescrita de copy é etapa separada (docs/fila-de-conteudo.md).
+// Mantém a querystring do CSS igual ao CSS_V atual mesmo nas páginas que o build não regenera,
+// senão elas continuam servindo uma folha antiga do cache do navegador.
+function sincronizaCss(file, src) {
+  const alvo = `/assets/shine-leve.css?v=${CSS_V}`;
+  const novo = src.replace(/\/assets\/shine-leve\.css\?v=[^"']*/g, () => alvo);
+  if (novo !== src) writeFileSync(file, novo);
+}
+
 function buildPosts() {
   const dirs = readdirSync(join(ROOT, 'blog'), { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name);
   let n = 0;
   for (const slug of dirs) {
     const file = join(ROOT, 'blog', slug, 'index.html');
     const src = readFileSync(file, 'utf8');
-    if (src.includes('shine-leve.css')) continue; // já migrado (ex.: tipos-de-forro)
+    if (src.includes('shine-leve.css')) { sincronizaCss(file, src); continue; } // já migrado (ex.: tipos-de-forro)
     const mainM = src.match(/<main[^>]*>([\s\S]*?)<\/main>/);
     if (!mainM) { console.warn(`  (sem <main>) ${slug}`); continue; }
     let main = mainM[1];
@@ -249,7 +257,7 @@ function buildVideoPages() {
   for (const f of readdirSync(dir).filter((x) => x.endsWith('.html') && x !== 'index.html')) {
     const file = join(dir, f);
     const src = readFileSync(file, 'utf8');
-    if (src.includes('shine-leve.css')) continue;
+    if (src.includes('shine-leve.css')) { sincronizaCss(file, src); continue; }
     const h1 = dec((src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, ''])[1].replace(/<[^>]+>/g, '').trim());
     const iframe = (src.match(/<iframe[\s\S]*?<\/iframe>/) || [''])[0]
       .replace(/ class="[^"]*"/, '').replace('<iframe', '<iframe class="sl-embed"');

@@ -20,10 +20,10 @@ export const PAGINAS = [
         'É por isso que a escolha não se faz por foto. Na consultoria, o consultor leva o mostruário até a sua casa, e você compara os tecidos com a luz real do seu cômodo, na hora do dia em que você mais usa o ambiente.',
       ] },
       { t: 'cards', h2: 'Tecidos que trabalhamos', sub: 'A escolha depende do ambiente, da incidência de sol e do efeito que você procura.', items: [
-        { tag: 'Leveza', h: 'Voil', p: 'Tecido leve que filtra a luz e mantém o ambiente claro. Muito usado em camada dupla, com uma segunda cortina por trás.', img: '/duplo.avif' },
-        { tag: 'Natural', h: 'Linho', p: 'Textura natural e caimento generoso. É o tecido de quem quer o ar de projeto de arquitetura na sala.', img: '/linha-puro.avif' },
-        { tag: 'Sofisticação', h: 'Veludo', p: 'Peso, profundidade de cor e conforto acústico. Indicado para salas de estar e ambientes de receber.', img: '/cortina-sob-medida.avif' },
-        { tag: 'Escurecimento', h: 'Blackout', p: 'Tecido que bloqueia a luz. Pode ser o próprio tecido da cortina ou entrar como forro atrás do tecido decorativo.', img: '/blackouts-tecnicos.avif' },
+        { tag: 'Leveza', h: 'Voil', p: 'Tecido leve que filtra a luz e mantém o ambiente claro. Muito usado em camada dupla, com uma segunda cortina por trás.', img: '/duplo.avif', alt: 'Sala com cortina dupla de voil e linho, projeto ShineCortinas' },
+        { tag: 'Natural', h: 'Linho', p: 'Textura natural e caimento generoso. É o tecido de quem quer o ar de projeto de arquitetura na sala.', img: '/linha-puro.avif', alt: 'Tecido de linho natural do mostruário ShineCortinas' },
+        { tag: 'Sofisticação', h: 'Veludo', p: 'Peso, profundidade de cor e conforto acústico. Indicado para salas de estar e ambientes de receber.', img: '/cortina-sob-medida.avif', alt: 'Sala com cortina de linho sob medida, projeto ShineCortinas', ref: true },
+        { tag: 'Escurecimento', h: 'Blackout', p: 'Tecido que bloqueia a luz. Pode ser o próprio tecido da cortina ou entrar como forro atrás do tecido decorativo.', img: '/blackouts-tecnicos.avif', alt: 'Home theater escurecido com blackout, projeto ShineCortinas' },
       ] },
       { t: 'prose', h2: 'O forro decide o resultado', p: [
         'O forro é a segunda camada, acoplada atrás do tecido decorativo. Ele existe em dois grupos: o <strong>forro translúcido</strong>, que dá privacidade, protege o tecido de frente do sol e quebra parte da claridade; e o <strong>forro blackout</strong>, em duas versões — <strong>70%</strong>, o semi blackout, que deixa o ambiente em penumbra, e <strong>100%</strong>, que entrega escuro de verdade.',
@@ -59,12 +59,12 @@ export const PAGINAS = [
     heroAlt: 'Sala com persiana rolô screen instalada pela ShineCortinas',
     blocos: [
       { t: 'cards', h2: 'Os sistemas que trabalhamos', sub: 'Cada um resolve um problema diferente de luz, calor e privacidade.', items: [
-        { tag: 'Enrolamento', h: 'Rolô', p: 'O sistema mais discreto. O tecido enrola no topo da janela e desaparece quando aberto. Existe em versão screen, translúcida e blackout.', img: '/persiana-motorizada.avif' },
-        { tag: 'Controle solar', h: 'Screen (tela solar)', p: 'Tecido técnico que corta o calor e o reflexo sem esconder a vista da janela. Ideal para salas envidraçadas e home office.', img: '/tela-solar.avif' },
-        { tag: 'Dupla função', h: 'Double vision', p: 'Duas faixas de tecido que se alternam: abre para a luz suave, fecha para privacidade, sem trocar de sistema.', img: '/duplo.avif' },
-        { tag: 'Natural', h: 'Madeira', p: 'Lâminas de madeira que dão calor visual e controle de luz por inclinação. Para escritórios, cozinhas e varandas.', img: '/madeira.avif' },
-        { tag: 'Vãos largos', h: 'Vertical', p: 'Lâminas verticais para janelas e portas largas, com abertura lateral e controle por rotação.', img: '/automacao.avif' },
-        { tag: 'Escurecimento', h: 'Blackout 100%', p: 'As persianas também têm material blackout 100%, para quem precisa de escuro no quarto ou no home office.', img: '/blackouts-tecnicos.avif' },
+        { tag: 'Enrolamento', h: 'Rolô', p: 'O sistema mais discreto. O tecido enrola no topo da janela e desaparece quando aberto. Existe em versão screen, translúcida e blackout.', img: '/persiana-motorizada.avif', alt: 'Persiana rolô screen instalada em sala pela ShineCortinas' },
+        { tag: 'Controle solar', h: 'Screen (tela solar)', p: 'Tecido técnico que corta o calor e o reflexo sem esconder a vista da janela. Ideal para salas envidraçadas e home office.', img: '/tela-solar.avif', alt: 'Sala envidraçada com rolô screen instalado pela ShineCortinas' },
+        { tag: 'Dupla função', h: 'Double vision', p: 'Duas faixas de tecido que se alternam: abre para a luz suave, fecha para privacidade, sem trocar de sistema.', img: '/duplo.avif', alt: 'Sala com cortina dupla de voil e linho, projeto ShineCortinas', ref: true },
+        { tag: 'Natural', h: 'Madeira', p: 'Lâminas de madeira que dão calor visual e controle de luz por inclinação. Para escritórios, cozinhas e varandas.', img: '/madeira.avif', alt: 'Ambiente com persiana de madeira instalada pela ShineCortinas' },
+        { tag: 'Vãos largos', h: 'Vertical', p: 'Lâminas verticais para janelas e portas largas, com abertura lateral e controle por rotação.', img: '/automacao.avif', alt: 'Sala com cortina motorizada acionada por controle, projeto ShineCortinas', ref: true },
+        { tag: 'Escurecimento', h: 'Blackout 100%', p: 'As persianas também têm material blackout 100%, para quem precisa de escuro no quarto ou no home office.', img: '/blackouts-tecnicos.avif', alt: 'Home theater escurecido com blackout, projeto ShineCortinas', ref: true },
       ] },
       { t: 'prose', h2: 'Como escolher entre eles', p: [
         'A decisão começa pela orientação da janela e pelo uso do ambiente. Janela que recebe sol forte no fim da tarde pede screen ou madeira; quarto de quem dorme de dia pede material blackout 100%; home office com reunião por vídeo pede controle de reflexo.',
@@ -194,7 +194,7 @@ export const PAGINAS = [
     h1: 'Trilhos e acionamentos: a parte que <em>ninguém elogia</em> e todo mundo sente',
     lead: 'O trilho e o acionamento não aparecem na foto, mas são eles que definem se a cortina abre com leveza todo dia, se o tecido corre alinhado e se o projeto continua funcionando anos depois.',
     hero: '/automacao.avif',
-    heroAlt: 'Trilho e acionamento de cortina instalados pela ShineCortinas',
+    heroAlt: 'Cortina motorizada com acionamento por controle, projeto ShineCortinas',
     blocos: [
       { t: 'prose', h2: 'Trilho ou varão', p: [
         'O trilho aproxima o tecido da parede e dá uma leitura mais limpa, além de ser o que permite sistemas como a <a href="/cortina-wave/">cortina wave</a>. O varão é um elemento aparente, decorativo, e pede mais atenção à saída da bainha e ao volume das pregas.',
@@ -224,7 +224,7 @@ export const PAGINAS = [
     h1: 'Do primeiro contato à instalação, <em>sem surpresa</em>',
     lead: 'A Shine trabalha com consultoria em domicílio: o consultor vai até a sua casa com o mostruário completo, mede cada janela a laser e apresenta as opções no seu próprio ambiente. Você decide com calma, sem sair de casa e sem pressão.',
     hero: '/cortina-sob-medida.avif',
-    heroAlt: 'Consultor da ShineCortinas apresentando tecidos na casa do cliente',
+    heroAlt: 'Sala com cortina de linho sob medida, projeto ShineCortinas',
     blocos: [
       { t: 'steps6' },
       { t: 'prose', h2: 'Por que a medição é responsabilidade nossa', p: [
@@ -311,7 +311,7 @@ export const PAGINAS = [
     h1: 'Fale com um consultor <em>de verdade</em>',
     lead: 'Sem robô, sem formulário e sem espera. Você manda uma mensagem no WhatsApp e um consultor responde em minutos para entender o seu ambiente e, se você quiser, agendar a consultoria gratuita em casa.',
     hero: '/cortina-sob-medida.avif',
-    heroAlt: 'Atendimento ShineCortinas para agendamento de consultoria em domicílio',
+    heroAlt: 'Sala com cortina de linho sob medida, projeto ShineCortinas',
     blocos: [
       { t: 'contato' },
       { t: 'prose', h2: 'Como funciona o primeiro contato', p: [

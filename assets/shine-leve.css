@@ -28,7 +28,9 @@ p{margin:0;text-wrap:pretty}
 /* kicker: hairline dourada + rótulo */
 .sl-kicker{display:flex;align-items:center;gap:11px;margin-bottom:16px;color:var(--gold);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.22em;line-height:1.5}
 .sl-kicker::before{content:"";width:24px;height:1px;background:var(--gold-light);flex-shrink:0}
-.sl-kicker--center{justify-content:center}
+.sl-kicker--center{display:block;text-align:center}
+.sl-kicker--center::before{display:block;margin:0 auto 9px}
+.sl-kicker--center::after{content:"";display:block;width:24px;height:1px;background:var(--gold-light);margin:9px auto 0}
 .sl-h2{font-size:clamp(26px,3.4vw,40px);line-height:1.18;margin-bottom:14px}
 .sl-h2 em{font-style:italic;color:var(--gold)}
 .sl-sub{color:var(--muted);font-size:clamp(15px,1.2vw,17px);max-width:60ch}
@@ -88,7 +90,8 @@ p{margin:0;text-wrap:pretty}
 /* duas colunas */
 .sl-grid-2{display:grid;gap:clamp(28px,5vw,64px);align-items:center}
 @media(min-width:900px){.sl-grid-2{grid-template-columns:1fr 1fr}.sl-grid-2--img-right>.sl-media{order:2}}
-.sl-media{overflow:hidden;border-radius:var(--radius);background:var(--sand)}
+.sl-media{position:relative;overflow:hidden;border-radius:var(--radius);background:var(--sand)}
+.sl-media__ref{position:absolute;left:8px;right:8px;bottom:8px;background:rgba(22,48,42,.82);color:#fff;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:5px 8px;border-radius:3px;text-align:center}
 .sl-media img{aspect-ratio:4/5;width:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1)}
 .sl-media--wide img{aspect-ratio:4/3}
 .sl-media:hover img{transform:scale(1.04)}
@@ -194,7 +197,11 @@ p{margin:0;text-wrap:pretty}
   .sl-wa{display:none}
   .sl-hero__in{text-align:center;margin:0 auto;padding-top:clamp(120px,32vw,200px)}
   .sl-crumbs{justify-content:center}
-  .sl-kicker{justify-content:center}
+  /* no celular o kicker é bloco centrado: o traço vira moldura acima/abaixo,
+     senão o traço lateral de 24px empurra o texto 17,5px para a direita */
+  .sl-kicker{display:block;text-align:center}
+  .sl-kicker::before{display:block;margin:0 auto 9px}
+  .sl-kicker::after{content:"";display:block;width:24px;height:1px;background:var(--gold-light);margin:9px auto 0}
   .sl-hero__rule{margin-left:auto;margin-right:auto}
   .sl-lede,.sl-sub{margin-left:auto;margin-right:auto}
   .sl-copy,.sl-section .sl-h2,.sl-section .sl-sub{text-align:center}
@@ -407,3 +414,6 @@ p{margin:0;text-wrap:pretty}
   .sl-btn{white-space:normal;text-align:center;justify-content:center}
   .sl-copy .sl-btn,.sl-article .sl-btn{width:100%}
 }
+
+/* alvos de âncora não podem parar atrás do header sticky */
+[id]{scroll-margin-top:100px}

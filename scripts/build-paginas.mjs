@@ -46,7 +46,7 @@ const bloco = {
         ${b.sub ? `<p class="sl-sub">${b.sub}</p>` : ''}
       </div>
       <div class="sl-cards">
-${b.items.map((i) => `        <div class="sl-card"><div class="sl-media"><img src="${i.img}" alt="${esc(i.h)} — ShineCortinas" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>${i.tag}</span><h3>${i.h}</h3><p>${i.p}</p></div></div>`).join('\n')}
+${b.items.map((i) => `        <div class="sl-card"><div class="sl-media"><img src="${i.img}" alt="${esc(i.alt || `${i.h} — ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async">${i.ref ? '<span class="sl-media__ref">Referência do modelo, em outro ambiente</span>' : ''}</div><div class="sl-card__body"><span>${i.tag}</span><h3>${i.h}</h3><p>${i.p}</p></div></div>`).join('\n')}
       </div>
     </div></section>`,
 
@@ -169,13 +169,17 @@ function ajustaHead(head, p) {
     };
     const i = g.findIndex((n) => n['@type'] === 'FAQPage');
     if (i >= 0) g[i] = faqNode; else g.push(faqNode);
+    const biz = g.find((n) => n['@type'] === 'LocalBusiness' && !n['@id']);
+    if (biz) biz['@id'] = `${BASE}/#biz`;
+    const org = g.find((n) => n['@type'] === 'Organization' && !n['@id']);
+    if (org) org['@id'] = `${BASE}/#org`;
     const j = g.findIndex((n) => n['@type'] === 'WebPage');
     const web = { '@type': 'WebPage', '@id': url, url, name: p.title, inLanguage: 'pt-BR', dateModified: TODAY,
       about: { '@id': `${BASE}/#biz` },
       speakable: { '@type': 'SpeakableSpecification', xpath: ['/html/body//h1', '/html/body//p[@class="sl-lede"]'] } };
     if (j >= 0) g[j] = web; else g.push(web);
     const out = ld['@graph'] ? { ...ld, '@graph': g } : { '@context': 'https://schema.org', '@graph': g };
-    head = head.replace(m[0], `<script type="application/ld+json">\n${JSON.stringify(out, null, 2)}\n</script>`);
+    head = head.replace(m[0], () => `<script type="application/ld+json">\n${JSON.stringify(out, null, 2)}\n</script>`);
   }
   return head;
 }

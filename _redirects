@@ -27,6 +27,12 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 /produtos-de-cortinas-e-persianas-sob-medida-volta-redonda-resende-barra-mansa-e-barra-do-pirai  /cidades/volta-redonda/  301
 
 
+# duplicatas do blog consolidadas (taxonomia de forro corrigida pelo Isani)
+/blog/7-tipos-de-forro-para-cortina-escolha-o-ideal-para-o-seu-ambiente/ /blog/tipos-de-forro-para-cortina/ 301!
+/blog/7-tipos-de-forro-para-cortina-escolha-o-ideal-para-o-seu-ambiente /blog/tipos-de-forro-para-cortina/ 301!
+/blog/qual-a-altura-ideal-de-uma-cortina/ /blog/altura-ideal-da-cortina/ 301!
+/blog/qual-a-altura-ideal-de-uma-cortina /blog/altura-ideal-da-cortina/ 301!
+
 /post/qual-a-altura-ideal-de-uma-cortina /blog/altura-ideal-da-cortina 301!
 /post/7-tipos-de-forro-para-cortina-escolha-o-ideal-para-o-seu-ambiente /blog/tipos-de-forro-para-cortina 301!
 /post/bainha-de-cortina /blog/bainha-de-cortina 301!

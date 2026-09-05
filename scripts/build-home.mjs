@@ -64,7 +64,7 @@ const SIM = {
   },
   privacidade: {
     sala: ['Voil com cortina de linho', 'O voil dá privacidade sem escurecer; a segunda camada fecha quando você quiser.', '/duplo.avif', '/cortinas/', true],
-    quarto: ['Cortina dupla com forro', 'Privacidade total à noite e luz filtrada de manhã.', '/duplo.avif', '/cortinas/', false],
+    quarto: ['Cortina dupla com forro', 'Quem define a privacidade é o forro: o translúcido fecha a vista de dia, e o blackout 100% fecha à noite, com a luz acesa.', '/duplo.avif', '/blackout-e-forros/', false],
     escritorio: ['Persiana double vision', 'Faixas que abrem e fecham a visão de fora sem perder a luz.', '/persiana-motorizada.avif', '/persianas/', false],
     cozinha: ['Persiana de madeira', 'Lâminas que fecham a visão e resistem ao dia a dia da cozinha.', '/madeira.avif', '/persianas/', false],
   },
@@ -98,7 +98,7 @@ function body(reviews) {
   return `<body id="top" data-wa-context="a página inicial">
 ${header('/')}
   <section class="sl-hero sl-hero--home">
-    <div class="sl-hero__img"><img src="/hero-sala.avif" alt="Sala com cortina sob medida instalada pela ShineCortinas em Volta Redonda" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
+    <div class="sl-hero__img"><img src="/hero-sala.avif" alt="Sala com cortina sob medida do teto ao chão, projeto ShineCortinas" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
     <div class="sl-wrap"><div class="sl-hero__in">
       <p class="sl-kicker">Volta Redonda · Sul Fluminense · desde 2009</p>
       <h1 class="sl-h1">Cortinas e Persianas Sob Medida em <em>Volta Redonda</em> e todo o Sul Fluminense</h1>
@@ -285,7 +285,7 @@ ld['@graph'].push({
   inLanguage: 'pt-BR', isPartOf: { '@id': `${BASE}/#website` }, about: { '@id': `${BASE}/#biz` }, dateModified: TODAY,
   speakable: { '@type': 'SpeakableSpecification', xpath: ['/html/body//h1', '/html/body//h1/following-sibling::p[1]'] },
 });
-head = head.replace(ldm[0], `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`);
+head = head.replace(ldm[0], () => `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`);
 if (!/rel="canonical" href="https:\/\/www\.shinecortinas\.com\/"/.test(head)) throw new Error('canonical da home ausente');
 writeFileSync(FILE, head + body(reviews));
 console.log(`build-home: index.html gerado (${reviews.length} avaliações, ${FAQ.length} FAQs)`);
