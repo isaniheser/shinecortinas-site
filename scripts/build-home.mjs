@@ -23,7 +23,7 @@ const SOLUCOES = [
   { href: '/cortinas/', img: '/cortina-sob-medida.avif', tag: 'Cortinas', h: 'Cortinas sob medida', p: 'Wave, prega, painel e linho. Cabeçote com memória e barra dupla para o caimento que não desmancha.' },
   { href: '/persianas/', img: '/persiana-motorizada.avif', tag: 'Persianas', h: 'Persianas técnicas', p: 'Rolô, romana, double vision, vertical e screen. Luz e privacidade na medida de cada janela.' },
   { href: '/cortina-motorizada/', img: '/automacao.avif', tag: 'Automação', h: 'Cortinas e persianas motorizadas', p: 'Motores de 7ª geração, silenciosos, com Alexa, Google Home e Apple Home. Abre pelo celular ou pela voz.' },
-  { href: '/blackout-e-forros/', img: '/blackouts-tecnicos.avif', tag: 'Blackout', h: 'Blackout técnico e forros', p: 'Tecido que barra a luz pela trama e repele o calor. O escurecimento do ambiente vem da folga certa, do forro e da instalação.' },
+  { href: '/blackout-e-forros/', img: '/blackouts-tecnicos.avif', tag: 'Blackout', h: 'Blackout técnico e forros', p: 'Forro translúcido para privacidade, semi blackout de 70% para penumbra e blackout 100% para escuro total. O forro define o resultado.' },
   { href: '/cortina-wave/', img: '/linha-puro.avif', tag: 'Linha Puro', h: 'Linho e tecidos selecionados', p: 'Curadoria de tecidos que você sente na mão, na sua sala, antes de decidir.' },
   { href: '/persianas/', img: '/madeira.avif', tag: 'Madeira', h: 'Persianas de madeira', p: 'Toque natural e controle de luz por lâminas. Para cozinhas, escritórios e varandas.' },
 ];
@@ -42,7 +42,7 @@ const FAQ = [
   ['Vocês atendem na minha cidade?', 'Sim. Atendemos todo o Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira. O consultor vai até você.'],
   ['Tenho que ir até a loja?', 'Não. Somos pioneiros no modelo de consultoria em domicílio: o especialista vai até a sua casa com o mostruário, mede cada ambiente a laser e apresenta as melhores opções no seu espaço. Você escolhe sem sair de casa e sem pressão.'],
   ['Quanto tempo leva para instalar?', 'Na grande maioria dos projetos, a instalação é concluída no mesmo dia. A equipe chega, trabalha com limpeza e sai deixando o ambiente pronto, sem entulho.'],
-  ['O blackout bloqueia toda a luz do quarto?', 'O tecido blackout bloqueia a passagem de luz pela trama. O que define a escuridão do ambiente é a instalação: folgas calculadas, sobreposição na parede, o forro adequado e, quando necessário, trilho com vedação lateral. Na consultoria o consultor mede a janela e diz com honestidade o nível de escurecimento possível naquele ambiente.'],
+  ['O blackout bloqueia toda a luz do quarto?', 'Depende do forro. O forro blackout 100% bloqueia a passagem de luz pelo tecido e é ele que entrega o quarto escuro de verdade. O forro blackout de 70%, chamado de semi blackout, deixa o ambiente em penumbra. Na consultoria o consultor mede a janela e indica o forro certo para o escurecimento que você procura.'],
   ['Qual é a garantia?', 'A garantia parte de 1 ano na instalação, chega a 5 anos em cortinas e a até 8 anos nos projetos com motorização. Se surgir qualquer problema, você nos chama e a gente resolve, sem burocracia e sem custo adicional.'],
 ];
 
@@ -57,7 +57,7 @@ const BLOG = [
 // false = foto de referência do modelo (outro ambiente) até termos a foto certa — ver docs/fotos-necessarias.md
 const SIM = {
   escurecer: {
-    quarto: ['Cortina blackout com forro', 'O tecido barra a luz pela trama; o escurecimento do quarto vem da folga calculada, da sobreposição na parede e do forro. Resolve quem trabalha à noite ou tem bebê em casa.', '/blackouts-tecnicos.avif', '/blackout-e-forros/', false],
+    quarto: ['Cortina com forro blackout 100%', 'É o que entrega quarto escuro de verdade: o forro blackout 100% bloqueia a passagem de luz pelo tecido. Resolve quem trabalha à noite ou tem bebê em casa.', '/blackouts-tecnicos.avif', '/blackout-e-forros/', false],
     sala: ['Blackout técnico para sala e home theater', 'Escuridão de cinema quando você quiser, com o acabamento de cortina.', '/blackouts-tecnicos.avif', '/blackout-e-forros/', true],
     escritorio: ['Persiana rolô blackout', 'Barra a luz que bate no monitor e na câmera da reunião, com acionamento discreto.', '/blackouts-tecnicos.avif', '/persianas/', false],
     cozinha: ['Persiana rolô blackout', 'Escurece quando você precisa, com tecido fácil de limpar.', '/blackouts-tecnicos.avif', '/persianas/', false],

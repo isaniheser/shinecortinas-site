@@ -61,10 +61,14 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
   reconhece e a página renderiza em branco.
 - **Fatos de produto (corrigidos pelo Isani — não reintroduzir):**
   - A Shine **não trabalha** com rolô de **guias laterais** nem **caixa box**.
-    Nunca citar "Sistema Box". O escurecimento se explica por folga calculada,
-    sobreposição na parede, forro e, quando necessário, trilho com vedação lateral.
-  - Não prometer "100% de vedação", "escuridão absoluta" ou "privacidade absoluta":
-    o tecido barra a luz pela trama; o resultado no ambiente depende da instalação.
+    Nunca citar "Sistema Box". Também não existe "trilho com vedação lateral".
+  - **Forro (corrigido pelo Isani, set/2026):** são dois grupos. O **forro translúcido**
+    dá privacidade, protege o tecido decorativo e quebra parte da claridade. O **forro
+    blackout** tem duas versões: **70% (semi blackout)**, que deixa penumbra, e
+    **100%**, que entrega escuro total. Persianas também têm material blackout 100%.
+    Para quarto escuro de verdade: **cortina com forro blackout 100% resolve**.
+  - Não prometer "privacidade absoluta" nem atribuir o escurecimento a acessório que
+    a Shine não usa; o que define o resultado é o **tipo de forro**.
   - Fotos: só usar imagem que mostre **o ambiente e a solução exatos**. Quando não
     houver, marcar como referência (ver `docs/fotos-necessarias.md`).
 - **WhatsApp (CTA padrão):**
