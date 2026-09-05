@@ -15,7 +15,7 @@ const POSTS = [
     slug: 'tipos-de-forro-para-cortina',
     title: 'Tipos de forro para cortina: translúcido, semi blackout e blackout 100%',
     seoTitle: 'Tipos de Forro para Cortina: Translúcido, Semi Blackout e Blackout 100% | ShineCortinas',
-    description: 'O forro decide o resultado da cortina. Entenda o forro translúcido, o semi blackout de 70% e o blackout 100%, e qual deles resolve cada ambiente.',
+    description: 'O forro decide o resultado da cortina. Entenda o forro translúcido (gabardine, tergal, cetim, gorgurinho), o semi blackout de 70% e o blackout 100%.',
     kicker: 'Tecidos e forros',
     published: '2026-02-19',
     modified: TODAY,
@@ -29,6 +29,9 @@ const POSTS = [
       <h2>Forro translúcido: privacidade e proteção, sem escurecer</h2>
       <p>O forro translúcido cumpre três funções. Dá <strong>privacidade</strong> durante o dia, sem fechar o ambiente. <strong>Protege o tecido decorativo</strong> da cortina, que fica exposto ao sol todos os dias. E <strong>quebra parte da claridade</strong>, suavizando a luz que entra.</p>
       <p>É a escolha de quem quer o ambiente claro, mas sem a sensação de estar exposto e sem que o tecido bonito da frente sofra com o sol. Não é a escolha de quem precisa dormir de dia.</p>
+
+      <h3>Os tecidos que compõem o forro translúcido</h3>
+      <p>"Forro translúcido" é o nome do grupo, e dentro dele há mais de um tecido: <strong>gabardine</strong> (de algodão ou de poliéster), <strong>tergal</strong>, <strong>tergal verão</strong>, <strong>cetim</strong> e <strong>gorgurinho</strong>. Cada um se comporta de um jeito com a luz, com o caimento e com o tecido decorativo que vai na frente. A escolha entre eles é feita na consultoria, com o mostruário na mão e a luz do seu próprio ambiente.</p>
 
       <h2>Forro blackout: duas versões, dois resultados diferentes</h2>
       <p>Quando o assunto é escurecer, o forro blackout se divide em duas subcategorias, e a diferença entre elas é o que mais gera confusão na hora de comprar.</p>
@@ -68,6 +71,8 @@ const POSTS = [
        'A cortina com forro blackout 100%. Esse forro bloqueia a passagem de luz pelo tecido e é o que entrega escuro de verdade, inclusive ao meio-dia. É a indicação para quem trabalha à noite, tem bebê em casa ou sono leve.'],
       ['Persiana também escurece por completo?',
        'Sim. As persianas também têm material com blackout 100%. A escolha entre cortina e persiana é uma decisão de estética e de uso; o nível de escurecimento depende do material escolhido.'],
+      ['Quais tecidos servem como forro translúcido?',
+       'O forro translúcido é um grupo, e dentro dele há vários tecidos: gabardine (de algodão ou de poliéster), tergal, tergal verão, cetim e gorgurinho. Cada um responde de um jeito à luz e ao caimento, e a escolha é feita na consultoria, junto com o tecido decorativo da frente.'],
       ['Qual a diferença entre tecido blackout e forro blackout?',
        'O tecido blackout é o próprio tecido da cortina, que já bloqueia a luz. O forro blackout é uma segunda camada acoplada atrás de uma cortina decorativa, somando escurecimento sem abrir mão da estética do tecido de frente.'],
     ],

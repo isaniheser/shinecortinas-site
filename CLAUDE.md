@@ -67,6 +67,10 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     blackout** tem duas versões: **70% (semi blackout)**, que deixa penumbra, e
     **100%**, que entrega escuro total. Persianas também têm material blackout 100%.
     Para quarto escuro de verdade: **cortina com forro blackout 100% resolve**.
+    "Forro translúcido" é o nome correto, não tem sinônimo comercial. Tecidos que
+    compõem esse grupo (informados pelo Isani): **gabardine** (de algodão e de
+    poliéster), **tergal**, **tergal verão**, **cetim** e **gorgurinho**. Não atribuir
+    característica a cada um sem confirmar com ele — a lista é o que está validado.
   - Não prometer "privacidade absoluta" nem atribuir o escurecimento a acessório que
     a Shine não usa; o que define o resultado é o **tipo de forro**.
   - Fotos: só usar imagem que mostre **o ambiente e a solução exatos**. Quando não
