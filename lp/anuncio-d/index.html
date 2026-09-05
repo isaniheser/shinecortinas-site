@@ -449,11 +449,9 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
 
   function track(evento, dados) {
     dados = dados || {};
-    // Identidade vai DENTRO do payload de cada evento: e o caminho que o
-    // componente do Facebook le (payload.external_id / payload.fbc). O
-    // zaraz.set() abaixo continua como reforco, mas nao e mais o unico canal.
+    // Mantem o identificador do visitante no payload de cada evento.
+    // O identificador de clique fbc e gerenciado pela integracao do Zaraz.
     if (identidade.external_id && !dados.external_id) dados.external_id = identidade.external_id;
-    if (identidade.fbc && !dados.fbc) dados.fbc = identidade.fbc;
     try {
       if (window.zaraz && typeof window.zaraz.track === 'function') window.zaraz.track(evento, dados);
     } catch (e) {}
@@ -474,21 +472,11 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
   var qs = new URLSearchParams(window.location.search);
 
   /* ---------- identidade do evento ----------
-     A Meta descarta para atribuicao e otimizacao todo evento de servidor que
-     chega sem nenhuma chave de user_data. Sem formulario nesta pagina, nao ha
-     telefone nem e-mail para enviar, entao mandamos duas chaves que nao expoem
-     nada de pessoal:
-
-       external_id  identificador aleatorio e estavel por navegador
-       fbc          identificacao do clique no anuncio, no formato exigido
-                    fb.1.<timestamp>.<fbclid>, com o fbclid intacto (a Meta
-                    acusa erro quando o valor chega truncado ou em minusculas)
-
-     zaraz.set(chave, valor) vira user_data.<chave> no envio pela API de
-     Conversoes, e o Zaraz persiste o valor no proprio navegador. */
+     external_id e um identificador aleatorio e estavel por navegador.
+     A integracao do Zaraz cuida de fbc; a landing nao cria nem persiste uma
+     segunda copia desse valor. O fbclid original segue nos dados de origem. */
 
   var ARMAZEM_ID = 'sc_visitante_id';
-  var ARMAZEM_FBC = 'sc_fbc';
 
   function guardado(chave) {
     try { return window.localStorage.getItem(chave); } catch (e) { return null; }
@@ -497,21 +485,12 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
     try { window.localStorage.setItem(chave, valor); } catch (e) {}
   }
 
-  var identidade = { external_id: '', fbc: '' };
+  var identidade = { external_id: '' };
 
   function identificaVisitante() {
     var id = guardado(ARMAZEM_ID);
     if (!id) { id = uuid(); guardar(ARMAZEM_ID, id); }
     identidade.external_id = id;
-
-    var fbclid = qs.get('fbclid');
-    var fbc = guardado(ARMAZEM_FBC);
-    if (fbclid) {
-      // Reconstroi sempre que o clique e novo, sem alterar o fbclid recebido.
-      fbc = 'fb.1.' + Date.now() + '.' + fbclid;
-      guardar(ARMAZEM_FBC, fbc);
-    }
-    identidade.fbc = fbc || '';
 
     var tentativas = 0;
     (function aplica() {
@@ -519,7 +498,6 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
       if (window.zaraz && typeof window.zaraz.set === 'function') {
         try {
           window.zaraz.set('external_id', id);
-          if (fbc) window.zaraz.set('fbc', fbc);
         } catch (e) {}
         return;
       }
