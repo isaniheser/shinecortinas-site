@@ -5,6 +5,25 @@ sediada em Volta Redonda (RJ), atendendo todo o **Sul Fluminense**.
 CEO: Isani Oliveira. Site estático hospedado no **Cloudflare Pages** (deploy
 automático ao dar merge na branch `main`).
 
+## ORDEM DE PRIORIDADE (decisão do Isani, set/2026) — desempate obrigatório
+
+Quando duas escolhas conflitarem, vence a de número menor. Sempre.
+
+1. **Ser encontrado em primeiro.** Google, Bing, Yandex e os mecanismos de
+   busca das IAs (ChatGPT, Perplexity, Gemini, Claude). Esta premissa não muda.
+   Nada que enfraqueça indexação, conteúdo único, schema, links internos ou
+   velocidade entra no site, por mais bonito que seja.
+2. **Converter, educar e selecionar.** O site explica com autoridade e leva à
+   conversa no WhatsApp com a escada de pedidos (conversar → estimativa →
+   agendar). A seleção do cliente é feita por vocabulário, estética e pelas
+   perguntas do próprio funil (cidade, ambiente, objetivo) — nunca por
+   hostilidade, preço na cara ou filtro de renda explícito (ver "Linguagem").
+   Quem não é cliente hoje se afasta sozinho; quem é, se sente em casa.
+3. **Beleza, sofisticação, tecnologia e inovação.** Sistema visual leve,
+   celular primeiro, recursos modernos (transições nativas, pré-carregamento,
+   simulador, popover) — sempre progressivos e leves. Inovação que custe
+   posição na busca ou peso na página é vetada pela premissa 1.
+
 ## PREMISSAS INEGOCIÁVEIS (não podem mudar)
 
 Toda alteração no site DEVE respeitar, simultaneamente, estas 5 premissas:
@@ -34,12 +53,38 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
 ## Restrições técnicas (armadilhas conhecidas)
 
 - **Tailwind está CONGELADO** em `/assets/tailwind.generated.css` (pré-compilado).
-  Classes utilitárias novas NÃO existem nele. Qualquer classe nova usada nas
-  páginas de cidade precisa ser definida em **`/assets/cidades.css`** (já linkado
-  nessas páginas). Sempre validar que toda classe usada existe num dos dois CSS.
+  Classes utilitárias novas NÃO existem nele. Páginas ainda no Tailwind (home,
+  produto, blog): validar que toda classe existe no CSS gerado. As páginas de
+  cidade NÃO usam mais Tailwind — usam `/assets/shine-leve.css`.
+- **Bug do `$$` no `String.replace()`:** em JS, `$$` no texto de substituição vira
+  um `$` literal. Os builds gravam o JSON-LD com `head.replace(bloco, novoTexto)`, então
+  `"priceRange": "$$"` era silenciosamente rebaixado para `"$"` a cada build. Corrigido
+  usando função como substituto (`.replace(x, () => texto)`). Nunca passar texto gerado
+  direto como 2º argumento de `.replace()`.
+- **Marcação `Review` (decisão set/2026):** só marcar como `schema.org/Review` avaliação
+  real e atribuível (as 5 da home vêm do Google Business Profile). Depoimento escrito
+  para o site fica como texto visível, **sem** marcação de avaliação — marcar copy de
+  marketing como Review é spam de dados estruturados e arrisca ação manual do Google,
+  exatamente contra a premissa 1.
 - **Bug do `</script>`:** ao gerar páginas via script, escrever a tag de
   fechamento como `</script>` literal. Nunca `<\/script>` — o navegador não
   reconhece e a página renderiza em branco.
+- **Fatos de produto (corrigidos pelo Isani — não reintroduzir):**
+  - A Shine **não trabalha** com rolô de **guias laterais** nem **caixa box**.
+    Nunca citar "Sistema Box". Também não existe "trilho com vedação lateral".
+  - **Forro (corrigido pelo Isani, set/2026):** são dois grupos. O **forro translúcido**
+    dá privacidade, protege o tecido decorativo e quebra parte da claridade. O **forro
+    blackout** tem duas versões: **70% (semi blackout)**, que deixa penumbra, e
+    **100%**, que entrega escuro total. Persianas também têm material blackout 100%.
+    Para quarto escuro de verdade: **cortina com forro blackout 100% resolve**.
+    "Forro translúcido" é o nome correto, não tem sinônimo comercial. Tecidos que
+    compõem esse grupo (informados pelo Isani): **gabardine** (de algodão e de
+    poliéster), **tergal**, **tergal verão**, **cetim** e **gorgurinho**. Não atribuir
+    característica a cada um sem confirmar com ele — a lista é o que está validado.
+  - Não prometer "privacidade absoluta" nem atribuir o escurecimento a acessório que
+    a Shine não usa; o que define o resultado é o **tipo de forro**.
+  - Fotos: só usar imagem que mostre **o ambiente e a solução exatos**. Quando não
+    houver, marcar como referência (ver `docs/fotos-necessarias.md`).
 - **WhatsApp (CTA padrão):**
   `https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.`
   Telefones: (24) 99329-8763 (WhatsApp) e (24) 3338-3069.
@@ -59,13 +104,29 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     ("a comodidade de parcelar em até 12x"), nunca como argumento de "é baratinho".
   - Manter: consultoria gratuita, sem pressão, sem robô (acolhimento ≠ povão).
 
-## Página de referência (template aprovado)
+## Página de referência (template aprovado) — sistema visual "leve"
 
-`/cidades/resende/index.html` é o **padrão aprovado** para todas as páginas de
-cidade. Estrutura: navbar glass → hero cinematográfico (100svh, hero claro) →
-faixa de confiança → bloco "Imagine só" (projeção/PNL) → story → galeria de 6
-projetos → "Como Funciona" (3 círculos dourados) → depoimento → FAQ → CTA final
-→ links internos → footer → WhatsApp flutuante.
+Decisão do Isani (set/2026): o tom preto/dourado pesado foi substituído pelo
+**sistema visual leve**, derivado da landing `/lp/anuncio-d/`: chão areia
+`#FBFAF7`, verde profundo `#16302A` como faixa e voz, dourado `#C6A868` só em
+detalhes (kickers, hairlines, um botão). Playfair Display peso 500 (nunca 900),
+Montserrat no corpo, Cinzel só no logotipo. Header sólido verde (não mais vidro).
+**Celular primeiro:** no celular tudo centralizado, hero ocupa a tela, barra de
+ação fixa embaixo (`.sl-bar`); o desktop é derivado, nunca o contrário.
+
+- CSS do sistema: `/assets/shine-leve.css` (semântico, sem Tailwind).
+- **As 15 páginas de cidade são GERADAS**: conteúdo único de cada cidade em
+  `cidades/cidades.json`; template em `scripts/build-cidades.mjs`.
+  Para alterar copy de uma cidade: edite o JSON e rode
+  `node scripts/build-cidades.mjs`. Para alterar layout: edite o template.
+  Nunca edite `cidades/<slug>/index.html` à mão — o build sobrescreve.
+  O `<head>` (title, metas, canonical, JSON-LD) é preservado do arquivo.
+- Estrutura: header → hero (foto + degradê verde, breadcrumb, H1) → faixa de
+  confiança → "Imagine" (imagem + copy local) → story (imagem + copy local) →
+  prova (17 anos, 5.0/292, 9 mil ambientes, equipe própria) → galeria clara →
+  comparação "pela internet × com a Shine" → como funciona → depoimento (faixa
+  verde) → FAQ com as 6 perguntas do schema visíveis → CTA final (faixa verde)
+  → links internos + cidades próximas → rodapé claro → barra fixa (celular).
 
 ## Cidades atendidas (15)
 
@@ -75,7 +136,10 @@ visconde-de-maua, volta-redonda.
 
 ## Git / Deploy
 
-- Branch de trabalho atual: `claude/awesome-turing-clhtty`.
+- Branch de trabalho atual: `claude/cortinas-search-rio-cities-ntit7r` (SEO/GEO + sistema leve).
+- **Pendente (decidido, não feito):** home única e responsiva no sistema leve e
+  remoção do redirect JS de celular para `/app/` (a home que o Google indexa
+  hoje é o app: 411 palavras, 5 H1, sem links para as cidades).
 - A branch `claude/audit-website-errors-NmMfH` guarda trabalho NÃO publicado
   (tom âmbar escuro + API v2 do Instagram com vídeo/carrossel) — não apagar
   sem decisão do Isani.

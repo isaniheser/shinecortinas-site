@@ -7,7 +7,9 @@ const BUILD_DIR = process.argv[2] ? path.resolve(process.argv[2]) : process.cwd(
 const REDIRECTS_PATH = path.join(BUILD_DIR, '_redirects');
 
 // /lp/ = landings de tráfego pago (Meta/Google Ads): páginas de conversão, não de busca orgânica.
-const EXCLUDED_PATH_PREFIXES = ['/post/', '/produtos-cidade/', '/portfolio-collections/', '/lp/'];
+const EXCLUDED_PATH_PREFIXES = ['/post/', '/produtos-cidade/', '/portfolio-collections/', '/lp/', '/app/',
+  // duplicatas do blog: canonical aponta para a versão curta
+  '/blog/qual-a-altura-ideal-de-uma-cortina', '/blog/7-tipos-de-forro-para-cortina-escolha-o-ideal-para-o-seu-ambiente'];
 const EXCLUDED_EXACT_PATHS = new Set(['/404.html']);
 
 function walk(dir) {
@@ -131,10 +133,8 @@ const sortedUrls = [...urls].sort((a, b) => a.localeCompare(b));
 const sitemapXml = createSitemapXml(sortedUrls);
 
 fs.writeFileSync(path.join(BUILD_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
-fs.writeFileSync(
-  path.join(BUILD_DIR, 'robots.txt'),
-  'User-agent: *\nAllow: /\n\nSitemap: https://www.shinecortinas.com/sitemap.xml\n',
-  'utf8',
-);
+// robots.txt NÃO é gerado aqui: é um arquivo-fonte versionado (libera os buscadores de IA).
+// Gerá-lo sobrescrevia essa configuração a cada deploy.
+if (!fs.existsSync(path.join(BUILD_DIR, 'robots.txt'))) throw new Error('robots.txt ausente na raiz');
 
 console.log(`Generated sitemap.xml with ${sortedUrls.length} canonical URLs.`);

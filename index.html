@@ -3,17 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <script>
-    (function(){
-      if (/Mobi|Android|iPhone|iPod/i.test(navigator.userAgent) && !localStorage.getItem('prefer-desktop')) {
-        window.location.replace('/app/');
-      }
-    })();
-    </script>
-    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.shinecortinas.com/app/">
 
 
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#16302A">
 
     <!-- ========================================== -->
     <!--     VERSÃO: 12.0 (LAYOUT CORRIGIDO)        -->
@@ -46,12 +38,10 @@
     <meta name="twitter:image" content="https://www.shinecortinas.com/logo-shine.avif">
     
     <!-- PERFORMANCE -->
-    <link rel="preload" as="image" href="hero-sala.avif" fetchpriority="high">
-    <link rel="preload" href="assets/tailwind.generated.css" as="style">
-    <link rel="stylesheet" href="assets/tailwind.generated.css">
+    <link rel="preload" as="image" href="/hero-sala.avif" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Cinzel:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
     
     <!-- RASTREAMENTO -->
 
@@ -155,11 +145,76 @@
         "worstRating": "1"
       },
       "review": [
-        {"@type": "Review", "author": {"@type": "Person", "name": "Marcio Soares"}, "datePublished": "2026-06", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente."},
-        {"@type": "Review", "author": {"@type": "Person", "name": "Amanda Rocha da Silva"}, "datePublished": "2026-04", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente."},
-        {"@type": "Review", "author": {"@type": "Person", "name": "Luan Ferreira"}, "datePublished": "2026-03", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Experiência excelente com a Shine Cortinas! Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo."},
-        {"@type": "Review", "author": {"@type": "Person", "name": "Marcio Rocha"}, "datePublished": "2026-03", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Atendimento ágil, entrega rápida e cortinas impecáveis. Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!"},
-        {"@type": "Review", "author": {"@type": "Person", "name": "Vitória Fernandes"}, "datePublished": "2026-04", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Trabalho de excelência, pontuais e ótimos profissionais. Fiquei muito satisfeita, recomendo."}
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Marcio Soares"
+          },
+          "datePublished": "2026-06",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Amanda Rocha da Silva"
+          },
+          "datePublished": "2026-04",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Luan Ferreira"
+          },
+          "datePublished": "2026-03",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Experiência excelente com a Shine Cortinas! Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Marcio Rocha"
+          },
+          "datePublished": "2026-03",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Atendimento ágil, entrega rápida e cortinas impecáveis. Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Vitória Fernandes"
+          },
+          "datePublished": "2026-04",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Trabalho de excelência, pontuais e ótimos profissionais. Fiquei muito satisfeita, recomendo."
+        }
       ]
     },
     {
@@ -167,7 +222,9 @@
       "@id": "https://www.shinecortinas.com/#isani",
       "name": "Isani Oliveira",
       "jobTitle": "CEO",
-      "worksFor": {"@id": "https://www.shinecortinas.com/#org"},
+      "worksFor": {
+        "@id": "https://www.shinecortinas.com/#org"
+      },
       "url": "https://www.shinecortinas.com/sobre",
       "image": "https://www.shinecortinas.com/ceo-shine.avif",
       "sameAs": [
@@ -274,7 +331,6 @@
       ],
       "url": "https://www.shinecortinas.com/#solucoes"
     },
-    
     {
       "@type": "CollectionPage",
       "@id": "https://www.shinecortinas.com/#portfolio",
@@ -296,1082 +352,395 @@
           "@type": "ImageObject",
           "name": "Projeto Jardins | Blackout técnico",
           "contentUrl": "https://www.shinecortinas.com/blackout.avif",
-          "caption": "Sistema blackout com vedação lateral para quarto, priorizando conforto térmico e escurecimento total na região dos Jardins."
+          "caption": "Quarto com cortina de forro blackout 100%, para escurecimento total e conforto térmico"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.shinecortinas.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como funciona o investimento num projeto sob medida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada projeto é único, então não há tabela de preços fixa: o valor depende do ambiente, dos tecidos escolhidos e do tipo de instalação. Na consultoria em domicílio, gratuita, o consultor apresenta as opções e as condições, incluindo a comodidade de parcelar em até 12x. Você decide com calma, sem compromisso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês atendem na minha cidade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Atendemos todo o Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira. O consultor vai até você."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tenho que ir até a loja?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Somos pioneiros no modelo de consultoria em domicílio: o especialista vai até a sua casa com o mostruário, mede cada ambiente a laser e apresenta as melhores opções no seu espaço. Você escolhe sem sair de casa e sem pressão."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva para instalar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Na grande maioria dos projetos, a instalação é concluída no mesmo dia. A equipe chega, trabalha com limpeza e sai deixando o ambiente pronto, sem entulho."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O blackout bloqueia toda a luz do quarto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende do forro. O forro blackout 100% bloqueia a passagem de luz pelo tecido e é ele que entrega o quarto escuro de verdade. O forro blackout de 70%, chamado de semi blackout, deixa o ambiente em penumbra. Na consultoria o consultor mede a janela e indica o forro certo para o escurecimento que você procura."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é a garantia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A garantia parte de 1 ano na instalação, chega a 5 anos em cortinas e a até 8 anos nos projetos com motorização. Se surgir qualquer problema, você nos chama e a gente resolve, sem burocracia e sem custo adicional."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.shinecortinas.com/",
+      "url": "https://www.shinecortinas.com/",
+      "name": "Loja de Cortinas e Persianas em Volta Redonda | ShineCortinas",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.shinecortinas.com/#website"
+      },
+      "about": {
+        "@id": "https://www.shinecortinas.com/#biz"
+      },
+      "dateModified": "2026-09-05",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/body//h1",
+          "/html/body//h1/following-sibling::p[1]"
+        ]
+      }
     }
   ]
 }
 </script>
-
-    <style>
-        
-        body { font-family: 'Montserrat', sans-serif; }
-        .font-logo { font-family: 'Cinzel', serif; } 
-        .font-luxury { font-family: 'Playfair Display', serif; }
-        .font-tech { font-family: 'Montserrat', sans-serif; }
-        
-        .text-gold { color: #C6A868; }
-        .bg-gold { background-color: #C6A868; }
-        .border-gold { border-color: #C6A868; }
-        
-        .gold-gradient { background: linear-gradient(135deg, #DFBD69 0%, #FFF0C6 50%, #B89648 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .gold-bg-gradient { background: linear-gradient(135deg, #DFBD69 0%, #FFF0C6 50%, #B89648 100%); }
-
-        .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        ::selection { background: #C6A868; color: black; }
-        
-        .accordion-content { transition: max-height 0.3s ease-out, padding 0.3s ease; max-height: 0; overflow: hidden; }
-        .accordion-content.active { max-height: 800px; }
-        .rotate-icon { transition: transform 0.3s ease; }
-        .rotate-icon.active { transform: rotate(180deg); color: #C6A868; }
-        .modal { visibility: hidden; opacity: 0; transition: all 0.3s ease-in-out; }
-        .modal.active { visibility: visible; opacity: 1; }
-        /* iOS: garante que o toque caia no card clicável (e não na camada decorativa por cima) */
-        #solucoes .group > * { pointer-events: none; }
-        .mobile-menu-panel { position: fixed; top: 72px; left: 0; width: 100%; max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; }
-        @media (min-width: 768px) { .mobile-menu-panel { position: static; max-height: none; overflow: visible; } }
-        .mobile-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 1rem; }
-        .mobile-scroll::-webkit-scrollbar { height: 4px; }
-        .mobile-scroll::-webkit-scrollbar-thumb { background: #C6A868; border-radius: 4px; }
-        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 1000; animation: pulse 2s infinite; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-        
-        .badge-item { display: flex; flex-direction: column; align-items: center; }
-        .badge-icon-wrap { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; }
-        .badge-img { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); transition: transform 0.3s; }
-        .badge-item:hover .badge-img { transform: scale(1.1); }
-        .badge-label { min-height: 20px; display: block; line-height: 1.2; }
-        .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 1000px; }
-        section[id] { scroll-margin-top: 110px; }
-        .hero-safe-top { padding-top: clamp(7rem, 12vh, 10rem); }
-        .shine-timeline-item { position: relative; display: flex; gap: 1.5rem; align-items: flex-start; padding-bottom: 2.5rem; }
-        .shine-timeline-item:not(:last-child)::after { content: ''; position: absolute; left: 24px; top: 50px; bottom: 0; width: 2px; background: linear-gradient(to bottom, #C6A868 0%, rgba(198,168,104,0.15) 100%); }
-        .shine-timeline-num { flex-shrink: 0; width: 50px; height: 50px; background: #C6A868; color: #000; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; z-index: 1; font-family: 'Montserrat', sans-serif; line-height: 1; }
-        .shine-timeline-body { padding-top: 0.75rem; }
-        .step-card { position: relative; background: #0e0e0e; border: 1px solid rgba(198,168,104,0.22); border-radius: 18px; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
-        .step-card:hover { border-color: rgba(198,168,104,0.65); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
-        .step-card-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(198,168,104,0.55); }
-        .nav-glass { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-color: rgba(198,168,104,0.30); }
-        .nav-solid { background: rgba(0,0,0,0.65); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-color: rgba(51,51,51,0.8); }
-        /* Utilitários ausentes no Tailwind congelado (home) */
-        .object-center { object-position: center; }
-        .opacity-100 { opacity: 1; }
-        .w-11 { width: 2.75rem; }
-        .h-11 { height: 2.75rem; }
-        .mb-1 { margin-bottom: 0.25rem; }
-        .hover\:underline:hover { text-decoration-line: underline; }
-        @media (min-width: 768px) { .md\:gap-14 { gap: 3.5rem; } }
-        .max-w-xl { max-width: 36rem; }
-        /* Galeria Instagram — grid uniforme compacto (estilo feed) */
-        .ig-grid-uniform { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
-        @media (min-width: 640px) { .ig-grid-uniform { grid-template-columns: repeat(4, 1fr); gap: 6px; } }
-        @media (min-width: 1024px) { .ig-grid-uniform { grid-template-columns: repeat(6, 1fr); gap: 8px; } }
-        .ig-item { position: relative; display: block; overflow: hidden; border-radius: 8px; background: #111; aspect-ratio: 1; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-        .ig-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 700ms cubic-bezier(.22,.61,.36,1); }
-        @media (hover: hover) { .ig-item:hover img { transform: scale(1.08); } }
-        .ig-cap { position: absolute; inset-inline: 0; bottom: 0; padding: 1rem 0.55rem 0.45rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fff; font-size: 0.62rem; line-height: 1.3; transform: translateY(101%); transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
-        @media (hover: hover) { .ig-item:hover .ig-cap { transform: translateY(0); } }
-        @media (hover: none) { .ig-cap { display: none; } }
-        .ig-play { position: absolute; top: 6px; right: 6px; width: 20px; height: 20px; border-radius: 50%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 8px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
-        .ig-skel { aspect-ratio: 1; border-radius: 8px; background: linear-gradient(100deg, #141414 30%, #1f1f1f 50%, #141414 70%); background-size: 200% 100%; animation: igShim 1.3s linear infinite; }
-        @keyframes igShim { to { background-position: -200% 0; } }
-        /* Círculos de story (destaques) */
-        .ig-stories { display: flex; gap: 18px; overflow-x: auto; padding: 0 24px 6px; max-width: 80rem; margin: 0 auto 30px; scrollbar-width: none; }
-        .ig-stories::-webkit-scrollbar { display: none; }
-        .ig-story-c { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; width: 76px; background: none; border: none; padding: 0; }
-        .ig-story-ring { width: 72px; height: 72px; border-radius: 50%; padding: 2.5px; background: linear-gradient(135deg, #DFBD69, #FFF0C6, #B89648); flex-shrink: 0; transition: transform .25s; }
-        .ig-story-c:hover .ig-story-ring { transform: scale(1.06); }
-        .ig-story-c.seen .ig-story-ring { background: #3a3a3a; }
-        .ig-story-ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid #0a0a0a; display: block; }
-        .ig-story-label { font-size: 0.62rem; color: #cfc7b8; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 76px; }
-        /* Visualizador de story (tela cheia) */
-        .sv { position: fixed; inset: 0; z-index: 3000; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.93); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-        .sv.open { display: flex; }
-        .sv-card { position: relative; width: min(420px, 94vw); height: min(92vh, 740px); border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
-        .sv-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-        .sv-scrim { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 20%, transparent 52%, rgba(0,0,0,0.92) 100%); }
-        .sv-bars { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; gap: 4px; z-index: 5; }
-        .sv-bar { flex: 1; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.3); overflow: hidden; }
-        .sv-bar > i { display: block; height: 100%; width: 0; background: #fff; }
-        .sv-bar.done > i { width: 100%; }
-        .sv-bar.active > i { animation: svFill 5s linear forwards; }
-        @keyframes svFill { from { width: 0; } to { width: 100%; } }
-        .sv-head { position: absolute; top: 24px; left: 14px; right: 14px; z-index: 5; display: flex; align-items: center; gap: 10px; }
-        .sv-avatar { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid #C6A868; padding: 2px; background: #000; object-fit: contain; }
-        .sv-user { color: #fff; font-weight: 700; font-size: 0.8rem; flex: 1; text-decoration: none; }
-        .sv-close { width: 34px; height: 34px; border-radius: 50%; border: none; background: rgba(0,0,0,0.45); color: #fff; font-size: 20px; cursor: pointer; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
-        .sv-cap { position: absolute; left: 16px; right: 16px; bottom: 72px; z-index: 3; color: #fff; font-size: 0.82rem; line-height: 1.5; max-height: 28%; overflow-y: auto; text-shadow: 0 1px 6px rgba(0,0,0,0.7); pointer-events: none; }
-        .sv-cta { position: absolute; left: 16px; right: 16px; bottom: 18px; z-index: 5; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 12px; background: linear-gradient(135deg,#DFBD69,#B89648); color: #000; font-weight: 700; font-size: 0.74rem; text-transform: uppercase; letter-spacing: .04em; text-decoration: none; }
-        .sv-nav { position: absolute; top: 60px; bottom: 64px; width: 38%; z-index: 4; cursor: pointer; }
-        .sv-prev { left: 0; }
-        .sv-next { right: 0; }
-        .ig-item { cursor: pointer; }
-        /* Lightbox da galeria */
-        .ig-lb { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 3vh 3vw; }
-        .ig-lb.open { display: flex; }
-        .ig-lb-back { position: absolute; inset: 0; background: rgba(5,5,5,0.9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-        .ig-lb-dialog { position: relative; z-index: 1; display: flex; flex-direction: column; max-width: 980px; width: 100%; max-height: 94vh; background: #0e0e0e; border: 1px solid rgba(198,168,104,0.25); border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.65); animation: igLbIn .3s cubic-bezier(.22,.61,.36,1); }
-        @media (min-width: 860px) { .ig-lb-dialog { flex-direction: row; } }
-        @keyframes igLbIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
-        .ig-lb-media { position: relative; background: #000; display: flex; align-items: center; justify-content: center; flex: 1 1 58%; min-height: 0; }
-        .ig-lb-stage { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; min-height: 0; }
-        .ig-lb-stage img, .ig-lb-stage video { width: 100%; height: 100%; max-height: 94vh; object-fit: contain; display: block; background: #000; }
-        .ig-lb-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 4; width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(0,0,0,0.5); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; }
-        .ig-lb-arrow:hover { background: rgba(198,168,104,0.9); color: #000; }
-        .ig-lb-arrow.prev { left: 10px; } .ig-lb-arrow.next { right: 10px; }
-        .ig-lb-count { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 4; background: rgba(0,0,0,0.55); color: #fff; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
-        .ig-multi { font-size: 11px; }
-        .ig-lb-panel { flex: 1 1 42%; display: flex; flex-direction: column; padding: 1.5rem 1.4rem; min-width: 0; }
-        @media (min-width: 860px) { .ig-lb-panel { max-width: 360px; } }
-        .ig-lb-head { display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem; }
-        .ig-lb-avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: contain; background:#000; border: 1.5px solid #C6A868; padding:3px; }
-        .ig-lb-user { color: #fff; font-weight: 700; font-size: .85rem; text-decoration: none; }
-        .ig-lb-user:hover { color: #C6A868; }
-        .ig-lb-caption { color: #cfc7b8; font-size: .82rem; line-height: 1.55; overflow-y: auto; flex: 1; white-space: pre-line; margin-bottom: 1rem; min-height: 60px; }
-        .ig-lb-actions { display: flex; flex-direction: column; gap: .55rem; }
-        .ig-lb-btn { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .7rem 1rem; border-radius: 10px; font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; text-decoration: none; cursor: pointer; border: 1px solid rgba(198,168,104,0.4); background: transparent; color: #fff; transition: border-color .25s, background .25s, color .25s; font-family: inherit; }
-        .ig-lb-btn:hover { border-color: #C6A868; background: rgba(198,168,104,0.1); }
-        .ig-lb-btn.primary { background: linear-gradient(135deg,#DFBD69,#B89648); color: #000; border: none; }
-        .ig-lb-btn.primary:hover { filter: brightness(1.07); }
-        .ig-lb-btn svg { flex-shrink: 0; }
-        .ig-lb-like.liked { color: #ff4d6d; border-color: rgba(255,77,109,0.55); }
-        .ig-lb-like.liked svg { fill: #ff4d6d; stroke: #ff4d6d; }
-        .ig-lb-like.pop svg { animation: igHeart .45s ease; }
-        @keyframes igHeart { 0%{transform:scale(1);} 35%{transform:scale(1.35);} 70%{transform:scale(.9);} 100%{transform:scale(1);} }
-        .ig-lb-close { position: absolute; top: 12px; right: 14px; z-index: 3; width: 38px; height: 38px; border-radius: 50%; border: none; background: rgba(0,0,0,0.55); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
-        .ig-lb-close:hover { background: rgba(198,168,104,0.9); color: #000; }
-        .hero-cta { width: 91.666667%; font-size: clamp(0.875rem,1.2vw,1rem); padding: clamp(1rem,1.5vw,1.25rem) clamp(2rem,3.5vw,2.5rem); }
-        @media (min-width: 640px) { .hero-cta { width: fit-content; } }
-        .hero-gradient { background: linear-gradient(to right, rgba(8,8,8,0.94) 0%, rgba(8,8,8,0.86) 30%, rgba(8,8,8,0.55) 58%, rgba(8,8,8,0.05) 82%, rgba(8,8,8,0) 100%); }
-        @media (max-width: 767px) { .hero-gradient { background: linear-gradient(to right, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.94) 50%, rgba(8,8,8,0.78) 73%, rgba(8,8,8,0.35) 90%, rgba(8,8,8,0.08) 100%); } }
-    </style>
-
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="stylesheet" href="/assets/shine-leve.css?v=7">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="ShineCortinas" />
 <link rel="manifest" href="/site.webmanifest" />
 </head>
-<body class="bg-white text-gray-900 antialiased overflow-x-hidden">
+<body id="top" data-wa-context="a página inicial">
 
-    <!-- NAVBAR -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 nav-glass py-4 border-b" aria-label="Menu Principal">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div id="nav-logo" class="opacity-100 transition-opacity duration-300 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)" role="button">
-                <div class="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#C6A868] bg-black shadow-md"><span class="font-logo text-lg font-bold text-[#C6A868] pt-0.5">S</span></div>
-                <span class="text-xl font-logo font-bold text-white tracking-widest">SHINE</span>
-            </div>
-            <div class="hidden md:flex gap-8 font-tech font-bold text-[11px] uppercase tracking-[0.2em] text-white items-center">
-                <a href="#comparativo" class="text-[#C6A868] hover:text-white transition">Diferencial</a><a href="#solucoes" class="hover:text-[#C6A868] transition">Soluções</a><a href="#clientes" class="hover:text-[#C6A868] transition">Clientes</a><a href="#cidades" class="hover:text-[#C6A868] transition">Cidades</a><a href="#faq" class="hover:text-[#C6A868] transition">FAQ</a><a href="#blog" class="hover:text-[#C6A868] transition">Blog</a><a href="#galeria" class="hover:text-[#C6A868] transition">Projetos</a><a href="/videos/" class="hover:text-[#C6A868] transition">Vídeos</a><a href="#ceo" class="hover:text-[#C6A868] transition">CEO</a>
-                <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="border border-[#C6A868] text-[#C6A868] px-6 py-2 hover:bg-[#C6A868] hover:text-black transition duration-300">Pedir Orçamento Grátis</a>
-            </div>
-            <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2" aria-label="Abrir Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg></button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu-panel hidden bg-black/95 backdrop-blur-md border-t border-gray-800 p-6 flex flex-col gap-6 text-white uppercase font-bold text-sm tracking-widest shadow-2xl md:h-auto">
-            <a href="#comparativo" class="text-[#C6A868] block py-2 border-b border-gray-800">Por que Shine?</a><a href="#solucoes" class="block py-2 border-b border-gray-800">Soluções</a><a href="#clientes" class="block py-2 border-b border-gray-800">Clientes</a><a href="#cidades" class="block py-2 border-b border-gray-800">Cidades Atendidas</a><a href="#faq" class="block py-2 border-b border-gray-800">FAQ</a><a href="#blog" class="block py-2 border-b border-gray-800">Blog e Dicas</a><a href="#galeria" class="block py-2 border-b border-gray-800">Projetos</a><a href="/videos/" class="block py-2 border-b border-gray-800">Vídeos</a><a href="#ceo" class="block py-2 border-b border-gray-800">O CEO</a>
-            <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." class="bg-[#C6A868] text-black text-center py-4 rounded mt-4">Falar com Especialista</a>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="relative min-h-[100svh] flex items-center bg-black font-tech overflow-hidden hero-safe-top">
-        <div class="absolute inset-0 z-0">
-            <img src="hero-sala.avif" alt="Cortinas e Persianas Sob Medida em Volta Redonda - ShineCortinas" class="w-full h-full object-cover" style="object-position:right center;" width="1920" height="1080" fetchpriority="high" decoding="async" />
-            <div class="absolute inset-0 hero-gradient"></div>
-        </div>
-        <div class="relative z-10 w-full max-w-3xl text-left animate-fade-in-up" style="padding-left:clamp(1.5rem,5.5vw,4rem);padding-right:1.5rem;">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="h-px w-12 bg-[#C6A868]" style="box-shadow:0 0 8px #C6A868;"></span>
-                <span class="font-logo text-[#C6A868]" style="font-size:clamp(0.75rem,1vw,0.875rem);text-transform:uppercase;letter-spacing:0.32em;">Volta Redonda · Sul Fluminense</span>
-            </div>
-            <h1 class="font-luxury text-white font-black drop-shadow-lg mb-5" style="font-size:clamp(1.875rem,5vw,3.75rem);line-height:1.05;">O Seu Ambiente Ainda Não É O Que Você <span class="italic text-[#C6A868]">Imaginou.</span></h1>
-            <h2 class="font-luxury italic text-[#C6A868] tracking-wide max-w-2xl" style="font-size:clamp(1.125rem,2.5vw,1.875rem);margin-bottom:1.75rem;">A Shine é a Referência em Cortinas e Persianas no Sul Fluminense — e Transforma Qualquer Ambiente Em Exatamente O Que Você Merece.</h2>
-            <p class="max-w-xl drop-shadow-md leading-relaxed" style="color:#e5e7eb;font-size:clamp(0.875rem,1.2vw,1rem);font-weight:500;margin-bottom:2.25rem;">A Shine vai até a sua casa em Volta Redonda, Barra Mansa, Resende e em toda a região Sul Fluminense, mede com precisão milimétrica, apresenta as opções certas para o seu ambiente e entrega uma <span class="text-[#C6A868]">transformação</span> que você vai sentir todo dia — sem esforço, sem preocupação, sem surpresa.</p>
-            <div class="flex flex-col items-start gap-4">
-                <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="gold-bg-gradient text-black font-black rounded hover:scale-105 transition shadow-xl flex items-center justify-center gap-3 hero-cta">Quero Minha Consultoria Gratuita →</a>
-                <span class="flex items-center gap-2 text-gray-300 uppercase" style="font-size:11px;letter-spacing:0.18em;white-space:nowrap;"><span class="rounded-full bg-[#C6A868]" style="width:0.375rem;height:0.375rem;display:inline-block;flex-shrink:0;box-shadow:0 0 6px #C6A868;"></span>Sem compromisso · no seu tempo</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAIXA DE CONFIANÇA -->
-    <div class="bg-[#C6A868] py-6 font-tech">
-        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-6 md:gap-14 text-black text-[11px] md:text-xs font-black uppercase tracking-widest text-center">
-            <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 17 Anos de Experiência</span>
-            <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Leve em até 12x no Cartão</span>
-            <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Consultoria 100% Gratuita em Casa</span>
-            <span class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Agenda Com Vagas Limitadas</span>
-        </div>
+  <header class="sl-header">
+    <div class="sl-wrap sl-header__in">
+      <a href="/" class="sl-logo" aria-label="ShineCortinas — início"><span class="sl-logo__mark">S</span><span class="sl-logo__name">SHINE</span></a>
+      <nav class="sl-nav" aria-label="Menu principal">
+        <a href="/cortinas/">Cortinas</a>
+        <a href="/persianas/">Persianas</a>
+        <a href="/metodo/">Como funciona</a>
+        <a href="/cidades-atendidas.html">Cidades</a>
+        <a href="/portfolio/">Projetos</a>
+        <a href="/blog/">Blog</a>
+        <a class="sl-btn" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Falar com um consultor</a>
+      </nav>
+      <button class="sl-menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
     </div>
+    <div class="sl-wrap"><nav id="mobile-menu" class="sl-menu" aria-label="Menu">
+      <a href="/">Início</a><a href="/cortinas/">Cortinas</a><a href="/persianas/">Persianas</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas.html">Cidades atendidas</a><a href="/portfolio/">Projetos</a><a href="/blog/">Blog</a>
+      <a data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Falar com um consultor →</a>
+    </nav></div>
+  </header>
 
-    <!-- COMPARATIVO -->
-    <section id="comparativo" class="relative z-10 py-16 md:py-24 bg-white font-tech">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-10 md:mb-16"><span class="text-xs font-bold uppercase tracking-widest text-[#C6A868] mb-2 block">Verdade Nua e Crua</span><h2 class="text-2xl md:text-4xl font-luxury font-black text-black">POR QUE <span class="text-[#C6A868]">SHINE</span>?</h2></div>
-            <div class="mobile-scroll border border-gray-200 shadow-2xl rounded">
-                <table class="w-full text-left border-collapse min-w-[600px] md:min-w-0" role="table">
-                    <thead><tr class="bg-black text-white uppercase text-xs tracking-widest"><th class="p-4 md:p-6 w-1/3 sticky left-0 bg-black z-10">Critério</th><th class="p-4 md:p-6 w-1/3 bg-[#C6A868] text-black font-black border-b-4 border-white">Padrão Shine</th><th class="p-4 md:p-6 w-1/3 text-gray-500">Mercado</th></tr></thead>
-                    <tbody class="text-sm">
-                        <tr class="border-b border-gray-100"><td class="p-4 md:p-6 font-bold sticky left-0 bg-white border-r">Experiência</td><td class="p-4 md:p-6 bg-yellow-50 font-bold text-[#C6A868]">17 Anos de Mercado</td><td class="p-4 md:p-6 text-gray-400">Desconhecida</td></tr>
-                        <tr class="border-b border-gray-100"><td class="p-4 md:p-6 font-bold sticky left-0 bg-white border-r">Motorização</td><td class="p-4 md:p-6 bg-yellow-50 font-bold text-[#C6A868]">7ª Geração (IoT)</td><td class="p-4 md:p-6 text-gray-400">Genérica</td></tr>
-                        <tr class="border-b border-gray-100"><td class="p-4 md:p-6 font-bold sticky left-0 bg-white border-r">Acabamento</td><td class="p-4 md:p-6 bg-yellow-50 font-bold text-[#C6A868]">Memory & Barra Dupla</td><td class="p-4 md:p-6 text-gray-400">Simples</td></tr>
-                        <tr class="border-b border-gray-100"><td class="p-4 md:p-6 font-bold sticky left-0 bg-white border-r">Garantia</td><td class="p-4 md:p-6 bg-yellow-50 font-bold text-[#C6A868]">5 Anos Real</td><td class="p-4 md:p-6 text-gray-400">3 Meses</td></tr>
-                        <tr class="border-b border-gray-100"><td class="p-4 md:p-6 font-bold sticky left-0 bg-white border-r">Pagamento</td><td class="p-4 md:p-6 bg-yellow-50 font-bold text-[#C6A868]">Até 12x no Cartão</td><td class="p-4 md:p-6 text-gray-400">À Vista</td></tr>
-                        <tr><td class="p-4 md:p-6 font-bold sticky left-0 bg-white border-r">Risco de Arrependimento</td><td class="p-4 md:p-6 bg-yellow-50 font-bold text-[#C6A868]">Zero — Garantia Real</td><td class="p-4 md:p-6 text-gray-400">Alto</td></tr>
-                    </tbody>
-                </table>
+  <section class="sl-hero sl-hero--home">
+    <div class="sl-hero__img"><img src="/hero-sala.avif" alt="Sala com cortina sob medida do teto ao chão, projeto ShineCortinas" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
+    <div class="sl-wrap"><div class="sl-hero__in">
+      <p class="sl-kicker">Volta Redonda · Sul Fluminense · desde 2009</p>
+      <h1 class="sl-h1">Cortinas e Persianas Sob Medida em <em>Volta Redonda</em> e todo o Sul Fluminense</h1>
+      <div class="sl-hero__rule"></div>
+      <p class="sl-lede">O consultor vai até a sua casa, mede a laser e você escolhe os tecidos no seu próprio ambiente. Consultoria gratuita, sem compromisso, e você decide no seu tempo.</p>
+      <a class="sl-btn" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Falar com um consultor →</a>
+      <p class="sl-note">Sem compromisso · Resposta em minutos · Você decide o próximo passo</p>
+    </div></div>
+  </section>
+
+  <div class="sl-citybar"><div class="sl-wrap"><span class="sl-chip" data-city-chip>
+    <span data-city-label>Atendemos todo o Sul Fluminense</span>
+    <button type="button" class="sl-chip__btn" popovertarget="city-pop">minha cidade</button>
+    <div id="city-pop" popover class="sl-citypop"><p>Escolha a sua cidade</p><div class="sl-citypop__list" data-city-list></div></div>
+  </span></div></div>
+
+  <div class="sl-strip"><div class="sl-wrap sl-strip__in">
+    <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>17 anos no Sul Fluminense</span>
+    <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Consultoria gratuita em casa</span>
+    <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Parcele em até 12x</span>
+    <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Atendimento humano, sem robô</span>
+  </div></div>
+
+  <main>
+    <section class="sl-section sl-reveal"><div class="sl-wrap sl-grid-2">
+      <div class="sl-media"><img src="/cortina-sob-medida.avif" alt="Sala com cortina de linho sob medida, caimento perfeito, projeto ShineCortinas" width="800" height="1000" loading="lazy" decoding="async"></div>
+      <div class="sl-copy">
+        <p class="sl-kicker">Imagine só</p>
+        <h2 class="sl-h2">A luz entrando do jeito certo, <em>todo dia.</em></h2>
+        <p>Cortina sob medida não é cortina de prateleira. Cada projeto começa com medição a laser e uma curadoria de tecidos escolhida para o seu ambiente, apresentada na sua casa.</p>
+        <p>Há 17 anos fazemos isso em Volta Redonda, Barra Mansa, Resende e em toda a região, com <strong>equipe própria do consultor ao instalador</strong> e a comodidade de parcelar em até 12x.</p>
+        <a class="sl-btn sl-btn--green" data-wa="estimativa" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Quero esse resultado na minha casa →</a>
+      </div>
+    </div></section>
+
+    <section class="sl-section sl-reveal" id="simulador"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:26px">
+        <p class="sl-kicker sl-kicker--center">Em três toques</p>
+        <h2 class="sl-h2">Qual cortina para o <em>meu ambiente?</em></h2>
+        <p class="sl-sub">Escolha o cômodo e o que você precisa. A gente sugere o caminho e você confirma na visita.</p>
+      </div>
+      <form class="sl-sim" id="sim" data-sim>
+        <fieldset><legend>1. O cômodo</legend>
+          <label><input type="radio" name="comodo" value="sala" checked><span>Sala</span></label>
+          <label><input type="radio" name="comodo" value="quarto"><span>Quarto</span></label>
+          <label><input type="radio" name="comodo" value="escritorio"><span>Home office</span></label>
+          <label><input type="radio" name="comodo" value="cozinha"><span>Cozinha / área</span></label>
+        </fieldset>
+        <fieldset><legend>2. O que você precisa</legend>
+          <label><input type="radio" name="objetivo" value="decorar" checked><span>Decorar</span></label>
+          <label><input type="radio" name="objetivo" value="escurecer"><span>Escurecer</span></label>
+          <label><input type="radio" name="objetivo" value="privacidade"><span>Privacidade</span></label>
+          <label><input type="radio" name="objetivo" value="sol"><span>Controlar o sol</span></label>
+        </fieldset>
+        <fieldset><legend>3. Um extra</legend>
+          <label><input type="checkbox" name="motor" value="1"><span>Quero abrir pelo celular ou pela voz</span></label>
+        </fieldset>
+        <div class="sl-sim__result" data-sim-result aria-live="polite">
+          <div class="sl-media"><img data-sim-img src="/cortina-sob-medida.avif" alt="Sugestão de cortina para o seu ambiente" width="800" height="1000" loading="lazy" decoding="async"><span class="sl-sim__ref" data-sim-ref hidden>Referência do modelo, em outro ambiente</span></div>
+          <div>
+            <p class="sl-kicker">Nossa sugestão</p>
+            <h3 data-sim-title>Cortina wave em linho</h3>
+            <p data-sim-text>Ondas regulares do teto ao chão. É o acabamento de projeto de arquitetura.</p>
+            <p class="sl-sim__motor" data-sim-motor hidden>Com motorização de 7ª geração: silenciosa, com Alexa, Google Home e Apple Home.</p>
+            <div class="sl-sim__actions">
+              <a class="sl-btn" data-wa="estimativa" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Receber uma estimativa para este ambiente →</a>
+              <a class="sl-btn sl-btn--ghost" data-sim-link href="/cortina-wave/">Ver detalhes</a>
             </div>
+          </div>
         </div>
-    </section>
+      </form>
+    </div></section>
 
-    <!-- COMO FUNCIONA -->
-    <section id="metodo" class="cv-auto py-16 md:py-24 bg-black text-white font-tech border-b border-[#222]">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-12 md:mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-[#C6A868] mb-3 block">Simples. Transparente. Sem Surpresa.</span>
-                <h2 class="text-2xl md:text-4xl font-luxury font-black">COMO FUNCIONA<br><span class="text-[#C6A868] italic">O Atendimento Shine</span></h2>
-            </div>
-            <!-- Passos em grade de cards arredondados: 1→2→3 / 4→5→6 -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="step-card p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="shine-timeline-num">1</div>
-                        <span class="step-card-tag">Passo 01</span>
-                    </div>
-                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Você entra em contato</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">WhatsApp, Instagram ou telefone — em minutos você fala com um consultor de verdade. Sem robô, sem formulário, sem espera.</p>
-                </div>
-                <div class="step-card p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="shine-timeline-num">2</div>
-                        <span class="step-card-tag">Passo 02</span>
-                    </div>
-                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Agendamos a visita gratuita</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Nosso consultor vai até a sua casa em Volta Redonda, Barra Mansa, Resende ou onde você estiver — no dia e horário que funcionar pra você.</p>
-                </div>
-                <div class="step-card p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="shine-timeline-num">3</div>
-                        <span class="step-card-tag">Passo 03</span>
-                    </div>
-                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Medição milimétrica a laser</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Com equipamento profissional, medimos cada ambiente com precisão absoluta. Zero erro. Zero retrabalho. Zero surpresa no resultado final.</p>
-                </div>
-                <div class="step-card p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="shine-timeline-num">4</div>
-                        <span class="step-card-tag">Passo 04</span>
-                    </div>
-                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Projeto + aprovação</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Montamos o projeto completo com os materiais, cores e modelos que você escolheu. Você aprova cada detalhe antes de assinar qualquer coisa.</p>
-                </div>
-                <div class="step-card p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="shine-timeline-num">5</div>
-                        <span class="step-card-tag">Passo 05</span>
-                    </div>
-                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Confecção sob medida</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Sua cortina ou persiana é fabricada exclusivamente para o seu ambiente — sem peça genérica, sem adaptação. Feita do zero, para o seu espaço.</p>
-                </div>
-                <div class="step-card p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="shine-timeline-num">6</div>
-                        <span class="step-card-tag">Passo 06</span>
-                    </div>
-                    <h3 class="text-white font-bold text-base md:text-lg mb-2">Instalação pela nossa equipe</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Chegamos, instalamos e saímos deixando o ambiente perfeito — limpo, organizado, sem entulho. Na maioria dos projetos, tudo no mesmo dia.</p>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="inline-block bg-[#C6A868] text-black font-bold text-sm uppercase tracking-widest px-8 py-4 hover:bg-white transition" style="border-radius:9999px;">Quero Começar Agora →</a>
-            </div>
-        </div>
-    </section>
+    <section class="sl-section sl-reveal" id="solucoes"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:30px">
+        <p class="sl-kicker sl-kicker--center">O que a gente faz</p>
+        <h2 class="sl-h2">Soluções sob medida para <em>cada janela</em></h2>
+        <p class="sl-sub">Da cortina de linho à persiana motorizada. Tudo medido, confeccionado e instalado pela nossa equipe.</p>
+      </div>
+      <div class="sl-cards">
+        <a class="sl-card" href="/cortinas/"><div class="sl-media"><img src="/cortina-sob-medida.avif" alt="Cortinas sob medida — ShineCortinas" width="800" height="1000" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Cortinas</span><h3>Cortinas sob medida</h3><p>Wave, prega, painel e linho. Cabeçote com memória e barra dupla para o caimento que não desmancha.</p><em>Ver detalhes →</em></div></a>
+        <a class="sl-card" href="/persianas/"><div class="sl-media"><img src="/persiana-motorizada.avif" alt="Persianas técnicas — ShineCortinas" width="800" height="1000" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Persianas</span><h3>Persianas técnicas</h3><p>Rolô, romana, double vision, vertical e screen. Luz e privacidade na medida de cada janela.</p><em>Ver detalhes →</em></div></a>
+        <a class="sl-card" href="/cortina-motorizada/"><div class="sl-media"><img src="/automacao.avif" alt="Cortinas e persianas motorizadas — ShineCortinas" width="800" height="1000" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Automação</span><h3>Cortinas e persianas motorizadas</h3><p>Motores de 7ª geração, silenciosos, com Alexa, Google Home e Apple Home. Abre pelo celular ou pela voz.</p><em>Ver detalhes →</em></div></a>
+        <a class="sl-card" href="/blackout-e-forros/"><div class="sl-media"><img src="/blackouts-tecnicos.avif" alt="Blackout técnico e forros — ShineCortinas" width="800" height="1000" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Blackout</span><h3>Blackout técnico e forros</h3><p>Forro translúcido para privacidade, semi blackout de 70% para penumbra e blackout 100% para escuro total. O forro define o resultado.</p><em>Ver detalhes →</em></div></a>
+        <a class="sl-card" href="/cortina-wave/"><div class="sl-media"><img src="/linha-puro.avif" alt="Linho e tecidos selecionados — ShineCortinas" width="800" height="1000" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Linha Puro</span><h3>Linho e tecidos selecionados</h3><p>Curadoria de tecidos que você sente na mão, na sua sala, antes de decidir.</p><em>Ver detalhes →</em></div></a>
+        <a class="sl-card" href="/persianas/"><div class="sl-media"><img src="/madeira.avif" alt="Persianas de madeira — ShineCortinas" width="800" height="1000" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Madeira</span><h3>Persianas de madeira</h3><p>Toque natural e controle de luz por lâminas. Para cozinhas, escritórios e varandas.</p><em>Ver detalhes →</em></div></a>
+      </div>
+    </div></section>
 
-    <!-- SOLUÇÕES -->
-    <section id="solucoes" class="cv-auto py-16 md:py-24 px-6 bg-[#F8F9FA] font-tech">
-        <div class="max-w-7xl mx-auto text-center mb-12">
-            <h2 class="text-3xl md:text-5xl font-luxury font-black text-black">NOSSAS <span class="italic text-[#C6A868] font-serif">SOLUÇÕES</span></h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="relative group bg-black h-[400px] shadow-2xl overflow-hidden rounded cursor-pointer" onclick="openModal('modal-persiana')">
-                <img src="persiana-motorizada.avif" alt="Persianas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full"><h3 class="text-2xl font-bold text-white uppercase mb-2">Persianas Motorizadas</h3><span class="text-[#C6A868] text-xs font-bold uppercase tracking-widest border-b border-[#C6A868] pb-1">Ver Detalhes</span></div>
-            </div>
-            <div class="relative group bg-black h-[400px] shadow-2xl overflow-hidden rounded cursor-pointer" onclick="openModal('modal-cortina')">
-                <img src="cortina-sob-medida.avif" alt="Cortinas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-50 transition duration-700 group-hover:scale-110" width="800" height="1200" decoding="async" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full"><h3 class="text-2xl font-bold text-white uppercase mb-2">Cortinas sob Medida</h3><span class="text-[#C6A868] text-xs font-bold uppercase tracking-widest border-b border-[#C6A868] pb-1">Ver Detalhes</span></div>
-            </div>
-            <div class="relative group bg-black h-[400px] shadow-2xl overflow-hidden rounded cursor-pointer" onclick="openModal('modal-blackout')">
-                <img src="blackouts-tecnicos.avif" alt="Blackout" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700" width="800" height="1200" decoding="async" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full"><h3 class="text-2xl font-bold text-white uppercase mb-2">Blackouts Técnicos</h3><span class="text-[#C6A868] text-xs font-bold uppercase tracking-widest border-b border-[#C6A868] pb-1">Ver Detalhes</span></div>
-            </div>
-        </div>
-    </section>
+    <section class="sl-section" id="prova"><div class="sl-wrap">
+      <p class="sl-kicker">Por que a gente pode falar sobre isso</p>
+      <h2 class="sl-h2">Somos referência em cortinas no Sul Fluminense</h2>
+      <p class="sl-sub">Volta Redonda, Barra Mansa, Resende e mais 12 cidades. O consultor vai até a sua casa sem custo.</p>
+      <div class="sl-stats" style="margin-top:28px">
+        <div class="sl-stat"><span class="sl-stat__n">17</span><div><h3>Anos medindo, confeccionando e instalando</h3><p>Desde 2009 no Sul Fluminense. Cortina sob medida é o que a gente faz, não uma linha a mais no catálogo.</p></div></div>
+        <div class="sl-stat"><span class="sl-stat__n">5.0</span><div><h3>Nota máxima no Google, com 292 avaliações</h3><p>Cliente satisfeito volta para o segundo ambiente e indica para o vizinho.</p></div></div>
+        <div class="sl-stat"><span class="sl-stat__n">9 mil</span><div><h3>Ambientes entregues na região</h3><p>Salas, quartos, escritórios e projetos corporativos, todos medidos e instalados pela nossa equipe.</p></div></div>
+        <div class="sl-stat"><span class="sl-stat__n">100%</span><div><h3>Equipe própria, do consultor ao instalador</h3><p>Medição, confecção e instalação são feitas pela nossa gente. Não terceirizamos a sua casa.</p></div></div>
+      </div>
+      <div class="sl-seals">
+        <img src="/selo-premio.avif" alt="Prêmio de excelência ShineCortinas" width="56" height="56" loading="lazy" decoding="async">
+        <img src="/selo-diamante.avif" alt="Selo de qualidade ShineCortinas" width="56" height="56" loading="lazy" decoding="async">
+        <p>Cortinas premiadas e reconhecidas pelo trabalho de confecção sob medida na região.</p>
+      </div>
+    </div></section>
 
-    <!-- CLIENTES GOLD (CORRIGIDO: DISCRETO E CHIQUE) -->
-    <section id="clientes" class="cv-auto py-16 bg-black border-t border-[#222]">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-gray-500 text-xs font-bold uppercase tracking-[0.2em] mb-12">Quem Confia no Padrão Shine</p>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center">
-                <div class="group p-4 border border-transparent hover:border-[#C6A868] transition duration-500 rounded"><span class="font-tech text-sm md:text-base font-bold text-gray-400 block transform group-hover:text-[#C6A868] group-hover:scale-105 transition tracking-widest">UNIMED</span></div>
-                <div class="group p-4 border border-transparent hover:border-[#C6A868] transition duration-500 rounded"><span class="font-tech text-sm md:text-base font-bold text-gray-400 block transform group-hover:text-[#C6A868] group-hover:scale-105 transition tracking-widest">VOLKSWAGEN</span></div>
-                <div class="group p-4 border border-transparent hover:border-[#C6A868] transition duration-500 rounded"><span class="font-tech text-sm md:text-base font-bold text-gray-400 block transform group-hover:text-[#C6A868] group-hover:scale-105 transition tracking-widest">CSN</span></div>
-                <div class="group p-4 border border-transparent hover:border-[#C6A868] transition duration-500 rounded"><span class="font-tech text-sm md:text-base font-bold text-gray-400 block transform group-hover:text-[#C6A868] group-hover:scale-105 transition tracking-widest">BANCO DO BRASIL</span></div>
-                <div class="group p-4 border border-transparent hover:border-[#C6A868] transition duration-500 rounded"><span class="font-tech text-sm md:text-base font-bold text-gray-400 block transform group-hover:text-[#C6A868] group-hover:scale-105 transition tracking-widest">SICREDI</span></div>
-                <div class="group p-4 border border-transparent hover:border-[#C6A868] transition duration-500 rounded"><span class="font-tech text-sm md:text-base font-bold text-gray-400 block transform group-hover:text-[#C6A868] group-hover:scale-105 transition tracking-widest">OAB</span></div>
-            </div>
-        </div>
-    </section>
+    <section class="sl-section sl-section--tight sl-reveal"><div class="sl-wrap sl-center">
+      <p class="sl-label">Quem confia no padrão Shine</p>
+      <div class="sl-clients"><span>UNIMED</span><span>Volkswagen</span><span>CSN</span><span>Banco do Brasil</span><span>Sicredi</span><span>OAB</span></div>
+    </div></section>
 
-    <!-- COBERTURA REGIONAL -->
-    <section id="cidades" class="cv-auto py-16 md:py-24 bg-[#F8F9FA] border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="max-w-3xl mb-10">
-                <span class="text-xs font-bold uppercase tracking-widest text-[#C6A868]">Presença Regional</span>
-                <h2 class="text-3xl md:text-5xl font-luxury font-black text-black mt-3">A referência em cortinas e persianas sob medida em todo o <span class="text-[#C6A868]">Sul Fluminense</span></h2>
-                <p class="text-gray-600 mt-4">Atendimento técnico especializado para residências, apartamentos e espaços comerciais — com visita, medição, instalação e pós-venda completo.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm font-bold uppercase tracking-wide">
-                <div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Itatiaia</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Resende</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Penedo</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Visconde de Mauá</div>
-                <div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Maromba</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Porto Real</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Barra Mansa</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Volta Redonda</div>
-                <div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Pinheiral</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Piraí</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Barra do Piraí</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Valença</div>
-                <div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Vassouras</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Paulo de Frontin</div><div class="bg-white border border-gray-200 p-4" style="color:#A87B1E">Miguel Pereira</div><a href="cidades-atendidas.html" class="bg-black text-white border border-black p-4 hover:bg-[#C6A868] hover:text-black transition">Mapa completo +</a>
-            </div>
-        </div>
-    </section>
+    <section class="sl-section" id="comparativo"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:30px">
+        <p class="sl-kicker sl-kicker--center">Antes de decidir</p>
+        <h2 class="sl-h2">Comprar pela internet ou <em>sob medida?</em></h2>
+      </div>
+      <div class="sl-compare">
+        <div class="sl-compare__row sl-compare__head"><div>Pela internet</div><div>Com a Shine</div></div>
+        <div class="sl-compare__row"><div>Você mede sozinho</div><div>Medição a laser feita por nós, na sua casa</div></div>
+        <div class="sl-compare__row"><div>Escolhe o tecido pela tela</div><div>Sente a textura e vê a cor no seu ambiente</div></div>
+        <div class="sl-compare__row"><div>Compra trilho e acionamento à parte</div><div>Projeto completo, com trilho e acionamento</div></div>
+        <div class="sl-compare__row"><div>Instalador desconhecido</div><div>Equipe própria, instalação no dia combinado</div></div>
+        <div class="sl-compare__row"><div>Garantia de loja: meses</div><div>1 ano na instalação, até 5 em cortinas e até 8 em motorização</div></div>
+        <div class="sl-compare__row"><div>Erro de medida é problema seu</div><div>A medida é responsabilidade nossa</div></div>
+      </div>
+    </div></section>
 
+    <section class="sl-section sl-reveal" id="metodo"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:34px">
+        <p class="sl-kicker sl-kicker--center">Simples, transparente, sem surpresa</p>
+        <h2 class="sl-h2">Como funciona o <em>atendimento Shine</em></h2>
+      </div>
+      <div class="sl-steps sl-steps--6">
+        <div class="sl-step"><div class="sl-step__n">1</div><h3>Você fala com a gente</h3><p>WhatsApp, Instagram ou telefone. Em minutos você fala com um consultor de verdade, sem robô e sem formulário.</p></div>
+        <div class="sl-step"><div class="sl-step__n">2</div><h3>Agendamos a visita gratuita</h3><p>O consultor vai até a sua casa, na sua cidade, no dia e horário que funcionar para você.</p></div>
+        <div class="sl-step"><div class="sl-step__n">3</div><h3>Medição a laser</h3><p>Cada ambiente medido com equipamento profissional. A medida é responsabilidade nossa, não sua.</p></div>
+        <div class="sl-step"><div class="sl-step__n">4</div><h3>Projeto e aprovação</h3><p>Você vê tecidos, cores e modelos no seu ambiente e aprova cada detalhe antes de qualquer compromisso.</p></div>
+        <div class="sl-step"><div class="sl-step__n">5</div><h3>Confecção sob medida</h3><p>Sua cortina ou persiana é feita do zero para a sua janela. Nada de peça genérica adaptada.</p></div>
+        <div class="sl-step"><div class="sl-step__n">6</div><h3>Instalação pela nossa equipe</h3><p>Chegamos, instalamos e saímos deixando o ambiente limpo. Na maioria dos projetos, tudo no mesmo dia.</p></div>
+      </div>
+    </div></section>
 
-    <!-- ACERVO TÉCNICO -->
-    <section id="blog" class="cv-auto py-16 md:py-24 bg-white border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                <div class="mb-6 md:mb-0"><span class="text-xs font-bold uppercase tracking-widest text-[#C6A868] mb-2 block">A Palavra do Especialista</span><h2 class="text-3xl md:text-5xl font-luxury font-black text-black">ACERVO <span class="text-[#C6A868]">TÉCNICO</span></h2><p class="text-gray-500 mt-4 text-sm max-w-lg">Guias práticos para você escolher sem erro e sem arrependimento.</p></div>
-                <a href="/blog/" class="flex items-center gap-2 bg-black text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#C6A868] hover:text-black transition">Ver Biblioteca Completa <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="/blog/por-que-escolher-cortina-motorizada" class="group block bg-[#F8F9FA] hover:shadow-2xl transition duration-500 border hover:border-[#C6A868]"><div class="aspect-video bg-gray-200 relative overflow-hidden"><img src="automacao.avif" alt="Automação" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" width="800" height="600" decoding="async" loading="lazy"><div class="absolute top-4 left-4 bg-[#C6A868] text-black text-[10px] font-bold px-3 py-1 uppercase">IoT & Tech</div></div><div class="p-8"><h3 class="text-xl font-bold mb-3 font-luxury group-hover:text-[#C6A868] transition">A Era da Casa Conectada</h3><p class="text-gray-500 text-sm mb-6 line-clamp-3">Motores de 7ª Geração e o Sistema IoT.</p><span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2">Ler Artigo <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></div></a>
-                <a href="/blog/o-que-e-blackout" class="group block bg-[#F8F9FA] hover:shadow-2xl transition duration-500 border hover:border-[#C6A868]"><div class="aspect-video bg-gray-200 relative overflow-hidden"><img src="blackout.avif" alt="Blackout" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" width="800" height="600" decoding="async" loading="lazy"><div class="absolute top-4 left-4 bg-[#C6A868] text-black text-[10px] font-bold px-3 py-1 uppercase">Técnico</div></div><div class="p-8"><h3 class="text-xl font-bold mb-3 font-luxury group-hover:text-[#C6A868] transition">O Escuro Biológico</h3><p class="text-gray-500 text-sm mb-6 line-clamp-3">Blackout não é apenas tecido grosso.</p><span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2">Ler Artigo <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></div></a>
-                <a href="/blog/linho-para-cortinas" class="group block bg-[#F8F9FA] hover:shadow-2xl transition duration-500 border hover:border-[#C6A868]"><div class="aspect-video bg-gray-200 relative overflow-hidden"><img src="linha-puro.avif" alt="Linho" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" width="800" height="600" decoding="async" loading="lazy"><div class="absolute top-4 left-4 bg-[#C6A868] text-black text-[10px] font-bold px-3 py-1 uppercase">Têxtil</div></div><div class="p-8"><h3 class="text-xl font-bold mb-3 font-luxury group-hover:text-[#C6A868] transition">A Memória do Tecido</h3><p class="text-gray-500 text-sm mb-6 line-clamp-3">Por que as cortinas da Shine mantêm a forma.</p><span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2">Ler Artigo <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></div></a>
-            </div>
-        </div>
-    </section>
+    <section class="sl-band" id="depoimentos"><div class="sl-wrap">
+      <p class="sl-kicker">Avaliações reais · Google 5.0</p>
+      <h2 class="sl-h2">O que dizem depois da <em>instalação</em></h2>
+      <div class="sl-quotes">
+        <figure class="sl-quotecard"><div class="sl-stars" aria-label="5 estrelas">★★★★★</div><blockquote>"Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente."</blockquote><figcaption>Marcio Soares<small>Avaliação real no Google</small></figcaption></figure>
+        <figure class="sl-quotecard"><div class="sl-stars" aria-label="5 estrelas">★★★★★</div><blockquote>"EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente."</blockquote><figcaption>Amanda Rocha da Silva<small>Avaliação real no Google</small></figcaption></figure>
+        <figure class="sl-quotecard"><div class="sl-stars" aria-label="5 estrelas">★★★★★</div><blockquote>"Experiência excelente com a Shine Cortinas! Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo."</blockquote><figcaption>Luan Ferreira<small>Avaliação real no Google</small></figcaption></figure>
+        <figure class="sl-quotecard"><div class="sl-stars" aria-label="5 estrelas">★★★★★</div><blockquote>"Atendimento ágil, entrega rápida e cortinas impecáveis. Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!"</blockquote><figcaption>Marcio Rocha<small>Avaliação real no Google</small></figcaption></figure>
+        <figure class="sl-quotecard"><div class="sl-stars" aria-label="5 estrelas">★★★★★</div><blockquote>"Trabalho de excelência, pontuais e ótimos profissionais. Fiquei muito satisfeita, recomendo."</blockquote><figcaption>Vitória Fernandes<small>Avaliação real no Google</small></figcaption></figure>
+      </div>
+    </div></section>
 
-    <!-- GALERIA -->
-    <section id="galeria" class="cv-auto py-16 md:py-24 bg-[#0a0a0a] text-white">
-        <div class="max-w-7xl mx-auto px-6 mb-6 md:mb-10 flex flex-col md:flex-row justify-between items-end">
-            <div><h2 class="text-2xl md:text-5xl font-luxury font-black mb-2">O PADRÃO <span class="text-[#C6A868]">SHINE</span></h2><p class="text-gray-400 font-tech uppercase text-xs md:text-sm">Projetos entregues. Sem filtros.</p></div>
-            <a href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me" class="hidden md:flex items-center gap-2 text-[#C6A868] font-bold uppercase text-xs hover:text-white transition">Ver no Instagram <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
-        </div>
-        <!-- Destaques (stories) -->
-        <div id="ig-stories" class="ig-stories" aria-label="Destaques"></div>
-        <div id="ig-masonry" class="ig-grid-uniform max-w-7xl mx-auto px-4 md:px-6">
-            <span class="ig-skel"></span><span class="ig-skel"></span><span class="ig-skel"></span>
-            <span class="ig-skel"></span><span class="ig-skel"></span><span class="ig-skel"></span>
-            <span class="ig-skel"></span><span class="ig-skel"></span><span class="ig-skel"></span>
-            <span class="ig-skel"></span><span class="ig-skel"></span><span class="ig-skel"></span>
-        </div>
-    </section>
+    <section class="sl-section sl-reveal" id="cidades"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:26px">
+        <p class="sl-kicker sl-kicker--center">Presença regional</p>
+        <h2 class="sl-h2">Atendemos <em>15 cidades</em> do Sul Fluminense</h2>
+        <p class="sl-sub">Cada cidade tem uma página própria, com perguntas, depoimento e projetos de lá. Escolha a sua.</p>
+      </div>
+      <div class="sl-chips"><a href="/cidades/volta-redonda/">Volta Redonda</a><a href="/cidades/barra-mansa/">Barra Mansa</a><a href="/cidades/resende/">Resende</a><a href="/cidades/porto-real/">Porto Real</a><a href="/cidades/itatiaia/">Itatiaia</a><a href="/cidades/penedo/">Penedo</a><a href="/cidades/visconde-de-maua/">Visconde de Mauá</a><a href="/cidades/maromba/">Maromba</a><a href="/cidades/pinheiral/">Pinheiral</a><a href="/cidades/pirai/">Piraí</a><a href="/cidades/barra-do-pirai/">Barra do Piraí</a><a href="/cidades/valenca/">Valença</a><a href="/cidades/vassouras/">Vassouras</a><a href="/cidades/paulo-de-frontin/">Engenheiro Paulo de Frontin</a><a href="/cidades/miguel-pereira/">Miguel Pereira</a></div>
+      <p class="sl-center" style="margin-top:22px"><a href="/cidades-atendidas.html" class="sl-btn sl-btn--ghost">Ver todas as cidades →</a></p>
+    </div></section>
 
+    <section class="sl-section sl-reveal" id="blog"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:26px">
+        <p class="sl-kicker sl-kicker--center">A palavra do especialista</p>
+        <h2 class="sl-h2">Guias para escolher <em>sem erro</em></h2>
+      </div>
+      <div class="sl-posts">
+        <a class="sl-post" href="/blog/por-que-escolher-cortina-motorizada"><span>Automação</span><h3>Por que escolher uma cortina motorizada</h3><p>Motores de 7ª geração, silêncio e integração com a casa conectada.</p></a>
+        <a class="sl-post" href="/blog/o-que-e-blackout"><span>Blackout</span><h3>O que é blackout e quando faz diferença</h3><p>Não é só tecido grosso: entenda a trama, o forro e o peso da instalação.</p></a>
+        <a class="sl-post" href="/blog/linho-para-cortinas"><span>Tecidos</span><h3>Linho para cortinas: caimento e memória</h3><p>Por que as cortinas da Shine mantêm a forma ano após ano.</p></a>
+      </div>
+      <p class="sl-center" style="margin-top:22px"><a href="/blog/" class="sl-btn sl-btn--ghost">Ver o blog completo →</a></p>
+    </div></section>
 
-    <section id="hubs" class="cv-auto py-14 bg-black text-white border-t border-[#222]">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-luxury font-black mb-4">HUBs de Autoridade ShineCortinas</h2>
-            <p class="text-sm text-gray-300 mb-6">Páginas dedicadas para decisões técnicas em cortinas e persianas, com método e prova real.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs font-bold uppercase tracking-widest">
-                <a href="/cortinas" class="hover:text-[#C6A868]">/cortinas</a><a href="/persianas" class="hover:text-[#C6A868]">/persianas</a><a href="/cortina-wave" class="hover:text-[#C6A868]">/cortina-wave</a>
-                <a href="/cortina-motorizada" class="hover:text-[#C6A868]">/cortina-motorizada</a><a href="/blackout-e-forros" class="hover:text-[#C6A868]">/blackout-e-forros</a><a href="/trilhos-e-acionamentos" class="hover:text-[#C6A868]">/trilhos-e-acionamentos</a>
-                <a href="/portfolio/" class="hover:text-[#C6A868]">/portfolio</a><a href="/videos/" class="hover:text-[#C6A868]">/videos</a><a href="/metodo" class="hover:text-[#C6A868]">/metodo</a><a href="/sobre" class="hover:text-[#C6A868]">/sobre</a>
-                <a href="/faq" class="hover:text-[#C6A868]">/faq</a><a href="/contato" class="hover:text-[#C6A868]">/contato</a>
-            </div>
-        </div>
-    </section>
+    <section class="sl-section sl-reveal" id="faq"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:28px">
+        <p class="sl-kicker sl-kicker--center">Dúvidas frequentes</p>
+        <h2 class="sl-h2">Antes de chamar a gente</h2>
+      </div>
+      <div class="sl-faq">
+        <details><summary>Como funciona o investimento num projeto sob medida?</summary><div>Cada projeto é único, então não há tabela de preços fixa: o valor depende do ambiente, dos tecidos escolhidos e do tipo de instalação. Na consultoria em domicílio, gratuita, o consultor apresenta as opções e as condições, incluindo a comodidade de parcelar em até 12x. Você decide com calma, sem compromisso.</div></details>
+        <details><summary>Vocês atendem na minha cidade?</summary><div>Sim. Atendemos todo o Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira. O consultor vai até você.</div></details>
+        <details><summary>Tenho que ir até a loja?</summary><div>Não. Somos pioneiros no modelo de consultoria em domicílio: o especialista vai até a sua casa com o mostruário, mede cada ambiente a laser e apresenta as melhores opções no seu espaço. Você escolhe sem sair de casa e sem pressão.</div></details>
+        <details><summary>Quanto tempo leva para instalar?</summary><div>Na grande maioria dos projetos, a instalação é concluída no mesmo dia. A equipe chega, trabalha com limpeza e sai deixando o ambiente pronto, sem entulho.</div></details>
+        <details><summary>O blackout bloqueia toda a luz do quarto?</summary><div>Depende do forro. O forro blackout 100% bloqueia a passagem de luz pelo tecido e é ele que entrega o quarto escuro de verdade. O forro blackout de 70%, chamado de semi blackout, deixa o ambiente em penumbra. Na consultoria o consultor mede a janela e indica o forro certo para o escurecimento que você procura.</div></details>
+        <details><summary>Qual é a garantia?</summary><div>A garantia parte de 1 ano na instalação, chega a 5 anos em cortinas e a até 8 anos nos projetos com motorização. Se surgir qualquer problema, você nos chama e a gente resolve, sem burocracia e sem custo adicional.</div></details>
+      </div>
+    </div></section>
 
-    <!-- CEO -->
-    <section id="ceo" class="cv-auto py-16 bg-[#F8F9FA]"><div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"><div class="order-2 md:order-1"><h2 class="text-4xl font-luxury font-black mb-6">"Alinhamento se faz antes. Depois disso, o que vier é justificativa."</h2><p class="text-gray-600">Minha missão é garantir engenharia e cuidado para sua família.</p><div class="mt-6 font-bold">ISANI OLIVEIRA <span class="text-gray-400 font-normal">| CEO</span></div></div><div class="order-1 md:order-2"><img src="ceo-shine.avif" alt="CEO" class="w-full h-auto grayscale hover:grayscale-0 transition shadow-2xl"  width="900" height="1200" decoding="async" loading="lazy"></div></div></section>
-    
-    <!-- FAQ -->
-    <section id="faq" class="cv-auto py-16 md:py-20 bg-white font-tech border-t border-gray-100">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-2xl md:text-3xl font-black uppercase mb-8 md:mb-10 text-center">Dúvidas Frequentes</h2>
-            <div class="space-y-4" id="faq-container">
-                <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Como funciona o investimento num projeto sob medida?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">Cada projeto é único, então não há tabela de preços fixa — o valor depende do ambiente, dos tecidos escolhidos e do tipo de instalação. Na consultoria em domicílio (totalmente gratuita), o Isani apresenta as opções e as condições, incluindo a comodidade de parcelar em até 12x. Você decide com calma, sem compromisso.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Agendar minha consultoria gratuita</a></div></div></div>
-                <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Vocês atendem na minha cidade?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">Sim. Atendemos toda a região Sul Fluminense — Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Paulo de Frontin e Miguel Pereira. Nosso consultor vai até você.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Agendar visita na minha cidade</a></div></div></div>
-                <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Quanto tempo leva para instalar?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">Na grande maioria dos projetos, a instalação é concluída no mesmo dia. Nossa equipe chega, trabalha com limpeza e sai deixando seu ambiente transformado — sem entulho, sem rastro, sem preocupação.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Quero agendar minha consultoria</a></div></div></div>
-                <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">O blackout realmente bloqueia 100% da luz?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">Sim. Nossa linha Blackout Técnico utiliza tecido com película de silicone que bloqueia raios UVA/UVB e reduz ruído. Com as guias laterais (Sistema Box), garantimos 100% de vedação luminosa — escuridão real, não aproximada.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Quero conhecer o Blackout Técnico</a></div></div></div>
-                <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Qual a garantia? E se der algum problema?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">A garantia parte de 1 ano na instalação, chegando a 5 anos em cortinas e até 8 anos nos projetos com motorização. Se surgir qualquer problema, você nos chama e a gente resolve — sem burocracia, sem custo adicional.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Quero garantia real no meu projeto</a></div></div></div>
-                <div class="border border-gray-200 rounded overflow-hidden"><button class="faq-btn w-full flex justify-between items-center p-4 md:p-6 bg-gray-50 hover:bg-white transition text-left focus:outline-none"><span class="font-bold uppercase text-xs md:text-base pr-4">Como funciona o atendimento? Tenho que ir até vocês?</span><svg class="rotate-icon text-gray-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="accordion-content"><div class="border-t border-gray-100 p-4 md:p-6 pt-4"><p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">Não. Somos pioneiros no modelo de Consultoria em Domicílio. Nosso especialista vai até a sua casa com todo o mostruário, mede cada ambiente com precisão e apresenta as melhores opções para o seu espaço. Você escolhe com calma, sem sair de casa, sem pressão.</p><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="text-[#C6A868] font-bold text-sm hover:underline">→ Agendar minha visita gratuita</a></div></div></div>
-            </div>
-        </div>
-    </section>
+    <section class="sl-section sl-reveal" id="ceo"><div class="sl-wrap sl-ceo">
+      <img src="/ceo-shine.avif" alt="Isani Oliveira, fundador e CEO da ShineCortinas" width="320" height="320" loading="lazy" decoding="async">
+      <div>
+        <p class="sl-kicker">Quem responde por cada projeto</p>
+        <blockquote class="sl-ceo__quote">"Alinhamento se faz antes. Depois disso, o que vier é justificativa."</blockquote>
+        <p>Minha missão é garantir engenharia e cuidado para a sua família. Desde 2009, cada medida e cada instalação passam pelo mesmo padrão.</p>
+        <p class="sl-quote-by" style="margin-top:12px">Isani Oliveira<small>Fundador e CEO · <a href="/sobre/">conheça a história</a></small></p>
+      </div>
+    </div></section>
 
-    <!-- DEPOIMENTOS -->
-    <section id="depoimentos" class="cv-auto py-16 bg-white border-t border-gray-100">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="flex items-center gap-4 mb-10">
-                <div class="bg-[#C6A868] p-3 rounded-full text-black"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-                <div><h3 class="text-xl font-bold font-luxury text-black">Excelência Reconhecida</h3><p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Avaliação 5.0 Google Reviews</p></div>
-            </div>
-            <div class="relative" id="depo-carousel">
-                <div class="overflow-hidden">
-                    <div id="depo-track" class="flex" style="transition: transform 0.5s ease-in-out;">
+    <section class="sl-band"><div class="sl-wrap sl-center">
+      <p class="sl-kicker sl-kicker--center">Consultoria em domicílio · Sul Fluminense</p>
+      <h2 class="sl-h2">Pronto para ver os tecidos <em>na sua sala?</em></h2>
+      <p class="sl-sub" style="margin:0 auto 26px">A consultoria é gratuita, vai até a sua casa e você não precisa decidir nada na hora.</p>
+      <a class="sl-btn" data-wa="agendar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Agendar consultoria em casa →</a>
+      <p class="sl-note">Gratuita · Sem compromisso · (24) 99329-8763</p>
+    </div></section>
 
-                        <div class="depo-slide w-full flex-shrink-0">
-                            <div class="bg-[#F8F9FA] p-8 border border-gray-200 rounded">
-                                <p class="text-[#C6A868] text-[10px] font-black uppercase tracking-widest mb-3">⭐ Cliente que voltou</p>
-                                <div class="flex items-center gap-3 mb-5"><div class="w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600 text-lg">M</div><div><p class="font-bold text-sm">Marcio Soares</p><p class="text-[10px] text-gray-400">Avaliação real no Google · há 1 mês</p></div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente. Obrigada pelo profissionalismo, dedicação e atenção em cada detalhe"</p>
-                            </div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Como arquiteta, sou exigente. A Shine é a única empresa que indico de olhos fechados. O alinhamento das barras é perfeito e a motorização nunca deu problema."</p>
-                            </div>
-                        </div>
+    <section class="sl-section sl-section--tight"><div class="sl-wrap">
+      <p class="sl-label">Explore o site</p>
+      <div class="sl-links">
+        <a href="/cortinas/">Cortinas sob medida</a><a href="/persianas/">Persianas técnicas</a><a href="/cortina-motorizada/">Cortina motorizada</a><a href="/cortina-wave/">Cortina wave</a>
+        <a href="/blackout-e-forros/">Blackout e forros</a><a href="/trilhos-e-acionamentos/">Trilhos e acionamentos</a><a href="/portfolio/">Portfólio real</a><a href="/videos/">Vídeos</a>
+        <a href="/metodo/">Método</a><a href="/sobre/">Sobre a Shine</a><a href="/faq/">Perguntas frequentes</a><a href="/contato/">Contato</a>
+      </div>
+    </div></section>
+  </main>
 
-                        <div class="depo-slide w-full flex-shrink-0">
-                            <div class="bg-[#F8F9FA] p-8 border border-gray-200 rounded">
-                                <div class="flex items-center gap-3 mb-5"><div class="w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600 text-lg">A</div><div><p class="font-bold text-sm">Amanda Rocha da Silva</p><p class="text-[10px] text-gray-400">Avaliação real no Google · há 3 meses</p></div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente."</p>
-                            </div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Precisava de escuridão total pós-plantão. O blackout técnico que o Isani desenhou foi a única solução que resolveu 100%. Acabamento nível Europa."</p>
-                            </div>
-                        </div>
+  <footer class="sl-footer"><div class="sl-wrap">
+    <div class="sl-footer__grid">
+      <div>
+        <a href="/" class="sl-logo"><span class="sl-logo__mark">S</span><span class="sl-logo__name">SHINE</span></a>
+        <p style="margin-top:14px">Rua K, 60 · Volta Redonda, RJ<br>Atendemos todo o Sul Fluminense.<br>Sob medida para cada ambiente, desde 2009.</p>
+      </div>
+      <div>
+        <h4>Fale conosco</h4>
+        <a class="sl-footer__phone" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.">(24) 99329-8763</a>
+        <p>(24) 3338-3069</p>
+        <p style="margin-top:10px">Na visita você conhece o projeto, os tecidos e as condições, inclusive o parcelamento em até 12x.</p>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <p><a href="https://www.instagram.com/shinecortinas/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://www.facebook.com/shinecortinas" rel="me noopener" target="_blank">Facebook</a> · <a href="https://www.youtube.com/@shinecortinas" rel="me noopener" target="_blank">YouTube</a><br><a href="https://www.tiktok.com/@shinecortinas" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.pinterest.com/shinecortinas" rel="me noopener" target="_blank">Pinterest</a></p>
+      </div>
+    </div>
+    <div class="sl-footer__bottom"><span>© 2026 ShineCortinas</span><span>Google 5.0 ★★★★★ · 292 avaliações</span></div>
+  </div></footer>
 
-                        <div class="depo-slide w-full flex-shrink-0">
-                            <div class="bg-[#F8F9FA] p-8 border border-gray-200 rounded">
-                                <div class="flex items-center gap-3 mb-5"><div class="w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600 text-lg">L</div><div><p class="font-bold text-sm">Luan Ferreira</p><p class="text-[10px] text-gray-400">Avaliação real no Google · há 4 meses</p></div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Experiência excelente com a Shine Cortinas! O trabalho deles é simplesmente sensacional. Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo."</p>
-                            </div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Tínhamos reforma em andamento e não queríamos mais um fornecedor que gerasse retrabalho. O Isani veio em casa, mediu com calma, indicou o tecido certo para a luz da sala — e o resultado superou o que havíamos imaginado. Dividimos em 10x e não nos preocupamos com mais nada."</p>
-                            </div>
-                        </div>
+  <a class="sl-wa" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
-                        <div class="depo-slide w-full flex-shrink-0">
-                            <div class="bg-[#F8F9FA] p-8 border border-gray-200 rounded">
-                                <div class="flex items-center gap-3 mb-5"><div class="w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600 text-lg">M</div><div><p class="font-bold text-sm">Marcio Rocha</p><p class="text-[10px] text-gray-400">Avaliação real no Google · há 4 meses</p></div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Atendimento ágil, entrega rápida e cortinas impecáveis. Obrigado à Shine Cortinas pelo excelente trabalho! Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular !!!!"</p>
-                            </div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Fiquei semanas admirando os projetos no site antes de entrar em contato. O Isani veio em casa, o mostruário de tecidos me encantou logo de cara e o resultado ficou além do que eu imaginava. Parcelei com tranquilidade e só me arrependi de não ter agendado antes."</p>
-                            </div>
-                        </div>
+  <nav class="sl-tabs" aria-label="Atalhos">
+    <a href="#top" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Início</span></a>
+    <a href="#solucoes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M8 4v16"/></svg><span>Soluções</span></a>
+    <a href="/portfolio/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg><span>Projetos</span></a>
+    <a href="#cidades"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Cidades</span></a>
+    <a class="sl-tabs__wa" data-wa="conversar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span></a>
+  </nav>
 
-                        <div class="depo-slide w-full flex-shrink-0">
-                            <div class="bg-[#F8F9FA] p-8 border border-gray-200 rounded">
-                                <div class="flex items-center gap-3 mb-5"><div class="w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600 text-lg">V</div><div><p class="font-bold text-sm">Vitória Fernandes</p><p class="text-[10px] text-gray-400">Avaliação real no Google · há 3 meses</p></div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"Trabalho de excelência, pontuais e ótimos profissionais. Fiquei muito satisfeita, recomendo."</p>
-                            </div></div>
-                                <div class="text-[#C6A868] mb-4 text-base">★★★★★</div>
-                                <p class="text-gray-600 text-base leading-relaxed">"A sala passou a ter aquele acabamento que a gente vê em projetos de arquitetura — luz na medida, tecido com caimento perfeito, sem uma ruga. O Isani veio em casa, trouxe o mostruário e a gente escolheu tudo com calma. Atendimento atencioso e cuidadoso do começo ao fim."</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <button id="depo-prev" class="absolute left-0 bg-white border border-gray-200 shadow-md p-2 rounded-full hover:border-[#C6A868] transition z-10" style="top:50%;transform:translate(-1.25rem,-50%);" aria-label="Anterior"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
-                <button id="depo-next" class="absolute right-0 bg-white border border-gray-200 shadow-md p-2 rounded-full hover:border-[#C6A868] transition z-10" style="top:50%;transform:translate(1.25rem,-50%);" aria-label="Próximo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
-            </div>
-            <div class="flex justify-center gap-2 mt-6" id="depo-dots">
-                <button class="depo-dot rounded-full transition-all" style="width:20px;height:10px;background:#C6A868;" data-i="0" aria-label="Depoimento 1"></button>
-                <button class="depo-dot rounded-full transition-all" style="width:10px;height:10px;background:#D1D5DB;" data-i="1" aria-label="Depoimento 2"></button>
-                <button class="depo-dot rounded-full transition-all" style="width:10px;height:10px;background:#D1D5DB;" data-i="2" aria-label="Depoimento 3"></button>
-                <button class="depo-dot rounded-full transition-all" style="width:10px;height:10px;background:#D1D5DB;" data-i="3" aria-label="Depoimento 4"></button>
-                <button class="depo-dot rounded-full transition-all" style="width:10px;height:10px;background:#D1D5DB;" data-i="4" aria-label="Depoimento 5"></button>
-            </div>
-        </div>
-    </section>
-    <script>
+  <script>
     (function(){
-        var track = document.getElementById('depo-track');
-        var dots = document.querySelectorAll('.depo-dot');
-        var carousel = document.getElementById('depo-carousel');
-        var total = 5;
-        var cur = 0;
-        var timer;
-        function go(n){
-            cur = (n + total) % total;
-            track.style.transform = 'translateX(-' + (cur * 100) + '%)';
-            dots.forEach(function(d, i){
-                if(i === cur){
-                    d.style.width = '20px';
-                    d.style.background = '#C6A868';
-                } else {
-                    d.style.width = '10px';
-                    d.style.background = '#D1D5DB';
-                }
-            });
-        }
-        document.getElementById('depo-prev').addEventListener('click', function(){ go(cur - 1); reset(); });
-        document.getElementById('depo-next').addEventListener('click', function(){ go(cur + 1); reset(); });
-        dots.forEach(function(d){ d.addEventListener('click', function(){ go(parseInt(d.dataset.i)); reset(); }); });
-        carousel.addEventListener('mouseenter', function(){ clearInterval(timer); });
-        carousel.addEventListener('mouseleave', function(){ reset(); });
-        function reset(){ clearInterval(timer); timer = setInterval(function(){ go(cur + 1); }, 5500); }
-        reset();
+      var SIM={"escurecer":{"quarto":["Cortina com forro blackout 100%","É o que entrega quarto escuro de verdade: o forro blackout 100% bloqueia a passagem de luz pelo tecido. Resolve quem trabalha à noite ou tem bebê em casa.","/blackouts-tecnicos.avif","/blackout-e-forros/",false],"sala":["Blackout técnico para sala e home theater","Escuridão de cinema quando você quiser, com o acabamento de cortina.","/blackouts-tecnicos.avif","/blackout-e-forros/",true],"escritorio":["Persiana rolô blackout","Barra a luz que bate no monitor e na câmera da reunião, com acionamento discreto.","/blackouts-tecnicos.avif","/persianas/",false],"cozinha":["Persiana rolô blackout","Escurece quando você precisa, com tecido fácil de limpar.","/blackouts-tecnicos.avif","/persianas/",false]},"privacidade":{"sala":["Voil com cortina de linho","O voil dá privacidade sem escurecer; a segunda camada fecha quando você quiser.","/duplo.avif","/cortinas/",true],"quarto":["Cortina dupla com forro","Quem define a privacidade é o forro: o translúcido fecha a vista de dia, e o blackout 100% fecha à noite, com a luz acesa.","/duplo.avif","/blackout-e-forros/",false],"escritorio":["Persiana double vision","Faixas que abrem e fecham a visão de fora sem perder a luz.","/persiana-motorizada.avif","/persianas/",false],"cozinha":["Persiana de madeira","Lâminas que fecham a visão e resistem ao dia a dia da cozinha.","/madeira.avif","/persianas/",false]},"sol":{"sala":["Tela solar screen","Corta o calor e o reflexo sem esconder a vista da janela.","/tela-solar.avif","/persianas/",true],"quarto":["Screen com blackout","Screen para o dia, blackout para dormir: dois sistemas na mesma janela.","/persiana-motorizada.avif","/persianas/",false],"escritorio":["Tela solar screen","Reflexo zero na tela e temperatura mais baixa, com a vista preservada.","/persiana-motorizada.avif","/persianas/",false],"cozinha":["Persiana rolô screen","Sol controlado e limpeza simples.","/persiana-motorizada.avif","/persianas/",false]},"decorar":{"sala":["Cortina wave em linho","Ondas regulares do teto ao chão. É o acabamento de projeto de arquitetura.","/cortina-sob-medida.avif","/cortina-wave/",true],"quarto":["Cortina wave com forro","Caimento perfeito e o conforto do forro para dormir melhor.","/cortina-sob-medida.avif","/cortina-wave/",false],"escritorio":["Persiana de madeira","Toque natural e ar de biblioteca, com luz por lâminas.","/madeira.avif","/persianas/",true],"cozinha":["Persiana de madeira","Calor visual e praticidade na limpeza.","/madeira.avif","/persianas/",false]}};
+      var f=document.getElementById('sim'); if(!f) return;
+      var img=f.querySelector('[data-sim-img]'),ref=f.querySelector('[data-sim-ref]'),tt=f.querySelector('[data-sim-title]'),tx=f.querySelector('[data-sim-text]'),mo=f.querySelector('[data-sim-motor]'),ln=f.querySelector('[data-sim-link]');
+      var rooms={sala:'sala',quarto:'quarto',escritorio:'home office',cozinha:'cozinha'};
+      function upd(){
+        var c=f.comodo.value,o=f.objetivo.value,m=f.motor.checked,r=SIM[o][c];
+        tt.textContent=r[0]; tx.textContent=r[1]; img.src=r[2]; img.alt=r[0]; ln.href=r[3]; mo.hidden=!m; ref.hidden=!!r[4];
+        document.body.setAttribute('data-wa-context','o simulador: '+rooms[c]+', '+f.objetivo.value+(m?', com motorização':'')+' → '+r[0]);
+      }
+      f.addEventListener('change',upd); upd();
     })();
-    </script>
-
-    <!-- FOOTER BLINDADO (BRASÕES VISUAIS - IMAGENS 3D) -->
-    <footer id="contato" class="bg-black pt-16 pb-24 md:pt-20 md:pb-10 px-6 border-t-4 border-[#C6A868]">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-12 mb-12">
-            <div class="md:w-1/3">
-                <div class="flex items-center gap-3">
-                    <div class="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#C6A868] bg-black shadow-md"><span class="font-logo text-lg font-bold text-[#C6A868] pt-0.5">S</span></div>
-                    <span class="font-logo text-2xl md:text-3xl text-white tracking-widest">SHINE</span>
-                </div>
-                <p class="mt-4 text-gray-500 text-xs md:text-sm leading-relaxed">Volta Redonda, RJ. <br> Qualidade e cuidado para qualquer ambiente.</p>
-                <div class="mt-6">
-                    <p class="text-[#333] text-[10px] font-bold uppercase tracking-widest mb-4">Autoridade & Segurança</p>
-                    <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 items-start">
-                        <!-- Brasão 1: Diamante -->
-                        <div class="badge-item group">
-                            <div class="badge-icon-wrap">
-                                <img src="selo-diamante.avif" alt="Empresa Diamante" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
-                            </div>
-                            <span class="badge-label text-[11px] text-[#C6A868] mt-2 uppercase text-center font-bold">Diamante</span>
-                        </div>
-                        <!-- Brasão 2: Região do Aço (Bigorna) -->
-                        <div class="badge-item group">
-                            <div class="badge-icon-wrap">
-                                <img src="selo-aco.avif" alt="Top of Mind Sul" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
-                            </div>
-                            <span class="badge-label text-[11px] text-[#C6A868] mt-2 uppercase text-center font-bold">Top of Mind</span>
-                        </div>
-                         <!-- Brasão 3: Prêmio Melhor Loja (NOVO) -->
-                        <div class="badge-item group">
-                            <div class="badge-icon-wrap">
-                                <img src="selo-premio.avif" alt="Melhor Loja Região Sul" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
-                            </div>
-                            <span class="badge-label text-[11px] text-[#C6A868] mt-2 uppercase text-center font-bold">Melhor Loja</span>
-                        </div>
-                        <!-- Brasão 4: Blindado -->
-                        <div class="badge-item group">
-                            <div class="badge-icon-wrap">
-                                <img src="selo-blindado.avif" alt="Site Blindado" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
-                            </div>
-                            <span class="badge-label text-[11px] text-[#C6A868] mt-2 uppercase text-center font-bold">Site Seguro</span>
-                        </div>
-                        <!-- Brasão 5: Facebook -->
-                        <div class="badge-item group">
-                            <div class="badge-icon-wrap">
-                                <img src="selo-facebook.avif" alt="Facebook 5 Estrelas" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
-                            </div>
-                            <span class="badge-label text-[11px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
-                        </div>
-                        <!-- Brasão 6: Google -->
-                        <div class="badge-item group">
-                            <div class="badge-icon-wrap">
-                                <img src="selo-google.avif" alt="Google 5 Estrelas" class="badge-img" loading="lazy" decoding="async" width="50" height="50">
-                            </div>
-                            <span class="badge-label text-[11px] text-[#C6A868] mt-2 uppercase text-center font-bold">5.0 Estrelas</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="md:w-1/3"><p class="text-gray-400 text-xs leading-relaxed mb-5 italic">Se o único motivo para não agendar é não saber se cabe no seu orçamento — a gente resolve isso na visita, sem compromisso.</p><h4 class="text-white font-bold uppercase tracking-widest mb-6 border-b border-[#333] pb-2 text-sm">Fale Conosco</h4><a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." class="flex items-center gap-3 text-white text-base md:text-lg font-bold hover:text-[#C6A868] transition mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (24) 99329-8763</a><p class="text-gray-500 text-xs flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (24) 3338-3069</p></div>
-            <div class="md:w-1/3 bg-[#111] p-6 border border-[#333] hover:border-[#C6A868] transition group"><p class="text-[#C6A868] font-luxury italic text-base md:text-lg mb-4 group-hover:text-white transition">"Mais de 9.000 ambientes transformados com padrão técnico Shine."</p><p class="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest">- Prova real ShineCortinas</p></div>
-        </div>
-        <!-- BARRA DE CONFIANÇA -->
-        <div class="max-w-6xl mx-auto border-t border-[#222] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <p class="text-gray-600 text-[10px] uppercase tracking-widest">© 2026 ShineCortinas.com | Site Seguro & Blindado</p>
-            <div class="flex gap-4 opacity-50">
-               <!-- Ícones de Segurança (SVG Simples) -->
-               <svg class="h-6 w-auto text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 11h8"/><path d="M12 11v4"/></svg>
-               <span class="text-[10px] text-gray-500 uppercase flex items-center">SSL Certificado</span>
-               <span class="text-[10px] text-gray-500 uppercase flex items-center">Google 5.0 ★★★★★</span>
-            </div>
-        </div>
-    </footer>
-    
-    <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer" class="whatsapp-float bg-[#25D366] text-white rounded-full shadow-lg p-3 flex items-center justify-center" aria-label="Falar no WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
-<!-- ===================== -->
-<!-- MODAIS (SOLUÇÕES)     -->
-<!-- ===================== -->
-
-<!-- MODAL: PERSIANAS -->
-<div id="modal-persiana" class="modal fixed inset-0 z-[2000] flex items-center justify-center bg-black/80 p-6 cursor-pointer" role="dialog" aria-modal="true" aria-labelledby="modal-persiana-title">
-  <div class="w-full max-w-2xl bg-white rounded shadow-2xl overflow-hidden">
-    <div class="bg-black text-white px-6 py-5 flex items-start justify-between gap-6">
-      <div>
-        <h3 id="modal-persiana-title" class="text-xl md:text-2xl font-luxury font-black">Persianas Motorizadas</h3>
-        <p class="text-gray-300 text-sm mt-1">Automação real. Precisão. Silêncio.</p>
-      </div>
-      <button onclick="closeModal('modal-persiana')" class="text-[#C6A868] text-2xl leading-none hover:text-white transition" aria-label="Fechar">✕</button>
-    </div>
-
-    <div class="p-6 md:p-8">
-      <ul class="space-y-3 text-gray-700 text-sm md:text-base">
-        <li>• Motores de última geração com controle por app e automações.</li>
-        <li>• Soluções para salas, quartos, home office e grandes vãos.</li>
-        <li>• Acabamento refinado com instalação técnica limpa e cuidadosa.</li>
-      </ul>
-
-      <div class="mt-7 flex flex-col sm:flex-row gap-3">
-        <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer"
-           class="bg-black text-white px-6 py-4 font-bold uppercase tracking-widest text-xs hover:bg-[#C6A868] hover:text-black transition text-center"
-          >
-          Quero Minha Consultoria Gratuita
-        </a>
-        <button onclick="closeModal('modal-persiana')" class="border border-black px-6 py-4 font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white transition">
-          Voltar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: CORTINAS -->
-<div id="modal-cortina" class="modal fixed inset-0 z-[2000] flex items-center justify-center bg-black/80 p-6 cursor-pointer" role="dialog" aria-modal="true" aria-labelledby="modal-cortina-title">
-  <div class="w-full max-w-2xl bg-white rounded shadow-2xl overflow-hidden">
-    <div class="bg-black text-white px-6 py-5 flex items-start justify-between gap-6">
-      <div>
-        <h3 id="modal-cortina-title" class="text-xl md:text-2xl font-luxury font-black">Cortinas sob Medida</h3>
-        <p class="text-gray-300 text-sm mt-1">Caimento, forma e acabamento impecável.</p>
-      </div>
-      <button onclick="closeModal('modal-cortina')" class="text-[#C6A868] text-2xl leading-none hover:text-white transition" aria-label="Fechar">✕</button>
-    </div>
-
-    <div class="p-6 md:p-8">
-      <ul class="space-y-3 text-gray-700 text-sm md:text-base">
-        <li>• Medição técnica e solução pensada pro seu ambiente.</li>
-        <li>• Tecidos de qualidade com “memória” e acabamento impecável.</li>
-        <li>• Trilhos e sistemas que entregam onda perfeita e durabilidade.</li>
-      </ul>
-
-      <div class="mt-7 flex flex-col sm:flex-row gap-3">
-        <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer"
-           class="bg-black text-white px-6 py-4 font-bold uppercase tracking-widest text-xs hover:bg-[#C6A868] hover:text-black transition text-center"
-          >
-          Quero Minha Consultoria Gratuita
-        </a>
-        <button onclick="closeModal('modal-cortina')" class="border border-black px-6 py-4 font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white transition">
-          Voltar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: BLACKOUT -->
-<div id="modal-blackout" class="modal fixed inset-0 z-[2000] flex items-center justify-center bg-black/80 p-6 cursor-pointer" role="dialog" aria-modal="true" aria-labelledby="modal-blackout-title">
-  <div class="w-full max-w-2xl bg-white rounded shadow-2xl overflow-hidden">
-    <div class="bg-black text-white px-6 py-5 flex items-start justify-between gap-6">
-      <div>
-        <h3 id="modal-blackout-title" class="text-xl md:text-2xl font-luxury font-black">Blackouts Técnicos</h3>
-        <p class="text-gray-300 text-sm mt-1">Escurecimento de verdade, sem gambiarra.</p>
-      </div>
-      <button onclick="closeModal('modal-blackout')" class="text-[#C6A868] text-2xl leading-none hover:text-white transition" aria-label="Fechar">✕</button>
-    </div>
-
-    <div class="p-6 md:p-8">
-      <ul class="space-y-3 text-gray-700 text-sm md:text-base">
-        <li>• Bloqueio de luz com acabamento técnico para quartos e home theater.</li>
-        <li>• Opções com forro, trilhos adequados e caimento correto.</li>
-        <li>• Instalação limpa e orientação pra melhor performance.</li>
-      </ul>
-
-      <div class="mt-7 flex flex-col sm:flex-row gap-3">
-        <a href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer"
-           class="bg-black text-white px-6 py-4 font-bold uppercase tracking-widest text-xs hover:bg-[#C6A868] hover:text-black transition text-center"
-          >
-          Quero Minha Consultoria Gratuita
-        </a>
-        <button onclick="closeModal('modal-blackout')" class="border border-black px-6 py-4 font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white transition">
-          Voltar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
-
-  function syncBodyScrollLock() {
-    const menuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
-    const hasModal = document.querySelector('.modal.active') !== null;
-    document.body.classList.toggle('overflow-hidden', menuOpen || hasModal);
-  }
-
-  function closeMobileMenu() {
-    if (!mobileMenu || !menuBtn) return;
-    mobileMenu.classList.add('hidden');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    syncBodyScrollLock();
-  }
-
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
-      syncBodyScrollLock();
-    });
-    mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768) closeMobileMenu();
-    });
-  }
-
-  const navbar = document.getElementById('navbar');
-  let ticking = false;
-
-  window.addEventListener('scroll', () => {
-    if (!navbar) return;
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        if (window.scrollY > 50) {
-          navbar.classList.add('nav-solid');
-          navbar.classList.remove('nav-glass');
-        } else {
-          navbar.classList.remove('nav-solid');
-          navbar.classList.add('nav-glass');
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-
-  const faqBtns = document.querySelectorAll('.faq-btn');
-  faqBtns.forEach(btn => {
-    btn.addEventListener('click', function () {
-      const content = this.nextElementSibling;
-      if (!content) return;
-      content.classList.toggle('active');
-      const icon = this.querySelector('.rotate-icon');
-      if (icon) icon.classList.toggle('active');
-    });
-  });
-
-  function openModal(modalId) {
-    const el = document.getElementById(modalId);
-    if (!el) return; // evita erro se não existir
-    el.classList.add('active');
-    syncBodyScrollLock();
-  }
-
-  function closeModal(modalId) {
-    const el = document.getElementById(modalId);
-    if (!el) return;
-    el.classList.remove('active');
-    syncBodyScrollLock();
-  }
-
-  // Fechar clicando no fundo (overlay)
-  window.addEventListener('click', (event) => {
-    if (event.target && event.target.classList && event.target.classList.contains('modal')) {
-      closeModal(event.target.id);
-    }
-  });
-
-  // Fechar com ESC
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      document.querySelectorAll('.modal.active').forEach(m => m.classList.remove('active'));
-      syncBodyScrollLock();
-    }
-  });
-
-  // Galeria do Instagram (masonry) — puxa os posts reais via /api/instagram.
-  // Se a API falhar, cai para fotos do próprio repositório (nunca fica vazio).
-  var igAllItems = [];
-  (function loadInstaHome() {
-    var box = document.getElementById('ig-masonry');
-    if (!box) return;
-    var IG = 'https://www.instagram.com/shinecortinas/';
-    var fallback = [
-      { image: 'automacao.avif', permalink: IG, caption: 'Automação', type: 'IMAGE' },
-      { image: 'linha-puro.avif', permalink: IG, caption: 'Linho Puro', type: 'IMAGE' },
-      { image: 'blackout.avif', permalink: IG, caption: 'Blackout', type: 'IMAGE' },
-      { image: 'duplo.avif', permalink: IG, caption: 'Cortina Duplo', type: 'IMAGE' },
-      { image: 'tela-solar.avif', permalink: IG, caption: 'Tela Solar', type: 'IMAGE' },
-      { image: 'madeira.avif', permalink: IG, caption: 'Persiana de Madeira', type: 'IMAGE' }
-    ];
-    function firstLine(t) {
-      t = (t || '').split('\n')[0].trim();
-      return t.length > 90 ? t.slice(0, 87) + '…' : t;
-    }
-    function esc(s) {
-      return String(s).replace(/[&<>"]/g, function (c) {
-        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
-      });
-    }
-    function render(items) {
-      igAllItems = items.slice(0, 18);
-      box.innerHTML = igAllItems.map(function (m, i) {
-        if (!m.image) return '';
-        // marca ícone: vídeo (▶) ou carrossel (▢)
-        var badge = m.type === 'VIDEO' ? '<span class="ig-play">▶</span>'
-          : (m.type === 'CAROUSEL_ALBUM' ? '<span class="ig-play ig-multi">▢</span>' : '');
-        var line = firstLine(m.caption);
-        var cap = line ? '<span class="ig-cap">' + esc(line) + '</span>' : '';
-        return '<a class="ig-item" href="' + esc(m.permalink) + '" target="_blank" rel="noopener noreferrer me" data-idx="' + i + '">'
-          + '<img src="' + esc(m.image) + '" loading="lazy" decoding="async" alt="Projeto Shine Cortinas">'
-          + badge + cap + '</a>';
-      }).join('');
-      buildStories(items);
-    }
-    // Clique abre o lightbox (delegação)
-    box.addEventListener('click', function (e) {
-      var a = e.target.closest('.ig-item');
-      if (!a) return;
-      e.preventDefault();
-      openIgLightbox(parseInt(a.getAttribute('data-idx'), 10));
-    });
-
-    // ── Destaques / Stories ──
-    var storyItems = [];
-    var svIndex = 0, svTimer = null;
-    function buildStories(items) {
-      var row = document.getElementById('ig-stories');
-      if (!row) return;
-      storyItems = items.slice(0, 10);
-      if (!storyItems.length) { row.style.display = 'none'; return; }
-      row.innerHTML = storyItems.map(function (m, i) {
-        var label = firstLine(m.caption) || 'Projeto';
-        label = label.length > 14 ? label.slice(0, 13) + '…' : label;
-        return '<button type="button" class="ig-story-c" data-idx="' + i + '">'
-          + '<span class="ig-story-ring"><img src="' + esc(m.image) + '" alt="" loading="lazy"></span>'
-          + '<span class="ig-story-label">' + esc(label) + '</span></button>';
-      }).join('');
-      row.querySelectorAll('.ig-story-c').forEach(function (b) {
-        b.addEventListener('click', function () { openStory(parseInt(b.getAttribute('data-idx'))); });
-      });
-    }
-    function renderBars() {
-      var bars = document.getElementById('sv-bars');
-      if (!bars) return;
-      bars.innerHTML = storyItems.map(function (_, i) {
-        var cls = i < svIndex ? 'sv-bar done' : (i === svIndex ? 'sv-bar active' : 'sv-bar');
-        return '<div class="' + cls + '"><i></i></div>';
-      }).join('');
-    }
-    function showStory(i) {
-      if (i < 0) i = 0;
-      if (i >= storyItems.length) { closeStory(); return; }
-      svIndex = i;
-      var m = storyItems[i];
-      document.getElementById('sv-img').src = m.image;
-      document.getElementById('sv-cap').textContent = (m.caption || '').split('\n')[0] || '';
-      document.getElementById('sv-cta').href = m.permalink || IG;
-      renderBars();
-      var c = document.querySelector('.ig-story-c[data-idx="' + i + '"]');
-      if (c) c.classList.add('seen');
-      if (svTimer) clearTimeout(svTimer);
-      svTimer = setTimeout(function () { showStory(svIndex + 1); }, 5000);
-    }
-    function openStory(i) {
-      var sv = document.getElementById('story-viewer');
-      if (!sv) return;
-      sv.classList.add('open');
-      sv.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('overflow-hidden');
-      showStory(i);
-    }
-    function closeStory() {
-      var sv = document.getElementById('story-viewer');
-      if (sv) { sv.classList.remove('open'); sv.setAttribute('aria-hidden', 'true'); }
-      document.body.classList.remove('overflow-hidden');
-      if (svTimer) { clearTimeout(svTimer); svTimer = null; }
-    }
-    function bindStory() {
-      var sv = document.getElementById('story-viewer');
-      if (!sv) return;
-      document.getElementById('sv-close').addEventListener('click', closeStory);
-      document.getElementById('sv-next').addEventListener('click', function () { showStory(svIndex + 1); });
-      document.getElementById('sv-prev').addEventListener('click', function () { showStory(svIndex - 1); });
-      document.addEventListener('keydown', function (e) {
-        if (!sv.classList.contains('open')) return;
-        if (e.key === 'Escape') closeStory();
-        else if (e.key === 'ArrowRight') showStory(svIndex + 1);
-        else if (e.key === 'ArrowLeft') showStory(svIndex - 1);
-      });
-    }
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindStory);
-    else bindStory();
-
-    fetch('/api/instagram')
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (!d.items || !d.items.length) throw new Error('vazio');
-        render(d.items);
-      })
-      .catch(function () { render(fallback); });
-  })();
-
-  // Lightbox da galeria: foto ampliada + legenda + curtir (local) + ir ao Instagram
-  var lbSlides = [];
-  var lbSlide = 0;
-  function lbStopVideos() {
-    var stage = document.querySelector('#ig-lightbox .ig-lb-stage');
-    if (stage) stage.querySelectorAll('video').forEach(function (v) { try { v.pause(); } catch (e) {} });
-  }
-  function lbEsc(s) { return String(s == null ? '' : s).replace(/"/g, '&quot;'); }
-  function lbRenderSlide() {
-    var stage = document.querySelector('#ig-lightbox .ig-lb-stage');
-    if (!stage) return;
-    var s = lbSlides[lbSlide] || {};
-    if (s.type === 'VIDEO' && s.video) {
-      stage.innerHTML = '<video src="' + lbEsc(s.video) + '" poster="' + lbEsc(s.image) + '" controls autoplay playsinline preload="metadata"></video>';
-      var v = stage.querySelector('video');
-      if (v) v.play().catch(function () {});
-    } else {
-      stage.innerHTML = '<img src="' + lbEsc(s.image) + '" alt="Projeto Shine Cortinas">';
-    }
-    var multi = lbSlides.length > 1;
-    var prev = document.querySelector('#ig-lightbox .ig-lb-arrow.prev');
-    var next = document.querySelector('#ig-lightbox .ig-lb-arrow.next');
-    var count = document.querySelector('#ig-lightbox .ig-lb-count');
-    if (prev) prev.style.display = multi ? '' : 'none';
-    if (next) next.style.display = multi ? '' : 'none';
-    if (count) { count.style.display = multi ? '' : 'none'; count.textContent = (lbSlide + 1) + ' / ' + lbSlides.length; }
-  }
-  function lbGo(d) {
-    if (lbSlides.length < 2) return;
-    lbStopVideos();
-    lbSlide = (lbSlide + d + lbSlides.length) % lbSlides.length;
-    lbRenderSlide();
-  }
-  function openIgLightbox(idx) {
-    var item = igAllItems[idx];
-    if (!item) return;
-    var lb = document.getElementById('ig-lightbox');
-    if (!lb) return;
-    var cap = document.getElementById('ig-lb-caption');
-    var open = document.getElementById('ig-lb-open');
-    var like = document.getElementById('ig-lb-like');
-    // Carrossel: usa os filhos; senão, um único slide (foto ou vídeo)
-    lbSlides = (item.type === 'CAROUSEL_ALBUM' && item.children && item.children.length)
-      ? item.children
-      : [{ type: item.type, image: item.image, video: item.video }];
-    lbSlide = 0;
-    lbRenderSlide();
-    cap.textContent = item.caption || '';
-    open.href = item.permalink || 'https://www.instagram.com/shinecortinas/';
-    // estado da curtida (salvo no aparelho)
-    var likes = {};
-    try { likes = JSON.parse(localStorage.getItem('ig-likes') || '{}'); } catch (e) {}
-    var liked = !!likes[item.id];
-    like.classList.toggle('liked', liked);
-    like.setAttribute('aria-pressed', String(liked));
-    like.onclick = function () {
-      liked = !liked;
-      likes[item.id] = liked;
-      if (!liked) delete likes[item.id];
-      try { localStorage.setItem('ig-likes', JSON.stringify(likes)); } catch (e) {}
-      like.classList.toggle('liked', liked);
-      like.setAttribute('aria-pressed', String(liked));
-      if (liked) { like.classList.add('pop'); setTimeout(function () { like.classList.remove('pop'); }, 460); }
-    };
-    lb.classList.add('open');
-    lb.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('overflow-hidden');
-  }
-  function closeIgLightbox() {
-    var lb = document.getElementById('ig-lightbox');
-    if (!lb) return;
-    lbStopVideos();
-    lb.classList.remove('open');
-    lb.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('overflow-hidden');
-    var stage = lb.querySelector('.ig-lb-stage');
-    if (stage) stage.innerHTML = '';
-  }
-  function bindLightbox() {
-    var lb = document.getElementById('ig-lightbox');
-    if (!lb) return;
-    lb.querySelector('.ig-lb-back').addEventListener('click', closeIgLightbox);
-    lb.querySelector('.ig-lb-close').addEventListener('click', closeIgLightbox);
-    var prev = lb.querySelector('.ig-lb-arrow.prev');
-    var next = lb.querySelector('.ig-lb-arrow.next');
-    if (prev) prev.addEventListener('click', function () { lbGo(-1); });
-    if (next) next.addEventListener('click', function () { lbGo(1); });
-    document.addEventListener('keydown', function (e) {
-      if (!lb.classList.contains('open')) return;
-      if (e.key === 'Escape') closeIgLightbox();
-      else if (e.key === 'ArrowRight') lbGo(1);
-      else if (e.key === 'ArrowLeft') lbGo(-1);
-    });
-  }
-  // O HTML do lightbox vem depois deste script; garante que já exista no DOM.
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', bindLightbox);
-  } else {
-    bindLightbox();
-  }
-
-</script>
-
-    <!-- Lightbox da galeria do Instagram -->
-    <div id="ig-lightbox" class="ig-lb" aria-hidden="true">
-      <div class="ig-lb-back"></div>
-      <div class="ig-lb-dialog" role="dialog" aria-modal="true" aria-label="Projeto Shine Cortinas">
-        <button class="ig-lb-close" type="button" aria-label="Fechar">&times;</button>
-        <div class="ig-lb-media">
-          <div class="ig-lb-stage"></div>
-          <button class="ig-lb-arrow prev" type="button" aria-label="Anterior" style="display:none">‹</button>
-          <button class="ig-lb-arrow next" type="button" aria-label="Próximo" style="display:none">›</button>
-          <span class="ig-lb-count" style="display:none"></span>
-        </div>
-        <div class="ig-lb-panel">
-          <div class="ig-lb-head">
-            <img class="ig-lb-avatar" src="logo-shine.avif" alt="Shine Cortinas" width="38" height="38">
-            <a class="ig-lb-user" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">@shinecortinas</a>
-          </div>
-          <p id="ig-lb-caption" class="ig-lb-caption"></p>
-          <div class="ig-lb-actions">
-            <button id="ig-lb-like" class="ig-lb-btn ig-lb-like" type="button" aria-pressed="false">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span>Curtir</span>
-            </button>
-            <a id="ig-lb-open" class="ig-lb-btn primary" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
-              Ver no Instagram
-            </a>
-            <a class="ig-lb-btn" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Seguir @shinecortinas
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Visualizador de Story (destaques) -->
-    <div id="story-viewer" class="sv" aria-hidden="true">
-      <div class="sv-card">
-        <img id="sv-img" class="sv-img" src="" alt="Projeto Shine Cortinas">
-        <div class="sv-scrim"></div>
-        <div class="sv-nav sv-prev" id="sv-prev" aria-label="Anterior"></div>
-        <div class="sv-nav sv-next" id="sv-next" aria-label="Próximo"></div>
-        <div class="sv-bars" id="sv-bars"></div>
-        <div class="sv-head">
-          <img class="sv-avatar" src="logo-shine.avif" alt="Shine Cortinas" width="34" height="34">
-          <a class="sv-user" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">shinecortinas</a>
-          <button class="sv-close" id="sv-close" type="button" aria-label="Fechar">&times;</button>
-        </div>
-        <p id="sv-cap" class="sv-cap"></p>
-        <a id="sv-cta" class="sv-cta" href="https://www.instagram.com/shinecortinas/" target="_blank" rel="noopener noreferrer me">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
-          Ver no Instagram
-        </a>
-      </div>
-    </div>
-
+  </script>
+  <script src="/assets/shine-wa.js?v=2" defer></script>
+  <script type="speculationrules">
+  {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}
+  </script>
+  <script>
+    (function(){
+      var btn=document.getElementById('menu-btn'),menu=document.getElementById('mobile-menu');
+      if(btn&&menu){btn.addEventListener('click',function(){var open=menu.hasAttribute('data-open');if(open){menu.removeAttribute('data-open');btn.setAttribute('aria-expanded','false');}else{menu.setAttribute('data-open','');btn.setAttribute('aria-expanded','true');}});}
+    })();
+  </script>
 </body>
 </html>
