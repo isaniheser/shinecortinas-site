@@ -17,6 +17,14 @@ export const NAV = [
   ['/cidades-atendidas.html', 'Cidades'], ['/portfolio/', 'Projetos'], ['/blog/', 'Blog'],
 ];
 
+// Canonical de página-pasta tem que terminar em '/', que é a URL que o Cloudflare serve e o sitemap declara.
+// Normaliza canonical, og:url e toda ocorrência da mesma URL entre aspas (JSON-LD, links).
+export function normalizaCanonical(html) {
+  const cm = html.match(/<link rel="canonical" href="(https:\/\/www\.shinecortinas\.com\/[^"]*?)"/);
+  if (!cm || cm[1].endsWith('/') || /\.[a-z0-9]+$/i.test(cm[1])) return html;
+  return html.split(`"${cm[1]}"`).join(`"${cm[1]}/"`);
+}
+
 // Limpa o <head> herdado (Tailwind, estilos inline, redirect de celular) e injeta o CSS do sistema.
 export function cleanHead(head, opts = {}) {
   head = head.replace(/\s*<script>\s*\(function\(\)\{\s*if \(\/Mobi[\s\S]*?<\/script>/, '');
@@ -30,6 +38,9 @@ export function cleanHead(head, opts = {}) {
   head = head.replace(/href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]+"/, `href="${FONTS}"`);
   head = head.replace(/<link rel="preload" as="image" href="hero-sala.avif"/, '<link rel="preload" as="image" href="/hero-sala.avif"');
   head = head.replace('<link rel="icon" type="image/png"', `<link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">\n  <link rel="icon" type="image/png"`);
+  // Canonical de página-pasta tem que terminar em '/', que é a URL que o Cloudflare serve e o sitemap declara.
+  // Normaliza canonical, og:url e toda ocorrência da mesma URL no JSON-LD (breadcrumb, mainEntityOfPage).
+  head = normalizaCanonical(head);
   const precisaLd = opts.semSchema !== true;
   if (!/shine-leve\.css/.test(head) || (precisaLd && !/application\/ld\+json/.test(head)) || /tailwind|location\.replace\('\/app\/'\)/.test(head)) throw new Error('head inválido');
   return head;

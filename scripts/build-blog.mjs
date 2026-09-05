@@ -80,7 +80,7 @@ const POSTS = [
 ];
 
 function build(post) {
-  const url = `${BASE}/blog/${post.slug}`;
+  const url = `${BASE}/blog/${post.slug}/`;
   const faqHtml = post.faq.map(([q, a]) => `        <details><summary>${q}</summary><div>${a}</div></details>`).join('\n');
   const ld = {
     '@context': 'https://schema.org',

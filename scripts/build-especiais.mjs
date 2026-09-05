@@ -5,7 +5,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { WA, CSS_V, esc, cleanHead, header, cityChip, strip, footer, waFloat, bar, tail } from './partials.mjs';
+import { WA, CSS_V, esc, cleanHead, normalizaCanonical, header, cityChip, strip, footer, waFloat, bar, tail } from './partials.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://www.shinecortinas.com';
@@ -187,7 +187,7 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
 // senão elas continuam servindo uma folha antiga do cache do navegador.
 function sincronizaCss(file, src) {
   const alvo = `/assets/shine-leve.css?v=${CSS_V}`;
-  const novo = src.replace(/\/assets\/shine-leve\.css\?v=[^"']*/g, () => alvo);
+  const novo = normalizaCanonical(src.replace(/\/assets\/shine-leve\.css\?v=[^"']*/g, () => alvo));
   if (novo !== src) writeFileSync(file, novo);
 }
 
