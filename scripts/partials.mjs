@@ -3,7 +3,7 @@
 
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 export const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
-export const CSS_V = '5';
+export const CSS_V = '6';
 export const JS_V = '2';
 
 export const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;');
@@ -18,7 +18,7 @@ export const NAV = [
 ];
 
 // Limpa o <head> herdado (Tailwind, estilos inline, redirect de celular) e injeta o CSS do sistema.
-export function cleanHead(head) {
+export function cleanHead(head, opts = {}) {
   head = head.replace(/\s*<script>\s*\(function\(\)\{\s*if \(\/Mobi[\s\S]*?<\/script>/, '');
   head = head.replace(/\s*<link rel="alternate" media="only screen[^>]*>/, '');
   head = head.replace(/\s*<link rel="preload" href="\/?assets\/tailwind.generated.css"[^>]*>/, '');
@@ -30,7 +30,8 @@ export function cleanHead(head) {
   head = head.replace(/href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]+"/, `href="${FONTS}"`);
   head = head.replace(/<link rel="preload" as="image" href="hero-sala.avif"/, '<link rel="preload" as="image" href="/hero-sala.avif"');
   head = head.replace('<link rel="icon" type="image/png"', `<link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">\n  <link rel="icon" type="image/png"`);
-  if (!/shine-leve\.css/.test(head) || !/application\/ld\+json/.test(head) || /tailwind|location\.replace\('\/app\/'\)/.test(head)) throw new Error('head inválido');
+  const precisaLd = opts.semSchema !== true;
+  if (!/shine-leve\.css/.test(head) || (precisaLd && !/application\/ld\+json/.test(head)) || /tailwind|location\.replace\('\/app\/'\)/.test(head)) throw new Error('head inválido');
   return head;
 }
 
