@@ -59,6 +59,14 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
 - **Bug do `</script>`:** ao gerar páginas via script, escrever a tag de
   fechamento como `</script>` literal. Nunca `<\/script>` — o navegador não
   reconhece e a página renderiza em branco.
+- **Fatos de produto (corrigidos pelo Isani — não reintroduzir):**
+  - A Shine **não trabalha** com rolô de **guias laterais** nem **caixa box**.
+    Nunca citar "Sistema Box". O escurecimento se explica por folga calculada,
+    sobreposição na parede, forro e, quando necessário, trilho com vedação lateral.
+  - Não prometer "100% de vedação", "escuridão absoluta" ou "privacidade absoluta":
+    o tecido barra a luz pela trama; o resultado no ambiente depende da instalação.
+  - Fotos: só usar imagem que mostre **o ambiente e a solução exatos**. Quando não
+    houver, marcar como referência (ver `docs/fotos-necessarias.md`).
 - **WhatsApp (CTA padrão):**
   `https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.`
   Telefones: (24) 99329-8763 (WhatsApp) e (24) 3338-3069.

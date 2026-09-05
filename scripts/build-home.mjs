@@ -23,7 +23,7 @@ const SOLUCOES = [
   { href: '/cortinas/', img: '/cortina-sob-medida.avif', tag: 'Cortinas', h: 'Cortinas sob medida', p: 'Wave, prega, painel e linho. Cabeçote com memória e barra dupla para o caimento que não desmancha.' },
   { href: '/persianas/', img: '/persiana-motorizada.avif', tag: 'Persianas', h: 'Persianas técnicas', p: 'Rolô, romana, double vision, vertical e screen. Luz e privacidade na medida de cada janela.' },
   { href: '/cortina-motorizada/', img: '/automacao.avif', tag: 'Automação', h: 'Cortinas e persianas motorizadas', p: 'Motores de 7ª geração, silenciosos, com Alexa, Google Home e Apple Home. Abre pelo celular ou pela voz.' },
-  { href: '/blackout-e-forros/', img: '/blackouts-tecnicos.avif', tag: 'Blackout', h: 'Blackout técnico e forros', p: 'Tecido com fibra de vidro que repele o calor. Com o Sistema Box, escuridão total no quarto.' },
+  { href: '/blackout-e-forros/', img: '/blackouts-tecnicos.avif', tag: 'Blackout', h: 'Blackout técnico e forros', p: 'Tecido que barra a luz pela trama e repele o calor. O escurecimento do ambiente vem da folga certa, do forro e da instalação.' },
   { href: '/cortina-wave/', img: '/linha-puro.avif', tag: 'Linha Puro', h: 'Linho e tecidos selecionados', p: 'Curadoria de tecidos que você sente na mão, na sua sala, antes de decidir.' },
   { href: '/persianas/', img: '/madeira.avif', tag: 'Madeira', h: 'Persianas de madeira', p: 'Toque natural e controle de luz por lâminas. Para cozinhas, escritórios e varandas.' },
 ];
@@ -42,13 +42,13 @@ const FAQ = [
   ['Vocês atendem na minha cidade?', 'Sim. Atendemos todo o Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira. O consultor vai até você.'],
   ['Tenho que ir até a loja?', 'Não. Somos pioneiros no modelo de consultoria em domicílio: o especialista vai até a sua casa com o mostruário, mede cada ambiente a laser e apresenta as melhores opções no seu espaço. Você escolhe sem sair de casa e sem pressão.'],
   ['Quanto tempo leva para instalar?', 'Na grande maioria dos projetos, a instalação é concluída no mesmo dia. A equipe chega, trabalha com limpeza e sai deixando o ambiente pronto, sem entulho.'],
-  ['O blackout realmente bloqueia 100% da luz?', 'Sim. A linha Blackout Técnico usa tecido com película que bloqueia raios UVA e UVB e reduz ruído. Com as guias laterais do Sistema Box, a vedação luminosa é total: escuridão real, não aproximada.'],
+  ['O blackout bloqueia toda a luz do quarto?', 'O tecido blackout bloqueia a passagem de luz pela trama. O que define a escuridão do ambiente é a instalação: folgas calculadas, sobreposição na parede, o forro adequado e, quando necessário, trilho com vedação lateral. Na consultoria o consultor mede a janela e diz com honestidade o nível de escurecimento possível naquele ambiente.'],
   ['Qual é a garantia?', 'A garantia parte de 1 ano na instalação, chega a 5 anos em cortinas e a até 8 anos nos projetos com motorização. Se surgir qualquer problema, você nos chama e a gente resolve, sem burocracia e sem custo adicional.'],
 ];
 
 const BLOG = [
   ['/blog/por-que-escolher-cortina-motorizada', 'Automação', 'Por que escolher uma cortina motorizada', 'Motores de 7ª geração, silêncio e integração com a casa conectada.'],
-  ['/blog/o-que-e-blackout', 'Blackout', 'O que é blackout e quando faz diferença', 'Não é só tecido grosso: entenda película, forro e Sistema Box.'],
+  ['/blog/o-que-e-blackout', 'Blackout', 'O que é blackout e quando faz diferença', 'Não é só tecido grosso: entenda a trama, o forro e o peso da instalação.'],
   ['/blog/linho-para-cortinas', 'Tecidos', 'Linho para cortinas: caimento e memória', 'Por que as cortinas da Shine mantêm a forma ano após ano.'],
 ];
 
@@ -57,10 +57,10 @@ const BLOG = [
 // false = foto de referência do modelo (outro ambiente) até termos a foto certa — ver docs/fotos-necessarias.md
 const SIM = {
   escurecer: {
-    quarto: ['Blackout técnico com Sistema Box', 'Guias laterais vedam a luz por completo. É o que resolve quem trabalha à noite ou tem bebê em casa.', '/blackouts-tecnicos.avif', '/blackout-e-forros/', false],
+    quarto: ['Cortina blackout com forro', 'O tecido barra a luz pela trama; o escurecimento do quarto vem da folga calculada, da sobreposição na parede e do forro. Resolve quem trabalha à noite ou tem bebê em casa.', '/blackouts-tecnicos.avif', '/blackout-e-forros/', false],
     sala: ['Blackout técnico para sala e home theater', 'Escuridão de cinema quando você quiser, com o acabamento de cortina.', '/blackouts-tecnicos.avif', '/blackout-e-forros/', true],
-    escritorio: ['Persiana rolô blackout', 'Bloqueio total da luz no monitor e na tela de reunião, com acionamento discreto.', '/blackouts-tecnicos.avif', '/persianas/', false],
-    cozinha: ['Persiana rolô blackout', 'Bloqueio total quando precisar, com tecido fácil de limpar.', '/blackouts-tecnicos.avif', '/persianas/', false],
+    escritorio: ['Persiana rolô blackout', 'Barra a luz que bate no monitor e na câmera da reunião, com acionamento discreto.', '/blackouts-tecnicos.avif', '/persianas/', false],
+    cozinha: ['Persiana rolô blackout', 'Escurece quando você precisa, com tecido fácil de limpar.', '/blackouts-tecnicos.avif', '/persianas/', false],
   },
   privacidade: {
     sala: ['Voil com cortina de linho', 'O voil dá privacidade sem escurecer; a segunda camada fecha quando você quiser.', '/duplo.avif', '/cortinas/', true],

@@ -30,7 +30,7 @@
 - **Medição a laser** e confecção sob medida para caimento preciso.
 - **Automação IoT:** motores ocultos, baixo nível de ruído e compatibilidade com Alexa, Google Home e Apple Home.
 - **Cortina Wave:** cabeçote estruturado e sistema que preserva a regularidade da onda; trilho duplo com espaçamento que evita atrito no forro.
-- **Blackout técnico:** tecido com fibra de vidro, que repele o calor por infravermelho, com opção de sistema box (guias laterais) para escurecimento total; redução térmica de até cerca de 11 °C.
+- **Blackout técnico:** tecido com fibra de vidro, que repele o calor por infravermelho. O tecido barra a luz pela trama; o nível de escurecimento do ambiente depende da folga calculada, da sobreposição, do forro e da instalação. Redução térmica de até cerca de 11 °C.
 - **Instalação impecável:** equipe própria, sem improvisos.
 
 ## Projetos e clientes atendidos

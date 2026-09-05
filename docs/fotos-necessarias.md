@@ -25,7 +25,7 @@ Entregar em JPG/HEIC de alta resolução; a conversão para AVIF é feita aqui.
 
 | Prioridade | Ambiente + solução | Nome do arquivo esperado |
 |---|---|---|
-| 1 | Quarto com blackout técnico e Sistema Box (guias laterais visíveis) | `quarto-blackout-box.avif` |
+| 1 | Quarto com cortina blackout instalada (sobreposição na parede e forro à mostra) | `quarto-blackout.avif` |
 | 2 | Quarto com cortina dupla (voil + forro/blackout) | `quarto-cortina-dupla.avif` |
 | 3 | Quarto com cortina wave e forro | `quarto-wave-forro.avif` |
 | 4 | Quarto com screen + blackout (dois sistemas na janela) | `quarto-screen-blackout.avif` |
@@ -52,3 +52,9 @@ Ordem: Porto Real → Barra Mansa → Volta Redonda → Resende → demais.
   Servem para cards de produto, nunca para representar um cômodo.
 - Ao receber uma foto nova, basta trocar o caminho na tabela `SIM` de
   `scripts/build-home.mjs` e marcar o 5º campo como `true`.
+
+## O que a Shine NÃO trabalha (não citar, não fotografar)
+
+- Persiana/cortina rolô com **guias laterais** ou **caixa box**. Correção do Isani (set/2026):
+  não faz parte do portfólio. O escurecimento se explica por folga calculada, sobreposição na
+  parede, forro e, quando necessário, trilho com vedação lateral.
