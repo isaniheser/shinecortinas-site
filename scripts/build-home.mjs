@@ -43,7 +43,7 @@ const FAQ = [
   ['Tenho que ir até a loja?', 'Não. Somos pioneiros no modelo de consultoria em domicílio: o especialista vai até a sua casa com o mostruário, mede cada ambiente a laser e apresenta as melhores opções no seu espaço. Você escolhe sem sair de casa e sem pressão.'],
   ['Quanto tempo leva para instalar?', 'Na grande maioria dos projetos, a instalação é concluída no mesmo dia. A equipe chega, trabalha com limpeza e sai deixando o ambiente pronto, sem entulho.'],
   ['O blackout bloqueia toda a luz do quarto?', 'Depende do forro. O forro blackout 100% bloqueia a passagem de luz pelo tecido e é ele que entrega o quarto escuro de verdade. O forro blackout de 70%, chamado de semi blackout, deixa o ambiente em penumbra. Na consultoria o consultor mede a janela e indica o forro certo para o escurecimento que você procura.'],
-  ['Qual é a garantia?', 'A garantia parte de 1 ano na instalação, chega a 5 anos em cortinas e a até 8 anos nos projetos com motorização. Se surgir qualquer problema, você nos chama e a gente resolve, sem burocracia e sem custo adicional.'],
+  ['Qual é a garantia?', 'A garantia é de 1 ano para cortinas e persianas não motorizadas e chega a até 5 anos nos projetos motorizados. Se surgir qualquer problema, você nos chama e a nossa equipe resolve.'],
 ];
 
 const BLOG = [
@@ -225,12 +225,12 @@ ${faq}
     </div></section>
 
     <section class="sl-section sl-reveal" id="ceo"><div class="sl-wrap sl-ceo">
-      <img src="/ceo-shine.avif" alt="Isani Oliveira, fundador e CEO da ShineCortinas" width="320" height="320" loading="lazy" decoding="async">
+      <img src="/ceo-shine.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="320" height="320" loading="lazy" decoding="async">
       <div>
         <p class="sl-kicker">Quem responde por cada projeto</p>
         <blockquote class="sl-ceo__quote">"Alinhamento se faz antes. Depois disso, o que vier é justificativa."</blockquote>
         <p>Minha missão é garantir engenharia e cuidado para a sua família. Desde 2009, cada medida e cada instalação passam pelo mesmo padrão.</p>
-        <p class="sl-quote-by" style="margin-top:12px">Isani Oliveira<small>Fundador e CEO · <a href="/sobre/">conheça a história</a></small></p>
+        <p class="sl-quote-by" style="margin-top:12px">Isani Oliveira<small>Fundador e especialista em cortinas sob medida · <a href="/sobre/">conheça a história</a></small></p>
       </div>
     </div></section>
 

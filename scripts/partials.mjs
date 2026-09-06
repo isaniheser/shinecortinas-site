@@ -127,7 +127,7 @@ export function compare() {
         <div class="sl-compare__row"><div>Escolhe o tecido pela tela</div><div>Sente a textura e vê a cor no seu ambiente</div></div>
         <div class="sl-compare__row"><div>Compra trilho e acionamento à parte</div><div>Projeto completo, com trilho e acionamento</div></div>
         <div class="sl-compare__row"><div>Instalador desconhecido</div><div>Equipe própria, instalação no dia combinado</div></div>
-        <div class="sl-compare__row"><div>Garantia de loja: meses</div><div>1 ano na instalação, até 5 em cortinas e até 8 em motorização</div></div>
+        <div class="sl-compare__row"><div>Garantia de loja: meses</div><div>1 ano; até 5 anos na motorização</div></div>
         <div class="sl-compare__row"><div>Erro de medida é problema seu</div><div>A medida é responsabilidade nossa</div></div>
       </div>
     </div></section>

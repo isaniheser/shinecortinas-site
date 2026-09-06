@@ -81,6 +81,12 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     compõem esse grupo (informados pelo Isani): **gabardine** (de algodão e de
     poliéster), **tergal**, **tergal verão**, **cetim** e **gorgurinho**. Não atribuir
     característica a cada um sem confirmar com ele — a lista é o que está validado.
+  - **Garantia (informada pelo Isani, set/2026):** 1 ano para cortinas e persianas
+    **não motorizadas**; até **5 anos** nos projetos **motorizados**. Não existe "8 anos".
+  - **Isani:** designer de interiores por formação prática (empírica), fundador e
+    especialista em cortinas sob medida. No schema, `jobTitle` usa "especialista";
+    o texto visível pode dizer "designer de interiores por prática". Nunca atribuir
+    formação acadêmica ou registro que ele não informou.
   - Não prometer "privacidade absoluta" nem atribuir o escurecimento a acessório que
     a Shine não usa; o que define o resultado é o **tipo de forro**.
   - Fotos: só usar imagem que mostre **o ambiente e a solução exatos**. Quando não
@@ -137,9 +143,9 @@ visconde-de-maua, volta-redonda.
 ## Git / Deploy
 
 - Branch de trabalho atual: `claude/cortinas-search-rio-cities-ntit7r` (SEO/GEO + sistema leve).
-- **Pendente (decidido, não feito):** home única e responsiva no sistema leve e
-  remoção do redirect JS de celular para `/app/` (a home que o Google indexa
-  hoje é o app: 411 palavras, 5 H1, sem links para as cidades).
+- **Publicado (set/2026, PRs #125 e #127):** home única e responsiva no sistema
+  leve, redirect de celular para `/app/` removido (`/app/` → `/` 301), 56 páginas
+  no sistema leve, páginas de produto reescritas. Backlog e meta: `docs/pendencias.md`.
 - A branch `claude/audit-website-errors-NmMfH` guarda trabalho NÃO publicado
   (tom âmbar escuro + API v2 do Instagram com vídeo/carrossel) — não apagar
   sem decisão do Isani.
