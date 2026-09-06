@@ -16,6 +16,7 @@ existir, o simulador mostra a foto de referência com a legenda
 | Home office + decorar | `madeira.avif` | escritório/estar com persiana de madeira |
 | Motorização (cortina) | `automacao.avif` | sala, cortina + controle |
 | Motorização (persiana) | `persiana-motorizada.avif` | sala, rolô screen + celular |
+| Consultoria / instalação | `isani-consultoria.avif` (1108×1484) | Isani conferindo caimento de cortina de linho, equipe instalando ao fundo. Derivadas: `-800` (4:5) e `isani-autor.avif` (320² avatar). Enviada pelo Isani em 06/set/2026. |
 
 ## O que falta fotografar (prioridade = o que o cliente mais escolhe)
 

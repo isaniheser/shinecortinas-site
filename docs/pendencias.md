@@ -67,7 +67,7 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 - Acesso ao Google Search Console e ao Bing Webmaster Tools. **Caminho combinado:** não há como usar o Chrome do Isani a partir deste ambiente e o acesso direto ao Google é bloqueado aqui; ele exporta os relatórios (Search Console → Desempenho → Exportar) e as avaliações do Perfil da Empresa para uma pasta no Google Drive, que está conectado a esta sessão.
 - Os 15 depoimentos das páginas de cidade são clientes reais e atribuíveis?
 - ~~Credenciais~~ **Respondido:** designer de interiores por formação prática (empírica); no schema fica "fundador e especialista em cortinas sob medida". Falta só o LinkedIn, se houver.
-- Fotos da equipe e do Isani trabalhando — **prometidas para amanhã de manhã**.
+- ~~Foto do Isani trabalhando~~ **Recebida e publicada** (`isani-consultoria.avif`: hero de /metodo/ e /sobre/, imagem do Person). Faltam as outras fotos da equipe e, se existir, o original em resolução maior (a recebida tem 1108 px de largura).
 - Porto Real: bairros, condomínios, imóvel predominante, um projeto com foto.
 - Observações do GPT sobre o trabalho anterior.
 - ~~Garantia~~ **Respondido e aplicado:** 1 ano (não motorizado), até 5 anos (motorizado). Falta confirmar "9.000 ambientes".

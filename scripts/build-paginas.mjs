@@ -107,8 +107,8 @@ function render(p) {
   const links = p.links.map(([h, t]) => `<a href="${h}">${t}</a>`).join('');
   return `<body data-wa-context="a página de ${esc(p.kicker.toLowerCase())}">
 ${header('/' + p.dir + '/')}
-  <section class="sl-hero sl-hero--interna">
-    <div class="sl-hero__img"><img src="${p.hero}" alt="${esc(p.heroAlt)}" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
+  <section class="sl-hero sl-hero--interna${p.heroPessoa ? ' sl-hero--pessoa' : ''}">
+    <div class="sl-hero__img"><img src="${p.hero}" alt="${esc(p.heroAlt)}" width="${p.heroW || 1920}" height="${p.heroH || 1080}" fetchpriority="high" decoding="async"></div>
     <div class="sl-wrap"><div class="sl-hero__in">
       <nav aria-label="Breadcrumb"><ol class="sl-crumbs">
         <li><a href="/">Início</a></li><li aria-hidden="true">/</li>
