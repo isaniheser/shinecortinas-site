@@ -417,3 +417,18 @@ p{margin:0;text-wrap:pretty}
 
 /* alvos de âncora não podem parar atrás do header sticky */
 [id]{scroll-margin-top:100px}
+
+/* hero com pessoa (foto em retrato): rosto fica visível acima do texto */
+.sl-hero--pessoa{min-height:min(78svh,700px)}
+.sl-hero--pessoa .sl-hero__img img{object-position:50% 10%}
+@media(max-width:899px){
+  .sl-hero--pessoa{min-height:calc(100svh - 62px)}
+  .sl-hero--pessoa .sl-hero__in{padding-top:clamp(300px,78vw,380px)}
+  .sl-hero--pessoa .sl-hero__img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,48,42,0) 30%,rgba(22,48,42,.55) 55%,rgba(22,48,42,.92) 100%)}
+}
+@media(min-width:900px){
+  /* desktop: texto à esquerda sobre o verde, foto à direita — o rosto não fica atrás do título */
+  .sl-hero--pessoa .sl-hero__img{left:52%}
+  .sl-hero--pessoa .sl-hero__img img{object-position:50% 15%}
+  .sl-hero--pessoa .sl-hero__img::after{background:linear-gradient(90deg,var(--green) 0%,rgba(22,48,42,.55) 22%,rgba(22,48,42,0) 55%),linear-gradient(to bottom,rgba(11,25,22,0) 60%,rgba(11,25,22,.85) 100%)}
+}

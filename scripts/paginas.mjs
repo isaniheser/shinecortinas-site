@@ -223,8 +223,8 @@ export const PAGINAS = [
     kicker: 'Como funciona',
     h1: 'Do primeiro contato à instalação, <em>sem surpresa</em>',
     lead: 'A Shine trabalha com consultoria em domicílio: o consultor vai até a sua casa com o mostruário completo, mede cada janela a laser e apresenta as opções no seu próprio ambiente. Você decide com calma, sem sair de casa e sem pressão.',
-    hero: '/cortina-sob-medida.avif',
-    heroAlt: 'Sala com cortina de linho sob medida, projeto ShineCortinas',
+    hero: '/isani-consultoria.avif', heroW: 1108, heroH: 1484, heroPessoa: true,
+    heroAlt: 'Isani Oliveira conferindo o caimento de uma cortina de linho durante a instalação, com a equipe ShineCortinas ao fundo',
     blocos: [
       { t: 'steps6' },
       { t: 'prose', h2: 'Por que a medição é responsabilidade nossa', p: [
@@ -253,8 +253,8 @@ export const PAGINAS = [
     kicker: 'Sobre a Shine',
     h1: 'Dezessete anos medindo, confeccionando e <em>instalando</em>',
     lead: 'A ShineCortinas é uma empresa de cortinas e persianas sob medida com sede em Volta Redonda, no Rio de Janeiro. Desde 2009 atende o Sul Fluminense com equipe própria — do consultor que vai à sua casa ao instalador que fecha o projeto.',
-    hero: '/hero-sala.avif',
-    heroAlt: 'Projeto de cortinas sob medida executado pela ShineCortinas',
+    hero: '/isani-consultoria.avif', heroW: 1108, heroH: 1484, heroPessoa: true,
+    heroAlt: 'Isani Oliveira conferindo o caimento de uma cortina de linho durante a instalação, com a equipe ShineCortinas ao fundo',
     blocos: [
       { t: 'proof' },
       { t: 'ceo' },
