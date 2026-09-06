@@ -87,7 +87,7 @@ function build(post) {
     '@graph': [
       { '@type': 'Organization', '@id': `${BASE}/#org`, name: 'ShineCortinas', url: BASE, logo: `${BASE}/logo-shine.avif`,
         sameAs: ['https://www.instagram.com/shinecortinas/', 'https://www.facebook.com/shinecortinas', 'https://www.tiktok.com/@shinecortinas', 'https://www.youtube.com/@shinecortinas', 'https://www.pinterest.com/shinecortinas'] },
-      { '@type': 'Person', '@id': `${BASE}/#isani`, name: 'Isani Oliveira', jobTitle: 'CEO e especialista em cortinas sob medida', url: `${BASE}/sobre/`, worksFor: { '@id': `${BASE}/#org` } },
+      { '@type': 'Person', '@id': `${BASE}/#isani`, name: 'Isani Oliveira', jobTitle: 'Fundador e especialista em cortinas e persianas sob medida', description: 'Fundador da ShineCortinas, à frente da empresa desde 2009. Designer de interiores por formação prática, projeta cortinas e persianas sob medida para residências do Sul Fluminense.', url: `${BASE}/sobre/`, worksFor: { '@id': `${BASE}/#org` } },
       { '@type': 'Article', '@id': `${url}#article`, headline: post.title, description: post.description,
         datePublished: post.published, dateModified: post.modified,
         author: { '@id': `${BASE}/#isani` }, publisher: { '@id': `${BASE}/#org` },
@@ -149,7 +149,7 @@ ${header('/blog/')}
       </ol></nav>
       <p class="sl-kicker">${post.kicker}</p>
       <h1 class="sl-h1" style="font-size:clamp(28px,4.2vw,46px)">${post.title}</h1>
-      <p class="sl-postmeta"><span>Por <a href="/sobre/">Isani Oliveira</a>, CEO da ShineCortinas</span><span>Atualizado em ${post.modified.split('-').reverse().join('/')}</span></p>
+      <p class="sl-postmeta"><span>Por <a href="/sobre/">Isani Oliveira</a>, fundador da ShineCortinas e especialista em cortinas sob medida</span><span>Atualizado em ${post.modified.split('-').reverse().join('/')}</span></p>
     </div></div>
   </section>
 ${cityChip(null)}

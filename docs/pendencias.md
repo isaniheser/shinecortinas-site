@@ -64,13 +64,13 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 
 ## Depende do Isani (pedido, sem resposta)
 
-- Acesso ao Google Search Console e ao Bing Webmaster Tools.
+- Acesso ao Google Search Console e ao Bing Webmaster Tools. **Caminho combinado:** não há como usar o Chrome do Isani a partir deste ambiente e o acesso direto ao Google é bloqueado aqui; ele exporta os relatórios (Search Console → Desempenho → Exportar) e as avaliações do Perfil da Empresa para uma pasta no Google Drive, que está conectado a esta sessão.
 - Os 15 depoimentos das páginas de cidade são clientes reais e atribuíveis?
-- Credenciais: formação em design de interiores, anos com cortina, registro, LinkedIn.
-- Fotos da equipe e do Isani trabalhando.
+- ~~Credenciais~~ **Respondido:** designer de interiores por formação prática (empírica); no schema fica "fundador e especialista em cortinas sob medida". Falta só o LinkedIn, se houver.
+- Fotos da equipe e do Isani trabalhando — **prometidas para amanhã de manhã**.
 - Porto Real: bairros, condomínios, imóvel predominante, um projeto com foto.
 - Observações do GPT sobre o trabalho anterior.
-- Confirmar: garantia 1/5/8 anos; "9.000 ambientes".
+- ~~Garantia~~ **Respondido e aplicado:** 1 ano (não motorizado), até 5 anos (motorizado). Falta confirmar "9.000 ambientes".
 - Horário de atendimento.
 - Decisão sobre o `aggregateRating` (item 4).
 - Descrição de cada tecido do forro translúcido (gabardine, tergal, tergal verão,

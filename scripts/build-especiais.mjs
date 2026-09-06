@@ -225,7 +225,7 @@ ${header('/blog/')}
       </ol></nav>
       <p class="sl-kicker">Blog ShineCortinas</p>
       <h1 class="sl-h1" style="font-size:clamp(28px,4.2vw,46px)">${esc(h1)}</h1>
-      <p class="sl-postmeta"><span>Por <a href="/sobre/">Isani Oliveira</a>, CEO da ShineCortinas</span>${meta ? `<span>Atualizado em ${esc(meta)}</span>` : ''}</p>
+      <p class="sl-postmeta"><span>Por <a href="/sobre/">Isani Oliveira</a>, fundador da ShineCortinas e especialista em cortinas sob medida</span>${meta ? `<span>Atualizado em ${esc(meta)}</span>` : ''}</p>
     </div></div>
   </section>
 ${cityChip(null)}
