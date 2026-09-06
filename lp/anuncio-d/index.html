@@ -453,8 +453,13 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
     // O identificador de clique fbc e gerenciado pela integracao do Zaraz.
     if (identidade.external_id && !dados.external_id) dados.external_id = identidade.external_id;
     try {
-      if (window.zaraz && typeof window.zaraz.track === 'function') window.zaraz.track(evento, dados);
+      if (window.zaraz && typeof window.zaraz.track === 'function') {
+        window.zaraz.track(evento, dados);
+        return;
+      }
     } catch (e) {}
+    // Fallback: o modo de compatibilidade converte este push em zaraz.track.
+    // Usar apenas um caminho por evento evita o envio duplicado.
     window.dataLayer = window.dataLayer || [];
     var d = { event: evento };
     for (var k in dados) if (Object.prototype.hasOwnProperty.call(dados, k)) d[k] = dados[k];
