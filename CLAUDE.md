@@ -137,9 +137,9 @@ visconde-de-maua, volta-redonda.
 ## Git / Deploy
 
 - Branch de trabalho atual: `claude/cortinas-search-rio-cities-ntit7r` (SEO/GEO + sistema leve).
-- **Pendente (decidido, não feito):** home única e responsiva no sistema leve e
-  remoção do redirect JS de celular para `/app/` (a home que o Google indexa
-  hoje é o app: 411 palavras, 5 H1, sem links para as cidades).
+- **Publicado (set/2026, PRs #125 e #127):** home única e responsiva no sistema
+  leve, redirect de celular para `/app/` removido (`/app/` → `/` 301), 56 páginas
+  no sistema leve, páginas de produto reescritas. Backlog e meta: `docs/pendencias.md`.
 - A branch `claude/audit-website-errors-NmMfH` guarda trabalho NÃO publicado
   (tom âmbar escuro + API v2 do Instagram com vídeo/carrossel) — não apagar
   sem decisão do Isani.
