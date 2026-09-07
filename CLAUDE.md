@@ -62,10 +62,14 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
   usando função como substituto (`.replace(x, () => texto)`). Nunca passar texto gerado
   direto como 2º argumento de `.replace()`.
 - **Marcação `Review` (decisão set/2026):** só marcar como `schema.org/Review` avaliação
-  real e atribuível (as 5 da home vêm do Google Business Profile). Depoimento escrito
-  para o site fica como texto visível, **sem** marcação de avaliação — marcar copy de
-  marketing como Review é spam de dados estruturados e arrisca ação manual do Google,
-  exatamente contra a premissa 1.
+  real e atribuível (as 5 da home e as 15 das páginas de cidade vêm do Google Business
+  Profile; a fonte completa está em `docs/dados-google/avaliacoes.json`). Depoimento
+  escrito para o site fica como texto visível, **sem** marcação de avaliação — marcar copy
+  de marketing como Review é spam de dados estruturados e arrisca ação manual do Google,
+  exatamente contra a premissa 1. **Nunca inventar depoimento** (os 15 antigos das cidades
+  eram inventados e foram trocados em 06/set/2026). Para trocar o depoimento de uma
+  cidade: escolher avaliação 5★ de `avaliacoes.json`, preencher `quote`, `quote_by`,
+  `quote_google_author`, `quote_date` (AAAA-MM) no `cidades.json` e rodar o build.
 - **Bug do `</script>`:** ao gerar páginas via script, escrever a tag de
   fechamento como `</script>` literal. Nunca `<\/script>` — o navegador não
   reconhece e a página renderiza em branco.

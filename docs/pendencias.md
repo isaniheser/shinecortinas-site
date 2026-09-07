@@ -65,7 +65,7 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 ## Depende do Isani (pedido, sem resposta)
 
 - Acesso ao Google Search Console e ao Bing Webmaster Tools. O Isani autorizou o acesso (06/set), mas este ambiente não alcança google.com (bloqueio de rede, não de permissão). **Caminho combinado:** não há como usar o Chrome do Isani a partir deste ambiente e o acesso direto ao Google é bloqueado aqui; ele exporta os relatórios (Search Console → Desempenho → Exportar) e as avaliações do Perfil da Empresa para uma pasta no Google Drive, que está conectado a esta sessão.
-- Os 15 depoimentos das páginas de cidade são clientes reais e atribuíveis?
+- ~~Os 15 depoimentos das páginas de cidade são clientes reais?~~ **Verificado (06/set): não eram** — nenhum dos 15 textos/autores existia entre as 297 avaliações do Google. **Substituídos por 15 avaliações reais e públicas do Google** (uma por cidade, sem repetir as 5 da home; Piraí e Valença com avaliações que citam a cidade; as demais identificadas como "cliente ShineCortinas", sem afirmar cidade). Cada uma entra no schema como `Review` (build-cidades → `withReview`).
 - ~~Credenciais~~ **Respondido:** designer de interiores por formação prática (empírica); no schema fica "fundador e especialista em cortinas sob medida". Falta só o LinkedIn, se houver.
 - ~~Foto do Isani trabalhando~~ **Recebida e publicada** (`isani-consultoria.avif`: hero de /metodo/ e /sobre/, imagem do Person). Faltam as outras fotos da equipe e, se existir, o original em resolução maior (a recebida tem 1108 px de largura).
 - Porto Real: bairros, condomínios, imóvel predominante, um projeto com foto.
