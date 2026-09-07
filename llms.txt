@@ -84,7 +84,8 @@ Casos reais executados pela ShineCortinas:
 - Miguel Pereira: https://www.shinecortinas.com/cidades/miguel-pereira/
 
 ## Prova social
-- 292 avaliações no Google com nota média 5,0 (dado refletido no schema.org AggregateRating do site).
+- 294 avaliações no Google com nota média 4,9 (Perfil da Empresa, consultado em 06/09/2026). O site marca como schema.org/Review apenas 5 avaliações reais do Google; não usa AggregateRating.
+- Horário de atendimento: segunda a sexta, 08:00–17:00 (sábado e domingo fechado). Consultoria em domicílio agendada pelo WhatsApp.
 
 ## Outros
 - Sitemap: https://www.shinecortinas.com/sitemap.xml

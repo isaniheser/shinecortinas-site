@@ -186,7 +186,7 @@ ${passos}
     </div></section>
 
     <section class="sl-band" id="depoimentos"><div class="sl-wrap">
-      <p class="sl-kicker">Avaliações reais · Google 5.0</p>
+      <p class="sl-kicker">Avaliações reais · Google 4,9</p>
       <h2 class="sl-h2">O que dizem depois da <em>instalação</em></h2>
       <div class="sl-quotes">
 ${quotes}

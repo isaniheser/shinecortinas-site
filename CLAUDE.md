@@ -83,6 +83,10 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     característica a cada um sem confirmar com ele — a lista é o que está validado.
   - **Números confirmados pelo Isani (set/2026):** empresa desde 2009; "mais de 9.000
     ambientes transformados". Podem ser usados no texto e no schema.
+  - **Nota do Google (coletada em 06/set/2026 no Perfil da Empresa):** **4,9 com 294
+    avaliações**. Nunca escrever "5.0"; o número vem de `docs/dados-google/perfil.json`.
+    Sem `aggregateRating` no schema (removido). Horário oficial: **seg–sex 08:00–17:00**,
+    já no `openingHoursSpecification` de todo LocalBusiness.
   - **Garantia (informada pelo Isani, set/2026):** 1 ano para cortinas e persianas
     **não motorizadas**; até **5 anos** nos projetos **motorizados**. Não existe "8 anos".
   - **Isani:** designer de interiores por formação prática (empírica), fundador e
