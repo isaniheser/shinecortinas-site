@@ -14,7 +14,7 @@ export const telIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColo
 
 export const NAV = [
   ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/metodo/', 'Como funciona'],
-  ['/cidades-atendidas.html', 'Cidades'], ['/portfolio/', 'Projetos'], ['/blog/', 'Blog'],
+  ['/cidades-atendidas.html', 'Cidades'], ['/portfolio/', 'Projetos'], ['/sobre/', 'Sobre'], ['/blog/', 'Blog'],
 ];
 
 // Canonical de página-pasta tem que terminar em '/', que é a URL que o Cloudflare serve e o sitemap declara.
