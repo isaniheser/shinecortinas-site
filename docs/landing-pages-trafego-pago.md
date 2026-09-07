@@ -78,8 +78,11 @@ A rota antiga `/lp/anuncio-d/obrigado/` redireciona para o contato no final da
 landing, sem ler dados antigos nem disparar conversões. O fluxo novo não passa
 por essa rota.
 
-Eventos emitidos pelo código da landing, via `zaraz.track()` quando disponível,
-com espelho em `dataLayer`:
+Eventos emitidos pelo código da landing, via `zaraz.track()` quando disponível.
+O `dataLayer` serve apenas como alternativa se a chamada direta estiver indisponível
+ou falhar de forma síncrona; o modo de compatibilidade do Zaraz converte esse
+`push` em uma chamada de rastreamento. Não emitir o mesmo evento pelos dois
+caminhos:
 
 | Momento | Evento | Significado |
 |---|---|---|
