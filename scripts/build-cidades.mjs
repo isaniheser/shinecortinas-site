@@ -80,7 +80,7 @@ ${steps}
     </div></section>
 
     <section class="sl-band"><div class="sl-wrap">
-      <p class="sl-kicker">Depoimento real · ${d.city}</p>
+      <p class="sl-kicker">Avaliação real no Google</p>
       <div class="sl-stars" aria-label="5 estrelas">★★★★★</div>
       <blockquote class="sl-quote">"${d.quote}"</blockquote>
       <p class="sl-quote-by">${d.quote_by}<small>${d.quote_sub}</small></p>
@@ -117,13 +117,36 @@ ${faq}
 ${footer()}${waFloat()}${bar('single')}${tail()}`;
 }
 
+// O depoimento visível é uma avaliação real e pública do Google (cidades.json: quote,
+// quote_google_author, quote_date). Só por isso ele entra no JSON-LD como schema.org/Review,
+// no nó LocalBusiness do <head>. Substituição por função: nunca passar texto gerado como
+// 2º argumento de .replace() (bug do "$$").
+function withReview(head, d) {
+  if (!d.quote_google_author || !d.quote_date) return head;
+  return head.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, open, raw, close) => {
+    let ld; try { ld = JSON.parse(raw); } catch { return m; }
+    const nodes = ld['@graph'] || [ld];
+    const biz = nodes.find((x) => x['@type'] === 'LocalBusiness' || (Array.isArray(x['@type']) && x['@type'].includes('LocalBusiness')));
+    if (!biz) return m;
+    biz.review = [{
+      '@type': 'Review',
+      author: { '@type': 'Person', name: d.quote_by },
+      datePublished: d.quote_date,
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: d.quote.replace(/\s*\[…\]\s*/g, ' ').replace(/\s+/g, ' ').trim(),
+    }];
+    const indent = (raw.match(/\n(\s*)\S/) || [, '  '])[1];
+    return open + '\n' + indent + JSON.stringify(ld, null, 2).replace(/\n/g, '\n' + indent) + '\n' + indent + close;
+  });
+}
+
 let n = 0;
 for (const slug of readdirSync(join(ROOT, 'cidades'), { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name)) {
   const d = data[slug];
   if (!d) throw new Error(`sem dados em cidades.json para ${slug}`);
   const file = join(ROOT, 'cidades', slug, 'index.html');
   const src = readFileSync(file, 'utf8');
-  writeFileSync(file, cleanHead(src.split('<body')[0]) + body(d));
+  writeFileSync(file, withReview(cleanHead(src.split('<body')[0]), d) + body(d));
   n++;
 }
 console.log(`build-cidades: ${n} páginas geradas`);

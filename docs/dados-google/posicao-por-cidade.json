@@ -1,0 +1,132 @@
+{
+  "fonte": "Search Console, Desempenho, últimos 3 meses (05/06/2026 a 03/09/2026), tipo Web, propriedade sc-domain:shinecortinas.com",
+  "metodo": "consultas do export Consultas.csv que contêm o nome da cidade; posição média ponderada por impressões",
+  "coletadoEm": "2026-09-06",
+  "cidades": [
+    {
+      "cidade": "Volta Redonda",
+      "consultas": [
+        {
+          "consulta": "cortinas volta redonda",
+          "cliques": 0,
+          "impressoes": 2,
+          "posicaoMedia": 1.5
+        },
+        {
+          "consulta": "shine rio volta redonda",
+          "cliques": 0,
+          "impressoes": 1,
+          "posicaoMedia": 10.0
+        }
+      ],
+      "cliques": 0,
+      "impressoes": 3,
+      "posicaoMedia": 4.33
+    },
+    {
+      "cidade": "Barra Mansa",
+      "consultas": [
+        {
+          "consulta": "casa shine barra mansa",
+          "cliques": 0,
+          "impressoes": 19,
+          "posicaoMedia": 10.11
+        }
+      ],
+      "cliques": 0,
+      "impressoes": 19,
+      "posicaoMedia": 10.11
+    },
+    {
+      "cidade": "Resende",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Porto Real",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Barra do Piraí",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Piraí",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Itatiaia",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Penedo",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Pinheiral",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Valença",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Vassouras",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Miguel Pereira",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Paulo de Frontin",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Maromba",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    },
+    {
+      "cidade": "Visconde de Mauá",
+      "consultas": [],
+      "cliques": 0,
+      "impressoes": 0,
+      "posicaoMedia": null
+    }
+  ]
+}

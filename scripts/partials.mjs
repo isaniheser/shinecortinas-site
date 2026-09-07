@@ -101,7 +101,7 @@ export function proof(cityName) {
       <p class="sl-sub">${sub}</p>
       <div class="sl-stats" style="margin-top:28px">
         <div class="sl-stat"><span class="sl-stat__n">17</span><div><h3>Anos medindo, confeccionando e instalando</h3><p>Desde 2009 no Sul Fluminense. Cortina sob medida é o que a gente faz, não uma linha a mais no catálogo.</p></div></div>
-        <div class="sl-stat"><span class="sl-stat__n">5.0</span><div><h3>Nota máxima no Google, com 292 avaliações</h3><p>Cliente satisfeito volta para o segundo ambiente e indica para o vizinho.</p></div></div>
+        <div class="sl-stat"><span class="sl-stat__n">4,9</span><div><h3>Nota 4,9 no Google, com 294 avaliações</h3><p>Cliente satisfeito volta para o segundo ambiente e indica para o vizinho.</p></div></div>
         <div class="sl-stat"><span class="sl-stat__n">9 mil</span><div><h3>Ambientes entregues na região</h3><p>Salas, quartos, escritórios e projetos corporativos, todos medidos e instalados pela nossa equipe.</p></div></div>
         <div class="sl-stat"><span class="sl-stat__n">100%</span><div><h3>Equipe própria, do consultor ao instalador</h3><p>Medição, confecção e instalação são feitas pela nossa gente. Não terceirizamos a sua casa.</p></div></div>
       </div>
@@ -153,7 +153,7 @@ export function footer() {
         <p><a href="https://www.instagram.com/shinecortinas/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://www.facebook.com/shinecortinas" rel="me noopener" target="_blank">Facebook</a> · <a href="https://www.youtube.com/@shinecortinas" rel="me noopener" target="_blank">YouTube</a><br><a href="https://www.tiktok.com/@shinecortinas" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.pinterest.com/shinecortinas" rel="me noopener" target="_blank">Pinterest</a></p>
       </div>
     </div>
-    <div class="sl-footer__bottom"><span>© 2026 ShineCortinas</span><span>Google 5.0 ★★★★★ · 292 avaliações</span></div>
+    <div class="sl-footer__bottom"><span>© 2026 ShineCortinas</span><span>Google 4,9 ★★★★★ · 294 avaliações</span></div>
   </div></footer>
 `;
 }

@@ -269,7 +269,7 @@ export const PAGINAS = [
     ],
     faq: [
       ['O que é a ShineCortinas e o que ela oferece?', 'A ShineCortinas é uma empresa especializada em cortinas e persianas sob medida, sediada em Volta Redonda (RJ), atendendo todo o Sul Fluminense há 17 anos, com consultoria gratuita em domicílio, medição a laser, confecção e instalação por equipe própria.'],
-      ['Há quanto tempo a ShineCortinas existe?', 'Desde 2009, com 17 anos de atuação no Sul Fluminense, mais de 9.000 projetos entregues e avaliação 5.0 no Google.'],
+      ['Há quanto tempo a ShineCortinas existe?', 'Desde 2009, com 17 anos de atuação no Sul Fluminense, mais de 9.000 projetos entregues e nota 4,9 no Google, com 294 avaliações.'],
       ['A ShineCortinas tem loja física?', 'Sim, a sede fica em Volta Redonda (RJ). O modelo principal, no entanto, é a consultoria em domicílio: o consultor vai até a sua casa com o mostruário completo.'],
       ['Vocês atendem pousadas e ambientes comerciais?', 'Sim. A ShineCortinas atende residências, pousadas, chalés, hotéis e ambientes comerciais, com experiência especial em projetos para pousadas na região serrana do Sul Fluminense.'],
     ],

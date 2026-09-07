@@ -30,8 +30,8 @@ registrada — depende do acesso (ver "Depende do Isani").
 |---|---|---|---|---|
 | 1 | 13 posts do blog com corpo quase idêntico (mesmo boilerplate, "alto padrão" 2–4x, H2 "o custo do barato") | `/blog/*` | Duplicação em massa indexada; risco para a premissa 1 | Entrevistas com o Isani (fila abaixo) |
 | 2 | 8 páginas de vídeo com ~30 palavras próprias, indexadas | `/videos/*.html` | Conteúdo fino no sitemap | Isani: o que foi medido/usado em cada projeto |
-| 3 | Sem `openingHours` no LocalBusiness | todo JSON-LD | Dado mais consultado por Google e IAs sobre negócio local | Isani: horário |
-| 4 | `aggregateRating` 5.0/292 do Google marcado como próprio | `index.html` e 15 cidades | Google pode ignorar ou punir avaliação autorreferente | Decisão (recomendo remover o aggregateRating e manter só as 5 Review) |
+| 3 | ~~Sem `openingHours` no LocalBusiness~~ **Resolvido 06/09:** seg–sex 08:00–17:00 (do Perfil da Empresa) em 42 nós LocalBusiness | todo JSON-LD | — | — |
+| 4 | ~~`aggregateRating` 5.0/292~~ **Resolvido 06/09:** removido de 17 páginas; texto visível agora diz 4,9 com 294 (nota pública real) | `index.html` e 15 cidades | — | — |
 | 5 | `Person` do Isani só como "CEO" | schema em todo o site | E-E-A-T e citação por IAs pedem credencial de designer de interiores | Isani: formação, anos, registro, LinkedIn |
 | 6 | Heros de 5 páginas usam foto 637×791 ampliada 2,3×; nenhuma página tem `srcset`; home 839 KB e cidade 803 KB no celular | `cortinas`, `cortina-wave`, `contato`, `metodo`, `blackout-e-forros` | Premissa 4 (leve) e LCP | Fotos novas em alta (ver `fotos-necessarias.md`); srcset é trabalho meu |
 | 7 | 15 cidades com a mesma foto de hero e as mesmas 9 imagens | `/cidades/*` | Diferenciação real por cidade | Fotos de projeto por cidade (Porto Real primeiro) |
@@ -65,15 +65,16 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 ## Depende do Isani (pedido, sem resposta)
 
 - Acesso ao Google Search Console e ao Bing Webmaster Tools. O Isani autorizou o acesso (06/set), mas este ambiente não alcança google.com (bloqueio de rede, não de permissão). **Caminho combinado:** não há como usar o Chrome do Isani a partir deste ambiente e o acesso direto ao Google é bloqueado aqui; ele exporta os relatórios (Search Console → Desempenho → Exportar) e as avaliações do Perfil da Empresa para uma pasta no Google Drive, que está conectado a esta sessão.
-- Os 15 depoimentos das páginas de cidade são clientes reais e atribuíveis?
+- ~~Os 15 depoimentos das páginas de cidade são clientes reais?~~ **Verificado (06/set): não eram** — nenhum dos 15 textos/autores existia entre as 297 avaliações do Google. **Substituídos por 15 avaliações reais e públicas do Google** (uma por cidade, sem repetir as 5 da home; Piraí e Valença com avaliações que citam a cidade; as demais identificadas como "cliente ShineCortinas", sem afirmar cidade). Cada uma entra no schema como `Review` (build-cidades → `withReview`).
 - ~~Credenciais~~ **Respondido:** designer de interiores por formação prática (empírica); no schema fica "fundador e especialista em cortinas sob medida". Falta só o LinkedIn, se houver.
 - ~~Foto do Isani trabalhando~~ **Recebida e publicada** (`isani-consultoria.avif`: hero de /metodo/ e /sobre/, imagem do Person). Faltam as outras fotos da equipe e, se existir, o original em resolução maior (a recebida tem 1108 px de largura).
 - Porto Real: bairros, condomínios, imóvel predominante, um projeto com foto.
 - Observações do GPT sobre o trabalho anterior.
 - ~~Garantia~~ **Respondido e aplicado:** 1 ano (não motorizado), até 5 anos (motorizado).
 - ~~"9.000 ambientes" e "desde 2009"~~ **Confirmados pelo Isani (06/set/2026):** mais de 9.000 ambientes transformados; empresa desde 2009.
-- Horário de atendimento.
-- Decisão sobre o `aggregateRating` (item 4).
+- ~~Horário de atendimento~~ **Lido do Perfil da Empresa (06/set):** seg–sex 08:00–17:00.
+- ~~Decisão sobre o `aggregateRating`~~ **Removido (06/set).**
+- ~~Acesso ao Search Console~~ **Coleta feita no Mac do Isani (06/set):** `docs/dados-google/`. Linha de base: só 2 consultas com nome de cidade em 3 meses (Volta Redonda pos. 4,3 com 3 impressões; Barra Mansa pos. 10,1 com 19). Sitemap reenviado; 7 URLs com indexação solicitada; 54 indexadas / 148 não.
 - Descrição de cada tecido do forro translúcido (gabardine, tergal, tergal verão,
   cetim, gorgurinho) para o artigo.
 
