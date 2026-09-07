@@ -81,6 +81,8 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     compõem esse grupo (informados pelo Isani): **gabardine** (de algodão e de
     poliéster), **tergal**, **tergal verão**, **cetim** e **gorgurinho**. Não atribuir
     característica a cada um sem confirmar com ele — a lista é o que está validado.
+  - **Números confirmados pelo Isani (set/2026):** empresa desde 2009; "mais de 9.000
+    ambientes transformados". Podem ser usados no texto e no schema.
   - **Garantia (informada pelo Isani, set/2026):** 1 ano para cortinas e persianas
     **não motorizadas**; até **5 anos** nos projetos **motorizados**. Não existe "8 anos".
   - **Isani:** designer de interiores por formação prática (empírica), fundador e

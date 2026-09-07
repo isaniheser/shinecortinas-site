@@ -258,6 +258,7 @@ export const PAGINAS = [
     blocos: [
       { t: 'proof' },
       { t: 'ceo' },
+      { t: 'figure', kicker: 'Equipe própria', h2: 'Quem mede, confecciona e instala', sub: 'Consultores e instaladores da própria Shine: do primeiro contato ao acabamento, sem terceirização.', src: '/equipe-shine.avif', w: 1374, h: 1145, alt: 'Equipe da ShineCortinas reunida, de uniforme, com Isani Oliveira ao centro', cap: 'A equipe ShineCortinas, com Isani Oliveira ao centro.' },
       { t: 'prose', h2: 'Onde atendemos', p: [
         'São 15 cidades do Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira. Cada uma tem <a href="/cidades-atendidas.html">a sua própria página</a>, com as perguntas e os projetos de lá.',
         'Além das residências, a Shine atende pousadas, chalés, hotéis e ambientes comerciais, com experiência especial em projetos para pousadas da região serrana.',

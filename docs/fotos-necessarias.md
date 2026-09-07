@@ -17,6 +17,7 @@ existir, o simulador mostra a foto de referência com a legenda
 | Motorização (cortina) | `automacao.avif` | sala, cortina + controle |
 | Motorização (persiana) | `persiana-motorizada.avif` | sala, rolô screen + celular |
 | Consultoria / instalação | `isani-consultoria.avif` (1108×1484) | Isani conferindo caimento de cortina de linho, equipe instalando ao fundo. Derivadas: `-800` (4:5) e `isani-autor.avif` (320² avatar). Enviada pelo Isani em 06/set/2026. |
+| Equipe | `equipe-shine.avif` (1374×1145) | Equipe reunida de uniforme, Isani ao centro. Foto real, editada com IA pelo Isani (o texto pequeno das camisas ficou ilegível; se houver o original, trocar). Derivada `-800`. Publicada em /sobre/. |
 
 ## O que falta fotografar (prioridade = o que o cliente mais escolhe)
 

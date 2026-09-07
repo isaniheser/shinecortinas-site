@@ -64,17 +64,22 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 
 ## Depende do Isani (pedido, sem resposta)
 
-- Acesso ao Google Search Console e ao Bing Webmaster Tools. **Caminho combinado:** não há como usar o Chrome do Isani a partir deste ambiente e o acesso direto ao Google é bloqueado aqui; ele exporta os relatórios (Search Console → Desempenho → Exportar) e as avaliações do Perfil da Empresa para uma pasta no Google Drive, que está conectado a esta sessão.
+- Acesso ao Google Search Console e ao Bing Webmaster Tools. O Isani autorizou o acesso (06/set), mas este ambiente não alcança google.com (bloqueio de rede, não de permissão). **Caminho combinado:** não há como usar o Chrome do Isani a partir deste ambiente e o acesso direto ao Google é bloqueado aqui; ele exporta os relatórios (Search Console → Desempenho → Exportar) e as avaliações do Perfil da Empresa para uma pasta no Google Drive, que está conectado a esta sessão.
 - Os 15 depoimentos das páginas de cidade são clientes reais e atribuíveis?
 - ~~Credenciais~~ **Respondido:** designer de interiores por formação prática (empírica); no schema fica "fundador e especialista em cortinas sob medida". Falta só o LinkedIn, se houver.
 - ~~Foto do Isani trabalhando~~ **Recebida e publicada** (`isani-consultoria.avif`: hero de /metodo/ e /sobre/, imagem do Person). Faltam as outras fotos da equipe e, se existir, o original em resolução maior (a recebida tem 1108 px de largura).
 - Porto Real: bairros, condomínios, imóvel predominante, um projeto com foto.
 - Observações do GPT sobre o trabalho anterior.
-- ~~Garantia~~ **Respondido e aplicado:** 1 ano (não motorizado), até 5 anos (motorizado). Falta confirmar "9.000 ambientes".
+- ~~Garantia~~ **Respondido e aplicado:** 1 ano (não motorizado), até 5 anos (motorizado).
+- ~~"9.000 ambientes" e "desde 2009"~~ **Confirmados pelo Isani (06/set/2026):** mais de 9.000 ambientes transformados; empresa desde 2009.
 - Horário de atendimento.
 - Decisão sobre o `aggregateRating` (item 4).
 - Descrição de cada tecido do forro translúcido (gabardine, tergal, tergal verão,
   cetim, gorgurinho) para o artigo.
+
+## Observação sobre o índice do Google (06/set/2026)
+
+Busca externa ainda mostra títulos e URLs do site antigo (`/sobre-nós`, `/cortinas-volta-redonda`, `/post/7-tipos…`, title com "Premium" no portfólio). Todas essas URLs têm 301 em `_redirects` e os títulos novos estão no ar; é o índice que ainda não recrawlou. Submeter o sitemap e pedir reindexação assim que houver acesso ao Search Console.
 
 ## Método que ficou combinado
 
