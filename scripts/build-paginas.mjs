@@ -38,6 +38,16 @@ const bloco = {
       ${b.list ? `<ul>${b.list.map((x) => `<li>${x}</li>`).join('')}</ul>` : ''}
     </div></div></section>`,
 
+  figure: (b) => `
+    <section class="sl-section sl-reveal"><div class="sl-wrap">
+      <div class="sl-section__head">
+        <p class="sl-kicker sl-kicker--center">${b.kicker || 'Equipe'}</p>
+        <h2 class="sl-h2">${b.h2}</h2>
+        ${b.sub ? `<p class="sl-sub">${b.sub}</p>` : ''}
+      </div>
+      <figure class="sl-figure"><div class="sl-media"><img src="${b.src}" alt="${esc(b.alt)}" width="${b.w}" height="${b.h}" loading="lazy" decoding="async"></div>${b.cap ? `<figcaption>${b.cap}</figcaption>` : ''}</figure>
+    </div></section>`,
+
   cards: (b) => `
     <section class="sl-section sl-reveal"><div class="sl-wrap">
       <div class="sl-center" style="margin-bottom:30px">
