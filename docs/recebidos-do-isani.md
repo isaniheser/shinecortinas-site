@@ -9,7 +9,14 @@ arquivo é a memória. Item sem "Feito" é pendência — não pedir de novo o q
 | Data | O que é | Arquivo (Downloads / repo) | Status |
 |---|---|---|---|
 | 06/09/2026 | Isani em consultoria, conferindo caimento de cortina de linho, equipe ao fundo | `isani-consultoria.avif` (+`-800`, `isani-autor.avif`) | **Feito:** hero de /sobre/ e /metodo/, foto do Person no schema (PR #130) |
-| 06/09/2026 | Equipe de uniforme, Isani ao centro (`Time..png`, 1374×1145; imagem gerada/editada por IA) | `equipe-shine.avif` (+`-800`) | **Feito:** /sobre/, seção da equipe (PR #131). **Trocar por foto real quando houver.** |
+| 06/09/2026 | Equipe de uniforme, Isani ao centro (`Time..png`, 1374×1145). Segundo o PR #131, é foto real que o Isani editou com IA; o texto das camisas ficou ilegível | `equipe-shine.avif` (+`-800`) | **Feito:** /sobre/, seção da equipe (PR #131). Se existir o original sem edição, trocar. |
+
+> Onde estão as conversas anteriores: o site foi feito em sessões na nuvem
+> ("Pesquisa de cortinas em cidades do Rio", "Análise do site e identidade visual",
+> "Audit website…", "Design/Landing page…"). Elas **não são legíveis** de outra
+> sessão. O que elas decidiram está nos commits da `main`, em `CLAUDE.md`, em
+> `docs/pendencias.md`, `docs/fotos-necessarias.md`, `docs/fila-de-conteudo.md`
+> e `docs/landing-pages-trafego-pago.md`. Este arquivo consolida o que veio do Isani.
 | 06/09/2026 | Retrato do Isani, fundo da loja (`Isani_Shine.png`, 1145×1374, IA) | ~/Downloads | **Pendente:** decidir se substitui `ceo-shine.avif` em /sobre/ |
 | 06/09/2026 | Retrato da Cristiane, fundo da loja (`Cristiane_Shine.png`, IA) | ~/Downloads | **Pendente:** seção de equipe com nome/cargo em /sobre/ — falta o cargo |
 | 06/09/2026 | Retrato da Thais, fundo da loja (`Thais_Shine.png`, IA) | ~/Downloads | **Pendente:** idem — falta o cargo |
