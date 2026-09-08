@@ -5,6 +5,13 @@ sediada em Volta Redonda (RJ), atendendo todo o **Sul Fluminense**.
 CEO: Isani Oliveira. Site estático hospedado no **Cloudflare Pages** (deploy
 automático ao dar merge na branch `main`).
 
+## ANTES DE TUDO: `docs/recebidos-do-isani.md`
+
+Cada conversa começa do zero. O que o Isani já enviou (fotos, fatos, decisões) e o que foi
+feito com cada item está em `docs/recebidos-do-isani.md`. **Ler antes de pedir qualquer
+coisa a ele** e **registrar ali, na hora, tudo que ele mandar.** Página nova só está pronta
+quando está ligada no menu ou em outra página (a `/sobre/` ficou 2 dias invisível por isso).
+
 ## ORDEM DE PRIORIDADE (decisão do Isani, set/2026) — desempate obrigatório
 
 Quando duas escolhas conflitarem, vence a de número menor. Sempre.
