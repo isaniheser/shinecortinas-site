@@ -17,10 +17,9 @@ arquivo é a memória. Item sem "Feito" é pendência — não pedir de novo o q
 > sessão. O que elas decidiram está nos commits da `main`, em `CLAUDE.md`, em
 > `docs/pendencias.md`, `docs/fotos-necessarias.md`, `docs/fila-de-conteudo.md`
 > e `docs/landing-pages-trafego-pago.md`. Este arquivo consolida o que veio do Isani.
-| 06/09/2026 | Retrato do Isani, fundo da loja (`Isani_Shine.png`, 1145×1374, IA) | ~/Downloads | **Pendente:** decidir se substitui `ceo-shine.avif` em /sobre/ |
-| 06/09/2026 | Retrato da Cristiane, fundo da loja (`Cristiane_Shine.png`, IA) | ~/Downloads | **Pendente:** seção de equipe com nome/cargo em /sobre/ — falta o cargo |
-| 06/09/2026 | Retrato da Thais, fundo da loja (`Thais_Shine.png`, IA) | ~/Downloads | **Pendente:** idem — falta o cargo |
-| 06/09/2026 | Hall de entrada com cortina wave off-white, poltronas terracota (`1ZWYK.jpg`, 1216×1632) | ~/Downloads | **Pendente:** falta projeto e cidade (regra da foto exata). Se for Porto Real, usar lá primeiro |
+| 06/09/2026 | Retrato do Isani, fundo da loja (`Isani_Shine.png`) | ~/Downloads | **Decisão do Isani (07/09): não usar.** O retrato atual (`ceo-shine.avif`) fica |
+| 06/09/2026 | Retratos da Cristiane e da Thais, fundo da loja | ~/Downloads | **Decisão do Isani (07/09): deixar de fora.** Sem seção de equipe com cargos |
+| 06/09/2026 | Hall de entrada com cortina wave off-white, poltronas terracota (`1ZWYK.jpg`, 1216×1632). **Isani (07/09): Volta Redonda, pé-direito duplo, tecido 170 g/m²** | `hall-wave-volta-redonda.avif` (+`-800`) | **Feito:** seção "Imagine" de /cidades/volta-redonda/ com copy factual. Candidata também para /cortina-wave/ e portfólio |
 | 04/09/2026 | Plantas de gesso "Tathielly Duque" com cortineiro (3 prints de celular) | ~/Downloads `WhatsApp Image 2026-09-04…` | Documento de projeto, não é foto de site. Sem ação |
 | 06/09/2026 | Segunda versão da equipe (`People_posing_in_office_uniforms…jpeg`, IA, 896×1200) | ~/Downloads | Não usada (a outra versão foi publicada) |
 
