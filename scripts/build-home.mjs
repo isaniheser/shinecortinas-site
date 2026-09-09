@@ -258,10 +258,10 @@ ${footer()}${waFloat()}${bar('tabs')}
       var f=document.getElementById('sim'); if(!f) return;
       var img=f.querySelector('[data-sim-img]'),ref=f.querySelector('[data-sim-ref]'),tt=f.querySelector('[data-sim-title]'),tx=f.querySelector('[data-sim-text]'),mo=f.querySelector('[data-sim-motor]'),ln=f.querySelector('[data-sim-link]');
       var rooms={sala:'sala',quarto:'quarto',escritorio:'home office',cozinha:'cozinha'};
-      function upd(){
+      function upd(ev){
         var c=f.comodo.value,o=f.objetivo.value,m=f.motor.checked,r=SIM[o][c];
         tt.textContent=r[0]; tx.textContent=r[1]; img.src=r[2]; img.alt=r[0]; ln.href=r[3]; mo.hidden=!m; ref.hidden=!!r[4];
-        document.body.setAttribute('data-wa-context','o simulador: '+rooms[c]+', '+f.objetivo.value+(m?', com motorização':'')+' → '+r[0]);
+        if(ev) document.body.setAttribute('data-wa-context','o simulador: '+rooms[c]+', '+f.objetivo.value+(m?', com motorização':'')+' → '+r[0]);
       }
       f.addEventListener('change',upd); upd();
     })();

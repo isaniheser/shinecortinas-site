@@ -7,6 +7,8 @@
 
 # --- regras estáticas (sem curinga): 205 ---
 /CLAUDE.md / 301
+/.node-version / 301
+/.gitignore / 301
 /README.md / 301
 /build.sh / 301
 /cidades/cidades.json / 301

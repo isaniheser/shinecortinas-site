@@ -89,11 +89,14 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 - Arquivos internos (`CLAUDE.md`, `docs/`, `scripts/`, JSON de build) retirados do deploy.
 - `/cidades-atendidas.html` e os 8 vídeos viraram pastas (`/…/`): canonical = sitemap = URL servida.
 - 23 destinos de link sem barra final corrigidos (um redirect a menos por clique).
-- **Ainda aberto, do relatório:** fontes ausentes em 34 páginas; contraste do dourado (2,19:1);
-  `author` = Organization em 14 artigos; `srcset`; `lastmod` real no sitemap; mensagem do
-  WhatsApp com cidade adivinhada por IP; promessa "instalação no mesmo dia da consultoria"
-  em Porto Real (confirmar com o Isani); bloco gerenciado do Cloudflare no `robots.txt`
-  bloqueando GPTBot/ClaudeBot/Google-Extended (decisão do Isani, no painel do Cloudflare).
+- **Lote 2 (08/09, à noite):** fontes Playfair/Montserrat nas 34 páginas que não carregavam;
+  dourado de texto `--gold-ink #7F6636` (5,2:1) em kickers, números, legendas e "+" do FAQ;
+  `author` = Person Isani (`#isani`) nos 14 artigos; WhatsApp sem "Sou de X" quando a cidade
+  veio do IP e simulador só entra no contexto depois de usado; `lastmod` real (dateModified) no
+  sitemap; `llms.txt` com links Markdown e "fundador"; robots liberados no painel do Cloudflare
+  (decisão do Isani, feito com autorização).
+- **Ainda aberto, do relatório:** `srcset` (item 6 acima); promessa "instalação no mesmo dia da
+  consultoria" em Porto Real (confirmar com o Isani); artigos repetidos; fotos por cidade.
 
 ## Observação sobre o índice do Google (06/set/2026)
 
