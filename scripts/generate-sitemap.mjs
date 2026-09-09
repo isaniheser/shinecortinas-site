@@ -138,3 +138,17 @@ fs.writeFileSync(path.join(BUILD_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
 if (!fs.existsSync(path.join(BUILD_DIR, 'robots.txt'))) throw new Error('robots.txt ausente na raiz');
 
 console.log(`Generated sitemap.xml with ${sortedUrls.length} canonical URLs.`);
+
+// Arquivos internos do projeto não vão ao ar. Só roda no build do Cloudflare (CF_PAGES / CI),
+// nunca no Mac. Está aqui, e não só no build.sh, porque este script é o que comprovadamente
+// roda no deploy (o lastmod do sitemap muda a cada publicação). Auditoria de 08/09/2026.
+function limpaInternos() {
+  const env = process.env;
+  if (!(env.CF_PAGES === '1' || env.CF_PAGES_COMMIT_SHA || env.CI === 'true')) return;
+  for (const rel of ['docs', 'scripts', 'CLAUDE.md', 'README.md', 'build.sh', '.gitignore', '.node-version', '.claude',
+                     'cidades/cidades.json', 'blog/posts.json', 'videos/videos.json']) {
+    fs.rmSync(path.join(BUILD_DIR, rel), { recursive: true, force: true });
+  }
+  console.log('Arquivos internos removidos do deploy.');
+}
+limpaInternos();
