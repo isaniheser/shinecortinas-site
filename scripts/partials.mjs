@@ -3,7 +3,7 @@
 
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 export const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
-export const CSS_V = '7';
+export const CSS_V = '8';
 export const JS_V = '2';
 
 export const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;');
@@ -38,6 +38,8 @@ export function cleanHead(head, opts = {}) {
   head = head.replace(/href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]+"/, `href="${FONTS}"`);
   head = head.replace(/<link rel="preload" as="image" href="hero-sala.avif"/, '<link rel="preload" as="image" href="/hero-sala.avif"');
   head = head.replace('<link rel="icon" type="image/png"', `<link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">\n  <link rel="icon" type="image/png"`);
+  // Fontes: 34 páginas ficaram sem Playfair/Montserrat por herdarem um head sem o link (auditoria 08/09/2026).
+  if (!/fonts\.googleapis\.com/.test(head)) head = head.replace('<link rel="stylesheet" href="/assets/shine-leve.css', `<link rel="preconnect" href="https://fonts.googleapis.com">\n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n  <link href="${FONTS}" rel="stylesheet">\n  <link rel="stylesheet" href="/assets/shine-leve.css`);
   // Canonical de página-pasta tem que terminar em '/', que é a URL que o Cloudflare serve e o sitemap declara.
   // Normaliza canonical, og:url e toda ocorrência da mesma URL no JSON-LD (breadcrumb, mainEntityOfPage).
   head = normalizaCanonical(head);

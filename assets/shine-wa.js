@@ -32,7 +32,7 @@
   }
 
   function message(kind) {
-    var c = cityName(); var where = c ? ' Sou de ' + c + '.' : '';
+    var c = cityName(); var where = (c && state.source !== 'ip') ? ' Atendimento em ' + c + '.' : ''; // cidade por IP é só palpite: não vira afirmação
     var ctx = context();
     if (kind === 'agendar') return 'Olá, vim do site da Shine.' + where + ' Quero agendar a consultoria gratuita em casa.';
     if (kind === 'estimativa') return 'Olá, vim do site da Shine.' + where + ' Quero uma estimativa para o meu ambiente (vi: ' + ctx + ').';

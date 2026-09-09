@@ -97,10 +97,12 @@ function canonicalFromHtml(htmlContent) {
   }
 }
 
-function createSitemapXml(urls) {
-  const lastmod = new Date().toISOString().slice(0, 10);
+// lastmod: a data de edição real da página (dateModified do JSON-LD), não a data do build.
+// Todas iguais faziam qualquer publicação parecer edição do site inteiro (auditoria 08/09/2026).
+function createSitemapXml(urls, lastmods = new Map()) {
+  const hoje = new Date().toISOString().slice(0, 10);
   const body = urls
-    .map((url) => `  <url>\n    <loc>${url}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`)
+    .map((url) => `  <url>\n    <loc>${url}</loc>\n    <lastmod>${lastmods.get(url) || hoje}</lastmod>\n  </url>`)
     .join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
@@ -110,6 +112,7 @@ const redirects = loadRedirects();
 const htmlFiles = walk(BUILD_DIR).filter((file) => file.endsWith('.html'));
 
 const urls = new Set();
+const lastmods = new Map();
 
 for (const file of htmlFiles) {
   const urlPath = toPathFromFile(file);
@@ -127,10 +130,12 @@ for (const file of htmlFiles) {
 
   if (finalUrl.includes('/post/') || finalUrl.includes('/produtos-cidade/') || finalUrl.includes('/portfolio-collections/')) continue;
   urls.add(finalUrl);
+  const datas = [...htmlContent.matchAll(/"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})/g)].map((m) => m[1]).sort();
+  if (datas.length) lastmods.set(finalUrl, datas[datas.length - 1]);
 }
 
 const sortedUrls = [...urls].sort((a, b) => a.localeCompare(b));
-const sitemapXml = createSitemapXml(sortedUrls);
+const sitemapXml = createSitemapXml(sortedUrls, lastmods);
 
 fs.writeFileSync(path.join(BUILD_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
 // robots.txt NÃO é gerado aqui: é um arquivo-fonte versionado (libera os buscadores de IA).
