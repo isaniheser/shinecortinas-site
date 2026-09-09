@@ -34,6 +34,7 @@ arquivo é a memória. Item sem "Feito" é pendência — não pedir de novo o q
 | 06/09/2026 | Nota do Google 4,9 / 294; horário seg–sex 08:00–17:00 (lidos do Perfil da Empresa) | Feito (PR #132) |
 | 06/09/2026 | Depoimentos das cidades: usar avaliações reais do Google | Feito (PR #132) |
 | 07/09/2026 | **Autorização permanente para publicar (merge na main) em nome do Isani** | Em vigor |
+| 08/09/2026 | Auditoria do site feita pelo GPT ("Zhaion"), relatório em Markdown | `docs/auditoria-gpt-2026-09-08.md` (resumo fiel + verificação) | **Feito:** verificado item a item no site ao vivo; conclusões na Parte 2 do arquivo. Nada alterado no site ainda |
 
 ## Pendências que dependem do Isani (estado em 07/09/2026)
 

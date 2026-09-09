@@ -63,7 +63,7 @@ Casos reais executados pela ShineCortinas:
 - Trilhos e acionamentos: https://www.shinecortinas.com/trilhos-e-acionamentos
 - Método de trabalho: https://www.shinecortinas.com/metodo
 - Portfólio de projetos: https://www.shinecortinas.com/portfolio
-- Cidades atendidas: https://www.shinecortinas.com/cidades-atendidas.html
+- Cidades atendidas: https://www.shinecortinas.com/cidades-atendidas/
 - Contato por WhatsApp: https://wa.me/5524993298763
 
 ## Páginas por cidade (cada uma com FAQ e depoimento locais)

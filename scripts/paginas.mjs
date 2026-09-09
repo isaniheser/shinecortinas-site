@@ -27,7 +27,7 @@ export const PAGINAS = [
       ] },
       { t: 'prose', h2: 'O forro decide o resultado', p: [
         'O forro é a segunda camada, acoplada atrás do tecido decorativo. Ele existe em dois grupos: o <strong>forro translúcido</strong>, que dá privacidade, protege o tecido de frente do sol e quebra parte da claridade; e o <strong>forro blackout</strong>, em duas versões — <strong>70%</strong>, o semi blackout, que deixa o ambiente em penumbra, e <strong>100%</strong>, que entrega escuro de verdade.',
-        'Se o objetivo é quarto realmente escuro, a cortina com forro blackout 100% resolve. Entenda a diferença no artigo <a href="/blog/tipos-de-forro-para-cortina">tipos de forro para cortina</a>.',
+        'Se o objetivo é quarto realmente escuro, a cortina com forro blackout 100% resolve. Entenda a diferença no artigo <a href="/blog/tipos-de-forro-para-cortina/">tipos de forro para cortina</a>.',
       ] },
       { t: 'compare' },
       { t: 'prose', h2: 'Cortina ou persiana?', p: [
@@ -44,7 +44,7 @@ export const PAGINAS = [
       ['Quanto tempo leva para instalar?', 'Na maioria dos projetos, a instalação é concluída no mesmo dia da consultoria. A equipe chega, trabalha com limpeza e sai deixando o ambiente pronto, sem entulho.'],
     ],
     links: [['/cortina-wave/', 'Cortina wave'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Cortina motorizada'], ['/persianas/', 'Persianas técnicas'],
-            ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/portfolio/', 'Projetos reais'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas.html', 'Cidades atendidas']],
+            ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/portfolio/', 'Projetos reais'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 
   // --------------------------------------------------------------- PERSIANAS
@@ -80,7 +80,7 @@ export const PAGINAS = [
       ['Vocês instalam persiana motorizada em apartamento?', 'Sim. O sistema não exige obra: o motor é fixado com acabamento embutido no sanca ou no trilho, sem danificar a estrutura do apartamento.'],
     ],
     links: [['/cortinas/', 'Cortinas sob medida'], ['/cortina-motorizada/', 'Persiana motorizada'], ['/blackout-e-forros/', 'Blackout e forros'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'],
-            ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas.html', 'Cidades atendidas']],
+            ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 
   // ------------------------------------------------------- BLACKOUT E FORROS
@@ -119,8 +119,8 @@ export const PAGINAS = [
       ['Quais tecidos servem como forro translúcido?', 'Gabardine (de algodão ou de poliéster), tergal, tergal verão, cetim e gorgurinho. Cada um responde de um jeito à luz e ao caimento, e a escolha é feita na consultoria, junto com o tecido decorativo da frente.'],
       ['Persiana também escurece por completo?', 'Sim. As persianas têm material com blackout 100%.'],
     ],
-    links: [['/blog/tipos-de-forro-para-cortina', 'Artigo: tipos de forro'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/cortina-wave/', 'Cortina wave'],
-            ['/blog/o-que-e-blackout', 'O que é blackout'], ['/portfolio/', 'Projetos reais'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas.html', 'Cidades atendidas']],
+    links: [['/blog/tipos-de-forro-para-cortina/', 'Artigo: tipos de forro'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/cortina-wave/', 'Cortina wave'],
+            ['/blog/o-que-e-blackout/', 'O que é blackout'], ['/portfolio/', 'Projetos reais'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 
   // ------------------------------------------------------------ CORTINA WAVE
@@ -151,7 +151,7 @@ export const PAGINAS = [
       ['Qual tecido combina com cortina wave?', 'Linho, voil e veludo são os mais pedidos. A escolha depende da luz do ambiente e do efeito que você procura, e é feita na consultoria com o mostruário na sua casa.'],
     ],
     links: [['/cortinas/', 'Cortinas sob medida'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Cortina motorizada'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'],
-            ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/persianas/', 'Persianas'], ['/cidades-atendidas.html', 'Cidades atendidas']],
+            ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/persianas/', 'Persianas'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 
   // ------------------------------------------------------- CORTINA MOTORIZADA
@@ -182,7 +182,7 @@ export const PAGINAS = [
       ['Qual a garantia da motorização?', 'A garantia é de 1 ano nas cortinas e persianas não motorizadas e chega a até 5 anos nos projetos motorizados.'],
     ],
     links: [['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/cortina-wave/', 'Cortina wave'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'],
-            ['/blog/por-que-escolher-cortina-motorizada', 'Artigo sobre motorização'], ['/videos/', 'Vídeos'], ['/portfolio/', 'Projetos reais'], ['/cidades-atendidas.html', 'Cidades atendidas']],
+            ['/blog/por-que-escolher-cortina-motorizada/', 'Artigo sobre motorização'], ['/videos/', 'Vídeos'], ['/portfolio/', 'Projetos reais'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 
   // -------------------------------------------------- TRILHOS E ACIONAMENTOS
@@ -212,7 +212,7 @@ export const PAGINAS = [
       ['O trilho aparece depois de instalado?', 'Depende do projeto. Em muitos casos o trilho fica embutido no sanca ou coberto pelo próprio cabeçote da cortina. Na consultoria o consultor avalia o acabamento do teto antes de indicar.'],
     ],
     links: [['/cortina-motorizada/', 'Cortina motorizada'], ['/cortina-wave/', 'Cortina wave'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'],
-            ['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos reais'], ['/faq/', 'Perguntas frequentes'], ['/cidades-atendidas.html', 'Cidades atendidas']],
+            ['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos reais'], ['/faq/', 'Perguntas frequentes'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 
   // ------------------------------------------------------------------ MÉTODO
@@ -242,7 +242,7 @@ export const PAGINAS = [
       ['Como posso parcelar?', 'Em até 12x no cartão de crédito. As condições são apresentadas durante a consultoria em domicílio, junto com o projeto.'],
     ],
     links: [['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'],
-            ['/sobre/', 'Sobre a Shine'], ['/faq/', 'Perguntas frequentes'], ['/contato/', 'Contato'], ['/cidades-atendidas.html', 'Cidades atendidas']],
+            ['/sobre/', 'Sobre a Shine'], ['/faq/', 'Perguntas frequentes'], ['/contato/', 'Contato'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 
   // ------------------------------------------------------------------- SOBRE
@@ -260,7 +260,7 @@ export const PAGINAS = [
       { t: 'ceo' },
       { t: 'figure', kicker: 'Equipe própria', h2: 'Quem mede, confecciona e instala', sub: 'Consultores e instaladores da própria Shine: do primeiro contato ao acabamento, sem terceirização.', src: '/equipe-shine.avif', w: 1374, h: 1145, alt: 'Equipe da ShineCortinas reunida, de uniforme, com Isani Oliveira ao centro', cap: 'A equipe ShineCortinas, com Isani Oliveira ao centro.' },
       { t: 'prose', h2: 'Onde atendemos', p: [
-        'São 15 cidades do Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira. Cada uma tem <a href="/cidades-atendidas.html">a sua própria página</a>, com as perguntas e os projetos de lá.',
+        'São 15 cidades do Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira. Cada uma tem <a href="/cidades-atendidas/">a sua própria página</a>, com as perguntas e os projetos de lá.',
         'Além das residências, a Shine atende pousadas, chalés, hotéis e ambientes comerciais, com experiência especial em projetos para pousadas da região serrana.',
       ] },
       { t: 'prose', h2: 'Quem confia no padrão Shine', p: [
@@ -273,7 +273,7 @@ export const PAGINAS = [
       ['A ShineCortinas tem loja física?', 'Sim, a sede fica em Volta Redonda (RJ). O modelo principal, no entanto, é a consultoria em domicílio: o consultor vai até a sua casa com o mostruário completo.'],
       ['Vocês atendem pousadas e ambientes comerciais?', 'Sim. A ShineCortinas atende residências, pousadas, chalés, hotéis e ambientes comerciais, com experiência especial em projetos para pousadas na região serrana do Sul Fluminense.'],
     ],
-    links: [['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/cidades-atendidas.html', 'Cidades atendidas'],
+    links: [['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/cidades-atendidas/', 'Cidades atendidas'],
             ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/faq/', 'Perguntas frequentes'], ['/contato/', 'Contato']],
   },
 
@@ -300,7 +300,7 @@ export const PAGINAS = [
       ['Vocês atendem projetos corporativos?', 'Sim. Entre os projetos entregues estão UNIMED, Volkswagen, CSN, Banco do Brasil, Sicredi e OAB, além de pousadas e hotéis da região serrana.'],
     ],
     links: [['/videos/', 'Vídeos'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/cortina-wave/', 'Cortina wave'],
-            ['/cortina-motorizada/', 'Cortina motorizada'], ['/blackout-e-forros/', 'Blackout e forros'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas.html', 'Cidades atendidas']],
+            ['/cortina-motorizada/', 'Cortina motorizada'], ['/blackout-e-forros/', 'Blackout e forros'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 
   // ----------------------------------------------------------------- CONTATO
@@ -327,6 +327,6 @@ export const PAGINAS = [
       ['A visita tem custo?', 'Não. A consultoria em domicílio é gratuita e sem compromisso.'],
     ],
     links: [['/metodo/', 'Como funciona'], ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/portfolio/', 'Projetos reais'],
-            ['/faq/', 'Perguntas frequentes'], ['/sobre/', 'Sobre a Shine'], ['/videos/', 'Vídeos'], ['/cidades-atendidas.html', 'Cidades atendidas']],
+            ['/faq/', 'Perguntas frequentes'], ['/sobre/', 'Sobre a Shine'], ['/videos/', 'Vídeos'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 ];

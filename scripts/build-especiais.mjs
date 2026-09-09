@@ -1,8 +1,8 @@
 // Migra para o sistema visual "leve" as páginas com conteúdo próprio, preservando o que
-// já existe: /faq/ (21 perguntas), /videos/ (8 vídeos), /cidades-atendidas.html (15 cidades),
+// já existe: /faq/ (21 perguntas), /videos/ (8 vídeos), /cidades-atendidas/ (15 cidades),
 // /blog/ (índice) e os 16 posts (texto atual mantido; reescrita de copy é etapa separada).
 // Uso: node scripts/build-especiais.mjs
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync , statSync} from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { WA, CSS_V, esc, cleanHead, normalizaCanonical, header, cityChip, strip, footer, waFloat, bar, tail } from './partials.mjs';
@@ -90,7 +90,7 @@ ${cityChip(null)}${strip()}
   <main>
 ${corpo}
 ${ctaFinal()}
-${explore([['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Motorizada'], ['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos'], ['/blog/', 'Blog'], ['/cidades-atendidas.html', 'Cidades']])}
+${explore([['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Motorizada'], ['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos'], ['/blog/', 'Blog'], ['/cidades-atendidas/', 'Cidades']])}
   </main>
 ${footer()}${waFloat()}${bar('single')}${tail()}`;
   writeFileSync(file, head + body);
@@ -119,21 +119,21 @@ ${grid}
       </div>
     </div></section>
 ${ctaFinal()}
-${explore([['/portfolio/', 'Projetos reais'], ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/cortina-wave/', 'Cortina wave'], ['/cortina-motorizada/', 'Motorizada'], ['/metodo/', 'Como funciona'], ['/blog/', 'Blog'], ['/cidades-atendidas.html', 'Cidades']])}
+${explore([['/portfolio/', 'Projetos reais'], ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/cortina-wave/', 'Cortina wave'], ['/cortina-motorizada/', 'Motorizada'], ['/metodo/', 'Como funciona'], ['/blog/', 'Blog'], ['/cidades-atendidas/', 'Cidades']])}
   </main>
 ${footer()}${waFloat()}${bar('single')}${tail()}`;
   writeFileSync(file, head + body);
   return cards.length;
 }
 
-// ------------------------------------------------- /cidades-atendidas.html
+// ------------------------------------------------- /cidades-atendidas/
 function buildHub() {
-  const file = join(ROOT, 'cidades-atendidas.html');
+  const file = join(ROOT, 'cidades-atendidas', 'index.html');
   const src = readFileSync(file, 'utf8');
   const head = cleanHead(src.split('<body')[0]);
   const cards = CITIES.map(([s, n]) => `        <a class="sl-citycard" href="/cidades/${s}/"><h3>${n}</h3><span>Ver a página de ${n} →</span></a>`).join('\n');
   const body = `<body data-wa-context="a página de cidades atendidas">
-${header('/cidades-atendidas.html')}${heroInterna('Cidades atendidas',
+${header('/cidades-atendidas/')}${heroInterna('Cidades atendidas',
     'Atendemos <em>15 cidades</em> do Sul Fluminense',
     'O consultor vai até a sua casa, na sua cidade, com o mostruário completo. Cada cidade tem a sua própria página, com as perguntas e o conteúdo de lá.',
     '/hero-sala.avif', 'Cortinas sob medida no Sul Fluminense — ShineCortinas',
@@ -174,7 +174,7 @@ ${lista}
       </div>
     </div></section>
 ${ctaFinal()}
-${explore([['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-wave/', 'Cortina wave'], ['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos'], ['/videos/', 'Vídeos'], ['/cidades-atendidas.html', 'Cidades']])}
+${explore([['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-wave/', 'Cortina wave'], ['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos'], ['/videos/', 'Vídeos'], ['/cidades-atendidas/', 'Cidades']])}
   </main>
 ${footer()}${waFloat()}${bar('single')}${tail()}`;
   writeFileSync(file, head + body);
@@ -240,7 +240,7 @@ ${main}
       </div>
     </div></div></article>
 ${ctaFinal()}
-${explore([['/blog/', 'Todos os artigos'], ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-wave/', 'Cortina wave'], ['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos'], ['/cidades-atendidas.html', 'Cidades']])}
+${explore([['/blog/', 'Todos os artigos'], ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-wave/', 'Cortina wave'], ['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos'], ['/cidades-atendidas/', 'Cidades']])}
   </main>
 ${footer()}${waFloat()}${bar('single')}${tail()}`;
     writeFileSync(file, head + body);
@@ -254,8 +254,8 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
 function buildVideoPages() {
   const dir = join(ROOT, 'videos');
   let n = 0;
-  for (const f of readdirSync(dir).filter((x) => x.endsWith('.html') && x !== 'index.html')) {
-    const file = join(dir, f);
+  for (const f of readdirSync(dir).filter((x) => statSync(join(dir, x)).isDirectory())) {
+    const file = join(dir, f, 'index.html'); // /videos/<slug>/index.html → URL /videos/<slug>/
     const src = readFileSync(file, 'utf8');
     if (src.includes('shine-leve.css')) { sincronizaCss(file, src); continue; }
     const h1 = dec((src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, ''])[1].replace(/<[^>]+>/g, '').trim());
@@ -291,7 +291,7 @@ ${extra}
       </div>
     </div></div></section>
 ${ctaFinal()}
-${explore([['/videos/', 'Todos os vídeos'], ['/portfolio/', 'Projetos'], ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/cortina-wave/', 'Cortina wave'], ['/cortina-motorizada/', 'Motorizada'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas.html', 'Cidades']])}
+${explore([['/videos/', 'Todos os vídeos'], ['/portfolio/', 'Projetos'], ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/cortina-wave/', 'Cortina wave'], ['/cortina-motorizada/', 'Motorizada'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades']])}
   </main>
 ${footer()}${waFloat()}${bar('single')}${tail()}`;
     writeFileSync(file, head + body);
@@ -315,7 +315,7 @@ ${header('/')}
       <p class="sl-sub" style="margin:0 auto 26px">O endereço que você abriu não existe mais. Comece pelo início ou vá direto para o que você procurava.</p>
       <a class="sl-btn" href="/">Voltar para o início →</a>
     </div></section>
-${explore([['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Motorizada'], ['/portfolio/', 'Projetos'], ['/videos/', 'Vídeos'], ['/blog/', 'Blog'], ['/cidades-atendidas.html', 'Cidades']])}
+${explore([['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Motorizada'], ['/portfolio/', 'Projetos'], ['/videos/', 'Vídeos'], ['/blog/', 'Blog'], ['/cidades-atendidas/', 'Cidades']])}
   </main>
 ${footer()}${waFloat()}${tail()}`;
   writeFileSync(file, head + body);
