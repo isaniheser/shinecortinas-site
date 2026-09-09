@@ -82,9 +82,10 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 
 - `_redirects` reescrito: 47 regras com `301!` (inválidas) e ~150 sombreadas por curingas
   estavam mortas; as duas URLs históricas do blog (62% dos cliques) agora têm 301 válido.
-  Descoberto no ar que o Cloudflare só aplica ~100 regras: arquivo reduzido a 93. As 119
-  regras `/produtos-cidade/<produto>-em-<cidade>` caíram no curinga → `/cidades-atendidas/`
-  (só 8 dessas URLs constam no índice do Google). Se quiser cidade a cidade: Bulk Redirects no painel.
+  Causa real do "só 100 regras", achada em 7 prévias de teste: a partir do primeiro curinga `*`
+  (as regras de domínio `https://shinecortinas.com/*` estavam na linha 1), o Cloudflare conta todas
+  as linhas seguintes no limite de 100 dinâmicas. Curingas movidos para o fim: as 218 regras
+  voltaram, incluindo as 119 `/produtos-cidade/<produto>-em-<cidade>` por cidade.
 - Arquivos internos (`CLAUDE.md`, `docs/`, `scripts/`, JSON de build) retirados do deploy.
 - `/cidades-atendidas.html` e os 8 vídeos viraram pastas (`/…/`): canonical = sitemap = URL servida.
 - 23 destinos de link sem barra final corrigidos (um redirect a menos por clique).
