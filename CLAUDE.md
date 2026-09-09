@@ -78,14 +78,17 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
   cidade: escolher avaliação 5★ de `avaliacoes.json`, preencher `quote`, `quote_by`,
   `quote_google_author`, `quote_date` (AAAA-MM) no `cidades.json` e rodar o build.
 - **`_redirects` do Cloudflare Pages (auditoria de 08/09/2026 — 200 das 237 regras estavam mortas):**
+  **só as ~100 primeiras regras valem** (medido no ar: a 101ª funciona, a 102ª não); hoje o arquivo
+  tem 93. Mais regras só via Bulk Redirects no painel do Cloudflare. Formato:
   só `origem destino código`, códigos 301/302/303/307/308. **Nunca `301!`** (sintaxe do
   Netlify, o Cloudflare ignora a linha em silêncio) **nem 410**. Regra específica ANTES do
   curinga `*` (a primeira que casa vence). Origem com acento percent-encoded, destino com
   barra final. **Toda publicação termina com teste no site ao vivo** (`curl -I` nos endereços
   antigos e novos) — conferir só o código foi o que deixou o erro passar por 3 dias.
-- **Arquivos internos não vão ao ar:** o `build.sh` remove `docs/`, `scripts/`, `CLAUDE.md`,
-  `README.md` e os JSON de build do deploy (só quando `CF_PAGES=1`), e o `_redirects` manda
-  esses caminhos para `/`. Os endereços do site são todos pasta com barra final
+- **Arquivos internos não vão ao ar:** `scripts/generate-sitemap.mjs` (que roda no deploy) remove
+  `docs/`, `scripts/`, `CLAUDE.md`, `README.md` e os JSON de build (só com `CF_PAGES`/`CI`), e o
+  `_redirects` manda `/CLAUDE.md`, `/docs/*` e `/scripts/*` para `/`. Conferir depois de publicar:
+  `/.node-version` tem que dar 404. Os endereços do site são todos pasta com barra final
   (`/cidades-atendidas/`, `/videos/<slug>/`); não criar página `.html` solta.
 - **Bug do `</script>`:** ao gerar páginas via script, escrever a tag de
   fechamento como `</script>` literal. Nunca `<\/script>` — o navegador não
