@@ -17,13 +17,13 @@ function body(d) {
   const faq = d.faq.map((f) => `        <details><summary>${f.q}</summary><div>${f.a}</div></details>`).join('\n');
   const nearby = d.nearby.map(([slug, name]) => `<a href="/cidades/${slug}/">${name}</a>`).join('');
   return `<body data-wa-context="a página de ${d.city}">
-${header('/cidades-atendidas.html')}
+${header('/cidades-atendidas/')}
   <section class="sl-hero">
     <div class="sl-hero__img"><img src="/hero-sala.avif" alt="${esc(d.hero_alt)}" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
     <div class="sl-wrap"><div class="sl-hero__in">
       <nav aria-label="Breadcrumb"><ol class="sl-crumbs">
         <li><a href="/">Início</a></li><li aria-hidden="true">/</li>
-        <li><a href="/cidades-atendidas.html">Cidades</a></li><li aria-hidden="true">/</li>
+        <li><a href="/cidades-atendidas/">Cidades</a></li><li aria-hidden="true">/</li>
         <li aria-current="page">${d.city}</li>
       </ol></nav>
       <p class="sl-kicker">${d.badge}</p>
@@ -108,7 +108,7 @@ ${faq}
       <p class="sl-label">Explore o site</p>
       <div class="sl-links">
         <a href="/cortinas/">Cortinas sob medida</a><a href="/persianas/">Persianas técnicas</a><a href="/cortina-motorizada/">Cortina motorizada</a><a href="/cortina-wave/">Cortina wave</a>
-        <a href="/blackout-e-forros/">Blackout e forros</a><a href="/portfolio/">Portfólio real</a><a href="/blog/">Blog e dicas</a><a href="/cidades-atendidas.html">Todas as cidades</a>
+        <a href="/blackout-e-forros/">Blackout e forros</a><a href="/portfolio/">Portfólio real</a><a href="/blog/">Blog e dicas</a><a href="/cidades-atendidas/">Todas as cidades</a>
       </div>
       <p class="sl-label" style="margin-top:34px">Também atendemos na região</p>
       <div class="sl-chips">${nearby}</div>

@@ -47,9 +47,9 @@ const FAQ = [
 ];
 
 const BLOG = [
-  ['/blog/por-que-escolher-cortina-motorizada', 'Automação', 'Por que escolher uma cortina motorizada', 'Motores de 7ª geração, silêncio e integração com a casa conectada.'],
-  ['/blog/o-que-e-blackout', 'Blackout', 'O que é blackout e quando faz diferença', 'Não é só tecido grosso: entenda a trama, o forro e o peso da instalação.'],
-  ['/blog/linho-para-cortinas', 'Tecidos', 'Linho para cortinas: caimento e memória', 'Por que as cortinas da Shine mantêm a forma ano após ano.'],
+  ['/blog/por-que-escolher-cortina-motorizada/', 'Automação', 'Por que escolher uma cortina motorizada', 'Motores de 7ª geração, silêncio e integração com a casa conectada.'],
+  ['/blog/o-que-e-blackout/', 'Blackout', 'O que é blackout e quando faz diferença', 'Não é só tecido grosso: entenda a trama, o forro e o peso da instalação.'],
+  ['/blog/linho-para-cortinas/', 'Tecidos', 'Linho para cortinas: caimento e memória', 'Por que as cortinas da Shine mantêm a forma ano após ano.'],
 ];
 
 // Regras do simulador "qual cortina para o meu ambiente?" — validar com o Isani.
@@ -200,7 +200,7 @@ ${quotes}
         <p class="sl-sub">Cada cidade tem uma página própria, com perguntas, depoimento e projetos de lá. Escolha a sua.</p>
       </div>
       <div class="sl-chips">${cidades}</div>
-      <p class="sl-center" style="margin-top:22px"><a href="/cidades-atendidas.html" class="sl-btn sl-btn--ghost">Ver todas as cidades →</a></p>
+      <p class="sl-center" style="margin-top:22px"><a href="/cidades-atendidas/" class="sl-btn sl-btn--ghost">Ver todas as cidades →</a></p>
     </div></section>
 
     <section class="sl-section sl-reveal" id="blog"><div class="sl-wrap">

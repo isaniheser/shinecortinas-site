@@ -60,7 +60,7 @@ const POSTS = [
 
       <h2>Como a Shine define o forro do seu projeto</h2>
       <p>Na consultoria em domicílio, o consultor vê a janela, a orientação do sol e a rotina da casa, e apresenta o tecido decorativo junto com o forro correspondente. Você compara as opções no seu próprio ambiente, com a luz real daquele cômodo, antes de decidir qualquer coisa.</p>
-      <p>Veja também as <a href="/cortinas/">cortinas sob medida</a>, as <a href="/persianas/">persianas técnicas</a> e a página de <a href="/blackout-e-forros/">blackout e forros</a>. A Shine atende com consultoria gratuita em domicílio em <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a>, <a href="/cidades/resende/">Resende</a> e em todo o <a href="/cidades-atendidas.html">Sul Fluminense</a>.</p>
+      <p>Veja também as <a href="/cortinas/">cortinas sob medida</a>, as <a href="/persianas/">persianas técnicas</a> e a página de <a href="/blackout-e-forros/">blackout e forros</a>. A Shine atende com consultoria gratuita em domicílio em <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a>, <a href="/cidades/resende/">Resende</a> e em todo o <a href="/cidades-atendidas/">Sul Fluminense</a>.</p>
     `,
     faq: [
       ['Qual a diferença entre forro translúcido e forro blackout?',
@@ -187,8 +187,8 @@ ${faqHtml}
     <section class="sl-section sl-section--tight"><div class="sl-wrap">
       <p class="sl-label">Continue no site</p>
       <div class="sl-links">
-        <a href="/blog/o-que-e-blackout">O que é blackout</a><a href="/cortinas/">Cortinas sob medida</a><a href="/persianas/">Persianas técnicas</a><a href="/blackout-e-forros/">Blackout e forros</a>
-        <a href="/blog/">Todos os artigos</a><a href="/portfolio/">Projetos reais</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas.html">Cidades atendidas</a>
+        <a href="/blog/o-que-e-blackout/">O que é blackout</a><a href="/cortinas/">Cortinas sob medida</a><a href="/persianas/">Persianas técnicas</a><a href="/blackout-e-forros/">Blackout e forros</a>
+        <a href="/blog/">Todos os artigos</a><a href="/portfolio/">Projetos reais</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas/">Cidades atendidas</a>
       </div>
     </div></section>
   </main>

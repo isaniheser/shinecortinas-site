@@ -78,6 +78,19 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 - Descrição de cada tecido do forro translúcido (gabardine, tergal, tergal verão,
   cetim, gorgurinho) para o artigo.
 
+## Corrigido em 08/09/2026 (a partir da auditoria do GPT — ver `docs/auditoria-gpt-2026-09-08.md`)
+
+- `_redirects` reescrito: 47 regras com `301!` (inválidas) e ~150 sombreadas por curingas
+  estavam mortas; as duas URLs históricas do blog (62% dos cliques) agora têm 301 válido.
+- Arquivos internos (`CLAUDE.md`, `docs/`, `scripts/`, JSON de build) retirados do deploy.
+- `/cidades-atendidas.html` e os 8 vídeos viraram pastas (`/…/`): canonical = sitemap = URL servida.
+- 23 destinos de link sem barra final corrigidos (um redirect a menos por clique).
+- **Ainda aberto, do relatório:** fontes ausentes em 34 páginas; contraste do dourado (2,19:1);
+  `author` = Organization em 14 artigos; `srcset`; `lastmod` real no sitemap; mensagem do
+  WhatsApp com cidade adivinhada por IP; promessa "instalação no mesmo dia da consultoria"
+  em Porto Real (confirmar com o Isani); bloco gerenciado do Cloudflare no `robots.txt`
+  bloqueando GPTBot/ClaudeBot/Google-Extended (decisão do Isani, no painel do Cloudflare).
+
 ## Observação sobre o índice do Google (06/set/2026)
 
 Busca externa ainda mostra títulos e URLs do site antigo (`/sobre-nós`, `/cortinas-volta-redonda`, `/post/7-tipos…`, title com "Premium" no portfólio). Todas essas URLs têm 301 em `_redirects` e os títulos novos estão no ar; é o índice que ainda não recrawlou. Submeter o sitemap e pedir reindexação assim que houver acesso ao Search Console.
