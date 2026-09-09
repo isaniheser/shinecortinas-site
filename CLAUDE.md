@@ -78,8 +78,9 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
   cidade: escolher avaliação 5★ de `avaliacoes.json`, preencher `quote`, `quote_by`,
   `quote_google_author`, `quote_date` (AAAA-MM) no `cidades.json` e rodar o build.
 - **`_redirects` do Cloudflare Pages (auditoria de 08/09/2026 — 200 das 237 regras estavam mortas):**
-  **só as ~100 primeiras regras valem** (medido no ar: a 101ª funciona, a 102ª não); hoje o arquivo
-  tem 93. Mais regras só via Bulk Redirects no painel do Cloudflare. Formato:
+  **a partir da primeira linha com curinga `*`, o Cloudflare conta todas as seguintes no limite de
+  100 "dinâmicas" e descarta o resto em silêncio** (medido em prévias, 08/09/2026). Por isso todas
+  as regras com `*`, inclusive as de domínio `https://shinecortinas.com/*`, ficam no FIM. Formato:
   só `origem destino código`, códigos 301/302/303/307/308. **Nunca `301!`** (sintaxe do
   Netlify, o Cloudflare ignora a linha em silêncio) **nem 410**. Regra específica ANTES do
   curinga `*` (a primeira que casa vence). Origem com acento percent-encoded, destino com
