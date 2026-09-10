@@ -151,7 +151,11 @@ Montserrat no corpo, Cinzel só no logotipo. Header sólido verde (não mais vid
 **Celular primeiro:** no celular tudo centralizado, hero ocupa a tela, barra de
 ação fixa embaixo (`.sl-bar`); o desktop é derivado, nunca o contrário.
 
-- CSS do sistema: `/assets/shine-leve.css` (semântico, sem Tailwind).
+- CSS do sistema: `/assets/shine-leve.css` (semântico, sem Tailwind). **Logotipo:** imagem real
+  `logo-shine.avif` no cabeçalho e no rodapé (decisão do Isani, 10/09/2026); nunca voltar ao "S" em texto.
+- **Blog:** artigos novos usam `layout: 'editorial'` em `scripts/build-blog.mjs` (capa com foto real,
+  autor com foto, índice lateral, seções numeradas, desenhos em SVG, fechamento verde). Modelo de
+  conteúdo: pilar + satélites, com "Leia também" entre eles. Fatos só da entrevista em `docs/entrevistas/`.
 - **As 15 páginas de cidade são GERADAS**: conteúdo único de cada cidade em
   `cidades/cidades.json`; template em `scripts/build-cidades.mjs`.
   Para alterar copy de uma cidade: edite o JSON e rode

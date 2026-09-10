@@ -3,7 +3,7 @@
 
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 export const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
-export const CSS_V = '8';
+export const CSS_V = '11';
 export const JS_V = '2';
 
 export const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;');
@@ -55,7 +55,7 @@ export function header(currentPath) {
   return `
   <header class="sl-header">
     <div class="sl-wrap sl-header__in">
-      <a href="/" class="sl-logo" aria-label="ShineCortinas — início"><span class="sl-logo__mark">S</span><span class="sl-logo__name">SHINE</span></a>
+      <a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="64" height="64" decoding="async"></a>
       <nav class="sl-nav" aria-label="Menu principal">
 ${links}
         <a class="sl-btn" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">Falar com um consultor</a>
@@ -141,7 +141,7 @@ export function footer() {
   <footer class="sl-footer"><div class="sl-wrap">
     <div class="sl-footer__grid">
       <div>
-        <a href="/" class="sl-logo"><span class="sl-logo__mark">S</span><span class="sl-logo__name">SHINE</span></a>
+        <a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="56" height="56" loading="lazy" decoding="async"></a>
         <p style="margin-top:14px">Rua K, 60 · Volta Redonda, RJ<br>Atendemos todo o Sul Fluminense.<br>Sob medida para cada ambiente, desde 2009.</p>
       </div>
       <div>
