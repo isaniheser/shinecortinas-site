@@ -62,5 +62,25 @@ Modelo combinado: pilar + satélites (ver conversa de 08–09/09). Tudo abaixo �
   ar-condicionado não deveria ficar acima da janela.
 - Se houver ar-condicionado ou outro obstáculo: **mínimo 30 cm livres** para o suporte e o varão.
 
+
+## Esclarecimentos posteriores do Isani (dados ao GPT; encaminhados por ele em 10/09/2026)
+
+Valem sobre o que está acima, porque são mais recentes. Fonte: resposta do GPT que o Isani
+me repassou, citando as falas dele. Conferir com o Isani na revisão da prévia.
+
+- **Vão acima da verga:** "50 centímetros, um metro para cima da verga: utilizar o meio, dividir
+  esse espaço entre a verga e o teto." Ou seja, a regra de dividir vale também para 1 m
+  (varão a 50 cm). O que ele rejeita é deixar 1 m de parede nua entre o tubo e a verga.
+- **Pouco espaço até o teto (20–30 cm):** "dar um espaço de pelo menos uns 10 centímetros, 15,
+  acima da verga da janela."
+- **Barra "um dedo":** fixar em **1 cm** do chão no texto ("a faixa de 1 a 2 cm ficava confusa").
+
+## Decisão de formato (10/09/2026)
+Juntar as duas versões: layout da prévia do GPT (foto real no topo, autor com foto, seções
+numeradas, índice lateral, lista de conferência, desenhos com pregas) dentro do gerador do site
+(`build-blog.mjs`), com texto na voz do Isani, JSON-LD, 8 FAQs das buscas reais e links para os
+satélites (bainha, varão). Prévia do GPT salva em `/private/tmp/claude-501/gpt-rascunho.html`
+(local, temporário) — porta o que for útil antes de perder.
+
 ## Pendente de perguntar
 - Cabeceira alta e pé-direito duplo (hall de Volta Redonda); tecido/bainha (peso, encolhimento, sobra para ajuste); erros comuns em cortina pronta; caso real com cidade e ambiente.
