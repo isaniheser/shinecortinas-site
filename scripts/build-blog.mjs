@@ -8,7 +8,7 @@ import { WA, esc, cleanHead, header, cityChip, footer, waFloat, bar, tail, CSS_V
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://www.shinecortinas.com';
-const TODAY = new Date().toISOString().slice(0, 10);
+const TODAY = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' }); // data do Brasil, não UTC
 
 const POSTS = [
   {
@@ -18,7 +18,7 @@ const POSTS = [
     description: 'O forro decide o resultado da cortina. Entenda o forro translúcido (gabardine, tergal, cetim, gorgurinho), o semi blackout de 70% e o blackout 100%.',
     kicker: 'Tecidos e forros',
     published: '2026-02-19',
-    modified: TODAY,
+    modified: '2026-09-07',
     // Resposta direta no primeiro parágrafo: é o trecho que buscadores e IAs citam.
     lead: 'O forro da cortina se divide em dois grupos. O <strong>forro translúcido</strong> dá privacidade, protege o tecido decorativo e quebra parte da claridade, sem escurecer o ambiente. O <strong>forro blackout</strong> tem duas versões: o de <strong>70%</strong>, chamado de semi blackout, que deixa o ambiente em penumbra, e o de <strong>100%</strong>, que bloqueia a passagem de luz pelo tecido e é o que entrega escuro de verdade.',
     body: `
@@ -77,6 +77,102 @@ const POSTS = [
        'O tecido blackout é o próprio tecido da cortina, que já bloqueia a luz. O forro blackout é uma segunda camada acoplada atrás de uma cortina decorativa, somando escurecimento sem abrir mão da estética do tecido de frente.'],
     ],
   },
+  {
+    slug: 'altura-ideal-da-cortina',
+    title: 'Altura ideal da cortina: do chão, do teto e da janela, com as medidas que usamos',
+    seoTitle: 'Altura Ideal da Cortina: do Chão, do Teto e da Janela | ShineCortinas',
+    description: 'Cortina de tecido vai até o chão. Veja as três alturas de barra (bainha poodle, beijando o chão, um dedo), a regra dos 50 cm para fixar acima da janela, teto e cortineiro, e como medir em três pontos.',
+    kicker: 'Medidas e instalação',
+    published: '2026-02-19',
+    modified: TODAY,
+    ogImage: '/hall-wave-volta-redonda.avif',
+    faqEm: 'altura de cortina',
+    bandH2: 'Deixe a medição <em>com a gente</em>',
+    cta: { h3: 'Quer a altura certa sem risco de errar a medida?',
+           p: 'O consultor vai até a sua casa, mede a laser nos três pontos e define com você a altura da barra e a fixação. Gratuito e sem compromisso.' },
+    related: [['/blog/bainha-de-cortina/', 'Bainha de cortina'], ['/blog/varao-para-cortina/', 'Varão para cortina'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas'], ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo: ajuste de bainha em casa']],
+    lead: 'A cortina de tecido vai <strong>sempre até o chão</strong>. O que muda é como a barra termina: <strong>bainha poodle</strong> (sobra de tecido arrastando), <strong>beijando o chão</strong> ou <strong>um dedo do chão</strong> (1 a 2 cm). Em cima, com varão fixado na parede, a regra é dividir o espaço entre o topo da janela e o teto: com 50 cm de vão, o varão fica 25 cm acima da janela; se a janela já está perto do teto, o varão vai rente ao teto. Com cortineiro de gesso, o trilho vai dentro dele. Na medição, anote sempre <strong>largura × altura</strong>, nessa ordem.',
+    body: `
+      <h2>A cortina vai até o chão. A pergunta certa é como ela termina</h2>
+      <p>Cortina de tecido não se faz na altura da janela. Cortar um tecido bonito pela metade, "proporcional à janela", desperdiça a cortina e o efeito dela no ambiente. Quando o projeto pede algo proporcional ao vão, o produto certo é a <a href="/persianas/">persiana</a>. A cortina desce até o piso, e a decisão que importa é como a barra encontra o chão. Existem três alturas:</p>
+      <div class="sl-tablewrap"><table>
+        <thead><tr><th>Altura da barra</th><th>Como fica</th><th>Quando indicamos</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Bainha poodle</strong></td><td>Sobra de tecido que se acomoda e arrasta no chão, no estilo europeu</td><td>Ambientes de estar em que se quer volume e dramaticidade no tecido</td></tr>
+          <tr><td><strong>Beijando o chão</strong></td><td>A barra encosta de leve no piso, o que chamamos de "pé de bailarina"</td><td>Quartos, e qualquer ambiente com piso polido que reflete a luz</td></tr>
+          <tr><td><strong>Um dedo do chão</strong></td><td>Folga de 1 a 2 cm entre a barra e o piso</td><td>Uso diário intenso, limpeza frequente, cortina que abre e fecha muitas vezes ao dia</td></tr>
+        </tbody>
+      </table></div>
+      <p>Não existe uma altura "certa" para todas as casas. O especialista analisa o ambiente e o seu gosto, e a escolha se reflete direto no resultado. Mas há uma regra que a gente não abre mão: <strong>piso que reflete pede cortina beijando o chão</strong>. Imagine um quarto com porcelanato polido e uma cortina a um dedo do piso. De manhã, a claridade entra por baixo, bate no piso espelhado e é jogada para cima. Ali, a barra encostando no chão é o que bloqueia essa luz.</p>
+
+      <h2>Onde fixar em cima: a regra dos 50 cm</h2>
+      <p>Existem dois tipos de fixação: <strong>na parede</strong>, com suportes que seguram o varão (o tubo), e <strong>no teto</strong>, com trilho ou varão. Vamos começar pela parede, que é a dúvida mais comum.</p>
+      <p>O objetivo é não deixar exposto o espaço entre a <strong>verga</strong> (o topo da janela ou da porta) e o teto, e ao mesmo tempo não criar uma "testeira" enorme de tecido que atrapalhe a arquitetura. A regra prática que usamos:</p>
+      <ul>
+        <li><strong>Vão de cerca de 50 cm entre a verga e o teto ou a sanca:</strong> divida. O varão fica <strong>25 cm acima da janela</strong>. Assim não sobra espaço demais nem do varão para o teto, nem do varão para a verga.</li>
+        <li><strong>Janela que já chega perto do teto:</strong> o varão vai <strong>rente ao teto</strong>, para aproveitar toda a altura.</li>
+        <li><strong>Vão muito grande entre a verga e o teto:</strong> não adianta subir o varão para "alongar" o ambiente. Um metro de parede vazia entre o varão e o topo da janela fica desproporcional. Nesse caso, a solução vem do projeto: cortineiro, sanca ou uma cortina desenhada para o vão.</li>
+      </ul>
+
+      <h2>Fixação no teto: laje, forro de gesso e cortineiro</h2>
+      <p>No teto, a fixação pode ser feita direto na <strong>laje</strong>, no <strong>forro de gesso</strong> ou dentro do <strong>cortineiro</strong>. Os três funcionam, desde que a fixação seja bem feita para o peso do tecido. Quando a casa tem cortineiro, a instalação vai <strong>dentro do cortineiro</strong>, ou em uma <strong>sanca de gesso invertida</strong>, e o trilho fica escondido. É o acabamento mais limpo que existe: o tecido parece nascer do teto.</p>
+      <p>Uma coisa que não fazemos nunca: <strong>varão de ilhós com suporte dentro de cortineiro</strong>. O cortineiro foi feito para receber trilho. Colocar um varão com suporte lá dentro compromete o acabamento e o funcionamento da cortina.</p>
+
+      <h2>Sala, quarto e bancada: o que muda</h2>
+      <p>Na sala e no quarto, a regra é a mesma: até o chão, com a barra escolhida entre as três alturas. No quarto, o piso polido costuma decidir pela barra beijando o chão, pelo motivo da claridade que explicamos acima.</p>
+      <p>A única exceção é a janela com <strong>bancada ou pia</strong> embaixo. Aí a cortina pode terminar um pouco abaixo da bancada, proporcional ao vão, porque não há como descer até o piso. Fora essa situação, cortina de tecido vai até o chão.</p>
+
+      <h2>Largura: quanto passar da janela</h2>
+      <p>Com varão fixado na parede, o varão precisa passar de cada lado <strong>o suficiente para acolher as ondas da cortina recolhida</strong>, liberando o vão inteiro da janela ou da porta. Não existe número mágico. Vinte centímetros de cada lado podem não bastar: depende do volume de tecido, e uma cortina com mais pregas ou mais onda pede mais espaço lateral. O erro clássico é passar pouco e, com a cortina aberta, o tecido ainda cobrir parte do vidro.</p>
+
+      <h2>Como medimos: três pontos, e largura antes da altura</h2>
+      <p>Quando a instalação vai no teto ou no cortineiro, medimos a altura em <strong>três pontos, sempre da esquerda para a direita</strong>: lado esquerdo, meio e lado direito, do teto ao chão. O objetivo é descobrir se o ambiente tem diferença de altura entre um lado e outro, porque isso influencia a confecção.</p>
+      <p>O ideal é que não haja desnível. <strong>Até meio centímetro é aceitável.</strong> Quando a diferença chega a dois ou três centímetros, como já vimos em casas mais antigas, o caminho correto é pedir ao gesseiro um enchimento na parte superior. Em último caso, ajusta-se a bainha no local.</p>
+      <p>O que não se faz, em nenhuma hipótese, é costurar a bainha torta ou na diagonal para "compensar" o desnível. Isso danifica a trama do tecido, e com o tempo a cortina fica desengonçada, com aqueles vincos que chamamos de "caminho de rato". Cortina se costura em linha reta, no fio do tecido. Quem já viu uma cortina torta em uma casa quase sempre está vendo uma costura enviesada.</p>
+      <p>Na hora de anotar, <strong>a largura vem primeiro e a altura depois</strong>, sempre. É a mesma convenção da geometria, base vezes altura. Anotar ao contrário é uma das causas mais comuns de cortina confeccionada errada.</p>
+
+      <h2>Ar-condicionado e outros obstáculos acima da janela</h2>
+      <p>O correto é a parte de cima da janela ficar <strong>livre</strong> para receber a cortina ou a persiana. Ar-condicionado não deveria ficar acima da janela. Quando ele já está lá, ou há outro obstáculo, é preciso haver no mínimo <strong>30 cm livres</strong> para acomodar o suporte e o varão. Se esse espaço não existe, a solução passa a ser de projeto: trilho no teto ou reposicionar o equipamento.</p>
+
+      <h2>Resumo das medidas</h2>
+      <div class="sl-tablewrap"><table>
+        <thead><tr><th>Situação</th><th>Medida que usamos</th></tr></thead>
+        <tbody>
+          <tr><td>Barra "um dedo do chão"</td><td>1 a 2 cm do piso</td></tr>
+          <tr><td>Barra "beijando o chão"</td><td>Encostando de leve no piso</td></tr>
+          <tr><td>Bainha poodle</td><td>Sobra de tecido acomodada no chão</td></tr>
+          <tr><td>Varão na parede, vão de ~50 cm até o teto</td><td>25 cm acima da verga</td></tr>
+          <tr><td>Varão na parede, janela perto do teto</td><td>Rente ao teto</td></tr>
+          <tr><td>Casa com cortineiro</td><td>Trilho dentro do cortineiro (ou sanca invertida)</td></tr>
+          <tr><td>Desnível aceitável entre os três pontos</td><td>Até 0,5 cm</td></tr>
+          <tr><td>Obstáculo acima da janela</td><td>Mínimo 30 cm livres para suporte e varão</td></tr>
+          <tr><td>Ordem de anotação</td><td>Largura × altura</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2>Como a Shine define a altura no seu projeto</h2>
+      <p>Na consultoria em domicílio, o consultor mede a laser nos três pontos, confere a verga, o teto e o que há acima da janela, e apresenta as opções de barra com o tecido na mão, no seu ambiente. A escolha entre um dedo, beijar o chão ou bainha poodle é feita ali, com você, olhando o piso e a luz do cômodo. A cortina é confeccionada na medida exata e, quando o piso pede, a bainha é ajustada no local, como mostramos no <a href="/videos/ajuste-bainha-em-casa-alfaiataria/">vídeo de ajuste de bainha</a>.</p>
+      <p>Veja também as <a href="/cortinas/">cortinas sob medida</a>, os <a href="/trilhos-e-acionamentos/">trilhos e acionamentos</a> e a <a href="/cortina-wave/">cortina wave</a>. A Shine atende com consultoria gratuita em todo o Sul Fluminense, de <a href="/cidades/volta-redonda/">Volta Redonda</a> a <a href="/cidades/resende/">Resende</a>.</p>
+    `,
+    faq: [
+      ['Qual a altura da cortina no chão?',
+       'A cortina de tecido vai até o chão. A barra pode terminar de três formas: com bainha poodle (sobra de tecido arrastando), beijando o chão (encostando de leve) ou a um dedo do chão (1 a 2 cm). Em piso polido que reflete a luz, a indicação é beijar o chão, para a claridade não entrar por baixo.'],
+      ['Qual a altura ideal para cortina de sala e de quarto?',
+       'Nos dois, até o chão. Na sala, a barra é escolhida pelo efeito desejado; no quarto, o piso polido costuma pedir a barra beijando o chão, porque o reflexo do piso joga a claridade para cima de manhã.'],
+      ['Qual a altura da cortina acima da janela?',
+       'Com varão fixado na parede, divida o espaço entre o topo da janela (a verga) e o teto. Com cerca de 50 cm de vão, o varão fica 25 cm acima da janela. Se a janela já está perto do teto, o varão vai rente ao teto.'],
+      ['Qual a altura certa para colocar o varão de cortina?',
+       'A mesma regra: 25 cm acima da janela quando há uns 50 cm até o teto, ou rente ao teto quando a janela está próxima dele. Nunca suba o varão deixando um vão de um metro de parede nua até a janela.'],
+      ['O que vem primeiro na medida da cortina, altura ou largura?',
+       'Largura primeiro, altura depois. Anote sempre largura × altura. Anotar ao contrário é uma causa comum de cortina confeccionada errada.'],
+      ['Como medir a altura da cortina?',
+       'Do teto ao chão, em três pontos, da esquerda para a direita: lado esquerdo, meio e lado direito. Isso mostra se há desnível. Até meio centímetro é aceitável; acima disso, corrige-se no gesso ou, em último caso, na bainha, nunca com costura enviesada.'],
+      ['Cortina pode ficar na altura da janela?',
+       'Cortina de tecido não. Ela vai até o chão; proporcional à janela é papel da persiana. A única exceção é janela com bancada ou pia embaixo, em que a cortina termina um pouco abaixo da bancada.'],
+      ['Tem ar-condicionado acima da janela. E agora?',
+       'O ideal é a parte de cima da janela ficar livre. Se o aparelho está lá, é preciso no mínimo 30 cm livres para o suporte e o varão. Sem esse espaço, a alternativa é trilho no teto.'],
+    ],
+  },
 ];
 
 function build(post) {
@@ -120,7 +216,7 @@ function build(post) {
   <meta property="og:title" content="${esc(post.seoTitle)}">
   <meta property="og:description" content="${esc(post.description)}">
   <meta property="og:url" content="${url}">
-  <meta property="og:image" content="${BASE}/blackouts-tecnicos.avif">
+  <meta property="og:image" content="${BASE}${post.ogImage || '/blackouts-tecnicos.avif'}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@shinecortinas">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -159,8 +255,8 @@ ${cityChip(null)}
         <p class="sl-lead">${post.lead}</p>
 ${post.body.trim()}
         <div class="sl-cta-inline">
-          <h3>Não sabe qual forro o seu ambiente pede?</h3>
-          <p>O consultor vai até a sua casa com o mostruário e mostra a diferença na luz do seu próprio cômodo. Gratuito e sem compromisso.</p>
+          <h3>${post.cta?.h3 || 'Não sabe qual forro o seu ambiente pede?'}</h3>
+          <p>${post.cta?.p || 'O consultor vai até a sua casa com o mostruário e mostra a diferença na luz do seu próprio cômodo. Gratuito e sem compromisso.'}</p>
           <a class="sl-btn" data-wa="estimativa" href="${WA}" target="_blank" rel="noopener noreferrer">Falar com um consultor →</a>
         </div>
       </div>
@@ -169,7 +265,7 @@ ${post.body.trim()}
     <section class="sl-section"><div class="sl-wrap">
       <div class="sl-center" style="margin-bottom:28px">
         <p class="sl-kicker sl-kicker--center">Dúvidas frequentes</p>
-        <h2 class="sl-h2">Perguntas sobre <em>forro de cortina</em></h2>
+        <h2 class="sl-h2">Perguntas sobre <em>${post.faqEm || 'forro de cortina'}</em></h2>
       </div>
       <div class="sl-faq">
 ${faqHtml}
@@ -178,7 +274,7 @@ ${faqHtml}
 
     <section class="sl-band"><div class="sl-wrap sl-center">
       <p class="sl-kicker sl-kicker--center">Consultoria em domicílio · Sul Fluminense</p>
-      <h2 class="sl-h2">Veja os tecidos e os forros <em>na sua casa</em></h2>
+      <h2 class="sl-h2">${post.bandH2 || 'Veja os tecidos e os forros <em>na sua casa</em>'}</h2>
       <p class="sl-sub" style="margin:0 auto 26px">A consultoria é gratuita, vai até você e não obriga a decidir nada na hora.</p>
       <a class="sl-btn" data-wa="agendar" href="${WA}" target="_blank" rel="noopener noreferrer">Agendar consultoria em casa →</a>
       <p class="sl-note">Gratuita · Sem compromisso · (24) 99329-8763</p>
@@ -187,7 +283,7 @@ ${faqHtml}
     <section class="sl-section sl-section--tight"><div class="sl-wrap">
       <p class="sl-label">Continue no site</p>
       <div class="sl-links">
-        <a href="/blog/o-que-e-blackout/">O que é blackout</a><a href="/cortinas/">Cortinas sob medida</a><a href="/persianas/">Persianas técnicas</a><a href="/blackout-e-forros/">Blackout e forros</a>
+${(post.related || [['/blog/o-que-e-blackout/', 'O que é blackout'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/blackout-e-forros/', 'Blackout e forros']]).map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}
         <a href="/blog/">Todos os artigos</a><a href="/portfolio/">Projetos reais</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas/">Cidades atendidas</a>
       </div>
     </div></section>
