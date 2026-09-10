@@ -48,10 +48,11 @@ p{margin:0;text-wrap:pretty}
 
 /* header (igual à landing) */
 .sl-header{position:sticky;top:0;z-index:50;background:var(--green);color:#fff;border-bottom:1px solid rgba(223,189,105,.18)}
-.sl-header__in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.sl-header__in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 0}
 .sl-logo{display:flex;align-items:center;gap:10px;color:#fff}
-.sl-logo__mark{width:34px;height:34px;border-radius:9999px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--logo);font-weight:700;color:var(--gold-light);font-size:15px;padding-top:2px}
-.sl-logo__name{font-family:var(--logo);font-weight:700;letter-spacing:.16em;font-size:17px}
+/* logotipo real (decisão do Isani, 10/09/2026): 64px no desktop, 52px no celular; gold sobre transparente funciona no verde e na areia */
+.sl-logo img{height:64px;width:auto;display:block}
+@media(max-width:719px){.sl-logo img{height:52px}}
 .sl-nav{display:none;align-items:center;gap:26px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.16em}
 .sl-nav a{color:rgba(255,255,255,.82)}
 .sl-nav a:hover,.sl-nav a[aria-current]{color:var(--gold-light)}
@@ -176,8 +177,7 @@ p{margin:0;text-wrap:pretty}
 @media(min-width:900px){.sl-footer{padding-bottom:40px}}
 .sl-footer__grid{display:grid;gap:28px}
 @media(min-width:900px){.sl-footer__grid{grid-template-columns:1.2fr 1fr 1fr}}
-.sl-footer .sl-logo{color:var(--green)}
-.sl-footer .sl-logo__mark{background:var(--green)}
+.sl-footer .sl-logo img{height:56px}
 .sl-footer h4{font-family:var(--sans);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--green);margin:0 0 10px}
 .sl-footer a{color:var(--green)}
 .sl-footer__phone{font-size:18px;font-weight:700}
