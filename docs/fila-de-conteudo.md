@@ -26,9 +26,9 @@ Método: uma conversa curta por post (5 a 10 perguntas), depois a redação.
 | 9 | persiana-para-dividir-ambientes | fila |
 | 10 | cortina-ou-persiana-na-cozinha | fila |
 | 11 | qual-cortina-escolher-para-sala | fila |
-| 12 | altura-ideal-da-cortina | fila |
-| 13 | bainha-de-cortina | fila |
-| 14 | varao-para-cortina | fila |
+| 12 | altura-ideal-da-cortina | **Reescrito** (10/09, layout editorial; pilar dos satélites 13 e 14) |
+| 13 | bainha-de-cortina | próximo (satélite de altura) |
+| 14 | varao-para-cortina | próximo (satélite de altura) |
 | 15 | quantidade-de-tecido-para-cortina-wave | fila |
 | 16 | (duplicatas com canonical) | não reescrever |
 
