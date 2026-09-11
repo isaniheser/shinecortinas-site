@@ -240,12 +240,12 @@ const POSTS = [
     },
     sections: [
       { id: 'o-que-e', toc: 'Bainha e barra', h2: 'Bainha e barra não são a mesma coisa', html: `
-            <p>Bainha é a dobra costurada na parte de baixo do tecido. Barra é o que você vê: a faixa final da cortina, do vinco da dobra até o chão. Uma é a costura, a outra é o resultado. Por isso, quando alguém me pergunta "qual o tamanho da bainha", a pergunta certa é <strong>qual o tamanho da barra</strong>. Quando a bainha é bem feita, a barra cai reta, pesa certo e para no lugar combinado.</p>
+            <p>Bainha é a dobra costurada na parte de baixo do tecido. Barra é o que você vê: a faixa final da cortina, do vinco da dobra até o chão. Uma é a costura, a outra é o resultado. A frase que eu uso com a costureira resume a diferença: <strong>"ajusta a bainha da cortina com uma barra de 20 centímetros"</strong>. Ela entende na hora: mexer na bainha, que é a costura, e deixar 20 cm de barra, que é a faixa que aparece. É assim que este artigo fala: a bainha se faz, a barra se mede. Quando a bainha é bem feita, a barra cai reta, pesa certo e para no lugar combinado.</p>
             <p>É a bainha que entrega os três acabamentos de que eu falo no artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a>: a barra a 1 cm do chão, a barra beijando o chão e o efeito poodle, com o tecido sobrando no piso. A altura é a decisão; a bainha é quem executa.</p>
             <div class="sl-aside"><strong>Leia também</strong><p>Antes de decidir a bainha, decida onde a cortina termina. No artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a> eu explico as três alturas, a regra do varão e como medir em três pontos.</p></div>` },
 
       { id: 'tamanho', toc: 'Tamanho da barra', h2: 'Tamanho da barra: proporcional ao pé-direito', html: `
-            <p>A pergunta que mais chega é "qual o tamanho da bainha?", e o que a pessoa quer saber é o tamanho da barra. Não existe um número único. A barra tem que ser <strong>proporcional à altura do ambiente</strong>. Imagina uma cortina de 2,30 m de altura com uma barra de 30 cm: o teto fica achatado, esquisito. A mesma barra de 30 cm, num pé-direito de 3 m, fica bonita.</p>
+            <p>A pergunta que mais chega é "qual o tamanho da bainha?". O que a pessoa quer saber é o tamanho da barra que a bainha vai deixar. Não existe um número único. A barra tem que ser <strong>proporcional à altura do ambiente</strong>. Imagina uma cortina de 2,30 m de altura com uma barra de 30 cm: o teto fica achatado, esquisito. A mesma barra de 30 cm, num pé-direito de 3 m, fica bonita.</p>
             <div class="sl-ed-table"><table>
               <thead><tr><th>Pé-direito</th><th>Barra que eu uso</th></tr></thead>
               <tbody>

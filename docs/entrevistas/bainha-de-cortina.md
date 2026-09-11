@@ -58,3 +58,5 @@ não como fala dele; ele aprova antes.
 ## Terminologia (Isani, 10/09): "bainha" é a costura; o que se mede e se vê é a **barra**. O artigo usa
 "barra" para o tamanho e mantém "bainha" no título e nas perguntas porque é o que as pessoas digitam
 (318 impressões com "bainha" contra 22 com "barra").
+Frase-guia do Isani para a costureira: "ajusta a bainha da cortina com uma barra de 20 cm" = mexer na
+bainha (costura) deixando 20 cm de barra (faixa visível). A bainha se faz; a barra se mede.
