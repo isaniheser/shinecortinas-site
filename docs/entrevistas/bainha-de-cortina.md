@@ -60,3 +60,13 @@ não como fala dele; ele aprova antes.
 (318 impressões com "bainha" contra 22 com "barra").
 Frase-guia do Isani para a costureira: "ajusta a bainha da cortina com uma barra de 20 cm" = mexer na
 bainha (costura) deixando 20 cm de barra (faixa visível). A bainha se faz; a barra se mede.
+
+## Confirmado pelo Isani em 10/09 (revisão com o GPT, aceita por ele)
+- **Bainha dupla = a barra dobrada duas vezes, cada dobra com a altura inteira da barra.** Barra de
+  15 cm dupla usa 30 cm de tecido (15 + 15).
+- Causas de barra repuxada além da costura enviesada (que continua a principal): tensão da linha,
+  alimentação do tecido na máquina, encolhimento. **Sem citar fabricante** (conhecimento dele).
+- Cortina que encolheu: só recupera altura se sobrou tecido na bainha.
+- Frase "única empresa da região que leva alfaiataria" retirada do artigo (difícil de provar).
+- Desenhos do rascunho do GPT (duas medidas, proporção em cards, perfil da dobra) e vídeo embutido
+  adotados. Layout: figuras com classes `sl-ed-cards/card/measure/legend/profile-card/video/checklist`.
