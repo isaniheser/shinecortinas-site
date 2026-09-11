@@ -217,6 +217,148 @@ const POSTS = [
        'O ideal é a parte de cima da janela ficar livre. Se o aparelho está lá, é preciso no mínimo 30 cm livres para o suporte e o varão. Sem esse espaço, a alternativa é trilho no teto.'],
     ],
   },
+  {
+    slug: 'bainha-de-cortina',
+    layout: 'editorial',
+    title: 'Bainha de cortina: o tamanho da barra, a dobra e o ajuste',
+    seoTitle: 'Bainha de Cortina: Tamanho da Barra, Bainha Dupla e Ajuste em Casa | ShineCortinas',
+    description: 'Bainha é a costura; barra é o resultado. O tamanho da barra é proporcional ao pé-direito (15, 20 a 25, 30 cm), a bainha dupla é para tecido leve, e a costura tem que ser reta, no fio. Por Isani Oliveira.',
+    kicker: 'Medidas e instalação',
+    published: '2026-02-19',
+    modified: TODAY,
+    ogImage: '/isani-consultoria.avif',
+    faqEm: 'bainha de cortina',
+    tocNote: 'A bainha é a parte da cortina que a gente mais olha e menos entende.',
+    related: [['/blog/altura-ideal-da-cortina/', 'Altura ideal da cortina'], ['/blog/varao-para-cortina/', 'Varão para cortina'], ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro'], ['/cortinas/', 'Cortinas sob medida'], ['/cortina-wave/', 'Cortina wave'], ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo: ajuste de bainha em casa']],
+    hero: {
+      eyebrow: 'O olhar de quem instala',
+      h1: 'Bainha de cortina:', h1em: 'a costura que faz a barra.',
+      lead: '<p><strong>A bainha é a dobra costurada na parte de baixo da cortina.</strong> É ela que faz a barra, e é ela que decide se a cortina termina a 1 cm do chão, beijando o chão ou com sobra. Muita gente diz "tamanho da bainha", mas o nome certo do que se vê é <strong>barra</strong>. O tamanho da barra não é fixo: é <strong>proporcional ao pé-direito</strong>. Em teto baixo, uns 15 cm; entre 2,50 e 2,70 m, 20 a 25 cm; perto de 3 m, 30 cm.</p><p>Tecido leve pede <strong>bainha dupla</strong>, para dar corpo. Tecido mais pesado fica bem com bainha simples. E a costura tem que ser reta, no fio do tecido, senão a cortina entorta com o tempo. Quando o pé-direito é alto, a nossa alfaiataria vai até a casa e ajusta a bainha no lugar.</p>',
+      readTo: 'tamanho', readText: 'Veja a tabela de tamanho da barra',
+      photo: '/isani-consultoria.avif', photoAlt: 'Isani Oliveira conferindo o caimento e a barra de uma cortina de linho durante uma consultoria',
+      photoTag: 'Consultoria ShineCortinas', photoCaption: 'Isani conferindo o caimento e a barra de uma cortina de linho, com a equipe ao fundo',
+    },
+    sections: [
+      { id: 'o-que-e', toc: 'Bainha e barra', h2: 'Bainha e barra não são a mesma coisa', html: `
+            <p>Bainha é a dobra costurada na parte de baixo do tecido. Barra é o que você vê: a faixa final da cortina, do vinco da dobra até o chão. Uma é a costura, a outra é o resultado. A frase que eu uso com a costureira resume a diferença: <strong>"ajusta a bainha da cortina com uma barra de 20 centímetros"</strong>. Ela entende na hora: mexer na bainha, que é a costura, e deixar 20 cm de barra, que é a faixa que aparece. É assim que este artigo fala: a bainha se faz, a barra se mede. Quando a bainha é bem feita, a barra cai reta, pesa certo e para no lugar combinado.</p>
+            <p>É a bainha que entrega os três acabamentos de que eu falo no artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a>: a barra a 1 cm do chão, a barra beijando o chão e o efeito poodle, com o tecido sobrando no piso. A altura é a decisão; a bainha é quem executa.</p>
+            <div class="sl-aside"><strong>Leia também</strong><p>Antes de decidir a bainha, decida onde a cortina termina. No artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a> eu explico as três alturas, a regra do varão e como medir em três pontos.</p></div>` },
+
+      { id: 'tamanho', toc: 'Tamanho da barra', h2: 'Tamanho da barra: proporcional ao pé-direito', html: `
+            <p>A pergunta que mais chega é "qual o tamanho da bainha?". O que a pessoa quer saber é o tamanho da barra que a bainha vai deixar. Não existe um número único. A barra tem que ser <strong>proporcional à altura do ambiente</strong>. Imagina uma cortina de 2,30 m de altura com uma barra de 30 cm: o teto fica achatado, esquisito. A mesma barra de 30 cm, num pé-direito de 3 m, fica bonita.</p>
+            <div class="sl-ed-table"><table>
+              <thead><tr><th>Pé-direito</th><th>Barra que eu uso</th></tr></thead>
+              <tbody>
+                <tr><td>Baixo, por volta de 2,30 m</td><td>Cerca de 15 cm</td></tr>
+                <tr><td>2,50 a 2,70 m, o mais comum</td><td>20 a 25 cm</td></tr>
+                <tr><td>2,90 a 3,00 m</td><td>30 cm</td></tr>
+                <tr><td>Pé-direito duplo, 5 a 6 m</td><td>40 a 50 cm de barra com acabamento</td></tr>
+              </tbody>
+            </table></div>
+            <figure class="sl-ed-fig">
+              <div class="sl-ed-figtop"><span class="sl-ed-eyebrow">Desenho 01</span><span>A barra acompanha o pé-direito</span></div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Três pés-direitos diferentes com barras proporcionais: 15, 20 a 25 e 30 centímetros">
+<g font-family="Montserrat,Arial,sans-serif" fill="#3f4740">
+<!-- ambiente 1: pé-direito baixo -->
+<path d="M40 96H190" stroke="#16302a" stroke-width="2"/><path d="M40 230H190" stroke="#16302a" stroke-width="2"/>
+<path d="M60 100H170V228H60Z" fill="#e2d6c0" stroke="#9c8c72" stroke-width="1.5"/>
+<g stroke="#c9b894" stroke-width="1"><path d="M78 102V226"/><path d="M96 102V226"/><path d="M114 102V226"/><path d="M132 102V226"/><path d="M150 102V226"/></g>
+<rect x="60" y="216" width="110" height="12" fill="#c9b48a" stroke="#9c8c72" stroke-width="1.5"/>
+<text x="115" y="88" font-size="11" text-anchor="middle" fill="#6d6e61">pé-direito 2,30 m</text>
+<text x="115" y="248" font-size="12" text-anchor="middle" font-weight="600" fill="#9b713a">barra ~15 cm</text>
+<!-- ambiente 2 -->
+<path d="M245 60H395" stroke="#16302a" stroke-width="2"/><path d="M245 230H395" stroke="#16302a" stroke-width="2"/>
+<path d="M265 64H375V228H265Z" fill="#e2d6c0" stroke="#9c8c72" stroke-width="1.5"/>
+<g stroke="#c9b894" stroke-width="1"><path d="M283 66V226"/><path d="M301 66V226"/><path d="M319 66V226"/><path d="M337 66V226"/><path d="M355 66V226"/></g>
+<rect x="265" y="209" width="110" height="19" fill="#c9b48a" stroke="#9c8c72" stroke-width="1.5"/>
+<text x="320" y="52" font-size="11" text-anchor="middle" fill="#6d6e61">pé-direito 2,50 a 2,70 m</text>
+<text x="320" y="248" font-size="12" text-anchor="middle" font-weight="600" fill="#9b713a">barra 20 a 25 cm</text>
+<!-- ambiente 3 -->
+<path d="M450 30H600" stroke="#16302a" stroke-width="2"/><path d="M450 230H600" stroke="#16302a" stroke-width="2"/>
+<path d="M470 34H580V228H470Z" fill="#e2d6c0" stroke="#9c8c72" stroke-width="1.5"/>
+<g stroke="#c9b894" stroke-width="1"><path d="M488 36V226"/><path d="M506 36V226"/><path d="M524 36V226"/><path d="M542 36V226"/><path d="M560 36V226"/></g>
+<rect x="470" y="204" width="110" height="24" fill="#c9b48a" stroke="#9c8c72" stroke-width="1.5"/>
+<text x="525" y="22" font-size="11" text-anchor="middle" fill="#6d6e61">pé-direito 2,90 a 3,00 m</text>
+<text x="525" y="248" font-size="12" text-anchor="middle" font-weight="600" fill="#9b713a">barra 30 cm</text>
+</g>
+</svg>
+              <figcaption>Quanto mais alto o ambiente, maior a barra. Esquema sem escala.</figcaption>
+            </figure>
+            <p>No pé-direito duplo, como num hall de entrada de 5 ou 6 metros, uma barra de 40 a 50 cm com acabamento é o que dá imponência ao tecido. É elegante, e valoriza a arquitetura em vez de disputar com ela.</p>` },
+
+      { id: 'dupla', toc: 'Bainha dupla ou simples', h2: 'Bainha dupla ou simples: a gramatura decide', html: `
+            <p>Gramatura é o peso do tecido por metro quadrado. Tecido leve, como o voil, tem gramatura <strong>abaixo de 150 g/m²</strong>. Nesses, eu faço <strong>bainha dupla</strong>: o tecido dobra duas vezes, e essa segunda dobra é que dá corpo à barra. Sem ela, a barra do voil fica mole e não cai reta.</p>
+            <p>Tecido mais pesado, de <strong>170, 180 ou 200 g/m²</strong>, não precisa. A própria dobra já dá o efeito encorpado. Bainha dupla ali só acrescenta volume onde não faz falta.</p>
+            <figure class="sl-ed-fig">
+              <div class="sl-ed-figtop"><span class="sl-ed-eyebrow">Desenho 02</span><span>Uma dobra ou duas</span></div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="Corte da bainha simples, com uma dobra, e da bainha dupla, com duas dobras">
+<g font-family="Montserrat,Arial,sans-serif">
+<!-- simples -->
+<text x="160" y="28" font-size="12" text-anchor="middle" font-weight="600" fill="#16302a">Bainha simples</text>
+<text x="160" y="46" font-size="11" text-anchor="middle" fill="#6d6e61">tecido de 170 a 200 g/m²</text>
+<path d="M150 60V170Q150 182 162 182Q174 182 174 170V120" fill="none" stroke="#9c8c72" stroke-width="6" stroke-linecap="round"/>
+<path d="M150 60V170Q150 182 162 182Q174 182 174 170V120" fill="none" stroke="#e2d6c0" stroke-width="3" stroke-linecap="round"/>
+<path d="M196 120V182" stroke="#9b713a" stroke-width="1.2"/><path d="M191 120H201M191 182H201" stroke="#9b713a" stroke-width="1.2"/>
+<text x="204" y="154" font-size="11" fill="#9b713a">uma dobra</text>
+<!-- dupla -->
+<text x="470" y="28" font-size="12" text-anchor="middle" font-weight="600" fill="#16302a">Bainha dupla</text>
+<text x="470" y="46" font-size="11" text-anchor="middle" fill="#6d6e61">tecido leve, abaixo de 150 g/m²</text>
+<path d="M440 60V170Q440 182 452 182Q464 182 464 170V132Q464 122 474 122Q484 122 484 132V170" fill="none" stroke="#9c8c72" stroke-width="6" stroke-linecap="round"/>
+<path d="M440 60V170Q440 182 452 182Q464 182 464 170V132Q464 122 474 122Q484 122 484 132V170" fill="none" stroke="#e2d6c0" stroke-width="3" stroke-linecap="round"/>
+<path d="M506 122V182" stroke="#9b713a" stroke-width="1.2"/><path d="M501 122H511M501 182H511" stroke="#9b713a" stroke-width="1.2"/>
+<text x="514" y="154" font-size="11" fill="#9b713a">duas dobras, mais corpo</text>
+<path d="M30 200H610" stroke="#ded8ca"/>
+<text x="320" y="214" font-size="10" text-anchor="middle" fill="#6d6e61">corte visto de lado · esquema sem escala</text>
+</g>
+</svg>
+              <figcaption>À esquerda, bainha simples para tecido encorpado. À direita, bainha dupla para tecido leve.</figcaption>
+            </figure>` },
+
+      { id: 'costura', toc: 'Costura reta, no fio', h2: 'Costura reta, no fio do tecido. Sempre.', html: `
+            <p>Cortina se costura em linha reta, seguindo o fio do tecido. É a regra mais simples e a mais desrespeitada. Quando a costura sai enviesada, na diagonal, ela danifica a trama. Na hora parece que ficou bom. Com o tempo, a cortina vai ficando desengonçada, torta, com aqueles vincos que eu chamo de <strong>caminho de rato</strong>.</p>
+            <p>Isso acontece muito quando alguém tenta corrigir na costura um problema que é do ambiente: teto desnivelado, piso fora de esquadro. Não é assim que se resolve. Desnível se corrige no gesso, e em último caso ajustando a bainha no local, com a costura continuando reta. Nunca costurando torto para "compensar".</p>` },
+
+      { id: 'ajuste', toc: 'Ajuste em casa', h2: 'Ajuste em casa: a alfaiataria vai até você', html: `
+            <p>A Shine tem uma <strong>equipe de alfaiataria</strong> que se desloca até a casa do cliente para ajustar a bainha no lugar. Não é para toda cortina. É para os casos em que não dá para prever, na oficina, como a cortina vai assentar depois de instalada.</p>
+            <p>O caso clássico é o <strong>pé-direito alto</strong>. O tecido é pesado, o vão é grande, e só com a cortina pendurada é que se vê exatamente onde a barra vai parar. O outro caso é quando as <strong>ondas e os obstáculos do vão</strong> pedem uma adequação: um rodapé mais alto de um lado, um degrau, um móvel fixo.</p>
+            <p>Nesses projetos, a cortina é instalada, a costureira confere a barra com a peça já no lugar e faz o ajuste ali. É o que você vê no <a href="/videos/ajuste-bainha-em-casa-alfaiataria/">vídeo do ajuste de bainha em casa</a>. Que eu saiba, somos a única empresa da região que leva a alfaiataria até o cliente.</p>` },
+
+      { id: 'erros', toc: 'O erro que mais vejo', h2: 'O erro que mais vejo em bainha de cortina', html: `
+            <p>Quando eu entro numa casa e a cortina está feia embaixo, quase sempre é a bainha. Ela está <strong>empachocada</strong>, embolada, com <strong>fio puxado</strong>, costurada com o <strong>ponto errado da máquina</strong>. Ou a cortina foi lavada, <strong>encolheu</strong>, e ninguém ajustou: a barra subiu e ficou curta.</p>
+            <p>Dá para consertar? Dá, mas não é remendo. O caminho correto é <strong>desmanchar a bainha e refazer</strong>, com o ponto certo, no fio, na medida nova. Tentar "puxar" ou "esticar" só piora o caminho de rato.</p>
+            <div class="sl-aside"><strong>Leia também</strong><p>A bainha cai bem quando o varão está na altura certa. No artigo sobre <a href="/blog/varao-para-cortina/">varão para cortina</a> eu mostro tubo, suporte e ponteira, e o que muda de um para outro.</p></div>` },
+
+      { id: 'antes', toc: 'Antes de mandar fazer', h2: 'O que conferir antes de mandar fazer a bainha', html: `
+            <ul>
+              <li>Qual é o pé-direito? O tamanho da barra vai ser proporcional a ele.</li>
+              <li>Qual é a gramatura do tecido? Abaixo de 150 g/m², bainha dupla.</li>
+              <li>A barra vai ficar a 1 cm, beijando o chão ou com sobra? A bainha executa essa escolha.</li>
+              <li>A altura foi medida em três pontos? Desnível se resolve antes da costura, não nela.</li>
+              <li>É pé-direito alto ou vão com obstáculo? Então o ajuste é no local, com a cortina pendurada.</li>
+            </ul>` },
+
+      { id: 'perguntas', toc: 'Perguntas frequentes', h2: 'Perguntas frequentes sobre bainha de cortina', faq: true, html: `
+            <p>Respostas curtas, do jeito que eu respondo na consultoria.</p>` },
+
+      { id: 'consultoria', toc: 'Consultoria em casa', label: 'Converse com a Shine', closing: true, h2: 'A bainha certa começa na medição',
+        html: `<p>Pé-direito, gramatura do tecido e o acabamento que você quer para a barra: as três coisas se decidem juntas, e na sua casa. Na consultoria em domicílio, eu ou alguém da equipe mede a laser, mostra o tecido no seu ambiente e define a bainha com você.</p><p>Atendemos Volta Redonda, Resende, Barra Mansa e todo o Sul Fluminense. Gratuito e sem compromisso.</p>`,
+        cta: 'Agendar consultoria em casa →', img: '/hall-wave-volta-redonda-800.avif', imgAlt: 'Cortina wave com barra de acabamento em hall de pé-direito duplo, projeto ShineCortinas em Volta Redonda' },
+    ],
+    faq: [
+      ['O que é a bainha da cortina?',
+       'É a dobra costurada na parte de baixo do tecido, que forma a barra da cortina. A altura da cortina é a decisão; a bainha é quem executa: é ela que faz a barra parar a 1 cm do chão, beijar o chão ou sobrar no piso.'],
+      ['Qual o tamanho ideal da bainha (barra) da cortina?',
+       'O nome certo do que se mede é barra; a bainha é a costura que faz a barra. O tamanho é proporcional ao pé-direito. Em teto baixo, por volta de 2,30 m, cerca de 15 cm. Entre 2,50 e 2,70 m, 20 a 25 cm. Perto de 3 m, 30 cm. Em pé-direito duplo, de 5 a 6 m, uma barra de 40 a 50 cm com acabamento.'],
+      ['Bainha dupla é melhor que bainha simples?',
+       'Depende do tecido. Tecido leve, abaixo de 150 g/m², como o voil, pede bainha dupla para ganhar corpo. Tecido de 170 a 200 g/m² fica bem com bainha simples, porque a própria dobra já dá o efeito encorpado.'],
+      ['A bainha pode ser ajustada depois da cortina instalada?',
+       'Pode, e em pé-direito alto é o certo: só com a cortina pendurada dá para ver onde a barra vai parar. A Shine leva a equipe de alfaiataria até a casa para esse ajuste. A costura continua reta, no fio; o que muda é a medida.'],
+      ['Minha cortina encolheu na lavagem e ficou curta. E agora?',
+       'É um dos problemas mais comuns. O conserto correto é desmanchar a bainha e refazer na medida nova, com o ponto certo. Puxar ou esticar não resolve e estraga a trama.'],
+      ['Por que a bainha da minha cortina ficou torta?',
+       'Quase sempre por costura enviesada, na diagonal, feita para compensar um desnível do teto ou do piso. Isso danifica a trama e, com o tempo, a cortina fica desengonçada. Desnível se corrige no gesso ou no ajuste da bainha no local, nunca costurando torto.'],
+    ],
+  },
 ];
 
 // ---- layout editorial (rascunho aprovado pelo Isani em 10/09/2026, portado para o sistema do site) ----
@@ -253,7 +395,7 @@ ${cityChip(null)}
         <nav aria-label="Breadcrumb" class="sl-ed-crumbs"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>${post.kicker}</span></nav>
         <p class="sl-ed-eyebrow">${h.eyebrow}</p>
         <h1 class="sl-ed-h1" id="topo">${h.h1} <em>${h.h1em}</em></h1>
-        <div class="sl-ed-author"><img src="/isani-autor.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" loading="eager" decoding="async"><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
+        <div class="sl-ed-author"><img src="/ceo-shine.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="object-position:50% 12%" loading="eager" decoding="async"><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
         <div class="sl-ed-lead">${h.lead}</div>
         <a class="sl-ed-readlink" href="#${h.readTo}">${h.readText} <span aria-hidden="true">↓</span></a>
       </div>
@@ -281,7 +423,7 @@ ${cityChip(null)}
 ${sections}
         </article>
         <div class="sl-ed-authorend">
-          <img src="/isani-autor.avif" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <img src="/ceo-shine.avif" alt="" width="64" height="64" style="object-position:50% 12%" loading="lazy" decoding="async">
           <p><strong>Conhecimento de quem está no projeto.</strong><br>Orientações de Isani Oliveira, fundador da ShineCortinas e especialista em cortinas sob medida, desde 2009 no Sul Fluminense. <a href="/sobre/">Conheça a Shine</a>.</p>
         </div>
       </div>
