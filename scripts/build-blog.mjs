@@ -220,9 +220,9 @@ const POSTS = [
   {
     slug: 'bainha-de-cortina',
     layout: 'editorial',
-    title: 'Bainha de cortina: tamanho, dobra e ajuste',
-    seoTitle: 'Bainha de Cortina: Tamanho Certo, Bainha Dupla e Ajuste em Casa | ShineCortinas',
-    description: 'A bainha define a barra da cortina. O tamanho é proporcional ao pé-direito (15, 20 a 25, 30 cm), a bainha dupla é para tecido leve, e a costura tem que ser reta, no fio. Por Isani Oliveira.',
+    title: 'Bainha de cortina: o tamanho da barra, a dobra e o ajuste',
+    seoTitle: 'Bainha de Cortina: Tamanho da Barra, Bainha Dupla e Ajuste em Casa | ShineCortinas',
+    description: 'Bainha é a costura; barra é o resultado. O tamanho da barra é proporcional ao pé-direito (15, 20 a 25, 30 cm), a bainha dupla é para tecido leve, e a costura tem que ser reta, no fio. Por Isani Oliveira.',
     kicker: 'Medidas e instalação',
     published: '2026-02-19',
     modified: TODAY,
@@ -232,22 +232,22 @@ const POSTS = [
     related: [['/blog/altura-ideal-da-cortina/', 'Altura ideal da cortina'], ['/blog/varao-para-cortina/', 'Varão para cortina'], ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro'], ['/cortinas/', 'Cortinas sob medida'], ['/cortina-wave/', 'Cortina wave'], ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo: ajuste de bainha em casa']],
     hero: {
       eyebrow: 'O olhar de quem instala',
-      h1: 'Bainha de cortina:', h1em: 'o acabamento que define a barra.',
-      lead: '<p><strong>A bainha é a dobra costurada na parte de baixo da cortina.</strong> É ela que faz a barra, e é ela que decide se a cortina termina a 1 cm do chão, beijando o chão ou com sobra. O tamanho não é fixo: é <strong>proporcional ao pé-direito</strong>. Em teto baixo, uns 15 cm; entre 2,50 e 2,70 m, 20 a 25 cm; perto de 3 m, 30 cm.</p><p>Tecido leve pede <strong>bainha dupla</strong>, para dar corpo. Tecido mais pesado fica bem com bainha simples. E a costura tem que ser reta, no fio do tecido, senão a cortina entorta com o tempo. Quando o pé-direito é alto, a nossa alfaiataria vai até a casa e ajusta a bainha no lugar.</p>',
-      readTo: 'tamanho', readText: 'Veja a tabela de tamanhos',
+      h1: 'Bainha de cortina:', h1em: 'a costura que faz a barra.',
+      lead: '<p><strong>A bainha é a dobra costurada na parte de baixo da cortina.</strong> É ela que faz a barra, e é ela que decide se a cortina termina a 1 cm do chão, beijando o chão ou com sobra. Muita gente diz "tamanho da bainha", mas o nome certo do que se vê é <strong>barra</strong>. O tamanho da barra não é fixo: é <strong>proporcional ao pé-direito</strong>. Em teto baixo, uns 15 cm; entre 2,50 e 2,70 m, 20 a 25 cm; perto de 3 m, 30 cm.</p><p>Tecido leve pede <strong>bainha dupla</strong>, para dar corpo. Tecido mais pesado fica bem com bainha simples. E a costura tem que ser reta, no fio do tecido, senão a cortina entorta com o tempo. Quando o pé-direito é alto, a nossa alfaiataria vai até a casa e ajusta a bainha no lugar.</p>',
+      readTo: 'tamanho', readText: 'Veja a tabela de tamanho da barra',
       photo: '/isani-consultoria.avif', photoAlt: 'Isani Oliveira conferindo o caimento e a barra de uma cortina de linho durante uma consultoria',
       photoTag: 'Consultoria ShineCortinas', photoCaption: 'Isani conferindo o caimento e a barra de uma cortina de linho, com a equipe ao fundo',
     },
     sections: [
-      { id: 'o-que-e', toc: 'O que é a bainha', h2: 'O que é a bainha e por que ela decide a barra', html: `
-            <p>Bainha é a dobra costurada na parte de baixo do tecido. A barra é o que você vê: a faixa final da cortina, do último vinco até o chão. Uma é a costura, a outra é o resultado. Quando a bainha é bem feita, a barra cai reta, pesa certo e para no lugar combinado.</p>
+      { id: 'o-que-e', toc: 'Bainha e barra', h2: 'Bainha e barra não são a mesma coisa', html: `
+            <p>Bainha é a dobra costurada na parte de baixo do tecido. Barra é o que você vê: a faixa final da cortina, do vinco da dobra até o chão. Uma é a costura, a outra é o resultado. Por isso, quando alguém me pergunta "qual o tamanho da bainha", a pergunta certa é <strong>qual o tamanho da barra</strong>. Quando a bainha é bem feita, a barra cai reta, pesa certo e para no lugar combinado.</p>
             <p>É a bainha que entrega os três acabamentos de que eu falo no artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a>: a barra a 1 cm do chão, a barra beijando o chão e o efeito poodle, com o tecido sobrando no piso. A altura é a decisão; a bainha é quem executa.</p>
             <div class="sl-aside"><strong>Leia também</strong><p>Antes de decidir a bainha, decida onde a cortina termina. No artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a> eu explico as três alturas, a regra do varão e como medir em três pontos.</p></div>` },
 
-      { id: 'tamanho', toc: 'Tamanho da bainha', h2: 'Tamanho da bainha: proporcional ao pé-direito', html: `
-            <p>A pergunta que mais chega é "qual o tamanho da bainha?". Não existe um número único. A bainha tem que ser <strong>proporcional à altura do ambiente</strong>. Imagina uma cortina de 2,30 m de altura com uma bainha de 30 cm: o teto fica achatado, esquisito. A mesma bainha de 30 cm, num pé-direito de 3 m, fica bonita.</p>
+      { id: 'tamanho', toc: 'Tamanho da barra', h2: 'Tamanho da barra: proporcional ao pé-direito', html: `
+            <p>A pergunta que mais chega é "qual o tamanho da bainha?", e o que a pessoa quer saber é o tamanho da barra. Não existe um número único. A barra tem que ser <strong>proporcional à altura do ambiente</strong>. Imagina uma cortina de 2,30 m de altura com uma barra de 30 cm: o teto fica achatado, esquisito. A mesma barra de 30 cm, num pé-direito de 3 m, fica bonita.</p>
             <div class="sl-ed-table"><table>
-              <thead><tr><th>Pé-direito</th><th>Bainha que eu uso</th></tr></thead>
+              <thead><tr><th>Pé-direito</th><th>Barra que eu uso</th></tr></thead>
               <tbody>
                 <tr><td>Baixo, por volta de 2,30 m</td><td>Cerca de 15 cm</td></tr>
                 <tr><td>2,50 a 2,70 m, o mais comum</td><td>20 a 25 cm</td></tr>
@@ -256,8 +256,8 @@ const POSTS = [
               </tbody>
             </table></div>
             <figure class="sl-ed-fig">
-              <div class="sl-ed-figtop"><span class="sl-ed-eyebrow">Desenho 01</span><span>A bainha acompanha o pé-direito</span></div>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Três pés-direitos diferentes com bainhas proporcionais: 15, 20 a 25 e 30 centímetros">
+              <div class="sl-ed-figtop"><span class="sl-ed-eyebrow">Desenho 01</span><span>A barra acompanha o pé-direito</span></div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Três pés-direitos diferentes com barras proporcionais: 15, 20 a 25 e 30 centímetros">
 <g font-family="Montserrat,Arial,sans-serif" fill="#3f4740">
 <!-- ambiente 1: pé-direito baixo -->
 <path d="M40 96H190" stroke="#16302a" stroke-width="2"/><path d="M40 230H190" stroke="#16302a" stroke-width="2"/>
@@ -265,24 +265,24 @@ const POSTS = [
 <g stroke="#c9b894" stroke-width="1"><path d="M78 102V226"/><path d="M96 102V226"/><path d="M114 102V226"/><path d="M132 102V226"/><path d="M150 102V226"/></g>
 <rect x="60" y="216" width="110" height="12" fill="#c9b48a" stroke="#9c8c72" stroke-width="1.5"/>
 <text x="115" y="88" font-size="11" text-anchor="middle" fill="#6d6e61">pé-direito 2,30 m</text>
-<text x="115" y="248" font-size="12" text-anchor="middle" font-weight="600" fill="#9b713a">bainha ~15 cm</text>
+<text x="115" y="248" font-size="12" text-anchor="middle" font-weight="600" fill="#9b713a">barra ~15 cm</text>
 <!-- ambiente 2 -->
 <path d="M245 60H395" stroke="#16302a" stroke-width="2"/><path d="M245 230H395" stroke="#16302a" stroke-width="2"/>
 <path d="M265 64H375V228H265Z" fill="#e2d6c0" stroke="#9c8c72" stroke-width="1.5"/>
 <g stroke="#c9b894" stroke-width="1"><path d="M283 66V226"/><path d="M301 66V226"/><path d="M319 66V226"/><path d="M337 66V226"/><path d="M355 66V226"/></g>
 <rect x="265" y="209" width="110" height="19" fill="#c9b48a" stroke="#9c8c72" stroke-width="1.5"/>
 <text x="320" y="52" font-size="11" text-anchor="middle" fill="#6d6e61">pé-direito 2,50 a 2,70 m</text>
-<text x="320" y="248" font-size="12" text-anchor="middle" font-weight="600" fill="#9b713a">bainha 20 a 25 cm</text>
+<text x="320" y="248" font-size="12" text-anchor="middle" font-weight="600" fill="#9b713a">barra 20 a 25 cm</text>
 <!-- ambiente 3 -->
 <path d="M450 30H600" stroke="#16302a" stroke-width="2"/><path d="M450 230H600" stroke="#16302a" stroke-width="2"/>
 <path d="M470 34H580V228H470Z" fill="#e2d6c0" stroke="#9c8c72" stroke-width="1.5"/>
 <g stroke="#c9b894" stroke-width="1"><path d="M488 36V226"/><path d="M506 36V226"/><path d="M524 36V226"/><path d="M542 36V226"/><path d="M560 36V226"/></g>
 <rect x="470" y="204" width="110" height="24" fill="#c9b48a" stroke="#9c8c72" stroke-width="1.5"/>
 <text x="525" y="22" font-size="11" text-anchor="middle" fill="#6d6e61">pé-direito 2,90 a 3,00 m</text>
-<text x="525" y="248" font-size="12" text-anchor="middle" font-weight="600" fill="#9b713a">bainha 30 cm</text>
+<text x="525" y="248" font-size="12" text-anchor="middle" font-weight="600" fill="#9b713a">barra 30 cm</text>
 </g>
 </svg>
-              <figcaption>Quanto mais alto o ambiente, maior a bainha. Esquema sem escala.</figcaption>
+              <figcaption>Quanto mais alto o ambiente, maior a barra. Esquema sem escala.</figcaption>
             </figure>
             <p>No pé-direito duplo, como num hall de entrada de 5 ou 6 metros, uma barra de 40 a 50 cm com acabamento é o que dá imponência ao tecido. É elegante, e valoriza a arquitetura em vez de disputar com ela.</p>` },
 
@@ -330,7 +330,7 @@ const POSTS = [
 
       { id: 'antes', toc: 'Antes de mandar fazer', h2: 'O que conferir antes de mandar fazer a bainha', html: `
             <ul>
-              <li>Qual é o pé-direito? A bainha vai ser proporcional a ele.</li>
+              <li>Qual é o pé-direito? O tamanho da barra vai ser proporcional a ele.</li>
               <li>Qual é a gramatura do tecido? Abaixo de 150 g/m², bainha dupla.</li>
               <li>A barra vai ficar a 1 cm, beijando o chão ou com sobra? A bainha executa essa escolha.</li>
               <li>A altura foi medida em três pontos? Desnível se resolve antes da costura, não nela.</li>
@@ -347,8 +347,8 @@ const POSTS = [
     faq: [
       ['O que é a bainha da cortina?',
        'É a dobra costurada na parte de baixo do tecido, que forma a barra da cortina. A altura da cortina é a decisão; a bainha é quem executa: é ela que faz a barra parar a 1 cm do chão, beijar o chão ou sobrar no piso.'],
-      ['Qual o tamanho ideal da bainha de cortina?',
-       'Proporcional ao pé-direito. Em teto baixo, por volta de 2,30 m, cerca de 15 cm. Entre 2,50 e 2,70 m, 20 a 25 cm. Perto de 3 m, 30 cm. Em pé-direito duplo, de 5 a 6 m, uma barra de 40 a 50 cm com acabamento.'],
+      ['Qual o tamanho ideal da bainha (barra) da cortina?',
+       'O nome certo do que se mede é barra; a bainha é a costura que faz a barra. O tamanho é proporcional ao pé-direito. Em teto baixo, por volta de 2,30 m, cerca de 15 cm. Entre 2,50 e 2,70 m, 20 a 25 cm. Perto de 3 m, 30 cm. Em pé-direito duplo, de 5 a 6 m, uma barra de 40 a 50 cm com acabamento.'],
       ['Bainha dupla é melhor que bainha simples?',
        'Depende do tecido. Tecido leve, abaixo de 150 g/m², como o voil, pede bainha dupla para ganhar corpo. Tecido de 170 a 200 g/m² fica bem com bainha simples, porque a própria dobra já dá o efeito encorpado.'],
       ['A bainha pode ser ajustada depois da cortina instalada?',

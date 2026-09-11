@@ -54,3 +54,7 @@ não como fala dele; ele aprova antes.
   segue a prática dele, apresentada como prática dele, sem "corroboração" externa nesse ponto.
   Outra referência: em voil, corrente/peso fino dentro da bainha para segurar o tecido —
   o Isani não citou; não entra.
+
+## Terminologia (Isani, 10/09): "bainha" é a costura; o que se mede e se vê é a **barra**. O artigo usa
+"barra" para o tamanho e mantém "bainha" no título e nas perguntas porque é o que as pessoas digitam
+(318 impressões com "bainha" contra 22 com "barra").
