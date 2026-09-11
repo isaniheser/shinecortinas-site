@@ -395,7 +395,7 @@ ${cityChip(null)}
         <nav aria-label="Breadcrumb" class="sl-ed-crumbs"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>${post.kicker}</span></nav>
         <p class="sl-ed-eyebrow">${h.eyebrow}</p>
         <h1 class="sl-ed-h1" id="topo">${h.h1} <em>${h.h1em}</em></h1>
-        <div class="sl-ed-author"><img src="/ceo-shine.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="object-position:50% 12%" loading="eager" decoding="async"><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
+        <div class="sl-ed-author"><span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:scale(1.7);transform-origin:50% 16%;border-radius:0" loading="eager" decoding="async"></span><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
         <div class="sl-ed-lead">${h.lead}</div>
         <a class="sl-ed-readlink" href="#${h.readTo}">${h.readText} <span aria-hidden="true">↓</span></a>
       </div>
@@ -423,7 +423,7 @@ ${cityChip(null)}
 ${sections}
         </article>
         <div class="sl-ed-authorend">
-          <img src="/ceo-shine.avif" alt="" width="64" height="64" style="object-position:50% 12%" loading="lazy" decoding="async">
+          <span style="display:block;width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="" width="64" height="64" style="width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:scale(1.7);transform-origin:50% 16%;border-radius:0" loading="lazy" decoding="async"></span>
           <p><strong>Conhecimento de quem está no projeto.</strong><br>Orientações de Isani Oliveira, fundador da ShineCortinas e especialista em cortinas sob medida, desde 2009 no Sul Fluminense. <a href="/sobre/">Conheça a Shine</a>.</p>
         </div>
       </div>
