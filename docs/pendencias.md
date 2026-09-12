@@ -112,6 +112,14 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
   artigo está indexado, mas a última visita do Google foi 09/09 20:42, antes do conteúdo novo (10/09).
 - Sitemap principal processado (53 páginas, lido em 11/09). Há 8 sitemaps antigos do Wix
   falhando na lista do Search Console (limpeza opcional, pelo Isani).
+- **Google Analytics (GA4, lido em 11/09 pelo Chrome do Isani — abre com a conta Google, sem
+  precisar do Cloudflare):** 30 dias = 1.324 sessões; 58% de anúncios (Instagram/Facebook) caindo
+  na landing `/lp/anuncio-d/` (644 visualizações, 1 min 45 s), 20% direto, **11% Google orgânico
+  (151 sessões)**. Artigo antigo de altura: 80 visualizações e 1 min 21 s em 30 dias. Artigo novo
+  de altura (9–11/09): 7 visualizações, **2 min 46 s de engajamento** (contra 1 min 21 s do antigo).
+  Bainha (11/09): 4 visualizações, 23 s (recém-publicado). `/persianas/`: 6 min 10 s. Linha de base
+  para comparar em 2 semanas. Os cliques no WhatsApp da landing contam como "evento principal"
+  (1.309 em 30 dias); os artigos ainda não geram evento principal (0).
 - **Próximo passo:** pedir indexação dos dois artigos novos no Search Console (um clique cada, na
   conta do Isani). Retenção/tempo na página: só no GA4 (tags injetadas pelo Cloudflare) — depende de login.
 
