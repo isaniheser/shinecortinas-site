@@ -100,12 +100,40 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
   - **Forro (corrigido pelo Isani, set/2026):** são dois grupos. O **forro translúcido**
     dá privacidade, protege o tecido decorativo e quebra parte da claridade. O **forro
     blackout** tem duas versões: **70% (semi blackout)**, que deixa penumbra, e
-    **100%**, que entrega escuro total. Persianas também têm material blackout 100%.
-    Para quarto escuro de verdade: **cortina com forro blackout 100% resolve**.
+    **100%**, que bloqueia a passagem de luz pelo material. Persianas também podem
+    usar material blackout 100%. Para escurecer o ambiente, o forro precisa trabalhar
+    junto da instalação: fechamento superior e lateral, tecido suficiente no centro
+    e barra beijando o chão.
     "Forro translúcido" é o nome correto, não tem sinônimo comercial. Tecidos que
     compõem esse grupo (informados pelo Isani): **gabardine** (de algodão e de
-    poliéster), **tergal**, **tergal verão**, **cetim** e **gorgurinho**. Não atribuir
-    característica a cada um sem confirmar com ele — a lista é o que está validado.
+    poliéster), **tergal**, **tergal verão**, **cetim**, **gorgurinho** e **microfibra**.
+    Microfibra foi acrescentada pelo Isani em 12/09/2026, sem substituir os demais.
+    Exemplos confirmados: gabardine 100 g/m²; tergal verão 70 g/m²; cetim 70, 90 ou
+    110 g/m²; microfibra 65 ou 100 g/m². Não fixar uma gramatura para toda a família
+    nem atribuir características adicionais aos tecidos sem confirmação.
+  - **Calor (esclarecido pelo Isani, 12/09/2026):** forro blackout de tecido tem
+    relato de redução de **5 a 6 °C**, medida pelo Isani comparando a temperatura
+    do ambiente antes e depois de instalações. A referência a **até cerca de 11 °C**
+    é para **persianas com fibra de vidro**, com **Screen (tela solar)** e **Pinpoint**
+    citados como exemplos de materiais. Não trocar as aplicações, prometer redução
+    universal, atribuir o mesmo resultado a todo modelo ou chamar Screen de blackout
+    100%. As condições de um ensaio controlado não foram informadas.
+  - **Instalação (entrevista de 12/09/2026):** finalizador/final de trilho prende a
+    ponta do forro; não é um sistema de vedação lateral. No fechamento comum, as
+    partes se encostam com tecido e franzimento suficientes. O **trilho triplo com
+    transpasse** tem a cortina à frente e duas vias traseiras para sobreposição do
+    forro de cerca de 15 cm. Ocupa mais espaço no cortineiro e é usado principalmente
+    quando solicitado. Não converter isso em obrigação para toda instalação.
+  - **Privacidade e manutenção (entrevista de 12/09/2026):** tecido encorpado, trama
+    fechada e, preferencialmente, gramatura acima de 170 g/m² são critérios conjuntos
+    para a situação de privacidade descrita; gramatura isolada não dispensa forro nem
+    resolve sua função de proteção. Manutenção depende da construção: diferenciar
+    microfibra, blackout de tecido com bloqueador interno e blackout com película
+    traseira. Os materiais acompanham documento de cuidados. Para película, Isani
+    recomenda **higienização profissional específica para blackout**; sua expressão
+    "lavagem a seco" não significava limpeza com solvente. Nomes Max Blackout,
+    Blackout Ultra e Super Blackout foram exemplos da entrevista, não prova de
+    equivalência entre produtos de fabricantes diferentes.
   - **Números confirmados pelo Isani (set/2026):** empresa desde 2009; "mais de 9.000
     ambientes transformados". Podem ser usados no texto e no schema.
   - **Nota do Google (coletada em 06/set/2026 no Perfil da Empresa):** **4,9 com 294
@@ -119,7 +147,7 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     o texto visível pode dizer "designer de interiores por prática". Nunca atribuir
     formação acadêmica ou registro que ele não informou.
   - Não prometer "privacidade absoluta" nem atribuir o escurecimento a acessório que
-    a Shine não usa; o que define o resultado é o **tipo de forro**.
+    a Shine não usa; o resultado depende do **tipo de forro e da instalação adequada**.
   - Fotos: só usar imagem que mostre **o ambiente e a solução exatos**. Quando não
     houver, marcar como referência (ver `docs/fotos-necessarias.md`).
 - **WhatsApp (CTA padrão):**

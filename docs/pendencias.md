@@ -98,6 +98,31 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 - **Ainda aberto, do relatório:** `srcset` (item 6 acima); promessa "instalação no mesmo dia da
   consultoria" em Porto Real (confirmar com o Isani); artigos repetidos; fotos por cidade.
 
+## Leitura do Search Console em 11/09/2026 (pelo Chrome do Isani, só leitura)
+
+- **Acesso funciona:** com o Claude in Chrome (o Chrome do Isani, logado), o Search Console abre e
+  dá para ler desempenho, inspeção de URL e sitemaps. O Cloudflare pede login de novo (sessão expira).
+- 28 dias (13/08–09/09): 113 cliques, 12,5 mil impressões, posição média 7. Metade dos cliques (55)
+  ainda vinha da URL antiga de altura.
+- **Queda a partir de 07/09:** cliques de 4–6/dia para 1/dia; impressões de ~400 para 155 (09/09).
+  Causa: a URL antiga de altura foi apagada em 05/09 com redirect inválido (`301!`) e ficou servida
+  do cache com `noindex`; o Google a retirou do índice. É o estrago que a auditoria pegou.
+- **Recuperação em curso:** em 09/09 11:31 o Google releu a URL antiga e já a trata como
+  "página com redirecionamento" para `/blog/altura-ideal-da-cortina/` (canônico = novo). O novo
+  artigo está indexado, mas a última visita do Google foi 09/09 20:42, antes do conteúdo novo (10/09).
+- Sitemap principal processado (53 páginas, lido em 11/09). Há 8 sitemaps antigos do Wix
+  falhando na lista do Search Console (limpeza opcional, pelo Isani).
+- **Google Analytics (GA4, lido em 11/09 pelo Chrome do Isani — abre com a conta Google, sem
+  precisar do Cloudflare):** 30 dias = 1.324 sessões; 58% de anúncios (Instagram/Facebook) caindo
+  na landing `/lp/anuncio-d/` (644 visualizações, 1 min 45 s), 20% direto, **11% Google orgânico
+  (151 sessões)**. Artigo antigo de altura: 80 visualizações e 1 min 21 s em 30 dias. Artigo novo
+  de altura (9–11/09): 7 visualizações, **2 min 46 s de engajamento** (contra 1 min 21 s do antigo).
+  Bainha (11/09): 4 visualizações, 23 s (recém-publicado). `/persianas/`: 6 min 10 s. Linha de base
+  para comparar em 2 semanas. Os cliques no WhatsApp da landing contam como "evento principal"
+  (1.309 em 30 dias); os artigos ainda não geram evento principal (0).
+- **Próximo passo:** pedir indexação dos dois artigos novos no Search Console (um clique cada, na
+  conta do Isani). Retenção/tempo na página: só no GA4 (tags injetadas pelo Cloudflare) — depende de login.
+
 ## Observação sobre o índice do Google (06/set/2026)
 
 Busca externa ainda mostra títulos e URLs do site antigo (`/sobre-nós`, `/cortinas-volta-redonda`, `/post/7-tipos…`, title com "Premium" no portfólio). Todas essas URLs têm 301 em `_redirects` e os títulos novos estão no ar; é o índice que ainda não recrawlou. Submeter o sitemap e pedir reindexação assim que houver acesso ao Search Console.

@@ -15,9 +15,9 @@ Método: uma conversa curta por post (5 a 10 perguntas), depois a redação.
 
 | # | Post | Status |
 |---|---|---|
-| 1 | tipos-de-forro-para-cortina | **Reescrito** (taxonomia de forro) |
-| 2 | o-que-e-blackout | fila |
-| 3 | como-escurecer-quarto-sala-tv | fila |
+| 1 | tipos-de-forro-para-cortina | **Reescrito 2ª vez** (13/09, rascunho Isani+GPT, layout editorial; pilar de forros) |
+| 2 | o-que-e-blackout | **próximo** (satélite de forros; busca de 1.466/mês) |
+| 3 | como-escurecer-quarto-sala-tv | **próximo** (satélite de forros) |
 | 4 | linho-para-cortinas | fila |
 | 5 | por-que-escolher-cortina-motorizada | fila |
 | 6 | como-funciona-persiana-motorizada | fila |

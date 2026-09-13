@@ -28,16 +28,17 @@
 
 ## Forros (fato validado pelo fundador, set/2026)
 O forro é a camada atrás do tecido decorativo e é ele que define luz e privacidade. Existem dois grupos:
-- **Forro translúcido:** dá privacidade, protege o tecido decorativo do sol e quebra parte da claridade. Tecidos que compõem esse grupo: gabardine (de algodão e de poliéster), tergal, tergal verão, cetim e gorgurinho.
-- **Forro blackout:** em duas versões. **70% (semi blackout)** deixa o ambiente em penumbra; **100%** entrega escuro total. Persianas também têm material blackout 100%.
-- Para quarto realmente escuro: cortina com forro blackout 100% resolve. O que define o resultado é o tipo de forro, não acessório.
+- **Forro translúcido:** dá privacidade, protege o tecido decorativo do sol e quebra parte da claridade. Tecidos que compõem esse grupo: gabardine (de algodão e de poliéster), tergal, tergal verão, cetim, gorgurinho e microfibra. Exemplos de opções informadas pelo fundador: gabardine de 100 g/m², tergal verão de 70 g/m², cetim de 70, 90 ou 110 g/m² e microfibra de 65 ou 100 g/m². São exemplos, não gramaturas fixas para toda a família de tecidos.
+- **Forro blackout:** em duas versões. **70% (semi blackout)** deixa o ambiente em penumbra; **100%** bloqueia a passagem de luz pelo material. Persianas também podem usar material blackout 100%.
+- Para quarto realmente escuro, o forro blackout 100% precisa trabalhar junto da instalação: fechamento superior e lateral, tecido suficiente no centro e barra beijando o chão. Finalizadores mantêm as pontas presas; não são guias de vedação lateral. O trilho triplo com transpasse permite sobreposição central de cerca de 15 cm, conforme a configuração descrita pelo fundador, e ocupa mais espaço no cortineiro.
 - A ShineCortinas não trabalha com rolô de guias laterais nem caixa box.
 
 ## Diferenciais técnicos
 - **Medição a laser** e confecção sob medida para caimento preciso.
 - **Automação IoT:** motores ocultos, baixo nível de ruído e compatibilidade com Alexa, Google Home e Apple Home.
 - **Cortina Wave:** cabeçote estruturado e sistema que preserva a regularidade da onda; trilho duplo com espaçamento que evita atrito no forro.
-- **Blackout técnico:** tecido com fibra de vidro, que repele o calor por infravermelho. O tecido barra a luz pela trama; o nível de escurecimento do ambiente depende da folga calculada, da sobreposição, do forro e da instalação. Redução térmica de até cerca de 11 °C.
+- **Forro blackout de tecido — relato de campo do fundador:** Isani relata reduções de temperatura do ambiente de aproximadamente 5 a 6 °C, comparando antes e depois de instalações com esse forro. Não é uma promessa de redução para qualquer ambiente nem um ensaio controlado descrito neste registro.
+- **Persianas com fibra de vidro:** a referência de redução térmica de até cerca de 11 °C informada pelo fundador se refere ao contexto dessas persianas, com Screen (tela solar) e Pinpoint citados como exemplos de materiais com fibra de vidro. Não atribuir esse número ao forro blackout de tecido, nem a todo modelo de Screen ou Pinpoint. Controle térmico e bloqueio luminoso são características distintas; tela solar não é sinônimo de blackout 100%.
 - **Instalação impecável:** equipe própria, sem improvisos.
 
 ## Projetos e clientes atendidos
