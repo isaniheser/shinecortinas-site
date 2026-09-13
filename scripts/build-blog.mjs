@@ -13,68 +13,211 @@ const TODAY = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Pa
 const POSTS = [
   {
     slug: 'tipos-de-forro-para-cortina',
+    layout: 'editorial',
+    bodyClass: 'sl-ed-fr-forros',
     title: 'Tipos de forro para cortina: translúcido, semi blackout e blackout 100%',
-    seoTitle: 'Tipos de Forro para Cortina: Translúcido, Semi Blackout e Blackout 100% | ShineCortinas',
-    description: 'O forro decide o resultado da cortina. Entenda o forro translúcido (gabardine, tergal, cetim, gorgurinho), o semi blackout de 70% e o blackout 100%.',
+    seoTitle: "Tipos de Forro para Cortina: Tecidos e Como Escolher | ShineCortinas",
+    description: "Translúcido, semi blackout ou blackout 100%? Isani Oliveira explica tecidos, privacidade, calor, instalação e lavagem para escolher o forro da cortina.",
     kicker: 'Tecidos e forros',
     published: '2026-02-19',
-    modified: '2026-09-07',
-    // Resposta direta no primeiro parágrafo: é o trecho que buscadores e IAs citam.
-    lead: 'O forro da cortina se divide em dois grupos. O <strong>forro translúcido</strong> dá privacidade, protege o tecido decorativo e quebra parte da claridade, sem escurecer o ambiente. O <strong>forro blackout</strong> tem duas versões: o de <strong>70%</strong>, chamado de semi blackout, que deixa o ambiente em penumbra, e o de <strong>100%</strong>, que bloqueia a passagem de luz pelo tecido e é o que entrega escuro de verdade.',
-    body: `
-      <h2>O forro é a camada que ninguém vê e que decide o resultado</h2>
-      <p>O forro é uma segunda camada acoplada atrás do tecido decorativo da cortina. Quem entra no ambiente vê o linho, o voil ou o veludo que você escolheu. O forro fica escondido, mas é ele que determina quanta luz entra, quanta privacidade você tem de dia e quanto tempo o tecido de frente vai durar bonito.</p>
-      <p>Por isso a escolha do forro não é um detalhe do fim do projeto. Ela vem junto com a escolha do tecido, porque as duas decisões juntas é que formam o resultado.</p>
-
-      <h2>Forro translúcido: privacidade e proteção, sem escurecer</h2>
-      <p>O forro translúcido cumpre três funções. Dá <strong>privacidade</strong> durante o dia, sem fechar o ambiente. <strong>Protege o tecido decorativo</strong> da cortina, que fica exposto ao sol todos os dias. E <strong>quebra parte da claridade</strong>, suavizando a luz que entra.</p>
-      <p>É a escolha de quem quer o ambiente claro, mas sem a sensação de estar exposto e sem que o tecido bonito da frente sofra com o sol. Não é a escolha de quem precisa dormir de dia.</p>
-
-      <h3>Os tecidos que compõem o forro translúcido</h3>
-      <p>"Forro translúcido" é o nome do grupo, e dentro dele há mais de um tecido: <strong>gabardine</strong> (de algodão ou de poliéster), <strong>tergal</strong>, <strong>tergal verão</strong>, <strong>cetim</strong> e <strong>gorgurinho</strong>. Cada um se comporta de um jeito com a luz, com o caimento e com o tecido decorativo que vai na frente. A escolha entre eles é feita na consultoria, com o mostruário na mão e a luz do seu próprio ambiente.</p>
-
-      <h2>Forro blackout: duas versões, dois resultados diferentes</h2>
-      <p>Quando o assunto é escurecer, o forro blackout se divide em duas subcategorias, e a diferença entre elas é o que mais gera confusão na hora de comprar.</p>
-
-      <h3>Semi blackout (70%)</h3>
-      <p>Reduz boa parte da luz e deixa o ambiente em <strong>penumbra</strong>. Serve para quem quer dormir melhor, assistir televisão de dia com conforto ou baixar a temperatura do quarto, mas não faz questão de escuro absoluto.</p>
-
+    modified: TODAY,
+    ogImage: '/isani-consultoria.avif',
+    faqEm: 'forro de cortina',
+    tocNote: "O forro não serve só para escurecer. Ele precisa combinar com a sua rotina.",
+    related: [['/blog/altura-ideal-da-cortina/', 'Altura ideal da cortina'], ['/blog/bainha-de-cortina/', 'Bainha de cortina'], ['/blog/o-que-e-blackout/', 'O que é blackout'], ['/blog/como-escurecer-quarto-sala-tv/', 'Como escurecer o quarto'], ['/blackout-e-forros/', 'Blackout e forros'], ['/persianas/', 'Persianas sob medida']],
+    hero: {
+      eyebrow: 'O olhar de quem instala',
+      h1: "Tipos de forro<br>para cortina:", h1em: "qual escolher?",
+      lead: "<p>O <strong>translúcido</strong> dá privacidade mantendo a claridade. O <strong>semi blackout 70%</strong> deixa aquela penumbra aconchegante. O <strong>blackout 100%</strong> bloqueia a luz pelo material, mas precisa de uma instalação bem resolvida para escurecer o ambiente.</p><p>Quando eu ajudo um cliente a escolher, preciso entender o que ele quer resolver. Nessa conversa entram o caimento, o investimento e a facilidade de limpeza.</p><p>O forro também protege o tecido decorativo, aquele que você escolheu para aparecer na frente da cortina.</p>",
+      readTo: "qual-escolher", readText: "Compare os forros por objetivo",
+      photo: "/isani-consultoria.avif", photoAlt: "Isani Oliveira conferindo o caimento de uma cortina durante uma consultoria",
+      photoTag: "Consultoria ShineCortinas", photoCaption: "A escolha do tecido e do forro começa pelo uso do ambiente.",
+    },
+    sections: [
+      { id: "precisa-de-forro", toc: "Quando usar forro", label: "Guia de forros", h2: "Translúcido, semi blackout e blackout: o que muda?", html: `
+<p>Eu separo os forros em dois grupos: <strong>translúcidos</strong> e <strong>blackout</strong>. Dentro do blackout, trabalho com o semi blackout 70% e o blackout 100%.</p>
+<figure class="sl-ed-fig sl-ed-figure sl-ed-fr-light-figure">
+  <div class="sl-ed-figtop"><span class="sl-ed-eyebrow">Desenho 01</span><span>O que muda na passagem da luz</span></div>
+  <div class="sl-ed-cards sl-ed-fr-light-cards">
+    <div class="sl-ed-card">
+      <h3>Translúcido</h3>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 176" role="img" aria-labelledby="sl-ed-fr-light-translucido-title sl-ed-fr-light-translucido-desc">
+    <title id="sl-ed-fr-light-translucido-title">Forro translúcido: passagem de claridade</title>
+    <desc id="sl-ed-fr-light-translucido-desc">Esquema da luz da esquerda para a direita: ela atravessa a janela e chega ao forro. O translúcido deixa passar claridade, mantendo o ambiente claro.</desc>
+    <rect x="12" y="33" width="206" height="114" rx="7" fill="#FBFAF7"/>
+    <path d="M54 40V142M61 40V142" stroke="#9BAFA8" stroke-width="2"/>
+    <path d="M54 40H61M54 142H61" stroke="#9BAFA8" stroke-width="2"/>
+    <g stroke="#B38D45" stroke-width="3" stroke-linecap="round"><path d="M20 67H119M20 100H119M20 133H119"/><path d="M113 63L119 67L113 71M113 96L119 100L113 104M113 129L119 133L113 137" fill="none"/></g>
+    <path d="M128 38Q135 42 142 38V147Q135 151 128 147Z" fill="#DAD9C7" stroke="#647368" stroke-width="1.5"/>
+    <path d="M134 40V148" stroke="#FBFAF7" opacity=".45"/>
+<g stroke="#B38D45" stroke-width="3" stroke-linecap="round" opacity="0.75"><path d="M150 67H206M150 100H206M150 133H206"/><path d="M200 63L206 67L200 71M200 96L206 100L200 104M200 129L206 133L200 137" fill="none"/></g>
+    <g fill="#4D5B52" font-size="13" font-family="Montserrat, sans-serif" text-anchor="middle"><text x="58" y="166">janela</text><text x="135" y="166">forro</text></g>
+  </svg>
+      <p><strong>Claridade e privacidade.</strong> Filtra parte da luz e mantém o ambiente claro.</p>
+    </div>
+    <div class="sl-ed-card">
+      <h3>Semi blackout 70%</h3>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 176" role="img" aria-labelledby="sl-ed-fr-light-semi-title sl-ed-fr-light-semi-desc">
+    <title id="sl-ed-fr-light-semi-title">Semi blackout 70%: parte da claridade atravessa o material</title>
+    <desc id="sl-ed-fr-light-semi-desc">Esquema da luz da esquerda para a direita: ela atravessa a janela e chega ao forro. O semi blackout deixa passar parte da claridade, criando penumbra.</desc>
+    <rect x="12" y="33" width="206" height="114" rx="7" fill="#FBFAF7"/>
+    <path d="M54 40V142M61 40V142" stroke="#9BAFA8" stroke-width="2"/>
+    <path d="M54 40H61M54 142H61" stroke="#9BAFA8" stroke-width="2"/>
+    <g stroke="#B38D45" stroke-width="3" stroke-linecap="round"><path d="M20 67H119M20 100H119M20 133H119"/><path d="M113 63L119 67L113 71M113 96L119 100L113 104M113 129L119 133L113 137" fill="none"/></g>
+    <path d="M128 38Q135 42 142 38V147Q135 151 128 147Z" fill="#AFB9A9" stroke="#647368" stroke-width="1.5"/>
+    <path d="M134 40V148" stroke="#FBFAF7" opacity=".45"/>
+<g stroke="#B38D45" stroke-width="3" stroke-linecap="round" opacity="0.28"><path d="M150 67H206M150 100H206M150 133H206"/><path d="M200 63L206 67L200 71M200 96L206 100L200 104M200 129L206 133L200 137" fill="none"/></g>
+    <g fill="#4D5B52" font-size="13" font-family="Montserrat, sans-serif" text-anchor="middle"><text x="58" y="166">janela</text><text x="135" y="166">forro</text></g>
+  </svg>
+      <p><strong>Sensação de tardezinha.</strong> Reduz a claridade e deixa uma penumbra aconchegante.</p>
+    </div>
+    <div class="sl-ed-card">
       <h3>Blackout 100%</h3>
-      <p>Bloqueia a passagem de luz pelo tecido. É o forro que entrega <strong>escuro de verdade</strong>: quem trabalha à noite e dorme de dia, quarto de bebê, quem tem sono leve, sala de projeção. Se o objetivo é quarto realmente escuro, a cortina com forro blackout 100% resolve.</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 176" role="img" aria-labelledby="sl-ed-fr-light-blackout-title sl-ed-fr-light-blackout-desc">
+    <title id="sl-ed-fr-light-blackout-title">Blackout 100%: bloqueio da luz pelo material</title>
+    <desc id="sl-ed-fr-light-blackout-desc">Esquema da luz da esquerda para a direita: ela atravessa a janela e chega ao forro. O material blackout 100% interrompe a passagem de luz pelo tecido.</desc>
+    <rect x="12" y="33" width="206" height="114" rx="7" fill="#FBFAF7"/>
+    <path d="M54 40V142M61 40V142" stroke="#9BAFA8" stroke-width="2"/>
+    <path d="M54 40H61M54 142H61" stroke="#9BAFA8" stroke-width="2"/>
+    <g stroke="#B38D45" stroke-width="3" stroke-linecap="round"><path d="M20 67H119M20 100H119M20 133H119"/><path d="M113 63L119 67L113 71M113 96L119 100L113 104M113 129L119 133L113 137" fill="none"/></g>
+    <path d="M128 38Q135 42 142 38V147Q135 151 128 147Z" fill="#284B40" stroke="#647368" stroke-width="1.5"/>
+    <path d="M134 40V148" stroke="#FBFAF7" opacity=".45"/>
 
-      <h2>E as persianas?</h2>
-      <p>As persianas também têm material com blackout 100%. Ou seja, a decisão entre cortina e persiana não é a mesma decisão do nível de escurecimento: existe persiana que escurece por completo, do mesmo jeito que existe cortina que apenas filtra a luz.</p>
-
-      <h2>Qual escolher para cada objetivo</h2>
-      <div class="sl-tablewrap"><table>
-        <thead><tr><th>Você quer</th><th>Forro indicado</th><th>Resultado no ambiente</th></tr></thead>
-        <tbody>
-          <tr><td>Privacidade de dia</td><td>Translúcido</td><td>Ambiente claro, sem exposição para a rua</td></tr>
-          <tr><td>Proteger o tecido do sol</td><td>Translúcido</td><td>O tecido de frente dura mais</td></tr>
-          <tr><td>Dormir melhor, sem escuro total</td><td>Semi blackout (70%)</td><td>Penumbra</td></tr>
-          <tr><td>Sala de TV confortável de dia</td><td>Semi blackout (70%)</td><td>Tela sem reflexo, ambiente ainda legível</td></tr>
-          <tr><td>Quarto escuro de verdade</td><td>Blackout 100%</td><td>Escuro mesmo ao meio-dia</td></tr>
-          <tr><td>Dormir de dia, quarto de bebê</td><td>Blackout 100%</td><td>Escuro mesmo ao meio-dia</td></tr>
-        </tbody>
-      </table></div>
-
-      <h2>Como a Shine define o forro do seu projeto</h2>
-      <p>Na consultoria em domicílio, o consultor vê a janela, a orientação do sol e a rotina da casa, e apresenta o tecido decorativo junto com o forro correspondente. Você compara as opções no seu próprio ambiente, com a luz real daquele cômodo, antes de decidir qualquer coisa.</p>
-      <p>Veja também as <a href="/cortinas/">cortinas sob medida</a>, as <a href="/persianas/">persianas técnicas</a> e a página de <a href="/blackout-e-forros/">blackout e forros</a>. A Shine atende com consultoria gratuita em domicílio em <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a>, <a href="/cidades/resende/">Resende</a> e em todo o <a href="/cidades-atendidas/">Sul Fluminense</a>.</p>
-    `,
+    <g fill="#4D5B52" font-size="13" font-family="Montserrat, sans-serif" text-anchor="middle"><text x="58" y="166">janela</text><text x="135" y="166">forro</text></g>
+  </svg>
+      <p><strong>Bloqueio pelo material.</strong> Para escurecer o cômodo, a instalação também precisa resolver as frestas.</p>
+    </div>
+  </div>
+  <figcaption>Mesma janela e mesma luz incidente nos três esquemas. A comparação é ilustrativa: não representa uma medição nem o escurecimento final de um ambiente. Os desenhos mostram a passagem de luz pelo material.</figcaption>
+</figure>
+<h3>Toda cortina precisa de forro?</h3>
+<p>Para dar privacidade, nem sempre.</p>
+<p>Em uma sala que precisa continuar clara, posso trabalhar com um tecido encorpado, de trama fechada, preferencialmente com gramatura acima de 170 g/m². Eu observo essas características juntas: o tecido precisa ter corpo e uma trama que ofereça o fechamento necessário.</p>
+<p>Agora, se a escolha for um voal ou uma gaze de linho com trama mais aberta, o caminho é acrescentar um forro. Assim, preservamos a aparência do tecido da frente e conseguimos trabalhar a privacidade por trás.</p>
+<p>Essa escolha trata da privacidade. A proteção do tecido decorativo também precisa ser considerada antes de decidir pelo uso sem forro.</p>` },
+      { id: "translucido", toc: "Translúcido e tecidos", label: "Guia de forros", h2: "Forro translúcido: privacidade com o ambiente claro", html: `
+<p>O forro translúcido é uma opção para quem quer suavizar a claridade e ter privacidade, mantendo a sensação de um ambiente claro.</p>
+<h3>Quais tecidos podem ser usados como forro translúcido?</h3>
+<p>Forro translúcido é o nome do grupo. Entre as opções estão gabardine, tergal, tergal verão, cetim, gorgurinho e microfibra. Na gabardine, há opções de algodão e de poliéster.</p>
+<p>Há diferentes gramaturas dentro dessas famílias. Alguns exemplos com que trabalho são:</p>
+<ul><li>Gabardine de 100 g/m².</li><li>Tergal verão de 70 g/m².</li><li>Cetim de 70, 90 ou 110 g/m².</li><li>Microfibra de 65 ou 100 g/m².</li></ul>
+<p>Esses números são exemplos de opções, não uma gramatura única para cada tipo de tecido. E gramatura não é o percentual de escurecimento: eu preciso observar também a trama, a construção do material e o resultado que o cliente procura.</p>
+<h3>Microfibra de 65 ou 100 g/m²: o que muda na privacidade?</h3>
+<p>Uma das opções que utilizo é a microfibra de aproximadamente 65 g/m². Ela protege o tecido decorativo e quebra parte da claridade — em torno de 20% a 30%, na minha avaliação desses materiais.</p>
+<p>E a pergunta que costuma aparecer é: “Quando eu acender a luz à noite, essa privacidade continua?”</p>
+<p>Continua, mas existe uma diferença entre ter privacidade no ambiente e não aparecer nenhuma silhueta quando alguém chega perto da cortina. Com um forro mais leve, a pessoa que se aproxima do tecido pode deixar a silhueta perceptível do lado de fora.</p>
+<p>Quando o cliente quer um fechamento maior, posso trabalhar com uma microfibra de aproximadamente 100 g/m². A figura fica menos definida; mesmo perto da cortina, o que pode aparecer é uma sombra difusa, aquela “fumaça”, em vez de uma silhueta marcada.</p>
+<p>Por isso, eu não escolho o forro olhando apenas a gramatura. A trama, o material e o resultado desejado precisam ser considerados juntos.</p>` },
+      { id: "semi-blackout", toc: "Semi blackout 70%", label: "Guia de forros", h2: "Semi blackout 70%: a sensação de tardezinha dentro da sala", html: `
+<p>O semi blackout é muito utilizado em salas. Tem cliente que quer assistir a um filme com mais conforto, mas não quer transformar a sala em um ambiente completamente escuro.</p>
+<p>Eu gosto de explicar assim: ele traz aquela sensação de tardezinha. A luz fica mais suave, o ambiente ganha aconchego e continua com alguma claridade.</p>
+<p>O semi blackout de microfibra com que trabalho também permite fazer pregas e conseguir um bom caimento. E o investimento costuma ser menor que o das opções de blackout 100%.</p>
+<p>É uma escolha interessante quando o objetivo é deixar a sala mais gostosa de usar, sem buscar escuridão total.</p>` },
+      { id: "blackout-100", toc: "Blackout 100%", label: "Guia de forros", h2: "Blackout 100%: existem construções diferentes", html: `
+<p>O nome “blackout 100%” informa a proposta de bloqueio da luz pelo material, mas não conta tudo sobre sua construção.</p>
+<p>Há diferenças que influenciam o caimento, o controle de calor e, principalmente, a manutenção.</p>
+<h3>Blackout de tecido com bloqueador interno</h3>
+<p>Nesse tipo, o bloqueio fica por dentro de uma construção de tecido mais encorpada, de dupla face. É o tipo a que me refiro quando falo em Max Blackout, Blackout Ultra ou Super Blackout.</p>
+<p>Os nomes comerciais precisam ser conferidos junto da descrição do material. O que importa é identificar como aquele produto foi construído.</p>
+<p>Nas opções que utilizo, esse blackout pode ser lavado em máquina. Ele não tem aquela película siliconada exposta na parte traseira.</p>
+<p>A contrapartida é o caimento: por ser mais grosso, não tem a mesma maleabilidade de um forro leve.</p>
+<h3>Blackout com película traseira siliconada</h3>
+<p>Esse material tem uma dublagem na parte de trás e merece uma atenção diferente.</p>
+<p>É uma das opções que prefiro quando o cliente também quer reduzir o calor. Porém, a manutenção exige mais cuidado: a película pode grudar ou se danificar quando a limpeza é feita de maneira inadequada.</p>
+<p>Essa diferença precisa ser explicada antes da compra. A facilidade de lavar também faz parte da escolha do forro.</p><p>Se o nome ainda gera dúvida, veja também <a href="/blog/o-que-e-blackout/">o que é blackout</a>.</p>` },
+      { id: "qual-escolher", toc: "Qual forro escolher", label: "Guia de forros", h2: "Qual forro eu escolheria para o seu ambiente?", html: `
+<p>O ponto de partida é o que você precisa resolver. Esta comparação ajuda a organizar a escolha antes de olhar o mostruário.</p><div class="sl-ed-table sl-ed-fr-choice-table"><table><caption>Seu objetivo, a opção a avaliar e o cuidado na escolha</caption><thead><tr><th scope="col">Você quer</th><th scope="col">Eu avalio</th><th scope="col">O que considerar</th></tr></thead><tbody><tr><td data-label="Você quer">Manter a sala clara e ter privacidade</td><td data-label="Eu avalio">Forro translúcido</td><td data-label="O que considerar">Observar a trama e a proximidade das pessoas ao tecido, especialmente à noite.</td></tr><tr><td data-label="Você quer">Suavizar a luz para assistir a um filme</td><td data-label="Eu avalio">Semi blackout 70%</td><td data-label="O que considerar">Deixa alguma claridade. Não é a escolha para escuridão total.</td></tr><tr><td data-label="Você quer">Dormir de dia ou deixar o quarto escuro</td><td data-label="Eu avalio">Blackout 100%</td><td data-label="O que considerar">O resultado depende também do fechamento no teto, nas laterais, no centro e junto ao piso.</td></tr><tr><td data-label="Você quer">Reduzir o calor de um ambiente ensolarado</td><td data-label="Eu avalio">Avaliar a construção do blackout 100%</td><td data-label="O que considerar">Considerar o material, a incidência de sol e a manutenção. Não há redução de temperatura garantida para toda casa.</td></tr><tr><td data-label="Você quer">Priorizar a facilidade de lavagem</td><td data-label="Eu avalio">Microfibra ou blackout de tecido com bloqueador interno, conforme o objetivo</td><td data-label="O que considerar">Confirmar as instruções do produto. O blackout com película exige outros cuidados.</td></tr></tbody></table></div><p>Veja também as opções de <a href="/blackout-e-forros/">blackout e forros para o seu projeto</a>.</p><aside class="sl-ed-fr-consult" aria-labelledby="sl-ed-fr-consult-title"><p class="sl-ed-eyebrow">Veja no seu ambiente</p><h3 id="sl-ed-fr-consult-title">Ainda em dúvida entre dois forros?</h3><p>Na consultoria em casa, avaliamos a luz da janela e comparamos o tecido decorativo com o forro. Assim, a escolha considera a sua rotina, o caimento e os cuidados depois da instalação.</p><a class="sl-btn" data-wa="agendar" href="https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener noreferrer">Agendar consultoria gratuita →</a><p class="sl-ed-fr-consult-note">Volta Redonda e Sul Fluminense · Sem compromisso</p></aside>` },
+      { id: "calor", toc: "Forro e redução de calor", label: "Guia de forros", h2: "Para reduzir o calor, eu observo o material", html: `
+<p>Nem todo forro entrega o mesmo resultado em relação ao calor.</p>
+<p>Para um ambiente que recebe muito sol, minha preferência é trabalhar com blackout 100%, especialmente nas opções com película traseira siliconada.</p>
+<p>Em instalações com forro blackout de tecido que acompanhei, medi reduções de aproximadamente 5 a 6 °C ao comparar a temperatura do ambiente antes e depois da instalação. Esse número registra resultados que observei nesses projetos; não é uma redução que eu prometa para qualquer casa.</p>
+<p>Quando faço essa indicação, estou falando dos materiais de blackout de tecido que utilizo, e não de qualquer produto de lona ou plástico vendido com o mesmo nome.</p>` },
+      { id: "persianas", toc: "E as persianas?", label: "Guia de forros", h2: "E as persianas com blackout?", html: `
+<p>Persianas também podem usar material blackout 100%. A escolha entre cortina e persiana é uma decisão; o nível de escurecimento do material é outra. Nos dois casos, é preciso considerar a instalação e os caminhos pelos quais a luz pode entrar.</p>
+<p>Também existem persianas com fibra de vidro na composição, como a Screen, que é uma tela solar, e a Pinpoint. Quando faço referência a uma redução térmica de até cerca de 11 °C, estou falando do contexto dessas persianas, e não dos forros blackout de tecido.</p>
+<p>Isso não significa que toda Screen ou Pinpoint terá a mesma redução de temperatura. Também não transforma uma tela solar em blackout 100%. O controle de calor e o bloqueio da luz precisam ser avaliados de acordo com o material escolhido e a aplicação.</p>` },
+      { id: "quarto-escuro", toc: "Instalação e frestas", label: "Guia de forros", h2: "Blackout 100% deixa o quarto completamente escuro?", html: `
+<p>É possível conseguir um ambiente completamente escuro, mesmo durante o dia. Mas o tecido precisa trabalhar junto com a instalação.</p>
+<p>O blackout bloqueia a luz pelo material. Se houver uma abertura por cima, pelos lados ou junto ao piso, a claridade encontra esse caminho.</p>
+<p>Na instalação com trilho no teto, eu procuro deixar o forro bem próximo ao teto e descendo junto à parede, para que o tecido encoste e evite a passagem de luz.</p>
+<p>No varão duplo, a cortina decorativa fica no tubo da frente e o forro no tubo traseiro. A posição desse varão precisa deixar espaço suficiente acima da janela para que o forro saia do tubo, se acomode para trás e consiga tocar a parede.</p>
+<figure class="sl-ed-fig sl-ed-figure sl-ed-fr-rod-figure">
+  <div class="sl-ed-figtop"><span class="sl-ed-eyebrow">Desenho 02</span><span>Varão duplo visto de lado</span></div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 428" role="img" aria-labelledby="sl-ed-fr-rod-title sl-ed-fr-rod-desc">
+    <title id="sl-ed-fr-rod-title">Corte lateral de um varão duplo: forro atrás e cortina à frente</title>
+    <desc id="sl-ed-fr-rod-desc">Parede à esquerda e interior do cômodo à direita. Os dois tubos são vistos como círculos na mesma altura, acima da janela. O traseiro sustenta o forro verde, que se acomoda contra a face da parede antes da verga e segue até beijar o piso. O dianteiro sustenta a cortina decorativa dourada. Esquema sem escala, com suportes omitidos para destacar o caminho dos tecidos.</desc>
+    <g font-family="Montserrat, sans-serif" font-size="14" fill="#4D5B52"><text x="27" y="22">Parede</text><text x="243" y="22">Interior →</text></g>
+    <!-- A face interna da parede é x=82. O forro toca essa face, sem cruzá-la. -->
+    <path d="M30 34H82V198H30ZM30 322H82V388H30Z" fill="#DCD9CF"/>
+    <path d="M82 34V198H30M30 322H82V388" fill="none" stroke="#7F887B" stroke-width="2"/>
+    <rect x="48" y="202" width="9" height="116" fill="#E6EEEA" stroke="#9BAFA8" stroke-width="1.5"/>
+    <path d="M52.5 207V313" stroke="#B5C4BB"/>
+    <text x="35" y="284" transform="rotate(-90 35 284)" fill="#56685B" font-size="14" font-family="Montserrat, sans-serif">Janela</text>
+    <path d="M30 388H334" stroke="#16302A" stroke-width="2"/>
+    <path d="M30 393H334" stroke="#D9D4C8"/>
+    <text x="298" y="413" fill="#4D5B52" font-size="14" font-family="Montserrat, sans-serif">Piso</text>
+    <!-- Dois tubos vistos de perfil, à mesma altura. -->
+    <circle cx="132" cy="78" r="13" fill="#FBFAF7" stroke="#647368" stroke-width="3"/>
+    <circle cx="222" cy="78" r="13" fill="#FBFAF7" stroke="#9B713A" stroke-width="3"/>
+    <!-- O forro sai do tubo traseiro e volta à parede acima da verga. -->
+    <path d="M145 78Q146 94 132 97C113 101 98 120 86 151Q84 155 84 170V386" fill="none" stroke="#284B40" stroke-width="4" stroke-linecap="round"/>
+    <!-- A cortina decorativa permanece à frente do forro. -->
+    <path d="M235 78Q237 94 224 98C218 124 227 165 224 212S221 294 225 338Q227 365 225 385.5" fill="none" stroke="#AF8B54" stroke-width="5" stroke-linecap="round"/>
+    <path d="M89 198H106" stroke="#7F887B" stroke-width="1.2"/>
+    <text x="111" y="203" fill="#4D5B52" font-size="14" font-family="Montserrat, sans-serif">Verga</text>
+    <!-- Os números remetem às legendas HTML abaixo, legíveis no celular. -->
+    <g stroke="#6C786B" stroke-width="1.2" fill="none"><path d="M121 43L128 62"/><path d="M248 44L231 64"/><path d="M156 152H105L88 157"/><path d="M151 365L92 384"/></g>
+    <g font-family="Montserrat, sans-serif" font-size="15" font-weight="600" text-anchor="middle">
+      <circle cx="116" cy="36" r="13" fill="#284B40"/><text x="116" y="41" fill="#FFF">1</text>
+      <circle cx="255" cy="36" r="13" fill="#8D6C3A"/><text x="255" y="41" fill="#FFF">2</text>
+      <circle cx="169" cy="152" r="13" fill="#284B40"/><text x="169" y="157" fill="#FFF">3</text>
+      <circle cx="164" cy="361" r="13" fill="#284B40"/><text x="164" y="366" fill="#FFF">4</text>
+    </g>
+  </svg>
+  <div class="sl-ed-fr-rod-legend">
+    <p><strong><span>1</span> Varão traseiro</strong> Sustenta o forro, mais próximo da parede.</p>
+    <p><strong><span>2</span> Varão dianteiro</strong> Sustenta a cortina decorativa, voltada para o ambiente.</p>
+    <p><strong><span>3</span> Contato acima da janela</strong> A altura da instalação permite que o forro saia do tubo e se acomode junto à parede antes da verga.</p>
+    <p><strong><span>4</span> Barra beijando o chão</strong> O forro chega ao piso, evitando uma abertura para a claridade por baixo.</p>
+  </div>
+  <figcaption>Corte lateral esquemático, sem escala. Os círculos representam os tubos vistos de ponta; os suportes foram omitidos para destacar os tecidos. Este detalhe mostra a parte superior e o piso. As laterais e o encontro das duas partes do forro também precisam ser resolvidos na instalação.</figcaption>
+</figure>
+<p>E tem um cuidado do qual não abro mão quando o objetivo é escurecer: <strong>o forro precisa beijar o chão</strong>. Se ficar uma fresta por baixo, passa claridade.</p>
+<p>No artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a>, explico a relação entre a instalação, a altura e o encontro do tecido com o piso. O artigo sobre <a href="/blog/bainha-de-cortina/">bainha de cortina</a> detalha o acabamento da barra.</p>
+<h3>As laterais precisam permanecer no lugar</h3>
+<p>O forro também precisa ter tecido suficiente para fechar no centro sem puxar as laterais junto.</p>
+<p>Se ele tiver apenas a medida exata do vão, o movimento de fechar pode deslocar as pontas e abrir uma passagem de luz.</p>
+<p>No trilho, utilizo finalizadores nas extremidades para manter as pontas laterais presas. Assim, quando alguém fecha o forro com mais força ou rapidez, as laterais permanecem no lugar. O finalizador prende a ponta do forro; não é um sistema de vedação lateral.</p>
+<p>No encontro central comum, as duas partes se encostam com tecido e franzimento suficientes para fechar aquela passagem.</p>
+<h3>Quando entra o trilho triplo com transpasse?</h3>
+<p>Existe uma solução específica chamada trilho triplo com transpasse.</p>
+<p>A cortina decorativa ocupa a via da frente. As duas vias traseiras permitem que uma parte do forro passe por trás da outra, com uma sobreposição de aproximadamente 15 cm.</p>
+<p>Isso ajuda no fechamento central, mas o trilho é mais largo e ocupa mais espaço no cortineiro. É uma opção que utilizo principalmente quando o cliente solicita esse sistema, considerando o espaço disponível.</p><p>Para olhar o conjunto da solução, veja também <a href="/blog/como-escurecer-quarto-sala-tv/">como escurecer o quarto e a sala de TV</a>.</p>` },
+      { id: "limpeza", toc: "Lavagem e cuidados", label: "Guia de forros", h2: "Como limpar cada tipo de forro", html: `
+<p>A primeira referência é o documento de cuidados que acompanha o material. Todos os materiais com que trabalhamos têm essa orientação.</p>
+<p>Nas opções que descrevi, os cuidados são diferentes:</p>
+<div class="sl-ed-table sl-ed-fr-care-table"><table><caption>Cuidados com os materiais que utilizo</caption><thead><tr><th scope="col">Material</th><th scope="col">Como oriento a manutenção</th></tr></thead><tbody><tr><td>Microfibra e semi blackout de tecido</td><td>Permitem lavagem em máquina e centrifugação, seguindo os cuidados do produto.</td></tr><tr><td>Blackout de tecido com bloqueador interno</td><td>As opções descritas permitem lavagem em máquina. É preciso confirmar a construção e as instruções daquele material.</td></tr><tr><td>Blackout com película traseira</td><td>Recomendo higienização profissional específica para esse blackout. Não colocar na máquina, usar água quente ou torcer.</td></tr></tbody></table></div>
+<p>Para o blackout com película, confirme antes se a empresa conhece e atende esse material. Nem toda lavanderia aceita o serviço, justamente pelo risco de danificar a dublagem.</p>
+<p>Quando falo em higienização profissional, estou me referindo ao procedimento adequado àquele blackout, conforme suas instruções de conservação. Não basta pedir uma “lavagem a seco” sem esclarecer qual é o material e como ele deve ser tratado.</p>` },
+      { id: "perguntas", toc: "Perguntas frequentes", label: "Guia de forros", h2: "Dúvidas frequentes sobre forro de cortina", faq: true, html: `
+            ` },
+      { id: "consultoria", toc: "Consultoria em casa", label: "Converse com a Shine", closing: true, h2: "O forro precisa fazer sentido na sua casa",
+        html: `<p>É assim que eu escolho o forro: olhando o que você precisa resolver, como quer usar o ambiente e como pretende cuidar da cortina depois.</p><p>Na consultoria gratuita em domicílio, eu ou alguém da equipe avalia essas escolhas com você. Atendemos Volta Redonda e todo o Sul Fluminense.</p>`,
+        cta: "Conversar sobre meu ambiente →", img: "/isani-consultoria-800.avif", imgAlt: "Isani Oliveira conferindo o caimento de uma cortina durante uma consultoria" },
+    ],
     faq: [
-      ['Qual a diferença entre forro translúcido e forro blackout?',
-       'O forro translúcido dá privacidade, protege o tecido decorativo do sol e quebra parte da claridade, mas não escurece o ambiente. O forro blackout serve para escurecer e existe em duas versões: 70% (semi blackout), que deixa penumbra, e 100%, que bloqueia a passagem de luz pelo tecido.'],
-      ['O que é semi blackout?',
-       'Semi blackout é o forro blackout de 70%. Ele reduz boa parte da luz e deixa o ambiente em penumbra. É indicado para quem quer dormir melhor ou assistir televisão de dia, mas não precisa de escuro absoluto.'],
-      ['O que resolve um quarto realmente escuro?',
-       'A cortina com forro blackout 100%. Esse forro bloqueia a passagem de luz pelo tecido e é o que entrega escuro de verdade, inclusive ao meio-dia. É a indicação para quem trabalha à noite, tem bebê em casa ou sono leve.'],
-      ['Persiana também escurece por completo?',
-       'Sim. As persianas também têm material com blackout 100%. A escolha entre cortina e persiana é uma decisão de estética e de uso; o nível de escurecimento depende do material escolhido.'],
-      ['Quais tecidos servem como forro translúcido?',
-       'O forro translúcido é um grupo, e dentro dele há vários tecidos: gabardine (de algodão ou de poliéster), tergal, tergal verão, cetim e gorgurinho. Cada um responde de um jeito à luz e ao caimento, e a escolha é feita na consultoria, junto com o tecido decorativo da frente.'],
-      ['Qual a diferença entre tecido blackout e forro blackout?',
-       'O tecido blackout é o próprio tecido da cortina, que já bloqueia a luz. O forro blackout é uma segunda camada acoplada atrás de uma cortina decorativa, somando escurecimento sem abrir mão da estética do tecido de frente.'],
+      ["O que é blackout?",
+       "Blackout é o material usado para bloquear a luz. Nas opções de forro que utilizo, o semi blackout 70% deixa alguma claridade, enquanto o blackout 100% bloqueia a passagem de luz pelo material. Para escurecer o ambiente, a instalação também precisa evitar frestas."],
+      ["Qual o melhor tecido para forro de cortina?",
+       "Depende do objetivo. Para privacidade com claridade, avalio o grupo translúcido: gabardine, tergal, tergal verão, cetim, gorgurinho e microfibra. Para penumbra, semi blackout 70%. Para escuridão, blackout 100% com instalação adequada. Caimento e manutenção entram na decisão."],
+      ["Qual o melhor forro para cortina de voil?",
+       "Para manter a leveza visual e ter privacidade, começo avaliando um forro translúcido, como a microfibra, junto do voil. Se o objetivo for escurecer, a escolha pode ser semi blackout ou blackout 100%. O tecido da frente não define sozinho o forro."],
+      ["Como escurecer o quarto com cortina?",
+       "Eu avalio o blackout 100% junto da instalação: o fechamento superior, as laterais, o encontro das duas partes no centro e a barra beijando o chão. O material bloqueia a luz que passa por ele, mas uma fresta permite a entrada de claridade."],
+      ["O forro translúcido dá privacidade à noite?",
+       "Nas opções descritas, sim, mas isso não significa ausência de silhueta junto ao tecido. A microfibra mais leve pode deixar a figura perceptível quando alguém chega perto; uma trama mais fechada pode torná-la mais difusa. Eu avalio o material e o uso do ambiente juntos."],
+      ["Pode lavar forro blackout na máquina?",
+       "Depende da construção. As opções de microfibra e de blackout de tecido com bloqueador interno que descrevo permitem lavagem em máquina, conforme o documento de cuidados. Para blackout com película traseira, recomendo higienização profissional específica para esse material."],
     ],
   },
   {
@@ -365,7 +508,7 @@ ${html}
           </section>`;
   }).join('\n');
   const h = post.hero;
-  return `<body data-wa-context="o artigo sobre ${esc(post.kicker.toLowerCase())}">
+  return `<body class="${post.bodyClass || ''}" data-wa-context="o artigo sobre ${esc(post.kicker.toLowerCase())}">
 ${header('/blog/')}
 ${cityChip(null)}
   <main>
