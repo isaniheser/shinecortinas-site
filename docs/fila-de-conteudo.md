@@ -16,7 +16,7 @@ Método: uma conversa curta por post (5 a 10 perguntas), depois a redação.
 | # | Post | Status |
 |---|---|---|
 | 1 | tipos-de-forro-para-cortina | **Reescrito 2ª vez** (13/09, rascunho Isani+GPT, layout editorial; pilar de forros) |
-| 2 | o-que-e-blackout | **Prévia pronta para revisão** (13/09, explicador de blackout ligado ao guia de forros; ainda sem publicação nesta tarefa). A referência histórica é de 1.466 impressões em três meses, não buscas mensais. |
+| 2 | o-que-e-blackout | **Reescrito** (13/09, Isani+GPT via Codex, PR #147; satélite de forros) |
 | 3 | como-escurecer-quarto-sala-tv | **próximo** (satélite de forros) |
 | 4 | linho-para-cortinas | fila |
 | 5 | por-que-escolher-cortina-motorizada | fila |

@@ -98,6 +98,15 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 - **Ainda aberto, do relatório:** `srcset` (item 6 acima); promessa "instalação no mesmo dia da
   consultoria" em Porto Real (confirmar com o Isani); artigos repetidos; fotos por cidade.
 
+## Fluxo combinado com o GPT/Codex (13/09/2026)
+
+O Isani produz rascunhos com o GPT; o Codex grava numa cópia de trabalho própria
+(`.codex-worktrees/<artigo>-<data>`, branch `codex/...`), já dentro do gerador. O Claude confere
+(fatos × CLAUDE.md, links, JSON-LD, prévia nos dois tamanhos), abre o PR a partir da branch do
+Codex, publica e testa no ar. Artigos assim: forros (PR #146, portado à mão) e blackout (PR #147,
+direto da branch do Codex). Registros do GPT feitos no checkout principal (fora do git) precisam
+ser trazidos para a branch antes de publicar.
+
 ## Leitura do Search Console em 11/09/2026 (pelo Chrome do Isani, só leitura)
 
 - **Acesso funciona:** com o Claude in Chrome (o Chrome do Isani, logado), o Search Console abre e
