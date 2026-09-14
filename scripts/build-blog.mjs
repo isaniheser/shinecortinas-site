@@ -1,6 +1,7 @@
 // Gera artigos do blog no sistema visual "leve".
 // Fonte dos fatos: conhecimento do Isani (ver CLAUDE.md → "Fatos de produto").
 // Nada aqui pode contradizer aquela seção. Uso: node scripts/build-blog.mjs
+import blackout from './content/blackout.mjs';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -11,6 +12,7 @@ const BASE = 'https://www.shinecortinas.com';
 const TODAY = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' }); // data do Brasil, não UTC
 
 const POSTS = [
+  blackout,
   {
     slug: 'tipos-de-forro-para-cortina',
     layout: 'editorial',
@@ -502,7 +504,7 @@ function editorialBody(post) {
     }
     const html = sec.faq ? sec.html + '\n' + faqEd : sec.html;
     return `          <section id="${sec.id}" class="sl-ed-sec">
-            <div class="sl-ed-label">${nn(i)} / ${sec.label || 'Guia de medidas'}</div>
+            <div class="sl-ed-label">${nn(i)} / ${sec.label || post.sectionLabel || 'Guia de medidas'}</div>
             <h2>${sec.h2}</h2>
 ${html}
           </section>`;
@@ -522,7 +524,7 @@ ${cityChip(null)}
         <a class="sl-ed-readlink" href="#${h.readTo}">${h.readText} <span aria-hidden="true">↓</span></a>
       </div>
       <figure class="sl-ed-photo">
-        <img src="${h.photo}" alt="${esc(h.photoAlt)}" width="1216" height="1632" fetchpriority="high" decoding="async">
+        <img src="${h.photo}" alt="${esc(h.photoAlt)}" width="${h.photoWidth || 1216}" height="${h.photoHeight || 1632}" fetchpriority="high" decoding="async">
         <figcaption><span>${h.photoTag}</span>${h.photoCaption}</figcaption>
       </figure>
     </section>
@@ -583,7 +585,7 @@ function build(post) {
         author: { '@id': `${BASE}/#isani` }, publisher: { '@id': `${BASE}/#org` },
         ...(post.ogImage ? { image: `${BASE}${post.ogImage}` } : {}),
         mainEntityOfPage: { '@id': url }, inLanguage: 'pt-BR',
-        about: ['forro para cortina', 'blackout', 'semi blackout', 'cortinas sob medida'] },
+        about: post.about || ['forro para cortina', 'blackout', 'semi blackout', 'cortinas sob medida'] },
       { '@type': 'FAQPage', '@id': `${url}#faq`,
         mainEntity: post.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
       { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [
@@ -592,7 +594,7 @@ function build(post) {
         { '@type': 'ListItem', position: 3, name: post.title, item: url } ] },
       { '@type': 'WebPage', '@id': url, url, name: post.seoTitle, inLanguage: 'pt-BR',
         breadcrumb: { '@id': `${url}#breadcrumb` }, dateModified: post.modified,
-        speakable: { '@type': 'SpeakableSpecification', xpath: ['/html/body//h1', '/html/body//p[@class="sl-lead"]'] } },
+        speakable: { '@type': 'SpeakableSpecification', xpath: post.speakableXPath || ['/html/body//h1', '/html/body//p[@class="sl-lead"]'] } },
     ],
   };
 
@@ -620,7 +622,7 @@ function build(post) {
   <script type="application/ld+json">
 ${JSON.stringify(ld, null, 2)}
   </script>
-  <link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">
+  <link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">${post.stylesheet ? `\n  <link rel="stylesheet" href="${esc(post.stylesheet)}">` : ''}
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -691,5 +693,10 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
   return post.slug;
 }
 
-const done = POSTS.map(build);
+// Um slug opcional permite gerar somente o artigo em revisão.
+const requested = process.argv.slice(2);
+for (const slug of requested) {
+  if (!POSTS.some(post => post.slug === slug)) throw new Error(`Artigo desconhecido: ${slug}`);
+}
+const done = POSTS.filter(post => !requested.length || requested.includes(post.slug)).map(build);
 console.log(`build-blog: ${done.length} artigo(s) gerado(s) — ${done.join(', ')}`);
