@@ -1,3 +1,4 @@
+import {AURORA_CSS} from './aurora-layout.mjs';
 // Gera artigos do blog no sistema visual "leve".
 // Fonte dos fatos: conhecimento do Isani (ver CLAUDE.md → "Fatos de produto").
 // Nada aqui pode contradizer aquela seção. Uso: node scripts/build-blog.mjs
@@ -510,7 +511,7 @@ ${html}
           </section>`;
   }).join('\n');
   const h = post.hero;
-  return `<body class="${post.bodyClass || ''}" data-wa-context="o artigo sobre ${esc(post.kicker.toLowerCase())}">
+  return `<body data-concept="ambientes" data-logo-finish="aurora" class="${post.bodyClass || ''}" data-wa-context="o artigo sobre ${esc(post.kicker.toLowerCase())}">
 ${header('/blog/')}
 ${cityChip(null)}
   <main>
@@ -623,6 +624,7 @@ function build(post) {
 ${JSON.stringify(ld, null, 2)}
   </script>
   <link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">${post.stylesheet ? `\n  <link rel="stylesheet" href="${esc(post.stylesheet)}">` : ''}
+  ${AURORA_CSS}
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -631,7 +633,7 @@ ${JSON.stringify(ld, null, 2)}
 </head>
 `;
 
-  const body = post.layout === 'editorial' ? editorialBody(post) : `<body data-wa-context="o artigo sobre ${esc(post.kicker.toLowerCase())}">
+  const body = post.layout === 'editorial' ? editorialBody(post) : `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="o artigo sobre ${esc(post.kicker.toLowerCase())}">
 ${header('/blog/')}
   <section class="sl-hero sl-hero--post">
     <div class="sl-wrap"><div class="sl-hero__in">

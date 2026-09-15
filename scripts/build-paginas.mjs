@@ -115,7 +115,7 @@ function render(p) {
   const corpo = p.blocos.map((b) => bloco[b.t](b)).join('\n');
   const faq = p.faq.map(([q, a]) => `        <details><summary>${q}</summary><div>${a}</div></details>`).join('\n');
   const links = p.links.map(([h, t]) => `<a href="${h}">${t}</a>`).join('');
-  return `<body data-wa-context="a página de ${esc(p.kicker.toLowerCase())}">
+  return `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de ${esc(p.kicker.toLowerCase())}">
 ${header('/' + p.dir + '/')}
   <section class="sl-hero sl-hero--interna${p.heroPessoa ? ' sl-hero--pessoa' : ''}">
     <div class="sl-hero__img"><img src="${p.hero}" alt="${esc(p.heroAlt)}" width="${p.heroW || 1920}" height="${p.heroH || 1080}" fetchpriority="high" decoding="async"></div>
