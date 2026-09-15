@@ -16,7 +16,7 @@ function body(d) {
   const steps = d.steps.map((s, i) => `        <div class="sl-step"><div class="sl-step__n">${i + 1}</div><h3>${s.h}</h3><p>${s.p}</p></div>`).join('\n');
   const faq = d.faq.map((f) => `        <details><summary>${f.q}</summary><div>${f.a}</div></details>`).join('\n');
   const nearby = d.nearby.map(([slug, name]) => `<a href="/cidades/${slug}/">${name}</a>`).join('');
-  return `<body data-wa-context="a página de ${d.city}">
+  return `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de ${d.city}">
 ${header('/cidades-atendidas/')}
   <section class="sl-hero">
     <div class="sl-hero__img"><img src="/hero-sala.avif" alt="${esc(d.hero_alt)}" width="1920" height="1080" fetchpriority="high" decoding="async"></div>

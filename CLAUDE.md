@@ -169,15 +169,22 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     ("a comodidade de parcelar em até 12x"), nunca como argumento de "é baratinho".
   - Manter: consultoria gratuita, sem pressão, sem robô (acolhimento ≠ povão).
 
-## Página de referência (template aprovado) — sistema visual "leve"
+## Página de referência — Ambientes / Aurora (aprovado em 15/09/2026)
 
-Decisão do Isani (set/2026): o tom preto/dourado pesado foi substituído pelo
-**sistema visual leve**, derivado da landing `/lp/anuncio-d/`: chão areia
-`#FBFAF7`, verde profundo `#16302A` como faixa e voz, dourado `#C6A868` só em
-detalhes (kickers, hairlines, um botão). Playfair Display peso 500 (nunca 900),
-Montserrat no corpo, Cinzel só no logotipo. Header sólido verde (não mais vidro).
-**Celular primeiro:** no celular tudo centralizado, hero ocupa a tela, barra de
-ação fixa embaixo (`.sl-bar`); o desktop é derivado, nunca o contrário.
+Isani aprovou e autorizou efetivar no site a composição Ambientes: verde claro
+`#f2f6ef`, areia suave `#f8f5ed`, dourado nos destaques e logotipo oficial com
+Aurora. Cabeçalho central em névoa translúcida suave, sem faixa rígida; navegação
+pelo puxador flutuante “Explore a Shine” e menu que abre em duas folhas. Sem dica
+repetida abaixo do logo. Esta decisão substitui as direções anteriores de header
+sólido e barra inferior de abas. Não reintroduzir as propostas descartadas.
+
+CSS/JS aprovados: `assets/shine-aurora.css` e `assets/shine-aurora.js`, sobre a base
+`shine-leve.css`. Menu com links em HTML estático; navegação de fallback disponível
+sem JavaScript. Componentes em `scripts/aurora-layout.mjs`, compartilhados pelos
+partials. `build-home.mjs` gera a home; `build-aurora.mjs` atualiza somente a moldura
+das páginas existentes, preservando conteúdo e metadados. Landings de anúncios
+mantêm a composição própria. Não publicar comparadores, rotas de prévia ou
+parâmetros `conceito`.
 
 - CSS do sistema: `/assets/shine-leve.css` (semântico, sem Tailwind). **Logotipo:** imagem real
   `logo-shine.avif` no cabeçalho e no rodapé (decisão do Isani, 10/09/2026); nunca voltar ao "S" em texto.

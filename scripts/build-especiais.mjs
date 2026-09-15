@@ -80,7 +80,7 @@ ${s.itens.map(([q, a]) => `        <details><summary>${esc(q)}</summary><div>${e
     </div></section>`).join('\n');
 
   const head = cleanHead(src.split('<body')[0]);
-  const body = `<body data-wa-context="a página de perguntas frequentes">
+  const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de perguntas frequentes">
 ${header('/faq/')}${heroInterna('Perguntas frequentes',
     'As respostas que a gente <em>mais dá</em> no WhatsApp',
     `Reunimos aqui ${perguntas.length} perguntas que os clientes fazem antes de fechar um projeto: empresa, prazos, tecidos, garantia e casos especiais. Se a sua não estiver aqui, é só chamar no WhatsApp.`,
@@ -105,7 +105,7 @@ function buildVideos() {
   const grid = cards.map((c) => `        <a class="sl-card" href="${c.href}"><div class="sl-media sl-media--video"><img src="${c.img}" alt="${esc(c.alt)}" width="800" height="450" loading="lazy" decoding="async"><span class="sl-play" aria-hidden="true">▶</span></div><div class="sl-card__body"><span>Vídeo</span><h3>${esc(c.titulo)}</h3><p>${esc(c.resumo)}</p><em>Assistir →</em></div></a>`).join('\n');
 
   const head = cleanHead(src.split('<body')[0]);
-  const body = `<body data-wa-context="a página de vídeos">
+  const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de vídeos">
 ${header('/videos/')}${heroInterna('Vídeos',
     'Projetos entregues, <em>em movimento</em>',
     'Instalação, automação e caimento em ambientes reais do Sul Fluminense. É a prova que uma foto não consegue dar: como a cortina se comporta quando abre, fecha e corre no trilho.',
@@ -132,7 +132,7 @@ function buildHub() {
   const src = readFileSync(file, 'utf8');
   const head = cleanHead(src.split('<body')[0]);
   const cards = CITIES.map(([s, n]) => `        <a class="sl-citycard" href="/cidades/${s}/"><h3>${n}</h3><span>Ver a página de ${n} →</span></a>`).join('\n');
-  const body = `<body data-wa-context="a página de cidades atendidas">
+  const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de cidades atendidas">
 ${header('/cidades-atendidas/')}${heroInterna('Cidades atendidas',
     'Atendemos <em>15 cidades</em> do Sul Fluminense',
     'O consultor vai até a sua casa, na sua cidade, com o mostruário completo. Cada cidade tem a sua própria página, com as perguntas e o conteúdo de lá.',
@@ -160,7 +160,7 @@ function buildBlogIndex() {
   const posts = JSON.parse(readFileSync(join(ROOT, 'blog', 'posts.json'), 'utf8'));
   const lista = posts.map((p) => `        <a class="sl-post" href="${p.href}"><span>Artigo</span><h3>${esc(p.titulo)}</h3><p>${esc(p.resumo)}</p></a>`).join('\n');
   const head = cleanHead(src.split('<body')[0]);
-  const body = `<body data-wa-context="o blog">
+  const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="o blog">
 ${header('/blog/')}${heroInterna('Blog',
     'Guias para escolher <em>sem erro</em>',
     'O que a gente explica na consultoria, escrito. Tecidos, forros, sistemas, medidas e os erros que mais aparecem em quem compra sem orientação técnica.',
@@ -214,7 +214,7 @@ function buildPosts() {
     const lead = (main.match(/<p>([\s\S]*?)<\/p>/) || [, ''])[1];
     main = main.replace(/<p>[\s\S]*?<\/p>/, '');
     const head = cleanHead(src.split('<body')[0]);
-    const body = `<body data-wa-context="o artigo &quot;${esc(h1)}&quot;">
+    const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="o artigo &quot;${esc(h1)}&quot;">
 ${header('/blog/')}
   <section class="sl-hero sl-hero--post">
     <div class="sl-wrap"><div class="sl-hero__in">
@@ -265,7 +265,7 @@ function buildVideoPages() {
     const extra = [...src.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>\s*<p[^>]*>([\s\S]*?)<\/p>/g)]
       .map((m) => `      <h2 class="sl-h2">${dec(m[1].replace(/<[^>]+>/g, '').trim())}</h2>\n      <p>${dec(m[2].replace(/<[^>]+>/g, '').trim())}</p>`).join('\n');
     const head = cleanHead(src.split('<body')[0]);
-    const body = `<body data-wa-context="o vídeo &quot;${esc(h1)}&quot;">
+    const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="o vídeo &quot;${esc(h1)}&quot;">
 ${header('/videos/')}
   <section class="sl-hero sl-hero--post">
     <div class="sl-wrap"><div class="sl-hero__in">
@@ -306,7 +306,7 @@ function build404() {
   let src = readFileSync(file, 'utf8');
   if (!/name="robots"/.test(src)) src = src.replace('</title>', '</title>\n  <meta name="robots" content="noindex, follow">');
   const head = cleanHead(src.split('<body')[0], { semSchema: true });
-  const body = `<body data-wa-context="uma página não encontrada">
+  const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="uma página não encontrada">
 ${header('/')}
   <main>
     <section class="sl-section" style="padding-top:clamp(80px,14vw,140px)"><div class="sl-wrap sl-center">

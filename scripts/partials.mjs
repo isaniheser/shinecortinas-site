@@ -1,3 +1,4 @@
+import {auroraHeader,auroraMenu,auroraHead,AURORA_V} from './aurora-layout.mjs';
 // Blocos compartilhados do sistema visual "leve" (header, faixa, rodapé, barra fixa, scripts).
 // Usados por build-cidades.mjs e build-home.mjs. Alterar aqui muda todas as páginas geradas.
 
@@ -45,32 +46,10 @@ export function cleanHead(head, opts = {}) {
   head = normalizaCanonical(head);
   const precisaLd = opts.semSchema !== true;
   if (!/shine-leve\.css/.test(head) || (precisaLd && !/application\/ld\+json/.test(head)) || /tailwind|location\.replace\('\/app\/'\)/.test(head)) throw new Error('head inválido');
-  return head;
+  return auroraHead(head);
 }
 
-export function header(currentPath) {
-  const links = NAV.map(([h, t]) => `        <a href="${h}"${h === currentPath ? ' aria-current="true"' : ''}>${t}</a>`).join('\n');
-  const mobile = [['/', 'Início'], ...NAV.map(([h, t]) => [h, t === 'Cidades' ? 'Cidades atendidas' : t])]
-    .map(([h, t]) => `<a href="${h}">${t}</a>`).join('');
-  return `
-  <header class="sl-header">
-    <div class="sl-wrap sl-header__in">
-      <a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="64" height="64" decoding="async"></a>
-      <nav class="sl-nav" aria-label="Menu principal">
-${links}
-        <a class="sl-btn" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">Falar com um consultor</a>
-      </nav>
-      <button class="sl-menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-      </button>
-    </div>
-    <div class="sl-wrap"><nav id="mobile-menu" class="sl-menu" aria-label="Menu">
-      ${mobile}
-      <a data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">Falar com um consultor →</a>
-    </nav></div>
-  </header>
-`;
-}
+export function header(currentPath) { return auroraHeader(currentPath); }
 
 export function cityChip(cityName) {
   const label = cityName ? `Atendendo em ${cityName}` : 'Atendemos todo o Sul Fluminense';
@@ -160,45 +139,19 @@ export function footer() {
 `;
 }
 
-export function waFloat() {
-  return `
-  <a class="sl-wa" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">${waIcon}</a>
-`;
-}
-
-// Barra fixa do celular: uma ação (cidades) ou abas estilo app (home).
-export function bar(kind) {
-  if (kind === 'tabs') {
-    const icon = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">${d}</svg>`;
-    return `
-  <nav class="sl-tabs" aria-label="Atalhos">
-    <a href="#top" aria-current="page">${icon('<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>')}<span>Início</span></a>
-    <a href="#solucoes">${icon('<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M8 4v16"/>')}<span>Soluções</span></a>
-    <a href="/portfolio/">${icon('<rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/>')}<span>Projetos</span></a>
-    <a href="#cidades">${icon('<path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>')}<span>Cidades</span></a>
-    <a class="sl-tabs__wa" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">${waIconSmall}<span>WhatsApp</span></a>
-  </nav>
-`;
-  }
-  return `
-  <div class="sl-bar">
-    <a class="sl-btn" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">${waIconSmall}Falar com um consultor pelo WhatsApp</a>
-  </div>
-`;
-}
+// A navegação flutuante substitui as barras antigas. CTAs contextuais continuam nas páginas.
+export function waFloat() { return ''; }
+export function bar() { return ''; }
 
 export function tail() {
   return `
+  ${auroraMenu()}
+  <script src="/assets/shine-aurora.js?v=${AURORA_V}" defer></script>
   <script src="/assets/shine-wa.js?v=${JS_V}" defer></script>
   <script type="speculationrules">
   {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}
   </script>
-  <script>
-    (function(){
-      var btn=document.getElementById('menu-btn'),menu=document.getElementById('mobile-menu');
-      if(btn&&menu){btn.addEventListener('click',function(){var open=menu.hasAttribute('data-open');if(open){menu.removeAttribute('data-open');btn.setAttribute('aria-expanded','false');}else{menu.setAttribute('data-open','');btn.setAttribute('aria-expanded','true');}});}
-    })();
-  </script>
+
 </body>
 </html>
 `;

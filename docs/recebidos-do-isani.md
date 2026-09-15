@@ -28,6 +28,7 @@ arquivo é a memória. Item sem "Feito" é pendência — não pedir de novo o q
 | Data | Item | Status |
 |---|---|---|
 | 13/09/2026 | Isani pediu a página completa de “O que é blackout”, com imagens ou vetores e link de prévia, seguindo a reestruturação discutida. | **Feito na prévia local:** texto em primeira pessoa, imagem de referência e dois desenhos; fonte em `scripts/content/blackout.mjs`. Trabalho iniciado sobre a versão atual `664b973`, com o guia de forros já integrado pelo Claude. Branch `codex/artigo-blackout-20260913`; prévia `http://127.0.0.1:4318/blog/o-que-e-blackout/`. Registro de entrega em `docs/rascunhos/blackout-previa-2026-09-13.md`. Esta tarefa não publicou a página. |
+| 15/09/2026 | Isani aprovou o layout Ambientes com Aurora, Menu Cortina flutuante, cabeçalho em névoa suave e sem dica repetida no logo: “Pode efetivar ele no site”. | Integração e publicação autorizadas. Referência visual: commit `0b865ff` da prévia. Trabalho sobre `origin/main` em `codex/aurora-site-20260915`, preservando artigos e URLs. |
 | 06/09/2026 | Empresa desde 2009; "mais de 9.000 ambientes" | Feito (site e schema) |
 | 06/09/2026 | Garantia: 1 ano não motorizado, até 5 anos motorizado | Feito |
 | 06/09/2026 | Isani: designer de interiores por prática; schema "fundador e especialista" | Feito |
