@@ -4,7 +4,7 @@ import {auroraHeader,auroraMenu,auroraHead,AURORA_V} from './aurora-layout.mjs';
 
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 export const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
-export const CSS_V = '13';
+export const CSS_V = '14';
 export const JS_V = '2';
 
 export const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;');
@@ -26,8 +26,90 @@ export function normalizaCanonical(html) {
   return html.split(`"${cm[1]}"`).join(`"${cm[1]}/"`);
 }
 
+const SAME_AS = [
+  'https://www.instagram.com/shinecortinas/',
+  'https://www.facebook.com/shinecortinas',
+  'https://www.youtube.com/@shinecortinas',
+  'https://www.tiktok.com/@shinecortinas',
+  'https://www.pinterest.com/shinecortinas',
+];
+
+export function normalizaJsonLd(head, crumbs) {
+  const m = head.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  if (!m) return head;
+  let data;
+  try { data = JSON.parse(m[1]); } catch { return head; }
+  const graph = data['@graph'] || (Array.isArray(data) ? data : [data]);
+  const can = (head.match(/<link rel="canonical" href="([^"]+)"/) || [, 'https://www.shinecortinas.com/'])[1];
+  const title = (head.match(/<title>([\s\S]*?)<\/title>/) || [, 'ShineCortinas'])[1].trim();
+  const desc = (head.match(/<meta name="description" content="([^"]*)"/) || [, ''])[1].trim();
+
+  const fixPerson = (p) => {
+    if (!p || typeof p !== 'object' || p['@type'] !== 'Person') return;
+    if (!p.name || p.name.startsWith('Isani')) {
+      p['@id'] = 'https://www.shinecortinas.com/#isani';
+      p.name = 'Isani Oliveira';
+      p.jobTitle = 'Fundador e especialista em cortinas e persianas sob medida';
+      p.url = 'https://www.shinecortinas.com/sobre/';
+      p.image = 'https://www.shinecortinas.com/isani-consultoria.avif';
+      p.worksFor = { '@id': 'https://www.shinecortinas.com/#org' };
+    }
+  };
+
+  let existingMod = null;
+  for (const n of graph) {
+    if (!n || typeof n !== 'object') continue;
+    if (n.dateModified && !existingMod) existingMod = n.dateModified;
+    const t = n['@type'];
+    if (t === 'Organization' || (Array.isArray(t) && t.includes('Organization'))) {
+      n['@id'] = 'https://www.shinecortinas.com/#org';
+      n.name = 'ShineCortinas';
+      n.url = 'https://www.shinecortinas.com/';
+      if (!n.logo) n.logo = 'https://www.shinecortinas.com/logo-shine.avif';
+      n.sameAs = SAME_AS;
+    }
+    if (t === 'LocalBusiness' || t === 'HomeAndConstructionBusiness' || (Array.isArray(t) && (t.includes('LocalBusiness') || t.includes('HomeAndConstructionBusiness')))) {
+      n['@id'] = 'https://www.shinecortinas.com/#biz';
+      n.name = 'ShineCortinas';
+      n.url = 'https://www.shinecortinas.com/';
+      n.telephone = '+55-24-99329-8763';
+      n.priceRange = '$$';
+      if (!n.image) n.image = 'https://www.shinecortinas.com/hero-sala.avif';
+      n.address = { '@type': 'PostalAddress', streetAddress: 'Rua K, 60', addressLocality: 'Volta Redonda', addressRegion: 'RJ', postalCode: '27260-390', addressCountry: 'BR' };
+      if (!n.geo) n.geo = { '@type': 'GeoCoordinates', latitude: -22.5232, longitude: -44.1044 };
+      if (!n.openingHoursSpecification) {
+        n.openingHoursSpecification = [
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '13:00' },
+        ];
+      }
+    }
+    fixPerson(n);
+    if (n.author) fixPerson(n.author);
+    if (n.founder) fixPerson(n.founder);
+    if (n.reviewedBy) fixPerson(n.reviewedBy);
+    if (Array.isArray( crumbs ) && crumbs.length && t === 'BreadcrumbList') {
+      n.itemListElement = crumbs.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item }));
+    }
+  }
+
+  let wp = graph.find((n) => n && (n['@type'] === 'WebPage' || n['@type'] === 'AboutPage' || n['@type'] === 'ContactPage' || n['@type'] === 'CollectionPage'));
+  if (!wp) {
+    wp = { '@type': 'WebPage', '@id': can, url: can, name: title, description: desc, inLanguage: 'pt-BR', isPartOf: { '@id': 'https://www.shinecortinas.com/#website' } };
+    graph.push(wp);
+  }
+  if (!wp.dateModified) wp.dateModified = existingMod || '2026-09-14';
+  if (Array.isArray(crumbs) && crumbs.length && !graph.some((n) => n && n['@type'] === 'BreadcrumbList')) {
+    graph.push({ '@type': 'BreadcrumbList', itemListElement: crumbs.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })) });
+  }
+
+  const out = data['@graph'] ? { ...data, '@graph': graph } : { '@context': 'https://schema.org', '@graph': graph };
+  return head.replace(m[0], () => `<script type="application/ld+json">\n  ${JSON.stringify(out, null, 2)}\n  </script>`);
+}
+
 // Limpa o <head> herdado (Tailwind, estilos inline, redirect de celular) e injeta o CSS do sistema.
 export function cleanHead(head, opts = {}) {
+  head = head.replace('<html lang="pt-BR" class="scroll-smooth">', '<html lang="pt-BR">');
   head = head.replace(/\s*<script>\s*\(function\(\)\{\s*if \(\/Mobi[\s\S]*?<\/script>/, '');
   head = head.replace(/\s*<link rel="alternate" media="only screen[^>]*>/, '');
   head = head.replace(/\s*<link rel="preload" href="\/?assets\/tailwind.generated.css"[^>]*>/, '');
@@ -44,7 +126,9 @@ export function cleanHead(head, opts = {}) {
   // Canonical de página-pasta tem que terminar em '/', que é a URL que o Cloudflare serve e o sitemap declara.
   // Normaliza canonical, og:url e toda ocorrência da mesma URL no JSON-LD (breadcrumb, mainEntityOfPage).
   head = normalizaCanonical(head);
+  head = head.split('"https://www.shinecortinas.com/sobre"').join('"https://www.shinecortinas.com/sobre/"');
   const precisaLd = opts.semSchema !== true;
+  if (precisaLd) head = normalizaJsonLd(head, opts.crumbs);
   if (!/shine-leve\.css/.test(head) || (precisaLd && !/application\/ld\+json/.test(head)) || /tailwind|location\.replace\('\/app\/'\)/.test(head)) throw new Error('head inválido');
   return auroraHead(head);
 }

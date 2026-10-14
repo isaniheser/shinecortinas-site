@@ -434,6 +434,7 @@ p{margin:0;text-wrap:pretty}
 }
 
 /* figura de largura total (ex.: foto da equipe em /sobre/) */
+.sl-section__head{text-align:center;margin-bottom:30px}
 .sl-figure{max-width:960px;margin:0 auto}
 .sl-figure .sl-media img{aspect-ratio:auto;height:auto}
 .sl-figure figcaption{margin-top:12px;text-align:center;font-size:13px;color:var(--muted);letter-spacing:.02em}
@@ -491,10 +492,13 @@ p{margin:0;text-wrap:pretty}
 
 .sl-ed-profile-card svg{display:block;width:100%;max-height:310px;margin:16px auto}.sl-ed-profile-card h3{font-size:20px}.sl-ed-profile-card p{font-size:16px;line-height:1.7}.sl-ed-profile-card .sl-ed-card-value{margin-top:16px;padding-top:14px;border-top:1px solid #ded8ca;font-size:15px}@media(max-width:600px){.sl-ed-profile-card svg{height:290px;max-height:290px}}
 /* artigo de forros (rascunho aprovado em 13/09/2026): consulta no meio, cards de luz, corte do varão duplo */
+.sl-ed-fr-forros .sl-ed-h1{max-width:14ch}
+.sl-ed-fr-light-figure{margin:28px 0 34px}
 .sl-ed-toc{max-height:calc(100vh - 116px);overflow:auto;padding-right:8px}
 .sl-ed-table caption{text-align:left;font-size:13px;color:var(--muted);padding:0 0 12px}
 .sl-ed-fr-choice-table td:first-child{width:27%}
 .sl-ed-fr-choice-table td:nth-child(2){width:28%}
+.sl-ed-fr-care-table td:first-child{width:34%}
 .sl-ed-fr-consult{padding:28px 30px;margin-top:30px;background:#eeeee5;border:1px solid #d9dbc9;border-left:3px solid #9b713a}
 .sl-ed-fr-consult .sl-ed-eyebrow{font-size:11px;margin:0 0 10px;color:var(--gold-ink)}
 .sl-ed-fr-consult h3{font:500 28px/1.25 var(--serif);margin:0 0 15px}
@@ -514,14 +518,15 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold-ink);outline-
   .sl-ed-fr-light-cards h3{min-height:0}
   .sl-ed-fr-rod-legend{grid-template-columns:1fr}
   .sl-ed-fr-rod-legend p{font-size:16px}
-  .sl-ed-fr-choice-table table,.sl-ed-fr-choice-table tbody,.sl-ed-fr-choice-table tr,.sl-ed-fr-choice-table td{display:block;width:100%!important}
-  .sl-ed-fr-choice-table caption{display:block;width:100%;line-height:1.65}
-  .sl-ed-fr-choice-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-  .sl-ed-fr-choice-table tr{padding:16px 18px;border:1px solid var(--line);margin-bottom:14px;background:#f5f3ec}
-  .sl-ed-fr-choice-table td{padding:7px 0!important;border:0;font-size:14px}
-  .sl-ed-fr-choice-table td::before{content:attr(data-label);display:block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-ink);font-weight:600;margin-bottom:4px}
-  .sl-ed-fr-choice-table td:first-child{font-family:var(--serif);font-size:22px;line-height:1.3}
-  .sl-ed-fr-choice-table td:first-child::before{font-family:var(--sans)}
+  .sl-ed-fr-choice-table table,.sl-ed-fr-choice-table tbody,.sl-ed-fr-choice-table tr,.sl-ed-fr-choice-table td,
+  .sl-ed-fr-care-table table,.sl-ed-fr-care-table tbody,.sl-ed-fr-care-table tr,.sl-ed-fr-care-table td{display:block;width:100%!important}
+  .sl-ed-fr-choice-table caption,.sl-ed-fr-care-table caption{display:block;width:100%;line-height:1.65}
+  .sl-ed-fr-choice-table thead,.sl-ed-fr-care-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .sl-ed-fr-choice-table tr,.sl-ed-fr-care-table tr{padding:16px 18px;border:1px solid var(--line);margin-bottom:14px;background:#f5f3ec}
+  .sl-ed-fr-choice-table td,.sl-ed-fr-care-table td{padding:7px 0!important;border:0;font-size:14px}
+  .sl-ed-fr-choice-table td::before,.sl-ed-fr-care-table td::before{content:attr(data-label);display:block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-ink);font-weight:600;margin-bottom:4px}
+  .sl-ed-fr-choice-table td:first-child,.sl-ed-fr-care-table td:first-child{font-family:var(--serif);font-size:22px;line-height:1.3}
+  .sl-ed-fr-choice-table td:first-child::before,.sl-ed-fr-care-table td:first-child::before{font-family:var(--sans)}
   .sl-ed-fr-consult{padding:24px 20px}
   .sl-ed-fr-consult .sl-btn{width:100%}
 }

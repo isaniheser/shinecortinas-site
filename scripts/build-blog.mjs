@@ -19,7 +19,7 @@ const POSTS = [
     layout: 'editorial',
     bodyClass: 'sl-ed-fr-forros',
     title: 'Tipos de forro para cortina: translúcido, semi blackout e blackout 100%',
-    seoTitle: "Tipos de Forro para Cortina: Tecidos e Como Escolher | ShineCortinas",
+    seoTitle: "Tipos de Forro para Cortina: Como Escolher | ShineCortinas",
     description: "Translúcido, semi blackout ou blackout 100%? Isani Oliveira explica tecidos, privacidade, calor, instalação e lavagem para escolher o forro da cortina.",
     kicker: 'Tecidos e forros',
     published: '2026-02-19',
@@ -33,7 +33,7 @@ const POSTS = [
       h1: "Tipos de forro<br>para cortina:", h1em: "qual escolher?",
       lead: "<p>O <strong>translúcido</strong> dá privacidade mantendo a claridade. O <strong>semi blackout 70%</strong> deixa aquela penumbra aconchegante. O <strong>blackout 100%</strong> bloqueia a luz pelo material, mas precisa de uma instalação bem resolvida para escurecer o ambiente.</p><p>Quando eu ajudo um cliente a escolher, preciso entender o que ele quer resolver. Nessa conversa entram o caimento, o investimento e a facilidade de limpeza.</p><p>O forro também protege o tecido decorativo, aquele que você escolheu para aparecer na frente da cortina.</p>",
       readTo: "qual-escolher", readText: "Compare os forros por objetivo",
-      photo: "/isani-consultoria.avif", photoAlt: "Isani Oliveira conferindo o caimento de uma cortina durante uma consultoria",
+      photo: "/isani-consultoria.avif", photoSrcset: "/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w", photoWidth: 1108, photoHeight: 1484, photoAlt: "Isani Oliveira conferindo o caimento de uma cortina durante uma consultoria",
       photoTag: "Consultoria ShineCortinas", photoCaption: "A escolha do tecido e do forro começa pelo uso do ambiente.",
     },
     sections: [
@@ -190,7 +190,7 @@ const POSTS = [
 <h3>As laterais precisam permanecer no lugar</h3>
 <p>O forro também precisa ter tecido suficiente para fechar no centro sem puxar as laterais junto.</p>
 <p>Se ele tiver apenas a medida exata do vão, o movimento de fechar pode deslocar as pontas e abrir uma passagem de luz.</p>
-<p>No trilho, utilizo finalizadores nas extremidades para manter as pontas laterais presas. Assim, quando alguém fecha o forro com mais força ou rapidez, as laterais permanecem no lugar. O finalizador prende a ponta do forro; não é um sistema de vedação lateral.</p>
+<p>No trilho, utilizo finalizadores nas extremidades para manter as pontas laterais presas. Assim, quando alguém fecha o forro com mais força ou rapidez, as laterais permanecem no lugar, alinhadas junto à parede.</p>
 <p>No encontro central comum, as duas partes se encostam com tecido e franzimento suficientes para fechar aquela passagem.</p>
 <h3>Quando entra o trilho triplo com transpasse?</h3>
 <p>Existe uma solução específica chamada trilho triplo com transpasse.</p>
@@ -199,7 +199,7 @@ const POSTS = [
       { id: "limpeza", toc: "Lavagem e cuidados", label: "Guia de forros", h2: "Como limpar cada tipo de forro", html: `
 <p>A primeira referência é o documento de cuidados que acompanha o material. Todos os materiais com que trabalhamos têm essa orientação.</p>
 <p>Nas opções que descrevi, os cuidados são diferentes:</p>
-<div class="sl-ed-table sl-ed-fr-care-table"><table><caption>Cuidados com os materiais que utilizo</caption><thead><tr><th scope="col">Material</th><th scope="col">Como oriento a manutenção</th></tr></thead><tbody><tr><td>Microfibra e semi blackout de tecido</td><td>Permitem lavagem em máquina e centrifugação, seguindo os cuidados do produto.</td></tr><tr><td>Blackout de tecido com bloqueador interno</td><td>As opções descritas permitem lavagem em máquina. É preciso confirmar a construção e as instruções daquele material.</td></tr><tr><td>Blackout com película traseira</td><td>Recomendo higienização profissional específica para esse blackout. Não colocar na máquina, usar água quente ou torcer.</td></tr></tbody></table></div>
+<div class="sl-ed-table sl-ed-fr-care-table"><table><caption>Cuidados com os materiais que utilizo</caption><thead><tr><th scope="col">Material</th><th scope="col">Como oriento a manutenção</th></tr></thead><tbody><tr><td data-label="Material">Microfibra e semi blackout de tecido</td><td data-label="Como oriento a manutenção">Permitem lavagem em máquina e centrifugação, seguindo os cuidados do produto.</td></tr><tr><td data-label="Material">Blackout de tecido com bloqueador interno</td><td data-label="Como oriento a manutenção">As opções descritas permitem lavagem em máquina. É preciso confirmar a construção e as instruções daquele material.</td></tr><tr><td data-label="Material">Blackout com película traseira</td><td data-label="Como oriento a manutenção">Recomendo higienização profissional específica para esse blackout. Não colocar na máquina, usar água quente ou torcer.</td></tr></tbody></table></div>
 <p>Para o blackout com película, confirme antes se a empresa conhece e atende esse material. Nem toda lavanderia aceita o serviço, justamente pelo risco de danificar a dublagem.</p>
 <p>Quando falo em higienização profissional, estou me referindo ao procedimento adequado àquele blackout, conforme suas instruções de conservação. Não basta pedir uma “lavagem a seco” sem esclarecer qual é o material e como ele deve ser tratado.</p>` },
       { id: "perguntas", toc: "Perguntas frequentes", label: "Guia de forros", h2: "Dúvidas frequentes sobre forro de cortina", faq: true, html: `
@@ -227,8 +227,8 @@ const POSTS = [
     slug: 'altura-ideal-da-cortina',
     layout: 'editorial',
     title: 'Qual a altura ideal da cortina? Do chão ao teto',
-    seoTitle: 'Altura Ideal da Cortina: do Chão, do Teto e da Janela | ShineCortinas',
-    description: 'Cortina de tecido vai até o chão. As três alturas de barra (1 cm do chão, beijando o chão, efeito poodle), a regra de dividir o vão para fixar o varão, teto e cortineiro, e a medição em três pontos. Por Isani Oliveira.',
+    seoTitle: 'Altura Ideal da Cortina: Chão, Teto e Janela | ShineCortinas',
+    description: 'Cortina de tecido vai até o chão: veja as 3 alturas de barra (1 cm, beijando o chão e efeito poodle), onde fixar o varão e como medir em três pontos.',
     kicker: 'Medidas e instalação',
     published: '2026-02-19',
     modified: TODAY,
@@ -241,7 +241,7 @@ const POSTS = [
       h1: 'Qual a altura<br>ideal da cortina?', h1em: 'Do chão ao teto.',
       lead: '<p><strong>Cortina de tecido vai até o chão.</strong> A barra pode terminar de três jeitos: a <strong>1 cm do chão</strong>, <strong>beijando o chão</strong> (o pé de bailarina) ou com o tecido <strong>sobrando no piso</strong> (efeito poodle). A escolha depende do ambiente, do uso e da luz.</p><p>Em cima, com varão na parede, eu divido ao meio o espaço entre a janela e o teto. Com cortineiro, o trilho vai dentro dele. E na hora de anotar a medida, largura primeiro, altura depois. Abaixo eu explico cada ponto, com desenho.</p>',
       readTo: 'chao', readText: 'Veja os três acabamentos',
-      photo: '/hall-wave-volta-redonda.avif', photoAlt: 'Cortina wave off-white em hall com pé-direito duplo, projeto ShineCortinas em Volta Redonda',
+      photo: '/hall-wave-volta-redonda.avif', photoSrcset: '/hall-wave-volta-redonda-800.avif 800w, /hall-wave-volta-redonda.avif 1216w', photoWidth: 1216, photoHeight: 1632, photoAlt: 'Cortina wave off-white em hall com pé-direito duplo, projeto ShineCortinas em Volta Redonda',
       photoTag: 'Projeto ShineCortinas', photoCaption: 'Hall com pé-direito duplo · Volta Redonda · cortina wave em tecido de 170 g/m²',
     },
     sections: [
@@ -367,8 +367,8 @@ const POSTS = [
     slug: 'bainha-de-cortina',
     layout: 'editorial',
     title: 'Bainha de cortina: o tamanho da barra, a dobra e o ajuste',
-    seoTitle: 'Bainha de Cortina: Tamanho da Barra, Bainha Dupla e Ajuste em Casa | ShineCortinas',
-    description: 'Bainha é a costura; barra é o resultado. O tamanho da barra é proporcional ao pé-direito (15, 20 a 25, 30 cm), a bainha dupla é para tecido leve, e a costura tem que ser reta, no fio. Por Isani Oliveira.',
+    seoTitle: 'Bainha de Cortina: Tamanho da Barra e Ajuste | ShineCortinas',
+    description: 'Bainha é a costura; barra é o resultado. Veja a proporção da barra por pé-direito (15, 20 a 25, 30 cm), quando usar bainha dupla e por que costurar no fio.',
     kicker: 'Medidas e instalação',
     published: '2026-02-19',
     modified: TODAY,
@@ -381,7 +381,7 @@ const POSTS = [
       h1: 'Bainha de cortina:', h1em: 'a costura que faz a barra.',
       lead: '<p><strong>A bainha é a dobra costurada na parte de baixo da cortina.</strong> É ela que faz a barra, e é ela que decide se a cortina termina a 1 cm do chão, beijando o chão ou com sobra. Muita gente diz "tamanho da bainha", mas o nome certo do que se vê é <strong>barra</strong>. O tamanho da barra não é fixo: é <strong>proporcional ao pé-direito</strong>. Em teto baixo, uns 15 cm; entre 2,50 e 2,70 m, 20 a 25 cm; perto de 3 m, 30 cm.</p><p>Tecido leve pede <strong>bainha dupla</strong>, para dar corpo. Tecido mais pesado fica bem com bainha simples. E a costura tem que ser reta, no fio do tecido, senão a cortina entorta com o tempo. Quando o pé-direito é alto, a nossa alfaiataria vai até a casa e ajusta a bainha no lugar.</p>',
       readTo: 'tamanho', readText: 'Veja a tabela de tamanho da barra',
-      photo: '/isani-consultoria.avif', photoAlt: 'Isani Oliveira conferindo o caimento e a barra de uma cortina de linho durante uma consultoria',
+      photo: '/isani-consultoria.avif', photoSrcset: '/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w', photoWidth: 1108, photoHeight: 1484, photoAlt: 'Isani Oliveira conferindo o caimento e a barra de uma cortina de linho durante uma consultoria',
       photoTag: 'Consultoria ShineCortinas', photoCaption: 'Isani conferindo o caimento e a barra de uma cortina de linho, com a equipe ao fundo',
     },
     sections: [
@@ -443,7 +443,7 @@ const POSTS = [
             <p>A Shine tem uma <strong>equipe de alfaiataria</strong> que se desloca até a casa do cliente para ajustar a bainha no lugar. Não é para toda cortina. É para os casos em que não dá para prever, na oficina, como a cortina vai assentar depois de instalada.</p>
             <p>O caso clássico é o <strong>pé-direito alto</strong>. O tecido é pesado, o vão é grande, e só com a cortina pendurada é que se vê exatamente onde a barra vai parar. O outro caso é quando as <strong>ondas e os obstáculos do vão</strong> pedem uma adequação: um rodapé mais alto de um lado, um degrau, um móvel fixo.</p>
             <p>Nesses projetos, a cortina é instalada, a costureira confere a barra com a peça já no lugar e faz o ajuste ali. Assim, a decisão considera o que está acontecendo no ambiente, e não o que a gente imaginou na oficina.</p>
-            <figure class="sl-ed-video"><div class="sl-ed-video-heading"><span class="sl-ed-eyebrow">Veja o trabalho de perto</span><h3>Ajuste de bainha na casa do cliente</h3></div><div class="sl-ed-video-stage" id="video-ajuste"><button type="button" class="sl-ed-play" data-video="https://customer-zheg6rb9ddhx9h8y.cloudflarestream.com/c9058bc905c6e533b7a31c6013677fbe/iframe" aria-label="Reproduzir vídeo de ajuste de bainha em casa"><img src="https://customer-zheg6rb9ddhx9h8y.cloudflarestream.com/c9058bc905c6e533b7a31c6013677fbe/thumbnails/thumbnail.jpg" alt="" loading="lazy" decoding="async"><span class="sl-ed-play-label"><span aria-hidden="true">▶</span> Assistir ao vídeo</span></button></div><figcaption>Vídeo da ShineCortinas. <a href="/videos/ajuste-bainha-em-casa-alfaiataria/">Abrir a página do vídeo</a>.</figcaption></figure>` },
+            <figure class="sl-ed-video"><div class="sl-ed-video-heading"><span class="sl-ed-eyebrow">Veja o trabalho de perto</span><h3>Ajuste de bainha na casa do cliente</h3></div><div class="sl-ed-video-stage" id="video-ajuste"><button type="button" class="sl-ed-play" data-video="https://customer-zheg6rb9ddhx9h8y.cloudflarestream.com/c9058bc905c6e533b7a31c6013677fbe/iframe" aria-label="Reproduzir vídeo de ajuste de bainha em casa"><img src="https://customer-zheg6rb9ddhx9h8y.cloudflarestream.com/c9058bc905c6e533b7a31c6013677fbe/thumbnails/thumbnail.jpg" alt="" width="720" height="540" loading="lazy" decoding="async"><span class="sl-ed-play-label"><span aria-hidden="true">▶</span> Assistir ao vídeo</span></button></div><figcaption>Vídeo da ShineCortinas. <a href="/videos/ajuste-bainha-em-casa-alfaiataria/">Abrir a página do vídeo</a>.</figcaption></figure>` },
 
       { id: 'erros', toc: 'O erro que mais vejo', h2: 'O erro que mais vejo em bainha de cortina', html: `
             <p>Quando eu entro numa casa e a cortina está feia embaixo, quase sempre é a bainha. Ela está <strong>empachocada</strong>, embolada, com <strong>fio puxado</strong>, costurada com o <strong>ponto errado da máquina</strong>. Ou a cortina foi lavada, <strong>encolheu</strong>, e ninguém ajustou: a barra subiu e ficou curta.</p>
@@ -520,12 +520,12 @@ ${cityChip(null)}
         <nav aria-label="Breadcrumb" class="sl-ed-crumbs"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>${post.kicker}</span></nav>
         <p class="sl-ed-eyebrow">${h.eyebrow}</p>
         <h1 class="sl-ed-h1" id="topo">${h.h1} <em>${h.h1em}</em></h1>
-        <div class="sl-ed-author"><span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:scale(1.7);transform-origin:50% 16%;border-radius:0" loading="eager" decoding="async"></span><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
+        <div class="sl-ed-author"><span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="eager" decoding="async"></span><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
         <div class="sl-ed-lead">${h.lead}</div>
         <a class="sl-ed-readlink" href="#${h.readTo}">${h.readText} <span aria-hidden="true">↓</span></a>
       </div>
       <figure class="sl-ed-photo">
-        <img src="${h.photo}" alt="${esc(h.photoAlt)}" width="${h.photoWidth || 1216}" height="${h.photoHeight || 1632}" fetchpriority="high" decoding="async">
+        <img src="${h.photo}"${h.photoSrcset ? ` srcset="${h.photoSrcset}" sizes="(max-width: 960px) 100vw, 44vw"` : ''} alt="${esc(h.photoAlt)}" width="${h.photoWidth || 1216}" height="${h.photoHeight || 1632}" fetchpriority="high" decoding="async">
         <figcaption><span>${h.photoTag}</span>${h.photoCaption}</figcaption>
       </figure>
     </section>
@@ -548,7 +548,7 @@ ${cityChip(null)}
 ${sections}
         </article>
         <div class="sl-ed-authorend">
-          <span style="display:block;width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="" width="64" height="64" style="width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:scale(1.7);transform-origin:50% 16%;border-radius:0" loading="lazy" decoding="async"></span>
+          <span style="display:block;width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="" width="64" height="64" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="lazy" decoding="async"></span>
           <p><strong>Conhecimento de quem está no projeto.</strong><br>Orientações de Isani Oliveira, fundador da ShineCortinas e especialista em cortinas sob medida, desde 2009 no Sul Fluminense. <a href="/sobre/">Conheça a Shine</a>.</p>
         </div>
       </div>
@@ -575,6 +575,9 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
 function build(post) {
   const url = `${BASE}/blog/${post.slug}/`;
   const faqHtml = post.faq.map(([q, a]) => `        <details><summary>${q}</summary><div>${a}</div></details>`).join('\n');
+  const defaultSpeakable = post.layout === 'editorial'
+    ? ['/html/body//h1', '/html/body//div[@class="sl-ed-lead"]/p[1]']
+    : ['/html/body//h1', '/html/body//p[@class="sl-lead"]'];
   const ld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -592,10 +595,10 @@ function build(post) {
       { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Início', item: `${BASE}/` },
         { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog/` },
-        { '@type': 'ListItem', position: 3, name: post.title, item: url } ] },
+        { '@type': 'ListItem', position: 3, name: post.kicker, item: url } ] },
       { '@type': 'WebPage', '@id': url, url, name: post.seoTitle, inLanguage: 'pt-BR',
         breadcrumb: { '@id': `${url}#breadcrumb` }, dateModified: post.modified,
-        speakable: { '@type': 'SpeakableSpecification', xpath: post.speakableXPath || ['/html/body//h1', '/html/body//p[@class="sl-lead"]'] } },
+        speakable: { '@type': 'SpeakableSpecification', xpath: post.speakableXPath || defaultSpeakable } },
     ],
   };
 

@@ -7,7 +7,7 @@ export const PAGINAS = [
   // ---------------------------------------------------------------- CORTINAS
   {
     dir: 'cortinas',
-    title: 'Cortinas Sob Medida em Volta Redonda e Sul Fluminense | ShineCortinas',
+    title: 'Cortinas Sob Medida em Volta Redonda e Região | ShineCortinas',
     description: 'Cortinas sob medida com caimento impecável: wave, linho, voil, veludo e blackout. Consultoria gratuita em casa, medição a laser e instalação própria.',
     kicker: 'Cortinas sob medida',
     h1: 'Cortinas sob medida, com o <em>caimento</em> que a foto de loja não mostra',
@@ -41,7 +41,7 @@ export const PAGINAS = [
       ['Qual tipo de cortina escolher para sala?', 'Para salas, as opções mais indicadas são: voil com blackout em sistema duplo, que dá leveza durante o dia e escurecimento quando necessário; linho ou tecido texturizado para ambientes com iluminação natural generosa; e cortina wave quando o objetivo é um acabamento arquitetônico limpo. A escolha depende da exposição solar, do pé-direito e do estilo da sala.'],
       ['Qual tecido de cortina é melhor para quarto?', 'Para quartos, o blackout é o mais indicado, especialmente para quem trabalha em turnos, tem filhos pequenos ou quarto com exposição solar intensa. Para quem prefere luz filtrada, o double vision permite ajustar entre o tecido blackout e a luz suave. Para suítes com proposta estética mais elaborada, linho com forro oferece caimento elegante.'],
       ['Vocês lavam e fazem manutenção de cortinas?', 'Sim. A ShineCortinas oferece serviço completo de lavagem e manutenção: retiramos a cortina, mesmo em pé-direito alto, lavamos com tratamento técnico e reinstalamos.'],
-      ['Quanto tempo leva para instalar?', 'Na maioria dos projetos, a instalação é concluída no mesmo dia da consultoria. A equipe chega, trabalha com limpeza e sai deixando o ambiente pronto, sem entulho.'],
+      ['Quanto tempo leva para instalar?', 'Na maioria dos projetos, a instalação é concluída no mesmo dia. A equipe chega, trabalha com limpeza e sai deixando o ambiente pronto, sem entulho.'],
     ],
     links: [['/cortina-wave/', 'Cortina wave'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Cortina motorizada'], ['/persianas/', 'Persianas técnicas'],
             ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/portfolio/', 'Projetos reais'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
@@ -50,7 +50,7 @@ export const PAGINAS = [
   // --------------------------------------------------------------- PERSIANAS
   {
     dir: 'persianas',
-    title: 'Persianas Sob Medida em Volta Redonda e Sul Fluminense | ShineCortinas',
+    title: 'Persianas Sob Medida em Volta Redonda e Região | ShineCortinas',
     description: 'Persianas sob medida: rolô, double vision, screen, vertical e de madeira. Controle preciso de luz e calor, com consultoria gratuita em casa e instalação própria.',
     kicker: 'Persianas técnicas',
     h1: 'Persianas sob medida, para controlar a luz <em>no detalhe</em>',
@@ -86,7 +86,7 @@ export const PAGINAS = [
   // ------------------------------------------------------- BLACKOUT E FORROS
   {
     dir: 'blackout-e-forros',
-    title: 'Blackout e Forros para Cortina: Translúcido, 70% e 100% | ShineCortinas',
+    title: 'Blackout e Forros para Cortina: 70%, 100% e Translúcido | Shine',
     description: 'O forro decide quanta luz entra. Entenda o forro translúcido, o semi blackout de 70% e o blackout 100%, e qual deles resolve o seu ambiente.',
     kicker: 'Blackout e forros',
     h1: 'O forro é a camada que <em>decide</em> quanta luz entra',
@@ -96,7 +96,7 @@ export const PAGINAS = [
     blocos: [
       { t: 'prose', h2: 'Forro translúcido', p: [
         'Cumpre três funções: dá <strong>privacidade</strong> durante o dia sem fechar o ambiente, <strong>protege o tecido decorativo</strong> da cortina, que fica exposto ao sol todos os dias, e <strong>quebra parte da claridade</strong>.',
-        '"Forro translúcido" é o nome do grupo. Dentro dele há mais de um tecido: gabardine (de algodão ou de poliéster), tergal, tergal verão, cetim e gorgurinho. Cada um se comporta de um jeito com a luz e com o caimento, e a escolha é feita na consultoria, junto com o tecido de frente.',
+        '"Forro translúcido" é o nome do grupo. Dentro dele há mais de um tecido: gabardine (de algodão ou de poliéster), tergal, tergal verão, cetim, gorgurinho e microfibra. Cada um se comporta de um jeito com a luz e com o caimento, e a escolha é feita na consultoria, junto com o tecido de frente.',
       ] },
       { t: 'prose', h2: 'Forro blackout: 70% e 100%', p: [
         '<strong>Semi blackout (70%)</strong> reduz boa parte da luz e deixa o ambiente em penumbra. Serve para quem quer dormir melhor ou assistir televisão de dia com conforto, sem fazer questão de escuro absoluto.',
@@ -116,7 +116,7 @@ export const PAGINAS = [
       ['O blackout bloqueia toda a luz do quarto?', 'Depende do forro. O forro blackout 100% bloqueia a passagem de luz pelo tecido e é ele que entrega o quarto escuro de verdade. O forro blackout de 70%, chamado de semi blackout, deixa o ambiente em penumbra. Na consultoria o consultor mede a janela e indica o forro certo para o escurecimento que você procura.'],
       ['Qual a diferença entre tecido blackout e forro blackout?', 'O tecido blackout é o próprio tecido da cortina, que já bloqueia a luz. O forro blackout é uma segunda camada acoplada atrás de uma cortina decorativa, somando escurecimento sem abrir mão da estética do tecido de frente.'],
       ['Qual a diferença entre forro translúcido e forro blackout?', 'O forro translúcido dá privacidade, protege o tecido decorativo do sol e quebra parte da claridade, mas não escurece. O forro blackout serve para escurecer e existe em duas versões: 70%, que deixa penumbra, e 100%, que bloqueia a passagem de luz pelo tecido.'],
-      ['Quais tecidos servem como forro translúcido?', 'Gabardine (de algodão ou de poliéster), tergal, tergal verão, cetim e gorgurinho. Cada um responde de um jeito à luz e ao caimento, e a escolha é feita na consultoria, junto com o tecido decorativo da frente.'],
+      ['Quais tecidos servem como forro translúcido?', 'Gabardine (de algodão ou de poliéster), tergal, tergal verão, cetim, gorgurinho e microfibra. Cada um responde de um jeito à luz e ao caimento, e a escolha é feita na consultoria, junto com o tecido decorativo da frente.'],
       ['Persiana também escurece por completo?', 'Sim. As persianas têm material com blackout 100%.'],
     ],
     links: [['/blog/tipos-de-forro-para-cortina/', 'Artigo: tipos de forro'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/cortina-wave/', 'Cortina wave'],
@@ -126,7 +126,7 @@ export const PAGINAS = [
   // ------------------------------------------------------------ CORTINA WAVE
   {
     dir: 'cortina-wave',
-    title: 'Cortina Wave Sob Medida: Ondas Regulares e Uniformes | ShineCortinas',
+    title: 'Cortina Wave Sob Medida: Ondas Regulares | ShineCortinas',
     description: 'Cortina wave é o sistema com trilho especial que forma ondas regulares e uniformes no tecido, criando um desenho contínuo do teto ao chão.',
     kicker: 'Cortina wave',
     h1: 'Cortina wave: a onda que fica <em>regular</em> do teto ao chão',
@@ -218,12 +218,12 @@ export const PAGINAS = [
   // ------------------------------------------------------------------ MÉTODO
   {
     dir: 'metodo',
-    title: 'Como Funciona: Consultoria em Domicílio e Instalação | ShineCortinas',
+    title: 'Como Funciona: Consultoria e Instalação | ShineCortinas',
     description: 'Do primeiro contato à instalação: consultoria gratuita em casa, medição a laser, projeto aprovado por você, confecção sob medida e instalação pela nossa equipe.',
     kicker: 'Como funciona',
     h1: 'Do primeiro contato à instalação, <em>sem surpresa</em>',
     lead: 'A Shine trabalha com consultoria em domicílio: o consultor vai até a sua casa com o mostruário completo, mede cada janela a laser e apresenta as opções no seu próprio ambiente. Você decide com calma, sem sair de casa e sem pressão.',
-    hero: '/isani-consultoria.avif', heroW: 1108, heroH: 1484, heroPessoa: true,
+    hero: '/isani-consultoria.avif', heroSrcset: '/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w', heroW: 1108, heroH: 1484, heroPessoa: true,
     heroAlt: 'Isani Oliveira conferindo o caimento de uma cortina de linho durante a instalação, com a equipe ShineCortinas ao fundo',
     blocos: [
       { t: 'steps6' },
@@ -253,12 +253,12 @@ export const PAGINAS = [
     kicker: 'Sobre a Shine',
     h1: 'Dezessete anos medindo, confeccionando e <em>instalando</em>',
     lead: 'A ShineCortinas é uma empresa de cortinas e persianas sob medida com sede em Volta Redonda, no Rio de Janeiro. Desde 2009 atende o Sul Fluminense com equipe própria — do consultor que vai à sua casa ao instalador que fecha o projeto.',
-    hero: '/isani-consultoria.avif', heroW: 1108, heroH: 1484, heroPessoa: true,
+    hero: '/isani-consultoria.avif', heroSrcset: '/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w', heroW: 1108, heroH: 1484, heroPessoa: true,
     heroAlt: 'Isani Oliveira conferindo o caimento de uma cortina de linho durante a instalação, com a equipe ShineCortinas ao fundo',
     blocos: [
       { t: 'proof' },
       { t: 'ceo' },
-      { t: 'figure', kicker: 'Equipe própria', h2: 'Quem mede, confecciona e instala', sub: 'Consultores e instaladores da própria Shine: do primeiro contato ao acabamento, sem terceirização.', src: '/equipe-shine.avif', w: 1374, h: 1145, alt: 'Equipe da ShineCortinas reunida, de uniforme, com Isani Oliveira ao centro', cap: 'A equipe ShineCortinas, com Isani Oliveira ao centro.' },
+      { t: 'figure', kicker: 'Equipe própria', h2: 'Quem mede, confecciona e instala', sub: 'Consultores e instaladores da própria Shine: do primeiro contato ao acabamento, sem terceirização.', src: '/equipe-shine.avif', srcset: '/equipe-shine-800.avif 800w, /equipe-shine.avif 1374w', w: 1374, h: 1145, alt: 'Equipe da ShineCortinas reunida, de uniforme, com Isani Oliveira ao centro', cap: 'A equipe ShineCortinas, com Isani Oliveira ao centro.' },
       { t: 'prose', h2: 'Onde atendemos', p: [
         'São 15 cidades do Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira. Cada uma tem <a href="/cidades-atendidas/">a sua própria página</a>, com as perguntas e os projetos de lá.',
         'Além das residências, a Shine atende pousadas, chalés, hotéis e ambientes comerciais, com experiência especial em projetos para pousadas da região serrana.',
@@ -306,7 +306,7 @@ export const PAGINAS = [
   // ----------------------------------------------------------------- CONTATO
   {
     dir: 'contato',
-    title: 'Contato ShineCortinas: WhatsApp e Consultoria Gratuita | ShineCortinas',
+    title: 'Contato e Consultoria Gratuita pelo WhatsApp | ShineCortinas',
     description: 'Fale com um consultor da ShineCortinas pelo WhatsApp e agende a consultoria gratuita em domicílio no Sul Fluminense. Sede em Volta Redonda (RJ).',
     kicker: 'Contato',
     h1: 'Fale com um consultor <em>de verdade</em>',

@@ -17,7 +17,7 @@ function walk(dir) {
   const files = [];
 
   for (const entry of entries) {
-    if (entry.name === '.git' || entry.name === 'node_modules') continue;
+    if (entry.name.startsWith('.') || entry.name === 'node_modules') continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) files.push(...walk(full));
     else files.push(full);

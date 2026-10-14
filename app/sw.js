@@ -1,7 +1,5 @@
-const CACHE = 'shine-app-v9';
+const CACHE = 'shine-app-v10';
 const PRECACHE = [
-  '/app/',
-  '/app/index.html',
   '/logo-shine.avif',
   '/hero-sala.avif',
   '/automacao.avif',

@@ -45,7 +45,7 @@ const bloco = {
         <h2 class="sl-h2">${b.h2}</h2>
         ${b.sub ? `<p class="sl-sub">${b.sub}</p>` : ''}
       </div>
-      <figure class="sl-figure"><div class="sl-media"><img src="${b.src}" alt="${esc(b.alt)}" width="${b.w}" height="${b.h}" loading="lazy" decoding="async"></div>${b.cap ? `<figcaption>${b.cap}</figcaption>` : ''}</figure>
+      <figure class="sl-figure"><div class="sl-media"><img src="${b.src}"${b.srcset ? ` srcset="${b.srcset}" sizes="(max-width: 900px) 100vw, 980px"` : ''} alt="${esc(b.alt)}" width="${b.w}" height="${b.h}" loading="lazy" decoding="async"></div>${b.cap ? `<figcaption>${b.cap}</figcaption>` : ''}</figure>
     </div></section>`,
 
   cards: (b) => `
@@ -118,7 +118,7 @@ function render(p) {
   return `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de ${esc(p.kicker.toLowerCase())}">
 ${header('/' + p.dir + '/')}
   <section class="sl-hero sl-hero--interna${p.heroPessoa ? ' sl-hero--pessoa' : ''}">
-    <div class="sl-hero__img"><img src="${p.hero}" alt="${esc(p.heroAlt)}" width="${p.heroW || 1920}" height="${p.heroH || 1080}" fetchpriority="high" decoding="async"></div>
+    <div class="sl-hero__img"><img src="${p.hero}"${p.heroSrcset ? ` srcset="${p.heroSrcset}" sizes="100vw"` : ''} alt="${esc(p.heroAlt)}" width="${p.heroW || 1920}" height="${p.heroH || 1080}" fetchpriority="high" decoding="async"></div>
     <div class="sl-wrap"><div class="sl-hero__in">
       <nav aria-label="Breadcrumb"><ol class="sl-crumbs">
         <li><a href="/">Início</a></li><li aria-hidden="true">/</li>
@@ -179,17 +179,29 @@ function ajustaHead(head, p) {
     };
     const i = g.findIndex((n) => n['@type'] === 'FAQPage');
     if (i >= 0) g[i] = faqNode; else g.push(faqNode);
+    const bcNode = {
+      '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: `${BASE}/` },
+        { '@type': 'ListItem', position: 2, name: p.kicker, item: url },
+      ],
+    };
+    const bi = g.findIndex((n) => n['@type'] === 'BreadcrumbList');
+    if (bi >= 0) g[bi] = bcNode; else g.push(bcNode);
     const biz = g.find((n) => n['@type'] === 'LocalBusiness');
     if (biz) {
       biz['@id'] = `${BASE}/#biz`;
       if (!biz.priceRange) biz.priceRange = '$$';
       if (biz.address && !biz.address.streetAddress) biz.address = { '@type': 'PostalAddress', streetAddress: 'Rua K, 60', ...biz.address };
     }
-    const org = g.find((n) => n['@type'] === 'Organization' && !n['@id']);
-    if (org) org['@id'] = `${BASE}/#org`;
+    const org = g.find((n) => n['@type'] === 'Organization');
+    if (org) {
+      org['@id'] = `${BASE}/#org`;
+      if (!org.sameAs) org.sameAs = ['https://www.instagram.com/shinecortinas/', 'https://www.facebook.com/shinecortinas', 'https://www.tiktok.com/@shinecortinas', 'https://www.youtube.com/@shinecortinas', 'https://www.pinterest.com/shinecortinas'];
+    }
     const j = g.findIndex((n) => n['@type'] === 'WebPage');
     const web = { '@type': 'WebPage', '@id': url, url, name: p.title, inLanguage: 'pt-BR', dateModified: TODAY,
-      about: { '@id': `${BASE}/#biz` },
+      breadcrumb: { '@id': `${url}#breadcrumb` }, about: { '@id': `${BASE}/#biz` },
       speakable: { '@type': 'SpeakableSpecification', xpath: ['/html/body//h1', '/html/body//p[@class="sl-lede"]'] } };
     if (j >= 0) g[j] = web; else g.push(web);
     const out = ld['@graph'] ? { ...ld, '@graph': g } : { '@context': 'https://schema.org', '@graph': g };

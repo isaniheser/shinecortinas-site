@@ -165,6 +165,8 @@
 .pv-curtain-content nav a[aria-current]{color:#886b37}
 .pv-curtain-content footer{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;border-top:1px solid #b3bf9c50;padding-top:8px}
 .pv-curtain-content footer a{min-height:44px;display:flex;align-items:center;font:500 11px var(--sans);color:#435e45}
+.pv-curtain-wa{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;margin-top:18px;padding:12px 22px;border-radius:30px;background:#193e30;color:#f5f5e9!important;font:600 12px/1.4 var(--sans);text-decoration:none;transition:background .2s}
+.pv-curtain-wa:hover,.pv-curtain-wa:focus-visible{background:#265442}
 .pv-curtain-signature{font:italic 16px var(--serif);color:#99814e;margin-top:8px}
 .pv-curtain-wing{position:absolute;z-index:3;top:0;bottom:0;width:51%;pointer-events:none;background:repeating-linear-gradient(90deg,#d9e3d1 0%,#f7f7e8 9%,#cad5be 17%,#edf0df 25%);box-shadow:0 0 30px #21392222}
 .pv-curtain-wing--left{left:0;transform:translateX(-102%)}
@@ -184,6 +186,7 @@
 .pv-curtain-content strong{font-size:30px}
 .pv-curtain-content nav a{min-height:69px;padding-top:11px;padding-bottom:11px;grid-template-columns:23px minmax(0,1fr) 18px;gap:8px}
 .pv-curtain-scene>div{background:linear-gradient(90deg,#f5f5ebfa,#f5f5ebe0 65%,#f5f5eb88)}
+.pv-curtain-wa{width:100%;margin-top:14px}
 .pv-curtain-content footer{gap:0 18px;margin-top:10px}
 .pv-curtain-eyebrow{font-size:8px}
 .pv-curtain-signature{font-size:14px}
@@ -211,6 +214,8 @@
 /* Provas e informações locais preservadas abaixo da composição aprovada. */
 .pv-home-trust{border-top:1px solid var(--pv-line)}
 .pv-home-trust h2{margin-bottom:28px}
+.pv-home-trust .sl-stats{margin-top:28px}
+.pv-home-trust .sl-stat{background:#f8f5ed;border-color:var(--pv-line)}
 .pv-home-trust .sl-quote{color:var(--pv-ink);font-size:20px;margin:0;padding:24px;background:#f8f5ed;border-radius:16px;scroll-snap-align:start}
 .pv-home-trust .sl-quote footer{margin-top:20px;color:var(--pv-accent);font:600 11px/1.7 var(--sans);font-style:normal}
 .pv-home-trust .sl-chips{margin-top:24px}

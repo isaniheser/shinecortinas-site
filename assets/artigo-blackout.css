@@ -6,6 +6,7 @@
 .sb-blackout .sb-care>div{border-bottom:1px solid var(--line);padding:24px 0 6px}
 .sb-blackout .sb-care h3{margin:0 0 12px}
 .sb-blackout .sl-ed-readlink{max-width:360px}
+.sb-comparison-figure,.sb-gaps-figure{margin:28px 0 34px}
 .sb-comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0}
 .sb-panel{border:1px solid #ddd6c8;background:#fbfaf7;padding:24px 20px;text-align:center;min-width:0}
 .sb-blackout .sb-panel h3{font:500 25px/1.25 var(--serif);margin:0 0 14px}

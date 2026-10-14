@@ -79,7 +79,7 @@ ${s.itens.map(([q, a]) => `        <details><summary>${esc(q)}</summary><div>${e
       </div>
     </div></section>`).join('\n');
 
-  const head = cleanHead(src.split('<body')[0]);
+  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['FAQ', `${BASE}/faq/`]] });
   const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de perguntas frequentes">
 ${header('/faq/')}${heroInterna('Perguntas frequentes',
     'As respostas que a gente <em>mais dá</em> no WhatsApp',
@@ -104,7 +104,7 @@ function buildVideos() {
   const cards = JSON.parse(readFileSync(join(ROOT, 'videos', 'videos.json'), 'utf8'));
   const grid = cards.map((c) => `        <a class="sl-card" href="${c.href}"><div class="sl-media sl-media--video"><img src="${c.img}" alt="${esc(c.alt)}" width="800" height="450" loading="lazy" decoding="async"><span class="sl-play" aria-hidden="true">▶</span></div><div class="sl-card__body"><span>Vídeo</span><h3>${esc(c.titulo)}</h3><p>${esc(c.resumo)}</p><em>Assistir →</em></div></a>`).join('\n');
 
-  const head = cleanHead(src.split('<body')[0]);
+  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['Vídeos', `${BASE}/videos/`]] });
   const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de vídeos">
 ${header('/videos/')}${heroInterna('Vídeos',
     'Projetos entregues, <em>em movimento</em>',
@@ -130,7 +130,7 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
 function buildHub() {
   const file = join(ROOT, 'cidades-atendidas', 'index.html');
   const src = readFileSync(file, 'utf8');
-  const head = cleanHead(src.split('<body')[0]);
+  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['Cidades', `${BASE}/cidades-atendidas/`]] });
   const cards = CITIES.map(([s, n]) => `        <a class="sl-citycard" href="/cidades/${s}/"><h3>${n}</h3><span>Ver a página de ${n} →</span></a>`).join('\n');
   const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de cidades atendidas">
 ${header('/cidades-atendidas/')}${heroInterna('Cidades atendidas',
@@ -159,7 +159,7 @@ function buildBlogIndex() {
   const src = readFileSync(file, 'utf8');
   const posts = JSON.parse(readFileSync(join(ROOT, 'blog', 'posts.json'), 'utf8'));
   const lista = posts.map((p) => `        <a class="sl-post" href="${p.href}"><span>Artigo</span><h3>${esc(p.titulo)}</h3><p>${esc(p.resumo)}</p></a>`).join('\n');
-  const head = cleanHead(src.split('<body')[0]);
+  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['Blog', `${BASE}/blog/`]] });
   const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="o blog">
 ${header('/blog/')}${heroInterna('Blog',
     'Guias para escolher <em>sem erro</em>',
@@ -181,14 +181,33 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
   return posts.length;
 }
 
+const VIDEO_META = {
+  'ajuste-bainha-em-casa-alfaiataria': ['Ajuste de Bainha em Domicílio: Alfaiataria | ShineCortinas', null],
+  'cortina-cabana-chale-vassouras': ['Cortina Sob Medida em Chalé A-Frame Vassouras | ShineCortinas', 'Projeto sob medida em chalé A-Frame em Vassouras: cortina que acompanha o vão inclinado da cabana, garantindo conforto térmico, caimento e privacidade.'],
+  'cortina-motorizada-wave-resende': ['Cortina Motorizada Wave em Resende RJ | ShineCortinas', null],
+  'cortina-screen-motorizada-mangaratiba': ['Cortina Tela Solar Motorizada em Mangaratiba | ShineCortinas', null],
+  'experiencia-tecidos-alfaiataria': ['Mostruário em Domicílio e Tecidos Sob Medida | ShineCortinas', null],
+  'instalacao-sul-fluminense': ['Instalação de Cortinas no Sul Fluminense | ShineCortinas', null],
+  'persiana-horizontal-madeira-barra-mansa': ['Persiana de Madeira 50mm em Barra Mansa | ShineCortinas', null],
+};
+
 // --------------------------------------------- posts do blog (visual apenas)
 // O texto atual é mantido; a reescrita de copy é etapa separada (docs/fila-de-conteudo.md).
-// Mantém a querystring do CSS igual ao CSS_V atual mesmo nas páginas que o build não regenera,
-// senão elas continuam servindo uma folha antiga do cache do navegador.
-function sincronizaCss(file, src) {
-  const alvo = `/assets/shine-leve.css?v=${CSS_V}`;
-  const novo = normalizaCanonical(src.replace(/\/assets\/shine-leve\.css\?v=[^"']*/g, () => alvo));
-  if (novo !== src) writeFileSync(file, novo);
+// Mantém head, header, rodapé e tail sincronizados mesmo nas páginas já migradas.
+function sincronizaCss(file, src, sectionPath = '/blog/', crumbs, metaFix) {
+  let [rawHead, rest] = src.split('<body');
+  if (!rest) return;
+  if (metaFix && metaFix[0]) rawHead = rawHead.replace(/<title>[\s\S]*?<\/title>/, `<title>${metaFix[0]}</title>`);
+  if (metaFix && metaFix[1]) rawHead = rawHead.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${metaFix[1]}">`);
+  rawHead = rawHead.replace(/Por que escolher cortina motorizada em projetos de alto padrão: qual/g, 'Por que escolher cortina motorizada: qual');
+  const head = cleanHead(rawHead, { crumbs });
+  let body = '<body' + rest;
+  body = body.replace(/acabamento de alto padrão\./g, 'acabamento sob medida.');
+  body = body.replace(/Em projetos de alto padrão, o material/g, 'Em projetos sob medida, o material');
+  body = body.replace(/Por que escolher cortina motorizada em projetos de alto padrão: qual/g, 'Por que escolher cortina motorizada: qual');
+  body = body.replace(/<header class="pv-header"[\s\S]*?<\/header>/, header(sectionPath).trim());
+  body = body.replace(/<\/footer>[\s\S]*?<\/html>\s*$/, `</footer>${waFloat()}${bar('single')}${tail()}`);
+  writeFileSync(file, head + body);
 }
 
 function buildPosts() {
@@ -197,7 +216,9 @@ function buildPosts() {
   for (const slug of dirs) {
     const file = join(ROOT, 'blog', slug, 'index.html');
     const src = readFileSync(file, 'utf8');
-    if (src.includes('shine-leve.css')) { sincronizaCss(file, src); continue; } // já migrado (ex.: tipos-de-forro)
+    const curLabel = (src.match(/<li aria-current="page">([^<]+)<\/li>/) || src.match(/<nav aria-label="Breadcrumb"[^>]*>[\s\S]*?<span>([^<]+)<\/span>\s*<\/nav>/) || [, 'Artigo'])[1].trim();
+    const crumbs = [['Início', `${BASE}/`], ['Blog', `${BASE}/blog/`], [curLabel, `${BASE}/blog/${slug}/`]];
+    if (src.includes('shine-leve.css')) { sincronizaCss(file, src, '/blog/', crumbs); continue; } // já migrado (ex.: tipos-de-forro)
     const mainM = src.match(/<main[^>]*>([\s\S]*?)<\/main>/);
     if (!mainM) { console.warn(`  (sem <main>) ${slug}`); continue; }
     let main = mainM[1];
@@ -213,7 +234,7 @@ function buildPosts() {
                .trim();
     const lead = (main.match(/<p>([\s\S]*?)<\/p>/) || [, ''])[1];
     main = main.replace(/<p>[\s\S]*?<\/p>/, '');
-    const head = cleanHead(src.split('<body')[0]);
+    const head = cleanHead(src.split('<body')[0], { crumbs });
     const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="o artigo &quot;${esc(h1)}&quot;">
 ${header('/blog/')}
   <section class="sl-hero sl-hero--post">
@@ -257,14 +278,15 @@ function buildVideoPages() {
   for (const f of readdirSync(dir).filter((x) => statSync(join(dir, x)).isDirectory())) {
     const file = join(dir, f, 'index.html'); // /videos/<slug>/index.html → URL /videos/<slug>/
     const src = readFileSync(file, 'utf8');
-    if (src.includes('shine-leve.css')) { sincronizaCss(file, src); continue; }
+    const crumbs = [['Início', `${BASE}/`], ['Vídeos', `${BASE}/videos/`], ['Projeto', `${BASE}/videos/${f}/`]];
+    if (src.includes('shine-leve.css')) { sincronizaCss(file, src, '/videos/', crumbs, VIDEO_META[f]); continue; }
     const h1 = dec((src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, ''])[1].replace(/<[^>]+>/g, '').trim());
     const iframe = (src.match(/<iframe[\s\S]*?<\/iframe>/) || [''])[0]
       .replace(/ class="[^"]*"/, '').replace('<iframe', '<iframe class="sl-embed"');
     const lead = dec(((src.match(/<h1[^>]*>[\s\S]*?<\/h1>\s*<p[^>]*>([\s\S]*?)<\/p>/) || [, ''])[1]).replace(/<[^>]+>/g, '').trim());
     const extra = [...src.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>\s*<p[^>]*>([\s\S]*?)<\/p>/g)]
       .map((m) => `      <h2 class="sl-h2">${dec(m[1].replace(/<[^>]+>/g, '').trim())}</h2>\n      <p>${dec(m[2].replace(/<[^>]+>/g, '').trim())}</p>`).join('\n');
-    const head = cleanHead(src.split('<body')[0]);
+    const head = cleanHead(src.split('<body')[0], { crumbs });
     const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="o vídeo &quot;${esc(h1)}&quot;">
 ${header('/videos/')}
   <section class="sl-hero sl-hero--post">

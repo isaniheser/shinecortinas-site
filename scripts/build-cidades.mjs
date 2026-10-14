@@ -122,23 +122,61 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
 // no nó LocalBusiness do <head>. Substituição por função: nunca passar texto gerado como
 // 2º argumento de .replace() (bug do "$$").
 function withReview(head, d) {
-  if (!d.quote_google_author || !d.quote_date) return head;
+  const BASE = 'https://www.shinecortinas.com';
+  const url = `${BASE}/cidades/${d.slug}/`;
   return head.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, open, raw, close) => {
     let ld; try { ld = JSON.parse(raw); } catch { return m; }
     const nodes = ld['@graph'] || [ld];
     const biz = nodes.find((x) => x['@type'] === 'LocalBusiness' || (Array.isArray(x['@type']) && x['@type'].includes('LocalBusiness')));
-    if (!biz) return m;
-    biz.review = [{
-      '@type': 'Review',
-      author: { '@type': 'Person', name: d.quote_by },
-      datePublished: d.quote_date,
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody: d.quote.replace(/\s*\[…\]\s*/g, ' ').replace(/\s+/g, ' ').trim(),
-    }];
+    if (biz && d.quote_google_author && d.quote_date) {
+      biz.review = [{
+        '@type': 'Review',
+        author: { '@type': 'Person', name: d.quote_by },
+        datePublished: d.quote_date,
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        reviewBody: d.quote.replace(/\s*\[…\]\s*/g, ' ').replace(/\s+/g, ' ').trim(),
+      }];
+    }
+    const person = nodes.find((x) => x['@type'] === 'Person');
+    if (person) {
+      person['@id'] = `${BASE}/#isani`;
+      person.url = `${BASE}/sobre/`;
+      if (!person.image) person.image = `${BASE}/isani-consultoria.avif`;
+    }
+    const faqNode = nodes.find((x) => x['@type'] === 'FAQPage');
+    if (faqNode && d.faq) {
+      faqNode['@id'] = `${url}#faq`;
+      faqNode.mainEntity = d.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }));
+    }
+    const bcNode = nodes.find((x) => x['@type'] === 'BreadcrumbList');
+    if (bcNode) {
+      bcNode['@id'] = `${url}#breadcrumb`;
+      bcNode.itemListElement = [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: `${BASE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Cidades', item: `${BASE}/cidades-atendidas/` },
+        { '@type': 'ListItem', position: 3, name: d.city, item: url },
+      ];
+    }
     const indent = (raw.match(/\n(\s*)\S/) || [, '  '])[1];
     return open + '\n' + indent + JSON.stringify(ld, null, 2).replace(/\n/g, '\n' + indent) + '\n' + indent + close;
   });
 }
+
+const CITY_TITLES = {
+  'volta-redonda': 'Cortinas em Volta Redonda: Bairros e Consultoria | ShineCortinas',
+  'barra-do-pirai': 'Cortinas Sob Medida em Barra do Piraí | ShineCortinas',
+  'barra-mansa': 'Cortinas e Persianas Sob Medida em Barra Mansa | ShineCortinas',
+  'itatiaia': 'Cortinas e Persianas Sob Medida em Itatiaia | ShineCortinas',
+  'maromba': 'Cortinas e Persianas Sob Medida em Maromba | ShineCortinas',
+  'miguel-pereira': 'Cortinas Sob Medida em Miguel Pereira | ShineCortinas',
+  'paulo-de-frontin': 'Cortinas Sob Medida em Paulo de Frontin | ShineCortinas',
+  'pinheiral': 'Cortinas e Persianas Sob Medida em Pinheiral | ShineCortinas',
+  'porto-real': 'Cortinas e Persianas Sob Medida em Porto Real | ShineCortinas',
+  'resende': 'Cortinas e Persianas Sob Medida em Resende | ShineCortinas',
+  'valenca': 'Cortinas e Persianas Sob Medida em Valença | ShineCortinas',
+  'vassouras': 'Cortinas e Persianas Sob Medida em Vassouras | ShineCortinas',
+  'visconde-de-maua': 'Cortinas Sob Medida em Visconde de Mauá | ShineCortinas',
+};
 
 let n = 0;
 for (const slug of readdirSync(join(ROOT, 'cidades'), { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name)) {
@@ -146,7 +184,12 @@ for (const slug of readdirSync(join(ROOT, 'cidades'), { withFileTypes: true }).f
   if (!d) throw new Error(`sem dados em cidades.json para ${slug}`);
   const file = join(ROOT, 'cidades', slug, 'index.html');
   const src = readFileSync(file, 'utf8');
-  writeFileSync(file, withReview(cleanHead(src.split('<body')[0]), d) + body(d));
+  let rawHead = src.split('<body')[0];
+  if (CITY_TITLES[slug]) {
+    rawHead = rawHead.replace(/<title>[\s\S]*?<\/title>/, `<title>${CITY_TITLES[slug]}</title>`);
+  }
+  const head = withReview(cleanHead(rawHead, { crumbs: [['Início', 'https://www.shinecortinas.com/'], ['Cidades', 'https://www.shinecortinas.com/cidades-atendidas/'], [d.city, `https://www.shinecortinas.com/cidades/${slug}/`]] }), d);
+  writeFileSync(file, head + body(d));
   n++;
 }
 console.log(`build-cidades: ${n} páginas geradas`);
