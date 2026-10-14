@@ -4,7 +4,13 @@
   "totalAvaliacoes": 294,
   "notaMediaCalculada": 4.92,
   "totalAvaliacoesColetadas": 297,
-  "distribuicaoNotas": { "5": 288, "4": 3, "3": 1, "2": 0, "1": 5 },
+  "distribuicaoNotas": {
+    "5": 288,
+    "4": 3,
+    "3": 1,
+    "2": 0,
+    "1": 5
+  },
   "avaliacoesComRespostaDoDono": 83,
   "horario": {
     "domingo": "Fechado",
@@ -15,18 +21,50 @@
     "sexta-feira": "08:00–17:00",
     "sabado": "Fechado"
   },
-  "endereco": "R. K, 60 - Parque do Contorno, Volta Redonda - RJ, 27240-581",
-  "enderecoNoGerenciador": "Rua k 60 - Parque do Contorno, Volta Redonda - RJ, 27240-581",
+  "endereco": null,
+  "enderecoNoGerenciador": "Sem local físico; apenas entregas e atendimento no local do cliente (Service Area Business)",
   "telefone": "(24) 3338-3069",
   "categoriaPrincipal": "Loja de cortinas e persianas",
   "codigoDaLoja": "2032799",
   "avaliacoesWeb": "Facebook 5/5 (53 votos)",
   "observacoes": [
-    "Painel público do Google exibe 4,9 com 294 avaliações (o site afirma 5.0 com 292 — precisa corrigir para 4,9 e o total atual).",
+    "14/10/2026: perfil já estava como Service Area Business (endereço oculto). Área de cobertura ampliada de 9 para 15 localidades (adicionadas Itatiaia, Penedo, Visconde de Mauá, Maromba, Eng. Paulo de Frontin e Miguel Pereira) — pendente de revisão do Google.",
+    "14/10/2026: o campo Site do perfil apontava para o Instagram; edição para https://www.shinecortinas.com/ reenviada (a anterior foi rejeitada). Conferir em 1–2 dias se foi aprovada.",
+    "14/10/2026: horário seg–sex 08:00–17:00 confirmado, sem alerta de feriado pendente.",
     "O gerenciador lista 297 avaliações; 4 delas estão sob nomes antigos do perfil (SHINE | Cortina e Persiana sob Medida; SHINECORTINAS.COM), de 2018.",
     "Datas recentes aparecem em formato relativo ('Há N semanas') porque é assim que o painel exibe; as mais antigas têm data absoluta.",
-    "Google Ads: campanha PAUSADA e saldo da conta vencido (aviso no painel).",
-    "Google pede confirmação de horário para o feriado de 7 de setembro."
+    "Google Ads: campanha PAUSADA e saldo da conta vencido (aviso no painel)."
   ],
-  "coletadoEm": "2026-09-06"
+  "coletadoEm": "2026-09-06",
+  "cidadeBase": "Volta Redonda, RJ",
+  "areaDeCobertura": [
+    "Volta Redonda, RJ",
+    "Barra Mansa, RJ",
+    "Resende, RJ",
+    "Itatiaia, RJ",
+    "Penedo (Itatiaia), RJ",
+    "Visconde de Mauá (Resende), RJ",
+    "Maromba (Itatiaia), RJ",
+    "Porto Real, RJ",
+    "Pinheiral, RJ",
+    "Piraí, RJ",
+    "Barra do Piraí, RJ",
+    "Valença, RJ",
+    "Vassouras, RJ",
+    "Engenheiro Paulo de Frontin, RJ",
+    "Miguel Pereira, RJ"
+  ],
+  "telefoneSecundarioNoGerenciador": "(24) 3511-0195 (não consta na documentação do site — confirmar com o Isani)",
+  "chatWhatsApp": "https://wa.me/5524993298763",
+  "siteNoGerenciador": {
+    "atual": "https://instagram.com/shinecortinas",
+    "pendente": "https://www.shinecortinas.com/",
+    "status": "edição reenviada em 14/10/2026 (a anterior tinha sido rejeitada pelo Google)"
+  },
+  "redesSociaisNoGerenciador": [
+    "https://instagram.com/shinecortinas",
+    "https://www.facebook.com/shinecortinas",
+    "https://www.youtube.com/@shinecortinas"
+  ],
+  "atualizadoEm": "2026-10-14"
 }

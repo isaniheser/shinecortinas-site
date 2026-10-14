@@ -67,17 +67,20 @@ export function normalizaJsonLd(head, crumbs) {
       n.url = 'https://www.shinecortinas.com/';
       if (!n.logo) n.logo = 'https://www.shinecortinas.com/logo-shine.avif';
       n.sameAs = SAME_AS;
-      if (Array.isArray(n.contactPoint)) {
-        for (const cp of n.contactPoint) {
-          if (cp && typeof cp === 'object') cp.telephone = '+5524993298763';
-        }
-      }
+      n.contactPoint = [
+        { '@type': 'ContactPoint', telephone: '+5524993298763', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
+        { '@type': 'ContactPoint', telephone: '+552433383069', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
+      ];
     }
     if (t === 'LocalBusiness' || t === 'HomeAndConstructionBusiness' || (Array.isArray(t) && (t.includes('LocalBusiness') || t.includes('HomeAndConstructionBusiness')))) {
       n['@id'] = 'https://www.shinecortinas.com/#biz';
       n.name = 'ShineCortinas';
       n.url = 'https://www.shinecortinas.com/';
       n.telephone = '+5524993298763';
+      n.contactPoint = [
+        { '@type': 'ContactPoint', telephone: '+5524993298763', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
+        { '@type': 'ContactPoint', telephone: '+552433383069', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
+      ];
       n.priceRange = '$$';
       if (!n.image) n.image = 'https://www.shinecortinas.com/hero-sala.avif';
       n.address = { '@type': 'PostalAddress', addressLocality: 'Volta Redonda', addressRegion: 'RJ', addressCountry: 'BR' };
@@ -93,6 +96,13 @@ export function normalizaJsonLd(head, crumbs) {
       n.openingHoursSpecification = [
         { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
       ];
+      n.aggregateRating = {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        reviewCount: '294',
+        bestRating: '5',
+        worstRating: '1',
+      };
     }
     fixPerson(n);
     if (n.author) fixPerson(n.author);

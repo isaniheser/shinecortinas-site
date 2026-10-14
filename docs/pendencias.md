@@ -110,8 +110,8 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 - **Recuperação em curso:** em 09/09 11:31 o Google releu a URL antiga e já a trata como
   "página com redirecionamento" para `/blog/altura-ideal-da-cortina/` (canônico = novo). O novo
   artigo está indexado, mas a última visita do Google foi 09/09 20:42, antes do conteúdo novo (10/09).
-- Sitemap principal processado (53 páginas, lido em 11/09). Há 8 sitemaps antigos do Wix
-  falhando na lista do Search Console (limpeza opcional, pelo Isani).
+- Sitemap principal processado (53 páginas, lido em 11/09). Havia 4 sitemaps antigos do Wix
+  falhando na lista do Search Console — **removidos em 14/10/2026**.
 - **Google Analytics (GA4, lido em 11/09 pelo Chrome do Isani — abre com a conta Google, sem
   precisar do Cloudflare):** 30 dias = 1.324 sessões; 58% de anúncios (Instagram/Facebook) caindo
   na landing `/lp/anuncio-d/` (644 visualizações, 1 min 45 s), 20% direto, **11% Google orgânico
@@ -122,6 +122,57 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
   (1.309 em 30 dias); os artigos ainda não geram evento principal (0).
 - **Próximo passo:** pedir indexação dos dois artigos novos no Search Console (um clique cada, na
   conta do Isani). Retenção/tempo na página: só no GA4 (tags injetadas pelo Cloudflare) — depende de login.
+
+## Ações nos painéis do Google em 14/10/2026 (pelo Chrome do Isani, com autorização)
+
+Contexto: commits `338fa81` e `30de594` em `main` (Service Area Business sem endereço, fim de
+"instalação no mesmo dia", botão WhatsApp flutuante, títulos, FAQ, sw.js).
+
+**Perfil da Empresa no Google (código de loja 2032799)**
+- Já estava como "Sem local físico; apenas atendimento no local do cliente" — endereço oculto, nada a mudar.
+- Área de cobertura: tinha 9 cidades; **adicionadas 6** (Itatiaia, Penedo, Visconde de Mauá, Maromba,
+  Eng. Paulo de Frontin, Miguel Pereira). Agora 15 localidades, pendente de revisão do Google.
+- Horário seg–sex 08:00–17:00 confirmado; sem alerta de feriado.
+- **Site do perfil apontava para `instagram.com/shinecortinas`.** Uma edição anterior para
+  `https://www.shinecortinas.com/` tinha sido **rejeitada**; reenviada hoje (pendente). Conferir em 1–2 dias.
+- Telefones: (24) 3338-3069 principal (também WhatsApp) e Chat `wa.me/5524993298763` (conectado aos anúncios Meta). **Decisão do Isani (14/10): o secundário `(24) 3511-0195` não é mais dele e deve ser removido do Perfil da Empresa.**
+
+**Search Console (`https://www.shinecortinas.com/`)**
+- `sitemap.xml` reenviado: processado em 14/10, 53 páginas.
+- **Removidos os 4 sitemaps antigos do Wix** que falhavam (`dynamic-produtos-cidade-sitemap.xml`,
+  `blog-posts-sitemap.xml`, `blog-categories-sitemap.xml`, `pages-sitemap.xml`). Eram 4, não 8.
+- Indexação solicitada para 8 URLs: `/`, `/cidades/volta-redonda/`, `/blog/o-que-e-blackout/`,
+  `/blog/tipos-de-forro-para-cortina/`, `/blog/altura-ideal-da-cortina/`, `/blog/bainha-de-cortina/`,
+  `/faq/`, `/contato/`. Todas já indexadas; última visita do Google à home foi 12/10 (ainda com `Rua K, 60`).
+- **Achado na inspeção da home — "Snippets de avaliação: 5 itens inválidos", erro crítico
+  "Há várias avaliações sem o objeto aggregateRating".** **Decisão do Isani (14/10): Opção (a) aprovada e aplicada** — restaurado `aggregateRating` (`ratingValue: "4.9"`, `reviewCount: "294"`, `bestRating: "5"`, `worstRating: "1"`) no `LocalBusiness` de todas as páginas, junto com os dois telefones (`+5524993298763` e `+552433383069`) em `contactPoint`. Próximo passo no Search Console: solicitar reindexação da Home e validar a correção de Snippets de avaliação.
+- Indexação geral: 52 indexadas / 84 não indexadas (visão geral de 14/10).
+- Desempenho 28 dias (14/09–11/10): **191 cliques, 20,4 mil impressões, CTR 0,9%, posição média 6,2**
+  (em 11/09 eram 113 cliques / 12,5 mil). Top páginas: altura-ideal 97 cliques (11,4 mil impr., pos. 5,7);
+  home 28 (pos. 4,4); tipos-de-forro 17; bainha 12; o-que-e-blackout 5 (3,1 mil impr., pos. 6,8, CTR 0,2%).
+- **Posição por cidade (28 dias)** — cliques / impressões / posição: Resende 7/156/4,6 · Volta Redonda
+  5/336/6,7 · Vassouras 3/43/7,6 · Valença 2/77/11,3 · Miguel Pereira 2/44/6,7 · Barra Mansa 1/134/5,4 ·
+  Porto Real 1/76/5,5 · Barra do Piraí 0/83/7,2 · Pinheiral 0/24/6,2 · Piraí 0/19/8,2 · Itatiaia 0/15/4,6 ·
+  Visconde de Mauá 0/10/6,7 · Maromba 0/6/8,5 · Paulo de Frontin 0/4/6,0 · Penedo 0/1/5,0.
+  Soma das 15: 21 cliques, 1,03 mil impressões, posição média 6,5.
+
+**GA4 (propriedade "Shine – GA4", p263510890)**
+- **Causa do WhatsApp "zerado":** o evento principal cadastrado chamava-se `click_whatsapp` (sem nenhum
+  disparo em 28 dias), mas o evento que o site realmente envia é **`whatsapp_click`** (nome invertido).
+  **Corrigido pelo painel: `whatsapp_click` marcado como evento principal** (não é retroativo).
+  `click_whatsapp` e `purchase` continuam marcados mas sem dados — podem ser desmarcados depois.
+- `whatsapp_click` em 28 dias (16/09–13/10): 59 eventos / 32 usuários. Por página: `/lp/anuncio-d/` 36,
+  home 8, `/cidades/volta-redonda/` 4, `/cortinas/` 2, `/persianas/` 1. **Nos 4 artigos do blog o evento é 0**
+  (altura-ideal tem 163 visualizações e nenhum clique registrado) — o template editorial do blog
+  provavelmente não dispara o evento no clique de `wa.me`; conferir se o `.sl-wa` restaurado hoje resolve
+  (a tag é injetada pelo Cloudflare, não está no HTML).
+- A landing também envia `Contact` (17) e `lp_video_inicio`/`lp_video_completo`; na coluna "Eventos
+  principais" a landing soma 1.416, muito acima dos 36 `whatsapp_click` — há outro evento da landing
+  contando como principal pela camada do Cloudflare. Investigar na próxima leitura.
+- 28 dias: **1.509 sessões**; Paid Social 920 (61%), Direct 258, **Organic Search 224 (15%, 1 min 52 s de
+  engajamento)**, Organic Social 74, AI Assistant 6. Em 11/09 o orgânico era 151 em 30 dias.
+- Tempo médio de engajamento nos artigos (28 dias): altura-ideal 2 min 31 s (163 views) · bainha 1 min 53 s
+  (21) · o-que-e-blackout 1 min 24 s (13) · tipos-de-forro 49 s (21). Volta Redonda 2 min 37 s (31).
 
 ## Observação sobre o índice do Google (06/set/2026)
 
