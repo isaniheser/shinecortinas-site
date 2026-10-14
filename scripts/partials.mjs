@@ -80,8 +80,16 @@ export function normalizaJsonLd(head, crumbs) {
       n.telephone = '+5524993298763';
       n.priceRange = '$$';
       if (!n.image) n.image = 'https://www.shinecortinas.com/hero-sala.avif';
-      n.address = { '@type': 'PostalAddress', streetAddress: 'Rua K, 60', addressLocality: 'Volta Redonda', addressRegion: 'RJ', addressCountry: 'BR' };
+      n.address = { '@type': 'PostalAddress', addressLocality: 'Volta Redonda', addressRegion: 'RJ', addressCountry: 'BR' };
       delete n.geo;
+      if (!n.areaServed) {
+        n.areaServed = [
+          { '@type': 'City', name: 'Volta Redonda' },
+          { '@type': 'City', name: 'Barra Mansa' },
+          { '@type': 'City', name: 'Resende' },
+          { '@type': 'AdministrativeArea', name: 'Sul Fluminense, RJ' },
+        ];
+      }
       n.openingHoursSpecification = [
         { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
       ];
@@ -207,7 +215,7 @@ export function footer() {
     <div class="sl-footer__grid">
       <div>
         <a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="56" height="56" loading="lazy" decoding="async"></a>
-        <p style="margin-top:14px">Rua K, 60 · Volta Redonda, RJ<br>Atendemos todo o Sul Fluminense.<br>Sob medida para cada ambiente, desde 2009.</p>
+        <p style="margin-top:14px">Volta Redonda, RJ · Consultoria em domicílio<br>Atendemos todo o Sul Fluminense.<br>Sob medida para cada ambiente, desde 2009.</p>
       </div>
       <div>
         <h4>Fale conosco</h4>

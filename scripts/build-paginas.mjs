@@ -27,7 +27,7 @@ const PASSOS = [
   ['Medição a laser', 'Cada ambiente medido com equipamento profissional. A medida é responsabilidade nossa, não sua.'],
   ['Projeto e aprovação', 'Você vê tecidos, cores e modelos no seu ambiente e aprova cada detalhe antes de qualquer compromisso.'],
   ['Confecção sob medida', 'Sua cortina ou persiana é feita do zero para a sua janela. Nada de peça genérica adaptada.'],
-  ['Instalação pela nossa equipe', 'Chegamos, instalamos e saímos deixando o ambiente limpo. Na maioria dos projetos, tudo no mesmo dia.'],
+  ['Instalação pela nossa equipe', 'Assim que a peça sob medida fica pronta, agendamos a entrega. Nossa equipe própria instala e deixa o ambiente limpo e pronto.'],
 ];
 
 const bloco = {
@@ -103,7 +103,7 @@ ${PASSOS.map(([h, p], i) => `        <div class="sl-step"><div class="sl-step__n
       <div class="sl-contato">
         <div><span>WhatsApp</span><a class="sl-contato__big" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">(24) 99329-8763</a><p>Resposta em minutos, por um consultor de verdade.</p></div>
         <div><span>Telefone</span><p class="sl-contato__big">(24) 3338-3069</p><p>Para quem prefere falar por telefone.</p></div>
-        <div><span>Sede</span><p class="sl-contato__big">Volta Redonda, RJ</p><p>Rua K, 60. O atendimento principal é na sua casa, em todo o Sul Fluminense.</p></div>
+        <div><span>Cidade-base</span><p class="sl-contato__big">Volta Redonda, RJ</p><p>Atendimento em domicílio em todo o Sul Fluminense — levamos o mostruário até a sua casa.</p></div>
       </div>
     </div></section>`,
 
@@ -192,7 +192,7 @@ function ajustaHead(head, p) {
     if (biz) {
       biz['@id'] = `${BASE}/#biz`;
       if (!biz.priceRange) biz.priceRange = '$$';
-      if (biz.address && !biz.address.streetAddress) biz.address = { '@type': 'PostalAddress', streetAddress: 'Rua K, 60', ...biz.address };
+      biz.address = { '@type': 'PostalAddress', addressLocality: 'Volta Redonda', addressRegion: 'RJ', addressCountry: 'BR' };
     }
     const org = g.find((n) => n['@type'] === 'Organization');
     if (org) {

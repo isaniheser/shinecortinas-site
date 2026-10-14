@@ -188,6 +188,8 @@ for (const slug of readdirSync(join(ROOT, 'cidades'), { withFileTypes: true }).f
   if (CITY_TITLES[slug]) {
     rawHead = rawHead.replace(/<title>[\s\S]*?<\/title>/, `<title>${CITY_TITLES[slug]}</title>`);
   }
+  rawHead = rawHead.replace(/mede a laser e instala — muitas vezes no mesmo dia\./g, 'mede a laser, confecciona sob medida e instala com equipe própria.');
+  rawHead = rawHead.replace(/atendemos no mesmo dia, medimos a laser e instalamos\./g, 'levamos o mostruário em casa, medimos a laser e instalamos.');
   const head = withReview(cleanHead(rawHead, { crumbs: [['Início', 'https://www.shinecortinas.com/'], ['Cidades', 'https://www.shinecortinas.com/cidades-atendidas/'], [d.city, `https://www.shinecortinas.com/cidades/${slug}/`]] }), d);
   writeFileSync(file, head + body(d));
   n++;

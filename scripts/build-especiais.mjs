@@ -51,14 +51,14 @@ const explore = (pares) => `
 // ------------------------------------------------------------------ /faq/
 function buildFaq() {
   const file = join(ROOT, 'faq', 'index.html');
-  const src = readFileSync(file, 'utf8').replace(/no mesmo dia da consultoria/g, 'no mesmo dia');
+  const src = readFileSync(file, 'utf8');
   const ldRaw = src.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
   const ld = JSON.parse(ldRaw);
   const g = ld['@graph'] || [ld];
   const perguntas = (g.find((n) => n['@type'] === 'FAQPage') || {}).mainEntity.map((q) => [q.name.trim(), q.acceptedAnswer.text.trim()]);
   const grupos = [
     ['A empresa', ['O que é a ShineCortinas', 'A ShineCortinas tem loja', 'Há quanto tempo', 'Vocês atendem fora', 'Qual a melhor loja']],
-    ['Atendimento e prazos', ['Como funciona a consultoria', 'Quanto tempo leva', 'Vocês instalam no mesmo dia', 'Como funciona o investimento', 'Como posso parcelar', 'Qual a garantia']],
+    ['Atendimento e prazos', ['Como funciona a consultoria', 'Quanto tempo leva', 'Vocês trabalham com cortina pronta', 'Como funciona o investimento', 'Como posso parcelar', 'Qual a garantia']],
     ['Produtos e tecidos', ['Qual a diferença entre cortina e persiana', 'O blackout', 'O que é cortina Wave', 'Qual tipo de cortina escolher', 'Qual tecido de cortina é melhor', 'Cortina motorizada vale']],
     ['Casos especiais', ['Vocês lavam', 'Vocês atendem pousadas', 'Qual tecido de cortina resiste', 'Como escolher cortina para casarão']],
   ];

@@ -94,7 +94,9 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
 - **Bug do `</script>`:** ao gerar páginas via script, escrever a tag de
   fechamento como `</script>` literal. Nunca `<\/script>` — o navegador não
   reconhece e a página renderiza em branco.
-- **Fatos de produto (corrigidos pelo Isani — não reintroduzir):**
+- **Fatos de produto e operação (corrigidos pelo Isani — não reintroduzir):**
+  - **Sem endereço físico / Service Area Business (14/10/2026):** a Shine não tem mais loja/endereço físico aberto ao público (antiga `Rua K, 60` foi desativada). Usar apenas a cidade-base **Volta Redonda, RJ** (`addressLocality: "Volta Redonda"`, `addressRegion: "RJ"`, `addressCountry: "BR"`, sem `streetAddress`, sem `postalCode` e sem `geo`) e atendimento 100% em domicílio (`areaServed`).
+  - **Sem instalação no mesmo dia / sem cortina pronta (14/10/2026):** a Shine trabalha exclusivamente sob medida; **não** vende cortina pronta e **não** faz instalação no mesmo dia. Nunca escrever "instalamos no mesmo dia", "tudo no mesmo dia" ou "concluída no mesmo dia".
   - A Shine **não trabalha** com rolô de **guias laterais** nem **caixa box**.
     Nunca citar "Sistema Box". Também não existe "trilho com vedação lateral".
   - **Forro (corrigido pelo Isani, set/2026):** são dois grupos. O **forro translúcido**
