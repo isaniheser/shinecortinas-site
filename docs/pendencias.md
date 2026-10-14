@@ -135,7 +135,7 @@ Contexto: commits `338fa81` e `30de594` em `main` (Service Area Business sem end
 - Horário seg–sex 08:00–17:00 confirmado; sem alerta de feriado.
 - **Site do perfil apontava para `instagram.com/shinecortinas`.** Uma edição anterior para
   `https://www.shinecortinas.com/` tinha sido **rejeitada**; reenviada hoje (pendente). Conferir em 1–2 dias.
-- Telefones: (24) 3338-3069 principal (também WhatsApp) e Chat `wa.me/5524993298763` (conectado aos anúncios Meta). **Decisão do Isani (14/10): o secundário `(24) 3511-0195` não é mais dele e deve ser removido do Perfil da Empresa.**
+- Telefones: (24) 3338-3069 principal (também WhatsApp) e Chat `wa.me/5524993298763` (conectado aos anúncios Meta). **Decisão do Isani (14/10): o secundário `(24) 3511-0195` não é mais dele e deve ser removido do Perfil da Empresa.** **Removido às 15:45** (pendente de revisão do Google). No mesmo horário, o campo Site do perfil já aparecia **aprovado** como `https://www.shinecortinas.com/`.
 
 **Search Console (`https://www.shinecortinas.com/`)**
 - `sitemap.xml` reenviado: processado em 14/10, 53 páginas.
@@ -145,7 +145,7 @@ Contexto: commits `338fa81` e `30de594` em `main` (Service Area Business sem end
   `/blog/tipos-de-forro-para-cortina/`, `/blog/altura-ideal-da-cortina/`, `/blog/bainha-de-cortina/`,
   `/faq/`, `/contato/`. Todas já indexadas; última visita do Google à home foi 12/10 (ainda com `Rua K, 60`).
 - **Achado na inspeção da home — "Snippets de avaliação: 5 itens inválidos", erro crítico
-  "Há várias avaliações sem o objeto aggregateRating".** **Decisão do Isani (14/10): Opção (a) aprovada e aplicada** — restaurado `aggregateRating` (`ratingValue: "4.9"`, `reviewCount: "294"`, `bestRating: "5"`, `worstRating: "1"`) no `LocalBusiness` de todas as páginas, junto com os dois telefones (`+5524993298763` e `+552433383069`) em `contactPoint`. Próximo passo no Search Console: solicitar reindexação da Home e validar a correção de Snippets de avaliação.
+  "Há várias avaliações sem o objeto aggregateRating".** **Decisão do Isani (14/10): Opção (a) aprovada e aplicada** — restaurado `aggregateRating` (`ratingValue: "4.9"`, `reviewCount: "294"`, `bestRating: "5"`, `worstRating: "1"`) no `LocalBusiness` de todas as páginas, junto com os dois telefones (`+5524993298763` e `+552433383069`) em `contactPoint`. **Feito às 15:44 (Chrome do Isani):** teste ao vivo da home na Inspeção de URL deu **"Snippets de avaliação: 6 itens válidos"**, sem erro; indexação da home solicitada de novo; **"Validar a correção" iniciado** no relatório Snippets de avaliação (5 itens afetados — o Google avisa por e-mail quando concluir, normalmente em alguns dias).
 - Indexação geral: 52 indexadas / 84 não indexadas (visão geral de 14/10).
 - Desempenho 28 dias (14/09–11/10): **191 cliques, 20,4 mil impressões, CTR 0,9%, posição média 6,2**
   (em 11/09 eram 113 cliques / 12,5 mil). Top páginas: altura-ideal 97 cliques (11,4 mil impr., pos. 5,7);

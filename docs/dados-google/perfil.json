@@ -29,7 +29,7 @@
   "avaliacoesWeb": "Facebook 5/5 (53 votos)",
   "observacoes": [
     "14/10/2026: perfil já estava como Service Area Business (endereço oculto). Área de cobertura ampliada de 9 para 15 localidades (adicionadas Itatiaia, Penedo, Visconde de Mauá, Maromba, Eng. Paulo de Frontin e Miguel Pereira) — pendente de revisão do Google.",
-    "14/10/2026: o campo Site do perfil apontava para o Instagram; edição para https://www.shinecortinas.com/ reenviada (a anterior foi rejeitada). Conferir em 1–2 dias se foi aprovada.",
+    "14/10/2026 (15:45): telefone secundário (24) 3511-0195 removido (não é mais do Isani) — pendente de revisão. Site do perfil aprovado: https://www.shinecortinas.com/.",
     "14/10/2026: horário seg–sex 08:00–17:00 confirmado, sem alerta de feriado pendente.",
     "O gerenciador lista 297 avaliações; 4 delas estão sob nomes antigos do perfil (SHINE | Cortina e Persiana sob Medida; SHINECORTINAS.COM), de 2018.",
     "Datas recentes aparecem em formato relativo ('Há N semanas') porque é assim que o painel exibe; as mais antigas têm data absoluta.",
@@ -54,17 +54,18 @@
     "Engenheiro Paulo de Frontin, RJ",
     "Miguel Pereira, RJ"
   ],
-  "telefoneSecundarioNoGerenciador": "(24) 3511-0195 (não consta na documentação do site — confirmar com o Isani)",
   "chatWhatsApp": "https://wa.me/5524993298763",
   "siteNoGerenciador": {
-    "atual": "https://instagram.com/shinecortinas",
-    "pendente": "https://www.shinecortinas.com/",
-    "status": "edição reenviada em 14/10/2026 (a anterior tinha sido rejeitada pelo Google)"
+    "atual": "https://www.shinecortinas.com/",
+    "status": "aprovado pelo Google em 14/10/2026"
   },
   "redesSociaisNoGerenciador": [
     "https://instagram.com/shinecortinas",
     "https://www.facebook.com/shinecortinas",
     "https://www.youtube.com/@shinecortinas"
   ],
-  "atualizadoEm": "2026-10-14"
+  "atualizadoEm": "2026-10-14",
+  "telefones": [
+    "(24) 3338-3069 (principal)"
+  ]
 }
