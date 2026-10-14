@@ -2,7 +2,7 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 import {join,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {WA,esc,cleanHead,header,footer,tail} from './partials.mjs';
+import {WA,esc,cleanHead,header,footer,waFloat,tail} from './partials.mjs';
 const ROOT=join(dirname(fileURLToPath(import.meta.url)),'..');
 const FILE=join(ROOT,'index.html');
 const BASE='https://www.shinecortinas.com';
@@ -48,7 +48,7 @@ function trust(reviews){return `<section class="pv-section pv-home-trust" id="de
 // ---- monta ----
 const src = readFileSync(FILE, 'utf8');
 let head = cleanHead(src.split('<body')[0]);
-const HOME_TITLE = 'Cortinas e Persianas Sob Medida em Volta Redonda | ShineCortinas';
+const HOME_TITLE = 'Cortinas e Persianas Sob Medida no Sul Fluminense | ShineCortinas';
 head = head.replace(/<title>[\s\S]*?<\/title>/, `<title>${HOME_TITLE}</title>`);
 head = head.replace(/<meta property="og:image" content="[^"]*">/, '<meta property="og:image" content="https://www.shinecortinas.com/hero-sala.avif">');
 head = head.replace(/<meta property="og:image:width" content="[^"]*">/, '<meta property="og:image:width" content="1920">');
@@ -76,5 +76,5 @@ if (!/rel="canonical" href="https:\/\/www\.shinecortinas\.com\/"/.test(head)) th
 head=head.replace(/<link rel="preload" as="image"[^>]+>/g,'');
 head=head.replace(/[ \t]+$/gm,'');
 head=head.replace('</head>', '<link rel="preload" as="image" href="/cortina-sob-medida.avif" fetchpriority="high">\n</head>');
-writeFileSync(FILE,head+'<body class="pv-home" data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página inicial">'+header('/')+explore+footer()+tail());
+writeFileSync(FILE,head+'<body class="pv-home" data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página inicial">'+header('/')+explore+footer()+waFloat()+tail());
 console.log(`build-home: index.html gerado (${reviews.length} avaliações, ${FAQ.length} FAQs)`);

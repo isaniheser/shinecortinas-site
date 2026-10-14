@@ -67,22 +67,24 @@ export function normalizaJsonLd(head, crumbs) {
       n.url = 'https://www.shinecortinas.com/';
       if (!n.logo) n.logo = 'https://www.shinecortinas.com/logo-shine.avif';
       n.sameAs = SAME_AS;
+      if (Array.isArray(n.contactPoint)) {
+        for (const cp of n.contactPoint) {
+          if (cp && typeof cp === 'object') cp.telephone = '+5524993298763';
+        }
+      }
     }
     if (t === 'LocalBusiness' || t === 'HomeAndConstructionBusiness' || (Array.isArray(t) && (t.includes('LocalBusiness') || t.includes('HomeAndConstructionBusiness')))) {
       n['@id'] = 'https://www.shinecortinas.com/#biz';
       n.name = 'ShineCortinas';
       n.url = 'https://www.shinecortinas.com/';
-      n.telephone = '+55-24-99329-8763';
+      n.telephone = '+5524993298763';
       n.priceRange = '$$';
       if (!n.image) n.image = 'https://www.shinecortinas.com/hero-sala.avif';
-      n.address = { '@type': 'PostalAddress', streetAddress: 'Rua K, 60', addressLocality: 'Volta Redonda', addressRegion: 'RJ', postalCode: '27260-390', addressCountry: 'BR' };
-      if (!n.geo) n.geo = { '@type': 'GeoCoordinates', latitude: -22.5232, longitude: -44.1044 };
-      if (!n.openingHoursSpecification) {
-        n.openingHoursSpecification = [
-          { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
-          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '13:00' },
-        ];
-      }
+      n.address = { '@type': 'PostalAddress', streetAddress: 'Rua K, 60', addressLocality: 'Volta Redonda', addressRegion: 'RJ', addressCountry: 'BR' };
+      delete n.geo;
+      n.openingHoursSpecification = [
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
+      ];
     }
     fixPerson(n);
     if (n.author) fixPerson(n.author);
@@ -223,8 +225,12 @@ export function footer() {
 `;
 }
 
-// A navegação flutuante substitui as barras antigas. CTAs contextuais continuam nas páginas.
-export function waFloat() { return ''; }
+// Botão flutuante de WhatsApp visível durante a rolagem em todas as páginas.
+export function waFloat() {
+  return `
+  <a class="sl-wa" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">${waIcon}</a>
+`;
+}
 export function bar() { return ''; }
 
 export function tail() {

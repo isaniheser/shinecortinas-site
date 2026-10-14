@@ -163,7 +163,7 @@ function withReview(head, d) {
 }
 
 const CITY_TITLES = {
-  'volta-redonda': 'Cortinas em Volta Redonda: Bairros e Consultoria | ShineCortinas',
+  'volta-redonda': 'Cortinas e Persianas Sob Medida em Volta Redonda | ShineCortinas',
   'barra-do-pirai': 'Cortinas Sob Medida em Barra do Piraí | ShineCortinas',
   'barra-mansa': 'Cortinas e Persianas Sob Medida em Barra Mansa | ShineCortinas',
   'itatiaia': 'Cortinas e Persianas Sob Medida em Itatiaia | ShineCortinas',

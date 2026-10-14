@@ -1,5 +1,5 @@
 // Navegação aprovada: HTML real para links, com aprimoramento progressivo no navegador.
-export const AURORA_V = '2';
+export const AURORA_V = '3';
 export const AURORA_CSS = `<link rel="stylesheet" href="/assets/shine-aurora.css?v=${AURORA_V}">`;
 const WA_MENU = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 const entries = [

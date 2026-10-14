@@ -86,7 +86,7 @@ export const PAGINAS = [
   // ------------------------------------------------------- BLACKOUT E FORROS
   {
     dir: 'blackout-e-forros',
-    title: 'Blackout e Forros para Cortina: 70%, 100% e Translúcido | Shine',
+    title: 'Blackout e Forros de Cortina: Translúcido e 100% | ShineCortinas',
     description: 'O forro decide quanta luz entra. Entenda o forro translúcido, o semi blackout de 70% e o blackout 100%, e qual deles resolve o seu ambiente.',
     kicker: 'Blackout e forros',
     h1: 'O forro é a camada que <em>decide</em> quanta luz entra',

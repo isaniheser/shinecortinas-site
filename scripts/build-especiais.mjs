@@ -51,7 +51,7 @@ const explore = (pares) => `
 // ------------------------------------------------------------------ /faq/
 function buildFaq() {
   const file = join(ROOT, 'faq', 'index.html');
-  const src = readFileSync(file, 'utf8');
+  const src = readFileSync(file, 'utf8').replace(/no mesmo dia da consultoria/g, 'no mesmo dia');
   const ldRaw = src.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
   const ld = JSON.parse(ldRaw);
   const g = ld['@graph'] || [ld];
@@ -199,14 +199,18 @@ function sincronizaCss(file, src, sectionPath = '/blog/', crumbs, metaFix) {
   if (!rest) return;
   if (metaFix && metaFix[0]) rawHead = rawHead.replace(/<title>[\s\S]*?<\/title>/, `<title>${metaFix[0]}</title>`);
   if (metaFix && metaFix[1]) rawHead = rawHead.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${metaFix[1]}">`);
-  rawHead = rawHead.replace(/Por que escolher cortina motorizada em projetos de alto padrão: qual/g, 'Por que escolher cortina motorizada: qual');
+  rawHead = rawHead.replace(/Por que escolher cortina motorizada em projetos de alto padrão/g, 'Por que escolher cortina motorizada em projetos sob medida');
+  rawHead = rawHead.replace(/Cortina Motorizada Wave de Alto Padrão em Resende RJ/g, 'Cortina Motorizada Wave Sob Medida em Resende RJ');
+  rawHead = rawHead.replace(/levamos o mostruário de alto padrão até sua obra/g, 'levamos o mostruário completo até a sua casa');
   const head = cleanHead(rawHead, { crumbs });
   let body = '<body' + rest;
   body = body.replace(/acabamento de alto padrão\./g, 'acabamento sob medida.');
   body = body.replace(/Em projetos de alto padrão, o material/g, 'Em projetos sob medida, o material');
-  body = body.replace(/Por que escolher cortina motorizada em projetos de alto padrão: qual/g, 'Por que escolher cortina motorizada: qual');
-  body = body.replace(/<header class="pv-header"[\s\S]*?<\/header>/, header(sectionPath).trim());
-  body = body.replace(/<\/footer>[\s\S]*?<\/html>\s*$/, `</footer>${waFloat()}${bar('single')}${tail()}`);
+  body = body.replace(/Por que escolher cortina motorizada em projetos de alto padrão/g, 'Por que escolher cortina motorizada em projetos sob medida');
+  body = body.replace(/Cortina Motorizada Wave de Alto Padrão em Resende RJ/g, 'Cortina Motorizada Wave Sob Medida em Resende RJ');
+  body = body.replace(/levamos o mostruário de alto padrão até sua obra/g, 'levamos o mostruário completo até a sua casa');
+  body = body.replace(/<header class="(?:pv-header|sl-header)"[\s\S]*?<\/header>/, header(sectionPath).trim());
+  body = body.replace(/<footer class="sl-footer">[\s\S]*?<\/html>\s*$/, `${footer().trimStart()}${waFloat()}${bar('single')}${tail()}`);
   writeFileSync(file, head + body);
 }
 
