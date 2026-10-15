@@ -178,6 +178,12 @@ const CITY_TITLES = {
   'visconde-de-maua': 'Cortinas Sob Medida em Visconde de Mauá | ShineCortinas',
 };
 
+const CITY_DESCS = {
+  'barra-mansa': 'Cortinas e persianas sob medida em Barra Mansa. A ShineCortinas vai até a sua casa, mede a laser e instala com equipe própria. Consultoria gratuita, em 12x.',
+  'volta-redonda': 'Cortinas e persianas sob medida em Volta Redonda. Levamos o mostruário até a sua casa, medimos a laser e instalamos. Consultoria gratuita, em até 12x.',
+  'vassouras': 'Cortinas e persianas sob medida em Vassouras. Elegância para casarões imperiais, chalés e residências do Vale do Café. Consultoria gratuita, em até 12x.',
+};
+
 let n = 0;
 for (const slug of readdirSync(join(ROOT, 'cidades'), { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name)) {
   const d = data[slug];
@@ -187,6 +193,9 @@ for (const slug of readdirSync(join(ROOT, 'cidades'), { withFileTypes: true }).f
   let rawHead = src.split('<body')[0];
   if (CITY_TITLES[slug]) {
     rawHead = rawHead.replace(/<title>[\s\S]*?<\/title>/, `<title>${CITY_TITLES[slug]}</title>`);
+  }
+  if (CITY_DESCS[slug]) {
+    rawHead = rawHead.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${CITY_DESCS[slug]}">`);
   }
   rawHead = rawHead.replace(/mede a laser e instala — muitas vezes no mesmo dia\./g, 'mede a laser, confecciona sob medida e instala com equipe própria.');
   rawHead = rawHead.replace(/atendemos no mesmo dia, medimos a laser e instalamos\./g, 'levamos o mostruário em casa, medimos a laser e instalamos.');

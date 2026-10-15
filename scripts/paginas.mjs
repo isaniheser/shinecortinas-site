@@ -51,7 +51,7 @@ export const PAGINAS = [
   {
     dir: 'persianas',
     title: 'Persianas Sob Medida em Volta Redonda e Região | ShineCortinas',
-    description: 'Persianas sob medida: rolô, double vision, screen, vertical e de madeira. Controle preciso de luz e calor, com consultoria gratuita em casa e instalação própria.',
+    description: 'Persianas sob medida: rolô, double vision, screen, vertical e madeira. Controle preciso de luz e calor com consultoria gratuita e instalação própria.',
     kicker: 'Persianas técnicas',
     h1: 'Persianas sob medida, para controlar a luz <em>no detalhe</em>',
     lead: 'Persiana é estruturada em lâminas — madeira, alumínio, PVC — ou em enrolamento, como o rolô e o double vision. Em relação à cortina, ela oferece controle mais preciso da entrada de luz e de calor, com um desenho mais discreto na janela.',

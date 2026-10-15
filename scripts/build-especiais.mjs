@@ -159,7 +159,10 @@ function buildBlogIndex() {
   const src = readFileSync(file, 'utf8');
   const posts = JSON.parse(readFileSync(join(ROOT, 'blog', 'posts.json'), 'utf8'));
   const lista = posts.map((p) => `        <a class="sl-post" href="${p.href}"><span>Artigo</span><h3>${esc(p.titulo)}</h3><p>${esc(p.resumo)}</p></a>`).join('\n');
-  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['Blog', `${BASE}/blog/`]] });
+  let rawHead = src.split('<body')[0];
+  rawHead = rawHead.replace(/<title>[\s\S]*?<\/title>/, '<title>Guias de Cortinas e Persianas Sob Medida | ShineCortinas</title>');
+  rawHead = rawHead.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Guias práticos da ShineCortinas sobre tecidos, forros, blackout, altura de cortina, bainha, varão, persianas e automação para você escolher sem erro.">');
+  const head = cleanHead(rawHead, { crumbs: [['Início', `${BASE}/`], ['Blog', `${BASE}/blog/`]] });
   const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="o blog">
 ${header('/blog/')}${heroInterna('Blog',
     'Guias para escolher <em>sem erro</em>',
@@ -180,6 +183,20 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
   writeFileSync(file, head + body);
   return posts.length;
 }
+
+const POST_META = {
+  'como-escurecer-quarto-sala-tv': ['Como Escurecer Quarto e Sala de TV | ShineCortinas', 'Passo a passo técnico para escurecer quarto e sala de TV: forro translúcido, semi blackout 70% ou blackout 100%, tecido e escolha do acionamento.'],
+  'como-funciona-persiana-motorizada': ['Como Funciona a Persiana Motorizada? | ShineCortinas', null],
+  'cortina-ou-persiana-na-cozinha': ['Cortina ou Persiana na Cozinha: Qual Escolher | ShineCortinas', null],
+  'linho-para-cortinas': ['Linho para Cortinas: Como Escolher | ShineCortinas', null],
+  'persiana-ideal-para-cada-ambiente': ['Persiana Ideal para Cada Ambiente | ShineCortinas', null],
+  'persiana-para-dividir-ambientes': ['Persiana para Dividir Ambientes | ShineCortinas', null],
+  'persiana-vertical-ou-horizontal': ['Persiana Vertical ou Horizontal: Qual Escolher | ShineCortinas', null],
+  'por-que-escolher-cortina-motorizada': ['Por Que Escolher Cortina Motorizada | ShineCortinas', null],
+  'qual-cortina-escolher-para-sala': ['Qual Cortina Escolher para Sala | ShineCortinas', null],
+  'quantidade-de-tecido-para-cortina-wave': ['Quantidade de Tecido para Cortina Wave | ShineCortinas', null],
+  'varao-para-cortina': ['Varão para Cortina: Guia de Escolha e Medida | ShineCortinas', null],
+};
 
 const VIDEO_META = {
   'ajuste-bainha-em-casa-alfaiataria': ['Ajuste de Bainha em Domicílio: Alfaiataria | ShineCortinas', null],
@@ -222,7 +239,7 @@ function buildPosts() {
     const src = readFileSync(file, 'utf8');
     const curLabel = (src.match(/<li aria-current="page">([^<]+)<\/li>/) || src.match(/<nav aria-label="Breadcrumb"[^>]*>[\s\S]*?<span>([^<]+)<\/span>\s*<\/nav>/) || [, 'Artigo'])[1].trim();
     const crumbs = [['Início', `${BASE}/`], ['Blog', `${BASE}/blog/`], [curLabel, `${BASE}/blog/${slug}/`]];
-    if (src.includes('shine-leve.css')) { sincronizaCss(file, src, '/blog/', crumbs); continue; } // já migrado (ex.: tipos-de-forro)
+    if (src.includes('shine-leve.css')) { sincronizaCss(file, src, '/blog/', crumbs, POST_META[slug]); continue; } // já migrado (ex.: tipos-de-forro)
     const mainM = src.match(/<main[^>]*>([\s\S]*?)<\/main>/);
     if (!mainM) { console.warn(`  (sem <main>) ${slug}`); continue; }
     let main = mainM[1];
