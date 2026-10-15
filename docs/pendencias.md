@@ -68,7 +68,7 @@ pedir avaliação. Depende das credenciais que o Isani vai passar.
 - ~~Os 15 depoimentos das páginas de cidade são clientes reais?~~ **Verificado (06/set): não eram** — nenhum dos 15 textos/autores existia entre as 297 avaliações do Google. **Substituídos por 15 avaliações reais e públicas do Google** (uma por cidade, sem repetir as 5 da home; Piraí e Valença com avaliações que citam a cidade; as demais identificadas como "cliente ShineCortinas", sem afirmar cidade). Cada uma entra no schema como `Review` (build-cidades → `withReview`).
 - ~~Credenciais~~ **Respondido:** designer de interiores por formação prática (empírica); no schema fica "fundador e especialista em cortinas sob medida". Falta só o LinkedIn, se houver.
 - ~~Foto do Isani trabalhando~~ **Recebida e publicada** (`isani-consultoria.avif`: hero de /metodo/ e /sobre/, imagem do Person). Faltam as outras fotos da equipe e, se existir, o original em resolução maior (a recebida tem 1108 px de largura).
-- Porto Real: bairros, condomínios, imóvel predominante, um projeto com foto.
+- **Lembrete para mais pra frente (pedido pelo Isani em 14/out):** colher detalhes de projetos específicos e fotos reais instaladas em **Resende** e **Porto Real** (bairros e projetos em vídeo já incluídos em 14/out).
 - Observações do GPT sobre o trabalho anterior.
 - ~~Garantia~~ **Respondido e aplicado:** 1 ano (não motorizado), até 5 anos (motorizado).
 - ~~"9.000 ambientes" e "desde 2009"~~ **Confirmados pelo Isani (06/set/2026):** mais de 9.000 ambientes transformados; empresa desde 2009.
