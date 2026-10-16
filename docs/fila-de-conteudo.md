@@ -19,13 +19,13 @@ Método: uma conversa curta por post (5 a 10 perguntas), depois a redação.
 | 2 | o-que-e-blackout | **Reescrito e publicado** (layout editorial; ligado ao guia de forros) |
 | 3 | como-escurecer-quarto-sala-tv | **Reescrito e publicado** (15/10, layout editorial; sala de TV, cor no 100% vs 70% e 4 pontos da instalação) |
 | 4 | linho-para-cortinas | **Reescrito e publicado** (15/10, layout editorial; máx. 10% linho ou 100% poliéster, gramatura >170 g/m² e exceção peletizado) |
-| 5 | por-que-escolher-cortina-motorizada | **próximo** |
-| 6 | como-funciona-persiana-motorizada | fila |
-| 7 | persiana-vertical-ou-horizontal | fila |
-| 8 | persiana-ideal-para-cada-ambiente | fila |
-| 9 | persiana-para-dividir-ambientes | fila |
-| 10 | cortina-ou-persiana-na-cozinha | fila |
-| 11 | qual-cortina-escolher-para-sala | **próximo** |
+| 5 | por-que-escolher-cortina-motorizada | **Reescrito e publicado** (16/10, layout editorial; toque inteligente no tecido, abertura manual sem luz e pé-direito duplo) |
+| 6 | como-funciona-persiana-motorizada | **Reescrito e publicado** (16/10, layout editorial; energia vs bateria 6 meses e por que Rolô/Romana/Horizontal travam sem luz) |
+| 7 | persiana-vertical-ou-horizontal | **Reescrito e publicado** (16/10, layout editorial; vertical para porta de correr/vãos largos e horizontal 50 mm madeira/alumínio) |
+| 8 | persiana-ideal-para-cada-ambiente | **Reescrito e publicado** (16/10, layout editorial; Tela Solar na varanda, Double Vision/Romana no escritório, Romana/Rolô no quarto, Rolô/16 mm no banheiro) |
+| 9 | persiana-para-dividir-ambientes | **Reescrito e publicado** (16/10, layout editorial; opinião sincera contra persiana solta como parede e indicação de drywall) |
+| 10 | cortina-ou-persiana-na-cozinha | **Reescrito e publicado** (16/10, layout editorial; Rolô Tela Solar e Horizontal de Alumínio pela facilidade de limpeza) |
+| 11 | qual-cortina-escolher-para-sala | **Reescrito e publicado** (16/10, layout editorial; 6 modelos de prega, transição da sala e harmonia com estofado/tapete) |
 | 12 | altura-ideal-da-cortina | **Reescrito** (10/09, layout editorial; pilar dos satélites 13 e 14) |
 | 13 | bainha-de-cortina | **Reescrito** (layout editorial; satélite de altura) |
 | 14 | varao-para-cortina | **Reescrito e publicado** (15/10, layout editorial; 19/28 mm, alumínio, tubo suíço acima de 2 m e varão duplo) |

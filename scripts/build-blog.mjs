@@ -7,6 +7,13 @@ import escurecer from './content/escurecer.mjs';
 import varao from './content/varao.mjs';
 import wave from './content/wave.mjs';
 import linho from './content/linho.mjs';
+import cortinaMotorizada from './content/cortina-motorizada.mjs';
+import persianaMotorizada from './content/persiana-motorizada.mjs';
+import sala from './content/sala.mjs';
+import verticalHorizontal from './content/vertical-horizontal.mjs';
+import dividirAmbientes from './content/dividir-ambientes.mjs';
+import persianaAmbiente from './content/persiana-ambiente.mjs';
+import cozinha from './content/cozinha.mjs';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,6 +29,13 @@ const POSTS = [
   varao,
   wave,
   linho,
+  cortinaMotorizada,
+  persianaMotorizada,
+  sala,
+  verticalHorizontal,
+  dividirAmbientes,
+  persianaAmbiente,
+  cozinha,
   {
     slug: 'tipos-de-forro-para-cortina',
     layout: 'editorial',
