@@ -174,6 +174,12 @@ Contexto: commits `338fa81` e `30de594` em `main` (Service Area Business sem end
 - Tempo médio de engajamento nos artigos (28 dias): altura-ideal 2 min 31 s (163 views) · bainha 1 min 53 s
   (21) · o-que-e-blackout 1 min 24 s (13) · tipos-de-forro 49 s (21). Volta Redonda 2 min 37 s (31).
 
+**Google Ads (conta `989-725-8460` — "ADS Atendimento SHINE", auditada em 15/10/2026)**
+- Relatório completo salvo em `docs/dados-google/google-ads.md`.
+- Conta parada desde abril/2026 (saldo pendente de R$ 426,57 por cartão recusado; gasto acumulado 2020–2026: R$ 130.289,02).
+- **Atenção:** a campanha `ShineCortinas – Pesquisa Premium – Região VR` ainda consta com status **Ativa** lá dentro (com 5 anúncios reprovados por Erro 404 em URLs antigas do Wix) — deve ser pausada antes de qualquer pagamento futuro.
+- **Decisão estratégica e relato de campo do Isani (15/10/2026):** manter o Google Ads desligado e não dividir o orçamento diário de R$ 40/dia (hoje focado em Meta Ads), pois o CPC alto da Pesquisa traz risco de cliques de "1 janela avulsa" que não compensam o deslocamento. Além disso, os últimos 4 a 5 clientes atendidos presencialmente confirmaram que encontraram a ShineCortinas pelo **Google gratuito** (viram as 294 avaliações nota 4,9 no Google Meu Negócio e depois validaram no Instagram), mesmo com o Google Ads parado há 6 meses.
+
 ## Observação sobre o índice do Google (06/set/2026)
 
 Busca externa ainda mostra títulos e URLs do site antigo (`/sobre-nós`, `/cortinas-volta-redonda`, `/post/7-tipos…`, title com "Premium" no portfólio). Todas essas URLs têm 301 em `_redirects` e os títulos novos estão no ar; é o índice que ainda não recrawlou. Submeter o sitemap e pedir reindexação assim que houver acesso ao Search Console.
