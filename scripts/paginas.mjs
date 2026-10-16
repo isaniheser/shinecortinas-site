@@ -251,8 +251,8 @@ export const PAGINAS = [
     title: 'Sobre a ShineCortinas: 17 Anos no Sul Fluminense | ShineCortinas',
     description: 'Fundada em 2009 e dirigida por Isani Oliveira, a ShineCortinas atende 15 cidades do Sul Fluminense com equipe própria, do consultor ao instalador.',
     kicker: 'Sobre a Shine',
-    h1: 'Dezessete anos medindo, confeccionando e <em>instalando</em>',
-    lead: 'A ShineCortinas é uma empresa de cortinas e persianas sob medida com base em Volta Redonda, no Rio de Janeiro. Desde 2009 atende o Sul Fluminense com equipe própria — do consultor que vai à sua casa ao instalador que fecha o projeto.',
+    h1: 'Desde 2009 medindo, confeccionando e <em>instalando</em>',
+    lead: 'A ShineCortinas é uma empresa de cortinas e persianas sob medida com base em Volta Redonda, no Rio de Janeiro. Desde 2009 atende o Sul Fluminense com equipe própria, do consultor que vai à sua casa ao instalador que fecha o projeto.',
     hero: '/isani-consultoria.avif', heroSrcset: '/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w', heroW: 1108, heroH: 1484, heroPessoa: true,
     heroAlt: 'Isani Oliveira conferindo o caimento de uma cortina de linho durante a instalação, com a equipe ShineCortinas ao fundo',
     blocos: [
@@ -268,8 +268,8 @@ export const PAGINAS = [
       ] },
     ],
     faq: [
-      ['O que é a ShineCortinas e o que ela oferece?', 'A ShineCortinas é uma empresa especializada em cortinas e persianas sob medida, com base em Volta Redonda (RJ), atendendo todo o Sul Fluminense há 17 anos com consultoria gratuita em domicílio, medição a laser, confecção e instalação por equipe própria.'],
-      ['Há quanto tempo a ShineCortinas existe?', 'Desde 2009, com 17 anos de atuação no Sul Fluminense, mais de 9.000 ambientes transformados e nota 4,9 no Google, com 294 avaliações.'],
+      ['O que é a ShineCortinas e o que ela oferece?', 'A ShineCortinas é uma empresa especializada em cortinas e persianas sob medida, com base em Volta Redonda (RJ), atendendo todo o Sul Fluminense desde 2009 com consultoria gratuita em domicílio, medição a laser, confecção e instalação por equipe própria.'],
+      ['Há quanto tempo a ShineCortinas existe?', 'Desde 2009 no Sul Fluminense, com mais de 9.000 ambientes transformados e nota 4,9 no Google, com 297 avaliações.'],
       ['A ShineCortinas tem loja física?', 'Não trabalhamos com loja física aberta ao público. Nossa base fica em Volta Redonda (RJ) e atendemos exclusivamente no modelo de consultoria em domicílio: o consultor vai até a sua casa com o mostruário completo.'],
       ['Vocês atendem pousadas e ambientes comerciais?', 'Sim. A ShineCortinas atende residências, pousadas, chalés, hotéis e ambientes comerciais, com experiência especial em projetos para pousadas na região serrana do Sul Fluminense.'],
     ],

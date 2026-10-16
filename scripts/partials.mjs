@@ -5,7 +5,17 @@ import {auroraHeader,auroraMenu,auroraHead,AURORA_V} from './aurora-layout.mjs';
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 export const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
 export const CSS_V = '14';
-export const JS_V = '2';
+export const JS_V = '3';
+export const FOUNDED_YEAR = 2009;
+export const CURRENT_YEAR = new Date().getFullYear();
+export const YEARS_ACTIVE = CURRENT_YEAR - FOUNDED_YEAR;
+export const GOOGLE_RATING = '4.9';
+export const GOOGLE_RATING_PT = '4,9';
+export const GOOGLE_REVIEWS = '297';
+
+export const syncBrandFacts = (s) => String(s)
+  .replace(/\b29[0-9] avaliações/g, `${GOOGLE_REVIEWS} avaliações`)
+  .replace(/\b1[6-9] anos\b/g, `${YEARS_ACTIVE} anos`);
 
 export const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;');
 
@@ -98,11 +108,18 @@ export function normalizaJsonLd(head, crumbs) {
       ];
       n.aggregateRating = {
         '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '294',
+        ratingValue: GOOGLE_RATING,
+        reviewCount: GOOGLE_REVIEWS,
         bestRating: '5',
         worstRating: '1',
       };
+    }
+    if (t === 'FAQPage' && Array.isArray(n.mainEntity)) {
+      n.mainEntity.forEach((q) => {
+        if (q && q.acceptedAnswer && q.acceptedAnswer.text) {
+          q.acceptedAnswer.text = syncBrandFacts(q.acceptedAnswer.text);
+        }
+      });
     }
     fixPerson(n);
     if (n.author) fixPerson(n.author);
@@ -147,6 +164,7 @@ export function cleanHead(head, opts = {}) {
   // Normaliza canonical, og:url e toda ocorrência da mesma URL no JSON-LD (breadcrumb, mainEntityOfPage).
   head = normalizaCanonical(head);
   head = head.split('"https://www.shinecortinas.com/sobre"').join('"https://www.shinecortinas.com/sobre/"');
+  head = syncBrandFacts(head);
   const precisaLd = opts.semSchema !== true;
   if (precisaLd) head = normalizaJsonLd(head, opts.crumbs);
   if (!/shine-leve\.css/.test(head) || (precisaLd && !/application\/ld\+json/.test(head)) || /tailwind|location\.replace\('\/app\/'\)/.test(head)) throw new Error('head inválido');
@@ -169,7 +187,7 @@ export function cityChip(cityName) {
 export function strip() {
   return `
   <div class="sl-strip"><div class="sl-wrap sl-strip__in">
-    <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>17 anos no Sul Fluminense</span>
+    <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span data-years-text>${YEARS_ACTIVE} anos</span> no Sul Fluminense</span>
     <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Consultoria gratuita em casa</span>
     <span class="sl-strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Parcele em até 12x</span>
     <span class="sl-strip__item">${telIcon}Atendimento humano, sem robô</span>
@@ -185,8 +203,8 @@ export function proof(cityName) {
       <h2 class="sl-h2">Somos referência em cortinas no Sul Fluminense</h2>
       <p class="sl-sub">${sub}</p>
       <div class="sl-stats" style="margin-top:28px">
-        <div class="sl-stat"><span class="sl-stat__n">17</span><div><h3>Anos medindo, confeccionando e instalando</h3><p>Desde 2009 no Sul Fluminense. Cortina sob medida é o que a gente faz, não uma linha a mais no catálogo.</p></div></div>
-        <div class="sl-stat"><span class="sl-stat__n">4,9</span><div><h3>Nota 4,9 no Google, com 294 avaliações</h3><p>Cliente satisfeito volta para o segundo ambiente e indica para o vizinho.</p></div></div>
+        <div class="sl-stat"><span class="sl-stat__n" data-since="${FOUNDED_YEAR}">${YEARS_ACTIVE}</span><div><h3>Anos medindo, confeccionando e instalando</h3><p>Desde ${FOUNDED_YEAR} no Sul Fluminense. Cortina sob medida é o que a gente faz, não uma linha a mais no catálogo.</p></div></div>
+        <div class="sl-stat"><span class="sl-stat__n">${GOOGLE_RATING_PT}</span><div><h3>Nota ${GOOGLE_RATING_PT} no Google, com ${GOOGLE_REVIEWS} avaliações</h3><p>Cliente satisfeito volta para o segundo ambiente e indica para o vizinho.</p></div></div>
         <div class="sl-stat"><span class="sl-stat__n">9 mil</span><div><h3>Ambientes transformados na região</h3><p>Salas, quartos, escritórios e projetos corporativos, todos medidos e instalados pela nossa equipe.</p></div></div>
         <div class="sl-stat"><span class="sl-stat__n">100%</span><div><h3>Equipe própria, do consultor ao instalador</h3><p>Medição, confecção e instalação são feitas pela nossa gente. Não terceirizamos a sua casa.</p></div></div>
       </div>
@@ -225,7 +243,7 @@ export function footer() {
     <div class="sl-footer__grid">
       <div>
         <a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="56" height="56" loading="lazy" decoding="async"></a>
-        <p style="margin-top:14px">Volta Redonda, RJ · Consultoria em domicílio<br>Atendemos todo o Sul Fluminense.<br>Sob medida para cada ambiente, desde 2009.</p>
+        <p style="margin-top:14px">Volta Redonda, RJ · Consultoria em domicílio<br>Atendemos todo o Sul Fluminense.<br>Sob medida para cada ambiente, desde ${FOUNDED_YEAR}.</p>
       </div>
       <div>
         <h4>Fale conosco</h4>
@@ -238,7 +256,7 @@ export function footer() {
         <p><a href="https://www.instagram.com/shinecortinas/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://www.facebook.com/shinecortinas" rel="me noopener" target="_blank">Facebook</a> · <a href="https://www.youtube.com/@shinecortinas" rel="me noopener" target="_blank">YouTube</a><br><a href="https://www.tiktok.com/@shinecortinas" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.pinterest.com/shinecortinas" rel="me noopener" target="_blank">Pinterest</a></p>
       </div>
     </div>
-    <div class="sl-footer__bottom"><span>© 2026 ShineCortinas</span><span>Google 4,9 ★★★★★ · 294 avaliações</span></div>
+    <div class="sl-footer__bottom"><span>© <span data-current-year>${CURRENT_YEAR}</span> ShineCortinas</span><span>Google ${GOOGLE_RATING_PT} ★★★★★ · ${GOOGLE_REVIEWS} avaliações</span></div>
   </div></footer>
 `;
 }

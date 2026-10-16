@@ -5,7 +5,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync , statSync} from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { WA, CSS_V, esc, cleanHead, normalizaCanonical, header, cityChip, strip, footer, waFloat, bar, tail } from './partials.mjs';
+import { WA, CSS_V, esc, syncBrandFacts, cleanHead, normalizaCanonical, header, cityChip, strip, footer, waFloat, bar, tail } from './partials.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://www.shinecortinas.com';
@@ -55,7 +55,7 @@ function buildFaq() {
   const ldRaw = src.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
   const ld = JSON.parse(ldRaw);
   const g = ld['@graph'] || [ld];
-  const perguntas = (g.find((n) => n['@type'] === 'FAQPage') || {}).mainEntity.map((q) => [q.name.trim(), q.acceptedAnswer.text.trim()]);
+  const perguntas = (g.find((n) => n['@type'] === 'FAQPage') || {}).mainEntity.map((q) => [q.name.trim(), syncBrandFacts(q.acceptedAnswer.text.trim())]);
   const grupos = [
     ['A empresa', ['O que é a ShineCortinas', 'A ShineCortinas tem loja', 'Há quanto tempo', 'Vocês atendem fora', 'Qual a melhor loja']],
     ['Atendimento e prazos', ['Como funciona a consultoria', 'Quanto tempo leva', 'Vocês trabalham com cortina pronta', 'Como funciona o investimento', 'Como posso parcelar', 'Qual a garantia']],

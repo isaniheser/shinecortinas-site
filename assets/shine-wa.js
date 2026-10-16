@@ -73,6 +73,15 @@
   }
   renderChips();
 
+  /* atualização automática do tempo de atuação (desde 2009) e ano do rodapé */
+  var yr = new Date().getFullYear();
+  if (yr >= 2026) {
+    var yrs = yr - 2009;
+    document.querySelectorAll('[data-since]').forEach(function (el) { el.textContent = String(yr - (Number(el.getAttribute('data-since')) || 2009)); });
+    document.querySelectorAll('[data-years-text]').forEach(function (el) { el.textContent = yrs + ' anos'; });
+    document.querySelectorAll('[data-current-year]').forEach(function (el) { el.textContent = String(yr); });
+  }
+
   /* palpite pelo IP só quando não há memória nem página de cidade */
   if (!state.slug && window.fetch) {
     fetch('/api/geo', { credentials: 'omit' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (g) {
