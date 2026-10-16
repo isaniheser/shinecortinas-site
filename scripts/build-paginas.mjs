@@ -56,17 +56,43 @@ const bloco = {
         ${b.sub ? `<p class="sl-sub">${b.sub}</p>` : ''}
       </div>
       <div class="sl-cards">
-${b.items.map((i) => `        <div class="sl-card"><div class="sl-media"><img src="${i.img}" alt="${esc(i.alt || `${i.h} — ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async">${i.ref ? '<span class="sl-media__ref">Referência do modelo, em outro ambiente</span>' : ''}</div><div class="sl-card__body"><span>${i.tag}</span><h3>${i.h}</h3><p>${i.p}</p></div></div>`).join('\n')}
+${b.items.map((i) => `        <div class="sl-card"><div class="sl-media"><img src="${i.img}" alt="${esc(i.alt || `${i.h}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async">${i.ref ? '<span class="sl-media__ref">Referência do modelo, em outro ambiente</span>' : ''}</div><div class="sl-card__body"><span>${i.tag}</span><h3>${i.h}</h3><p>${i.p}</p></div></div>`).join('\n')}
       </div>
     </div></section>`,
 
   table: (b) => `
     <section class="sl-section sl-reveal"><div class="sl-wrap">
-      <div class="sl-center" style="margin-bottom:26px"><h2 class="sl-h2">${b.h2}</h2></div>
-      <div class="sl-tablewrap" style="max-width:820px;margin:0 auto"><table>
+      <div class="sl-center" style="margin-bottom:26px"><h2 class="sl-h2">${b.h2}</h2>${b.sub ? `<p class="sl-sub">${b.sub}</p>` : ''}</div>
+      <div class="sl-tablewrap" style="max-width:860px;margin:0 auto"><table>
         <thead><tr>${b.head.map((h) => `<th>${h}</th>`).join('')}</tr></thead>
         <tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
       </table></div>
+    </div></section>`,
+
+  diagram: (b) => `
+    <section class="sl-section sl-reveal"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:26px">
+        <p class="sl-kicker sl-kicker--center">${b.kicker || 'Engenharia sob medida'}</p>
+        <h2 class="sl-h2">${b.h2}</h2>
+        ${b.sub ? `<p class="sl-sub">${b.sub}</p>` : ''}
+      </div>
+      <figure class="sl-ed-fig sl-ed-figure" style="max-width:860px;margin:0 auto">
+        <div class="sl-ed-figtop"><span class="sl-ed-eyebrow">${b.figKicker || 'Esquema técnico Shine'}</span><span>${b.figRight || 'Padrão de oficina e instalação'}</span></div>
+        ${b.body || b.svg}
+        ${b.cap ? `<figcaption>${b.cap}</figcaption>` : ''}
+      </figure>
+    </div></section>`,
+
+  guides: (b) => `
+    <section class="sl-section sl-reveal"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:28px">
+        <p class="sl-kicker sl-kicker--center">${b.kicker || 'Guia técnico'}</p>
+        <h2 class="sl-h2">${b.h2}</h2>
+        ${b.sub ? `<p class="sl-sub">${b.sub}</p>` : ''}
+      </div>
+      <div class="sl-posts">
+${b.items.map(([href, tag, title, desc]) => `        <a class="sl-post" href="${href}"><span>${tag}</span><h3>${title}</h3><p>${desc}</p></a>`).join('\n')}
+      </div>
     </div></section>`,
 
   gallery: () => `
@@ -103,7 +129,7 @@ ${PASSOS.map(([h, p], i) => `        <div class="sl-step"><div class="sl-step__n
       <div class="sl-contato">
         <div><span>WhatsApp</span><a class="sl-contato__big" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">(24) 99329-8763</a><p>Resposta em minutos, por um consultor de verdade.</p></div>
         <div><span>Telefone</span><p class="sl-contato__big">(24) 3338-3069</p><p>Para quem prefere falar por telefone.</p></div>
-        <div><span>Cidade-base</span><p class="sl-contato__big">Volta Redonda, RJ</p><p>Atendimento em domicílio em todo o Sul Fluminense — levamos o mostruário até a sua casa.</p></div>
+        <div><span>Cidade-base</span><p class="sl-contato__big">Volta Redonda, RJ</p><p>Atendimento em domicílio em todo o Sul Fluminense. Levamos o mostruário até a sua casa.</p></div>
       </div>
     </div></section>`,
 
@@ -198,6 +224,15 @@ function ajustaHead(head, p) {
     if (org) {
       org['@id'] = `${BASE}/#org`;
       if (!org.sameAs) org.sameAs = ['https://www.instagram.com/shinecortinas/', 'https://www.facebook.com/shinecortinas', 'https://www.tiktok.com/@shinecortinas', 'https://www.youtube.com/@shinecortinas', 'https://www.pinterest.com/shinecortinas'];
+    }
+    const srv = g.find((n) => n['@type'] === 'Service');
+    if (srv) {
+      srv['@id'] = `${url}#service`;
+      srv.name = p.kicker;
+      srv.description = p.description;
+      srv.url = url;
+      srv.provider = { '@id': `${BASE}/#biz` };
+      srv.areaServed = 'Sul Fluminense, RJ';
     }
     const j = g.findIndex((n) => n['@type'] === 'WebPage');
     const web = { '@type': 'WebPage', '@id': url, url, name: p.title, inLanguage: 'pt-BR', dateModified: TODAY,

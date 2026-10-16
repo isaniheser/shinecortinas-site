@@ -1,45 +1,103 @@
 // Conteúdo das páginas de produto e institucionais, no sistema visual "leve".
-// FONTE DOS FATOS: as 21 perguntas que já estavam na /faq/ do site, a landing /lp/anuncio-d/,
-// a home e as correções do Isani (CLAUDE.md → "Fatos de produto"). Nada foi inventado.
-// Itens marcados com CONFIRMAR no comentário aguardam validação do Isani.
+// FONTE DOS FATOS: as 21 perguntas da /faq/ do site, a landing /lp/anuncio-d/,
+// a home e as especificações técnicas validadas pelo Isani (CLAUDE.md e docs/recebidos-do-isani.md).
+
+import sala from './content/sala.mjs';
+import linho from './content/linho.mjs';
+import wave from './content/wave.mjs';
+import cortinaMotorizada from './content/cortina-motorizada.mjs';
+import verticalHorizontal from './content/vertical-horizontal.mjs';
+import persianaAmbiente from './content/persiana-ambiente.mjs';
+import escurecer from './content/escurecer.mjs';
+import varao from './content/varao.mjs';
+
+function fig(post, idx, kicker, h2, sub) {
+  const all = post.sections.map((s) => s.html).join('\n');
+  const m = [...all.matchAll(/<figure class="sl-ed-fig[^"]*">([\s\S]*?)<\/figure>/g)][idx];
+  const inner = m ? m[1] : '';
+  const top = inner.match(/<div class="sl-ed-figtop">([\s\S]*?)<\/div>/);
+  const cap = inner.match(/<figcaption>([\s\S]*?)<\/figcaption>/);
+  const body = inner
+    .replace(/<div class="sl-ed-figtop">[\s\S]*?<\/div>/, '')
+    .replace(/<figcaption>[\s\S]*?<\/figcaption>/, '')
+    .trim();
+  const spans = top ? [...top[1].matchAll(/<span[^>]*>([\s\S]*?)<\/span>/g)] : [];
+  return {
+    t: 'diagram',
+    kicker,
+    h2,
+    sub,
+    figKicker: spans[0] ? spans[0][1] : 'Esquema técnico Shine',
+    figRight: spans[1] ? spans[1][1] : 'Padrão de oficina e instalação',
+    body,
+    cap: cap ? cap[1] : '',
+  };
+}
 
 export const PAGINAS = [
   // ---------------------------------------------------------------- CORTINAS
   {
     dir: 'cortinas',
     title: 'Cortinas Sob Medida em Volta Redonda e Região | ShineCortinas',
-    description: 'Cortinas sob medida com caimento impecável: wave, linho, voil, veludo e blackout. Consultoria gratuita em casa, medição a laser e instalação própria.',
+    description: 'Cortinas sob medida com acabamento de alfaiataria: Wave, prega fêmea, macho, americana, tombada e franzida. Tecidos acima de 170 g/m², medição a laser e instalação própria.',
     kicker: 'Cortinas sob medida',
     h1: 'Cortinas sob medida, com o <em>caimento</em> que a foto de loja não mostra',
-    lead: 'Cortina sob medida é tecido escolhido para o seu ambiente, medida a laser na sua janela e confeccionada do zero. O que muda o resultado não é só o tecido de frente: é a combinação dele com o forro, o trilho e a instalação.',
+    lead: 'Cortina sob medida é tecido escolhido na luz real da sua sala ou do seu quarto, medida a laser na sua janela e confeccionada do zero na nossa oficina. O que muda o resultado é a união entre a gramatura do tecido, o modelo da prega, o forro, a bainha dupla e o trilho.',
     hero: '/cortina-sob-medida.avif',
     heroAlt: 'Sala com cortina de linho sob medida instalada pela ShineCortinas',
     blocos: [
       { t: 'prose', h2: 'O que define uma cortina bem resolvida', p: [
-        'Três decisões fazem o resultado: o <strong>tecido decorativo</strong>, que é o que se vê; o <strong>forro</strong>, que fica escondido e decide luz e privacidade; e o <strong>acionamento</strong>, que define o uso no dia a dia.',
-        'É por isso que a escolha não se faz por foto. Na consultoria, o consultor leva o mostruário até a sua casa, e você compara os tecidos com a luz real do seu cômodo, na hora do dia em que você mais usa o ambiente.',
+        'Três decisões fazem o resultado na parede: o <strong>tecido decorativo</strong> da frente, que veste o ambiente e conversa com o estofado e o tapete, o <strong>forro</strong> que corre por trás controlando a claridade e protegendo a fibra contra o sol, e o <strong>sistema de prega e trilho</strong> que sustenta o desenho do teto ao chão.',
+        'É por isso que não indicamos escolher tecido por foto de celular. Na consultoria em domicílio, levamos o mostruário completo até a sua casa para você sentir o toque na mão e ver como a trama reage contra a luz da sua própria janela.',
       ] },
-      { t: 'cards', h2: 'Tecidos que trabalhamos', sub: 'A escolha depende do ambiente, da incidência de sol e do efeito que você procura.', items: [
-        { tag: 'Leveza', h: 'Voil', p: 'Tecido leve que filtra a luz e mantém o ambiente claro. Muito usado em camada dupla, com uma segunda cortina por trás.', img: '/duplo.avif', alt: 'Sala com cortina dupla de voil e linho, projeto ShineCortinas' },
-        { tag: 'Natural', h: 'Linho', p: 'Textura natural e caimento generoso. É o tecido de quem quer o ar de projeto de arquitetura na sala.', img: '/linha-puro.avif', alt: 'Tecido de linho natural do mostruário ShineCortinas' },
-        { tag: 'Sofisticação', h: 'Veludo', p: 'Peso, profundidade de cor e conforto acústico. Indicado para salas de estar e ambientes de receber.', img: '/cortina-sob-medida.avif', alt: 'Sala com cortina de linho sob medida, projeto ShineCortinas', ref: true },
-        { tag: 'Escurecimento', h: 'Blackout', p: 'Tecido que bloqueia a luz. Pode ser o próprio tecido da cortina ou entrar como forro atrás do tecido decorativo.', img: '/blackouts-tecnicos.avif', alt: 'Home theater escurecido com blackout, projeto ShineCortinas' },
+      { t: 'cards', h2: 'Tecidos e composições que trabalhamos', sub: 'Priorizamos tecidos com gramatura acima de 170 g/m² para garantir peso, prumo e resistência ao sol.', items: [
+        { tag: 'Caimento e textura', h: 'Linho técnico e misto (até 10%)', p: 'Trabalhamos com 100% poliéster que imita o linho com perfeição ou tecidos com no máximo 10% de linho natural. Assim a cortina tem caimento sedoso, não fica armada, não amarrota fácil e não encolhe na lavagem.', img: '/linha-puro.avif', alt: 'Tecido de linho do mostruário ShineCortinas' },
+        { tag: 'Leveza e luz', h: 'Voil e tramas leves', p: 'Tecidos translúcidos que filtram a claridade e mantêm a sala iluminada com privacidade. Muito utilizados na frente de um forro slim ou de um blackout.', img: '/duplo.avif', alt: 'Sala com cortina dupla de voil e linho, projeto ShineCortinas' },
+        { tag: 'Peso e presença', h: 'Tecidos encorpados e veludo', p: 'Tecidos peletizados, escovados ou de alta gramatura que entregam volume nobre, conforto acústico e maior resistência contra a queima pelo sol.', img: '/cortina-sob-medida.avif', alt: 'Sala com cortina sob medida, projeto ShineCortinas', ref: true },
+        { tag: 'Escurecimento', h: 'Blackout 70% e 100%', p: 'Pode entrar como forro costurado ou em trilho separado atrás do tecido principal. O 70% deixa uma penumbra suave para a TV e o 100% veda toda a luz para dormir.', img: '/blackouts-tecnicos.avif', alt: 'Home theater escurecido com blackout, projeto ShineCortinas' },
       ] },
-      { t: 'prose', h2: 'O forro decide o resultado', p: [
-        'O forro é a segunda camada, acoplada atrás do tecido decorativo. Ele existe em dois grupos: o <strong>forro translúcido</strong>, que dá privacidade, protege o tecido de frente do sol e quebra parte da claridade; e o <strong>forro blackout</strong>, em duas versões — <strong>70%</strong>, o semi blackout, que deixa o ambiente em penumbra, e <strong>100%</strong>, que entrega escuro de verdade.',
-        'Se o objetivo é quarto realmente escuro, a cortina com forro blackout 100% resolve. Entenda a diferença no artigo <a href="/blog/tipos-de-forro-para-cortina/">tipos de forro para cortina</a>.',
+      fig(
+        sala,
+        0,
+        'Alfaiataria sob medida',
+        'Os 6 modelos de confecção que trabalhamos',
+        'Da onda contínua da Wave às pregas clássicas de alfaiataria, cada cabeçote é montado conforme o estilo do seu projeto.'
+      ),
+      { t: 'prose', h2: 'Gramatura acima de 170 g/m² e bainha dupla de 15 a 20 cm', p: [
+        'Um erro comum de quem compra cortina pronta é levar um pano fino que fica voando e abrindo na barra. Aqui na Shine nós sempre indicamos tecidos com <strong>gramatura superior a 170 gramas por metro quadrado</strong> (a menos que seja um tecido peletizado e escovado de trama bem fechada). Esse peso faz a onda descer reta como um prumo e protege melhor a fibra contra o sol.',
+        'Na base da cortina, confeccionamos a <strong>bainha dupla com 15 cm ou 20 cm de altura</strong> (usando de 30 cm a 40 cm de tecido dobrado internamente) e instalamos a barra beijando o piso. Para ver todos os detalhes técnicos, confira nossos guias sobre <a href="/blog/linho-para-cortinas/">linho e gramatura</a>, <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a> e <a href="/blog/bainha-de-cortina/">bainha de alfaiataria</a>.',
+      ] },
+      fig(
+        linho,
+        1,
+        'Peso e durabilidade',
+        'Por que a gramatura acima de 170 g/m² muda o caimento',
+        'O peso por metro quadrado é o que faz a cortina assentar desde o primeiro dia e resistir melhor à incidência solar.'
+      ),
+      { t: 'table', h2: 'Qual modelo de cortina combina com cada proposta', sub: 'Todos os seis modelos são confeccionados sob medida na nossa oficina.', head: ['Modelo de confecção', 'Desenho na janela', 'Onde mais indicamos'], rows: [
+        ['Cortina Wave', 'Ondas contínuas e uniformes no trilho (proporções 2:1, 2,5:1 ou 3:1)', 'Salas contemporâneas, pés-direitos duplos e grandes vãos'],
+        ['Prega Fêmea', 'Dobras voltadas para dentro com frente limpa e alinhada', 'Salas elegantes e quartos com cortineiro mais enxuto'],
+        ['Prega Macho', 'Gomos salientes voltados para a frente com bastante corpo', 'Salas amplas que pedem presença de tecido'],
+        ['Prega Americana', 'Três dobras unidas no topo formando um leque clássico', 'Projetos tradicionais, casarões e salas acolhedoras'],
+        ['Prega Tombada', 'Dobras deitadas na mesma direção em sequência contínua', 'Salas e suítes, inclusive como opção de forro'],
+        ['Modelo Franzido', 'Micro-dobras cheias no cabeçote com volume generoso', 'Quartos e salas de estilo clássico ou romântico'],
       ] },
       { t: 'compare' },
-      { t: 'prose', h2: 'Cortina ou persiana?', p: [
-        'Cortina é confeccionada em tecido — voil, linho, veludo, blackout — e oferece mais versatilidade estética e controle de caimento. Persiana é estruturada em lâminas (madeira, alumínio, PVC) ou em enrolamento (rolô, double vision) e oferece controle mais preciso da entrada de luz e calor.',
-        'A escolha depende do ambiente, da exposição solar e do estilo desejado. Veja também as <a href="/persianas/">persianas técnicas</a>.',
+      { t: 'guides', kicker: 'Aprenda antes de escolher', h2: 'Guias técnicos do Isani sobre <em>cortinas</em>', sub: 'Artigos completos escritos com a experiência prática das nossas instalações no Sul Fluminense.', items: [
+        ['/blog/qual-cortina-escolher-para-sala/', 'Sala de estar', 'Qual cortina escolher para a sala: modelos e cores', 'Como harmonizar Wave, prega fêmea, macho, americana e tombada com o sofá e o tapete.'],
+        ['/blog/linho-para-cortinas/', 'Tecidos e fibras', 'Linho para cortinas: composição e gramatura', 'Por que indicamos até 10% de linho ou 100% poliéster com toque de linho e gramatura acima de 170 g/m².'],
+        ['/blog/quantidade-de-tecido-para-cortina-wave/', 'Cortina Wave', 'Quantidade de tecido na Wave: 2:1, 2,5:1 e 3:1', 'O cálculo de tecido, os cordões espaçadores 0,4, 0,5 e 0,8 e o cortineiro mínimo de 15x15 cm.'],
+        ['/blog/altura-ideal-da-cortina/', 'Medidas', 'Altura ideal da cortina: do teto ao piso', 'Por que a cortina do teto ao chão alonga a parede e como deixamos a barra beijando o piso.'],
+        ['/blog/bainha-de-cortina/', 'Acabamento', 'Bainha de cortina: barra dupla de 15 a 20 cm', 'Como a dobra dupla de 30 a 40 cm de tecido dá peso e alinhamento para a base da cortina.'],
+        ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo real', 'Ajuste fino e acabamento de alfaiataria em casa', 'Assista na prática como nossa equipe entrega o caimento alinhado no ambiente do cliente.'],
       ] },
       { t: 'proof' },
     ],
     faq: [
-      ['Qual a diferença entre cortina e persiana?', 'Cortina é confeccionada em tecido — voil, linho, veludo, blackout — e oferece mais versatilidade estética e controle de caimento. Persiana é estruturada em lâminas (madeira, alumínio, PVC) ou enrolamento (rolô, double vision) e oferece controle mais preciso da entrada de luz e calor. A escolha depende do ambiente, da exposição solar e do estilo desejado.'],
-      ['Qual tipo de cortina escolher para sala?', 'Para salas, as opções mais indicadas são: voil com blackout em sistema duplo, que dá leveza durante o dia e escurecimento quando necessário; linho ou tecido texturizado para ambientes com iluminação natural generosa; e cortina wave quando o objetivo é um acabamento arquitetônico limpo. A escolha depende da exposição solar, do pé-direito e do estilo da sala.'],
-      ['Qual tecido de cortina é melhor para quarto?', 'Para quartos, o blackout é o mais indicado, especialmente para quem trabalha em turnos, tem filhos pequenos ou quarto com exposição solar intensa. Para quem prefere luz filtrada, o double vision permite ajustar entre o tecido blackout e a luz suave. Para suítes com proposta estética mais elaborada, linho com forro oferece caimento elegante.'],
+      ['Quais modelos de prega vocês confeccionam?', 'Confeccionamos cortina Wave, prega fêmea, prega macho, prega americana, prega tombada e modelo franzido. Todos são feitos sob medida e indicados conforme o espaço do cortineiro, o tecido escolhido e o estilo da decoração.'],
+      ['Por que vocês indicam tecido com até 10% de linho ou 100% poliéster?', 'Quando o tecido passa de 10% de linho puro, ele costuma ficar armado, amassa com muita facilidade e corre risco de encolher na lavagem. O poliéster moderno imita com perfeição a trama do linho, da seda e do algodão, mantendo o caimento sedoso e a manutenção prática.'],
+      ['Qual a gramatura ideal para uma cortina ter bom caimento?', 'Indicamos tecidos com gramatura superior a 170 gramas por metro quadrado (exceto quando é um tecido peletizado e escovado de trama bem fechada). Abaixo disso o tecido perde peso, não forma onda definida e queima mais rápido no sol.'],
+      ['Como escolher a cor da cortina para a sala?', 'A cortina funciona como pano de fundo e faz a transição entre os itens decorativos, conversando principalmente com o estofado e o tapete. Para quem ainda não definiu o sofá ou o tapete, o ideal é trabalhar com tons neutros e pastéis.'],
       ['Vocês lavam e fazem manutenção de cortinas?', 'Sim. A ShineCortinas oferece serviço completo de lavagem e manutenção: retiramos a cortina, mesmo em pé-direito alto, lavamos com tratamento técnico e reinstalamos.'],
       ['Quanto tempo leva para instalar?', 'Trabalhamos exclusivamente sob medida: após a medição a laser, cada peça é confeccionada para o seu vão. Quando fica pronta e agendamos a entrega, o serviço de instalação em si leva poucas horas em uma única visita na maioria dos projetos, deixando o ambiente limpo e pronto.'],
     ],
@@ -51,33 +109,65 @@ export const PAGINAS = [
   {
     dir: 'persianas',
     title: 'Persianas Sob Medida em Volta Redonda e Região | ShineCortinas',
-    description: 'Persianas sob medida: rolô, double vision, screen, vertical e madeira. Controle preciso de luz e calor com consultoria gratuita e instalação própria.',
+    description: 'Persianas sob medida: Rolô, Romana, Double Vision, Screen 5%, Champion para varanda, Vertical e Horizontal 50 mm em madeira ou alumínio. Medição a laser.',
     kicker: 'Persianas técnicas',
     h1: 'Persianas sob medida, para controlar a luz <em>no detalhe</em>',
-    lead: 'Persiana é estruturada em lâminas — madeira, alumínio, PVC — ou em enrolamento, como o rolô e o double vision. Em relação à cortina, ela oferece controle mais preciso da entrada de luz e de calor, com um desenho mais discreto na janela.',
+    lead: 'Persiana é estruturada em lâminas horizontais ou verticais, em gomos dobráveis como a Romana, ou em enrolamento contínuo como a Rolô e a Double Vision. Cada ambiente da casa pede um modelo e um material específicos para resolver sol, calor, umidade ou reflexo na tela.',
     hero: '/persiana-motorizada.avif',
     heroAlt: 'Sala com persiana rolô screen instalada pela ShineCortinas',
     blocos: [
-      { t: 'cards', h2: 'Os sistemas que trabalhamos', sub: 'Cada um resolve um problema diferente de luz, calor e privacidade.', items: [
-        { tag: 'Enrolamento', h: 'Rolô', p: 'O sistema mais discreto. O tecido enrola no topo da janela e desaparece quando aberto. Existe em versão screen, translúcida e blackout.', img: '/persiana-motorizada.avif', alt: 'Persiana rolô screen instalada em sala pela ShineCortinas' },
-        { tag: 'Controle solar', h: 'Screen (tela solar)', p: 'Tecido técnico que corta o calor e o reflexo sem esconder a vista da janela. Ideal para salas envidraçadas e home office.', img: '/tela-solar.avif', alt: 'Sala envidraçada com rolô screen instalado pela ShineCortinas' },
-        { tag: 'Dupla função', h: 'Double vision', p: 'Duas faixas de tecido que se alternam: abre para a luz suave, fecha para privacidade, sem trocar de sistema.', img: '/duplo.avif', alt: 'Sala com cortina dupla de voil e linho, projeto ShineCortinas', ref: true },
-        { tag: 'Natural', h: 'Madeira', p: 'Lâminas de madeira que dão calor visual e controle de luz por inclinação. Para escritórios, cozinhas e varandas.', img: '/madeira.avif', alt: 'Ambiente com persiana de madeira instalada pela ShineCortinas' },
-        { tag: 'Vãos largos', h: 'Vertical', p: 'Lâminas verticais para janelas e portas largas, com abertura lateral e controle por rotação.', img: '/automacao.avif', alt: 'Sala com cortina motorizada acionada por controle, projeto ShineCortinas', ref: true },
-        { tag: 'Escurecimento', h: 'Blackout 100%', p: 'As persianas também têm material blackout 100%, para quem precisa de escuro no quarto ou no home office.', img: '/blackouts-tecnicos.avif', alt: 'Home theater escurecido com blackout, projeto ShineCortinas', ref: true },
+      { t: 'cards', h2: 'Os sistemas de persiana que trabalhamos', sub: 'Do controle solar técnico na varanda à imponência das lâminas de 50 mm na sala.', items: [
+        { tag: 'Versatilidade', h: 'Rolô (Screen, Translúcida e Blackout)', p: 'O tecido enrola em um tubo superior compacto. Na versão Tela Solar 5%, corta o calor e o reflexo mantendo a vista externa e facilitando a limpeza.', img: '/persiana-motorizada.avif', alt: 'Persiana rolô screen instalada em sala pela ShineCortinas' },
+        { tag: 'Varanda e sacada', h: 'Persiana Champion e Tela Solar', p: 'Projetadas para áreas gourmet, varandas e sacadas envidraçadas que recebem sol forte e vento, filtrando os raios solares sem fechar a paisagem.', img: '/tela-solar.avif', alt: 'Varanda envidraçada com tela solar instalada pela ShineCortinas' },
+        { tag: 'Escritório e quarto', h: 'Persiana Romana e Double Vision', p: 'A Romana recolhe em gomos horizontais elegantes, ótima para quartos e home office. Já a Double Vision alterna faixas translúcidas e opacas para dosar a luz no monitor.', img: '/duplo.avif', alt: 'Ambiente com controle de luz sob medida, projeto ShineCortinas', ref: true },
+        { tag: 'Ambientes de luxo', h: 'Horizontal 50 mm (Madeira e Alumínio)', p: 'Lâminas largas de 50 mm em madeira natural ou alumínio com opção de fita decorativa. Trazem imponência, volume arquitetônico e controle fino de luz por inclinação.', img: '/madeira.avif', alt: 'Ambiente com persiana horizontal de madeira 50 mm instalada pela ShineCortinas' },
+        { tag: 'Portas de correr', h: 'Persiana Vertical', p: 'Ideal para portas de correr e vãos muito largos, pois recolhe para a lateral acompanhando o sentido da porta e liberando a passagem.', img: '/automacao.avif', alt: 'Grande vão com sistema sob medida, projeto ShineCortinas', ref: true },
+        { tag: 'Áreas úmidas', h: 'Horizontal de Alumínio 16 mm', p: 'Lâminas leves que não absorvem vapor nem criam mofo. Junto com a Rolô sintética, é a nossa indicação certeira para banheiros e lavabos.', img: '/blackouts-tecnicos.avif', alt: 'Ambiente técnico com controle de privacidade, projeto ShineCortinas', ref: true },
       ] },
-      { t: 'prose', h2: 'Como escolher entre eles', p: [
-        'A decisão começa pela orientação da janela e pelo uso do ambiente. Janela que recebe sol forte no fim da tarde pede screen ou madeira; quarto de quem dorme de dia pede material blackout 100%; home office com reunião por vídeo pede controle de reflexo.',
-        'Na consultoria em domicílio, o consultor mede a laser e apresenta os sistemas no seu próprio ambiente, com a luz daquele horário. Você compara antes de decidir.',
+      fig(
+        persianaAmbiente,
+        0,
+        'Indicação por cômodo',
+        'Qual persiana escolher para cada ambiente da casa',
+        'Cada cômodo tem uma exigência diferente de sol, umidade, limpeza e estética.'
+      ),
+      { t: 'prose', h2: 'Onde cada persiana entrega o melhor resultado', p: [
+        'Para <strong>portas de correr e vãos largos</strong>, indicamos a persiana vertical porque ela abre para o lado no mesmo sentido da porta. Já quando o cliente busca imponência para um <strong>ambiente de luxo</strong>, nossa recomendação é a persiana horizontal de <strong>50 mm</strong>, tanto de madeira quanto de alumínio, que veste a janela como uma peça de mobiliário.',
+        'Um ponto de transparência importante da nossa consultoria: <strong>não indicamos usar persiana ou cortina para dividir ambientes no meio do cômodo</strong>. Persiana foi feita para janela e decoração. Quando a necessidade é separar dois espaços, o caminho correto é uma divisória estrutural ou drywall. Veja a explicação completa no nosso artigo <a href="/blog/persiana-para-dividir-ambientes/">persiana para dividir ambientes vale a pena?</a>.',
+      ] },
+      fig(
+        verticalHorizontal,
+        0,
+        'Sentido de abertura e lâminas',
+        'Persiana Vertical vs. Horizontal de 50 mm',
+        'Por que o tipo de abertura da janela ou porta define o modelo antes mesmo da cor.'
+      ),
+      { t: 'table', h2: 'Resumo técnico de indicação por ambiente', sub: 'Recomendações práticas que levamos na consultoria em domicílio.', head: ['Ambiente', 'Modelos indicados pela Shine', 'Principal vantagem prática'], rows: [
+        ['Varanda, sacada e área gourmet', 'Persiana Champion e Tela Solar', 'Bloqueia o calor e os raios UV mantendo a vista livre e a ventilação'],
+        ['Escritório e home office', 'Double Vision e Romana', 'Elimina o reflexo direto no monitor com estética executiva e aconchegante'],
+        ['Quarto e suíte', 'Romana e Rolô (com opção Blackout 100%)', 'Recolhimento compacto acima da bancada ou cabeceira e vedação de luz'],
+        ['Sala e ambientes de luxo', 'Horizontal 50 mm (Madeira ou Alumínio)', 'Lâminas largas de 50 mm que trazem imponência, requinte e giro de 180°'],
+        ['Portas de correr e grandes vãos', 'Persiana Vertical', 'Abertura lateral que libera a passagem sem precisar subir a peça inteira'],
+        ['Cozinha', 'Rolô em Tela Solar 5% ou Alumínio', 'Não retém cheiro de fritura e limpa fácil com pano úmido e detergente neutro'],
+        ['Banheiro e lavabo', 'Rolô ou Horizontal de Alumínio 16 mm', 'Resistência total ao vapor do chuveiro com privacidade imediata'],
+      ] },
+      { t: 'guides', kicker: 'Guias técnicos de persianas', h2: 'Leia os artigos do Isani sobre <em>persianas</em>', sub: 'Tire todas as dúvidas técnicas antes de definir o modelo da sua janela.', items: [
+        ['/blog/persiana-ideal-para-cada-ambiente/', 'Guia por cômodo', 'A persiana ideal para cada ambiente da casa', 'Por que indicamos Champion na varanda, Double Vision e Romana no escritório e 16 mm no banheiro.'],
+        ['/blog/persiana-vertical-ou-horizontal/', 'Comparativo', 'Persiana vertical ou horizontal: 50 mm, madeira e alumínio', 'Quando usar a vertical em portas de correr e quando apostar na horizontal de 50 mm.'],
+        ['/blog/cortina-ou-persiana-na-cozinha/', 'Cozinha e área gourmet', 'Cortina ou persiana na cozinha: Tela Solar 5% e limpeza', 'Por que o tecido comum acumula gordura e como a tela solar 5% e o alumínio facilitam o dia a dia.'],
+        ['/blog/como-funciona-persiana-motorizada/', 'Automação', 'Como funciona a persiana motorizada: elétrica e bateria', 'Autonomia média de 6 meses nos motores a bateria e como o freio mecânico atua na falta de luz.'],
+        ['/blog/persiana-para-dividir-ambientes/', 'Opinião sincera', 'Persiana para dividir ambientes vale a pena?', 'Por que somos contra improvisar persiana como parede divisória e quando cada modelo brilha na janela.'],
+        ['/videos/persiana-horizontal-madeira-barra-mansa/', 'Vídeo real', 'Persiana horizontal de madeira em Barra Mansa', 'Veja em vídeo o acabamento das lâminas de 50 mm com fita decorativa instaladas pela nossa equipe.'],
       ] },
       { t: 'proof' },
     ],
     faq: [
-      ['Qual a diferença entre cortina e persiana?', 'Cortina é confeccionada em tecido e oferece mais versatilidade estética e controle de caimento. Persiana é estruturada em lâminas (madeira, alumínio, PVC) ou enrolamento (rolô, double vision) e oferece controle mais preciso da entrada de luz e calor.'],
-      ['Persiana também escurece por completo?', 'Sim. As persianas têm material com blackout 100%. A escolha entre cortina e persiana é de estética e de uso; o nível de escurecimento depende do material escolhido.'],
-      ['Qual persiana é melhor para home office?', 'Para home office, o screen (tela solar) corta o reflexo no monitor e reduz o calor sem esconder a vista. Quando é preciso escurecer para reuniões por vídeo ou projeção, o rolô com material blackout resolve.'],
-      ['Persiana de madeira serve para cozinha?', 'Sim. As lâminas dão controle de luz por inclinação e resistem bem ao uso diário. Na consultoria o consultor avalia a exposição a vapor e calor do seu ambiente antes de indicar.'],
-      ['Vocês instalam persiana motorizada em apartamento?', 'Sim. O sistema não exige obra: o motor é fixado com acabamento embutido no sanca ou no trilho, sem danificar a estrutura do apartamento.'],
+      ['Qual persiana vocês indicam para varanda, quarto, escritório e banheiro?', 'Para varanda e sacada indicamos a Persiana Champion e a Tela Solar. Para escritório e home office, Double Vision e Romana. Para quarto, Romana e Rolô (inclusive com blackout 100%). E para banheiro, Rolô ou Horizontal de alumínio de 16 mm.'],
+      ['Qual a diferença entre a persiana horizontal de 50 mm e a de 16 mm?', 'A horizontal de 50 mm (em madeira natural ou alumínio) tem lâminas largas e imponentes, indicada para salas e ambientes de luxo. Já a horizontal de alumínio de 16 mm tem lâminas finas e leves, ideal para banheiros e janelas menores.'],
+      ['Qual persiana é melhor para cozinha?', 'Na cozinha indicamos a persiana Rolô em Tela Solar 5% ou a Horizontal de alumínio. Diferente da cortina de tecido tradicional, elas não absorvem gordura nem cheiro e podem ser limpas facilmente com pano úmido e detergente neutro.'],
+      ['Persiana também escurece por completo?', 'Sim. As persianas Rolô e Romana contam com tecidos blackout 100% que bloqueiam totalmente a passagem de luz pelo material.'],
+      ['Vale a pena usar persiana para dividir ambientes?', 'Não recomendamos. Persiana e cortina são feitas para vestir janelas e decorar. No meio de um cômodo de passagem, a peça balança e pode danificar. Para separar espaços, o ideal é fazer uma parede de drywall.'],
+      ['Vocês instalam persiana motorizada a bateria ou elétrica?', 'Sim. Trabalhamos tanto com motores ligados na rede elétrica quanto com motores a bateria interna recarregável (para modelos compatíveis, com carga durando em média 6 meses), sem necessidade de quebrar parede.'],
     ],
     links: [['/cortinas/', 'Cortinas sob medida'], ['/cortina-motorizada/', 'Persiana motorizada'], ['/blackout-e-forros/', 'Blackout e forros'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'],
             ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
@@ -86,38 +176,60 @@ export const PAGINAS = [
   // ------------------------------------------------------- BLACKOUT E FORROS
   {
     dir: 'blackout-e-forros',
-    title: 'Blackout e Forros de Cortina: Translúcido e 100% | ShineCortinas',
-    description: 'O forro decide quanta luz entra. Entenda o forro translúcido, o semi blackout de 70% e o blackout 100%, e qual deles resolve o seu ambiente.',
+    title: 'Blackout e Forros de Cortina: Translúcido, 70% e 100% | ShineCortinas',
+    description: 'Forro translúcido (gabardine, cetim, tergal, microfibra), semi blackout 70% e blackout 100%. Veja como vedar a luz no quarto com trilho triplo e transpasse.',
     kicker: 'Blackout e forros',
     h1: 'O forro é a camada que <em>decide</em> quanta luz entra',
-    lead: 'O forro se divide em dois grupos. O forro translúcido dá privacidade, protege o tecido decorativo e quebra parte da claridade, sem escurecer. O forro blackout tem duas versões: 70%, o semi blackout, que deixa penumbra, e 100%, que bloqueia a passagem de luz pelo tecido e entrega escuro de verdade.',
+    lead: 'O forro corre atrás do tecido decorativo e se divide em dois grupos: o forro translúcido, que dá privacidade de dia e protege o tecido nobre contra o sol, e o forro blackout, nas versões de 70% (semi blackout para penumbra) e 100% (bloqueio total da luz pelo material).',
     hero: '/blackouts-tecnicos.avif',
     heroAlt: 'Ambiente escurecido com cortina de blackout instalada pela ShineCortinas',
     blocos: [
-      { t: 'prose', h2: 'Forro translúcido', p: [
-        'Cumpre três funções: dá <strong>privacidade</strong> durante o dia sem fechar o ambiente, <strong>protege o tecido decorativo</strong> da cortina, que fica exposto ao sol todos os dias, e <strong>quebra parte da claridade</strong>.',
-        '"Forro translúcido" é o nome do grupo. Dentro dele há mais de um tecido: gabardine (de algodão ou de poliéster), tergal, tergal verão, cetim, gorgurinho e microfibra. Cada um se comporta de um jeito com a luz e com o caimento, e a escolha é feita na consultoria, junto com o tecido de frente.',
+      { t: 'prose', h2: 'Forro translúcido: proteção solar, privacidade e caimento', p: [
+        'O <strong>forro translúcido</strong> cumpre três funções essenciais: garante privacidade durante o dia sem precisar acender a lâmpada, quebra o excesso de claridade e serve como escudo para o sol não queimar a fibra do tecido decorativo da frente.',
+        'Dentro do grupo dos translúcidos trabalhamos com várias opções e gramaturas no nosso mostruário: <strong>gabardine</strong> (de algodão ou poliéster, como o de 100 g/m²), <strong>tergal e tergal verão</strong> (como o de 70 g/m²), <strong>cetim</strong> (em opções de 70, 90 ou 110 g/m²), <strong>microfibra</strong> (65 ou 100 g/m²) e <strong>gorgurinho</strong>. Na cortina Wave, ele pode ser confeccionado no modelo <strong>forro slim</strong> (reto como um painel, ocupando menos espaço no cortineiro) ou em pregas.',
       ] },
-      { t: 'prose', h2: 'Forro blackout: 70% e 100%', p: [
-        '<strong>Semi blackout (70%)</strong> reduz boa parte da luz e deixa o ambiente em penumbra. Serve para quem quer dormir melhor ou assistir televisão de dia com conforto, sem fazer questão de escuro absoluto.',
-        '<strong>Blackout 100%</strong> bloqueia a passagem de luz pelo tecido. É o que entrega escuro de verdade: quem trabalha à noite e dorme de dia, quarto de bebê, quem tem sono leve, sala de projeção. Para quarto realmente escuro, a cortina com forro blackout 100% resolve.',
-        'As persianas também têm material com blackout 100%, então a decisão entre cortina e persiana é separada da decisão do nível de escurecimento.',
+      { t: 'prose', h2: 'Forro blackout: a diferença real entre 70% e 100%', p: [
+        'O <strong>semi blackout (70%)</strong> filtra a maior parte do sol e deixa o ambiente em uma penumbra confortável. É ótimo para salas de TV e quartos de quem não gosta de escuridão total. Nele, a cor influencia: um semi blackout 70% em tom escuro segura um pouco mais a claridade do que um tom branco ou cru.',
+        'Já o <strong>blackout 100%</strong> possui revestimento vedante que bloqueia totalmente a passagem de luz pelo tecido, seja ele claro ou escuro. Além do escuro para dormir até mais tarde, em relatos práticos das nossas instalações o forro blackout de tecido ajuda a <strong>reduzir a temperatura do ambiente em cerca de 5 a 6 °C</strong> nos dias de sol forte.',
       ] },
-      { t: 'table', h2: 'Qual forro para cada objetivo', head: ['Você quer', 'Forro indicado', 'Resultado'], rows: [
-        ['Privacidade de dia', 'Translúcido', 'Ambiente claro, sem exposição para a rua'],
-        ['Proteger o tecido do sol', 'Translúcido', 'O tecido de frente dura mais'],
-        ['Dormir melhor, sem escuro total', 'Semi blackout (70%)', 'Penumbra'],
-        ['Sala de TV confortável de dia', 'Semi blackout (70%)', 'Tela sem reflexo'],
-        ['Quarto escuro de verdade', 'Blackout 100%', 'Escuro mesmo ao meio-dia'],
+      fig(
+        escurecer,
+        0,
+        'Controle luminoso',
+        'Como o Blackout 100% e o Semi Blackout 70% se comportam contra o sol',
+        'No blackout 100% a luz para na barreira técnica independentemente da cor. No 70% o ambiente fica em penumbra suave.'
+      ),
+      { t: 'prose', h2: 'Como deixar o quarto escuro de verdade (sem frestas de luz)', p: [
+        'Ter o tecido blackout 100% é metade do caminho. A outra metade é impedir que a claridade escape pelas bordas da janela. Por isso projetamos a cortina subindo até o teto ou dentro do cortineiro de gesso, descendo até beijar o piso e avançando com sobra generosa para as laterais.',
+        'Para fechar o pacote técnico nos quartos mais exigentes, utilizamos <strong>finalizadores nas pontas do trilho</strong> (que mantêm as extremidades encostadas na parede) e, quando o cliente quer zero fresta no meio da janela, o <strong>trilho triplo com transpasse central de 15 cm</strong>, onde uma banda cruza 15 cm por trás da outra.',
+      ] },
+      fig(
+        escurecer,
+        1,
+        'Engenharia da instalação',
+        'Por que a cortina sob medida veda melhor as bordas do que a rolô',
+        'Enquanto a persiana rolô deixa frestas naturais nas laterais do tubo, a cortina sob medida cobre o vão com folga do teto ao chão.'
+      ),
+      { t: 'table', h2: 'Qual forro escolher para o seu objetivo', sub: 'Comparativo direto entre as opções que levamos na consultoria em domicílio.', head: ['Seu objetivo no ambiente', 'Forro indicado pela Shine', 'Resultado na prática'], rows: [
+        ['Privacidade de dia mantendo a sala clara', 'Forro translúcido (gabardine, cetim, tergal ou microfibra)', 'Luz natural difusa, sem ninguém ver de fora para dentro'],
+        ['Proteger o linho da frente contra o sol', 'Forro translúcido ou semi blackout 70%', 'Preserva a fibra do tecido nobre por muitos anos'],
+        ['Cortar o reflexo na TV sem breu total', 'Semi blackout 70%', 'Penumbra aconchegante e conforto térmico'],
+        ['Quarto escuro para dormir de dia', 'Blackout 100% + sobras laterais e finalizadores', 'Bloqueio completo da luz pelo tecido e redução térmica de cerca de 5 a 6 °C'],
+        ['Eliminar o risco de luz no meio da cortina', 'Blackout 100% em trilho triplo com transpasse de 15 cm', 'Sobreposição central de 15 cm sem fresta entre os dois panos'],
+      ] },
+      { t: 'guides', kicker: 'Guias técnicos de escurecimento', h2: 'Aprofunde nos artigos do Isani sobre <em>forros e blackout</em>', sub: 'Entenda cada detalhe técnico antes de definir o projeto do seu quarto ou sala de TV.', items: [
+        ['/blog/tipos-de-forro-para-cortina/', 'Guia completo', 'Tipos de forro para cortina: translúcido, 70% e 100%', 'Conheça o gabardine, o tergal verão, o cetim, a microfibra e como escolher o forro certo.'],
+        ['/blog/o-que-e-blackout/', 'Luz e conforto térmico', 'O que é blackout para cortina? Entenda o 70% e o 100%', 'A diferença entre tecido blackout e forro blackout e o impacto na temperatura do quarto.'],
+        ['/blog/como-escurecer-quarto-sala-tv/', 'Instalação sem frestas', 'Como escurecer quarto ou sala de TV de verdade', 'Cortineiro, sobras laterais, finalizadores nas pontas e o trilho triplo com transpasse de 15 cm.'],
       ] },
       { t: 'proof' },
     ],
     faq: [
-      ['O blackout bloqueia toda a luz do quarto?', 'Depende do forro. O forro blackout 100% bloqueia a passagem de luz pelo tecido e é ele que entrega o quarto escuro de verdade. O forro blackout de 70%, chamado de semi blackout, deixa o ambiente em penumbra. Na consultoria o consultor mede a janela e indica o forro certo para o escurecimento que você procura.'],
-      ['Qual a diferença entre tecido blackout e forro blackout?', 'O tecido blackout é o próprio tecido da cortina, que já bloqueia a luz. O forro blackout é uma segunda camada acoplada atrás de uma cortina decorativa, somando escurecimento sem abrir mão da estética do tecido de frente.'],
-      ['Qual a diferença entre forro translúcido e forro blackout?', 'O forro translúcido dá privacidade, protege o tecido decorativo do sol e quebra parte da claridade, mas não escurece. O forro blackout serve para escurecer e existe em duas versões: 70%, que deixa penumbra, e 100%, que bloqueia a passagem de luz pelo tecido.'],
-      ['Quais tecidos servem como forro translúcido?', 'Gabardine (de algodão ou de poliéster), tergal, tergal verão, cetim, gorgurinho e microfibra. Cada um responde de um jeito à luz e ao caimento, e a escolha é feita na consultoria, junto com o tecido decorativo da frente.'],
-      ['Persiana também escurece por completo?', 'Sim. As persianas têm material com blackout 100%.'],
+      ['O blackout bloqueia toda a luz do quarto?', 'Depende da versão escolhida. O forro blackout 100% bloqueia totalmente a passagem de luz pelo tecido e entrega o quarto escuro de verdade. Já o forro blackout de 70% (semi blackout) deixa o ambiente em penumbra.'],
+      ['Quais tecidos vocês utilizam como forro translúcido?', 'Trabalhamos com gabardine (de algodão ou poliéster, ex. 100 g/m²), tergal e tergal verão (ex. 70 g/m²), cetim (70, 90 ou 110 g/m²), microfibra (65 ou 100 g/m²) e gorgurinho. Cada opção é escolhida na visita junto com o tecido da frente.'],
+      ['Como evitar que a luz entre pelo meio ou pelas laterais da cortina?', 'Projetamos a cortina do teto ao chão com sobras laterais generosas, usamos finalizadores nas pontas do trilho para encostar a cortina na parede e, quando necessário, instalamos o trilho triplo com transpasse central de 15 cm para cruzar as duas bandas no meio.'],
+      ['Quais tipos de prega o forro pode ter atrás da cortina Wave?', 'O forro pode ser feito no modelo slim (reto, sem prega, igual a um painel, ótimo para economizar espaço), em prega tombada, prega plissada, prega fêmea, prega macho ou até no modelo Wave (desde que haja 11 cm de distância entre os trilhos).'],
+      ['O forro blackout ajuda a diminuir o calor do quarto?', 'Sim. Em relatos de campo das nossas instalações, o forro blackout de tecido reduz a temperatura interna do ambiente em cerca de 5 a 6 °C nos horários de sol forte.'],
     ],
     links: [['/blog/tipos-de-forro-para-cortina/', 'Artigo: tipos de forro'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/cortina-wave/', 'Cortina wave'],
             ['/blog/o-que-e-blackout/', 'O que é blackout'], ['/portfolio/', 'Projetos reais'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
@@ -126,29 +238,61 @@ export const PAGINAS = [
   // ------------------------------------------------------------ CORTINA WAVE
   {
     dir: 'cortina-wave',
-    title: 'Cortina Wave Sob Medida: Ondas Regulares | ShineCortinas',
-    description: 'Cortina wave é o sistema com trilho especial que forma ondas regulares e uniformes no tecido, criando um desenho contínuo do teto ao chão.',
+    title: 'Cortina Wave Sob Medida: Proporções 2:1, 2,5:1 e 3:1 | ShineCortinas',
+    description: 'Cortina Wave sob medida nas proporções 2:1, 2,5:1 e 3:1 com cordão espaçador 0,4, 0,5 e 0,8. Descubra a medida do cortineiro 15x15 cm e as opções de forro.',
     kicker: 'Cortina wave',
     h1: 'Cortina wave: a onda que fica <em>regular</em> do teto ao chão',
-    lead: 'Cortina wave é um sistema com trilho especial que cria ondas regulares e uniformes no tecido, formando um desenho contínuo. É diferente da cortina comum, em que as pregas são costuradas e o volume varia ao longo do vão.',
+    lead: 'Na cortina Wave, as ondas não dependem da sorte na hora de puxar o pano. Elas são guiadas por um cordão espaçador dentro do trilho e calculadas na oficina nas proporções 2:1, 2,5:1 ou 3:1 para descerem alinhadas do teto até beijar o piso.',
     hero: '/cortina-sob-medida.avif',
     heroAlt: 'Cortina wave em linho com ondas regulares, projeto ShineCortinas',
     blocos: [
-      { t: 'prose', h2: 'Por que a wave virou o padrão de projeto', p: [
-        'A onda uniforme dá ao ambiente uma leitura limpa e contínua, sem os volumes irregulares que aparecem quando a prega é costurada de forma manual. É o acabamento que arquitetos costumam especificar quando querem que a cortina acompanhe a arquitetura, e não compita com ela.',
-        'O efeito depende do trilho, da quantidade de tecido e da confecção. Não é um tecido específico: você escolhe linho, voil, veludo ou blackout, e o sistema wave define o desenho.',
+      { t: 'prose', h2: 'Proporções 2:1, 2,5:1 e 3:1 e o cordão espaçador (0,4, 0,5 e 0,8)', p: [
+        'O segredo de uma cortina Wave imponente está na quantidade de tecido por metro de trilho e na distância entre os carrinhos deslizantes. Aqui na Shine confeccionamos a Wave nas proporções <strong>2:1</strong> (onda mais leve), <strong>2,5:1</strong> (equilíbrio clássico de profundidade) e <strong>3:1</strong> (onda profunda e cheia).',
+        'Dentro do trilho utilizamos o <strong>cordão espaçador nas medidas de 0,4, 0,5 e 0,8</strong>, combinado com uma técnica própria de confecção que <strong>reduz o espaço entre as ondas</strong>. Isso evita que a cortina fique aberta ou esgarçada quando fechada, mantendo as curvas próximas e simétricas de ponta a ponta.',
       ] },
-      { t: 'prose', h2: 'Quando a wave é a melhor escolha', p: [
-        'Ela rende especialmente bem em vãos largos e pé-direito alto, onde a irregularidade das pregas ficaria evidente. Também é a escolha natural de quem quer uma cortina que atravesse a parede inteira com um desenho só.',
-        'Para escurecer, a wave aceita forro: translúcido para privacidade, semi blackout de 70% para penumbra e blackout 100% para escuro total. Veja <a href="/blackout-e-forros/">blackout e forros</a>.',
+      fig(
+        wave,
+        0,
+        'Geometria das ondas',
+        'As proporções 2:1, 2,5:1 e 3:1 vistas de cima no trilho',
+        'Como a quantidade de tecido e o cordão espaçador (0,4, 0,5 e 0,8) definem a profundidade e a proximidade das curvas.'
+      ),
+      { t: 'prose', h2: 'O cortineiro ideal de 15x15 cm e os 6 tipos de forro', p: [
+        'Para que a onda da cortina Wave faça a curva completa para a frente e para trás sem amassar no gesso nem enroscar no forro, eu sempre peço um <strong>cortineiro de no mínimo 15 por 15 centímetros</strong> (15 cm de largura ou profundidade interna por 15 cm de altura).',
+        'Atrás da cortina Wave podemos trabalhar com o <strong>forro slim</strong> (reto, sem prega, igual a um painel, perfeito para não tomar profundidade), além do forro em <strong>prega tombada, prega plissada, prega fêmea, prega macho</strong> e até o forro no próprio <strong>modelo Wave</strong>. Quando o cliente deseja os dois tecidos no modelo Wave, deixamos <strong>11 cm de distância</strong> entre o trilho da frente e o de trás para uma onda nunca bater na outra.',
+      ] },
+      fig(
+        wave,
+        1,
+        'Medidas de obra e gesso',
+        'O cortineiro 15x15 cm e o espaçamento entre cortina e forro',
+        'Planejar a caixa do cortineiro com 15 cm de profundidade por 15 cm de altura garante que as ondas deslizem livres.'
+      ),
+      { t: 'table', h2: 'Especificações técnicas da Cortina Wave Shine', sub: 'Parâmetros reais utilizados pela nossa oficina e equipe de instalação.', head: ['Item técnico', 'Opções que trabalhamos', 'Indicação prática do Isani'], rows: [
+        ['Proporção de tecido', '2:1, 2,5:1 e 3:1', 'Define o volume de pano (de 2 m a 3 m de tecido para cada 1 m de trilho)'],
+        ['Cordão espaçador', '0,4, 0,5 e 0,8', 'Técnica exclusiva que reduz o espaço entre as ondas para não esgarçar'],
+        ['Medida do cortineiro', 'Mínimo 15 x 15 cm', '15 cm de profundidade por 15 cm de altura para trabalhar com bastante espaço'],
+        ['Forro Slim (reto)', 'Painel reto no trilho traseiro', 'Melhor escolha para economizar profundidade dentro do cortineiro'],
+        ['Forros em prega', 'Tombada, plissada, fêmea e macho', 'Dão mais corpo ao forro translúcido ou blackout sem exigir cortineiro gigante'],
+        ['Duplo Wave (frente + forro)', '11 cm entre os dois trilhos', 'Exige cortineiro mais profundo para as ondas da frente e de trás não se tocarem'],
+        ['Tecido e gramatura', 'Acima de 170 g/m² (até 10% linho ou 100% poliéster)', 'Garante peso para a onda cair reta, sem armar e sem encolher na lavagem'],
+      ] },
+      { t: 'guides', kicker: 'Guias técnicos sobre Cortina Wave', h2: 'Tudo o que você precisa saber antes de encomendar a sua <em>Wave</em>', sub: 'Artigos e vídeos reais das nossas instalações no Sul Fluminense.', items: [
+        ['/blog/quantidade-de-tecido-para-cortina-wave/', 'Cálculo e cortineiro', 'Quantidade de tecido para cortina Wave: 2:1, 2,5:1 e 3:1', 'Entenda o cordão espaçador 0,4, 0,5 e 0,8, os tipos de forro e o cortineiro 15x15 cm.'],
+        ['/blog/linho-para-cortinas/', 'Tecido ideal', 'Linho para cortinas: por que a gramatura define a onda', 'Por que usamos tecidos acima de 170 g/m² e poliéster com toque de linho para a Wave não armar.'],
+        ['/blog/bainha-de-cortina/', 'Acabamento de base', 'Bainha dupla de 15 a 20 cm na cortina Wave', 'Como o peso da barra dupla mantém as ondas alinhadas até beijar o piso.'],
+        ['/videos/cortina-wave-linho-barra-do-pirai/', 'Vídeo em Barra do Piraí', 'Cortina Wave em linho instalada em Barra do Piraí', 'Veja em movimento o deslize e o alinhamento das ondas em um projeto residencial real.'],
+        ['/videos/cortina-motorizada-wave-resende/', 'Vídeo em Resende', 'Cortina Wave motorizada em Resende', 'Assista à abertura silenciosa da cortina Wave automatizada pela nossa equipe.'],
+        ['/blog/tipos-de-forro-para-cortina/', 'Controle de luz', 'Como escolher o forro certo para a sua cortina Wave', 'Translúcido, semi blackout 70% ou blackout 100%: qual colocar atrás da sua Wave.'],
       ] },
       { t: 'proof' },
     ],
     faq: [
-      ['O que é cortina wave?', 'Cortina wave é um sistema com trilho especial que cria ondas regulares e uniformes no tecido, formando um desenho contínuo, diferente da cortina comum em que as pregas são costuradas e o volume varia.'],
-      ['A cortina wave aceita blackout?', 'Sim. A wave é um sistema de trilho e confecção, não um tecido. Ela aceita forro translúcido, semi blackout de 70% ou blackout 100%, conforme o escurecimento que você procura.'],
-      ['A wave pode ser motorizada?', 'Sim. O sistema wave é compatível com motorização, que costuma render bem justamente em vãos largos e janelas altas, onde a wave é mais usada.'],
-      ['Qual tecido combina com cortina wave?', 'Linho, voil e veludo são os mais pedidos. A escolha depende da luz do ambiente e do efeito que você procura, e é feita na consultoria com o mostruário na sua casa.'],
+      ['Quais são as proporções de tecido da cortina Wave?', 'Confeccionamos a cortina Wave nas proporções 2:1 (2 metros de tecido para cada 1 metro de trilho), 2,5:1 (2,50 metros por metro) e 3:1 (3 metros por metro). Quanto maior a proporção, mais profundas e cheias ficam as ondas.'],
+      ['Qual o tamanho mínimo do cortineiro de gesso para a cortina Wave?', 'O tamanho mínimo que exigimos para trabalhar com bastante espaço na cortina Wave com forro é 15x15 cm: 15 cm de largura (profundidade interna) por 15 cm de altura.'],
+      ['Quais medidas de cordão espaçador vocês utilizam?', 'Trabalhamos com cordões espaçadores de 0,4, 0,5 e 0,8, aplicando uma técnica na confecção que reduz o espaço entre as ondas para deixar o caimento mais próximo e elegante.'],
+      ['Qual forro vai atrás da cortina Wave?', 'Podemos usar o forro slim (reto, sem prega, igual a um painel), forro em prega tombada, prega plissada, prega fêmea, prega macho ou até forro no modelo Wave. Para usar o forro também em Wave, é necessário deixar 11 cm de distância entre a cortina da frente e a de trás para as ondas não se tocarem.'],
+      ['A cortina Wave pode ser motorizada?', 'Sim. O trilho motorizado da cortina Wave conta inclusive com acionamento inteligente por toque (Touch Motion), além de controle remoto, aplicativo e comando de voz.'],
     ],
     links: [['/cortinas/', 'Cortinas sob medida'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Cortina motorizada'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'],
             ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/persianas/', 'Persianas'], ['/cidades-atendidas/', 'Cidades atendidas']],
@@ -157,29 +301,58 @@ export const PAGINAS = [
   // ------------------------------------------------------- CORTINA MOTORIZADA
   {
     dir: 'cortina-motorizada',
-    title: 'Cortina e Persiana Motorizada com IoT | ShineCortinas',
-    description: 'Cortina e persiana motorizada com sistema IoT de 7ª geração: abre pelo celular, pelo controle ou por voz, com Alexa, Google Home e Apple Home.',
+    title: 'Cortina e Persiana Motorizada: Elétrica, Bateria e Touch Motion | ShineCortinas',
+    description: 'Cortina e persiana motorizada com garantia de até 5 anos. Motores elétricos ou a bateria (carga de ~6 meses), sistema Touch Motion e integração com Alexa.',
     kicker: 'Automação',
-    h1: 'Cortina motorizada: a janela que obedece <em>à sua voz</em>',
-    lead: 'A motorização vale especialmente em janelas altas ou de difícil acesso, salas com grandes vãos e ambientes com várias cortinas. O sistema IoT de 7ª geração abre e fecha pelo celular, pelo controle ou por comando de voz.',
+    h1: 'Cortina motorizada: a janela que obedece <em>ao seu toque e à sua voz</em>',
+    lead: 'Mais do que abrir a cortina pela Alexa, pelo celular ou pelo controle remoto, a motorização preserva o tecido e multiplica a vida útil do conjunto, especialmente em pés-direitos duplos e grandes vãos. Trabalhamos com motores elétricos e opções a bateria recarregável, com até 5 anos de garantia.',
     hero: '/automacao.avif',
     heroAlt: 'Cortina motorizada sendo acionada por controle remoto em sala de estar',
     blocos: [
-      { t: 'prose', h2: 'Quando a motorização se paga', p: [
-        'Em janela alta, cada abertura manual é um esforço, e com o tempo vira uma cortina que ninguém abre. Em sala com vários panos, motorizar transforma cinco gestos em um. E em ambientes de vidro grande, o acionamento programado ajuda a controlar o calor antes de o sol bater.',
-        'Também há o cuidado com o tecido: o acionamento correto reduz o manuseio direto do pano, que é onde a cortina costuma sujar e desgastar.',
+      { t: 'prose', h2: 'Sistema Touch Motion e o que acontece quando acaba a energia', p: [
+        'Muita gente tem receio de motorizar a cortina da sala ou do quarto e ficar com ela travada se faltar luz na rua. Na <strong>cortina motorizada de tecido (trilho motorizado)</strong>, você consegue abrir e fechar a cortina normalmente com a mão quando acaba a energia. E no dia a dia com energia, o trilho tem uma inteligência muito prática chamada <strong>Touch Motion</strong>: basta dar um leve puxão no pano e o motor reconhece o movimento, abrindo ou fechando tudo sozinho sem você precisar procurar o controle remoto.',
+        'Já nas <strong>persianas motorizadas de enrolar</strong> (como Rolô, Romana e Horizontal de alumínio), o funcionamento é diferente: como o tecido sobe enrolado num tubo horizontal, a engrenagem do motor possui um freio mecânico que trava a peça na falta de energia para ela não despencar (exceto nos modelos Painel e Vertical, que correm na horizontal). Explicamos essa diferença em detalhes no artigo <a href="/blog/como-funciona-persiana-motorizada/">como funciona a persiana motorizada</a>.',
       ] },
-      { t: 'prose', h2: 'Integração com a casa conectada', p: [
-        'Os motores são compatíveis com Alexa, Google Home e Apple Home, então a cortina entra nas mesmas rotinas da iluminação e do ar-condicionado. Também funciona por controle e por aplicativo, sem depender de assistente de voz.',
-        'Em apartamento, o sistema não exige obra: o motor é fixado com acabamento embutido no sanca ou no trilho, sem danificar a estrutura.',
+      fig(
+        cortinaMotorizada,
+        0,
+        'Inteligência no trilho',
+        'O acionamento por toque (Touch Motion) e a abertura manual sem energia',
+        'No trilho motorizado de cortina de pano, um leve toque dispara o motor e a embreagem libera o movimento manual se faltar luz.'
+      ),
+      { t: 'prose', h2: 'Motores a bateria (autonomia média de 6 meses) e pé-direito duplo', p: [
+        'Seu apartamento já está pronto e não tem ponto elétrico ao lado do cortineiro? Para diversos modelos de cortinas e persianas, trabalhamos com <strong>motores a bateria interna recarregável</strong> (mediante avaliação técnica dos nossos especialistas para o peso do vão). Dependendo do uso, a carga da bateria dura <strong>em média 6 meses</strong>, e para recarregar basta conectar o cabo carregador como se fosse um celular, sem quebrar gesso nem puxar fio aparente.',
+        'Quando o projeto envolve um <strong>pé-direito duplo ou vãos muito largos e pesados</strong>, nós indicamos a motorização sem pensar duas vezes. Puxar uma cortina alta pela mão ou forçar a cordinha todo dia tensiona a costura e os carrinhos. Com o motor conduzindo o peso de forma constante lá em cima, a cortina não sofre tranco e a garantia chega a <strong>até 5 anos nos sistemas motorizados</strong>.',
+      ] },
+      fig(
+        cortinaMotorizada,
+        1,
+        'Engenharia e durabilidade',
+        'Por que motorizar sem pensar duas vezes em pé-direito duplo e grandes vãos',
+        'O motor traciona o peso uniformemente pelo trilho superior, protegendo o tecido e ampliando a garantia para até 5 anos.'
+      ),
+      { t: 'table', h2: 'Comparativo: Cortina de Tecido Motorizada vs. Persiana Motorizada', sub: 'Entenda como cada sistema opera na prática.', head: ['Característica', 'Cortina de Tecido Motorizada (Trilho)', 'Persiana Motorizada (Rolô, Romana e Horizontal)'], rows: [
+        ['Alimentação disponível', 'Ponto elétrico (110V/220V) ou motor a bateria (sob consulta)', 'Ponto elétrico (110V/220V) ou motor a bateria (sob consulta)'],
+        ['Duração média da bateria', 'Cerca de 6 meses por carga (conforme o uso)', 'Cerca de 6 meses por carga (conforme o uso)'],
+        ['Se acabar a energia elétrica', 'Abre e fecha normalmente com a mão pelo trilho', 'Fica travada pelo freio da engrenagem (exceto Painel e Vertical)'],
+        ['Acionamento por toque no pano', 'Sim (sistema inteligente Touch Motion)', 'Acionamento por controle remoto, app ou comando de voz'],
+        ['Casa conectada (IoT)', 'Compatível com Alexa, Google Home e Apple Home', 'Compatível com Alexa, Google Home e Apple Home'],
+        ['Garantia Shine', 'Até 5 anos no sistema motorizado', 'Até 5 anos no sistema motorizado'],
+      ] },
+      { t: 'guides', kicker: 'Guias e vídeos de automação', h2: 'Veja os detalhes técnicos da <em>motorização</em>', sub: 'Artigos escritos pelo Isani e vídeos reais de projetos automatizados entregues pela Shine.', items: [
+        ['/blog/por-que-escolher-cortina-motorizada/', 'Cortina de tecido', 'Por que escolher cortina motorizada: Touch Motion e bateria', 'Como funciona o reconhecimento de toque no pano, a abertura sem energia e a vantagem no pé-direito duplo.'],
+        ['/blog/como-funciona-persiana-motorizada/', 'Persianas técnicas', 'Como funciona a persiana motorizada: motores e modelos', 'Por que as persianas de enrolar travam na falta de luz e quando usar motor a bateria ou ponto elétrico.'],
+        ['/videos/cortina-motorizada-wave-resende/', 'Vídeo em Resende', 'Cortina motorizada Wave em Resende', 'Assista ao deslizamento contínuo e silencioso de uma cortina Wave motorizada instalada pela nossa equipe.'],
+        ['/videos/cortina-screen-motorizada-mangaratiba/', 'Vídeo em Mangaratiba', 'Persiana Screen motorizada em grande vão', 'Veja na prática o recolhimento automatizado de telas solares em área envidraçada.'],
       ] },
       { t: 'proof' },
     ],
     faq: [
-      ['Cortina motorizada vale a pena?', 'Sim, especialmente em janelas altas ou de difícil acesso, salas com grandes vãos e ambientes com múltiplas cortinas. A motorização de 7ª geração permite acionamento por controle, celular ou voz.'],
-      ['Vocês instalam persiana motorizada em apartamento?', 'Sim. O sistema não requer obra: o motor é fixado com acabamento embutido no sanca ou no trilho, sem danificar a estrutura do apartamento.'],
-      ['Funciona com Alexa e Google Home?', 'Sim. Os motores são compatíveis com Alexa, Google Home e Apple Home, e também funcionam por controle remoto e aplicativo.'],
-      ['Qual a garantia da motorização?', 'A garantia é de 1 ano nas cortinas e persianas não motorizadas e chega a até 5 anos nos projetos motorizados.'],
+      ['Preciso quebrar a parede se não tiver tomada perto da janela?', 'Não necessariamente. Trabalhamos com motores a bateria interna recarregável para diversos modelos de cortinas e persianas (mediante consulta com nossos especialistas para avaliar o peso e o vão). A carga dura em média 6 meses dependendo do uso.'],
+      ['O que acontece com a cortina ou persiana motorizada se acabar a luz?', 'Na cortina motorizada de pano (trilho motorizado), você consegue abrir e fechar normalmente com a mão. Já nas persianas motorizadas que funcionam enrolando na horizontal (Rolô, Romana e Horizontal de alumínio), o sistema de engrenagem trava o tubo na falta de luz para a peça não descer sozinha, exceto nos modelos Painel e Vertical.'],
+      ['Como funciona o sistema Touch Motion da cortina motorizada?', 'É um recurso inteligente do trilho motorizado: quando você dá um leve toque ou puxão no tecido indicando a direção, o motor reconhece o movimento e abre ou fecha a cortina inteira sozinho, dispensando o controle remoto.'],
+      ['Por que a motorização é tão indicada para pé-direito duplo e vãos grandes?', 'Porque em cortinas muito altas e largas o peso do tecido é grande. O motor puxa tudo pelo topo com força constante, evitando que alguém force a cordinha ou puxe a barra lateral. Isso aumenta a vida útil da cortina e garante até 5 anos de garantia na motorização.'],
+      ['Funciona com Alexa, Google Home e celular?', 'Sim. Os motores IoT de 7ª geração funcionam por controle remoto, aplicativo no celular e comando de voz (Alexa, Google Home e Apple Home), permitindo inclusive programar horários de abertura e fechamento.'],
     ],
     links: [['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/cortina-wave/', 'Cortina wave'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'],
             ['/blog/por-que-escolher-cortina-motorizada/', 'Artigo sobre motorização'], ['/videos/', 'Vídeos'], ['/portfolio/', 'Projetos reais'], ['/cidades-atendidas/', 'Cidades atendidas']],
@@ -188,28 +361,58 @@ export const PAGINAS = [
   // -------------------------------------------------- TRILHOS E ACIONAMENTOS
   {
     dir: 'trilhos-e-acionamentos',
-    title: 'Trilhos e Acionamentos para Cortina Sob Medida | ShineCortinas',
-    description: 'Trilho, varão e acionamento definem o uso diário da cortina. Entenda as opções e como a escolha muda o caimento e a durabilidade do projeto.',
+    title: 'Trilhos e Acionamentos para Cortina: Trilho Suíço, Varão e Cortineiro | ShineCortinas',
+    description: 'Trilho suíço em alumínio, cortineiro 15x15 cm, trilho triplo com transpasse de 15 cm e varão de 19 mm ou 28 mm com suporte central. Veja como escolher.',
     kicker: 'Trilhos e acionamentos',
-    h1: 'Trilhos e acionamentos: a parte que <em>ninguém elogia</em> e todo mundo sente',
-    lead: 'O trilho e o acionamento não aparecem na foto, mas são eles que definem se a cortina abre com leveza todo dia, se o tecido corre alinhado e se o projeto continua funcionando anos depois.',
+    h1: 'Trilhos e acionamentos: a engenharia que <em>ninguém vê</em> e todo mundo sente',
+    lead: 'O trilho e o acionamento são a fundação mecânica da cortina. São eles que definem se a onda corre leve sem engasgar na emenda, se a luz vaza pelo topo da janela e se uma cortina pesada vai continuar alinhada daqui a dez anos.',
     hero: '/automacao.avif',
     heroAlt: 'Cortina motorizada com acionamento por controle, projeto ShineCortinas',
     blocos: [
-      { t: 'prose', h2: 'Trilho ou varão', p: [
-        'O trilho aproxima o tecido da parede e dá uma leitura mais limpa, além de ser o que permite sistemas como a <a href="/cortina-wave/">cortina wave</a>. O varão é um elemento aparente, decorativo, e pede mais atenção à saída da bainha e ao volume das pregas.',
-        'A escolha entre os dois não é só estética: muda o desenho da cortina, a forma de abrir e o que dá para fazer com o tecido.',
+      { t: 'prose', h2: 'Trilho no cortineiro (15x15 cm), trilho na laje ou varão aparente?', p: [
+        'Sempre que a obra tem rebaixo de gesso, recomendamos planejar um <strong>cortineiro com no mínimo 15 por 15 centímetros</strong> (15 cm de profundidade por 15 cm de altura). Essa medida acomoda com folga o trilho da <a href="/cortina-wave/">cortina Wave</a> e o trilho do forro sem que as ondas raspem no gesso. E quando o ambiente não tem gesso? Nós fixamos o <strong>trilho suíço de alumínio direto na laje</strong>, fazendo a cortina nascer colada no teto para alongar a parede e vedar a luz superior.',
+        'Já para quem faz questão da estética do <strong>varão aparente</strong>, dimensionamos a espessura do tubo pelo peso do projeto: <strong>varão de 19 mm</strong> para cortinas leves em vãos menores e <strong>varão de 28 mm</strong> para cortinas encorpadas, blackout ou janelas largas. Acima de <strong>2,00 metros de largura</strong>, instalamos obrigatoriamente o suporte central para o tubo não envergar no meio.',
       ] },
-      { t: 'prose', h2: 'Acionamento: manual ou motorizado', p: [
-        'O acionamento deve ser definido pela frequência de uso e pela ergonomia. Em vãos maiores e janelas altas, a solução motorizada eleva o conforto e preserva o tecido, porque reduz o manuseio direto do pano.',
-        'Veja as opções de <a href="/cortina-motorizada/">motorização com IoT</a>, compatíveis com Alexa, Google Home e Apple Home.',
+      fig(
+        varao,
+        0,
+        'Engenharia de sustentação',
+        'Varão tradicional vs. Tubo Suíço em vãos acima de 2,00 m',
+        'Por que o suporte central é obrigatório acima de 2 metros e como o tubo suíço permite que a cortina corra livre por baixo do suporte.'
+      ),
+      { t: 'prose', h2: 'Trilho simples, duplo e triplo com transpasse central de 15 cm', p: [
+        'A escolha do trilho também resolve problemas específicos de luz e espaço. No sistema tradicional de sala ou quarto, usamos o <strong>trilho duplo</strong> (ou dois trilhos paralelos): o tecido principal na frente e o forro translúcido ou blackout correndo independente atrás.',
+        'Quando o cliente precisa de escuridão total no quarto e não quer aquele fio de sol passando no meio onde as duas partes do blackout se encontram, instalamos o <strong>trilho triplo com transpasse central de 15 cm</strong>. Nele, uma banda do blackout corre em um canal e a outra banda corre no canal vizinho, cruzando 15 centímetros no centro da janela. E na montagem do varão duplo, sempre posicionamos o blackout no suporte traseiro (colado na parede) e a cortina decorativa no suporte dianteiro.',
+      ] },
+      fig(
+        varao,
+        1,
+        'Montagem em camada dupla',
+        'Como posicionamos o forro blackout e o tecido principal no suporte duplo',
+        'O blackout fica no canal traseiro próximo ao vidro para barrar a luz na origem, enquanto o tecido nobre veste a frente.'
+      ),
+      { t: 'table', h2: 'Qual estrutura escolher para a sua janela', sub: 'Comparativo técnico entre as soluções de fixação e acionamento da Shine.', head: ['Sistema de fixação', 'Medida / Especificação técnica', 'Onde entrega o melhor resultado'], rows: [
+        ['Trilho dentro do cortineiro', 'Cortineiro mínimo de 15 x 15 cm', 'Esconde toda a ferragem e o cabeçote, ideal para cortina Wave com forro'],
+        ['Trilho suíço direto na laje', 'Perfil de alumínio fixado no teto', 'Ambientes sem rebaixo de gesso que pedem cortina do teto ao chão sem vazar luz'],
+        ['Trilho triplo com transpasse', 'Sobreposição central de 15 cm no blackout', 'Quartos e suítes que exigem vedação total da fresta central entre os panos'],
+        ['Varão aparente de 19 mm', 'Tubo de 19 mm (suporte central acima de 2 m)', 'Janelas compactas com cortinas leves de voil ou linho sem forro pesado'],
+        ['Varão aparente de 28 mm / Tubo Suíço', 'Tubo reforçado de 28 mm', 'Cortinas pesadas, duplas ou vãos largos que precisam de firmeza sem selar'],
+        ['Trilho motorizado com Touch Motion', 'Elétrico ou a bateria (garantia até 5 anos)', 'Pés-direitos duplos, grandes vãos de sala e automação residencial IoT'],
+      ] },
+      { t: 'guides', kicker: 'Guias técnicos de instalação', h2: 'Leia os artigos do Isani sobre <em>trilhos, varões e medidas</em>', sub: 'Veja na prática como planejar o cortineiro e escolher a ferragem certa.', items: [
+        ['/blog/varao-para-cortina/', 'Varão ou trilho', 'Varão para cortina: medidas de 19 mm e 28 mm e suporte central', 'Quando usar varão aparente, tubo suíço deslizante ou trilho fixado direto no teto.'],
+        ['/blog/quantidade-de-tecido-para-cortina-wave/', 'Cortineiro 15x15 cm', 'O cortineiro 15x15 cm e o cordão espaçador da Wave', 'Por que a profundidade do gesso e o cordão 0,4, 0,5 e 0,8 mudam o movimento da cortina.'],
+        ['/blog/como-escurecer-quarto-sala-tv/', 'Trilho triplo', 'Como funciona o trilho triplo com transpasse de 15 cm', 'O recurso técnico que elimina a fresta de luz no encontro central do blackout.'],
+        ['/blog/por-que-escolher-cortina-motorizada/', 'Trilho motorizado', 'Trilho motorizado com sistema Touch Motion', 'Como o trilho inteligente reconhece o toque na cortina e abre manualmente se faltar energia.'],
       ] },
       { t: 'proof' },
     ],
     faq: [
-      ['Trilho ou varão: qual escolher?', 'O trilho aproxima o tecido da parede, dá uma leitura mais limpa e permite sistemas como a cortina wave. O varão é aparente e decorativo, e pede mais atenção à saída da bainha e ao volume de pregas.'],
-      ['Vale motorizar todas as cortinas da casa?', 'Nem sempre. A motorização rende mais em janelas altas, vãos largos e ambientes com várias cortinas. Em janelas de uso simples, o acionamento manual costuma atender bem.'],
-      ['O trilho aparece depois de instalado?', 'Depende do projeto. Em muitos casos o trilho fica embutido no sanca ou coberto pelo próprio cabeçote da cortina. Na consultoria o consultor avalia o acabamento do teto antes de indicar.'],
+      ['Trilho ou varão: qual é melhor para a minha cortina?', 'Sempre que o objetivo é um acabamento arquitetônico limpo do teto ao chão (especialmente na cortina Wave) ou vedar a entrada de luz pelo topo, o trilho de alumínio no cortineiro ou direto na laje é a melhor escolha. O varão é indicado quando não há gesso e você quer que a ferragem apareça como detalhe decorativo.'],
+      ['Qual medida devo deixar no cortineiro de gesso?', 'Pedimos no mínimo 15 por 15 centímetros (15 cm de profundidade por 15 cm de altura) para trabalhar com folga na cortina Wave com forro. Se o projeto tiver tanto a cortina da frente quanto o forro no modelo Wave, é preciso considerar também 11 cm de distância entre os dois trilhos.'],
+      ['Quando usar varão de 19 mm e quando usar varão de 28 mm?', 'O varão de 19 mm serve para janelas menores e cortinas leves de uma única camada. Já o varão de 28 mm é muito mais robusto, indicado para vãos largos, cortinas duplas ou tecidos encorpados com blackout, evitando que o tubo envergue.'],
+      ['Por que o suporte central é obrigatório acima de 2 metros no varão?', 'Porque qualquer tubo acima de 2,00 metros de largura sofre flexão no meio com o peso da cortina. Com o suporte central o varão fica 100% reto, dividindo a cortina em duas bandas simétricas ou usando tubo suíço deslizante para correr por baixo do suporte.'],
+      ['O que é o trilho triplo com transpasse de 15 cm?', 'É um trilho com três canais onde as duas bandas do forro blackout correm em pistas separadas e se cruzam por 15 centímetros no meio da janela, eliminando aquele risco de claridade central nos quartos.'],
     ],
     links: [['/cortina-motorizada/', 'Cortina motorizada'], ['/cortina-wave/', 'Cortina wave'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'],
             ['/metodo/', 'Como funciona'], ['/portfolio/', 'Projetos reais'], ['/faq/', 'Perguntas frequentes'], ['/cidades-atendidas/', 'Cidades atendidas']],
@@ -248,7 +451,7 @@ export const PAGINAS = [
   // ------------------------------------------------------------------- SOBRE
   {
     dir: 'sobre',
-    title: 'Sobre a ShineCortinas: 17 Anos no Sul Fluminense | ShineCortinas',
+    title: 'Sobre a ShineCortinas: Desde 2009 no Sul Fluminense | ShineCortinas',
     description: 'Fundada em 2009 e dirigida por Isani Oliveira, a ShineCortinas atende 15 cidades do Sul Fluminense com equipe própria, do consultor ao instalador.',
     kicker: 'Sobre a Shine',
     h1: 'Desde 2009 medindo, confeccionando e <em>instalando</em>',
