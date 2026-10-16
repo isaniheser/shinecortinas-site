@@ -5,6 +5,8 @@ import {AURORA_CSS} from './aurora-layout.mjs';
 import blackout from './content/blackout.mjs';
 import escurecer from './content/escurecer.mjs';
 import varao from './content/varao.mjs';
+import wave from './content/wave.mjs';
+import linho from './content/linho.mjs';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -18,6 +20,8 @@ const POSTS = [
   blackout,
   escurecer,
   varao,
+  wave,
+  linho,
   {
     slug: 'tipos-de-forro-para-cortina',
     layout: 'editorial',

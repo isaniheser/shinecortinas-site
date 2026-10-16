@@ -18,22 +18,26 @@ Método: uma conversa curta por post (5 a 10 perguntas), depois a redação.
 | 1 | tipos-de-forro-para-cortina | **Reescrito 2ª vez** (13/09, rascunho Isani+GPT, layout editorial; pilar de forros) |
 | 2 | o-que-e-blackout | **Reescrito e publicado** (layout editorial; ligado ao guia de forros) |
 | 3 | como-escurecer-quarto-sala-tv | **Reescrito e publicado** (15/10, layout editorial; sala de TV, cor no 100% vs 70% e 4 pontos da instalação) |
-| 4 | linho-para-cortinas | **próximo** |
-| 5 | por-que-escolher-cortina-motorizada | fila |
+| 4 | linho-para-cortinas | **Reescrito e publicado** (15/10, layout editorial; máx. 10% linho ou 100% poliéster, gramatura >170 g/m² e exceção peletizado) |
+| 5 | por-que-escolher-cortina-motorizada | **próximo** |
 | 6 | como-funciona-persiana-motorizada | fila |
 | 7 | persiana-vertical-ou-horizontal | fila |
 | 8 | persiana-ideal-para-cada-ambiente | fila |
 | 9 | persiana-para-dividir-ambientes | fila |
 | 10 | cortina-ou-persiana-na-cozinha | fila |
-| 11 | qual-cortina-escolher-para-sala | fila |
+| 11 | qual-cortina-escolher-para-sala | **próximo** |
 | 12 | altura-ideal-da-cortina | **Reescrito** (10/09, layout editorial; pilar dos satélites 13 e 14) |
 | 13 | bainha-de-cortina | **Reescrito** (layout editorial; satélite de altura) |
 | 14 | varao-para-cortina | **Reescrito e publicado** (15/10, layout editorial; 19/28 mm, alumínio, tubo suíço acima de 2 m e varão duplo) |
-| 15 | quantidade-de-tecido-para-cortina-wave | **próximo** |
+| 15 | quantidade-de-tecido-para-cortina-wave | **Reescrito e publicado** (15/10, layout editorial; proporções 2:1, 2,5:1 e 3:1, cordão 0,4/0,5/0,8, 6 forros e cortineiro 15x15) |
 | 16 | (duplicatas com canonical) | não reescrever |
 
 ## Artigos novos sugeridos
 
+- **Como proteger a cortina do sol (gramatura, forro e resistência da fibra).**
+  Ideia do Isani (15/10/2026) ao explicar que tecidos com gramatura acima de
+  170 g/m² demoram mais a queimar a fibra quando o sol bate e trabalham melhor
+  com o forro de proteção.
 - **Os tecidos do forro translúcido: gabardine, tergal, cetim e gorgurinho.**
   Ideia do Isani. Depende de ele descrever cada tecido: comportamento com a luz,
   caimento, durabilidade, quando indicar e quando evitar. Busca de cauda longa

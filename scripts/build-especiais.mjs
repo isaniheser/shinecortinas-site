@@ -188,13 +188,13 @@ const POST_META = {
   'como-escurecer-quarto-sala-tv': ['Como Escurecer Quarto e Sala de TV com Cortina | ShineCortinas', 'Veja como escurecer quarto e sala de TV com cortina sob medida: diferença entre blackout 100% e 70%, influência da cor do tecido e ajustes na instalação.'],
   'como-funciona-persiana-motorizada': ['Como Funciona a Persiana Motorizada? | ShineCortinas', null],
   'cortina-ou-persiana-na-cozinha': ['Cortina ou Persiana na Cozinha: Qual Escolher | ShineCortinas', null],
-  'linho-para-cortinas': ['Linho para Cortinas: Como Escolher | ShineCortinas', null],
+  'linho-para-cortinas': ['Linho para Cortinas: Caimento, Gramatura e Lavagem | ShineCortinas', 'Quer cortina de linho? Entenda por que indico no máximo 10% de linho ou 100% poliéster que imita linho, gramatura acima de 170 g/m² e tecido peletizado.'],
   'persiana-ideal-para-cada-ambiente': ['Persiana Ideal para Cada Ambiente | ShineCortinas', null],
   'persiana-para-dividir-ambientes': ['Persiana para Dividir Ambientes | ShineCortinas', null],
   'persiana-vertical-ou-horizontal': ['Persiana Vertical ou Horizontal: Qual Escolher | ShineCortinas', null],
   'por-que-escolher-cortina-motorizada': ['Por Que Escolher Cortina Motorizada | ShineCortinas', null],
   'qual-cortina-escolher-para-sala': ['Qual Cortina Escolher para Sala | ShineCortinas', null],
-  'quantidade-de-tecido-para-cortina-wave': ['Quantidade de Tecido para Cortina Wave | ShineCortinas', null],
+  'quantidade-de-tecido-para-cortina-wave': ['Quantidade de Tecido para Cortina Wave: 2:1 a 3:1 | ShineCortinas', 'Saiba calcular a quantidade de tecido para cortina Wave (proporções 2:1, 2,5:1 e 3:1), cordão espaçador 0,4 a 0,8, tipos de forro e cortineiro mínimo 15x15 cm.'],
   'varao-para-cortina': ['Varão para Cortina: Tubo Suíço, Altura e Medidas | ShineCortinas', 'Saiba escolher varão para cortina: diâmetros de 19 mm e 28 mm em alumínio, varão simples ou duplo, suporte central acima de 2 m e como funciona o tubo suíço.'],
 };
 
