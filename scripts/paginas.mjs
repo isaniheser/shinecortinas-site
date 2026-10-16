@@ -269,7 +269,7 @@ export const PAGINAS = [
     ],
     faq: [
       ['O que é a ShineCortinas e o que ela oferece?', 'A ShineCortinas é uma empresa especializada em cortinas e persianas sob medida, com base em Volta Redonda (RJ), atendendo todo o Sul Fluminense há 17 anos com consultoria gratuita em domicílio, medição a laser, confecção e instalação por equipe própria.'],
-      ['Há quanto tempo a ShineCortinas existe?', 'Desde 2009, com 17 anos de atuação no Sul Fluminense, mais de 9.000 projetos entregues e nota 4,9 no Google, com 294 avaliações.'],
+      ['Há quanto tempo a ShineCortinas existe?', 'Desde 2009, com 17 anos de atuação no Sul Fluminense, mais de 9.000 ambientes transformados e nota 4,9 no Google, com 294 avaliações.'],
       ['A ShineCortinas tem loja física?', 'Não trabalhamos com loja física aberta ao público. Nossa base fica em Volta Redonda (RJ) e atendemos exclusivamente no modelo de consultoria em domicílio: o consultor vai até a sua casa com o mostruário completo.'],
       ['Vocês atendem pousadas e ambientes comerciais?', 'Sim. A ShineCortinas atende residências, pousadas, chalés, hotéis e ambientes comerciais, com experiência especial em projetos para pousadas na região serrana do Sul Fluminense.'],
     ],
@@ -284,7 +284,7 @@ export const PAGINAS = [
     description: 'Ambientes medidos, confeccionados e instalados pela equipe da ShineCortinas no Sul Fluminense. Cortina wave, blackout, motorizada, screen e persiana de madeira.',
     kicker: 'Projetos reais',
     h1: 'Ambientes que a nossa equipe <em>entregou</em>',
-    lead: 'Cada projeto abaixo foi medido, confeccionado e instalado pela equipe da Shine. Sem filtro e sem render: é o resultado que o cliente vê ao chegar em casa.',
+    lead: 'Cada projeto abaixo foi medido, confeccionado e instalado pela equipe da Shine. Acabamento de alfaiataria sob medida: é o resultado que o cliente vê ao chegar em casa.',
     hero: '/hero-sala.avif',
     heroAlt: 'Sala com cortina sob medida instalada pela ShineCortinas',
     blocos: [
