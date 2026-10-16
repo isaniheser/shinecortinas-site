@@ -3,6 +3,8 @@ import {AURORA_CSS} from './aurora-layout.mjs';
 // Fonte dos fatos: conhecimento do Isani (ver CLAUDE.md → "Fatos de produto").
 // Nada aqui pode contradizer aquela seção. Uso: node scripts/build-blog.mjs
 import blackout from './content/blackout.mjs';
+import escurecer from './content/escurecer.mjs';
+import varao from './content/varao.mjs';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,6 +16,8 @@ const TODAY = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Pa
 
 const POSTS = [
   blackout,
+  escurecer,
+  varao,
   {
     slug: 'tipos-de-forro-para-cortina',
     layout: 'editorial',

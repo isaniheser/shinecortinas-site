@@ -136,11 +136,13 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     "lavagem a seco" não significava limpeza com solvente. Nomes Max Blackout,
     Blackout Ultra e Super Blackout foram exemplos da entrevista, não prova de
     equivalência entre produtos de fabricantes diferentes.
+  - **Sala de TV e cor do blackout (esclarecido pelo Isani, 15/10/2026):** na maioria dos projetos de sala de TV, a preferência é trabalhar com **cortina de tecido**, pois deixa o ambiente mais clássico e veda melhor no conjunto (embora a persiana rolô blackout vede 100% na trama, a claridade passa pelas frestas laterais). Sobre a **cor do tecido**: se for **blackout 100%**, a cor **não** influencia (branco, areia, bege ou off-white vedam 100% da mesma forma). Se for **blackout 70% (semi blackout)**, a cor influencia: um tecido mais claro deixa passar mais claridade do que um tecido mais escuro.
+  - **Varões e Tubo Suíço (esclarecido pelo Isani, 15/10/2026):** a Shine trabalha com varões de **28 mm e 19 mm**, em **alumínio, inox e madeira** (os de **alumínio** são os mais utilizados e os mais indicados). Cores trabalhadas: **cromado, aço escovado, branco, preto fosco** (em alta), **dourado, ouro velho e cobre**. Ponteiras trabalhadas: vários modelos, entre os mais conhecidos **ponteira bola, ponteira tampão, ponteira diamante e ponteira chama**. Tipos: **varão simples** (1 tecido) e **varão duplo** (2 tecidos: forro ou blackout atrás e cortina na frente, virada para o lado do cliente). Modelos de deslizamento: **varão padrão** (para cortina de argola e de ilhós) e **varão ou tubo suíço** (trilho disfarçado de tubo). Acima de **2,00 m de largura**, é imprescindível usar **suporte no meio do varão**; por isso o Isani prefere o **tubo suíço**, pois a cortina flutua por baixo do tubo e não toca no suporte central.
   - **Números confirmados pelo Isani (set/2026):** empresa desde 2009; "mais de 9.000
     ambientes transformados". Podem ser usados no texto e no schema.
   - **Nota do Google (coletada em 06/set/2026 no Perfil da Empresa):** **4,9 com 294
     avaliações**. Nunca escrever "5.0"; o número vem de `docs/dados-google/perfil.json`.
-    Sem `aggregateRating` no schema (removido). Horário oficial: **seg–sex 08:00–17:00**,
+    `aggregateRating` ativo no schema `LocalBusiness` (decisão de 14/10/2026). Horário oficial: **seg–sex 08:00–17:00**,
     já no `openingHoursSpecification` de todo LocalBusiness.
   - **Garantia (informada pelo Isani, set/2026):** 1 ano para cortinas e persianas
     **não motorizadas**; até **5 anos** nos projetos **motorizados**. Não existe "8 anos".
@@ -155,8 +157,10 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
 - **WhatsApp (CTA padrão):**
   `https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.`
   Telefones: (24) 99329-8763 (WhatsApp) e (24) 3338-3069.
-- **Linguagem — tom refinado e seletivo (DEMONSTRAR, não anunciar):** o público
-  é a família que pode investir num projeto sob medida (não cortina de prateleira).
+- **Linguagem — tom refinado, natural e sem cacoetes de IA (regra reforçada pelo Isani em 15/10/2026):**
+  - Nos artigos do blog, escrever em **tom coloquial brasileiro, direto e humano**, na primeira pessoa do Isani (*"Quando eu vou na casa do cliente..."*, *"Muita gente me pergunta..."*, *"Veja bem:"*). Quem ler precisa sentir que foi escrito palavra por palavra pelo Isani.
+  - **Proibido cacoetes de IA:** nunca usar travessões (`—` ou `–`) para intercalar frases, ponto-e-vírgula (`;`) artificial, jargões robóticos ou construções engessadas que não fazem parte da fala cotidiana do brasileiro. Usar vírgulas e pontos finais simples.
+  - O público é a família que pode investir num projeto sob medida (não cortina de prateleira).
   A seleção é feita pela **estética e pelo vocabulário**, jamais por filtro de renda
   explícito no texto (péssimo para marca e SEO). Marca sofisticada **mostra** o
   alto padrão — quase nunca escreve a palavra "luxo".

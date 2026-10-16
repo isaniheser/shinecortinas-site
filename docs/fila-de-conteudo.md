@@ -16,9 +16,9 @@ Método: uma conversa curta por post (5 a 10 perguntas), depois a redação.
 | # | Post | Status |
 |---|---|---|
 | 1 | tipos-de-forro-para-cortina | **Reescrito 2ª vez** (13/09, rascunho Isani+GPT, layout editorial; pilar de forros) |
-| 2 | o-que-e-blackout | **Prévia pronta para revisão** (13/09, explicador de blackout ligado ao guia de forros; ainda sem publicação nesta tarefa). A referência histórica é de 1.466 impressões em três meses, não buscas mensais. |
-| 3 | como-escurecer-quarto-sala-tv | **próximo** (satélite de forros) |
-| 4 | linho-para-cortinas | fila |
+| 2 | o-que-e-blackout | **Reescrito e publicado** (layout editorial; ligado ao guia de forros) |
+| 3 | como-escurecer-quarto-sala-tv | **Reescrito e publicado** (15/10, layout editorial; sala de TV, cor no 100% vs 70% e 4 pontos da instalação) |
+| 4 | linho-para-cortinas | **próximo** |
 | 5 | por-que-escolher-cortina-motorizada | fila |
 | 6 | como-funciona-persiana-motorizada | fila |
 | 7 | persiana-vertical-ou-horizontal | fila |
@@ -27,9 +27,9 @@ Método: uma conversa curta por post (5 a 10 perguntas), depois a redação.
 | 10 | cortina-ou-persiana-na-cozinha | fila |
 | 11 | qual-cortina-escolher-para-sala | fila |
 | 12 | altura-ideal-da-cortina | **Reescrito** (10/09, layout editorial; pilar dos satélites 13 e 14) |
-| 13 | bainha-de-cortina | próximo (satélite de altura) |
-| 14 | varao-para-cortina | próximo (satélite de altura) |
-| 15 | quantidade-de-tecido-para-cortina-wave | fila |
+| 13 | bainha-de-cortina | **Reescrito** (layout editorial; satélite de altura) |
+| 14 | varao-para-cortina | **Reescrito e publicado** (15/10, layout editorial; 19/28 mm, alumínio, tubo suíço acima de 2 m e varão duplo) |
+| 15 | quantidade-de-tecido-para-cortina-wave | **próximo** |
 | 16 | (duplicatas com canonical) | não reescrever |
 
 ## Artigos novos sugeridos
