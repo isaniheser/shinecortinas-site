@@ -138,9 +138,10 @@ const sortedUrls = [...urls].sort((a, b) => a.localeCompare(b));
 const sitemapXml = createSitemapXml(sortedUrls, lastmods);
 
 fs.writeFileSync(path.join(BUILD_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
-// robots.txt NÃO é gerado aqui: é um arquivo-fonte versionado (libera os buscadores de IA).
-// Gerá-lo sobrescrevia essa configuração a cada deploy.
-if (!fs.existsSync(path.join(BUILD_DIR, 'robots.txt'))) throw new Error('robots.txt ausente na raiz');
+// robots.txt, llms.txt e a chave IndexNow são arquivos-fonte versionados na raiz.
+for (const reqFile of ['robots.txt', 'llms.txt', 'd8a4f2c9e1b74360a5c8e2d9f1b3a7c4.txt']) {
+  if (!fs.existsSync(path.join(BUILD_DIR, reqFile))) throw new Error(`${reqFile} ausente na raiz`);
+}
 
 console.log(`Generated sitemap.xml with ${sortedUrls.length} canonical URLs.`);
 
