@@ -10,7 +10,7 @@ const entries = [
   ['Sobre a Shine','Conheça nossa história','/sobre/','/isani-consultoria-800.avif'],
   ['Vamos conversar','Seu ambiente começa aqui','/contato/','/cortina-sob-medida.avif'],
 ];
-const extra = [['/cortina-motorizada/','Automação'],['/metodo/','Como funciona'],['/cidades-atendidas/','Cidades']];
+const extra = [['/cortina-motorizada/','Automação'],['/lavagem-de-cortinas/','Lavagem'],['/metodo/','Como funciona'],['/cidades-atendidas/','Cidades']];
 
 export function auroraHeader() {
   return `<header class="sl-header"><div class="sl-wrap sl-header__in"><a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="70" height="70" decoding="async"></a></div></header>

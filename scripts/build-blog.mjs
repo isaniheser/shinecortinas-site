@@ -14,6 +14,7 @@ import verticalHorizontal from './content/vertical-horizontal.mjs';
 import dividirAmbientes from './content/dividir-ambientes.mjs';
 import persianaAmbiente from './content/persiana-ambiente.mjs';
 import cozinha from './content/cozinha.mjs';
+import lavagem from './content/lavagem.mjs';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -36,6 +37,7 @@ const POSTS = [
   dividirAmbientes,
   persianaAmbiente,
   cozinha,
+  lavagem,
   {
     slug: 'tipos-de-forro-para-cortina',
     layout: 'editorial',

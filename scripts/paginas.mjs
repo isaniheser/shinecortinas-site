@@ -10,6 +10,7 @@ import verticalHorizontal from './content/vertical-horizontal.mjs';
 import persianaAmbiente from './content/persiana-ambiente.mjs';
 import escurecer from './content/escurecer.mjs';
 import varao from './content/varao.mjs';
+import lavagem from './content/lavagem.mjs';
 
 function fig(post, idx, kicker, h2, sub) {
   const all = post.sections.map((s) => s.html).join('\n');
@@ -89,7 +90,7 @@ export const PAGINAS = [
         ['/blog/quantidade-de-tecido-para-cortina-wave/', 'Cortina Wave', 'Quantidade de tecido na Wave: 2:1, 2,5:1 e 3:1', 'O cálculo de tecido, os cordões espaçadores 0,4, 0,5 e 0,8 e o cortineiro mínimo de 15x15 cm.'],
         ['/blog/altura-ideal-da-cortina/', 'Medidas', 'Altura ideal da cortina: do teto ao piso', 'Por que a cortina do teto ao chão alonga a parede e como deixamos a barra beijando o piso.'],
         ['/blog/bainha-de-cortina/', 'Acabamento', 'Bainha de cortina: barra dupla de 15 a 20 cm', 'Como a dobra dupla de 30 a 40 cm de tecido dá peso e alinhamento para a base da cortina.'],
-        ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo real', 'Ajuste fino e acabamento de alfaiataria em casa', 'Assista na prática como nossa equipe entrega o caimento alinhado no ambiente do cliente.'],
+        ['/blog/lavagem-de-cortinas-sob-medida/', 'Lavagem e manutenção', 'Lavagem e secagem vertical de cortinas sob medida', 'Por que lavar de outro jeito faz o tecido perder o DNA e como revisamos deslizantes, costura e bainha.'],
       ] },
       { t: 'proof' },
     ],
@@ -98,11 +99,11 @@ export const PAGINAS = [
       ['Por que vocês indicam tecido com até 10% de linho ou 100% poliéster?', 'Quando o tecido passa de 10% de linho puro, ele costuma ficar armado, amassa com muita facilidade e corre risco de encolher na lavagem. O poliéster moderno imita com perfeição a trama do linho, da seda e do algodão, mantendo o caimento sedoso e a manutenção prática.'],
       ['Qual a gramatura ideal para uma cortina ter bom caimento?', 'Indicamos tecidos com gramatura superior a 170 gramas por metro quadrado (exceto quando é um tecido peletizado e escovado de trama bem fechada). Abaixo disso o tecido perde peso, não forma onda definida e queima mais rápido no sol.'],
       ['Como escolher a cor da cortina para a sala?', 'A cortina funciona como pano de fundo e faz a transição entre os itens decorativos, conversando principalmente com o estofado e o tapete. Para quem ainda não definiu o sofá ou o tapete, o ideal é trabalhar com tons neutros e pastéis.'],
-      ['Vocês lavam e fazem manutenção de cortinas?', 'Sim. A ShineCortinas oferece serviço completo de lavagem e manutenção: retiramos a cortina, mesmo em pé-direito alto, lavamos com tratamento técnico e reinstalamos.'],
+      ['Vocês lavam e fazem manutenção de cortinas?', 'Sim. Nossa equipe vai até a sua casa, retira as cortinas de tecido, faz a lavagem e a secagem na vertical para manter os vincos e o DNA do tecido, passa, revisa deslizantes, costuras, trilhos e bainha, e reinstala. Atendemos lavagem em Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral (exclusivamente para cortinas de tecido).'],
       ['Quanto tempo leva para instalar?', 'Trabalhamos exclusivamente sob medida: após a medição a laser, cada peça é confeccionada para o seu vão. Quando fica pronta e agendamos a entrega, o serviço de instalação em si leva poucas horas em uma única visita na maioria dos projetos, deixando o ambiente limpo e pronto.'],
     ],
-    links: [['/cortina-wave/', 'Cortina wave'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Cortina motorizada'], ['/persianas/', 'Persianas técnicas'],
-            ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/portfolio/', 'Projetos reais'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
+    links: [['/cortina-wave/', 'Cortina wave'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Cortina motorizada'], ['/lavagem-de-cortinas/', 'Lavagem de cortinas'],
+            ['/persianas/', 'Persianas técnicas'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/portfolio/', 'Projetos reais'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
   },
 
   // --------------------------------------------------------------- PERSIANAS
@@ -529,7 +530,78 @@ export const PAGINAS = [
       ['Vocês atendem fora de Volta Redonda?', 'Sim. A ShineCortinas atende 15 cidades do Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira.'],
       ['A visita tem custo?', 'Não. A consultoria em domicílio é gratuita e sem compromisso.'],
     ],
-    links: [['/metodo/', 'Como funciona'], ['/cortinas/', 'Cortinas'], ['/persianas/', 'Persianas'], ['/portfolio/', 'Projetos reais'],
+    links: [['/metodo/', 'Como funciona'], ['/cortinas/', 'Cortinas'], ['/lavagem-de-cortinas/', 'Lavagem de cortinas'], ['/persianas/', 'Persianas'], ['/portfolio/', 'Projetos reais'],
             ['/faq/', 'Perguntas frequentes'], ['/sobre/', 'Sobre a Shine'], ['/videos/', 'Vídeos'], ['/cidades-atendidas/', 'Cidades atendidas']],
+  },
+
+  // --------------------------------------------------- LAVAGEM DE CORTINAS
+  {
+    dir: 'lavagem-de-cortinas',
+    title: 'Lavagem de Cortinas em Volta Redonda, Resende e Região | ShineCortinas',
+    description: 'Lavagem e secagem vertical de cortinas de tecido com retirada e reinstalação em casa. Revisão de deslizantes, costuras, trilhos e ajuste de bainha com garantia Shine.',
+    kicker: 'Lavagem de cortinas',
+    h1: 'Lavagem e secagem vertical para a sua cortina <em>não perder o DNA</em>',
+    lead: 'A equipe da Shine vai até a sua casa, retira as cortinas de tecido, faz a lavagem e a secagem na vertical para manter os vincos e as dobras originais, passa e reinstala tudo no lugar. E enquanto a cortina está no nosso ateliê, revisamos deslizantes, costuras, trilhos e fazemos o ajuste de bainha se o tecido encolher.',
+    hero: '/lavagem-vertical-cortinas.avif',
+    heroSrcset: '/lavagem-vertical-cortinas-800.avif 800w, /lavagem-vertical-cortinas.avif 1376w',
+    heroW: 1376,
+    heroH: 768,
+    heroAlt: 'Especialista da ShineCortinas alinhando e vaporizando na vertical as ondas de uma cortina sob medida',
+    blocos: [
+      { t: 'prose', h2: 'Por que lavar de outro jeito estraga o caimento da cortina', p: [
+        'Uma cortina sob medida tem muitos metros de tecido trabalhado, entretela, pregas medidas na fita e barra dupla alinhada no fio. Quando você lava uma peça dessas de outro modo, batendo embolada em tambor ou em lavanderia comum de roupa, <strong>o tecido perde o DNA dele</strong> e perde aquele caimento bonito.',
+        'É por isso que na lavanderia da Shine utilizamos o <strong>modo de lavagem e secagem vertical</strong>. Mantemos os vincos e as dobras originais da cortina do começo ao fim, evitando que o tecido danifique e garantindo que ela volte para a sua janela com o mesmo prumo de quando foi confeccionada.',
+      ] },
+      fig(
+        lavagem,
+        0,
+        'Lavagem e secagem vertical',
+        'Como preservamos os vincos e o DNA do tecido',
+        'Diferente da lavagem comum de tambor que torce a fibra, nosso processo vertical mantém as pregas e ondas alinhadas.'
+      ),
+      { t: 'cards', h2: 'O serviço completo da Shine, da retirada à reinstalação', sub: 'Você não precisa subir em escada nem carregar peso. Nossa equipe própria cuida de tudo.', items: [
+        { tag: 'Passo 1 · Na sua casa', h: 'Retirada e conferência dos trilhos', p: 'Nossa equipe vai até a sua residência, retira as cortinas com todo cuidado (inclusive em pé-direito alto) e já avalia se algum trilho precisa de reforço ou alinhamento.', img: '/equipe-shine-800.avif', alt: 'Equipe própria da ShineCortinas uniformizada' },
+        { tag: 'Passo 2 · Lavanderia Shine', h: 'Lavagem, secagem e passadoria vertical', p: 'Lavamos e secamos a cortina na vertical para preservar a memória das ondas e os vincos da prega. Depois passamos toda a peça respeitando a fibra do tecido e do forro.', img: '/lavagem-vertical-cortinas-800.avif', alt: 'Acabamento e vaporização vertical de cortina na ShineCortinas' },
+        { tag: 'Passo 3 · Revisão de ateliê', h: 'Deslizantes, costuras e ajuste de bainha', p: 'Analisamos se há algum deslizante solto para recolocar, reforçamos costuras soltas e, se o tecido tiver encolhido na lavagem, fazemos o ajuste de bainha na nossa oficina.', img: '/linha-puro.avif', alt: 'Detalhe de tecido e acabamento de alfaiataria ShineCortinas' },
+        { tag: 'Passo 4 · Entrega pronta', h: 'Reinstalação com caimento perfeito', p: 'Voltamos até a sua casa, reforçamos os trilhos se necessário, penduramos a cortina higienizada e deixamos as dobras e a barra perfeitamente alinhadas no piso.', img: '/poster-lavagem-cortinas.avif', alt: 'Sala com cortina Wave higienizada e reinstalada pela ShineCortinas' },
+      ] },
+      fig(
+        lavagem,
+        1,
+        'Garantia exclusiva de ateliê',
+        'Os 4 pontos de revisão que nenhuma lavanderia comum entrega',
+        'Só quem é fábrica de cortinas e tem equipe própria de instalação consegue cuidar do tecido, da costura e do trilho ao mesmo tempo.'
+      ),
+      { t: 'prose', h2: 'A garantia de ajuste de bainha que só a Shine dá', p: [
+        'Tem tecido que encolhe na lavagem, principalmente quando possui porcentagem de fibra natural na composição. Quando você manda lavar fora, se a cortina encolher 3 ou 4 centímetros e ficar curta demais na janela, ninguém resolve.',
+        'Aqui na Shine nós damos essa garantia: quando fazemos a lavagem, conferimos todas as medidas e, <strong>se precisar fazer ajuste de bainha por encolhimento do tecido, o nosso ateliê faz</strong>. Assim a sua cortina volta beijando o piso exatamente como deve ser.',
+      ] },
+      { t: 'table', h2: 'O que lavamos e quais cidades atendemos', sub: 'Trabalhamos exclusivamente com cortinas de tecido nas 6 cidades abaixo.', head: ['Item', 'Como funciona na Lavanderia Shine'], rows: [
+        ['O que lavamos', 'Apenas cortinas de tecido (de pano): Wave, prega fêmea, macho, americana, tombada, franzida, voil, linho e forros de tecido ou blackout costurado'],
+        ['O que não lavamos', 'Não lavamos persianas (não fazemos lavagem de Rolô, Romana, Double Vision, Vertical nem Horizontal)'],
+        ['Retirada e entrega', 'Feitas pela equipe própria da Shine na casa do cliente, com reinstalação completa'],
+        ['Revisão inclusa', 'Recolocação de deslizantes soltos, reparo de costuras soltas, reforço de trilhos e ajuste de bainha se necessário'],
+        ['Cidades atendidas na lavagem', 'Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral'],
+      ] },
+      { t: 'guides', kicker: 'Aprenda com quem confecciona', h2: 'Guias técnicos sobre <em>lavagem, bainha e tecidos</em>', sub: 'Entenda como cuidamos de cada detalhe da sua cortina sob medida.', items: [
+        ['/blog/lavagem-de-cortinas-sob-medida/', 'Lavanderia Shine', 'Lavagem de cortinas sob medida: secagem vertical e revisão de ateliê', 'Por que lavar de outro jeito faz o tecido perder o DNA e como funciona nosso passo a passo completo.'],
+        ['/blog/bainha-de-cortina/', 'Acabamento', 'Bainha de cortina: barra dupla de 15 a 20 cm e ajuste no fio', 'Como a dobra dupla dá peso à cortina e permite ajustar a altura quando necessário.'],
+        ['/blog/linho-para-cortinas/', 'Tecidos e fibras', 'Linho para cortinas: composição e gramatura acima de 170 g/m²', 'Por que a composição certa evita que o tecido deforme ou encolha além da conta.'],
+        ['/blog/tipos-de-forro-para-cortina/', 'Forros e proteção', 'Tipos de forro para cortina: translúcido, 70% e 100%', 'Como o forro protege o tecido principal contra o sol e como cada material deve ser higienizado.'],
+        ['/blog/altura-ideal-da-cortina/', 'Medidas', 'Altura ideal da cortina: do teto ao piso', 'O padrão de 1 cm do chão que mantém a barra limpa e elegante no dia a dia.'],
+        ['/cortinas/', 'Cortinas novas', 'Cortinas sob medida: Wave e pregas de alfaiataria', 'Quer renovar um ambiente com uma cortina nova? Conheça nossos tecidos e modelos sob medida.'],
+      ] },
+      { t: 'proof' },
+    ],
+    faq: [
+      ['Como funciona o serviço de lavagem de cortinas da Shine?', 'A equipe própria da Shine vai até a sua casa, retira as cortinas de tecido, leva para a nossa lavanderia especializada, faz a lavagem e a secagem na vertical mantendo os vincos e as dobras, passa, revisa deslizantes, costuras, trilhos e bainha, e entrega a cortina reinstalada no lugar.'],
+      ['Por que vocês utilizam lavagem e secagem vertical?', 'Porque se você lavar e secar uma cortina sob medida de outra forma, batendo embolada em tambor, o tecido perde o DNA dele e perde o caimento. Na lavagem e secagem vertical nós preservamos os vincos e as ondas originais da cortina sem danificar a fibra.'],
+      ['Vocês dão garantia de ajuste se a cortina encolher?', 'Sim. Tem tecido que encolhe na lavagem. Por termos ateliê próprio de costura, se a sua cortina precisar de ajuste de bainha após a lavagem, nós fazemos esse ajuste com garantia total, o que nenhuma lavanderia comum faz.'],
+      ['O que vocês revisam na cortina e no trilho?', 'Durante o serviço analisamos se tem algum deslizante solto e recolocamos, ajustamos se tiver alguma costura solta, conferimos e reforçamos os trilhos na sua casa se precisar e fazemos ajuste de bainha quando necessário.'],
+      ['Vocês lavam persiana Rolô, Romana ou Double Vision?', 'Não. Nosso serviço de lavanderia atende exclusivamente cortinas de tecido (de pano). Não mexemos com lavagem de persiana Romana, Rolô, Double Vision, Vertical ou Horizontal.'],
+      ['Em quais cidades vocês atendem a lavagem de cortinas?', 'No momento atendemos o serviço de lavagem de cortinas em 6 cidades do Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral.'],
+    ],
+    links: [['/blog/lavagem-de-cortinas-sob-medida/', 'Artigo sobre lavagem vertical'], ['/cortinas/', 'Cortinas sob medida'], ['/cortina-wave/', 'Cortina wave'], ['/blackout-e-forros/', 'Blackout e forros'],
+            ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas'], ['/contato/', 'Contato']],
   },
 ];

@@ -41,11 +41,32 @@
 
   function isWa(a) { return a && /wa\.me\//.test(a.getAttribute('href') || ''); }
 
+  function trackWa(kind) {
+    var dados = {
+      origem_link: kind,
+      pagina: location.pathname,
+      contexto: context()
+    };
+    var c = cityName();
+    if (c && state.source !== 'ip') dados.cidade = c;
+    try {
+      if (window.zaraz && typeof window.zaraz.track === 'function') {
+        window.zaraz.track('Contact', dados);
+        return;
+      }
+    } catch (e) {}
+    window.dataLayer = window.dataLayer || [];
+    var d = { event: 'Contact' };
+    for (var k in dados) if (Object.prototype.hasOwnProperty.call(dados, k)) d[k] = dados[k];
+    window.dataLayer.push(d);
+  }
+
   document.addEventListener('click', function (ev) {
     var a = ev.target.closest && ev.target.closest('a');
     if (!isWa(a)) return;
     var kind = a.getAttribute('data-wa') || 'conversar';
     a.setAttribute('href', 'https://wa.me/' + NUMBER + '?text=' + encodeURIComponent(message(kind)));
+    trackWa(kind);
   }, true);
 
   /* etiqueta "Atendendo em X · trocar" */
