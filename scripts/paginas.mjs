@@ -40,7 +40,7 @@ export const PAGINAS = [
   {
     dir: 'cortinas',
     title: 'Cortinas Sob Medida em Volta Redonda e Região | ShineCortinas',
-    description: 'Cortinas sob medida com acabamento de alfaiataria: Wave, prega fêmea, macho, americana, tombada e franzida. Tecidos acima de 170 g/m², medição a laser e instalação própria.',
+    description: 'Cortinas sob medida: Wave, prega fêmea, macho, americana, tombada e franzida. Tecidos acima de 170 g/m², consultoria em casa, medição a laser e instalação.',
     kicker: 'Cortinas sob medida',
     h1: 'Cortinas sob medida, com o <em>caimento</em> que a foto de loja não mostra',
     lead: 'Cortina sob medida é tecido escolhido na luz real da sua sala ou do seu quarto, medida a laser na sua janela e confeccionada do zero na nossa oficina. O que muda o resultado é a união entre a gramatura do tecido, o modelo da prega, o forro, a bainha dupla e o trilho.',
@@ -177,7 +177,7 @@ export const PAGINAS = [
   // ------------------------------------------------------- BLACKOUT E FORROS
   {
     dir: 'blackout-e-forros',
-    title: 'Blackout e Forros de Cortina: Translúcido, 70% e 100% | ShineCortinas',
+    title: 'Blackout e Forros: Translúcido, 70% e 100% | ShineCortinas',
     description: 'Forro translúcido (gabardine, cetim, tergal, microfibra), semi blackout 70% e blackout 100%. Veja como vedar a luz no quarto com trilho triplo e transpasse.',
     kicker: 'Blackout e forros',
     h1: 'O forro é a camada que <em>decide</em> quanta luz entra',
@@ -239,7 +239,7 @@ export const PAGINAS = [
   // ------------------------------------------------------------ CORTINA WAVE
   {
     dir: 'cortina-wave',
-    title: 'Cortina Wave Sob Medida: Proporções 2:1, 2,5:1 e 3:1 | ShineCortinas',
+    title: 'Cortina Wave Sob Medida: 2:1, 2,5:1 e 3:1 | ShineCortinas',
     description: 'Cortina Wave sob medida nas proporções 2:1, 2,5:1 e 3:1 com cordão espaçador 0,4, 0,5 e 0,8. Descubra a medida do cortineiro 15x15 cm e as opções de forro.',
     kicker: 'Cortina wave',
     h1: 'Cortina wave: a onda que fica <em>regular</em> do teto ao chão',
@@ -302,7 +302,7 @@ export const PAGINAS = [
   // ------------------------------------------------------- CORTINA MOTORIZADA
   {
     dir: 'cortina-motorizada',
-    title: 'Cortina e Persiana Motorizada: Elétrica, Bateria e Touch Motion | ShineCortinas',
+    title: 'Cortina e Persiana Motorizada Sob Medida | ShineCortinas',
     description: 'Cortina e persiana motorizada com garantia de até 5 anos. Motores elétricos ou a bateria (carga de ~6 meses), sistema Touch Motion e integração com Alexa.',
     kicker: 'Automação',
     h1: 'Cortina motorizada: a janela que obedece <em>ao seu toque e à sua voz</em>',
@@ -362,7 +362,7 @@ export const PAGINAS = [
   // -------------------------------------------------- TRILHOS E ACIONAMENTOS
   {
     dir: 'trilhos-e-acionamentos',
-    title: 'Trilhos e Acionamentos para Cortina: Trilho Suíço, Varão e Cortineiro | ShineCortinas',
+    title: 'Trilhos, Varão e Cortineiro para Cortina | ShineCortinas',
     description: 'Trilho suíço em alumínio, cortineiro 15x15 cm, trilho triplo com transpasse de 15 cm e varão de 19 mm ou 28 mm com suporte central. Veja como escolher.',
     kicker: 'Trilhos e acionamentos',
     h1: 'Trilhos e acionamentos: a engenharia que <em>ninguém vê</em> e todo mundo sente',
@@ -452,7 +452,7 @@ export const PAGINAS = [
   // ------------------------------------------------------------------- SOBRE
   {
     dir: 'sobre',
-    title: 'Sobre a ShineCortinas: Desde 2009 no Sul Fluminense | ShineCortinas',
+    title: 'Sobre a Shine: Desde 2009 no Sul Fluminense | ShineCortinas',
     description: 'Fundada em 2009 e dirigida por Isani Oliveira, a ShineCortinas atende 15 cidades do Sul Fluminense com equipe própria, do consultor ao instalador.',
     kicker: 'Sobre a Shine',
     h1: 'Desde 2009 medindo, confeccionando e <em>instalando</em>',
@@ -537,8 +537,8 @@ export const PAGINAS = [
   // --------------------------------------------------- LAVAGEM DE CORTINAS
   {
     dir: 'lavagem-de-cortinas',
-    title: 'Lavagem de Cortinas em Volta Redonda, Resende e Região | ShineCortinas',
-    description: 'Lavagem e secagem vertical de cortinas de tecido com retirada e reinstalação em casa. Revisão de deslizantes, costuras, trilhos e ajuste de bainha com garantia Shine.',
+    title: 'Lavagem de Cortinas em Volta Redonda e Região | ShineCortinas',
+    description: 'Lavagem e secagem vertical de cortinas de tecido com retirada e reinstalação em casa. Revisão de deslizantes, costuras, trilhos e ajuste de bainha com garantia.',
     kicker: 'Lavagem de cortinas',
     h1: 'Lavagem e secagem vertical para a sua cortina <em>não perder o DNA</em>',
     lead: 'A equipe da Shine vai até a sua casa, retira as cortinas de tecido, faz a lavagem e a secagem na vertical para manter os vincos e as dobras originais, passa e reinstala tudo no lugar. E enquanto a cortina está no nosso ateliê, revisamos deslizantes, costuras, trilhos e fazemos o ajuste de bainha se o tecido encolher.',

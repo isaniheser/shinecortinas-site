@@ -204,12 +204,11 @@
 [data-concept=ambientes] .sl-header::after{display:none}
 }
 
-/* A navegação estática continua disponível até o menu ser aperfeiçoado. */
-.pv-curtain-pull{display:none}
-.pv-enhanced .pv-curtain-pull{display:flex}
-.sl-nav-fallback{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;padding:18px 24px;border-bottom:1px solid var(--pv-line);background:var(--pv-paper);color:var(--pv-ink)}
+/* A navegação estática fica no DOM para crawlers e aparece quando o navegador não executa JS, sem causar CLS (pulo de 185px) no carregamento móvel. */
+.pv-curtain-pull{display:flex}
+.sl-nav-fallback{display:none;justify-content:center;flex-wrap:wrap;gap:8px 24px;padding:18px 24px;border-bottom:1px solid var(--pv-line);background:var(--pv-paper);color:var(--pv-ink)}
 .sl-nav-fallback a{display:flex;align-items:center;min-height:44px;color:inherit;font:500 13px var(--sans)}
-.pv-enhanced .sl-nav-fallback{display:none}
+@media(scripting:none){.pv-curtain-pull{display:none}.sl-nav-fallback{display:flex}}
 
 /* Provas e informações locais preservadas abaixo da composição aprovada. */
 .pv-home-trust{border-top:1px solid var(--pv-line)}

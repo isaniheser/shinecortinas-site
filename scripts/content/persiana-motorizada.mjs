@@ -5,7 +5,7 @@ export default {
   layout: 'editorial',
   sectionLabel: 'Persianas e Automação',
   title: 'Como funciona a persiana motorizada: energia, bateria e o que acontece quando falta luz',
-  seoTitle: 'Como Funciona a Persiana Motorizada? Bateria e Luz | ShineCortinas',
+  seoTitle: 'Como Funciona Persiana Motorizada: Bateria e Luz | ShineCortinas',
   description: 'Entenda como funciona a persiana motorizada na prática: motores elétricos ou a bateria (média de 6 meses) e por que Rolô e Romana travam sem energia.',
   published: '2026-02-19',
   modified: new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' }),

@@ -5,7 +5,7 @@ export default {
   layout: 'editorial',
   sectionLabel: 'Tecidos e Caimento',
   title: 'Linho para cortinas: por que indico até 10% de linho ou poliéster toque de linho',
-  seoTitle: 'Linho para Cortinas: Caimento, Gramatura e Lavagem | ShineCortinas',
+  seoTitle: 'Linho para Cortinas: Caimento e Gramatura | ShineCortinas',
   description: 'Quer cortina de linho? Entenda por que indico no máximo 10% de linho ou 100% poliéster que imita linho, gramatura acima de 170 g/m² e tecido peletizado.',
   published: '2026-02-19',
   modified: new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' }),

@@ -66,4 +66,3 @@
 
 1. **Na Meta Ads:** desativar os demais anúncios e manter **apenas 1 anúncio ativo de reconhecimento/visita ao perfil** (para ganhar seguidores continuamente e fortalecer o Instagram como vitrine de validação do trabalho da Shine).
 2. **No Google:** concentrar o foco de captação de clientes no **Google** (onde o cliente já pesquisa com intenção real de compra e sem o volume de "caroço" do feed social, como comprovado pelo cliente vindo de Vassouras via `/cidades/vassouras/` e pelos últimos 4 a 5 clientes presenciais).
-

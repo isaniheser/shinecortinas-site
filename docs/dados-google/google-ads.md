@@ -40,7 +40,7 @@
 ### Gasto por Tipo de Campanha
 
 | Tipo | Gasto | Interações | CPC médio |
-|---|---|---|---|
+|---|---|---|
 | Pesquisa (Search) | R$ 103.354 | 52.039 cliques | R$ 1,99 |
 | Display | R$ 17.125 | 92.149 interações | R$ 0,19 |
 | Performance Max | R$ 5.702 | 30.936 interações | R$ 0,18 |
@@ -160,3 +160,32 @@
    - **Manter o Google Ads pausado** (não tirar verba da Meta para colocar no Google Ads agora).
    - Redobrar a força no **Google Gratuito** (Google Meu Negócio + SEO orgânico das 15 páginas de cidades e artigos do blog) integrado à vitrine do Instagram.
    - Fazer auditoria dedicada do **Meta Ads** para garantir que os R$ 40/dia estejam atraindo clientes de projetos completos.
+
+---
+
+## 5. Reestruturação Executada em 17/10/2026 (Campanha ID `24366643634`)
+
+Após a auditoria do Meta Ads em 16/10/2026 (onde o Isani decidiu manter apenas 1 anúncio de visita ao perfil no Instagram e concentrar a captação de orçamentos no Google), o saldo pendente de **R$ 426,57** foi quitado em 17/10/2026 e a conta foi reestruturada do zero:
+
+1. **Higienização das Conversões e Campanhas Antigas:**
+   - Todas as 28 campanhas antigas (incluindo `ShineCortinas – Pesquisa Premium – Região VR`) estão **Pausadas** ou **Removidas**.
+   - No GA4 (`Shine – GA4`, ID `263510890`), a ação **`whatsapp_click`** foi configurada para contagem **"Uma vez por sessão"**.
+   - No Google Ads, a meta **"Contatos"** (contendo apenas o WhatsApp) foi definida como padrão da conta e única meta da campanha; `YouTube channel subscriptions`, `YouTube follow-on views` e `Conversation started` foram rebaixadas para **Secundária**.
+2. **Nova Campanha Criada e Ativada (`Status: Ativada · Qualificada (aprendizado)`):**
+   - **Nome:** `[2026] Shine - Pesquisa - Projetos Sob Medida` (ID **`24366643634`**)
+   - **Rede:** Exclusivamente Pesquisa Google (sem Parceiros de Pesquisa, sem Rede de Display).
+   - **IA Max / Expansão de URL / Personalização de texto:** Desligados (zero correspondência ampla).
+   - **Orçamento e Lances:** R$ 35,00/dia · Maximizar Cliques com teto de CPC máximo de **R$ 4,50**.
+   - **Geografia e Idiomas:** 11 cidades do Sul Fluminense com opção **"Presença"** marcada · Idiomas Português, Inglês e Espanhol.
+   - **Públicos-alvo em Observação:** 5 segmentos (design de interiores, decoração, reforma e imóveis residenciais).
+   - **Lista de Negativas Vinculada:** `"Shine - Negativas Projetos Sob Medida"` (56 termos na Biblioteca Compartilhada, sem bloquear `lavagem`, `lavar` e `higienização`).
+   - **Recursos no nível da campanha:** 5 Sitelinks (`/cortina-wave/`, `/cortina-motorizada/`, `/lavagem-de-cortinas/`, `/metodo/`, `/portfolio/`) + Recurso de Chamada `(24) 3338-3069` (seg a sex, 08h às 17h).
+3. **Estrutura dos 5 Grupos de Anúncios (58 palavras-chave, 100% em Frase e Exata):**
+
+| Grupo | URL Final | Palavras-chave | Anúncio Responsivo (RSA) |
+|---|---|---|---|
+| **1. Volta Redonda e Barra Mansa** | `/cidades/volta-redonda/` | 11 | 15 títulos, 4 descrições (`"Não Vendemos Cortina Pronta"` fixado na pos. 2) |
+| **2. Resende, Penedo, Vassouras e Serra** | `/cidades/resende/` | 12 | 15 títulos, 4 descrições (`"Não Vendemos Cortina Pronta"` fixado na pos. 2) |
+| **3. Cortina Wave, Sala, Quarto e Pé-Direito Duplo** | `/cortinas/` | 12 | 15 títulos, 4 descrições (`"Não Vendemos Cortina Pronta"` fixado na pos. 2) |
+| **4. Motorizadas, Varanda (Tela Solar) e Persianas** | `/persianas/` | 12 | 15 títulos, 4 descrições (`"Não Vendemos Cortina Pronta"` fixado na pos. 2) |
+| **5. Lavagem de Cortinas (Apenas Tecido)** | `/lavagem-de-cortinas/` | 11 + 6 negativas próprias | 10 títulos, 4 descrições (`"Apenas Cortinas de Tecido"` fixado na pos. 2) |

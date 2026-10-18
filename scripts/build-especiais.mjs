@@ -186,9 +186,9 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
 
 const POST_META = {
   'como-escurecer-quarto-sala-tv': ['Como Escurecer Quarto e Sala de TV com Cortina | ShineCortinas', 'Veja como escurecer quarto e sala de TV com cortina sob medida: diferença entre blackout 100% e 70%, influência da cor do tecido e ajustes na instalação.'],
-  'como-funciona-persiana-motorizada': ['Como Funciona a Persiana Motorizada? Bateria e Luz | ShineCortinas', 'Entenda como funciona a persiana motorizada na prática: motores elétricos ou a bateria (média de 6 meses) e por que Rolô e Romana travam sem energia.'],
+  'como-funciona-persiana-motorizada': ['Como Funciona Persiana Motorizada: Bateria e Luz | ShineCortinas', 'Entenda como funciona a persiana motorizada na prática: motores elétricos ou a bateria (média de 6 meses) e por que Rolô e Romana travam sem energia.'],
   'cortina-ou-persiana-na-cozinha': ['Cortina ou Persiana na Cozinha: Qual Escolher | ShineCortinas', 'Cortina ou persiana na cozinha? Entenda por que a persiana Rolô Tela Solar e a Horizontal de Alumínio vencem na limpeza contra gordura, vapor e umidade da pia.'],
-  'linho-para-cortinas': ['Linho para Cortinas: Caimento, Gramatura e Lavagem | ShineCortinas', 'Quer cortina de linho? Entenda por que indico no máximo 10% de linho ou 100% poliéster que imita linho, gramatura acima de 170 g/m² e tecido peletizado.'],
+  'linho-para-cortinas': ['Linho para Cortinas: Caimento e Gramatura | ShineCortinas', 'Quer cortina de linho? Entenda por que indico no máximo 10% de linho ou 100% poliéster que imita linho, gramatura acima de 170 g/m² e tecido peletizado.'],
   'persiana-ideal-para-cada-ambiente': ['Persiana Ideal para Cada Ambiente: Guia Prático | ShineCortinas', 'Descubra a persiana ideal para cada ambiente da casa: Tela Solar na varanda, Double Vision e Romana no escritório, Romana e Rolô no quarto, e 16 mm no banheiro.'],
   'persiana-para-dividir-ambientes': ['Persiana para Dividir Ambientes Funciona? | ShineCortinas', 'Vale a pena usar persiana para dividir ambientes? Veja a opinião sincera de Isani Oliveira sobre por que separar espaço pede parede de drywall e não persiana.'],
   'persiana-vertical-ou-horizontal': ['Persiana Vertical ou Horizontal: 50 mm e Vãos | ShineCortinas', 'Persiana vertical ou horizontal: veja por que indico a vertical para porta de correr e vãos largos e a horizontal de 50 mm (madeira ou alumínio) para salas.'],
@@ -196,6 +196,7 @@ const POST_META = {
   'qual-cortina-escolher-para-sala': ['Qual Cortina Escolher para Sala: Pregas e Cores | ShineCortinas', 'Saiba escolher a cortina ideal para a sala: modelos Wave, prega fêmea, macho, americana, tombada e franzida, e como combinar com o estofado e o tapete.'],
   'quantidade-de-tecido-para-cortina-wave': ['Quantidade de Tecido para Cortina Wave: 2:1 a 3:1 | ShineCortinas', 'Saiba calcular a quantidade de tecido para cortina Wave (proporções 2:1, 2,5:1 e 3:1), cordão espaçador 0,4 a 0,8, tipos de forro e cortineiro mínimo 15x15 cm.'],
   'varao-para-cortina': ['Varão para Cortina: Tubo Suíço, Altura e Medidas | ShineCortinas', 'Saiba escolher varão para cortina: diâmetros de 19 mm e 28 mm em alumínio, varão simples ou duplo, suporte central acima de 2 m e como funciona o tubo suíço.'],
+  'lavagem-de-cortinas-sob-medida': ['Lavagem de Cortinas: Secagem Vertical e Revisão | ShineCortinas', 'Retiramos sua cortina de tecido em casa, fazemos lavagem e secagem vertical para manter os vincos, revisamos deslizantes, costura e bainha, e reinstalamos.'],
 };
 
 const VIDEO_META = {
