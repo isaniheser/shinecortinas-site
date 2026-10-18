@@ -62,7 +62,7 @@
 
 ---
 
-## 4. Decisão Estratégica do Isani (16/10/2026)
+## 4. Decisão Estratégica do Isani (16/10/2026 — Executada pelo Isani em 17/10/2026)
 
-1. **Na Meta Ads:** desativar os demais anúncios e manter **apenas 1 anúncio ativo de reconhecimento/visita ao perfil** (para ganhar seguidores continuamente e fortalecer o Instagram como vitrine de validação do trabalho da Shine).
-2. **No Google:** concentrar o foco de captação de clientes no **Google** (onde o cliente já pesquisa com intenção real de compra e sem o volume de "caroço" do feed social, como comprovado pelo cliente vindo de Vassouras via `/cidades/vassouras/` e pelos últimos 4 a 5 clientes presenciais).
+1. **Na Meta Ads (Feito pelo Isani):** desativados os demais anúncios e mantido **apenas 1 anúncio ativo de reconhecimento/visita ao perfil** (para ganhar seguidores continuamente e fortalecer o Instagram como vitrine de validação do trabalho da Shine).
+2. **No Google (Feito em 17/10/2026):** concentrado o foco de captação de clientes no **Google** (onde o cliente já pesquisa com intenção real de compra e sem o volume de "caroço" do feed social, como comprovado pelo cliente vindo de Vassouras via `/cidades/vassouras/` e pelos últimos 4 a 5 clientes presenciais).
