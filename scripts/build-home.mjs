@@ -50,6 +50,9 @@ const src = readFileSync(FILE, 'utf8');
 let head = cleanHead(src.split('<body')[0]);
 const HOME_TITLE = 'Cortinas e Persianas Sob Medida no Sul Fluminense | ShineCortinas';
 head = head.replace(/<title>[\s\S]*?<\/title>/, `<title>${HOME_TITLE}</title>`);
+if (!head.includes('name="yandex-verification"')) {
+  head = head.replace('<link rel="canonical"', '<meta name="yandex-verification" content="329cd5a44fd952c5" />\n    <link rel="canonical"');
+}
 head = head.replace(/<meta property="og:image" content="[^"]*">/, '<meta property="og:image" content="https://www.shinecortinas.com/hero-sala.avif">');
 head = head.replace(/<meta property="og:image:width" content="[^"]*">/, '<meta property="og:image:width" content="1920">');
 head = head.replace(/<meta property="og:image:height" content="[^"]*">/, '<meta property="og:image:height" content="1080">');

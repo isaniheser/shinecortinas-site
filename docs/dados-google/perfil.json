@@ -11,7 +11,7 @@
     "2": 0,
     "1": 5
   },
-  "avaliacoesComRespostaDoDono": 83,
+  "avaliacoesComRespostaDoDono": 93,
   "horario": {
     "domingo": "Fechado",
     "segunda-feira": "08:00–17:00",
@@ -26,14 +26,16 @@
   "telefone": "(24) 3338-3069",
   "categoriaPrincipal": "Loja de cortinas e persianas",
   "codigoDaLoja": "2032799",
+  "dataDeAbertura": "2009-11",
   "avaliacoesWeb": "Facebook 5/5 (53 votos)",
   "observacoes": [
-    "14/10/2026: perfil já estava como Service Area Business (endereço oculto). Área de cobertura ampliada de 9 para 15 localidades (adicionadas Itatiaia, Penedo, Visconde de Mauá, Maromba, Eng. Paulo de Frontin e Miguel Pereira) — pendente de revisão do Google.",
-    "14/10/2026 (15:45): telefone secundário (24) 3511-0195 removido (não é mais do Isani) — pendente de revisão. Site do perfil aprovado: https://www.shinecortinas.com/.",
+    "19/10/2026: publicadas as 10 respostas às avaliações 5★ recentes (total respondidas: 93); excluídos os 5 serviços antigos duplicados, permanecendo apenas os 7 serviços oficiais aprovados; data de abertura ajustada para novembro de 2009 e aprovada.",
+    "19/10/2026 (Search Console): solicitada a indexação dos 4 artigos restantes (100% dos artigos reescritos e páginas novas com indexação prioritária solicitada). Snippets de avaliação: 35 itens válidos, 0 problemas.",
+    "19/10/2026 (Bing Webmaster Tools & Bing Places): propriedade shinecortinas.com ativa (18 cliques / 1,7 mil impressões em 3 meses), sitemap.xml lido sem erros e 55 URLs recebidas via IndexNow (/lavagem-de-cortinas/ já indexada no Bing). Bing Places ressincronizado com o Google Meu Negócio: Rua K, 60 removida, endereço oculto com as 15 cidades, descrição nova, site https://www.shinecortinas.com/, telefone (24) 3338-3069 + WhatsApp wa.me/5524993298763 e horário seg–sex 08:00–17:00 publicados.",
+    "18/10/2026: todas as alterações de 14/10 aprovadas pelo Google (15 localidades de cobertura ativas, telefone antigo 3511-0195 removido, site https://www.shinecortinas.com/ aprovado e endereço oculto como Service Area Business).",
     "14/10/2026: horário seg–sex 08:00–17:00 confirmado, sem alerta de feriado pendente.",
     "O gerenciador lista 297 avaliações; 4 delas estão sob nomes antigos do perfil (SHINE | Cortina e Persiana sob Medida; SHINECORTINAS.COM), de 2018.",
-    "Datas recentes aparecem em formato relativo ('Há N semanas') porque é assim que o painel exibe; as mais antigas têm data absoluta.",
-    "Google Ads: campanha PAUSADA e saldo da conta vencido (aviso no painel)."
+    "Google Ads: saldo quitado e nova campanha '[2026] Shine - Pesquisa - Projetos Sob Medida' ativada em 17/10/2026."
   ],
   "coletadoEm": "2026-09-06",
   "cidadeBase": "Volta Redonda, RJ",
@@ -64,7 +66,7 @@
     "https://www.facebook.com/shinecortinas",
     "https://www.youtube.com/@shinecortinas"
   ],
-  "atualizadoEm": "2026-10-14",
+  "atualizadoEm": "2026-10-19",
   "telefones": [
     "(24) 3338-3069 (principal)"
   ]
