@@ -23,12 +23,13 @@
   },
   "endereco": null,
   "enderecoNoGerenciador": "Sem local físico; apenas entregas e atendimento no local do cliente (Service Area Business)",
-  "telefone": "(24) 3338-3069",
+  "telefone": "(24) 99329-8763",
   "categoriaPrincipal": "Loja de cortinas e persianas",
   "codigoDaLoja": "2032799",
   "dataDeAbertura": "2009-11",
   "avaliacoesWeb": "Facebook 5/5 (53 votos)",
   "observacoes": [
+    "20/10/2026: telefone fixo temporariamente desativado (24) 3338-3069 removido do site (57 páginas HTML e schemas JSON-LD), do recurso de chamada do Google Ads e substituído no Google Meu Negócio pelo número oficial e WhatsApp (24) 99329-8763. Endereço mantido oculto como Service Area Business para preservar a relevância nas 15 cidades da região.",
     "19/10/2026: publicadas as 10 respostas às avaliações 5★ recentes (total respondidas: 93); excluídos os 5 serviços antigos duplicados, permanecendo apenas os 7 serviços oficiais aprovados; data de abertura ajustada para novembro de 2009 e aprovada.",
     "19/10/2026 (Search Console): solicitada a indexação dos 4 artigos restantes (100% dos artigos reescritos e páginas novas com indexação prioritária solicitada). Snippets de avaliação: 35 itens válidos, 0 problemas.",
     "19/10/2026 (Bing Webmaster Tools & Bing Places): propriedade shinecortinas.com ativa (18 cliques / 1,7 mil impressões em 3 meses), sitemap.xml lido sem erros e 55 URLs recebidas via IndexNow (/lavagem-de-cortinas/ já indexada no Bing). Bing Places ressincronizado com o Google Meu Negócio: Rua K, 60 removida, endereço oculto com as 15 cidades, descrição nova, site https://www.shinecortinas.com/, telefone (24) 3338-3069 + WhatsApp wa.me/5524993298763 e horário seg–sex 08:00–17:00 publicados.",
@@ -66,8 +67,8 @@
     "https://www.facebook.com/shinecortinas",
     "https://www.youtube.com/@shinecortinas"
   ],
-  "atualizadoEm": "2026-10-19",
+  "atualizadoEm": "2026-10-20",
   "telefones": [
-    "(24) 3338-3069 (principal)"
+    "(24) 99329-8763 (principal / WhatsApp)"
   ]
 }

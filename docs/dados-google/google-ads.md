@@ -200,3 +200,71 @@ Após a auditoria do Meta Ads em 16/10/2026 (onde o Isani decidiu manter apenas 
   - `"cortina motorizada"` (Grupo 4): 1 clique · 6 impr · CTR 16,67% · R$ 2,91
   - `"lavar cortinas"` (Grupo 5): 1 clique · 3 impr · CTR 33,33% · R$ 2,21
 - **Por que o teste feito pelo Isani na volta de São Paulo (Guarulhos) não exibiu o anúncio:** a campanha está configurada em **"Presença: pessoas que estão nas suas regiões de segmentação"**, o que bloqueia a exibição do anúncio quando o celular está fisicamente em São Paulo/Guarulhos (mesmo digitando *"em Volta Redonda"* ou *"em Resende"*). Dentro do Sul Fluminense, a palavra-chave `"cortina motorizada"` está ativa e rodando normalmente.
+
+---
+
+## 6. Auditoria de Terça-feira (20/10/2026 às 10h) e Pacote de Otimização + Dados Offline (CRM SHINE)
+
+### 6.1. Fotografia Acumulada da Campanha (17/10 a 20/10/2026 às 10h)
+- **Investimento acumulado:** R$ 68,78 · **19 cliques** · **213 impressões** · **CTR médio:** 8,92% · **CPC médio:** R$ 3,62.
+- **Conversões principais (`whatsapp_click`):** **2,00 conversões** · **Taxa de conversão:** 10,53% · **CPA médio:** R$ 34,39.
+- **Todas as conversões:** **3,00 conversões** (incluindo interações secundárias do Google Meu Negócio).
+- **Manhã de 20/10 (até 10h00):** 1 clique em `"cortina wave"` (Grupo 3, R$ 4,01, CTR 20,00%, 10 impressões na manhã).
+
+### 6.2. Ajustes Cirúrgicos Aplicados sem Resetar o Aprendizado (20/10/2026)
+1. **Lista Compartilhada de Negativas (`Shine - Negativas Projetos Sob Medida`, ID `12273230031`):**
+   - Adicionados 4 novos termos em correspondência de frase a partir da auditoria dos Termos de Pesquisa: `"online"`, `"lumello"`, `"casa porto"` e `"veneziana"`.
+   - Total da lista compartilhada atualizado para **69 termos negativos**.
+2. **Negativas no Grupo 5 (`Lavagem de Cortinas (Apenas Tecido)`, ID `201840803512`):**
+   - Adicionadas `"persiana"` e `"persianas"` em correspondência de frase para bloquear buscas como *"lavar persianas"* (que consumiram 1 clique de R$ 2,21 em 19/10).
+   - O Grupo 5 conta agora com **12 negativas próprias** (`"rolo"`, `"rolô"`, `"romana"`, `"double vision"`, `"madeira"`, `"alumínio"`, `"aluminio"`, `"vertical"`, `"horizontal"`, `"motorizada"`, `"persiana"`, `"persianas"`) além da lista compartilhada da campanha.
+3. **URLs Finais no Nível da Palavra-Chave no Grupo 4 (`Motorizadas, Varanda (Tela Solar) e Persianas`, ID `206877443648`):**
+   - Para elevar o Índice de Qualidade (`3/10` por *"Experiência na página de destino abaixo da média"*) sem editar o anúncio RSA (preservando a fase de aprendizado), as 6 palavras-chave de motorização passaram a apontar diretamente para a nova landing page dedicada `https://www.shinecortinas.com/cortina-motorizada/`:
+     - `[persiana motorizada]`
+     - `"persiana motorizada"`
+     - `"cortina motorizada"`
+     - `[cortina motorizada]`
+     - `"persiana rolo automatizada"`
+     - `[persiana rolo automatizada]`
+
+### 6.3. Upload das Listas de Clientes e Conversões Offline do Sistema CRM SHINE (`d1-2026-10-19.sql.gz`)
+Extraídos os dados atualizados do **Sistema CRM SHINE** (`shine-crm.pages.dev`, banco Cloudflare D1 de 19/10/2026 com 286 clientes e 95 negócios fechados):
+
+1. **Listas de Clientes (Customer Match) no Gerenciador de Públicos-Alvo:**
+   - **`Shine CRM - Compradores Fechados`:** 74 clientes únicos com contratos fechados (100% das 74 linhas validadas pelo Google Ads).
+   - **`Shine CRM - Todos os Contatos`:** 266 contatos únicos do CRM entre compradores e orçamentos (100% das 266 linhas validadas pelo Google Ads).
+   - Ambas as listas foram vinculadas automaticamente à **Otimização do ciclo de vida do cliente** e adicionadas em modo **Observação** na campanha `[2026] Shine - Pesquisa - Projetos Sob Medida` (junto aos segmentos `Todos os visitantes (Google Ads)`, `Todos os usuários que fizeram uma conversão` e `Tratamentos para cortinas e janelas`, totalizando **10 segmentos em Observação**).
+2. **Ação de Conversão Offline Secundária (`Compra Offline (CRM)`):**
+   - Criada na categoria **Compras** (`Importar de cliques`) como **Ação Secundária** (`Incluídas nas metas da conta: Não`, `Contagem: Todas`, `Janela: 90 dias`), garantindo que os valores de vendas fechadas alimentem a coluna *"Todas as conv."* e *"Valor de todas as conv."* sem interferir nos lances da conversão principal (`whatsapp_click`).
+   - Conectada na **Central de Dados (`Produtos conectados > Upload de arquivos`)** via arquivo `google-ads-conversoes-offline-crm-2026-10-19.csv` (75 vendas fechadas dentro da janela de 90 dias, somando **R$ 333.405,23**, com carimbo de data/hora ISO-8601 `GMT-03:00` e 5 campos mapeados: `Conversion_Time`, `Email`, `Phone_Number`, `Conversion_Value` e `Conversion_Currency`).
+
+### 6.4. Reparos Técnicos de Conversão, Recursos Visuais e Snippets Estruturados (20/10/2026 às 14h35)
+1. **Pausa do Recurso de Mensagem Direta do WhatsApp (`(24)993298763 WhatsApp`):**
+   - O recurso antigo no nível da conta (criado em agosto de 2024), que desviava cliques direto da página de resultados do Google para o WhatsApp sem passar pelo site, foi **Pausado** (`Status: Pausado`). Agora **100% dos cliques nos anúncios levam o cliente para dentro do site** (`shinecortinas.com`) antes da conversão no WhatsApp.
+2. **Correção da Contagem da Conversão Principal (`whatsapp_click`) e Limpeza das Metas Padrão:**
+   - Na propriedade vinculada do Google Analytics 4 (`Shine - GA4`, ID `263510890` / ação `ctId=7845365986`), o método de contagem de `whatsapp_click` foi alterado de **"Todas as conversões"** para **"Apenas uma conversão"** (`Uma`), evitando que múltiplos cliques de um mesmo usuário na mesma visita inflem os números de leads.
+   - Em `Metas > Conversões > Resumo`, as 4 categorias sem ação primária que exibiam alerta vermelho de `Configuração incorreta` (`Solicitar cotação`, `Engajamento`, `Leads de mensagens` e `Visualizações resultantes no YouTube`) tiveram a opção *"Definir como meta padrão da conta"* desativada, permanecendo exclusivamente **Contato (`whatsapp_click`)** como meta padrão ativa da conta.
+3. **Adição do 6º Sitelink (`Persianas e Tela Solar`):**
+   - Criado no nível da campanha `[2026] Shine - Pesquisa - Projetos Sob Medida`:
+     - **Texto:** `Persianas e Tela Solar`
+     - **Descrição 1:** `Rolô, Tela Solar 5% e Madeira 50mm`
+     - **Descrição 2:** `Sob medida com instalação própria`
+     - **URL final:** `https://www.shinecortinas.com/persianas/`
+4. **Atualização dos `Snippets estruturados` (e pausa dos antigos de 2023):**
+   - Os 3 snippets antigos do nível da conta (de abril de 2023) foram **Pausados**.
+   - Foram criados e ativados 3 novos **Snippets Estruturados** no nível da campanha:
+     - **Tipos:** `Cortina Wave`, `Cortina Motorizada`, `Persiana Motorizada`, `Tela Solar 5%`, `Blackout 100%`, `Persiana Rolô`, `Madeira 50mm` (`Status: Qualificada`)
+     - **Destinos:** `Volta Redonda`, `Resende`, `Barra Mansa`, `Penedo`, `Itatiaia`, `Vassouras`, `Barra do Piraí` (`Status: Ativado / Em análise`)
+     - **Serviços:** `Consultoria em Domicílio`, `Medição a Laser`, `Confecção Sob Medida`, `Instalação Própria`, `Lavagem Vertical` (`Status: Ativado / Em análise`)
+5. **Recursos Visuais (`Nome da empresa` e 5 `Recursos de Imagem` de Obras Reais):**
+   - Confirmado o recurso **`Nome da empresa`**: `ShineCortinas` (`Status: Qualificada`).
+   - Enviados e associados **5 `Recursos de Imagem`** de projetos reais na campanha (`Status: Ativado / Em análise`):
+     - `hero-sala-landscape.jpg` (`1910x1000`, proporção horizontal `1.91:1`)
+     - `duplo-sq.jpg` (`800x800`, proporção quadrada `1:1` de Cortina Pé-Direito Duplo)
+     - `persiana-motorizada-sq.jpg` (`800x800`, proporção quadrada `1:1` de Persiana Rolô / Tela Solar)
+     - `automacao-sq.jpg` (`800x800`, proporção quadrada `1:1` de Cortina Motorizada)
+     - `madeira-sq.jpg` (`800x800`, proporção quadrada `1:1` de Persiana de Madeira 50mm)
+6. **Segmentos de Público-Alvo do GA4 em Modo `Observação`:**
+   - Adicionados **`All Users of Shine - GA4`** (`Status: Qualificada`) e **`Purchasers of Shine - GA4`** em modo **Observação** na campanha.
+7. **Pausa do Recurso de Chamada (`(24) 3338-3069` em `Recursos > Ligar para`):**
+   - Como o telefone fixo `(24) 3338-3069` está temporariamente desativado (e já havia consumido 2 cliques / R$ 8,57 na campanha), o recurso de chamada `(24) 3338-3069` foi **Pausado** às 16h42 (`Status: Pausado`), evitando tentativas frustradas de ligação e garantindo que 100% dos cliques conduzam ao site.
