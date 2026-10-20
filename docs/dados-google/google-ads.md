@@ -189,3 +189,14 @@ Após a auditoria do Meta Ads em 16/10/2026 (onde o Isani decidiu manter apenas 
 | **3. Cortina Wave, Sala, Quarto e Pé-Direito Duplo** | `/cortinas/` | 12 | 15 títulos, 4 descrições (`"Não Vendemos Cortina Pronta"` fixado na pos. 2) |
 | **4. Motorizadas, Varanda (Tela Solar) e Persianas** | `/persianas/` | 12 | 15 títulos, 4 descrições (`"Não Vendemos Cortina Pronta"` fixado na pos. 2) |
 | **5. Lavagem de Cortinas (Apenas Tecido)** | `/lavagem-de-cortinas/` | 11 + 6 negativas próprias | 10 títulos, 4 descrições (`"Apenas Cortinas de Tecido"` fixado na pos. 2) |
+
+### Performance de Segunda-feira (19/10/2026 até 21h15) e 1ª Conversão Registrada
+- **Investimento do dia:** R$ 21,63 · **6 cliques** · **101 impressões** · **CPC médio:** R$ 3,61.
+- **Conversões medidas hoje (`whatsapp_click`):** **1,00 em "Conversões"** (na palavra-chave `"persianas em resende"`, com **Custo/conv. de R$ 3,48**) e **2,00 em "Todas as conv."** (1 no grupo `Volta Redonda e Barra Mansa` e 1 no grupo `Resende, Penedo, Vassouras e Serra`).
+- **Cliques por palavra-chave em 19/10:**
+  - `"persianas em volta redonda"`: 2 cliques · 3 impr · CTR 66,67% · R$ 8,72
+  - `"cortina sob medida volta redonda"`: 1 clique · 2 impr · CTR 50,00% · R$ 4,31
+  - `"persianas em resende"`: 1 clique · 4 impr · CTR 25,00% · R$ 3,48 (**1 conversão**)
+  - `"cortina motorizada"` (Grupo 4): 1 clique · 6 impr · CTR 16,67% · R$ 2,91
+  - `"lavar cortinas"` (Grupo 5): 1 clique · 3 impr · CTR 33,33% · R$ 2,21
+- **Por que o teste feito pelo Isani na volta de São Paulo (Guarulhos) não exibiu o anúncio:** a campanha está configurada em **"Presença: pessoas que estão nas suas regiões de segmentação"**, o que bloqueia a exibição do anúncio quando o celular está fisicamente em São Paulo/Guarulhos (mesmo digitando *"em Volta Redonda"* ou *"em Resende"*). Dentro do Sul Fluminense, a palavra-chave `"cortina motorizada"` está ativa e rodando normalmente.

@@ -39,17 +39,17 @@ export const PAGINAS = [
   // ---------------------------------------------------------------- CORTINAS
   {
     dir: 'cortinas',
-    title: 'Cortinas Sob Medida em Volta Redonda e Região | ShineCortinas',
-    description: 'Cortinas sob medida: Wave, prega fêmea, macho, americana, tombada e franzida. Tecidos acima de 170 g/m², consultoria em casa, medição a laser e instalação.',
+    title: 'Cortinas Sob Medida em Volta Redonda, Resende e Região | ShineCortinas',
+    description: 'Cortinas sob medida em Volta Redonda, Resende, Barra Mansa e Sul Fluminense: Wave, prega fêmea, macho, americana e motorizada. Tecidos acima de 170 g/m² e medição a laser.',
     kicker: 'Cortinas sob medida',
     h1: 'Cortinas sob medida, com o <em>caimento</em> que a foto de loja não mostra',
-    lead: 'Cortina sob medida é tecido escolhido na luz real da sua sala ou do seu quarto, medida a laser na sua janela e confeccionada do zero na nossa oficina. O que muda o resultado é a união entre a gramatura do tecido, o modelo da prega, o forro, a bainha dupla e o trilho.',
+    lead: 'Cortina sob medida é tecido escolhido na luz real da sua sala ou do seu quarto, medida a laser na sua janela e confeccionada do zero na nossa oficina. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense unindo gramatura acima de 170 g/m², prega de alfaiataria, forro, bainha dupla e trilho.',
     hero: '/cortina-sob-medida.avif',
     heroAlt: 'Sala com cortina de linho sob medida instalada pela ShineCortinas',
     blocos: [
       { t: 'prose', h2: 'O que define uma cortina bem resolvida', p: [
-        'Três decisões fazem o resultado na parede: o <strong>tecido decorativo</strong> da frente, que veste o ambiente e conversa com o estofado e o tapete, o <strong>forro</strong> que corre por trás controlando a claridade e protegendo a fibra contra o sol, e o <strong>sistema de prega e trilho</strong> que sustenta o desenho do teto ao chão.',
-        'É por isso que não indicamos escolher tecido por foto de celular. Na consultoria em domicílio, levamos o mostruário completo até a sua casa para você sentir o toque na mão e ver como a trama reage contra a luz da sua própria janela.',
+        'Três decisões fazem o resultado na parede: o <strong>tecido decorativo</strong> da frente, que veste o ambiente e conversa com o estofado e o tapete, o <strong>forro</strong> que corre por trás controlando a claridade e protegendo a fibra contra o sol, e o <strong>sistema de prega e trilho</strong> (manual ou <a href="/cortina-motorizada/">motorizado com Touch Motion</a>) que sustenta o desenho do teto ao chão.',
+        'É por isso que não indicamos escolher tecido por foto de celular. Na consultoria gratuita em domicílio em <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/resende/">Resende</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a>, <a href="/cidades/penedo/">Penedo</a>, <a href="/cidades/vassouras/">Vassouras</a> e toda a região, levamos o mostruário completo até a sua casa para você sentir o toque na mão e ver como a trama reage contra a luz da sua própria janela.',
       ] },
       { t: 'cards', h2: 'Tecidos e composições que trabalhamos', sub: 'Priorizamos tecidos com gramatura acima de 170 g/m² para garantir peso, prumo e resistência ao sol.', items: [
         { tag: 'Caimento e textura', h: 'Linho técnico e misto (até 10%)', p: 'Trabalhamos com 100% poliéster que imita o linho com perfeição ou tecidos com no máximo 10% de linho natural. Assim a cortina tem caimento sedoso, não fica armada, não amarrota fácil e não encolhe na lavagem.', img: '/linha-puro.avif', alt: 'Tecido de linho do mostruário ShineCortinas' },
@@ -109,11 +109,11 @@ export const PAGINAS = [
   // --------------------------------------------------------------- PERSIANAS
   {
     dir: 'persianas',
-    title: 'Persianas Sob Medida em Volta Redonda e Região | ShineCortinas',
-    description: 'Persianas sob medida: Rolô, Romana, Double Vision, Screen 5%, Champion para varanda, Vertical e Horizontal 50 mm em madeira ou alumínio. Medição a laser.',
+    title: 'Persianas Sob Medida e Motorizadas em Volta Redonda, Resende e Região | ShineCortinas',
+    description: 'Persianas sob medida e motorizadas em Volta Redonda, Resende e Sul Fluminense: Rolô, Tela Solar 5%, Romana, Double Vision, Vertical e Horizontal 50 mm madeira ou alumínio.',
     kicker: 'Persianas técnicas',
     h1: 'Persianas sob medida, para controlar a luz <em>no detalhe</em>',
-    lead: 'Persiana é estruturada em lâminas horizontais ou verticais, em gomos dobráveis como a Romana, ou em enrolamento contínuo como a Rolô e a Double Vision. Cada ambiente da casa pede um modelo e um material específicos para resolver sol, calor, umidade ou reflexo na tela.',
+    lead: 'Persiana é estruturada em lâminas horizontais ou verticais, em gomos dobráveis como a Romana, ou em enrolamento contínuo como a Rolô e a Double Vision. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense com opções manuais ou motorizadas para varanda, sala, quarto, escritório e cozinha.',
     hero: '/persiana-motorizada.avif',
     heroAlt: 'Sala com persiana rolô screen instalada pela ShineCortinas',
     blocos: [
@@ -168,7 +168,7 @@ export const PAGINAS = [
       ['Qual persiana é melhor para cozinha?', 'Na cozinha indicamos a persiana Rolô em Tela Solar 5% ou a Horizontal de alumínio. Diferente da cortina de tecido tradicional, elas não absorvem gordura nem cheiro e podem ser limpas facilmente com pano úmido e detergente neutro.'],
       ['Persiana também escurece por completo?', 'Sim. As persianas Rolô e Romana contam com tecidos blackout 100% que bloqueiam totalmente a passagem de luz pelo material.'],
       ['Vale a pena usar persiana para dividir ambientes?', 'Não recomendamos. Persiana e cortina são feitas para vestir janelas e decorar. No meio de um cômodo de passagem, a peça balança e pode danificar. Para separar espaços, o ideal é fazer uma parede de drywall.'],
-      ['Vocês instalam persiana motorizada a bateria ou elétrica?', 'Sim. Trabalhamos tanto com motores ligados na rede elétrica quanto com motores a bateria interna recarregável (para modelos compatíveis, com carga durando em média 6 meses), sem necessidade de quebrar parede.'],
+      ['Vocês instalam persiana motorizada a bateria ou elétrica em Volta Redonda e Resende?', 'Sim. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense tanto com motores ligados na rede elétrica quanto com motores a bateria interna recarregável (para modelos compatíveis, com carga durando em média 6 meses), sem necessidade de quebrar parede e com até 5 anos de garantia.'],
     ],
     links: [['/cortinas/', 'Cortinas sob medida'], ['/cortina-motorizada/', 'Persiana motorizada'], ['/blackout-e-forros/', 'Blackout e forros'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'],
             ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/metodo/', 'Como funciona'], ['/cidades-atendidas/', 'Cidades atendidas']],
@@ -177,8 +177,8 @@ export const PAGINAS = [
   // ------------------------------------------------------- BLACKOUT E FORROS
   {
     dir: 'blackout-e-forros',
-    title: 'Blackout e Forros: Translúcido, 70% e 100% | ShineCortinas',
-    description: 'Forro translúcido (gabardine, cetim, tergal, microfibra), semi blackout 70% e blackout 100%. Veja como vedar a luz no quarto com trilho triplo e transpasse.',
+    title: 'Cortina Blackout 100%, 70% e Forros em Volta Redonda, Resende e Região | ShineCortinas',
+    description: 'Cortina blackout 100%, semi blackout 70% e forro translúcido sob medida em Volta Redonda, Resende, Barra Mansa e Sul Fluminense. Trilho triplo com transpasse de 15 cm.',
     kicker: 'Blackout e forros',
     h1: 'O forro é a camada que <em>decide</em> quanta luz entra',
     lead: 'O forro corre atrás do tecido decorativo e se divide em dois grupos: o forro translúcido, que dá privacidade de dia e protege o tecido nobre contra o sol, e o forro blackout, nas versões de 70% (semi blackout para penumbra) e 100% (bloqueio total da luz pelo material).',
@@ -202,7 +202,7 @@ export const PAGINAS = [
       ),
       { t: 'prose', h2: 'Como deixar o quarto escuro de verdade (sem frestas de luz)', p: [
         'Ter o tecido blackout 100% é metade do caminho. A outra metade é impedir que a claridade escape pelas bordas da janela. Por isso projetamos a cortina subindo até o teto ou dentro do cortineiro de gesso, descendo até beijar o piso e avançando com sobra generosa para as laterais.',
-        'Para fechar o pacote técnico nos quartos mais exigentes, utilizamos <strong>finalizadores nas pontas do trilho</strong> (que mantêm as extremidades encostadas na parede) e, quando o cliente quer zero fresta no meio da janela, o <strong>trilho triplo com transpasse central de 15 cm</strong>, onde uma banda cruza 15 cm por trás da outra.',
+        'Para fechar o pacote técnico nos quartos mais exigentes em <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/resende/">Resende</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a>, <a href="/cidades/penedo/">Penedo</a> e toda a região, utilizamos <strong>finalizadores nas pontas do trilho</strong> (que mantêm as extremidades encostadas na parede) e, quando o cliente quer zero fresta no meio da janela, o <strong>trilho triplo com transpasse central de 15 cm</strong>, onde uma banda cruza 15 cm por trás da outra.',
       ] },
       fig(
         escurecer,
@@ -239,11 +239,11 @@ export const PAGINAS = [
   // ------------------------------------------------------------ CORTINA WAVE
   {
     dir: 'cortina-wave',
-    title: 'Cortina Wave Sob Medida: 2:1, 2,5:1 e 3:1 | ShineCortinas',
-    description: 'Cortina Wave sob medida nas proporções 2:1, 2,5:1 e 3:1 com cordão espaçador 0,4, 0,5 e 0,8. Descubra a medida do cortineiro 15x15 cm e as opções de forro.',
+    title: 'Cortina Wave Sob Medida em Volta Redonda, Resende e Região | ShineCortinas',
+    description: 'Cortina Wave sob medida em Volta Redonda, Resende, Barra Mansa e Sul Fluminense. Proporções 2:1, 2,5:1 e 3:1, cordão espaçador 0,4 a 0,8 e cortineiro 15x15 cm.',
     kicker: 'Cortina wave',
     h1: 'Cortina wave: a onda que fica <em>regular</em> do teto ao chão',
-    lead: 'Na cortina Wave, as ondas não dependem da sorte na hora de puxar o pano. Elas são guiadas por um cordão espaçador dentro do trilho e calculadas na oficina nas proporções 2:1, 2,5:1 ou 3:1 para descerem alinhadas do teto até beijar o piso.',
+    lead: 'Na cortina Wave, as ondas não dependem da sorte na hora de puxar o pano. Elas são guiadas por um cordão espaçador dentro do trilho e calculadas na nossa oficina nas proporções 2:1, 2,5:1 ou 3:1 para descerem alinhadas do teto até beijar o piso em projetos de Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense.',
     hero: '/cortina-sob-medida.avif',
     heroAlt: 'Cortina wave em linho com ondas regulares, projeto ShineCortinas',
     blocos: [
@@ -293,7 +293,7 @@ export const PAGINAS = [
       ['Qual o tamanho mínimo do cortineiro de gesso para a cortina Wave?', 'O tamanho mínimo que exigimos para trabalhar com bastante espaço na cortina Wave com forro é 15x15 cm: 15 cm de largura (profundidade interna) por 15 cm de altura.'],
       ['Quais medidas de cordão espaçador vocês utilizam?', 'Trabalhamos com cordões espaçadores de 0,4, 0,5 e 0,8, aplicando uma técnica na confecção que reduz o espaço entre as ondas para deixar o caimento mais próximo e elegante.'],
       ['Qual forro vai atrás da cortina Wave?', 'Podemos usar o forro slim (reto, sem prega, igual a um painel), forro em prega tombada, prega plissada, prega fêmea, prega macho ou até forro no modelo Wave. Para usar o forro também em Wave, é necessário deixar 11 cm de distância entre a cortina da frente e a de trás para as ondas não se tocarem.'],
-      ['A cortina Wave pode ser motorizada?', 'Sim. O trilho motorizado da cortina Wave conta inclusive com acionamento inteligente por toque (Touch Motion), além de controle remoto, aplicativo e comando de voz.'],
+      ['A cortina Wave pode ser motorizada em Volta Redonda e Resende?', 'Sim. Instalamos a cortina Wave motorizada em Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense. O trilho motorizado conta com acionamento inteligente por toque (Touch Motion), controle remoto, aplicativo, comando de voz pela Alexa e até 5 anos de garantia.'],
     ],
     links: [['/cortinas/', 'Cortinas sob medida'], ['/blackout-e-forros/', 'Blackout e forros'], ['/cortina-motorizada/', 'Cortina motorizada'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'],
             ['/portfolio/', 'Projetos reais'], ['/videos/', 'Vídeos'], ['/persianas/', 'Persianas'], ['/cidades-atendidas/', 'Cidades atendidas']],
@@ -302,11 +302,11 @@ export const PAGINAS = [
   // ------------------------------------------------------- CORTINA MOTORIZADA
   {
     dir: 'cortina-motorizada',
-    title: 'Cortina e Persiana Motorizada Sob Medida | ShineCortinas',
-    description: 'Cortina e persiana motorizada com garantia de até 5 anos. Motores elétricos ou a bateria (carga de ~6 meses), sistema Touch Motion e integração com Alexa.',
+    title: 'Cortina e Persiana Motorizada em Volta Redonda, Resende e Região | ShineCortinas',
+    description: 'Cortina e persiana motorizada em Volta Redonda, Resende, Barra Mansa e Sul Fluminense. Motores elétricos ou a bateria (~6 meses), Touch Motion, Alexa e até 5 anos de garantia.',
     kicker: 'Automação',
-    h1: 'Cortina motorizada: a janela que obedece <em>ao seu toque e à sua voz</em>',
-    lead: 'Mais do que abrir a cortina pela Alexa, pelo celular ou pelo controle remoto, a motorização preserva o tecido e multiplica a vida útil do conjunto, especialmente em pés-direitos duplos e grandes vãos. Trabalhamos com motores elétricos e opções a bateria recarregável, com até 5 anos de garantia.',
+    h1: 'Cortina e persiana motorizada: a janela que obedece <em>ao seu toque e à sua voz</em>',
+    lead: 'Mais do que abrir a cortina pela Alexa, pelo celular ou pelo controle remoto, a motorização preserva o tecido e multiplica a vida útil do conjunto, especialmente em pés-direitos duplos e grandes vãos. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense com motores elétricos e opções a bateria recarregável, com até 5 anos de garantia.',
     hero: '/automacao.avif',
     heroAlt: 'Cortina motorizada sendo acionada por controle remoto em sala de estar',
     blocos: [
@@ -340,6 +340,10 @@ export const PAGINAS = [
         ['Casa conectada (IoT)', 'Compatível com Alexa, Google Home e Apple Home', 'Compatível com Alexa, Google Home e Apple Home'],
         ['Garantia Shine', 'Até 5 anos no sistema motorizado', 'Até 5 anos no sistema motorizado'],
       ] },
+      { t: 'prose', h2: 'Cortina e persiana motorizada em Volta Redonda, Resende, Barra Mansa e Sul Fluminense', p: [
+        'Com oficina própria e sede operacional em <strong><a href="/cidades/volta-redonda/">Volta Redonda</a></strong> (atendendo Aterrado, Vila Santa Cecília, Jardim Amália, Retiro, Laranjal, Jardim Belvedere e todos os condomínios), nossa equipe vai até a sua residência com os motores e tecidos do mostruário, faz a medição a laser sem custo e executa a instalação completa e configurada.',
+        'Realizamos projetos de <strong>cortina motorizada em <a href="/cidades/resende/">Resende</a></strong> (Campos Elíseos, Morada da Colina, Jardim Jalisco, Alphaville Resende, Manejo e Vila Julieta), <strong><a href="/cidades/barra-mansa/">Barra Mansa</a></strong>, <strong><a href="/cidades/penedo/">Penedo</a></strong>, <strong><a href="/cidades/itatiaia/">Itatiaia</a></strong>, <strong><a href="/cidades/visconde-de-maua/">Visconde de Mauá</a></strong>, <strong><a href="/cidades/vassouras/">Vassouras</a></strong>, <strong><a href="/cidades/valenca/">Valença</a></strong>, <strong><a href="/cidades/barra-do-pirai/">Barra do Piraí</a></strong>, <strong><a href="/cidades/pirai/">Piraí</a></strong>, <strong><a href="/cidades/pinheiral/">Pinheiral</a></strong> e <strong><a href="/cidades/porto-real/">Porto Real</a></strong>. Se você busca cortina Wave motorizada para pé-direito duplo ou persiana Rolô Tela Solar motorizada para varanda gourmet, nosso consultor avalia na hora se o seu vão pede ponto elétrico ou motor a bateria.',
+      ] },
       { t: 'guides', kicker: 'Guias e vídeos de automação', h2: 'Veja os detalhes técnicos da <em>motorização</em>', sub: 'Artigos escritos pelo Isani e vídeos reais de projetos automatizados entregues pela Shine.', items: [
         ['/blog/por-que-escolher-cortina-motorizada/', 'Cortina de tecido', 'Por que escolher cortina motorizada: Touch Motion e bateria', 'Como funciona o reconhecimento de toque no pano, a abertura sem energia e a vantagem no pé-direito duplo.'],
         ['/blog/como-funciona-persiana-motorizada/', 'Persianas técnicas', 'Como funciona a persiana motorizada: motores e modelos', 'Por que as persianas de enrolar travam na falta de luz e quando usar motor a bateria ou ponto elétrico.'],
@@ -349,21 +353,22 @@ export const PAGINAS = [
       { t: 'proof' },
     ],
     faq: [
+      ['Vocês instalam cortina motorizada e persiana motorizada em Volta Redonda e Resende?', 'Sim. Nossa base fica em Volta Redonda e nossa equipe própria realiza a consultoria gratuita em domicílio, medição a laser, confecção e instalação de cortinas e persianas motorizadas em Volta Redonda, Resende, Barra Mansa, Penedo, Itatiaia, Visconde de Mauá, Vassouras, Valença, Barra do Piraí e todo o Sul Fluminense, com até 5 anos de garantia.'],
       ['Preciso quebrar a parede se não tiver tomada perto da janela?', 'Não necessariamente. Trabalhamos com motores a bateria interna recarregável para diversos modelos de cortinas e persianas (mediante consulta com nossos especialistas para avaliar o peso e o vão). A carga dura em média 6 meses dependendo do uso.'],
       ['O que acontece com a cortina ou persiana motorizada se acabar a luz?', 'Na cortina motorizada de pano (trilho motorizado), você consegue abrir e fechar normalmente com a mão. Já nas persianas motorizadas que funcionam enrolando na horizontal (Rolô, Romana e Horizontal de alumínio), o sistema de engrenagem trava o tubo na falta de luz para a peça não descer sozinha, exceto nos modelos Painel e Vertical.'],
       ['Como funciona o sistema Touch Motion da cortina motorizada?', 'É um recurso inteligente do trilho motorizado: quando você dá um leve toque ou puxão no tecido indicando a direção, o motor reconhece o movimento e abre ou fecha a cortina inteira sozinho, dispensando o controle remoto.'],
       ['Por que a motorização é tão indicada para pé-direito duplo e vãos grandes?', 'Porque em cortinas muito altas e largas o peso do tecido é grande. O motor puxa tudo pelo topo com força constante, evitando que alguém force a cordinha ou puxe a barra lateral. Isso aumenta a vida útil da cortina e garante até 5 anos de garantia na motorização.'],
       ['Funciona com Alexa, Google Home e celular?', 'Sim. Os motores IoT de 7ª geração funcionam por controle remoto, aplicativo no celular e comando de voz (Alexa, Google Home e Apple Home), permitindo inclusive programar horários de abertura e fechamento.'],
     ],
-    links: [['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/cortina-wave/', 'Cortina wave'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'],
-            ['/blog/por-que-escolher-cortina-motorizada/', 'Artigo sobre motorização'], ['/videos/', 'Vídeos'], ['/portfolio/', 'Projetos reais'], ['/cidades-atendidas/', 'Cidades atendidas']],
+    links: [['/cidades/volta-redonda/', 'Volta Redonda'], ['/cidades/resende/', 'Resende'], ['/cidades/barra-mansa/', 'Barra Mansa'], ['/cortina-wave/', 'Cortina wave'],
+            ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/cidades-atendidas/', 'Todas as cidades']],
   },
 
   // -------------------------------------------------- TRILHOS E ACIONAMENTOS
   {
     dir: 'trilhos-e-acionamentos',
-    title: 'Trilhos, Varão e Cortineiro para Cortina | ShineCortinas',
-    description: 'Trilho suíço em alumínio, cortineiro 15x15 cm, trilho triplo com transpasse de 15 cm e varão de 19 mm ou 28 mm com suporte central. Veja como escolher.',
+    title: 'Trilho Suíço, Motorizado e Varão para Cortina em Volta Redonda e Região | ShineCortinas',
+    description: 'Trilho suíço em alumínio, trilho motorizado Touch Motion, cortineiro 15x15 cm, trilho triplo e varão de 19 mm ou 28 mm em Volta Redonda, Resende e Sul Fluminense.',
     kicker: 'Trilhos e acionamentos',
     h1: 'Trilhos e acionamentos: a engenharia que <em>ninguém vê</em> e todo mundo sente',
     lead: 'O trilho e o acionamento são a fundação mecânica da cortina. São eles que definem se a onda corre leve sem engasgar na emenda, se a luz vaza pelo topo da janela e se uma cortina pesada vai continuar alinhada daqui a dez anos.',
@@ -452,7 +457,7 @@ export const PAGINAS = [
   // ------------------------------------------------------------------- SOBRE
   {
     dir: 'sobre',
-    title: 'Sobre a Shine: Desde 2009 no Sul Fluminense | ShineCortinas',
+    title: 'Sobre a ShineCortinas: Desde 2009 no Sul Fluminense | ShineCortinas',
     description: 'Fundada em 2009 e dirigida por Isani Oliveira, a ShineCortinas atende 15 cidades do Sul Fluminense com equipe própria, do consultor ao instalador.',
     kicker: 'Sobre a Shine',
     h1: 'Desde 2009 medindo, confeccionando e <em>instalando</em>',
@@ -537,8 +542,8 @@ export const PAGINAS = [
   // --------------------------------------------------- LAVAGEM DE CORTINAS
   {
     dir: 'lavagem-de-cortinas',
-    title: 'Lavagem de Cortinas em Volta Redonda e Região | ShineCortinas',
-    description: 'Lavagem e secagem vertical de cortinas de tecido com retirada e reinstalação em casa. Revisão de deslizantes, costuras, trilhos e ajuste de bainha com garantia.',
+    title: 'Lavagem de Cortinas em Volta Redonda, Resende e Região | ShineCortinas',
+    description: 'Lavagem e secagem vertical de cortinas de tecido com retirada e reinstalação em casa. Revisão de deslizantes, costuras, trilhos e ajuste de bainha com garantia Shine.',
     kicker: 'Lavagem de cortinas',
     h1: 'Lavagem e secagem vertical para a sua cortina <em>não perder o DNA</em>',
     lead: 'A equipe da Shine vai até a sua casa, retira as cortinas de tecido, faz a lavagem e a secagem na vertical para manter os vincos e as dobras originais, passa e reinstala tudo no lugar. E enquanto a cortina está no nosso ateliê, revisamos deslizantes, costuras, trilhos e fazemos o ajuste de bainha se o tecido encolher.',

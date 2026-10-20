@@ -214,11 +214,34 @@ function ajustaHead(head, p) {
     };
     const bi = g.findIndex((n) => n['@type'] === 'BreadcrumbList');
     if (bi >= 0) g[bi] = bcNode; else g.push(bcNode);
+    const areasAll = [
+      { '@type': 'City', name: 'Volta Redonda' },
+      { '@type': 'City', name: 'Resende' },
+      { '@type': 'City', name: 'Barra Mansa' },
+      { '@type': 'Place', name: 'Penedo' },
+      { '@type': 'City', name: 'Itatiaia' },
+      { '@type': 'City', name: 'Barra do Piraí' },
+      { '@type': 'City', name: 'Vassouras' },
+      { '@type': 'City', name: 'Valença' },
+      { '@type': 'City', name: 'Piraí' },
+      { '@type': 'City', name: 'Pinheiral' },
+      { '@type': 'City', name: 'Porto Real' },
+      { '@type': 'AdministrativeArea', name: 'Sul Fluminense, RJ' },
+    ];
+    const areasLavagem = [
+      { '@type': 'City', name: 'Volta Redonda' },
+      { '@type': 'City', name: 'Barra Mansa' },
+      { '@type': 'City', name: 'Resende' },
+      { '@type': 'City', name: 'Barra do Piraí' },
+      { '@type': 'City', name: 'Piraí' },
+      { '@type': 'City', name: 'Pinheiral' },
+    ];
     const biz = g.find((n) => n['@type'] === 'LocalBusiness');
     if (biz) {
       biz['@id'] = `${BASE}/#biz`;
       if (!biz.priceRange) biz.priceRange = '$$';
       biz.address = { '@type': 'PostalAddress', addressLocality: 'Volta Redonda', addressRegion: 'RJ', addressCountry: 'BR' };
+      biz.areaServed = areasAll;
     }
     const org = g.find((n) => n['@type'] === 'Organization');
     if (org) {
@@ -232,7 +255,7 @@ function ajustaHead(head, p) {
       srv.description = p.description;
       srv.url = url;
       srv.provider = { '@id': `${BASE}/#biz` };
-      srv.areaServed = 'Sul Fluminense, RJ';
+      srv.areaServed = p.dir === 'lavagem-de-cortinas' ? areasLavagem : areasAll;
     }
     const j = g.findIndex((n) => n['@type'] === 'WebPage');
     const web = { '@type': 'WebPage', '@id': url, url, name: p.title, inLanguage: 'pt-BR', dateModified: TODAY,

@@ -6,7 +6,7 @@ import {WA,FOUNDED_YEAR,YEARS_ACTIVE,GOOGLE_RATING_PT,GOOGLE_REVIEWS,esc,cleanHe
 const ROOT=join(dirname(fileURLToPath(import.meta.url)),'..');
 const FILE=join(ROOT,'index.html');
 const BASE='https://www.shinecortinas.com';
-const TODAY='2026-10-16';
+const TODAY='2026-10-19';
 const CITIES = [
   ['volta-redonda', 'Volta Redonda'], ['barra-mansa', 'Barra Mansa'], ['resende', 'Resende'], ['porto-real', 'Porto Real'],
   ['itatiaia', 'Itatiaia'], ['penedo', 'Penedo'], ['visconde-de-maua', 'Visconde de Mauá'], ['maromba', 'Maromba'],
@@ -16,10 +16,12 @@ const CITIES = [
 
 const FAQ = [
   ['Como funciona o investimento num projeto sob medida?', 'Cada projeto é único, então não há tabela de preços fixa: o valor depende do ambiente, dos tecidos escolhidos e do tipo de instalação. Na consultoria em domicílio, gratuita, o consultor apresenta as opções e as condições, incluindo a comodidade de parcelar em até 12x. Você decide com calma, sem compromisso.'],
+  ['Vocês instalam cortina motorizada e persiana motorizada em Volta Redonda e Resende?', 'Sim. Projetamos e instalamos cortina motorizada em trilho Wave ou prega e persiana motorizada (rolô, tela solar e blackout) em Volta Redonda, Resende, Barra Mansa, Penedo, Itatiaia e todo o Sul Fluminense, com motorização silenciosa a bateria recarregável sem quebrar parede ou ponto 110V/220V e integração com Alexa, Google Home e Apple HomeKit.'],
   ['Vocês atendem na minha cidade?', 'Sim. Atendemos todo o Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Engenheiro Paulo de Frontin e Miguel Pereira. O consultor vai até você.'],
   ['Tenho que ir até a loja?', 'Não. Somos pioneiros no modelo de consultoria em domicílio: o especialista vai até a sua casa com o mostruário, mede cada ambiente a laser e apresenta as melhores opções no seu espaço. Você escolhe sem sair de casa e sem pressão.'],
   ['Quanto tempo leva para instalar?', 'Trabalhamos exclusivamente sob medida: após a medição a laser, cada peça é confeccionada para o seu vão. Quando fica pronta e agendamos a entrega, o serviço de instalação em si leva poucas horas em uma única visita na maioria dos projetos, deixando o ambiente limpo e pronto.'],
   ['O blackout bloqueia toda a luz do quarto?', 'Depende do forro. O forro blackout 100% bloqueia a passagem de luz pelo tecido e é ele que entrega o quarto escuro de verdade. O forro blackout de 70%, chamado de semi blackout, deixa o ambiente em penumbra. Na consultoria o consultor mede a janela e indica o forro certo para o escurecimento que você procura.'],
+  ['Vocês fazem lavagem de cortinas sob medida?', 'Sim. Em Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral, nossa equipe retira sua cortina de tecido no local, higieniza sem encolher linho, voil ou blackout e devolve instalada e alinhada no trilho.'],
   ['Qual é a garantia?', 'A garantia é de 1 ano para cortinas e persianas não motorizadas e chega a até 5 anos nos projetos motorizados. Se surgir qualquer problema, você nos chama e a nossa equipe resolve.'],
 ];
 
@@ -44,15 +46,19 @@ function journal(){return `<section class="pv-journal pv-section" id="blog"><p c
 
 function trust(reviews){return `<section class="pv-section pv-home-trust" id="depoimentos"><p class="pv-eyebrow">Avaliações reais · Google ${GOOGLE_RATING_PT}</p><h2>O que dizem depois da <em>instalação.</em></h2><div class="sl-stats"><div class="sl-stat"><span class="sl-stat__n" data-since="${FOUNDED_YEAR}">${YEARS_ACTIVE}</span><div><h3>Anos no Sul Fluminense</h3><p>Desde ${FOUNDED_YEAR} medindo, confeccionando e instalando sob medida.</p></div></div><div class="sl-stat"><span class="sl-stat__n">${GOOGLE_RATING_PT}</span><div><h3>Nota ${GOOGLE_RATING_PT} no Google</h3><p>${GOOGLE_REVIEWS} avaliações reais de clientes atendidos na região.</p></div></div><div class="sl-stat"><span class="sl-stat__n">9 mil</span><div><h3>Ambientes entregues</h3><p>Salas, quartos, escritórios, pousadas e projetos corporativos.</p></div></div><div class="sl-stat"><span class="sl-stat__n">100%</span><div><h3>Equipe própria</h3><p>Do consultor ao instalador, não terceirizamos a sua casa.</p></div></div></div><div class="sl-quotes">${reviews.map(r=>`<blockquote class="sl-quote"><p>${esc(r.body)}</p><footer>${esc(r.name)} · Google</footer></blockquote>`).join('')}</div></section>
 <section class="pv-section pv-home-trust" id="cidades"><p class="pv-eyebrow">Perto de você</p><h2>Cortinas e persianas sob medida <em>no Sul Fluminense.</em></h2><p>Desde ${FOUNDED_YEAR}, em Volta Redonda. Levamos o mostruário e a consultoria até a sua casa.</p><div class="sl-chips">${CITIES.map(([slug,name])=>`<a href="/cidades/${slug}/">${name}</a>`).join('')}</div></section>
-<section class="pv-section pv-home-trust" id="faq"><p class="pv-eyebrow">Dúvidas frequentes</p><h2>Antes de <em>escolher.</em></h2><div class="sl-faq">${FAQ.map(([q,a])=>`<details><summary>${q}</summary><div>${a}</div></details>`).join('')}</div><div class="sl-links"><a href="/cortina-wave/">Cortina wave</a><a href="/trilhos-e-acionamentos/">Trilhos e acionamentos</a><a href="/videos/">Vídeos</a><a href="/faq/">Mais perguntas</a></div></section>`;}
+<section class="pv-section pv-home-trust" id="faq"><p class="pv-eyebrow">Dúvidas frequentes</p><h2>Antes de <em>escolher.</em></h2><div class="sl-faq">${FAQ.map(([q,a])=>`<details><summary>${q}</summary><div>${a}</div></details>`).join('')}</div><div class="sl-links"><a href="/cortina-motorizada/">Cortina motorizada</a><a href="/cortina-wave/">Cortina wave</a><a href="/trilhos-e-acionamentos/">Trilhos e acionamentos</a><a href="/lavagem-de-cortinas/">Lavagem de cortinas</a><a href="/videos/">Vídeos</a><a href="/faq/">Mais perguntas</a></div></section>`;}
 // ---- monta ----
 const src = readFileSync(FILE, 'utf8');
 let head = cleanHead(src.split('<body')[0]);
-const HOME_TITLE = 'Cortinas e Persianas Sob Medida no Sul Fluminense | ShineCortinas';
+const HOME_TITLE = 'Cortinas, Persianas e Cortina Motorizada em Volta Redonda, Resende e Sul Fluminense | ShineCortinas';
+const HOME_DESC = 'Cortinas sob medida, cortina motorizada, Wave e persianas em Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense. Medição a laser e instalação própria.';
 head = head.replace(/<title>[\s\S]*?<\/title>/, `<title>${HOME_TITLE}</title>`);
 if (!head.includes('name="yandex-verification"')) {
   head = head.replace('<link rel="canonical"', '<meta name="yandex-verification" content="329cd5a44fd952c5" />\n    <link rel="canonical"');
 }
+head = head.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${HOME_DESC}">`);
+head = head.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${HOME_TITLE}">`);
+head = head.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${HOME_DESC}">`);
 head = head.replace(/<meta property="og:image" content="[^"]*">/, '<meta property="og:image" content="https://www.shinecortinas.com/hero-sala.avif">');
 head = head.replace(/<meta property="og:image:width" content="[^"]*">/, '<meta property="og:image:width" content="1920">');
 head = head.replace(/<meta property="og:image:height" content="[^"]*">/, '<meta property="og:image:height" content="1080">');
