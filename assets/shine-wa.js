@@ -31,15 +31,59 @@
     return t.length > 70 ? t.slice(0, 67) + '…' : t;
   }
 
+  function getJourneyDetails() {
+    var j = window.shineJourney || null;
+    if (!j) {
+      try { j = JSON.parse(sessionStorage.getItem('shine.jornada') || 'null'); } catch (e) {}
+    }
+    var favs = [];
+    try {
+      var rawFavs = JSON.parse(localStorage.getItem('shine.favoritos') || '[]');
+      if (Array.isArray(rawFavs)) favs = rawFavs;
+    } catch (e) {}
+    return {
+      consultor: j && j.consultor ? String(j.consultor) : null,
+      obras: j && Array.isArray(j.obras) ? j.obras : [],
+      videos: j && Array.isArray(j.videos) ? j.videos : [],
+      artigos: j && Array.isArray(j.artigos) ? j.artigos : [],
+      favoritos: favs
+    };
+  }
+
+  function journeyTextSuffix() {
+    var d = getJourneyDetails();
+    var parts = [];
+    if (d.consultor) parts.push('Consultor: ' + d.consultor);
+    if (d.favoritos.length) parts.push('Salvei: ' + d.favoritos.slice(0, 3).join(', '));
+    else if (d.obras.length) parts.push('Vi no acervo: ' + d.obras.slice(-2).join(', '));
+    if (d.videos.length) parts.push('Assisti: ' + d.videos.slice(-1)[0]);
+    if (!parts.length) return '';
+    return '\n\n✦ Meu interesse no site: ' + parts.join(' • ');
+  }
+
   function message(kind) {
     var c = cityName(); var where = (c && state.source !== 'ip') ? ' Atendimento em ' + c + '.' : ''; // cidade por IP é só palpite: não vira afirmação
     var ctx = context();
-    if (kind === 'agendar') return 'Olá, vim do site da Shine.' + where + ' Quero agendar a consultoria gratuita em casa.';
-    if (kind === 'estimativa') return 'Olá, vim do site da Shine.' + where + ' Quero uma estimativa para o meu ambiente (vi: ' + ctx + ').';
-    return 'Olá, vim do site da Shine.' + where + ' Quero falar com um consultor sobre cortinas e persianas (vi: ' + ctx + ').';
+    var suffix = journeyTextSuffix();
+    if (kind === 'agendar') return 'Olá, vim do site da Shine.' + where + ' Quero agendar a consultoria gratuita em casa.' + suffix;
+    if (kind === 'estimativa') return 'Olá, vim do site da Shine.' + where + ' Quero uma estimativa para o meu ambiente (vi: ' + ctx + ').' + suffix;
+    return 'Olá, vim do site da Shine.' + where + ' Quero falar com um consultor sobre cortinas e persianas (vi: ' + ctx + ').' + suffix;
   }
 
   function isWa(a) { return a && /wa\.me\//.test(a.getAttribute('href') || ''); }
+
+  var GENERIC_WA_KINDS = {
+    header: true,
+    hero: true,
+    consultoria: true,
+    fechamento: true,
+    footer: true,
+    flutuante: true,
+    'menu-modal': true,
+    conversar: true,
+    agendar: true,
+    estimativa: true
+  };
 
   function trackWa(kind) {
     var dados = {
@@ -49,6 +93,11 @@
     };
     var c = cityName();
     if (c && state.source !== 'ip') dados.cidade = c;
+    var jd = getJourneyDetails();
+    if (jd.consultor) dados.jornada_consultor = jd.consultor;
+    if (jd.obras.length) dados.jornada_obras = jd.obras.join(' | ');
+    if (jd.favoritos.length) dados.jornada_favoritos = jd.favoritos.join(' | ');
+    if (jd.videos.length) dados.jornada_videos = jd.videos.join(' | ');
     try {
       if (window.zaraz && typeof window.zaraz.track === 'function') {
         window.zaraz.track('Contact', dados);
@@ -67,6 +116,17 @@
     var kind = a.getAttribute('data-wa') || 'conversar';
     if (!a.hasAttribute('data-wa-custom')) {
       a.setAttribute('href', 'https://wa.me/' + NUMBER + '?text=' + encodeURIComponent(message(kind)));
+    } else if (GENERIC_WA_KINDS[kind]) {
+      var suffix = journeyTextSuffix();
+      if (suffix) {
+        try {
+          var currentHref = a.getAttribute('href') || '';
+          var m = currentHref.match(/[?&]text=([^&]*)/);
+          var baseText = m ? decodeURIComponent(m[1].replace(/\+/g, '%20')) : 'Olá, vim do site da Shine e quero agendar minha consultoria gratuita.';
+          var cleanBase = baseText.split('\n\n✦ Meu interesse no site:')[0];
+          a.setAttribute('href', 'https://wa.me/' + NUMBER + '?text=' + encodeURIComponent(cleanBase + suffix));
+        } catch (e) {}
+      }
     }
     trackWa(kind);
   }, true);

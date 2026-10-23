@@ -16,7 +16,7 @@ import {
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const FILE = join(ROOT, 'index.html');
 const BASE = 'https://www.shinecortinas.com';
-const TODAY = '2026-10-22';
+const TODAY = '2026-10-23';
 
 const HOME_TITLE =
   'Cortinas, Persianas e Cortina Motorizada em Volta Redonda, Resende e Sul Fluminense | ShineCortinas';
@@ -66,30 +66,35 @@ const REVIEWS = [
   {
     initials: 'MR',
     name: 'Marcio Rocha',
+    datePublished: '2026-03',
     tag: '🛡️ Pós-Venda e Compromisso',
     body: 'Atendimento ágil, entrega rápida e cortinas impecáveis. Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!'
   },
   {
     initials: 'AR',
     name: 'Amanda Rocha da Silva',
+    datePublished: '2026-04',
     tag: '⏱️ Pontualidade e Visita em Casa',
     body: 'EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente. Atendimento nota mil do início ao fim. Produtos da mais alta qualidade! Indico de olhos fechados!'
   },
   {
     initials: 'MS',
     name: 'Marcio Soares',
+    datePublished: '2026-06',
     tag: '✨ Cliente Recorrente',
     body: 'Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente. Parabéns a toda a equipe pelo profissionalismo e dedicação. Com certeza continuarei recomendando!'
   },
   {
     initials: 'LF',
     name: 'Luan Ferreira',
+    datePublished: '2026-04',
     tag: '🌟 Atendimento Nota 10',
     body: 'Experiência excelente com a Shine Cortinas! Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo.'
   },
   {
     initials: 'VF',
     name: 'Vitória Fernandes',
+    datePublished: '2026-04',
     tag: '🏠 Pontualidade e Qualidade',
     body: 'Trabalho de excelência, pontuais e ótimos profissionais. Fiquei muito satisfeita, recomendo.'
   }
@@ -449,6 +454,7 @@ const schemaJson = {
       review: REVIEWS.map((r) => ({
         '@type': 'Review',
         author: { '@type': 'Person', name: r.name },
+        datePublished: r.datePublished,
         reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
         reviewBody: r.body
       })),
@@ -483,7 +489,7 @@ const schemaJson = {
       name: 'Isani Oliveira',
       jobTitle: 'Fundador e especialista em cortinas e persianas sob medida',
       description:
-        'Fundador da ShineCortinas, à frente da empresa desde 2009. Projeta cortinas e persianas sob medida para residências do Sul Fluminense.',
+        'Fundador da ShineCortinas, à frente da empresa desde 2009. Designer de interiores por formação prática, projeta cortinas e persianas sob medida para residências do Sul Fluminense.',
       worksFor: { '@id': `${BASE}/#org` },
       url: `${BASE}/sobre/`,
       image: `${BASE}/isani-consultoria.avif`,
@@ -492,7 +498,8 @@ const schemaJson = {
         'https://www.facebook.com/shinecortinas',
         'https://www.tiktok.com/@shinecortinas',
         'https://www.youtube.com/@shinecortinas',
-        'https://www.pinterest.com/shinecortinas'
+        'https://www.pinterest.com/shinecortinas',
+        'https://www.linkedin.com/in/isani-oliveira-93482834b/'
       ]
     },
     {
@@ -1466,8 +1473,8 @@ ${FAQ.map(
     </div>
   </div>
 
-  <script data-cfasync="false" src="/assets/shine-home-e.js?v=5" defer></script>
-  <script data-cfasync="false" src="/assets/shine-wa.js?v=4" defer></script>
+  <script data-cfasync="false" src="/assets/shine-home-e.js?v=6" defer></script>
+  <script data-cfasync="false" src="/assets/shine-wa.js?v=5" defer></script>
   <script type="speculationrules">
   {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}
   </script>

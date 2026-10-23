@@ -2,9 +2,62 @@
    SHINECORTINAS — PRÉVIA E (INTERATIVIDADE MOBILE, CONSULTOR, BENTO E MODAIS)
    ========================================================================== */
 const STORAGE_KEY_FAVS = 'shine.favoritos';
+const STORAGE_KEY_JOURNEY = 'shine.jornada';
 const savedReferences = new Set();
 let diagState = { room: 'estar', vao: 'cortineiro' };
 let currentSheetId = 'wave';
+
+const shineJourney = {
+  consultor: null,
+  obras: [],
+  videos: [],
+  artigos: [],
+  verMaisCliques: 0
+};
+
+function loadJourney() {
+  try {
+    const raw = sessionStorage.getItem(STORAGE_KEY_JOURNEY);
+    if (!raw) return;
+    const obj = JSON.parse(raw);
+    if (obj && typeof obj === 'object') {
+      if (obj.consultor) shineJourney.consultor = String(obj.consultor);
+      if (Array.isArray(obj.obras)) shineJourney.obras = obj.obras.slice(-3);
+      if (Array.isArray(obj.videos)) shineJourney.videos = obj.videos.slice(-2);
+      if (Array.isArray(obj.artigos)) shineJourney.artigos = obj.artigos.slice(-2);
+      if (typeof obj.verMaisCliques === 'number') shineJourney.verMaisCliques = obj.verMaisCliques;
+    }
+  } catch (_) {}
+  window.shineJourney = shineJourney;
+}
+
+function saveJourney() {
+  window.shineJourney = shineJourney;
+  try {
+    sessionStorage.setItem(STORAGE_KEY_JOURNEY, JSON.stringify(shineJourney));
+  } catch (_) {}
+}
+
+function addUniqueRecent(list, val, maxLen) {
+  if (!val) return;
+  const idx = list.indexOf(val);
+  if (idx !== -1) list.splice(idx, 1);
+  list.push(val);
+  while (list.length > maxLen) list.shift();
+}
+
+function trackShineEvent(eventName, params) {
+  const payload = Object.assign({ pagina: location.pathname }, params || {});
+  try {
+    if (window.zaraz && typeof window.zaraz.track === 'function') {
+      window.zaraz.track(eventName, payload);
+    }
+  } catch (_) {}
+  try {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: eventName }, payload));
+  } catch (_) {}
+}
 
 function loadSavedReferences() {
   try {
@@ -92,6 +145,9 @@ const blogArticles = {
 function openArticleSheet(id) {
   const art = blogArticles[id];
   if (!art) return;
+  addUniqueRecent(shineJourney.artigos, art.title, 2);
+  saveJourney();
+  trackShineEvent('shine_blog_leitura', { artigo_id: id, titulo: art.title });
   document.getElementById('art-kicker').textContent = art.kicker;
   document.getElementById('art-title').textContent = art.title;
   document.getElementById('art-body').innerHTML = art.body;
@@ -116,6 +172,7 @@ function closeArticleSheet() {
 
 function openMenuSheet() {
   const count = savedReferences.size;
+  trackShineEvent('shine_menu_aberto', { salvos: count });
   const lbl = document.getElementById('menu-saved-label');
   if (lbl) lbl.textContent = '♡ Meus Salvos (' + count + ')';
   const modal = document.getElementById('menu-sheet-modal');
@@ -378,6 +435,13 @@ function setIsaniDiag(type, val) {
   const r = isaniRooms[diagState.room];
   const v = isaniVaos[diagState.vao];
   if (!r || !v) return;
+  shineJourney.consultor = r.name + ' · ' + v.name + ' (' + r.title + ')';
+  saveJourney();
+  trackShineEvent('shine_consultor', {
+    ambiente: r.name,
+    vao: v.name,
+    solucao: r.title
+  });
   document.getElementById('isani-diag-badge').textContent = '✓ Indicação para: ' + r.name + ' · ' + v.name;
   document.getElementById('isani-diag-img').src = r.img;
   document.getElementById('isani-diag-title').textContent = r.title;
@@ -402,6 +466,13 @@ function openCaseSheet(id) {
   currentSheetId = id;
   const item = caseCatalog[id];
   if (!item) return;
+  addUniqueRecent(shineJourney.obras, item.refTitle, 3);
+  saveJourney();
+  trackShineEvent('shine_obra_aberta', {
+    obra_id: id,
+    titulo: item.refTitle,
+    tem_video: Boolean(item.videoId)
+  });
   const sheetImg = document.getElementById('sheet-img');
   sheetImg.onerror = function () {
     this.onerror = null;
@@ -483,8 +554,10 @@ function syncSavedTilesDOM() {
 function toggleTileRef(id) {
   const item = caseCatalog[id];
   if (!item) return;
+  let acao = 'salvar';
   if (savedReferences.has(item.refTitle)) {
     savedReferences.delete(item.refTitle);
+    acao = 'remover';
   } else {
     savedReferences.add(item.refTitle);
   }
@@ -492,6 +565,12 @@ function toggleTileRef(id) {
   syncSavedTilesDOM();
   syncSheetSaveButton();
   updateSelectionUI();
+  trackShineEvent('shine_favorito', {
+    obra_id: id,
+    titulo: item.refTitle,
+    acao: acao,
+    total_salvos: savedReferences.size
+  });
 }
 
 function updateSelectionUI() {
@@ -589,6 +668,7 @@ function selectMainGroup(groupKey, btn) {
   currentMainGroup = groupKey;
   currentFilterCat = groupKey;
   visibleBentoLimit = 4;
+  trackShineEvent('shine_filtro_acervo', { grupo: groupKey });
 
   if (groupKey === 'insta') {
     syncInstagramHashtagFeed(true);
@@ -618,6 +698,7 @@ function selectMainGroup(groupKey, btn) {
         currentFilterCat = sg.cat;
         visibleBentoLimit = 4;
         ruleEl.innerHTML = sg.rule;
+        trackShineEvent('shine_filtro_acervo', { grupo: groupKey, subgrupo: sg.cat });
         renderBentoGrid();
       };
       listEl.appendChild(sbtn);
@@ -683,6 +764,13 @@ function toggleMoreProjects() {
   });
   if (visibleBentoLimit < matching.length) {
     visibleBentoLimit += 4;
+    shineJourney.verMaisCliques = (shineJourney.verMaisCliques || 0) + 1;
+    saveJourney();
+    trackShineEvent('shine_ver_mais', {
+      filtro: currentFilterCat,
+      visiveis: Math.min(visibleBentoLimit, matching.length),
+      total: matching.length
+    });
   } else {
     visibleBentoLimit = 4;
     const p = document.getElementById('portfolio');
@@ -692,6 +780,12 @@ function toggleMoreProjects() {
 }
 
 function openVideoModal(title, videoIdOrUrl, waText, pageUrl) {
+  addUniqueRecent(shineJourney.videos, title, 2);
+  saveJourney();
+  trackShineEvent('shine_video_play', {
+    titulo: title,
+    video_id: String(videoIdOrUrl)
+  });
   document.getElementById('video-modal-title').textContent = title;
   const box = document.getElementById('video-modal-box');
   if (String(videoIdOrUrl).startsWith('http')) {
@@ -870,6 +964,7 @@ async function syncInstagramHashtagFeed(includeAllApproved = false) {
 }
 
 // Inicialização
+loadJourney();
 loadSavedReferences();
 syncSavedTilesDOM();
 updateSelectionUI();
