@@ -268,3 +268,48 @@ Extraídos os dados atualizados do **Sistema CRM SHINE** (`shine-crm.pages.dev`,
    - Adicionados **`All Users of Shine - GA4`** (`Status: Qualificada`) e **`Purchasers of Shine - GA4`** em modo **Observação** na campanha.
 7. **Pausa do Recurso de Chamada (`(24) 3338-3069` em `Recursos > Ligar para`):**
    - Como o telefone fixo `(24) 3338-3069` está temporariamente desativado (e já havia consumido 2 cliques / R$ 8,57 na campanha), o recurso de chamada `(24) 3338-3069` foi **Pausado** às 16h42 (`Status: Pausado`), evitando tentativas frustradas de ligação e garantindo que 100% dos cliques conduzam ao site.
+
+---
+
+## 7. Diagnóstico de Leilão e Otimização de Quarta-feira (21/10/2026 às 13h30)
+
+### 7.1. Diagnóstico de Entrega na Manhã de 21/10/2026 (até 11h10)
+- **Por que parecia estar zerado:** O seletor de datas do painel do Google Ads estava fixado no intervalo estático `17–20 de out. de 2026` (excluindo o dia 21/10). Ao mudar para **`Hoje (21 de out. de 2026)`**, a campanha já registrava **27 impressões**, **1 clique** (`"cortina blackout com voil"`, CPC **R$ 3,66**) e **1,00 conversão principal (`whatsapp_click`)** no grupo `Cortina Wave, Sala, Quarto e Pé-Direito Duplo` (**CPA do dia: R$ 3,66**).
+- **Acumulado Geral da Campanha (`17/10 a 21/10/2026 às 11h10`):**
+  - **Custo total:** R$ 96,17 · **26 cliques** · **281 impressões** · **CTR médio:** 9,25% · **CPC médio:** R$ 3,70.
+  - **Conversões principais (`whatsapp_click`):** **4,00 conversões** · **Taxa de conversão:** 15,38% · **Custo/conv. (CPA):** **R$ 24,04**.
+- **Gargalo de Leilão Identificado (Trava de CPC Máximo em `R$ 4,50` + Qualidade do Anúncio `Ruim`):**
+  - Na manhã de 21/10, a campanha teve **48,39% de Perda de Parcela de Impressões por Classificação (`Lost IS rank`)**, chegando a **80,00%** no grupo `Motorizadas, Varanda (Tela Solar) e Persianas` e **75,00%** no grupo `Volta Redonda e Barra Mansa`.
+  - Termos nobres onde entramos no leilão em 21/10 mas ficamos abaixo do topo ou perdemos cliques pela trava de `R$ 4,50`: `[persiana motorizada]` (`Lost IS rank` de **84,62%**, Índice de Qualidade `3/10`), `"persiana tela solar varanda"` (`Lost IS rank` de **38,89%**, CPC real batendo `R$ 4,49`), `[cortinas volta redonda]` (`Lost IS rank` de **82,61%**, 21 impressões e 0 cliques) e `[persianas volta redonda]` (`Lost IS rank` de **50,00%**, 13 impressões e 0 cliques).
+
+### 7.2. Otimizações Executadas em 21/10/2026 (Itens 1 e 2)
+1. **Elevação do Limite de Lance de CPC Máximo (`R$ 4,50` → `R$ 6,50`):**
+   - Na configuração de lances da campanha (`Maximizar cliques`), o teto de CPC máximo foi atualizado e salvo de `R$ 4,50` para **`R$ 6,50`**, destravando os leilões de alta intenção comercial em Volta Redonda, Resende, Cortina Wave e Motorizadas.
+2. **Adição de 14 Novas Variações de Palavras-Chave (Frase e Exata):**
+   - **Grupo 1 (`Volta Redonda e Barra Mansa`, ID `202724551193`):**
+     - `"cortinas volta redonda"` (Frase)
+     - `"persianas volta redonda"` (Frase)
+   - **Grupo 3 (`Cortina Wave, Sala, Quarto e Pé-Direito Duplo`, ID `206877431448`):**
+     - `"cortina blackout com voil"` (Frase — termo exato que gerou a conversão de R$ 3,66 hoje)
+     - `[cortina blackout com voil]` (Exata)
+     - `"cortina wave"` (Frase)
+     - `"cortina blackout sob medida"` (Frase)
+     - `"cortina com voil"` (Frase)
+     - **Pausada:** `"cortina com forro blackout"` (Frase — acumulava 105 impressões com apenas 1 clique e CTR de 0,95%, atraindo buscas de forro avulso/pronto e puxando o CTR do Grupo 3 para baixo).
+   - **Grupo 4 (`Motorizadas, Varanda (Tela Solar) e Persianas`, ID `206877443648`):**
+     - `"persiana automatizada"` (Frase)
+     - `[persiana automatizada]` (Exata)
+     - `"persiana automática"` (Frase)
+     - `[persiana automática]` (Exata)
+     - `"persiana motorizada"` (Frase)
+     - `"cortina automatizada"` (Frase)
+     - `[cortina automatizada]` (Exata)
+     - `"cortina com controle remoto"` (Frase)
+     - `[cortina com controle remoto]` (Exata)
+3. **Destravamento da Qualidade dos 5 Anúncios Responsivos de Pesquisa (`Ruim` → `Excelente`):**
+   - Removida a fixação única da Posição 2 (`pinnedField: 12`) nos 5 anúncios RSAs (mantendo os títulos qualificadores `"Não Vendemos Cortina Pronta"` e `"Apenas Cortinas de Tecido"` ativos na rotação livre de 15 títulos, sem penalizar a nota do algoritmo).
+   - No **Grupo 4 (`Motorizadas`)**, incluídos títulos com correspondência exata das palavras-chave de maior volume (`"Persiana Motorizada Sob Medida"`, `"Cortina Motorizada Sob Medida"`, `"Persiana Tela Solar Varanda"`, `"Persiana Automatizada e Rolô"`), elevando a **Qualidade do anúncio** diretamente para **`Excelente`**.
+   - No **Grupo 3 (`Cortina Wave`)**, incluídos `"Cortina Wave Sob Medida"`, `"Cortina Blackout com Voil"` e `"Cortina Pé-Direito Duplo"`.
+   - Nos **Grupos 1 (`Volta Redonda`) e 2 (`Resende`)**, incluídos títulos locais exatos (`"Persianas em Volta Redonda"`, `"Cortinas em Barra Mansa e VR"`, `"Cortinas em Resende e Penedo"`, `"Persianas em Resende e Serra"`).
+   - No **Grupo 5 (`Lavagem de Cortinas`)**, adicionados 5 novos títulos para completar **15/15 títulos** (`"Lavagem de Cortinas Sob Medida"`, `"Higienização de Cortinas Shine"`, `"Lavar Cortinas Volta Redonda"`, `"Lavanderia de Cortinas Shine"`, `"Atendemos VR, BM e Resende"`).
+

@@ -79,7 +79,6 @@ export function normalizaJsonLd(head, crumbs) {
       n.sameAs = SAME_AS;
       n.contactPoint = [
         { '@type': 'ContactPoint', telephone: '+5524993298763', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
-        { '@type': 'ContactPoint', telephone: '+552433383069', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
       ];
     }
     if (t === 'LocalBusiness' || t === 'HomeAndConstructionBusiness' || (Array.isArray(t) && (t.includes('LocalBusiness') || t.includes('HomeAndConstructionBusiness')))) {
@@ -89,7 +88,6 @@ export function normalizaJsonLd(head, crumbs) {
       n.telephone = '+5524993298763';
       n.contactPoint = [
         { '@type': 'ContactPoint', telephone: '+5524993298763', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
-        { '@type': 'ContactPoint', telephone: '+552433383069', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
       ];
       n.priceRange = '$$';
       if (!n.image) n.image = 'https://www.shinecortinas.com/hero-sala.avif';
@@ -248,7 +246,6 @@ export function footer() {
       <div>
         <h4>Fale conosco</h4>
         <a class="sl-footer__phone" data-wa="conversar" href="${WA}">(24) 99329-8763</a>
-        <p>(24) 3338-3069</p>
         <p style="margin-top:10px">Na visita você conhece o projeto, os tecidos e as condições, inclusive o parcelamento em até 12x.</p>
       </div>
       <div>

@@ -65,7 +65,9 @@
     var a = ev.target.closest && ev.target.closest('a');
     if (!isWa(a)) return;
     var kind = a.getAttribute('data-wa') || 'conversar';
-    a.setAttribute('href', 'https://wa.me/' + NUMBER + '?text=' + encodeURIComponent(message(kind)));
+    if (!a.hasAttribute('data-wa-custom')) {
+      a.setAttribute('href', 'https://wa.me/' + NUMBER + '?text=' + encodeURIComponent(message(kind)));
+    }
     trackWa(kind);
   }, true);
 

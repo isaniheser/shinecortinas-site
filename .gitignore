@@ -1,1 +1,5 @@
 .claude/
+
+# Cloudflare local secrets
+.dev.vars
+novo-index-candidato.html
