@@ -1474,7 +1474,7 @@ ${FAQ.map(
   </div>
 
   <script data-cfasync="false" src="/assets/shine-home-e.js?v=6" defer></script>
-  <script data-cfasync="false" src="/assets/shine-wa.js?v=5" defer></script>
+  <script data-cfasync="false" src="/assets/shine-wa.js?v=6" defer></script>
   <script type="speculationrules">
   {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}
   </script>
