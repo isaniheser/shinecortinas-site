@@ -109,21 +109,22 @@ export const PAGINAS = [
   // --------------------------------------------------------------- PERSIANAS
   {
     dir: 'persianas',
-    title: 'Persianas Sob Medida e Motorizadas em Volta Redonda, Resende e Região | ShineCortinas',
-    description: 'Persianas sob medida e motorizadas em Volta Redonda, Resende e Sul Fluminense: Rolô, Tela Solar 5%, Romana, Double Vision, Vertical e Horizontal 50 mm madeira ou alumínio.',
+    title: 'Persianas Sob Medida e Motorizadas (Rolô, Madeira, Bambu e Tela Solar) em Volta Redonda e Resende | ShineCortinas',
+    description: 'Persianas sob medida e motorizadas em Volta Redonda, Resende e Sul Fluminense: Rolô, Tela Solar 5%, Romana, Double Vision, Vertical e Horizontal 50 mm em Madeira, Bambu ou Alumínio.',
+    serviceName: 'Persianas Sob Medida e Motorizadas (Rolô, Tela Solar, Romana, Double Vision, Vertical e Horizontal 50 mm em Madeira, Bambu ou Alumínio)',
     kicker: 'Persianas técnicas',
     h1: 'Persianas sob medida, para controlar a luz <em>no detalhe</em>',
-    lead: 'Persiana é estruturada em lâminas horizontais ou verticais, em gomos dobráveis como a Romana, ou em enrolamento contínuo como a Rolô e a Double Vision. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense com opções manuais ou motorizadas para varanda, sala, quarto, escritório e cozinha.',
+    lead: 'Persiana é estruturada em lâminas horizontais (em madeira natural, bambu ou alumínio) e verticais, em gomos dobráveis como a Romana, ou em enrolamento contínuo como a Rolô e a Double Vision. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense com opções manuais ou motorizadas para varanda, sala, quarto, escritório e cozinha.',
     hero: '/persiana-motorizada.avif',
     heroAlt: 'Sala com persiana rolô screen instalada pela ShineCortinas',
     blocos: [
-      { t: 'cards', h2: 'Os sistemas de persiana que trabalhamos', sub: 'Do controle solar técnico na varanda à imponência das lâminas de 50 mm na sala.', items: [
-        { tag: 'Versatilidade', h: 'Rolô (Screen, Translúcida e Blackout)', p: 'O tecido enrola em um tubo superior compacto. Na versão Tela Solar 5%, corta o calor e o reflexo mantendo a vista externa e facilitando a limpeza.', img: '/persiana-motorizada.avif', alt: 'Persiana rolô screen instalada em sala pela ShineCortinas' },
-        { tag: 'Varanda e sacada', h: 'Persiana Champion e Tela Solar', p: 'Projetadas para áreas gourmet, varandas e sacadas envidraçadas que recebem sol forte e vento, filtrando os raios solares sem fechar a paisagem.', img: '/tela-solar.avif', alt: 'Varanda envidraçada com tela solar instalada pela ShineCortinas' },
-        { tag: 'Escritório e quarto', h: 'Persiana Romana e Double Vision', p: 'A Romana recolhe em gomos horizontais elegantes, ótima para quartos e home office. Já a Double Vision alterna faixas translúcidas e opacas para dosar a luz no monitor.', img: '/duplo.avif', alt: 'Ambiente com controle de luz sob medida, projeto ShineCortinas', ref: true },
-        { tag: 'Ambientes de luxo', h: 'Horizontal 50 mm (Madeira e Alumínio)', p: 'Lâminas largas de 50 mm em madeira natural ou alumínio com opção de fita decorativa. Trazem imponência, volume arquitetônico e controle fino de luz por inclinação.', img: '/madeira.avif', alt: 'Ambiente com persiana horizontal de madeira 50 mm instalada pela ShineCortinas' },
-        { tag: 'Portas de correr', h: 'Persiana Vertical', p: 'Ideal para portas de correr e vãos muito largos, pois recolhe para a lateral acompanhando o sentido da porta e liberando a passagem.', img: '/automacao.avif', alt: 'Grande vão com sistema sob medida, projeto ShineCortinas', ref: true },
-        { tag: 'Áreas úmidas', h: 'Horizontal de Alumínio 16 mm', p: 'Lâminas leves que não absorvem vapor nem criam mofo. Junto com a Rolô sintética, é a nossa indicação certeira para banheiros e lavabos.', img: '/blackouts-tecnicos.avif', alt: 'Ambiente técnico com controle de privacidade, projeto ShineCortinas', ref: true },
+      { t: 'cards', h2: 'Os sistemas de persiana que trabalhamos', sub: 'Do controle solar técnico na varanda à imponência das lâminas de 50 mm em madeira, bambu e alumínio na sala.', items: [
+        { tag: 'Versatilidade', h: 'Rolô (Screen, Translúcida e Blackout)', p: 'O tecido enrola em um tubo superior compacto. Na versão Tela Solar 5%, corta o calor e o reflexo mantendo a vista externa e facilitando a limpeza.', img: '/persiana-motorizada.avif', alt: 'Persiana rolô screen instalada em sala pela ShineCortinas', waLabel: 'Orçar este modelo no WhatsApp →', waText: 'Olá, vim do site da Shine e quero orçar uma Persiana Rolô / Tela Solar.' },
+        { tag: 'Varanda e sacada', h: 'Persiana Champion e Tela Solar', p: 'Projetadas para áreas gourmet, varandas e sacadas envidraçadas que recebem sol forte e vento, filtrando os raios solares sem fechar a paisagem.', img: '/tela-solar.avif', alt: 'Varanda envidraçada com tela solar instalada pela ShineCortinas', waLabel: 'Orçar este modelo no WhatsApp →', waText: 'Olá, vim do site da Shine e quero orçar uma Persiana Champion / Tela Solar para varanda.' },
+        { tag: 'Escritório e quarto', h: 'Persiana Romana e Double Vision', p: 'A Romana recolhe em gomos horizontais elegantes, ótima para quartos e home office. Já a Double Vision alterna faixas translúcidas e opacas para dosar a luz no monitor.', img: '/duplo.avif', alt: 'Ambiente com controle de luz sob medida, projeto ShineCortinas', ref: true, waLabel: 'Orçar este modelo no WhatsApp →', waText: 'Olá, vim do site da Shine e quero orçar uma Persiana Romana / Double Vision.' },
+        { tag: 'Ambientes de luxo', h: 'Horizontal 50 mm (Madeira, Bambu e Alumínio)', p: 'Trabalhamos com lâminas horizontais largas de 50 mm em madeira natural, bambu e alumínio (com opção de fita decorativa). Trazem imponência, textura orgânica e controle fino de luz por inclinação.', img: '/madeira.avif', alt: 'Ambiente com persiana horizontal 50 mm de madeira e bambu instalada pela ShineCortinas', waLabel: 'Orçar este modelo no WhatsApp →', waText: 'Olá, vim do site da Shine e quero orçar uma Persiana Horizontal 50 mm (Madeira / Bambu / Alumínio).' },
+        { tag: 'Portas de correr', h: 'Persiana Vertical', p: 'Ideal para portas de correr e vãos muito largos, pois recolhe para a lateral acompanhando o sentido da porta e liberando a passagem.', img: '/automacao.avif', alt: 'Grande vão com sistema sob medida, projeto ShineCortinas', ref: true, waLabel: 'Orçar este modelo no WhatsApp →', waText: 'Olá, vim do site da Shine e quero orçar uma Persiana Vertical.' },
+        { tag: 'Áreas úmidas', h: 'Horizontal de Alumínio 16 mm', p: 'Lâminas leves que não absorvem vapor nem criam mofo. Junto com a Rolô sintética, é a nossa indicação certeira para banheiros e lavabos.', img: '/blackouts-tecnicos.avif', alt: 'Ambiente técnico com controle de privacidade, projeto ShineCortinas', ref: true, waLabel: 'Orçar este modelo no WhatsApp →', waText: 'Olá, vim do site da Shine e quero orçar uma Persiana Horizontal de Alumínio 16 mm.' },
       ] },
       fig(
         persianaAmbiente,
@@ -133,38 +134,38 @@ export const PAGINAS = [
         'Cada cômodo tem uma exigência diferente de sol, umidade, limpeza e estética.'
       ),
       { t: 'prose', h2: 'Onde cada persiana entrega o melhor resultado', p: [
-        'Para <strong>portas de correr e vãos largos</strong>, indicamos a persiana vertical porque ela abre para o lado no mesmo sentido da porta. Já quando o cliente busca imponência para um <strong>ambiente de luxo</strong>, nossa recomendação é a persiana horizontal de <strong>50 mm</strong>, tanto de madeira quanto de alumínio, que veste a janela como uma peça de mobiliário.',
+        'Para <strong>portas de correr e vãos largos</strong>, indicamos a persiana vertical porque ela abre para o lado no mesmo sentido da porta. Já quando o cliente busca imponência para um <strong>ambiente de luxo</strong>, nossa recomendação é a persiana horizontal de <strong>50 mm</strong>, disponível em <strong>madeira natural, bambu e alumínio</strong>, que veste a janela como uma peça de mobiliário.',
         'Um ponto de transparência importante da nossa consultoria: <strong>não indicamos usar persiana ou cortina para dividir ambientes no meio do cômodo</strong>. Persiana foi feita para janela e decoração. Quando a necessidade é separar dois espaços, o caminho correto é uma divisória estrutural ou drywall. Veja a explicação completa no nosso artigo <a href="/blog/persiana-para-dividir-ambientes/">persiana para dividir ambientes vale a pena?</a>.',
       ] },
       fig(
         verticalHorizontal,
         0,
         'Sentido de abertura e lâminas',
-        'Persiana Vertical vs. Horizontal de 50 mm',
+        'Persiana Vertical vs. Horizontal de 50 mm (Madeira, Bambu e Alumínio)',
         'Por que o tipo de abertura da janela ou porta define o modelo antes mesmo da cor.'
       ),
       { t: 'table', h2: 'Resumo técnico de indicação por ambiente', sub: 'Recomendações práticas que levamos na consultoria em domicílio.', head: ['Ambiente', 'Modelos indicados pela Shine', 'Principal vantagem prática'], rows: [
         ['Varanda, sacada e área gourmet', 'Persiana Champion e Tela Solar', 'Bloqueia o calor e os raios UV mantendo a vista livre e a ventilação'],
         ['Escritório e home office', 'Double Vision e Romana', 'Elimina o reflexo direto no monitor com estética executiva e aconchegante'],
         ['Quarto e suíte', 'Romana e Rolô (com opção Blackout 100%)', 'Recolhimento compacto acima da bancada ou cabeceira e vedação de luz'],
-        ['Sala e ambientes de luxo', 'Horizontal 50 mm (Madeira ou Alumínio)', 'Lâminas largas de 50 mm que trazem imponência, requinte e giro de 180°'],
+        ['Sala e ambientes de luxo', 'Horizontal 50 mm (Madeira, Bambu ou Alumínio)', 'Lâminas largas de 50 mm em madeira, bambu ou alumínio com fita decorativa e giro de 180°'],
         ['Portas de correr e grandes vãos', 'Persiana Vertical', 'Abertura lateral que libera a passagem sem precisar subir a peça inteira'],
         ['Cozinha', 'Rolô em Tela Solar 5% ou Alumínio', 'Não retém cheiro de fritura e limpa fácil com pano úmido e detergente neutro'],
         ['Banheiro e lavabo', 'Rolô ou Horizontal de Alumínio 16 mm', 'Resistência total ao vapor do chuveiro com privacidade imediata'],
       ] },
       { t: 'guides', kicker: 'Guias técnicos de persianas', h2: 'Leia os artigos do Isani sobre <em>persianas</em>', sub: 'Tire todas as dúvidas técnicas antes de definir o modelo da sua janela.', items: [
         ['/blog/persiana-ideal-para-cada-ambiente/', 'Guia por cômodo', 'A persiana ideal para cada ambiente da casa', 'Por que indicamos Champion na varanda, Double Vision e Romana no escritório e 16 mm no banheiro.'],
-        ['/blog/persiana-vertical-ou-horizontal/', 'Comparativo', 'Persiana vertical ou horizontal: 50 mm, madeira e alumínio', 'Quando usar a vertical em portas de correr e quando apostar na horizontal de 50 mm.'],
+        ['/blog/persiana-vertical-ou-horizontal/', 'Comparativo', 'Persiana vertical ou horizontal: 50 mm em madeira, bambu e alumínio', 'Quando usar a vertical em portas de correr e quando apostar na horizontal de 50 mm.'],
         ['/blog/cortina-ou-persiana-na-cozinha/', 'Cozinha e área gourmet', 'Cortina ou persiana na cozinha: Tela Solar 5% e limpeza', 'Por que o tecido comum acumula gordura e como a tela solar 5% e o alumínio facilitam o dia a dia.'],
         ['/blog/como-funciona-persiana-motorizada/', 'Automação', 'Como funciona a persiana motorizada: elétrica e bateria', 'Autonomia média de 6 meses nos motores a bateria e como o freio mecânico atua na falta de luz.'],
         ['/blog/persiana-para-dividir-ambientes/', 'Opinião sincera', 'Persiana para dividir ambientes vale a pena?', 'Por que somos contra improvisar persiana como parede divisória e quando cada modelo brilha na janela.'],
-        ['/videos/persiana-horizontal-madeira-barra-mansa/', 'Vídeo real', 'Persiana horizontal de madeira em Barra Mansa', 'Veja em vídeo o acabamento das lâminas de 50 mm com fita decorativa instaladas pela nossa equipe.'],
+        ['/videos/persiana-horizontal-madeira-barra-mansa/', 'Vídeo real', 'Persiana horizontal 50 mm em Barra Mansa', 'Veja em vídeo o acabamento das lâminas de 50 mm com fita decorativa instaladas pela nossa equipe.'],
       ] },
       { t: 'proof' },
     ],
     faq: [
       ['Qual persiana vocês indicam para varanda, quarto, escritório e banheiro?', 'Para varanda e sacada indicamos a Persiana Champion e a Tela Solar. Para escritório e home office, Double Vision e Romana. Para quarto, Romana e Rolô (inclusive com blackout 100%). E para banheiro, Rolô ou Horizontal de alumínio de 16 mm.'],
-      ['Qual a diferença entre a persiana horizontal de 50 mm e a de 16 mm?', 'A horizontal de 50 mm (em madeira natural ou alumínio) tem lâminas largas e imponentes, indicada para salas e ambientes de luxo. Já a horizontal de alumínio de 16 mm tem lâminas finas e leves, ideal para banheiros e janelas menores.'],
+      ['Qual a diferença entre a persiana horizontal de 50 mm (madeira, bambu e alumínio) e a de 16 mm?', 'A persiana horizontal de 50 mm (disponível em madeira natural, bambu e alumínio com opção de fita decorativa) tem lâminas largas e imponentes, indicada para salas, escritórios e ambientes de luxo. Já a horizontal de alumínio de 16 mm tem lâminas finas e leves, ideal para banheiros, lavabos e janelas menores.'],
       ['Qual persiana é melhor para cozinha?', 'Na cozinha indicamos a persiana Rolô em Tela Solar 5% ou a Horizontal de alumínio. Diferente da cortina de tecido tradicional, elas não absorvem gordura nem cheiro e podem ser limpas facilmente com pano úmido e detergente neutro.'],
       ['Persiana também escurece por completo?', 'Sim. As persianas Rolô e Romana contam com tecidos blackout 100% que bloqueiam totalmente a passagem de luz pelo material.'],
       ['Vale a pena usar persiana para dividir ambientes?', 'Não recomendamos. Persiana e cortina são feitas para vestir janelas e decorar. No meio de um cômodo de passagem, a peça balança e pode danificar. Para separar espaços, o ideal é fazer uma parede de drywall.'],
@@ -302,17 +303,22 @@ export const PAGINAS = [
   // ------------------------------------------------------- CORTINA MOTORIZADA
   {
     dir: 'cortina-motorizada',
-    title: 'Cortina e Persiana Motorizada em Volta Redonda, Resende e Região | ShineCortinas',
-    description: 'Cortina e persiana motorizada em Volta Redonda, Resende, Barra Mansa e Sul Fluminense. Motores elétricos ou a bateria (~6 meses), Touch Motion, Alexa e até 5 anos de garantia.',
+    title: 'Cortina e Persiana Motorizada (Automática, Controle Remoto e Alexa) em Volta Redonda e Resende | ShineCortinas',
+    description: 'Cortina motorizada e persiana motorizada (automática) em Volta Redonda, Resende e Sul Fluminense. Motores a bateria (~6 meses, sem obra) ou elétricos com controle remoto, celular, Alexa e até 5 anos de garantia.',
+    serviceName: 'Cortina Motorizada com Controle Remoto e Alexa e Persiana Motorizada / Automática (Elétrica ou a Bateria)',
     kicker: 'Automação',
     h1: 'Cortina e persiana motorizada: a janela que obedece <em>ao seu toque e à sua voz</em>',
-    lead: 'Mais do que abrir a cortina pela Alexa, pelo celular ou pelo controle remoto, a motorização preserva o tecido e multiplica a vida útil do conjunto, especialmente em pés-direitos duplos e grandes vãos. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense com motores elétricos e opções a bateria recarregável, com até 5 anos de garantia.',
+    lead: 'Mais do que abrir a cortina pela Alexa, pelo celular ou pelo controle remoto, a motorização preserva o tecido e multiplica a vida útil do conjunto, especialmente em pés-direitos duplos e grandes vãos. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense com persiana motorizada e automática e cortina motorizada (motores elétricos ou a bateria recarregável sem obra, com até 5 anos de garantia).',
     hero: '/automacao.avif',
-    heroAlt: 'Cortina motorizada sendo acionada por controle remoto em sala de estar',
+    heroAlt: 'Cortina e persiana motorizada sendo acionada por controle remoto e Alexa em sala de estar',
     blocos: [
-      { t: 'prose', h2: 'Sistema Touch Motion e o que acontece quando acaba a energia', p: [
+      { t: 'cards', kicker: 'Dois sistemas sob medida', h2: 'Persiana Motorizada e Automática ou Cortina com Controle Remoto e Alexa', sub: 'Escolha o sistema ideal para o seu ambiente. Temos opções elétricas e a bateria interna recarregável (sem quebrar parede).', items: [
+        { tag: 'Cortina com Controle Remoto e Alexa', h: 'Cortina Motorizada no Trilho (Wave e Prega)', p: 'Trilho motorizado silencioso para cortinas de tecido em salas, quartos e pé-direito duplo. Conta com sistema inteligente Touch Motion (um leve toque no pano dispara o motor) e abertura manual livre se faltar luz na rua.', img: '/automacao.avif', alt: 'Cortina motorizada no trilho Wave com controle remoto e Alexa instalada pela ShineCortinas', waLabel: 'Orçar Cortina Motorizada →', waText: 'Olá, vim do site da Shine e quero orçar uma Cortina Motorizada no Trilho (Wave / Prega).' },
+        { tag: 'Motor a Bateria (Sem Obra) ou Elétrico', h: 'Persiana Motorizada e Automática (Rolô, Tela Solar, Romana e 50 mm)', p: 'Motor tubular para persianas de varanda gourmet, sacada, sala, quarto e escritório. Temos motor a bateria interna recarregável (autonomia média de 6 meses, sem quebrar parede nem puxar fio) e motor elétrico, com acionamento por controle remoto, celular e Alexa.', img: '/persiana-motorizada.avif', alt: 'Persiana motorizada e automática Rolô Tela Solar instalada pela ShineCortinas', waLabel: 'Orçar Persiana Motorizada →', waText: 'Olá, vim do site da Shine e quero orçar uma Persiana Motorizada / Automática (Bateria ou Elétrica).' },
+      ] },
+      { t: 'prose', h2: 'Cortina com Controle Remoto e Alexa: sistema Touch Motion e abertura sem energia', p: [
         'Muita gente tem receio de motorizar a cortina da sala ou do quarto e ficar com ela travada se faltar luz na rua. Na <strong>cortina motorizada de tecido (trilho motorizado)</strong>, você consegue abrir e fechar a cortina normalmente com a mão quando acaba a energia. E no dia a dia com energia, o trilho tem uma inteligência muito prática chamada <strong>Touch Motion</strong>: basta dar um leve puxão no pano e o motor reconhece o movimento, abrindo ou fechando tudo sozinho sem você precisar procurar o controle remoto.',
-        'Já nas <strong>persianas motorizadas de enrolar</strong> (como Rolô, Romana e Horizontal de alumínio), o funcionamento é diferente: como o tecido sobe enrolado num tubo horizontal, a engrenagem do motor possui um freio mecânico que trava a peça na falta de energia para ela não despencar (exceto nos modelos Painel e Vertical, que correm na horizontal). Explicamos essa diferença em detalhes no artigo <a href="/blog/como-funciona-persiana-motorizada/">como funciona a persiana motorizada</a>.',
+        'Já nas <strong>persianas motorizadas e automáticas de enrolar</strong> (como Rolô, Tela Solar, Romana e Horizontal 50 mm), o funcionamento é diferente: como a peça sobe enrolada num tubo horizontal, a engrenagem do motor possui um freio mecânico que trava a persiana na falta de energia para ela não despencar (exceto nos modelos Painel e Vertical, que correm na horizontal). Explicamos essa diferença em detalhes no artigo <a href="/blog/como-funciona-persiana-motorizada/">como funciona a persiana motorizada</a>.',
       ] },
       fig(
         cortinaMotorizada,
@@ -321,28 +327,28 @@ export const PAGINAS = [
         'O acionamento por toque (Touch Motion) e a abertura manual sem energia',
         'No trilho motorizado de cortina de pano, um leve toque dispara o motor e a embreagem libera o movimento manual se faltar luz.'
       ),
-      { t: 'prose', h2: 'Motores a bateria (autonomia média de 6 meses) e pé-direito duplo', p: [
-        'Seu apartamento já está pronto e não tem ponto elétrico ao lado do cortineiro? Para diversos modelos de cortinas e persianas, trabalhamos com <strong>motores a bateria interna recarregável</strong> (mediante avaliação técnica dos nossos especialistas para o peso do vão). Dependendo do uso, a carga da bateria dura <strong>em média 6 meses</strong>, e para recarregar basta conectar o cabo carregador como se fosse um celular, sem quebrar gesso nem puxar fio aparente.',
-        'Quando o projeto envolve um <strong>pé-direito duplo ou vãos muito largos e pesados</strong>, nós indicamos a motorização sem pensar duas vezes. Puxar uma cortina alta pela mão ou forçar a cordinha todo dia tensiona a costura e os carrinhos. Com o motor conduzindo o peso de forma constante lá em cima, a cortina não sofre tranco e a garantia chega a <strong>até 5 anos nos sistemas motorizados</strong>.',
+      { t: 'prose', h2: 'Persiana Motorizada e Persiana Automática: motores a bateria (6 meses sem obra) e pé-direito duplo', p: [
+        'Seu apartamento já está pronto e não tem ponto elétrico ao lado do cortineiro ou da janela da varanda? Para diversos modelos de <strong>persiana motorizada (persiana automática)</strong> e cortina no trilho, trabalhamos com <strong>motores a bateria interna recarregável</strong> (mediante avaliação técnica dos nossos especialistas para o peso do vão). Dependendo do uso, a carga da bateria dura <strong>em média 6 meses</strong>, e para recarregar basta conectar o cabo carregador como se fosse um celular, sem quebrar gesso ou parede nem puxar fio aparente.',
+        'Quando o projeto envolve um <strong>pé-direito duplo, varanda gourmet envidraçada ou vãos muito largos e pesados</strong>, nós indicamos a motorização sem pensar duas vezes. Puxar uma cortina alta pela mão ou forçar a cordinha da persiana todo dia tensiona a costura e os componentes. Com o motor conduzindo o peso de forma constante lá em cima, a peça não sofre tranco e a garantia chega a <strong>até 5 anos nos sistemas motorizados</strong>.',
       ] },
       fig(
         cortinaMotorizada,
         1,
         'Engenharia e durabilidade',
         'Por que motorizar sem pensar duas vezes em pé-direito duplo e grandes vãos',
-        'O motor traciona o peso uniformemente pelo trilho superior, protegendo o tecido e ampliando a garantia para até 5 anos.'
+        'O motor traciona o peso uniformemente pelo trilho ou tubo superior, protegendo o tecido e ampliando a garantia para até 5 anos.'
       ),
-      { t: 'table', h2: 'Comparativo: Cortina de Tecido Motorizada vs. Persiana Motorizada', sub: 'Entenda como cada sistema opera na prática.', head: ['Característica', 'Cortina de Tecido Motorizada (Trilho)', 'Persiana Motorizada (Rolô, Romana e Horizontal)'], rows: [
-        ['Alimentação disponível', 'Ponto elétrico (110V/220V) ou motor a bateria (sob consulta)', 'Ponto elétrico (110V/220V) ou motor a bateria (sob consulta)'],
+      { t: 'table', h2: 'Comparativo: Cortina com Controle Remoto e Alexa vs. Persiana Motorizada e Automática', sub: 'Entenda como cada sistema opera na prática.', head: ['Característica', 'Cortina de Tecido Motorizada (Trilho)', 'Persiana Motorizada e Automática (Rolô, Romana e 50 mm)'], rows: [
+        ['Alimentação disponível', 'Ponto elétrico (110V/220V) ou motor a bateria (sob consulta)', 'Motor a bateria recarregável (sem obra) ou ponto elétrico (110V/220V)'],
         ['Duração média da bateria', 'Cerca de 6 meses por carga (conforme o uso)', 'Cerca de 6 meses por carga (conforme o uso)'],
         ['Se acabar a energia elétrica', 'Abre e fecha normalmente com a mão pelo trilho', 'Fica travada pelo freio da engrenagem (exceto Painel e Vertical)'],
-        ['Acionamento por toque no pano', 'Sim (sistema inteligente Touch Motion)', 'Acionamento por controle remoto, app ou comando de voz'],
+        ['Acionamento por toque no pano', 'Sim (sistema inteligente Touch Motion)', 'Acionamento por controle remoto, celular ou comando de voz'],
         ['Casa conectada (IoT)', 'Compatível com Alexa, Google Home e Apple Home', 'Compatível com Alexa, Google Home e Apple Home'],
         ['Garantia Shine', 'Até 5 anos no sistema motorizado', 'Até 5 anos no sistema motorizado'],
       ] },
-      { t: 'prose', h2: 'Cortina e persiana motorizada em Volta Redonda, Resende, Barra Mansa e Sul Fluminense', p: [
+      { t: 'prose', h2: 'Persiana Motorizada e Cortina Motorizada em Volta Redonda, Resende, Barra Mansa e Sul Fluminense', p: [
         'Com oficina própria e sede operacional em <strong><a href="/cidades/volta-redonda/">Volta Redonda</a></strong> (atendendo Aterrado, Vila Santa Cecília, Jardim Amália, Retiro, Laranjal, Jardim Belvedere e todos os condomínios), nossa equipe vai até a sua residência com os motores e tecidos do mostruário, faz a medição a laser sem custo e executa a instalação completa e configurada.',
-        'Realizamos projetos de <strong>cortina motorizada em <a href="/cidades/resende/">Resende</a></strong> (Campos Elíseos, Morada da Colina, Jardim Jalisco, Alphaville Resende, Manejo e Vila Julieta), <strong><a href="/cidades/barra-mansa/">Barra Mansa</a></strong>, <strong><a href="/cidades/penedo/">Penedo</a></strong>, <strong><a href="/cidades/itatiaia/">Itatiaia</a></strong>, <strong><a href="/cidades/visconde-de-maua/">Visconde de Mauá</a></strong>, <strong><a href="/cidades/vassouras/">Vassouras</a></strong>, <strong><a href="/cidades/valenca/">Valença</a></strong>, <strong><a href="/cidades/barra-do-pirai/">Barra do Piraí</a></strong>, <strong><a href="/cidades/pirai/">Piraí</a></strong>, <strong><a href="/cidades/pinheiral/">Pinheiral</a></strong> e <strong><a href="/cidades/porto-real/">Porto Real</a></strong>. Se você busca cortina Wave motorizada para pé-direito duplo ou persiana Rolô Tela Solar motorizada para varanda gourmet, nosso consultor avalia na hora se o seu vão pede ponto elétrico ou motor a bateria.',
+        'Realizamos projetos de <strong>persiana motorizada, persiana automática e cortina com controle remoto e Alexa em <a href="/cidades/resende/">Resende</a></strong> (Campos Elíseos, Morada da Colina, Jardim Jalisco, Alphaville Resende, Manejo e Vila Julieta), <strong><a href="/cidades/barra-mansa/">Barra Mansa</a></strong>, <strong><a href="/cidades/penedo/">Penedo</a></strong>, <strong><a href="/cidades/itatiaia/">Itatiaia</a></strong>, <strong><a href="/cidades/visconde-de-maua/">Visconde de Mauá</a></strong>, <strong><a href="/cidades/vassouras/">Vassouras</a></strong>, <strong><a href="/cidades/valenca/">Valença</a></strong>, <strong><a href="/cidades/barra-do-pirai/">Barra do Piraí</a></strong>, <strong><a href="/cidades/pirai/">Piraí</a></strong>, <strong><a href="/cidades/pinheiral/">Pinheiral</a></strong> e <strong><a href="/cidades/porto-real/">Porto Real</a></strong>. Se você busca cortina Wave motorizada para pé-direito duplo ou persiana Rolô Tela Solar motorizada para varanda gourmet, nosso consultor avalia na hora se o seu vão pede ponto elétrico ou motor a bateria.',
       ] },
       { t: 'guides', kicker: 'Guias e vídeos de automação', h2: 'Veja os detalhes técnicos da <em>motorização</em>', sub: 'Artigos escritos pelo Isani e vídeos reais de projetos automatizados entregues pela Shine.', items: [
         ['/blog/por-que-escolher-cortina-motorizada/', 'Cortina de tecido', 'Por que escolher cortina motorizada: Touch Motion e bateria', 'Como funciona o reconhecimento de toque no pano, a abertura sem energia e a vantagem no pé-direito duplo.'],
@@ -353,12 +359,12 @@ export const PAGINAS = [
       { t: 'proof' },
     ],
     faq: [
-      ['Vocês instalam cortina motorizada e persiana motorizada em Volta Redonda e Resende?', 'Sim. Nossa base fica em Volta Redonda e nossa equipe própria realiza a consultoria gratuita em domicílio, medição a laser, confecção e instalação de cortinas e persianas motorizadas em Volta Redonda, Resende, Barra Mansa, Penedo, Itatiaia, Visconde de Mauá, Vassouras, Valença, Barra do Piraí e todo o Sul Fluminense, com até 5 anos de garantia.'],
-      ['Preciso quebrar a parede se não tiver tomada perto da janela?', 'Não necessariamente. Trabalhamos com motores a bateria interna recarregável para diversos modelos de cortinas e persianas (mediante consulta com nossos especialistas para avaliar o peso e o vão). A carga dura em média 6 meses dependendo do uso.'],
+      ['Vocês instalam cortina motorizada e persiana motorizada (automática) em Volta Redonda e Resende?', 'Sim. Nossa base fica em Volta Redonda e nossa equipe própria realiza a consultoria gratuita em domicílio, medição a laser, confecção e instalação de cortinas e persianas motorizadas e automáticas em Volta Redonda, Resende, Barra Mansa, Penedo, Itatiaia, Visconde de Mauá, Vassouras, Valença, Barra do Piraí e todo o Sul Fluminense, com até 5 anos de garantia.'],
+      ['Preciso quebrar a parede se não tiver tomada perto da janela para a persiana motorizada?', 'Não necessariamente. Trabalhamos com motores a bateria interna recarregável para diversos modelos de persianas motorizadas (Rolô, Tela Solar, Romana, Double Vision e Horizontal) e cortinas (mediante consulta com nossos especialistas para avaliar o peso e o vão). A carga dura em média 6 meses dependendo do uso, sem quebrar parede nem puxar fio.'],
       ['O que acontece com a cortina ou persiana motorizada se acabar a luz?', 'Na cortina motorizada de pano (trilho motorizado), você consegue abrir e fechar normalmente com a mão. Já nas persianas motorizadas que funcionam enrolando na horizontal (Rolô, Romana e Horizontal de alumínio), o sistema de engrenagem trava o tubo na falta de luz para a peça não descer sozinha, exceto nos modelos Painel e Vertical.'],
       ['Como funciona o sistema Touch Motion da cortina motorizada?', 'É um recurso inteligente do trilho motorizado: quando você dá um leve toque ou puxão no tecido indicando a direção, o motor reconhece o movimento e abre ou fecha a cortina inteira sozinho, dispensando o controle remoto.'],
       ['Por que a motorização é tão indicada para pé-direito duplo e vãos grandes?', 'Porque em cortinas muito altas e largas o peso do tecido é grande. O motor puxa tudo pelo topo com força constante, evitando que alguém force a cordinha ou puxe a barra lateral. Isso aumenta a vida útil da cortina e garante até 5 anos de garantia na motorização.'],
-      ['Funciona com Alexa, Google Home e celular?', 'Sim. Os motores IoT de 7ª geração funcionam por controle remoto, aplicativo no celular e comando de voz (Alexa, Google Home e Apple Home), permitindo inclusive programar horários de abertura e fechamento.'],
+      ['A cortina com controle remoto e a persiana automática funcionam com Alexa e celular?', 'Sim. Os motores IoT de 7ª geração funcionam por controle remoto, aplicativo no celular e comando de voz (Alexa, Google Home e Apple Home), permitindo inclusive programar horários de abertura e fechamento automático.'],
     ],
     links: [['/cidades/volta-redonda/', 'Volta Redonda'], ['/cidades/resende/', 'Resende'], ['/cidades/barra-mansa/', 'Barra Mansa'], ['/cortina-wave/', 'Cortina wave'],
             ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/cidades-atendidas/', 'Todas as cidades']],

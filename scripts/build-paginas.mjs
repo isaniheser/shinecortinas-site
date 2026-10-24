@@ -51,12 +51,12 @@ const bloco = {
   cards: (b) => `
     <section class="sl-section sl-reveal"><div class="sl-wrap">
       <div class="sl-center" style="margin-bottom:30px">
-        <p class="sl-kicker sl-kicker--center">O que a gente faz</p>
+        <p class="sl-kicker sl-kicker--center">${b.kicker || 'O que a gente faz'}</p>
         <h2 class="sl-h2">${b.h2}</h2>
         ${b.sub ? `<p class="sl-sub">${b.sub}</p>` : ''}
       </div>
-      <div class="sl-cards">
-${b.items.map((i) => `        <div class="sl-card"><div class="sl-media"><img src="${i.img}" alt="${esc(i.alt || `${i.h}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async">${i.ref ? '<span class="sl-media__ref">Referência do modelo, em outro ambiente</span>' : ''}</div><div class="sl-card__body"><span>${i.tag}</span><h3>${i.h}</h3><p>${i.p}</p></div></div>`).join('\n')}
+      <div class="sl-cards${b.items.length === 2 ? ' sl-cards--2' : ''}">
+${b.items.map((i) => `        <div class="sl-card"><div class="sl-media"><img src="${i.img}" alt="${esc(i.alt || `${i.h}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async">${i.ref ? '<span class="sl-media__ref">Referência do modelo, em outro ambiente</span>' : ''}</div><div class="sl-card__body"><span>${i.tag}</span><h3>${i.h}</h3><p>${i.p}</p>${i.waText ? `<a class="sl-card__wa" data-wa="conversar" data-wa-custom="1" href="https://wa.me/5524993298763?text=${encodeURIComponent(i.waText)}" target="_blank" rel="noopener noreferrer">${i.waLabel || 'Orçar este modelo no WhatsApp →'}</a>` : ''}</div></div>`).join('\n')}
       </div>
     </div></section>`,
 
@@ -251,7 +251,7 @@ function ajustaHead(head, p) {
     const srv = g.find((n) => n['@type'] === 'Service');
     if (srv) {
       srv['@id'] = `${url}#service`;
-      srv.name = p.kicker;
+      srv.name = p.serviceName || p.kicker;
       srv.description = p.description;
       srv.url = url;
       srv.provider = { '@id': `${BASE}/#biz` };

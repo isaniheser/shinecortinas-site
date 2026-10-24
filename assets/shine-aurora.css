@@ -109,9 +109,11 @@
 .pv-explore-intro h1{font-size:35px}
 }
 [data-concept=ambientes]{padding-bottom:0}
-[data-concept=ambientes] .sl-header__in{flex-direction:column;gap:0;padding:5px 20px 8px!important}
-[data-concept=ambientes] .sl-header .sl-logo{position:relative;width:78px;height:72px;border:0;border-radius:0;background:transparent;isolation:isolate;cursor:pointer;touch-action:none;transform:translateY(var(--logo-pull,0px));padding:0;user-select:none;-webkit-user-select:none}
-[data-concept=ambientes] .sl-header .sl-logo img{width:70px;height:70px;filter:drop-shadow(0 1px 1px #57745140);pointer-events:none}
+[data-concept=ambientes] .sl-header__in{flex-direction:row!important;justify-content:space-between!important;align-items:center!important;gap:12px;padding:8px 16px!important}
+[data-concept=ambientes] .sl-header .sl-logo{position:relative;width:72px;height:66px;border:0;border-radius:0;background:transparent;isolation:isolate;cursor:pointer;touch-action:none;transform:translateY(var(--logo-pull,0px));padding:0;user-select:none;-webkit-user-select:none;flex-shrink:0}
+[data-concept=ambientes] .sl-header .sl-logo img{width:64px;height:64px;filter:drop-shadow(0 1px 1px #57745140);pointer-events:none}
+.sl-header__cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,#DDBB6E 0%,#C9A252 55%,#B38A3B 100%);color:#08130F!important;font:700 12px/1.2 var(--sans);text-decoration:none;white-space:nowrap;box-shadow:0 6px 18px rgba(179,138,59,.28);position:relative;z-index:2;transition:transform .15s}
+.sl-header__cta:hover{transform:translateY(-1px);color:#08130F!important}
 [data-concept=ambientes]{padding-bottom:calc(90px + env(safe-area-inset-bottom))}
 [data-concept=ambientes] .sl-header .sl-logo img{filter:drop-shadow(0 1px 1px #6b522324)}
 [data-concept=ambientes] #colecao{scroll-margin-top:114px}
@@ -122,8 +124,8 @@
 [data-concept=ambientes] .pv-arrow{color:#8c7048}
 [data-concept=ambientes]{--pv-paper:#f2f6ef;--pv-line:#dce4d6}
 [data-concept=ambientes] .pv-story{background:#f8f5ed}
-[data-concept=ambientes] .sl-header__in{padding-top:12px!important;padding-bottom:8px!important}
-[data-concept=ambientes] .sl-header .sl-logo{width:94px;height:82px}
+[data-concept=ambientes] .sl-header__in{padding-top:8px!important;padding-bottom:8px!important}
+[data-concept=ambientes] .sl-header .sl-logo{width:76px;height:68px}
 [data-concept=ambientes][data-logo-finish] .sl-header .sl-logo::before{display:none}
 [data-logo-finish] .pv-logo-trigger img{position:relative;z-index:2;filter:drop-shadow(0 1px 1px #78603120)}
 .pv-logo-art{position:absolute;inset:0;z-index:0;pointer-events:none;display:block;isolation:isolate}

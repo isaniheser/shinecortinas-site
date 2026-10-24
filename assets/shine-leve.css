@@ -286,16 +286,19 @@ p{margin:0;text-wrap:pretty}
 /* ===== cards de soluções ===== */
 .sl-cards{display:grid;gap:16px}
 @media(min-width:640px){.sl-cards{grid-template-columns:1fr 1fr}}
-@media(min-width:900px){.sl-cards{grid-template-columns:repeat(3,1fr);gap:22px}}
-.sl-card{display:block;color:inherit;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff;transition:border-color .2s,transform .2s}
+@media(min-width:900px){.sl-cards{grid-template-columns:repeat(3,1fr);gap:22px}.sl-cards--2{grid-template-columns:repeat(2,1fr)}}
+.sl-card{display:flex;flex-direction:column;color:inherit;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:border-color .2s,transform .2s}
 .sl-card:hover{border-color:var(--gold);transform:translateY(-2px);color:inherit}
 .sl-card .sl-media{border-radius:0}
 .sl-card .sl-media img{aspect-ratio:4/3}
-.sl-card__body{padding:16px 18px 18px}
+.sl-card__body{display:flex;flex-direction:column;flex:1;padding:16px 18px 18px}
 .sl-card__body span{display:block;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
 .sl-card__body h3{font-size:19px;margin-bottom:6px}
 .sl-card__body p{color:var(--muted);font-size:14px}
 .sl-card__body em{display:block;margin-top:10px;font-style:normal;font-size:12.5px;font-weight:600;color:var(--green)}
+.sl-card__wa{display:inline-flex;align-items:center;justify-content:center;width:100%;margin-top:auto;padding:12px 14px;border-radius:10px;background:linear-gradient(135deg,#DDBB6E 0%,#C9A252 55%,#B38A3B 100%);color:#08130F!important;font-family:var(--sans);font-size:13px;font-weight:700;text-decoration:none;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 14px rgba(179,138,59,.22)}
+.sl-card__body p+.sl-card__wa{margin-top:14px}
+.sl-card__wa:hover{transform:translateY(-1px);color:#08130F!important}
 @media(max-width:639px){.sl-card__body{text-align:center}}
 
 /* ===== clientes ===== */

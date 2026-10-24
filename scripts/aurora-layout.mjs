@@ -1,5 +1,5 @@
 // Navegação aprovada: HTML real para links, com aprimoramento progressivo no navegador.
-export const AURORA_V = '4';
+export const AURORA_V = '5';
 export const AURORA_CSS = `<link rel="stylesheet" href="/assets/shine-aurora.css?v=${AURORA_V}">`;
 const WA_MENU = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 const entries = [
@@ -13,7 +13,7 @@ const entries = [
 const extra = [['/#diagnostico-isani','✦ Consultor Isani'],['/#obras-reais','▶ Obras em Vídeo'],['/cortina-motorizada/','Automação'],['/lavagem-de-cortinas/','Lavagem'],['/metodo/','Como funciona'],['/cidades-atendidas/','Cidades']];
 
 export function auroraHeader() {
-  return `<header class="sl-header"><div class="sl-wrap sl-header__in"><a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="70" height="70" decoding="async"></a></div></header>
+  return `<header class="sl-header"><div class="sl-wrap sl-header__in"><a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="70" height="70" decoding="async"></a><a class="sl-header__cta" data-wa="conversar" href="${WA_MENU}" target="_blank" rel="noopener noreferrer">Orçar no WhatsApp →</a></div></header>
   <nav class="sl-nav-fallback" aria-label="Navegação principal"><a href="/">Início</a>${entries.map(([name,,url])=>`<a href="${url}">${name}</a>`).join('')}${extra.map(([url,name])=>`<a href="${url}">${name}</a>`).join('')}</nav>`;
 }
 
