@@ -128,7 +128,7 @@ ${PASSOS.map(([h, p], i) => `        <div class="sl-step"><div class="sl-step__n
     <section class="sl-section sl-reveal"><div class="sl-wrap">
       <div class="sl-contato">
         <div><span>WhatsApp</span><a class="sl-contato__big" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">(24) 99329-8763</a><p>Resposta em minutos, por um consultor de verdade.</p></div>
-        <div><span>Telefone</span><p class="sl-contato__big">(24) 3338-3069</p><p>Para quem prefere falar por telefone.</p></div>
+        <div><span>Atendimento</span><p class="sl-contato__big">Seg a Sex · 8h às 17h</p><p>Consultoria gratuita em domicílio com hora marcada em todo o Sul Fluminense.</p></div>
         <div><span>Cidade-base</span><p class="sl-contato__big">Volta Redonda, RJ</p><p>Atendimento em domicílio em todo o Sul Fluminense. Levamos o mostruário até a sua casa.</p></div>
       </div>
     </div></section>`,
@@ -154,7 +154,7 @@ ${header('/' + p.dir + '/')}
       <h1 class="sl-h1">${p.h1}</h1>
       <div class="sl-hero__rule"></div>
       <p class="sl-lede">${p.lead}</p>
-      <a class="sl-btn" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">Falar com um consultor →</a>
+      <a class="sl-btn" data-wa="conversar" href="${WA}" target="_blank" rel="noopener noreferrer">Receber Mostruário na Minha Casa →</a>
       <p class="sl-note">Sem compromisso · Resposta em minutos · Você decide o próximo passo</p>
     </div></div>
   </section>
@@ -176,7 +176,7 @@ ${faq}
       <p class="sl-kicker sl-kicker--center">Consultoria em domicílio · Sul Fluminense</p>
       <h2 class="sl-h2">Pronto para ver os tecidos <em>na sua casa?</em></h2>
       <p class="sl-sub" style="margin:0 auto 26px">A consultoria é gratuita, vai até você e não obriga a decidir nada na hora.</p>
-      <a class="sl-btn" data-wa="agendar" href="${WA}" target="_blank" rel="noopener noreferrer">Agendar consultoria em casa →</a>
+      <a class="sl-btn" data-wa="agendar" href="${WA}" target="_blank" rel="noopener noreferrer">Agendar Minha Consultoria Gratuita →</a>
       <p class="sl-note">Gratuita · Sem compromisso · (24) 99329-8763</p>
     </div></section>
 

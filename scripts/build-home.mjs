@@ -19,9 +19,9 @@ const BASE = 'https://www.shinecortinas.com';
 const TODAY = '2026-10-24';
 
 const HOME_TITLE =
-  'Cortinas, Persianas e Cortina Motorizada em Volta Redonda, Resende e Sul Fluminense | ShineCortinas';
+  'Cortinas, Persianas e Motorizadas | Volta Redonda e Região';
 const HOME_DESC =
-  'Cortinas e persianas sob medida com consultoria gratuita em domicílio em Volta Redonda, Resende, Barra Mansa, Vassouras e 15 cidades do Sul Fluminense. Ateliê próprio desde 2009 e até 5 anos de garantia.';
+  'Cortinas sob medida, Wave, persianas e motorizadas em Volta Redonda, Resende e Sul Fluminense. Mostruário em casa, medição a laser e instalação própria.';
 
 const CITIES = [
   ['volta-redonda', 'Volta Redonda'],
@@ -649,7 +649,7 @@ const html = `<!DOCTYPE html>
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="ShineCortinas">
   <meta property="og:title" content="${HOME_TITLE}">
-  <meta property="og:description" content="Levamos o mostruário até a sua sala para você escolher tocando no tecido contra a luz real da sua janela. Ateliê próprio desde 2009 e nota ${GOOGLE_RATING_PT} no Google.">
+  <meta property="og:description" content="${HOME_DESC}">
   <meta property="og:url" content="${BASE}/">
   <meta property="og:image" content="${BASE}/og-cover.jpg">
   <meta property="og:image:width" content="1200">
@@ -667,7 +667,7 @@ const html = `<!DOCTYPE html>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <link rel="preload" as="image" href="/duplo.avif" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="/duplo.avif" imagesrcset="/duplo-800.avif 760w, /duplo.avif 1696w" imagesizes="(max-width: 960px) calc(100vw - 28px), 580px" fetchpriority="high" type="image/avif">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
@@ -755,7 +755,7 @@ ${JSON.stringify(schemaJson, null, 2)}
           <div class="d-hero__stage">
             <div class="d-hero__single-frame" style="cursor: pointer;" onclick="openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
               <span class="d-frame-pill">Pé-Direito Duplo · Do Teto ao Piso</span>
-              <img src="/duplo.avif" alt="Cortina Prega Wave sob medida do teto ao piso em pé-direito duplo no Sul Fluminense" width="800" height="500" fetchpriority="high" decoding="async">
+              <img src="/duplo.avif" srcset="/duplo-800.avif 760w, /duplo.avif 1696w" sizes="(max-width: 960px) calc(100vw - 28px), 580px" alt="Cortina Prega Wave sob medida do teto ao piso em pé-direito duplo no Sul Fluminense" width="800" height="500" fetchpriority="high" decoding="async">
               <button type="button" class="d-hero-video-trigger" onclick="event.stopPropagation(); openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
                 <span>▶ Ver vídeo de obra real em Resende</span>
                 <span>0:15</span>
@@ -789,7 +789,7 @@ ${VIDEO_STORIES.map(
                   <small>${esc(s.sub)}</small>
                 </div>
               </button>
-              <a href="${s.pageUrl}" class="d-city-page-link">Ficha ↗</a>
+              <a href="${s.pageUrl}" class="d-city-page-link" aria-label="Ver ficha da obra: ${esc(s.title)}">Ver ficha da obra ↗</a>
             </div>`
 ).join('\n')}
           </div>
@@ -848,6 +848,9 @@ ${VIDEO_STORIES.map(
               <a id="isani-diag-wa" class="d-gold-btn" data-wa="consultor" data-wa-custom="1" style="width: 100%;" href="https://wa.me/5524993298763?text=Ol%C3%A1%21%20Vi%20a%20indica%C3%A7%C3%A3o%20do%20Isani%20no%20site%20para%20Sala%20de%20Estar%20%28Com%20Gesso%3A%20Cortina%20Wave%20em%20Tecido%20Encorpado%29%20e%20quero%20agendar%20minha%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener">
                 💬 Ver Amostras Dessa Solução em Casa →
               </a>
+              <div style="margin-top: 10px; text-align: center;">
+                <a id="isani-diag-page-link" href="/cortina-wave/" style="color: var(--gold-light); font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">Ver detalhes técnicos sobre Cortina Prega Wave →</a>
+              </div>
             </div>
           </div>
 
@@ -1046,10 +1049,7 @@ ${BENTO_ITEMS.map(
                 <span>Deslizar relatos</span>
                 <span>→</span>
               </button>
-              <a href="https://www.google.com/maps/search/?api=1&query=Shine+Cortinas+Volta+Redonda" target="_blank" rel="noopener" class="d-g-verify-link">
-                <span>Ver no Google Maps</span>
-                <span>↗</span>
-              </a>
+              <a href="#obras-reais" class="d-g-verify-link"><span>✓ 297 Avaliações Reais · Ver Obras Entregues</span><span>↓</span></a>
             </div>
           </div>
 
@@ -1158,7 +1158,7 @@ ${REVIEWS.map(
             <a href="/blog/o-que-e-blackout/">Blackout 70% vs 100% ↗</a>
             <a href="/blog/linho-para-cortinas/">Gramatura e Linho ↗</a>
             <a href="/blog/bainha-de-cortina/">Bainha a 1 cm do Piso ↗</a>
-            <a href="/blog/">Todos os 40 Artigos ↗</a>
+            <a href="/blog/">Todos os 16 Guias Técnicos ↗</a>
           </div>
         </div>
       </section>
@@ -1178,7 +1178,7 @@ ${CITIES.map(([slug, name]) => `            <a href="/cidades/${slug}/">${esc(na
         </div>
       </section>
 
-      <!-- DÚVIDAS FREQUENTES VISÍVEIS (#faq — 100% PARIDADE COM FAQPage JSON-LD) -->
+      <!-- DÚVIDAS FREQUENTES VISÍVEIS (#faq · 100% PARIDADE COM FAQPage JSON-LD) -->
       <section class="d-faq-sec" id="faq">
         <div class="d-container">
           <div class="d-sec-header">
@@ -1305,7 +1305,7 @@ ${FAQ.map(
     <div class="d-case-sheet-popup">
       <div class="d-sheet-handle"></div>
       <div class="d-sheet-media">
-        <img id="sheet-img" src="/cortina-sob-medida.avif" alt="Projeto ShineCortinas" width="400" height="400" onerror="this.onerror=null;this.src='/cortina-sob-medida.avif'">
+        <img id="sheet-img" src="/cortina-sob-medida.avif" alt="Projeto ShineCortinas" width="400" height="400" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/cortina-sob-medida.avif'">
         <button type="button" class="d-sheet-close" onclick="closeCaseSheet()">Fechar ✕</button>
         <button type="button" id="sheet-video-btn" style="display:none; position:absolute; left:12px; bottom:12px; background:rgba(8,19,15,0.92); color:#FAF6EE; border:1.5px solid #C9A252; border-radius:99px; padding:8px 14px; font-size:12px; font-weight:700; cursor:pointer;">▶ Assistir Vídeo Real</button>
       </div>
@@ -1421,7 +1421,7 @@ ${FAQ.map(
               <span>Abrir ↗</span>
             </a>
             <a href="/blog/" class="d-menu-blog-btn">
-              <div>Ver todos os 40 artigos do Blog da Shine</div>
+              <div>Ver todos os 16 guias técnicos do Blog da Shine</div>
               <span>Abrir ↗</span>
             </a>
           </div>

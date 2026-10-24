@@ -21,6 +21,9 @@ export default {
     ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro para cortina'],
     ['/blog/altura-ideal-da-cortina/', 'Altura ideal da cortina'],
     ['/blog/bainha-de-cortina/', 'Bainha de cortina'],
+    ['/cidades/volta-redonda/', 'Volta Redonda'],
+    ['/cidades/resende/', 'Resende'],
+    ['/cidades/barra-mansa/', 'Barra Mansa'],
   ],
   hero: {
     eyebrow: 'O olhar de quem instala',
@@ -112,7 +115,7 @@ export default {
         <h3>Proteção extra contra o sol e elegância</h3>
         <p>Escolher um tecido com gramatura maior, acima de 170 g/m², traz ainda mais duas vantagens claras:</p>
         <ul>
-          <li><strong>Presença no ambiente:</strong> um tecido mais encorpado é visivelmente mais luxuoso e mais elegante na sala ou no quarto.</li>
+          <li><strong>Presença no ambiente:</strong> um tecido de alta gramatura é visivelmente mais encorpado e imponente e mais elegante na sala ou no quarto.</li>
           <li><strong>Resistência ao sol:</strong> quanto maior a gramatura do tecido, mais difícil é de o sol queimar a fibra quando bate na janela (especialmente quando trabalha em conjunto com o <a href="/blog/tipos-de-forro-para-cortina/">forro de proteção</a> atrás da cortina).</li>
         </ul>
         <figure class="sl-ed-fig sl-ed-figure">
@@ -139,7 +142,7 @@ export default {
                 <path d="M100 33V162M136 33V162M172 33V162" stroke="#9b713a" stroke-width="1.6"/>
                 <text x="140" y="182" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">Mais corpo, caimento prumo e resistência ao sol</text>
               </svg>
-              <p>Acima de 170 g/m² a cortina ganha peso, fica mais luxuosa e resiste muito melhor quando o sol bate.</p>
+              <p>Acima de 170 g/m² a cortina ganha peso, fica mais elegante e vestida e resiste muito melhor quando o sol bate.</p>
             </div>
           </div>
           <figcaption>A influência da gramatura (g/m²) no peso da onda e na durabilidade da fibra contra o sol.</figcaption>
@@ -159,7 +162,7 @@ export default {
       label: 'Converse com a Shine',
       closing: true,
       h2: 'Sinta na mão a textura e o peso dos nossos tecidos na luz da sua sala',
-      html: `<p>Foto nenhuma substitui passar a mão no tecido e ver o pano contra a claridade da sua própria janela. Na consultoria em domicílio, eu levo o mostruário completo de tecidos com toque de linho, seda e algodão acima de 170 g/m² para você escolher com segurança.</p><p>Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense. Gratuito e sem compromisso.</p>`,
+      html: `<p>Foto nenhuma substitui passar a mão no tecido e ver o pano contra a claridade da sua própria janela. Na consultoria em domicílio, eu levo o mostruário completo de tecidos com toque de linho, seda e algodão acima de 170 g/m² para você escolher com segurança.</p><p>Atendemos <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/resende/">Resende</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a>, <a href="/cidades/penedo/">Penedo</a> e todo o Sul Fluminense. Gratuito e sem compromisso.</p>`,
       cta: 'Agendar consultoria em casa →',
       img: '/isani-consultoria-800.avif',
       imgAlt: 'Isani Oliveira apresentando tecidos de cortina na casa do cliente',

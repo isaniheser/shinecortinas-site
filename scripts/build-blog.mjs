@@ -51,7 +51,7 @@ const POSTS = [
     ogImage: '/isani-consultoria.avif',
     faqEm: 'forro de cortina',
     tocNote: "O forro não serve só para escurecer. Ele precisa combinar com a sua rotina.",
-    related: [['/blog/altura-ideal-da-cortina/', 'Altura ideal da cortina'], ['/blog/bainha-de-cortina/', 'Bainha de cortina'], ['/blog/o-que-e-blackout/', 'O que é blackout'], ['/blog/como-escurecer-quarto-sala-tv/', 'Como escurecer o quarto'], ['/blackout-e-forros/', 'Blackout e forros'], ['/persianas/', 'Persianas sob medida']],
+    related: [['/blog/altura-ideal-da-cortina/', 'Altura ideal da cortina'], ['/blog/bainha-de-cortina/', 'Bainha de cortina'], ['/blog/o-que-e-blackout/', 'O que é blackout'], ['/blog/como-escurecer-quarto-sala-tv/', 'Como escurecer o quarto'], ['/blackout-e-forros/', 'Blackout e forros'], ['/persianas/', 'Persianas sob medida'], ['/cidades/volta-redonda/', 'Cortinas em Volta Redonda'], ['/cidades/resende/', 'Cortinas em Resende'], ['/cidades/barra-mansa/', 'Cortinas em Barra Mansa']],
     hero: {
       eyebrow: 'O olhar de quem instala',
       h1: "Tipos de forro<br>para cortina:", h1em: "qual escolher?",
@@ -130,10 +130,10 @@ const POSTS = [
 <ul><li>Gabardine de 100 g/m².</li><li>Tergal verão de 70 g/m².</li><li>Cetim de 70, 90 ou 110 g/m².</li><li>Microfibra de 65 ou 100 g/m².</li></ul>
 <p>Esses números são exemplos de opções, não uma gramatura única para cada tipo de tecido. E gramatura não é o percentual de escurecimento: eu preciso observar também a trama, a construção do material e o resultado que o cliente procura.</p>
 <h3>Microfibra de 65 ou 100 g/m²: o que muda na privacidade?</h3>
-<p>Uma das opções que utilizo é a microfibra de aproximadamente 65 g/m². Ela protege o tecido decorativo e quebra parte da claridade — em torno de 20% a 30%, na minha avaliação desses materiais.</p>
+<p>Uma das opções que utilizo é a microfibra de aproximadamente 65 g/m². Ela protege o tecido decorativo e quebra parte da claridade, em torno de 20% a 30%, na minha avaliação desses materiais.</p>
 <p>E a pergunta que costuma aparecer é: “Quando eu acender a luz à noite, essa privacidade continua?”</p>
 <p>Continua, mas existe uma diferença entre ter privacidade no ambiente e não aparecer nenhuma silhueta quando alguém chega perto da cortina. Com um forro mais leve, a pessoa que se aproxima do tecido pode deixar a silhueta perceptível do lado de fora.</p>
-<p>Quando o cliente quer um fechamento maior, posso trabalhar com uma microfibra de aproximadamente 100 g/m². A figura fica menos definida; mesmo perto da cortina, o que pode aparecer é uma sombra difusa, aquela “fumaça”, em vez de uma silhueta marcada.</p>
+<p>Quando o cliente quer um fechamento maior, posso trabalhar com uma microfibra de aproximadamente 100 g/m². A figura fica menos definida. Mesmo perto da cortina, o que pode aparecer é uma sombra difusa, aquela “fumaça”, em vez de uma silhueta marcada.</p>
 <p>Por isso, eu não escolho o forro olhando apenas a gramatura. A trama, o material e o resultado desejado precisam ser considerados juntos.</p>` },
       { id: "semi-blackout", toc: "Semi blackout 70%", label: "Guia de forros", h2: "Semi blackout 70%: a sensação de tardezinha dentro da sala", html: `
 <p>O semi blackout é muito utilizado em salas. Tem cliente que quer assistir a um filme com mais conforto, mas não quer transformar a sala em um ambiente completamente escuro.</p>
@@ -157,10 +157,10 @@ const POSTS = [
       { id: "calor", toc: "Forro e redução de calor", label: "Guia de forros", h2: "Para reduzir o calor, eu observo o material", html: `
 <p>Nem todo forro entrega o mesmo resultado em relação ao calor.</p>
 <p>Para um ambiente que recebe muito sol, minha preferência é trabalhar com blackout 100%, especialmente nas opções com película traseira siliconada.</p>
-<p>Em instalações com forro blackout de tecido que acompanhei, medi reduções de aproximadamente 5 a 6 °C ao comparar a temperatura do ambiente antes e depois da instalação. Esse número registra resultados que observei nesses projetos; não é uma redução que eu prometa para qualquer casa.</p>
+<p>Em instalações com forro blackout de tecido que acompanhei, medi reduções de aproximadamente 5 a 6 °C ao comparar a temperatura do ambiente antes e depois da instalação. Esse número registra resultados que observei nesses projetos. Não é uma redução que eu prometa para qualquer casa.</p>
 <p>Quando faço essa indicação, estou falando dos materiais de blackout de tecido que utilizo, e não de qualquer produto de lona ou plástico vendido com o mesmo nome.</p>` },
       { id: "persianas", toc: "E as persianas?", label: "Guia de forros", h2: "E as persianas com blackout?", html: `
-<p>Persianas também podem usar material blackout 100%. A escolha entre cortina e persiana é uma decisão; o nível de escurecimento do material é outra. Nos dois casos, é preciso considerar a instalação e os caminhos pelos quais a luz pode entrar.</p>
+<p>Persianas também podem usar material blackout 100%. A escolha entre cortina e persiana é uma decisão, e o nível de escurecimento do material é outra. Nos dois casos, é preciso considerar a instalação e os caminhos pelos quais a luz pode entrar.</p>
 <p>Também existem persianas com fibra de vidro na composição, como a Screen, que é uma tela solar, e a Pinpoint. Quando faço referência a uma redução térmica de até cerca de 11 °C, estou falando do contexto dessas persianas, e não dos forros blackout de tecido.</p>
 <p>Isso não significa que toda Screen ou Pinpoint terá a mesma redução de temperatura. Também não transforma uma tela solar em blackout 100%. O controle de calor e o bloqueio da luz precisam ser avaliados de acordo com o material escolhido e a aplicação.</p>` },
       { id: "quarto-escuro", toc: "Instalação e frestas", label: "Guia de forros", h2: "Blackout 100% deixa o quarto completamente escuro?", html: `
@@ -207,7 +207,7 @@ const POSTS = [
     <p><strong><span>3</span> Contato acima da janela</strong> A altura da instalação permite que o forro saia do tubo e se acomode junto à parede antes da verga.</p>
     <p><strong><span>4</span> Barra beijando o chão</strong> O forro chega ao piso, evitando uma abertura para a claridade por baixo.</p>
   </div>
-  <figcaption>Corte lateral esquemático, sem escala. Os círculos representam os tubos vistos de ponta; os suportes foram omitidos para destacar os tecidos. Este detalhe mostra a parte superior e o piso. As laterais e o encontro das duas partes do forro também precisam ser resolvidos na instalação.</figcaption>
+  <figcaption>Corte lateral esquemático, sem escala. Os círculos representam os tubos vistos de ponta, e os suportes foram omitidos para destacar os tecidos. Este detalhe mostra a parte superior e o piso. As laterais e o encontro das duas partes do forro também precisam ser resolvidos na instalação.</figcaption>
 </figure>
 <p>E tem um cuidado do qual não abro mão quando o objetivo é escurecer: <strong>o forro precisa beijar o chão</strong>. Se ficar uma fresta por baixo, passa claridade.</p>
 <p>No artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a>, explico a relação entre a instalação, a altura e o encontro do tecido com o piso. O artigo sobre <a href="/blog/bainha-de-cortina/">bainha de cortina</a> detalha o acabamento da barra.</p>
@@ -229,7 +229,7 @@ const POSTS = [
       { id: "perguntas", toc: "Perguntas frequentes", label: "Guia de forros", h2: "Dúvidas frequentes sobre forro de cortina", faq: true, html: `
             ` },
       { id: "consultoria", toc: "Consultoria em casa", label: "Converse com a Shine", closing: true, h2: "O forro precisa fazer sentido na sua casa",
-        html: `<p>É assim que eu escolho o forro: olhando o que você precisa resolver, como quer usar o ambiente e como pretende cuidar da cortina depois.</p><p>Na consultoria gratuita em domicílio, eu ou alguém da equipe avalia essas escolhas com você. Atendemos Volta Redonda e todo o Sul Fluminense.</p>`,
+        html: `<p>É assim que eu escolho o forro: olhando o que você precisa resolver, como quer usar o ambiente e como pretende cuidar da cortina depois.</p><p>Na consultoria gratuita em domicílio, eu ou alguém da equipe avalia essas escolhas com você. Atendemos <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/resende/">Resende</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a> e todo o Sul Fluminense.</p>`,
         cta: "Conversar sobre meu ambiente →", img: "/isani-consultoria-800.avif", imgAlt: "Isani Oliveira conferindo o caimento de uma cortina durante uma consultoria" },
     ],
     faq: [
@@ -242,7 +242,7 @@ const POSTS = [
       ["Como escurecer o quarto com cortina?",
        "Eu avalio o blackout 100% junto da instalação: o fechamento superior, as laterais, o encontro das duas partes no centro e a barra beijando o chão. O material bloqueia a luz que passa por ele, mas uma fresta permite a entrada de claridade."],
       ["O forro translúcido dá privacidade à noite?",
-       "Nas opções descritas, sim, mas isso não significa ausência de silhueta junto ao tecido. A microfibra mais leve pode deixar a figura perceptível quando alguém chega perto; uma trama mais fechada pode torná-la mais difusa. Eu avalio o material e o uso do ambiente juntos."],
+       "Nas opções descritas, sim, mas isso não significa ausência de silhueta junto ao tecido. A microfibra mais leve pode deixar a figura perceptível quando alguém chega perto, enquanto uma trama mais fechada pode torná-la mais difusa. Eu avalio o material e o uso do ambiente juntos."],
       ["Pode lavar forro blackout na máquina?",
        "Depende da construção. As opções de microfibra e de blackout de tecido com bloqueador interno que descrevo permitem lavagem em máquina, conforme o documento de cuidados. Para blackout com película traseira, recomendo higienização profissional específica para esse material."],
     ],
@@ -259,7 +259,7 @@ const POSTS = [
     ogImage: '/hall-wave-volta-redonda.avif',
     faqEm: 'altura de cortina',
     tocNote: 'A medida certa começa com o olhar para o ambiente.',
-    related: [['/blog/bainha-de-cortina/', 'Bainha de cortina'], ['/blog/varao-para-cortina/', 'Varão para cortina'], ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/cortinas/', 'Cortinas sob medida'], ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo: ajuste de bainha em casa']],
+    related: [['/blog/bainha-de-cortina/', 'Bainha de cortina'], ['/blog/varao-para-cortina/', 'Varão para cortina'], ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/cortinas/', 'Cortinas sob medida'], ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo: ajuste de bainha em casa'], ['/cidades/volta-redonda/', 'Cortinas em Volta Redonda'], ['/cidades/resende/', 'Cortinas em Resende'], ['/cidades/barra-mansa/', 'Cortinas em Barra Mansa']],
     hero: {
       eyebrow: 'O olhar de quem instala',
       h1: 'Qual a altura<br>ideal da cortina?', h1em: 'Do chão ao teto.',
@@ -278,7 +278,7 @@ const POSTS = [
                 <div class="sl-ed-hem"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 230" role="img" aria-label="Barra tocando suavemente o piso"><defs><marker id="arrow-barra-tocando-suavemente-o-piso" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto-start-reverse"><path d="M0 0L6 3L0 6" fill="#9b713a"/></marker></defs><path d="M12 202H248" stroke="#16302a" stroke-width="2"/><path d="M12 208H248" stroke="#ded8ca"/><path d="M45 25H205V201Q195 206 185 201T145 201T105 201T65 201Q55 206 45 201Z" fill="#e2d6c0" stroke="#9c8c72" stroke-width="1.5"/><path d="M65 25V201" stroke="#b9aa91" stroke-width="1.4"/><path d="M85 25V201" stroke="#b9aa91" stroke-width="1.4"/><path d="M105 25V201" stroke="#b9aa91" stroke-width="1.4"/><path d="M125 25V201" stroke="#b9aa91" stroke-width="1.4"/><path d="M145 25V201" stroke="#b9aa91" stroke-width="1.4"/><path d="M165 25V201" stroke="#b9aa91" stroke-width="1.4"/><path d="M185 25V201" stroke="#b9aa91" stroke-width="1.4"/></svg><span class="sl-ed-hemnum">02</span><h4>Beijando o chão</h4><p>O pé de bailarina: a barra encosta de leve, sem sobra.</p></div>
                 <div class="sl-ed-hem"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 230" role="img" aria-label="Sobra de tecido apoiada no piso"><defs><marker id="arrow-sobra-de-tecido-apoiada-no-piso" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto-start-reverse"><path d="M0 0L6 3L0 6" fill="#9b713a"/></marker></defs><path d="M12 202H248" stroke="#16302a" stroke-width="2"/><path d="M12 208H248" stroke="#ded8ca"/><path d="M45 25H205V190Q205 202 220 207Q240 216 212 220L42 220Q19 214 35 207Q45 201 45 188Z" fill="#e2d6c0" stroke="#9c8c72" stroke-width="1.5"/><path d="M65 25V190Q65 205 58 214" fill="none" stroke="#b9aa91" stroke-width="1.4"/><path d="M85 25V190Q85 205 78 214" fill="none" stroke="#b9aa91" stroke-width="1.4"/><path d="M105 25V190Q105 205 98 214" fill="none" stroke="#b9aa91" stroke-width="1.4"/><path d="M125 25V190Q125 205 118 214" fill="none" stroke="#b9aa91" stroke-width="1.4"/><path d="M145 25V190Q145 205 138 214" fill="none" stroke="#b9aa91" stroke-width="1.4"/><path d="M165 25V190Q165 205 158 214" fill="none" stroke="#b9aa91" stroke-width="1.4"/><path d="M185 25V190Q185 205 178 214" fill="none" stroke="#b9aa91" stroke-width="1.4"/></svg><span class="sl-ed-hemnum">03</span><h4>Efeito poodle</h4><p>O estilo europeu: o tecido sobra e se acomoda no chão, de propósito.</p></div>
               </div>
-              <figcaption>Três acabamentos possíveis. Esquemas sem escala; a escolha depende do ambiente e do caimento desejado.</figcaption>
+              <figcaption>Três acabamentos possíveis. Esquemas sem escala. A escolha depende do ambiente e do caimento desejado.</figcaption>
             </figure>
             <p><strong>1 cm do chão.</strong> Uma folga pequena entre a barra e o piso. É a medida que vai anotada para a confecção, e a mais comum nas casas.</p>
             <p><strong>Beijando o chão.</strong> Eu chamo de pé de bailarina. A barra encosta de leve no piso, sem sobra. Pede o ambiente nivelado, senão um lado encosta antes do outro.</p>
@@ -365,24 +365,24 @@ const POSTS = [
             <p>As perguntas abaixo são as que mais chegam pelo Google e pelo WhatsApp. Respostas curtas, do jeito que eu respondo na consultoria.</p>` },
 
       { id: 'consultoria', toc: 'Consultoria em casa', label: 'Converse com a Shine', closing: true, h2: 'Acerte a medida no seu ambiente',
-        html: `<p>A distância da barra ao piso, a posição do varão e o espaço para recolher o tecido precisam funcionar juntos. Na consultoria em domicílio, eu ou alguém da equipe mede a laser nos três pontos e decide com você o acabamento, com o tecido na mão, no seu cômodo.</p><p>Atendemos Volta Redonda, Resende, Barra Mansa e todo o Sul Fluminense. Gratuito e sem compromisso.</p>`,
+        html: `<p>A distância da barra ao piso, a posição do varão e o espaço para recolher o tecido precisam funcionar juntos. Na consultoria em domicílio, eu ou alguém da equipe mede a laser nos três pontos e decide com você o acabamento, com o tecido na mão, no seu cômodo.</p><p>Atendemos <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/resende/">Resende</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a> e todo o Sul Fluminense. Gratuito e sem compromisso.</p>`,
         cta: 'Agendar consultoria em casa →', img: '/isani-consultoria-800.avif', imgAlt: 'Isani Oliveira em consultoria, conferindo o caimento de uma cortina de linho' },
     ],
     faq: [
       ['Qual a altura da cortina no chão?',
        'A cortina de tecido vai até o chão. A barra pode terminar de três formas: a 1 cm do chão, beijando o chão (encostando de leve) ou com o tecido sobrando no piso (efeito poodle). Em piso polido que reflete a luz, a indicação é beijar o chão, para a claridade não entrar por baixo.'],
       ['Qual a altura ideal para cortina de sala e de quarto?',
-       'Nos dois, até o chão. Na sala, a barra é escolhida pelo efeito desejado; no quarto, o piso polido costuma pedir a barra beijando o chão, porque o reflexo do piso joga a claridade para cima de manhã.'],
+       'Nos dois, até o chão. Na sala, a barra é escolhida pelo efeito desejado. No quarto, o piso polido costuma pedir a barra beijando o chão, porque o reflexo do piso joga a claridade para cima de manhã.'],
       ['Qual a altura da cortina acima da janela?',
-       'Com varão fixado na parede, divida ao meio o espaço entre o topo da janela (a verga) e o teto. Com 50 cm de vão, o varão fica 25 cm acima da janela; com 1 m, fica a 50 cm. Se sobram só 20 ou 30 cm, o varão vai rente ao teto, com pelo menos 10 a 15 cm acima da verga.'],
+       'Com varão fixado na parede, divida ao meio o espaço entre o topo da janela (a verga) e o teto. Com 50 cm de vão, o varão fica 25 cm acima da janela, e com 1 m, fica a 50 cm. Se sobram só 20 ou 30 cm, o varão vai rente ao teto, com pelo menos 10 a 15 cm acima da verga.'],
       ['Qual a altura certa para colocar o varão de cortina?',
        'A mesma regra: no meio do espaço entre a verga e o teto. Nunca suba o varão além disso deixando um metro de parede nua até a janela.'],
       ['O que vem primeiro na medida da cortina, altura ou largura?',
        'Largura primeiro, altura depois. Anote sempre largura × altura, com a unidade e o que foi medido. Anotar ao contrário é uma causa comum de cortina confeccionada errada.'],
       ['Como medir a altura da cortina?',
-       'Do plano de fixação ao chão, em três pontos, da esquerda para a direita: lado esquerdo, meio e lado direito. Isso mostra se há desnível. Até meio centímetro é aceitável; acima disso, corrige-se no gesso ou, em último caso, na bainha, nunca com costura enviesada.'],
+       'Do plano de fixação ao chão, em três pontos, da esquerda para a direita: lado esquerdo, meio e lado direito. Isso mostra se há desnível. Até meio centímetro é aceitável. Acima disso, corrige-se no gesso ou, em último caso, na bainha, nunca com costura enviesada.'],
       ['Cortina pode ficar na altura da janela?',
-       'Cortina de tecido não. Ela vai até o chão; proporcional à janela é papel da persiana. A única exceção é janela com bancada ou pia embaixo, em que a cortina termina um pouco abaixo da bancada.'],
+       'Cortina de tecido não. Ela vai até o chão, pois a altura proporcional à janela é papel da persiana. A única exceção é janela com bancada ou pia embaixo, em que a cortina termina um pouco abaixo da bancada.'],
       ['Tem ar-condicionado acima da janela. E agora?',
        'O ideal é a parte de cima da janela ficar livre. Se o aparelho está lá, é preciso no mínimo 30 cm livres para o suporte e o varão. Sem esse espaço, a alternativa é trilho no teto.'],
     ],
@@ -392,25 +392,25 @@ const POSTS = [
     layout: 'editorial',
     title: 'Bainha de cortina: o tamanho da barra, a dobra e o ajuste',
     seoTitle: 'Bainha de Cortina: Tamanho da Barra e Ajuste | ShineCortinas',
-    description: 'Bainha é a costura; barra é o resultado. Veja a proporção da barra por pé-direito (15, 20 a 25, 30 cm), quando usar bainha dupla e por que costurar no fio.',
+    description: 'Bainha é a costura e barra é o resultado. Veja a proporção da barra por pé-direito (15, 20 a 25, 30 cm), quando usar bainha dupla e por que costurar no fio.',
     kicker: 'Medidas e instalação',
     published: '2026-02-19',
     modified: TODAY,
     ogImage: '/isani-consultoria.avif',
     faqEm: 'bainha de cortina',
     tocNote: 'A bainha é a parte da cortina que a gente mais olha e menos entende.',
-    related: [['/blog/altura-ideal-da-cortina/', 'Altura ideal da cortina'], ['/blog/varao-para-cortina/', 'Varão para cortina'], ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro'], ['/cortinas/', 'Cortinas sob medida'], ['/cortina-wave/', 'Cortina wave'], ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo: ajuste de bainha em casa']],
+    related: [['/blog/altura-ideal-da-cortina/', 'Altura ideal da cortina'], ['/blog/varao-para-cortina/', 'Varão para cortina'], ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro'], ['/cortinas/', 'Cortinas sob medida'], ['/cortina-wave/', 'Cortina wave'], ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo: ajuste de bainha em casa'], ['/cidades/volta-redonda/', 'Cortinas em Volta Redonda'], ['/cidades/resende/', 'Cortinas em Resende'], ['/cidades/barra-mansa/', 'Cortinas em Barra Mansa']],
     hero: {
       eyebrow: 'O olhar de quem instala',
       h1: 'Bainha de cortina:', h1em: 'a costura que faz a barra.',
-      lead: '<p><strong>A bainha é a dobra costurada na parte de baixo da cortina.</strong> É ela que faz a barra, e é ela que decide se a cortina termina a 1 cm do chão, beijando o chão ou com sobra. Muita gente diz "tamanho da bainha", mas o nome certo do que se vê é <strong>barra</strong>. O tamanho da barra não é fixo: é <strong>proporcional ao pé-direito</strong>. Em teto baixo, uns 15 cm; entre 2,50 e 2,70 m, 20 a 25 cm; perto de 3 m, 30 cm.</p><p>Tecido leve pede <strong>bainha dupla</strong>, para dar corpo. Tecido mais pesado fica bem com bainha simples. E a costura tem que ser reta, no fio do tecido, senão a cortina entorta com o tempo. Quando o pé-direito é alto, a nossa alfaiataria vai até a casa e ajusta a bainha no lugar.</p>',
+      lead: '<p><strong>A bainha é a dobra costurada na parte de baixo da cortina.</strong> É ela que faz a barra, e é ela que decide se a cortina termina a 1 cm do chão, beijando o chão ou com sobra. Muita gente diz "tamanho da bainha", mas o nome certo do que se vê é <strong>barra</strong>. O tamanho da barra não é fixo: é <strong>proporcional ao pé-direito</strong>. Em teto baixo, uns 15 cm. Entre 2,50 e 2,70 m, 20 a 25 cm. Perto de 3 m, 30 cm.</p><p>Tecido leve pede <strong>bainha dupla</strong>, para dar corpo. Tecido mais pesado fica bem com bainha simples. E a costura tem que ser reta, no fio do tecido, senão a cortina entorta com o tempo. Quando o pé-direito é alto, a nossa alfaiataria vai até a casa e ajusta a bainha no lugar.</p>',
       readTo: 'tamanho', readText: 'Veja a tabela de tamanho da barra',
       photo: '/isani-consultoria.avif', photoSrcset: '/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w', photoWidth: 1108, photoHeight: 1484, photoAlt: 'Isani Oliveira conferindo o caimento e a barra de uma cortina de linho durante uma consultoria',
       photoTag: 'Consultoria ShineCortinas', photoCaption: 'Isani conferindo o caimento e a barra de uma cortina de linho, com a equipe ao fundo',
     },
     sections: [
       { id: 'o-que-e', toc: 'Bainha e barra', h2: 'Bainha e barra não são a mesma coisa', html: `
-            <p>Bainha é a dobra costurada na parte de baixo do tecido. Barra é o que você vê: a faixa final da cortina, do vinco da dobra até o chão. Uma é a costura, a outra é o resultado. A frase que eu uso com a costureira resume a diferença: <strong>"ajusta a bainha da cortina com uma barra de 20 centímetros"</strong>. Ela entende na hora: mexer na bainha, que é a costura, e deixar 20 cm de barra, que é a faixa que aparece. É assim que este artigo fala: a bainha se faz, a barra se mede. São 20 cm de acabamento no tecido; a distância até o piso é outra medida.</p>
+            <p>Bainha é a dobra costurada na parte de baixo do tecido. Barra é o que você vê: a faixa final da cortina, do vinco da dobra até o chão. Uma é a costura, a outra é o resultado. A frase que eu uso com a costureira resume a diferença: <strong>"ajusta a bainha da cortina com uma barra de 20 centímetros"</strong>. Ela entende na hora: mexer na bainha, que é a costura, e deixar 20 cm de barra, que é a faixa que aparece. É assim que este artigo fala: a bainha se faz, a barra se mede. São 20 cm de acabamento no tecido, enquanto a distância até o piso é outra medida.</p>
             <figure class="sl-ed-fig sl-ed-figure"><div class="sl-ed-figtop"><span class="sl-ed-eyebrow">Entenda no desenho</span><span>Duas medidas diferentes</span></div><div class="sl-ed-measure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" role="img" aria-label="Detalhe da parte inferior da cortina: a barra é medida no tecido, entre o limite superior do acabamento e a borda inferior. O espaço até o piso é outra medida.">
 <defs><linearGradient id="fold"><stop stop-color="#dfd3bd"/><stop offset=".5" stop-color="#f4eee2"/><stop offset="1" stop-color="#c6b597"/></linearGradient><pattern id="pleats" width="40" height="220" patternUnits="userSpaceOnUse"><rect width="40" height="220" fill="url(#fold)"/></pattern></defs>
 <path d="M38 18H238V218H38Z" fill="url(#pleats)"/><rect x="38" y="146" width="200" height="72" fill="#b78b46" fill-opacity=".32"/><path d="M38 146H238" stroke="#795d37" stroke-dasharray="4 4" stroke-width="2"/><path d="M38 218H238" stroke="#795d37" stroke-width="2"/>
@@ -418,9 +418,9 @@ const POSTS = [
 <circle cx="305" cy="182" r="16" fill="#16302a"/><text x="305" y="188" text-anchor="middle" fill="white" font-size="18" font-family="Arial">1</text>
 <path d="M20 250H336" stroke="#9b9487" stroke-width="2"/><path d="M276 223V245M271 228L276 223L281 228M271 240L276 245L281 240" stroke="#9b713a" fill="none" stroke-width="2"/>
 <circle cx="305" cy="235" r="13" fill="#9b713a"/><text x="305" y="241" text-anchor="middle" fill="white" font-size="17" font-family="Arial">2</text></svg>
-<div class="sl-ed-legend"><p><b><span>1</span> Tamanho da barra</b>A altura da faixa de acabamento, medida no próprio tecido.</p><p><b><span>2</span> Distância até o chão</b>O espaço entre a borda inferior da cortina e o piso.</p></div></div><figcaption>Detalhe da parte inferior da cortina. Esquema sem escala; o espaço até o piso está ampliado para facilitar a leitura.</figcaption></figure>
+<div class="sl-ed-legend"><p><b><span>1</span> Tamanho da barra</b>A altura da faixa de acabamento, medida no próprio tecido.</p><p><b><span>2</span> Distância até o chão</b>O espaço entre a borda inferior da cortina e o piso.</p></div></div><figcaption>Detalhe da parte inferior da cortina. Esquema sem escala, com o espaço até o piso ampliado para facilitar a leitura.</figcaption></figure>
             <p>Na altura final, eu trabalho com três opções: 1 cm do chão, beijando o chão, o pé de bailarina, ou efeito poodle, com tecido sobrando no piso. Uma barra de 20 cm pode fazer parte de qualquer uma dessas escolhas. Quando a bainha é bem feita, a barra cai reta, pesa certo e para no lugar combinado.</p>
-            <p>É a bainha que entrega os três acabamentos de que eu falo no artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a>: a barra a 1 cm do chão, a barra beijando o chão e o efeito poodle, com o tecido sobrando no piso. A altura é a decisão; a bainha é quem executa.</p>
+            <p>É a bainha que entrega os três acabamentos de que eu falo no artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a>: a barra a 1 cm do chão, a barra beijando o chão e o efeito poodle, com o tecido sobrando no piso. A altura é a decisão, e a bainha é quem executa.</p>
             <div class="sl-aside"><strong>Leia também</strong><p>Antes de decidir a bainha, decida onde a cortina termina. No artigo sobre <a href="/blog/altura-ideal-da-cortina/">altura ideal da cortina</a> eu explico as três alturas, a regra do varão e como medir em três pontos.</p></div>` },
 
       { id: 'tamanho', toc: 'Tamanho da barra', h2: 'Tamanho da barra: proporcional ao pé-direito', html: `
@@ -434,7 +434,7 @@ const POSTS = [
                 <tr><td>Pé-direito duplo, 5 a 6 m</td><td>40 a 50 cm de barra com acabamento</td></tr>
               </tbody>
             </table></div>
-            <figure class="sl-ed-fig sl-ed-figure"><div class="sl-ed-figtop"><span class="sl-ed-eyebrow">Entenda no desenho</span><span>A proporção muda com o ambiente</span></div><div class="sl-ed-cards"><div class="sl-ed-card"><p class="sl-ed-card-label">Pé-direito de 2,30 m</p><svg viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pé-direito de 2,30 m, barra de cerca de 15 cm"><defs><linearGradient id="f0"><stop stop-color="#d1c1a5"/><stop offset=".45" stop-color="#f2e9d9"/><stop offset="1" stop-color="#baa583"/></linearGradient><pattern id="p0" width="27" height="250" patternUnits="userSpaceOnUse"><rect width="27" height="250" fill="url(#f0)"/></pattern></defs><path d="M25 67H195M25 225H195" stroke="#16302a" stroke-width="2"/><rect x="42" y="72" width="135" height="149" fill="url(#p0)"/><rect x="42" y="210" width="135" height="11" fill="#ac854b" opacity=".38"/><path d="M42 210H177" stroke="#8c6d43" stroke-dasharray="3 3"/></svg><p class="sl-ed-card-value">Barra de cerca de 15 cm</p></div><div class="sl-ed-card"><p class="sl-ed-card-label">Pé-direito de 2,50 a 2,70 m</p><svg viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pé-direito de 2,50 a 2,70 m, barra de 20 a 25 cm"><defs><linearGradient id="f1"><stop stop-color="#d1c1a5"/><stop offset=".45" stop-color="#f2e9d9"/><stop offset="1" stop-color="#baa583"/></linearGradient><pattern id="p1" width="27" height="250" patternUnits="userSpaceOnUse"><rect width="27" height="250" fill="url(#f1)"/></pattern></defs><path d="M25 46H195M25 225H195" stroke="#16302a" stroke-width="2"/><rect x="42" y="51" width="135" height="170" fill="url(#p1)"/><rect x="42" y="204" width="135" height="17" fill="#ac854b" opacity=".38"/><path d="M42 204H177" stroke="#8c6d43" stroke-dasharray="3 3"/></svg><p class="sl-ed-card-value">Barra de 20 a 25 cm</p></div><div class="sl-ed-card"><p class="sl-ed-card-label">Pé-direito de 2,90 a 3,00 m</p><svg viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pé-direito de 2,90 a 3,00 m, barra de 30 cm"><defs><linearGradient id="f2"><stop stop-color="#d1c1a5"/><stop offset=".45" stop-color="#f2e9d9"/><stop offset="1" stop-color="#baa583"/></linearGradient><pattern id="p2" width="27" height="250" patternUnits="userSpaceOnUse"><rect width="27" height="250" fill="url(#f2)"/></pattern></defs><path d="M25 22H195M25 225H195" stroke="#16302a" stroke-width="2"/><rect x="42" y="27" width="135" height="194" fill="url(#p2)"/><rect x="42" y="199" width="135" height="22" fill="#ac854b" opacity=".38"/><path d="M42 199H177" stroke="#8c6d43" stroke-dasharray="3 3"/></svg><p class="sl-ed-card-value">Barra de 30 cm</p></div></div><figcaption>Exemplos das proporções usadas pela Shine. Os desenhos são esquemáticos; a tabela traz as medidas.</figcaption></figure>
+            <figure class="sl-ed-fig sl-ed-figure"><div class="sl-ed-figtop"><span class="sl-ed-eyebrow">Entenda no desenho</span><span>A proporção muda com o ambiente</span></div><div class="sl-ed-cards"><div class="sl-ed-card"><p class="sl-ed-card-label">Pé-direito de 2,30 m</p><svg viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pé-direito de 2,30 m, barra de cerca de 15 cm"><defs><linearGradient id="f0"><stop stop-color="#d1c1a5"/><stop offset=".45" stop-color="#f2e9d9"/><stop offset="1" stop-color="#baa583"/></linearGradient><pattern id="p0" width="27" height="250" patternUnits="userSpaceOnUse"><rect width="27" height="250" fill="url(#f0)"/></pattern></defs><path d="M25 67H195M25 225H195" stroke="#16302a" stroke-width="2"/><rect x="42" y="72" width="135" height="149" fill="url(#p0)"/><rect x="42" y="210" width="135" height="11" fill="#ac854b" opacity=".38"/><path d="M42 210H177" stroke="#8c6d43" stroke-dasharray="3 3"/></svg><p class="sl-ed-card-value">Barra de cerca de 15 cm</p></div><div class="sl-ed-card"><p class="sl-ed-card-label">Pé-direito de 2,50 a 2,70 m</p><svg viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pé-direito de 2,50 a 2,70 m, barra de 20 a 25 cm"><defs><linearGradient id="f1"><stop stop-color="#d1c1a5"/><stop offset=".45" stop-color="#f2e9d9"/><stop offset="1" stop-color="#baa583"/></linearGradient><pattern id="p1" width="27" height="250" patternUnits="userSpaceOnUse"><rect width="27" height="250" fill="url(#f1)"/></pattern></defs><path d="M25 46H195M25 225H195" stroke="#16302a" stroke-width="2"/><rect x="42" y="51" width="135" height="170" fill="url(#p1)"/><rect x="42" y="204" width="135" height="17" fill="#ac854b" opacity=".38"/><path d="M42 204H177" stroke="#8c6d43" stroke-dasharray="3 3"/></svg><p class="sl-ed-card-value">Barra de 20 a 25 cm</p></div><div class="sl-ed-card"><p class="sl-ed-card-label">Pé-direito de 2,90 a 3,00 m</p><svg viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pé-direito de 2,90 a 3,00 m, barra de 30 cm"><defs><linearGradient id="f2"><stop stop-color="#d1c1a5"/><stop offset=".45" stop-color="#f2e9d9"/><stop offset="1" stop-color="#baa583"/></linearGradient><pattern id="p2" width="27" height="250" patternUnits="userSpaceOnUse"><rect width="27" height="250" fill="url(#f2)"/></pattern></defs><path d="M25 22H195M25 225H195" stroke="#16302a" stroke-width="2"/><rect x="42" y="27" width="135" height="194" fill="url(#p2)"/><rect x="42" y="199" width="135" height="22" fill="#ac854b" opacity=".38"/><path d="M42 199H177" stroke="#8c6d43" stroke-dasharray="3 3"/></svg><p class="sl-ed-card-value">Barra de 30 cm</p></div></div><figcaption>Exemplos das proporções usadas pela Shine. Os desenhos são esquemáticos e a tabela traz as medidas.</figcaption></figure>
             <p>No pé-direito duplo, como num hall de entrada de 5 ou 6 metros, uma barra de 40 a 50 cm com acabamento é o que dá imponência ao tecido. É elegante, e valoriza a arquitetura em vez de disputar com ela.</p>` },
 
       { id: 'dupla', toc: 'Bainha dupla ou simples', h2: 'Bainha dupla ou simples: a gramatura decide', html: `
@@ -467,7 +467,7 @@ const POSTS = [
             <p>A Shine tem uma <strong>equipe de alfaiataria</strong> que se desloca até a casa do cliente para ajustar a bainha no lugar. Não é para toda cortina. É para os casos em que não dá para prever, na oficina, como a cortina vai assentar depois de instalada.</p>
             <p>O caso clássico é o <strong>pé-direito alto</strong>. O tecido é pesado, o vão é grande, e só com a cortina pendurada é que se vê exatamente onde a barra vai parar. O outro caso é quando as <strong>ondas e os obstáculos do vão</strong> pedem uma adequação: um rodapé mais alto de um lado, um degrau, um móvel fixo.</p>
             <p>Nesses projetos, a cortina é instalada, a costureira confere a barra com a peça já no lugar e faz o ajuste ali. Assim, a decisão considera o que está acontecendo no ambiente, e não o que a gente imaginou na oficina.</p>
-            <figure class="sl-ed-video"><div class="sl-ed-video-heading"><span class="sl-ed-eyebrow">Veja o trabalho de perto</span><h3>Ajuste de bainha na casa do cliente</h3></div><div class="sl-ed-video-stage" id="video-ajuste"><button type="button" class="sl-ed-play" data-video="https://customer-zheg6rb9ddhx9h8y.cloudflarestream.com/c9058bc905c6e533b7a31c6013677fbe/iframe" aria-label="Reproduzir vídeo de ajuste de bainha em casa"><img src="https://customer-zheg6rb9ddhx9h8y.cloudflarestream.com/c9058bc905c6e533b7a31c6013677fbe/thumbnails/thumbnail.jpg" alt="" width="720" height="540" loading="lazy" decoding="async"><span class="sl-ed-play-label"><span aria-hidden="true">▶</span> Assistir ao vídeo</span></button></div><figcaption>Vídeo da ShineCortinas. <a href="/videos/ajuste-bainha-em-casa-alfaiataria/">Abrir a página do vídeo</a>.</figcaption></figure>` },
+            <figure class="sl-ed-video"><div class="sl-ed-video-heading"><span class="sl-ed-eyebrow">Veja o trabalho de perto</span><h3>Ajuste de bainha na casa do cliente</h3></div><div class="sl-ed-video-stage" id="video-ajuste"><button type="button" class="sl-ed-play" data-video="https://customer-zheg6rb9ddhx9h8y.cloudflarestream.com/c9058bc905c6e533b7a31c6013677fbe/iframe" aria-label="Reproduzir vídeo de ajuste de bainha em casa"><img src="https://customer-zheg6rb9ddhx9h8y.cloudflarestream.com/c9058bc905c6e533b7a31c6013677fbe/thumbnails/thumbnail.jpg" alt="Vídeo de ajuste de bainha em domicílio pela equipe ShineCortinas" width="720" height="540" loading="lazy" decoding="async"><span class="sl-ed-play-label"><span aria-hidden="true">▶</span> Assistir ao vídeo</span></button></div><figcaption>Vídeo da ShineCortinas. <a href="/videos/ajuste-bainha-em-casa-alfaiataria/">Abrir a página do vídeo</a>.</figcaption></figure>` },
 
       { id: 'erros', toc: 'O erro que mais vejo', h2: 'O erro que mais vejo em bainha de cortina', html: `
             <p>Quando eu entro numa casa e a cortina está feia embaixo, quase sempre é a bainha. Ela está <strong>empachocada</strong>, embolada, com <strong>fio puxado</strong>, costurada com o <strong>ponto errado da máquina</strong>. Ou a cortina foi lavada, <strong>encolheu</strong>, e ninguém ajustou: a barra subiu e ficou curta.</p>
@@ -488,20 +488,20 @@ const POSTS = [
             <p>Respostas curtas, do jeito que eu respondo na consultoria.</p>` },
 
       { id: 'consultoria', toc: 'Consultoria em casa', label: 'Converse com a Shine', closing: true, h2: 'A bainha certa começa na medição',
-        html: `<p>Pé-direito, gramatura do tecido e o acabamento que você quer para a barra: as três coisas se decidem juntas, e na sua casa. Na consultoria em domicílio, eu ou alguém da equipe mede a laser, mostra o tecido no seu ambiente e define a bainha com você.</p><p>Atendemos Volta Redonda, Resende, Barra Mansa e todo o Sul Fluminense. Gratuito e sem compromisso.</p>`,
+        html: `<p>Pé-direito, gramatura do tecido e o acabamento que você quer para a barra: as três coisas se decidem juntas, e na sua casa. Na consultoria em domicílio, eu ou alguém da equipe mede a laser, mostra o tecido no seu ambiente e define a bainha com você.</p><p>Atendemos <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/resende/">Resende</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a> e todo o Sul Fluminense. Gratuito e sem compromisso.</p>`,
         cta: 'Agendar consultoria em casa →', img: '/hall-wave-volta-redonda-800.avif', imgAlt: 'Cortina wave com barra de acabamento em hall de pé-direito duplo, projeto ShineCortinas em Volta Redonda' },
     ],
     faq: [
       ['O que é a bainha da cortina?',
-       'É a dobra costurada na parte de baixo do tecido, que forma a barra da cortina. A altura da cortina é a decisão; a bainha é quem executa: é ela que faz a barra parar a 1 cm do chão, beijar o chão ou sobrar no piso.'],
+       'É a dobra costurada na parte de baixo do tecido, que forma a barra da cortina. A altura da cortina é a decisão, e a bainha é quem executa: é ela que faz a barra parar a 1 cm do chão, beijar o chão ou sobrar no piso.'],
       ['Qual o tamanho ideal da bainha (barra) da cortina?',
-       'O nome certo do que se mede é barra; a bainha é a costura que faz a barra. O tamanho é proporcional ao pé-direito. Em teto baixo, por volta de 2,30 m, cerca de 15 cm. Entre 2,50 e 2,70 m, 20 a 25 cm. Perto de 3 m, 30 cm. Em pé-direito duplo, de 5 a 6 m, uma barra de 40 a 50 cm com acabamento.'],
+       'O nome certo do que se mede é barra, pois a bainha é a costura que faz a barra. O tamanho é proporcional ao pé-direito. Em teto baixo, por volta de 2,30 m, cerca de 15 cm. Entre 2,50 e 2,70 m, 20 a 25 cm. Perto de 3 m, 30 cm. Em pé-direito duplo, de 5 a 6 m, uma barra de 40 a 50 cm com acabamento.'],
       ['O tamanho da barra é a distância da cortina até o chão?',
        'Não. O tamanho da barra é medido no próprio tecido, na faixa de acabamento que a bainha forma. A distância até o chão é outra medida: a cortina pode terminar a 1 cm do piso, beijando o chão ou com efeito poodle, e uma barra de 20 cm serve para qualquer uma dessas três.'],
       ['Bainha dupla é melhor que bainha simples?',
        'Depende do tecido. Tecido leve, abaixo de 150 g/m², como o voil, pede bainha dupla para ganhar corpo: a barra dobrada duas vezes, na altura inteira da barra (uma barra de 15 cm usa 30 cm de tecido). Tecido de 170 a 200 g/m² fica bem com bainha simples, porque a própria dobra já dá o efeito encorpado.'],
       ['A bainha pode ser ajustada depois da cortina instalada?',
-       'Pode, e em pé-direito alto é o certo: só com a cortina pendurada dá para ver onde a barra vai parar. A Shine leva a equipe de alfaiataria até a casa para esse ajuste. A costura continua reta, no fio; o que muda é a medida.'],
+       'Pode, e em pé-direito alto é o certo: só com a cortina pendurada dá para ver onde a barra vai parar. A Shine leva a equipe de alfaiataria até a casa para esse ajuste. A costura continua reta, no fio, e o que muda é a medida.'],
       ['Minha cortina encolheu na lavagem e ficou curta. E agora?',
        'É um dos problemas mais comuns. Primeiro se confere quanto tecido ainda existe na bainha: se sobrou margem, a bainha é desmanchada e refeita na medida nova, com o ponto certo. Se não sobrou, refazer a costura não devolve o comprimento que falta. Puxar ou esticar não resolve e estraga a trama.'],
       ['Por que a bainha da minha cortina ficou torta?',
@@ -544,7 +544,7 @@ ${cityChip(null)}
         <nav aria-label="Breadcrumb" class="sl-ed-crumbs"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>${post.kicker}</span></nav>
         <p class="sl-ed-eyebrow">${h.eyebrow}</p>
         <h1 class="sl-ed-h1" id="topo">${h.h1} <em>${h.h1em}</em></h1>
-        <div class="sl-ed-author"><span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="eager" decoding="async"></span><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
+        <div class="sl-ed-author"><span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/isani-autor.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="lazy" decoding="async"></span><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
         <div class="sl-ed-lead">${h.lead}</div>
         <a class="sl-ed-readlink" href="#${h.readTo}">${h.readText} <span aria-hidden="true">↓</span></a>
       </div>
@@ -572,7 +572,7 @@ ${cityChip(null)}
 ${sections}
         </article>
         <div class="sl-ed-authorend">
-          <span style="display:block;width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="" width="64" height="64" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="lazy" decoding="async"></span>
+          <span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/isani-autor.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="lazy" decoding="async"></span>
           <p><strong>Conhecimento de quem está no projeto.</strong><br>Orientações de Isani Oliveira, fundador da ShineCortinas e especialista em cortinas sob medida, desde 2009 no Sul Fluminense. <a href="/sobre/">Conheça a Shine</a>.</p>
         </div>
       </div>
@@ -582,7 +582,7 @@ ${sections}
       <p class="sl-label">Continue no site</p>
       <div class="sl-links">
 ${(post.related || []).map(([hh, t]) => `<a href="${hh}">${t}</a>`).join('')}
-        <a href="/blog/">Todos os artigos</a><a href="/portfolio/">Projetos reais</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas/">Cidades atendidas</a>
+        <a href="/cidades/volta-redonda/">Cortinas em Volta Redonda</a><a href="/cidades/resende/">Cortinas em Resende</a><a href="/cidades/barra-mansa/">Cortinas em Barra Mansa</a><a href="/blog/">Todos os artigos</a><a href="/portfolio/">Projetos reais</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas/">Cidades atendidas</a>
       </div>
     </div></section>
   </main>
@@ -710,7 +710,7 @@ ${faqHtml}
       <p class="sl-label">Continue no site</p>
       <div class="sl-links">
 ${(post.related || [['/blog/o-que-e-blackout/', 'O que é blackout'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/blackout-e-forros/', 'Blackout e forros']]).map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}
-        <a href="/blog/">Todos os artigos</a><a href="/portfolio/">Projetos reais</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas/">Cidades atendidas</a>
+        <a href="/cidades/volta-redonda/">Cortinas em Volta Redonda</a><a href="/cidades/resende/">Cortinas em Resende</a><a href="/cidades/barra-mansa/">Cortinas em Barra Mansa</a><a href="/blog/">Todos os artigos</a><a href="/portfolio/">Projetos reais</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas/">Cidades atendidas</a>
       </div>
     </div></section>
   </main>

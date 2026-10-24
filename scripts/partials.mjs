@@ -69,8 +69,13 @@ export function normalizaJsonLd(head, crumbs) {
   let existingMod = null;
   for (const n of graph) {
     if (!n || typeof n !== 'object') continue;
+    delete n['@context'];
     if (n.dateModified && !existingMod) existingMod = n.dateModified;
     const t = n['@type'];
+    if (t === 'VideoObject') {
+      n.name = title;
+      if (desc) n.description = desc;
+    }
     if (t === 'Organization' || (Array.isArray(t) && t.includes('Organization'))) {
       n['@id'] = 'https://www.shinecortinas.com/#org';
       n.name = 'ShineCortinas';
@@ -132,6 +137,9 @@ export function normalizaJsonLd(head, crumbs) {
   if (!wp) {
     wp = { '@type': 'WebPage', '@id': can, url: can, name: title, description: desc, inLanguage: 'pt-BR', isPartOf: { '@id': 'https://www.shinecortinas.com/#website' } };
     graph.push(wp);
+  } else {
+    wp.name = title;
+    if (desc) wp.description = desc;
   }
   if (!wp.dateModified) wp.dateModified = existingMod || '2026-09-14';
   if (Array.isArray(crumbs) && crumbs.length && !graph.some((n) => n && n['@type'] === 'BreadcrumbList')) {
@@ -149,15 +157,47 @@ export function cleanHead(head, opts = {}) {
   head = head.replace(/\s*<link rel="alternate" media="only screen[^>]*>/, '');
   head = head.replace(/\s*<link rel="preload" href="\/?assets\/tailwind.generated.css"[^>]*>/, '');
   head = head.replace(/\s*<link rel="stylesheet" href="\/?assets\/tailwind.generated.css">/, '');
-  head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/cidades.css[^"]*">/, '');
-  head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-leve.css[^"]*">/, '');
+  head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/cidades\.css[^"]*">/g, '');
+  head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-leve\.css[^"]*">/g, '');
+  head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-aurora\.css[^"]*">/g, '');
   head = head.replace(/\s*<style>[\s\S]*?<\/style>/g, '');
   head = head.replace('content="#000000"', 'content="#16302A"');
-  head = head.replace(/href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]+"/, `href="${FONTS}"`);
-  head = head.replace(/<link rel="preload" as="image" href="hero-sala.avif"/, '<link rel="preload" as="image" href="/hero-sala.avif"');
-  head = head.replace('<link rel="icon" type="image/png"', `<link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">\n  <link rel="icon" type="image/png"`);
-  // Fontes: 34 páginas ficaram sem Playfair/Montserrat por herdarem um head sem o link (auditoria 08/09/2026).
-  if (!/fonts\.googleapis\.com/.test(head)) head = head.replace('<link rel="stylesheet" href="/assets/shine-leve.css', `<link rel="preconnect" href="https://fonts.googleapis.com">\n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n  <link href="${FONTS}" rel="stylesheet">\n  <link rel="stylesheet" href="/assets/shine-leve.css`);
+  head = head.replace(/\s*<noscript>\s*<link[^>]*fonts\.googleapis\.com[^>]*>\s*<\/noscript>/g, '');
+  head = head.replace(/\s*<link[^>]*fonts\.(?:googleapis|gstatic)\.com[^>]*>/g, '');
+  head = head.replace(/<link rel="preload" as="image" href="hero-sala\.avif"/, '<link rel="preload" as="image" href="/hero-sala.avif"');
+
+  let preloadTag = '';
+  const existingPreload = head.match(/<link rel="preload" as="image"[^>]*>/);
+  if (existingPreload) {
+    preloadTag = existingPreload[0];
+    head = head.replace(/\s*<link rel="preload" as="image"[^>]*>/g, '');
+  } else if (opts.preloadImg) {
+    preloadTag = `<link rel="preload" as="image" href="${opts.preloadImg}" fetchpriority="high">`;
+  }
+
+  const hasSitemap = /rel="sitemap"/.test(head);
+  const criticalLinks = [
+    ...(preloadTag ? [preloadTag] : []),
+    '<link rel="preconnect" href="https://fonts.googleapis.com">',
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+    `<link rel="preload" as="style" href="${FONTS}">`,
+    `<link rel="stylesheet" href="${FONTS}" media="print" onload="this.media='all'">`,
+    `<noscript><link rel="stylesheet" href="${FONTS}"></noscript>`,
+    `<link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">`,
+    `<link rel="stylesheet" href="/assets/shine-aurora.css?v=${AURORA_V}">`,
+    ...(!hasSitemap ? ['<link rel="sitemap" type="application/xml" href="/sitemap.xml">'] : []),
+  ].join('\n  ');
+
+  const ldIdx = head.indexOf('<script type="application/ld+json">');
+  const iconIdx = head.indexOf('<link rel="icon"');
+  if (ldIdx !== -1 && (iconIdx === -1 || ldIdx < iconIdx)) {
+    head = head.replace('<script type="application/ld+json">', `${criticalLinks}\n  <script type="application/ld+json">`);
+  } else if (iconIdx !== -1) {
+    head = head.replace('<link rel="icon"', `${criticalLinks}\n  <link rel="icon"`);
+  } else {
+    head = head.replace('</head>', `  ${criticalLinks}\n</head>`);
+  }
+
   // Canonical de página-pasta tem que terminar em '/', que é a URL que o Cloudflare serve e o sitemap declara.
   // Normaliza canonical, og:url e toda ocorrência da mesma URL no JSON-LD (breadcrumb, mainEntityOfPage).
   head = normalizaCanonical(head);
@@ -220,16 +260,16 @@ export function compare() {
     <section class="sl-section" id="comparativo"><div class="sl-wrap">
       <div class="sl-center" style="margin-bottom:30px">
         <p class="sl-kicker sl-kicker--center">Antes de decidir</p>
-        <h2 class="sl-h2">Comprar pela internet ou <em>sob medida?</em></h2>
+        <h2 class="sl-h2">O risco de comprar às cegas ou a <em>segurança do sob medida?</em></h2>
+        <p class="sl-sub" style="margin:0 auto">Na foto da internet toda cortina parece encorpada. A diferença aparece quando o pacote chega, a barra fica torta e a sala continua com eco.</p>
       </div>
       <div class="sl-compare">
-        <div class="sl-compare__row sl-compare__head"><div>Pela internet</div><div>Com a Shine</div></div>
-        <div class="sl-compare__row"><div>Você mede sozinho</div><div>Medição a laser feita por nós, na sua casa</div></div>
-        <div class="sl-compare__row"><div>Escolhe o tecido pela tela</div><div>Sente a textura e vê a cor no seu ambiente</div></div>
-        <div class="sl-compare__row"><div>Compra trilho e acionamento à parte</div><div>Projeto completo, com trilho e acionamento</div></div>
-        <div class="sl-compare__row"><div>Instalador desconhecido</div><div>Equipe própria, instalação no dia combinado</div></div>
-        <div class="sl-compare__row"><div>Garantia de loja: meses</div><div>1 ano (e até 5 anos na motorização)</div></div>
-        <div class="sl-compare__row"><div>Erro de medida é problema seu</div><div>A medida é responsabilidade nossa</div></div>
+        <div class="sl-compare__row sl-compare__head"><div>Às cegas pela internet</div><div>Sob medida com a Shine</div></div>
+        <div class="sl-compare__row"><div>Você mede sozinho na trena e assume o prejuízo se a barra arrastar ou faltar tecido</div><div>Medição a laser na sua casa: qualquer milímetro é responsabilidade 100% nossa</div></div>
+        <div class="sl-compare__row"><div>Escolhe pela tela: tecido fino que passa claridade e não corta o eco da sala</div><div>Você toca o tecido (&gt;170 g/m²) na luz real da sua janela e sente o conforto acústico na hora</div></div>
+        <div class="sl-compare__row"><div>Compra trilho frágil à parte, que agarra no meio do vão e entorta com o peso</div><div>Projeto completo com trilho suíço de alumínio ou tubo suíço que desliza em silêncio</div></div>
+        <div class="sl-compare__row"><div>Precisa chamar um estranho para entrar na sua casa e furar o gesso sem garantia</div><div>Equipe própria registrada: instalação limpa, com aspirador, vaporizador e hora marcada</div></div>
+        <div class="sl-compare__row"><div>Se encolher na lavagem ou o motor travar, você fica sem assistência local</div><div>Ateliê próprio desde ${FOUNDED_YEAR}, garantia de 1 ano (até 5 anos nos motores) e ajuste de bainha</div></div>
       </div>
     </div></section>
 `;
@@ -249,7 +289,7 @@ export function footer() {
     </div>
     <div class="sl-footer__grid">
       <div>
-        <a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="56" height="56" loading="lazy" decoding="async"></a>
+        <a href="/" class="sl-logo" aria-label="ShineCortinas, início"><img src="/logo-shine.avif" alt="ShineCortinas" width="56" height="56" loading="lazy" decoding="async"></a>
         <p style="margin-top:14px">Volta Redonda, RJ · Consultoria em domicílio<br>Atendemos todo o Sul Fluminense.<br>Sob medida para cada ambiente, desde ${FOUNDED_YEAR}.</p>
       </div>
       <div>
@@ -258,11 +298,13 @@ export function footer() {
         <p style="margin-top:10px">Na visita você conhece o projeto, os tecidos e as condições, inclusive o parcelamento em até 12x.</p>
       </div>
       <div>
-        <h4>Redes</h4>
+        <h4>Soluções e guias</h4>
+        <p style="line-height:1.7"><a href="/cortinas/">Cortinas</a> · <a href="/cortina-wave/">Cortina Wave</a> · <a href="/persianas/">Persianas</a> · <a href="/cortina-motorizada/">Cortina Motorizada</a> · <a href="/blackout-e-forros/">Blackout e Forros</a> · <a href="/trilhos-e-acionamentos/">Trilhos e Acionamentos</a> · <a href="/lavagem-de-cortinas/">Lavagem de Cortinas</a> · <a href="/portfolio/">Portfólio</a> · <a href="/videos/">Vídeos</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · <a href="/cidades-atendidas/">Cidades Atendidas</a></p>
+        <h4 style="margin-top:16px">Redes</h4>
         <p><a href="https://www.instagram.com/shinecortinas/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://www.facebook.com/shinecortinas" rel="me noopener" target="_blank">Facebook</a> · <a href="https://www.youtube.com/@shinecortinas" rel="me noopener" target="_blank">YouTube</a><br><a href="https://www.tiktok.com/@shinecortinas" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.pinterest.com/shinecortinas" rel="me noopener" target="_blank">Pinterest</a></p>
       </div>
     </div>
-    <div class="sl-footer__bottom"><span>© <span data-current-year>${CURRENT_YEAR}</span> ShineCortinas</span><span>Google ${GOOGLE_RATING_PT} ★★★★★ · ${GOOGLE_REVIEWS} avaliações</span></div>
+    <div class="sl-footer__bottom"><span>© <span data-current-year>${CURRENT_YEAR}</span> ShineCortinas · <a href="/politica-de-privacidade/" style="color:inherit;text-decoration:underline;">Política de Privacidade</a></span><span>Google ${GOOGLE_RATING_PT} ★★★★★ · ${GOOGLE_REVIEWS} avaliações</span></div>
   </div></footer>
 `;
 }

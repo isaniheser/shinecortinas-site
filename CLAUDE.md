@@ -45,13 +45,17 @@ Toda alteração no site DEVE respeitar, simultaneamente, estas 5 premissas:
    busca citem em primeiro lugar. Para isso: conteúdo factual, schema.org rico
    (LocalBusiness, Service, FAQPage, BreadcrumbList, Organization), respostas
    diretas e bem estruturadas, FAQ em linguagem natural.
-3. **Estética premium.** Visual sofisticado. Paleta: preto, branco e dourado
-   `#C6A868` (gradiente `#DFBD69→#FFF0C6→#B89648`). Fontes: Playfair Display
-   (luxury), Cinzel (logo), Montserrat (corpo). Navbar **vidro fosco** (glass,
-   estilo iOS): `bg-white/10 backdrop-blur-lg`, solidifica ao rolar (`nav-scrolled`).
-4. **Leve e mobile-first.** Otimizado para smartphone acima de tudo. Imagens
-   `.avif`, `loading="lazy"`, `decoding="async"`, preload só do hero. Sem JS
-   pesado. CSS pré-compilado (ver abaixo).
+3. **Estética refinada e Neuro Web Design / PNL.** Visual editorial e acolhedor.
+   Paleta: verde profundo (`#08130F` / `#16302A`), marfim/areia (`#FAF7F2` / `#F6F1E7`) e
+   **dourado champanhe acetinado uniforme sem estouro branco**
+   (`linear-gradient(135deg, #DDBB6E 0%, #C9A252 55%, #B38A3B 100%)`).
+   Fontes: Cormorant Garamond / Playfair Display (títulos) e Plus Jakarta Sans (corpo).
+   Copy construída com **Neuro Web Design e PNL** (emoção antes da técnica, ativando os
+   canais **Visual**, **Tátil/Cinestésico** e **Auditivo/Acústico**).
+4. **Leve e mobile-first (Zero Fuga do Site).** Otimizado para smartphone acima de tudo.
+   Imagens `.avif`, `loading="lazy"`, `decoding="async"`, preload só do hero com `imagesrcset`.
+   Vídeos, Reels, fichas de obras e resumos do blog abrem dentro da própria página em
+   gavetas rápidas (*bottom-sheets*) com botão direto para o WhatsApp e pasta de referências.
 5. **Conectado a todas as redes sociais.** Manter `rel="me"`, Open Graph,
    Twitter card e links coerentes com os perfis da marca.
 
@@ -59,10 +63,9 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
 
 ## Restrições técnicas (armadilhas conhecidas)
 
-- **Tailwind está CONGELADO** em `/assets/tailwind.generated.css` (pré-compilado).
-  Classes utilitárias novas NÃO existem nele. Páginas ainda no Tailwind (home,
-  produto, blog): validar que toda classe existe no CSS gerado. As páginas de
-  cidade NÃO usam mais Tailwind — usam `/assets/shine-leve.css`.
+- **CSS leve e modular:** a Home usa `/assets/shine-home-e.css` + `/assets/shine-home-e.js`
+  e as páginas internas/cidades usam `/assets/shine-leve.css` + `/assets/shine-aurora.css`
+  (sem dependência do antigo Tailwind congelado).
 - **Bug do `$$` no `String.replace()`:** em JS, `$$` no texto de substituição vira
   um `$` literal. Os builds gravam o JSON-LD com `head.replace(bloco, novoTexto)`, então
   `"priceRange": "$$"` era silenciosamente rebaixado para `"$"` a cada build. Corrigido
@@ -146,8 +149,8 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
   - **Lavagem e Higienização de Cortinas (esclarecido pelo Isani, 17/10/2026):** a Shine oferece serviço completo de lavanderia especializada em domicílio: a equipe vai até a casa do cliente, retira as cortinas, lava, passa e entrega/reinstala no lugar. Utiliza **modo de lavagem e secagem vertical**, mantendo os vincos e as dobras originais para não danificar a peça (lavar de outra forma faz o tecido *"perder o DNA"* e perder o caimento). Inclui revisão técnica de ateliê e instalação que nenhuma lavanderia comum oferece: recolocação de **deslizantes soltos**, reparo de **costuras soltas**, avaliação e **reforço dos trilhos** se necessário e **ajuste de bainha** caso o tecido sofra encolhimento (com garantia da Shine). Escopo: lava **apenas cortinas de tecido (de pano)**; **não** lava persianas (Romana, Rolô, Double Vision etc.). Cidades atendidas na lavagem (por enquanto): **Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral**.
   - **Números confirmados pelo Isani (set/2026):** empresa desde 2009; "mais de 9.000
     ambientes transformados". Podem ser usados no texto e no schema.
-  - **Nota do Google (coletada em 06/set/2026 no Perfil da Empresa):** **4,9 com 294
-    avaliações**. Nunca escrever "5.0"; o número vem de `docs/dados-google/perfil.json`.
+  - **Nota do Google (Perfil da Empresa):** **4,9 com 297
+    avaliações**. Nunca escrever "5.0"; o número vem de `docs/dados-google/perfil.json` e `scripts/partials.mjs`.
     `aggregateRating` ativo no schema `LocalBusiness` (decisão de 14/10/2026). Horário oficial: **seg–sex 08:00–17:00**,
     já no `openingHoursSpecification` de todo LocalBusiness.
   - **Garantia (informada pelo Isani, set/2026):** 1 ano para cortinas e persianas
@@ -162,7 +165,7 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     houver, marcar como referência (ver `docs/fotos-necessarias.md`).
 - **WhatsApp (CTA padrão):**
   `https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.`
-  Telefones: (24) 99329-8763 (WhatsApp) e (24) 3338-3069.
+  Telefone / WhatsApp: (24) 99329-8763 (o antigo fixo 3338-3069 foi desativado e removido).
 - **Linguagem — tom refinado, natural e sem cacoetes de IA (regra reforçada pelo Isani em 15/10/2026):**
   - Nos artigos do blog, escrever em **tom coloquial brasileiro, direto e humano**, na primeira pessoa do Isani (*"Quando eu vou na casa do cliente..."*, *"Muita gente me pergunta..."*, *"Veja bem:"*). Quem ler precisa sentir que foi escrito palavra por palavra pelo Isani.
   - **Proibido cacoetes de IA:** nunca usar travessões (`—` ou `–`) para intercalar frases, ponto-e-vírgula (`;`) artificial, jargões robóticos ou construções engessadas que não fazem parte da fala cotidiana do brasileiro. Usar vírgulas e pontos finais simples.
@@ -181,26 +184,37 @@ A beleza e a estrutura evoluem em cima destas premissas — nunca contra elas.
     ("a comodidade de parcelar em até 12x"), nunca como argumento de "é baratinho".
   - Manter: consultoria gratuita, sem pressão, sem robô (acolhimento ≠ povão).
 
-## Página de referência — Ambientes / Aurora (aprovado em 15/09/2026)
+## Arquitetura Visual e Mobile-First — Nova Home (Prévia E) + Sistema Leve (out/2026)
 
-Isani aprovou e autorizou efetivar no site a composição Ambientes: verde claro
-`#f2f6ef`, areia suave `#f8f5ed`, dourado nos destaques e logotipo oficial com
-Aurora. Cabeçalho central em névoa translúcida suave, sem faixa rígida; navegação
-pelo puxador flutuante “Explore a Shine” e menu que abre em duas folhas. Sem dica
-repetida abaixo do logo. Esta decisão substitui as direções anteriores de header
-sólido e barra inferior de abas. Não reintroduzir as propostas descartadas.
+Isani aprovou o padrão **Mobile-First da Nova Home (Prévia E)** aliado à estética
+Ambientes/Aurora nas páginas internas e de cidades:
+- **Dourado Champanhe Acetinado Sem Estouro Branco:** nos botões e selos dourados, usar
+  exclusivamente `linear-gradient(135deg, #DDBB6E 0%, #C9A252 55%, #B38A3B 100%)` sem brilho
+  branco central que prejudique o contraste da tipografia.
+- **Hero Imponente + Consultor do Isani na Mesma Tela:** Hero com foto única ampla de
+  pé-direito duplo (`/duplo.avif` com `srcset`) e Simulador por Ambiente (Consultor do Isani)
+  que atualiza a recomendação imediatamente no mesmo cartão visível, com link contextual para
+  a página da solução correspondente.
+- **Mosaico Editorial Assimétrico (Bento Grid de 4 Fotos) + Expansão Progressiva:** o acervo
+  exibe inicialmente **4 projetos por vez** com botão **"+ Ver mais projetos"** (abrindo mais 4
+  a cada clique), botão `♡` para salvar na pasta de referências e gavetas rápidas
+  (*bottom-sheets*) com foto, vídeo real (Cloudflare Stream), diagnóstico do ambiente e CTA
+  para o WhatsApp sem tirar o visitante da página.
+- **Barra Flutuante Inferior de 5 Atalhos (Estilo App):** fixa na base do celular com
+  `⌂ Início`, `✦ Consultor`, `⊞ Acervo`, `📖 Blog` e `☰ Menu` (gaveta completa com todas as
+  soluções, guias técnicos do blog, vídeos de obras e pasta de salvos).
+- **Neuro Web Design e PNL nas Páginas de Produto, Cidades e Institucional:** abertura
+  sensorial ativando os canais **Visual** (ondas simétricas, luz dourada filtrada, bainha a
+  1 cm do piso), **Tátil/Cinestésico** (toque encorpado do tecido >170 g/m², frescor térmico de
+  5 a 6 °C no blackout e até 11 °C na fibra de vidro) e **Auditivo/Acústico** (deslizar
+  silencioso do trilho e absorção de eco).
 
-CSS/JS aprovados: `assets/shine-aurora.css` e `assets/shine-aurora.js`, sobre a base
-`shine-leve.css`. Menu com links em HTML estático; navegação de fallback disponível
-sem JavaScript. Componentes em `scripts/aurora-layout.mjs`, compartilhados pelos
-partials. `build-home.mjs` gera a home; `build-aurora.mjs` atualiza somente a moldura
-das páginas existentes, preservando conteúdo e metadados. Landings de anúncios
-mantêm a composição própria. Não publicar comparadores, rotas de prévia ou
-parâmetros `conceito`.
-
-- CSS do sistema: `/assets/shine-leve.css` (semântico, sem Tailwind). **Logotipo:** imagem real
-  `logo-shine.avif` no cabeçalho e no rodapé (decisão do Isani, 10/09/2026); nunca voltar ao "S" em texto.
-- **Blog:** artigos novos usam `layout: 'editorial'` em `scripts/build-blog.mjs` (capa com foto real,
+- CSS/JS da Home: `assets/shine-home-e.css` e `assets/shine-home-e.js`, gerados por
+  `scripts/build-home.mjs`.
+- CSS/JS das páginas internas e cidades: `/assets/shine-leve.css`, `/assets/shine-aurora.css`
+  e `/assets/shine-aurora.js`, com moldura em `scripts/aurora-layout.mjs` e `scripts/partials.mjs`.
+  **Logotipo:** imagem real `logo-shine.avif` no cabeçalho e no rodapé; nunca voltar ao "S" em texto.
+- **Blog:** 16 guias técnicos com `layout: 'editorial'` em `scripts/build-blog.mjs` (capa com foto real,
   autor com foto, índice lateral, seções numeradas, desenhos em SVG, fechamento verde). Modelo de
   conteúdo: pilar + satélites, com "Leia também" entre eles. Fatos só da entrevista em `docs/entrevistas/`.
 - **As 15 páginas de cidade são GERADAS**: conteúdo único de cada cidade em
@@ -209,9 +223,9 @@ parâmetros `conceito`.
   `node scripts/build-cidades.mjs`. Para alterar layout: edite o template.
   Nunca edite `cidades/<slug>/index.html` à mão — o build sobrescreve.
   O `<head>` (title, metas, canonical, JSON-LD) é preservado do arquivo.
-- Estrutura: header → hero (foto + degradê verde, breadcrumb, H1) → faixa de
+- Estrutura das cidades: header → hero (foto + degradê verde, breadcrumb, H1) → faixa de
   confiança → "Imagine" (imagem + copy local) → story (imagem + copy local) →
-  prova (17 anos, 5.0/292, 9 mil ambientes, equipe própria) → galeria clara →
+  prova (17 anos, 4,9 com 297 avaliações, 9 mil ambientes, equipe própria) → galeria clara →
   comparação "pela internet × com a Shine" → como funciona → depoimento (faixa
   verde) → FAQ com as 6 perguntas do schema visíveis → CTA final (faixa verde)
   → links internos + cidades próximas → rodapé claro → barra fixa (celular).

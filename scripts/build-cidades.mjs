@@ -12,6 +12,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(readFileSync(join(ROOT, 'cidades', 'cidades.json'), 'utf8'));
 
 const LAUNDRY_SLUGS = new Set(['volta-redonda', 'barra-mansa', 'resende', 'barra-do-pirai', 'pirai', 'pinheiral']);
+const SERRA_SLUGS = new Set(['penedo', 'visconde-de-maua', 'maromba', 'itatiaia', 'miguel-pereira', 'paulo-de-frontin']);
 
 function cityFaqs(d) {
   const base = [...(d.faq || [])];
@@ -19,16 +20,51 @@ function cityFaqs(d) {
   if (!hasMotor) {
     base.push({
       q: `Vocês instalam cortina motorizada e persiana motorizada em ${d.city}?`,
-      a: `Sim. Projetamos e instalamos cortina motorizada em trilho suíço Wave ou prega e persiana motorizada (rolô, tela solar e blackout) em ${d.city}. Trabalhamos com motorização Somfy e linhas homologadas silenciosas, com opção a bateria recarregável sem quebrar parede ou ponto 110V/220V e integração com Alexa, Google Home e Apple HomeKit.`,
+      a: `Sim. Projetamos e instalamos cortina motorizada em trilho suíço Wave ou prega e persiana motorizada (rolô, tela solar, romana e blackout) em ${d.city}. O trilho motorizado silencioso conta com a função Touch Motion (abre ou fecha ao dar um leve puxão no tecido) e permite manuseio manual normal se faltar luz. Já na persiana motorizada, trabalhamos com versão elétrica ou a bateria recarregável (duração média de 6 meses por carga, sem quebrar parede), integração com Alexa e Google Home e garantia de até 5 anos.`,
     });
   }
   if (LAUNDRY_SLUGS.has(d.slug) && !base.some((f) => /lavagem|lavar/i.test(f.q))) {
     base.push({
       q: `Vocês fazem lavagem de cortinas sob medida em ${d.city}?`,
-      a: `Sim. Em ${d.city}, nossa própria equipe retira sua cortina de tecido do trilho ou varão, realiza a lavagem técnica para linho, voil e blackout sem encolher e devolve instalada e alinhada no lugar.`,
+      a: `Sim. Em ${d.city}, nossa equipe própria faz a retirada e a reinstalação em domicílio exclusivamente para cortinas de tecido (não lavamos persianas). Realizamos lavagem e secagem vertical para manter os vincos e o DNA do tecido, revisão de rodízios e costuras e ajuste de bainha com garantia no nosso ateliê caso o tecido sofra retração.`,
     });
   }
   return base;
+}
+
+function cityBlogBridge(d) {
+  let posts;
+  if (SERRA_SLUGS.has(d.slug)) {
+    posts = [
+      ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro para cortina: blackout 100%, 70% e térmico', 'Veja como o bolsão de ar entre o tecido e o forro reduz de 5 a 6 °C a troca de calor com o vidro nos quartos da serra.'],
+      ['/blog/como-escurecer-quarto-sala-tv/', 'Como escurecer quarto e sala de TV sem frestas de luz', 'O cálculo de transpasse lateral, altura até o teto e diferença real entre blackout 100% e 70% para dormir no escuro total.'],
+      ['/blog/linho-para-cortinas/', 'Linho para cortinas: gramatura acima de 170 g/m² e caimento', 'Por que indicamos tecido peletizado com até 10% de fibra natural para ter textura de linho sem mofar na umidade.'],
+    ];
+  } else if (LAUNDRY_SLUGS.has(d.slug)) {
+    posts = [
+      ['/blog/quantidade-de-tecido-para-cortina-wave/', 'Quantidade de tecido para Cortina Wave: 2:1, 2,5:1 e 3:1', 'A conta de franzimento, cordão espaçador e cortineiro mínimo de 15x15 cm para ondas simétricas do teto ao piso.'],
+      ['/blog/por-que-escolher-cortina-motorizada/', 'Por que escolher cortina motorizada: Touch Motion e vãos', 'Como funciona a abertura ao dar um leve puxão no tecido, o manuseio se faltar luz e a proteção para pé-direito alto.'],
+      ['/blog/lavagem-de-cortinas-sob-medida/', 'Lavagem de cortinas sob medida: secagem vertical e revisão', `Como retiramos sua cortina de tecido em ${d.city}, lavamos na vertical e revisamos rodízios, costuras e bainha no ateliê.`],
+    ];
+  } else {
+    posts = [
+      ['/blog/quantidade-de-tecido-para-cortina-wave/', 'Quantidade de tecido para Cortina Wave: 2:1, 2,5:1 e 3:1', 'Como dimensionar a proporção de tecido, o cordão espaçador e o trilho suíço para janelas largas e pé-direito alto.'],
+      ['/blog/por-que-escolher-cortina-motorizada/', 'Por que escolher cortina motorizada: Touch Motion e vãos', 'Abertura com leve toque no tecido, uso manual quando falta energia e acionamento inteligente por voz ou aplicativo.'],
+      ['/blog/qual-cortina-escolher-para-sala/', 'Qual cortina escolher para a sala: pregas, Wave e cores', 'Como combinar tecido encorpado (>170 g/m²) com sofá e tapete para vestir a janela e eliminar o eco da sala.'],
+    ];
+  }
+  const cards = posts.map(([href, title, desc]) => `        <a class="sl-post" href="${href}"><span>Guia técnico</span><h3>${esc(title)}</h3><p>${esc(desc)}</p></a>`).join('\n');
+  return `
+    <section class="sl-section sl-reveal"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:28px">
+        <p class="sl-kicker sl-kicker--center">Leitura técnica · Consultoria Isani</p>
+        <h2 class="sl-h2">Guias técnicos do Isani para escolher sem erro em <em>${d.city}</em></h2>
+        <p class="sl-sub">O que explicamos na visita técnica em ${d.city}, documentado passo a passo para você comparar tecidos, forros e sistemas com segurança. Veja também nosso guia sobre <a href="/blog/qual-cortina-escolher-para-sala/">qual cortina escolher para a sala</a>.</p>
+      </div>
+      <div class="sl-posts">
+${cards}
+      </div>
+    </div></section>`;
 }
 
 function citySolutions(d) {
@@ -44,7 +80,7 @@ function citySolutions(d) {
         <div class="sl-card"><div class="sl-media"><img src="/automacao-sq.avif" alt="${esc(`Cortina motorizada sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Automação residencial</span><h3>Cortina e persiana motorizada</h3><p>Trilho motorizado silencioso e persiana rolô motorizada em ${d.city}, com versão a bateria recarregável sem obra ou elétrica e comando por controle, celular e voz. <a href="/cortina-motorizada/">Ver cortina motorizada →</a></p></div></div>
         <div class="sl-card"><div class="sl-media"><img src="/duplo-sq.avif" alt="${esc(`Cortina Wave em linho e voil sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Alfaiataria têxtil</span><h3>Cortina Wave em linho e voil</h3><p>Ondas simétricas em trilho suíço de alumínio, prega americana ou prega macho, confeccionadas ao milímetro para salas e suítes em ${d.city}. <a href="/cortina-wave/">Ver cortina Wave →</a></p></div></div>
         <div class="sl-card"><div class="sl-media"><img src="/tela-solar-sq.avif" alt="${esc(`Persiana rolô tela solar e madeira sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Controle solar</span><h3>Persianas rolô, tela solar e madeira</h3><p>Tela solar 1%, 3% e 5% para varandas gourmet, Double Vision, romana e madeira natural instaladas por equipe própria em ${d.city}. <a href="/persianas/">Ver persianas →</a></p></div></div>
-        <div class="sl-card"><div class="sl-media"><img src="/blackout-sq.avif" alt="${esc(`Cortina blackout 100% sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Conforto térmico e escuro real</span><h3>Blackout 100%, 80% e forros</h3><p>Forro blackout acoplado ou em trilho duplo para bloquear luz e calor em quartos, suítes e salas de TV em ${d.city}. <a href="/blackout-e-forros/">Ver blackout e forros →</a></p></div></div>
+        <div class="sl-card"><div class="sl-media"><img src="/blackout-sq.avif" alt="${esc(`Cortina blackout 100% sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Conforto térmico e escuro real</span><h3>Blackout 100%, 70% e forros</h3><p>Forro blackout acoplado ou em trilho duplo para bloquear luz e calor em quartos, suítes e salas de TV em ${d.city}. <a href="/blackout-e-forros/">Ver blackout e forros →</a></p></div></div>
       </div>${isLaundry ? `
       <div class="sl-center" style="margin-top:28px"><p class="sl-sub" style="margin:0 auto">Já tem cortina de tecido instalada em ${d.city}? Conheça também nosso serviço de <a href="/lavagem-de-cortinas/"><strong>lavagem de cortinas com retirada e reinstalação em domicílio</strong></a>.</p></div>` : ''}
     </div></section>`;
@@ -55,10 +91,11 @@ function body(d) {
   const steps = d.steps.map((s, i) => `        <div class="sl-step"><div class="sl-step__n">${i + 1}</div><h3>${s.h}</h3><p>${s.p}</p></div>`).join('\n');
   const faq = cityFaqs(d).map((f) => `        <details><summary>${f.q}</summary><div>${f.a}</div></details>`).join('\n');
   const nearby = d.nearby.map(([slug, name]) => `<a href="/cidades/${slug}/">${name}</a>`).join('');
+  const storySrcset = d.story_img === '/linha-puro.avif' ? ' srcset="/linha-puro-800.avif 760w, /linha-puro.avif 1696w" sizes="(max-width: 900px) 100vw, 480px"' : '';
   return `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de ${d.city}">
 ${header('/cidades-atendidas/')}
   <section class="sl-hero">
-    <div class="sl-hero__img"><img src="/hero-sala.avif" alt="${esc(d.hero_alt)}" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
+    <div class="sl-hero__img"><img src="/hero-sala.avif" srcset="/hero-sala-800.avif 800w, /hero-sala.avif 1920w" sizes="100vw" alt="${esc(d.hero_alt)}" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
     <div class="sl-wrap"><div class="sl-hero__in">
       <nav aria-label="Breadcrumb"><ol class="sl-crumbs">
         <li><a href="/">Início</a></li><li aria-hidden="true">/</li>
@@ -86,7 +123,7 @@ ${cityChip(d.city)}${strip()}
     </div></section>
 
     <section class="sl-section sl-reveal"><div class="sl-wrap sl-grid-2 sl-grid-2--img-right">
-      <div class="sl-media"><img src="${d.story_img}" alt="${esc(d.story_alt)}" width="800" height="1000" loading="lazy" decoding="async"></div>
+      <div class="sl-media"><img src="${d.story_img}"${storySrcset} alt="${esc(d.story_alt)}" width="800" height="1000" loading="lazy" decoding="async"></div>
       <div class="sl-copy">
         <p class="sl-kicker">${d.story_kicker}</p>
         <h2 class="sl-h2">${d.story_h2}</h2>
@@ -124,7 +161,7 @@ ${steps}
       <blockquote class="sl-quote">"${d.quote}"</blockquote>
       <p class="sl-quote-by">${d.quote_by}<small>${d.quote_sub}</small></p>
     </div></section>
-
+${cityBlogBridge(d)}
     <section class="sl-section"><div class="sl-wrap">
       <div class="sl-center" style="margin-bottom:28px">
         <p class="sl-kicker sl-kicker--center">Dúvidas frequentes</p>
@@ -221,40 +258,42 @@ function withReview(head, d) {
 }
 
 const CITY_TITLES = {
-  'volta-redonda': 'Cortinas, Persianas e Cortina Motorizada em Volta Redonda | ShineCortinas',
-  'barra-do-pirai': 'Cortinas, Persianas e Cortina Motorizada em Barra do Piraí | ShineCortinas',
-  'barra-mansa': 'Cortinas, Persianas e Cortina Motorizada em Barra Mansa | ShineCortinas',
-  'itatiaia': 'Cortinas, Persianas e Cortina Motorizada em Itatiaia | ShineCortinas',
-  'maromba': 'Cortinas, Persianas e Blackout Sob Medida em Maromba | ShineCortinas',
-  'miguel-pereira': 'Cortinas, Persianas e Cortina Motorizada em Miguel Pereira | ShineCortinas',
-  'paulo-de-frontin': 'Cortinas e Persianas Sob Medida em Paulo de Frontin | ShineCortinas',
-  'penedo': 'Cortinas, Persianas e Cortina Motorizada em Penedo | ShineCortinas',
-  'pinheiral': 'Cortinas, Persianas e Cortina Motorizada em Pinheiral | ShineCortinas',
-  'pirai': 'Cortinas, Persianas e Cortina Motorizada em Piraí | ShineCortinas',
-  'porto-real': 'Cortinas, Persianas e Cortina Motorizada em Porto Real | ShineCortinas',
-  'resende': 'Cortinas, Persianas e Cortina Motorizada em Resende | ShineCortinas',
-  'valenca': 'Cortinas, Persianas e Cortina Motorizada em Valença | ShineCortinas',
-  'vassouras': 'Cortinas, Persianas e Cortina Motorizada em Vassouras | ShineCortinas',
-  'visconde-de-maua': 'Cortinas, Persianas e Blackout Sob Medida em Visconde de Mauá | ShineCortinas',
+  'volta-redonda': 'Cortinas, Persianas e Motorizadas em Volta Redonda | Shine',
+  'barra-do-pirai': 'Cortinas, Persianas e Motorizadas em Barra do Piraí | Shine',
+  'barra-mansa': 'Cortinas, Persianas e Motorizadas em Barra Mansa | Shine',
+  'itatiaia': 'Cortinas, Persianas e Motorizadas em Itatiaia | Shine',
+  'maromba': 'Cortinas, Persianas e Blackout Sob Medida em Maromba | Shine',
+  'miguel-pereira': 'Cortinas, Persianas e Motorizadas em Miguel Pereira | Shine',
+  'paulo-de-frontin': 'Cortinas e Persianas Sob Medida em Paulo de Frontin | Shine',
+  'penedo': 'Cortinas, Persianas e Motorizadas em Penedo | ShineCortinas',
+  'pinheiral': 'Cortinas, Persianas e Motorizadas em Pinheiral | Shine',
+  'pirai': 'Cortinas, Persianas e Motorizadas em Piraí | ShineCortinas',
+  'porto-real': 'Cortinas, Persianas e Motorizadas em Porto Real | Shine',
+  'resende': 'Cortinas, Persianas e Motorizadas em Resende | ShineCortinas',
+  'valenca': 'Cortinas, Persianas e Motorizadas em Valença | ShineCortinas',
+  'vassouras': 'Cortinas, Persianas e Motorizadas em Vassouras | Shine',
+  'visconde-de-maua': 'Cortinas, Persianas e Blackout em Visconde de Mauá | Shine',
 };
 
 const CITY_DESCS = {
-  'volta-redonda': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Volta Redonda. Levamos o mostruário até a sua casa, medimos a laser e instalamos. Consultoria gratuita em 12x.',
-  'resende': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Resende (Campos Elíseos, Morada da Colina, Alphaville). Medição a laser e instalação própria em até 12x.',
-  'barra-mansa': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Barra Mansa. A ShineCortinas vai até a sua casa, mede a laser e instala com equipe própria em até 12x.',
-  'penedo': 'Cortinas sob medida, cortina motorizada, blackout térmico e persianas em Penedo para casas, chalés e pousadas. Visita com mostruário, medição a laser e instalação própria.',
-  'itatiaia': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Itatiaia. Atendimento em domicílio com mostruário completo, medição a laser e instalação própria.',
-  'barra-do-pirai': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Barra do Piraí. Consultoria gratuita em domicílio, medição a laser e instalação própria em até 12x.',
-  'vassouras': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Vassouras para residências e casarões do Vale do Café. Consultoria gratuita em domicílio em até 12x.',
-  'valenca': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Valença e Conservatória. Levamos o mostruário em casa, medimos a laser e instalamos com equipe própria.',
-  'pirai': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Piraí. Visita gratuita com mostruário completo, medição a laser e instalação própria em até 12x.',
-  'pinheiral': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Pinheiral. Atendimento rápido em domicílio com medição a laser e instalação própria em até 12x.',
-  'porto-real': 'Cortinas sob medida, cortina motorizada, Wave e persianas em Porto Real. Consultoria gratuita na sua casa com medição a laser e instalação própria em até 12x.',
-  'miguel-pereira': 'Cortinas sob medida, cortina motorizada, blackout térmico e persianas em Miguel Pereira. Visita agendada em domicílio, medição a laser e instalação própria.',
-  'paulo-de-frontin': 'Cortinas sob medida, blackout térmico e persianas em Engenheiro Paulo de Frontin. Consultoria em domicílio com mostruário, medição a laser e instalação própria.',
+  'volta-redonda': 'Cortinas sob medida, motorizadas, Wave e persianas em Volta Redonda. Visita gratuita com mostruário, medição a laser e instalação própria em até 12x.',
+  'resende': 'Cortinas sob medida, motorizadas, Wave e persianas em Resende (Campos Elíseos, Morada da Colina, Alphaville). Medição a laser e instalação própria em 12x.',
+  'barra-mansa': 'Cortinas sob medida, motorizadas, Wave e persianas em Barra Mansa. Visita gratuita com mostruário, medição a laser e instalação própria em até 12x.',
+  'penedo': 'Cortinas sob medida, motorizadas, blackout térmico e persianas em Penedo para casas, chalés e pousadas. Visita com mostruário, medição a laser e instalação.',
+  'itatiaia': 'Cortinas sob medida, motorizadas, Wave e persianas em Itatiaia. Visita gratuita em domicílio com mostruário, medição a laser e instalação própria em 12x.',
+  'barra-do-pirai': 'Cortinas sob medida, motorizadas, Wave e persianas em Barra do Piraí. Consultoria gratuita em domicílio, medição a laser e instalação própria em até 12x.',
+  'vassouras': 'Cortinas sob medida, motorizadas, Wave e persianas em Vassouras para residências, chalés e casarões do Vale do Café. Visita gratuita e instalação em 12x.',
+  'valenca': 'Cortinas sob medida, motorizadas, Wave e persianas em Valença e Conservatória. Levamos o mostruário em casa, medimos a laser e instalamos em até 12x.',
+  'pirai': 'Cortinas sob medida, motorizadas, Wave e persianas em Piraí. Visita gratuita com mostruário completo, medição a laser e instalação própria em até 12x.',
+  'pinheiral': 'Cortinas sob medida, motorizadas, Wave e persianas em Pinheiral. Atendimento ágil em domicílio com mostruário, medição a laser e instalação própria em 12x.',
+  'porto-real': 'Cortinas sob medida, motorizadas, Wave e persianas em Porto Real. Consultoria gratuita na sua casa com medição a laser e instalação própria em até 12x.',
+  'miguel-pereira': 'Cortinas sob medida, motorizadas, blackout térmico e persianas em Miguel Pereira. Visita agendada em domicílio, medição a laser e instalação em até 12x.',
+  'paulo-de-frontin': 'Cortinas sob medida, blackout térmico e persianas em Engenheiro Paulo de Frontin. Consultoria gratuita em casa, medição a laser e instalação em até 12x.',
   'visconde-de-maua': 'Cortinas sob medida, blackout térmico, linho e persianas em Visconde de Mauá para chalés, casas de serra e pousadas. Medição a laser e instalação própria.',
   'maromba': 'Cortinas sob medida, blackout térmico e persianas em Maromba e Maringá para chalés e pousadas da serra. Visita agendada com mostruário e instalação própria.',
 };
+
+const HERO_PRELOAD = '<link rel="preload" as="image" href="/hero-sala.avif" imagesrcset="/hero-sala-800.avif 800w, /hero-sala.avif 1920w" imagesizes="100vw" fetchpriority="high">';
 
 let n = 0;
 for (const slug of readdirSync(join(ROOT, 'cidades'), { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name)) {
@@ -270,6 +309,11 @@ for (const slug of readdirSync(join(ROOT, 'cidades'), { withFileTypes: true }).f
   if (CITY_DESCS[slug]) {
     rawHead = rawHead.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${CITY_DESCS[slug]}">`);
     rawHead = rawHead.replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${CITY_DESCS[slug]}$2`);
+  }
+  if (/<link rel="preload" as="image"[^>]*>/.test(rawHead)) {
+    rawHead = rawHead.replace(/<link rel="preload" as="image"[^>]*>/, HERO_PRELOAD);
+  } else {
+    rawHead = rawHead.replace('</head>', `  ${HERO_PRELOAD}\n</head>`);
   }
   rawHead = rawHead.replace(/mede a laser e instala — muitas vezes no mesmo dia\./g, 'mede a laser, confecciona sob medida e instala com equipe própria.');
   rawHead = rawHead.replace(/atendemos no mesmo dia, medimos a laser e instalamos\./g, 'levamos o mostruário em casa, medimos a laser e instalamos.');

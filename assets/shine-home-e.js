@@ -352,49 +352,63 @@ const isaniRooms = {
     kind: 'tecido',
     img: '/cortina-sob-medida.avif',
     title: 'Cortina Wave em Tecido Encorpado',
-    quote: '"Na sala de estar, a cortina precisa conversar com o sofá e o tapete. Indico tecido encorpado com toque de linho (acima de 170 g/m² e até 10% de linho na composição) que desce pesado e alinhado, sem amarrotar."'
+    quote: '"Na sala de estar, a cortina precisa conversar com o sofá e o tapete. Indico tecido encorpado com toque de linho (acima de 170 g/m² e até 10% de linho na composição) que desce pesado e alinhado, sem amarrotar."',
+    pageUrl: '/cortina-wave/',
+    pageLabel: 'Ver detalhes técnicos sobre Cortina Prega Wave →'
   },
   tv: {
     name: 'Sala de TV',
     kind: 'tecido',
     img: '/blackouts-tecnicos.avif',
     title: 'Cortina de Tecido + Forro Blackout 100%',
-    quote: '"Na maioria das salas de TV prefiro cortina de tecido com forro blackout 100%, que deixa o ambiente acolhedor, reduz de 5 a 6 °C do calor e veda melhor nas laterais. A cor pode ser clara: branco ou areia vedam 100% igual ao escuro."'
+    quote: '"Na maioria das salas de TV prefiro cortina de tecido com forro blackout 100%, que deixa o ambiente acolhedor, reduz de 5 a 6 °C do calor e veda melhor nas laterais. A cor pode ser clara: branco ou areia vedam 100% igual ao escuro."',
+    pageUrl: '/blackout-e-forros/',
+    pageLabel: 'Ver detalhes técnicos sobre Blackout e Forros →'
   },
   quarto: {
     name: 'Quarto / Suíte',
     kind: 'tecido',
     img: '/blackout-sq.avif',
     title: 'Cortina com Blackout 100% ou Romana',
-    quote: '"Para escurecer o quarto de verdade e ganhar conforto térmico, trabalhamos com forro blackout 100% no cortineiro, opção de transpasse central de 15 cm e pontas laterais fixadas."'
+    quote: '"Para escurecer o quarto de verdade e ganhar conforto térmico, trabalhamos com forro blackout 100% no cortineiro, opção de transpasse central de 15 cm e pontas laterais fixadas."',
+    pageUrl: '/blackout-e-forros/',
+    pageLabel: 'Ver detalhes técnicos sobre Blackout e Forros →'
   },
   varanda: {
     name: 'Varanda Gourmet',
     kind: 'estruturada',
     img: '/tela-solar-sq.avif',
     title: 'Persiana Rolô Tela Solar (Corta-Calor)',
-    quote: '"Para varanda gourmet e sacada, a campeã é a Tela Solar (Screen) ou Pinpoint com fibra de vidro: filtra os raios solares e reduz o calor em até cerca de 11 °C mantendo a vista externa."'
+    quote: '"Para varanda gourmet e sacada, a campeã é a Tela Solar (Screen) ou Pinpoint com fibra de vidro: filtra os raios solares e reduz o calor em até cerca de 11 °C mantendo a vista externa."',
+    pageUrl: '/persianas/',
+    pageLabel: 'Ver detalhes técnicos sobre Persianas Sob Medida →'
   },
   office: {
     name: 'Escritório',
     kind: 'estruturada',
     img: '/madeira-sq.avif',
     title: 'Persiana Madeira 50 mm, Romana ou Double Vision',
-    quote: '"Para controlar o reflexo nas telas com presença arquitetônica, indico Double Vision, Romana ou a Persiana Horizontal de Madeira natural de 50 mm."'
+    quote: '"Para controlar o reflexo nas telas com presença arquitetônica, indico Double Vision, Romana ou a Persiana Horizontal de Madeira natural de 50 mm."',
+    pageUrl: '/persianas/',
+    pageLabel: 'Ver detalhes técnicos sobre Persianas Sob Medida →'
   },
   cozinha: {
     name: 'Cozinha',
     kind: 'estruturada',
     img: '/persiana-motorizada-sq.avif',
     title: 'Persiana Rolô Tela Solar 5% ou Alumínio',
-    quote: '"Na cozinha, onde há gordura e vapor do preparo, indico a Persiana Rolô em Tela Solar 5% (lavável com pano úmido) ou a Horizontal de Alumínio 25 mm pela facilidade de limpeza."'
+    quote: '"Na cozinha, onde há gordura e vapor do preparo, indico a Persiana Rolô em Tela Solar 5% (lavável com pano úmido) ou a Horizontal de Alumínio 25 mm pela facilidade de limpeza."',
+    pageUrl: '/persianas/',
+    pageLabel: 'Ver detalhes técnicos sobre Persianas Sob Medida →'
   },
   banheiro: {
     name: 'Banheiro',
     kind: 'estruturada',
     img: '/persiana-motorizada-sq.avif',
     title: 'Persiana Horizontal de Alumínio ou PVC',
-    quote: '"Para janela de banheiro e área com vapor direto do chuveiro, trabalhamos com Persiana Horizontal em Alumínio ou PVC, materiais que não absorvem umidade nem mofam."'
+    quote: '"Para janela de banheiro e área com vapor direto do chuveiro, trabalhamos com Persiana Horizontal em Alumínio ou PVC, materiais que não absorvem umidade nem mofam."',
+    pageUrl: '/persianas/',
+    pageLabel: 'Ver detalhes técnicos sobre Persianas Sob Medida →'
   }
 };
 
@@ -459,6 +473,26 @@ function setIsaniDiag(type, val) {
   const waBtn = document.getElementById('isani-diag-wa');
   if (waBtn) {
     waBtn.href = 'https://wa.me/5524993298763?text=' + encodeURIComponent(msg);
+  }
+
+  let pageLink = document.getElementById('isani-diag-page-link');
+  if (!pageLink && box) {
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'margin-top: 10px; text-align: center;';
+    pageLink = document.createElement('a');
+    pageLink.id = 'isani-diag-page-link';
+    pageLink.style.cssText = 'color: var(--gold-light); font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;';
+    wrap.appendChild(pageLink);
+    box.appendChild(wrap);
+  }
+  if (pageLink) {
+    if (diagState.vao === 'duplo') {
+      pageLink.href = '/cortina-motorizada/';
+      pageLink.textContent = 'Ver detalhes técnicos sobre Cortina Motorizada →';
+    } else {
+      pageLink.href = r.pageUrl || '/cortinas/';
+      pageLink.textContent = r.pageLabel || 'Ver detalhes técnicos desta solução →';
+    }
   }
 }
 
@@ -663,7 +697,9 @@ function selectMainGroup(groupKey, btn) {
   document.querySelectorAll('#main-group-filters .d-filter-btn').forEach((b) => b.classList.remove('is-active'));
   if (btn) {
     btn.classList.add('is-active');
-    btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    requestAnimationFrame(() => {
+      btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
   }
   currentMainGroup = groupKey;
   currentFilterCat = groupKey;

@@ -1,4 +1,4 @@
-# ShineCortinas — Cortinas e Persianas Sob Medida (Sul Fluminense)
+# ShineCortinas · Cortinas e Persianas Sob Medida (Sul Fluminense)
 
 > A ShineCortinas é uma empresa de cortinas e persianas sob medida sediada em
 > Volta Redonda (RJ), atuando desde 2009. Atende residências e projetos
@@ -14,7 +14,7 @@
 - **Cidade-base:** Volta Redonda, RJ, Brasil (atendimento exclusivamente em domicílio, sem endereço físico aberto ao público).
 - **Experiência:** atuando desde 2009 no Sul Fluminense (mais de 9.000 ambientes transformados).
 - **Região atendida:** Sul Fluminense (Volta Redonda, Barra Mansa, Resende, Itatiaia, Penedo, Visconde de Mauá, Maromba, Porto Real, Pinheiral, Piraí, Barra do Piraí, Valença, Vassouras, Paulo de Frontin, Miguel Pereira), Costa Verde e parte da Grande São Paulo. No serviço de lavagem de cortinas, atende 6 cidades: Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral.
-- **Contato:** WhatsApp (24) 99329-8763 · telefone fixo (24) 3338-3069.
+- **Contato:** WhatsApp (24) 99329-8763.
 - **Atendimento:** consultoria gratuita em domicílio com mostruário completo e medição a laser, confecção sob medida e instalação por equipe própria. Comodidade de parcelar em até 12x.
 - **Redes sociais:** Instagram, Facebook, TikTok, YouTube e Pinterest (@shinecortinas).
 
@@ -27,7 +27,7 @@
 - Trilhos suíços, varões (19 mm e 28 mm) e tubo suíço.
 - Projetos corporativos para hotelaria, saúde, indústria e instituições.
 
-## Forros (fato validado pelo fundador, set–out/2026)
+## Forros (fato validado pelo fundador, set a out/2026)
 O forro é a camada atrás do tecido decorativo e é ele que define luz e privacidade. Existem dois grupos:
 - **Forro translúcido:** dá privacidade, protege o tecido decorativo do sol e quebra parte da claridade. Tecidos que compõem esse grupo: gabardine (de algodão e de poliéster), tergal, tergal verão, cetim, gorgurinho e microfibra. Exemplos de opções informadas pelo fundador: gabardine de 100 g/m², tergal verão de 70 g/m², cetim de 70, 90 ou 110 g/m² e microfibra de 65 ou 100 g/m². São exemplos, não gramaturas fixas para toda a família de tecidos.
 - **Forro blackout:** em duas versões. **70% (semi blackout)** deixa o ambiente em penumbra (neste caso, a cor do tecido influencia: tons mais claros deixam passar mais claridade que tons escuros); **100%** bloqueia a passagem de luz pelo material (no blackout 100%, a cor não influencia: branco, areia, bege ou off-white vedam 100% da mesma forma). Persianas também podem usar material blackout 100%.
@@ -38,7 +38,7 @@ O forro é a camada atrás do tecido decorativo e é ele que define luz e privac
 - **Atendimento completo em domicílio:** a equipe própria da ShineCortinas vai até a residência do cliente, retira as cortinas, realiza a higienização, passa e entrega as peças reinstaladas no lugar.
 - **Lavagem e secagem na vertical:** mantém os vincos, as ondas e as dobras originais da cortina, evitando que o tecido amasse, deforme ou "perca o DNA" e o caimento de fábrica.
 - **Revisão de ateliê e instalação inclusa:** recolocação de deslizantes soltos, reparo de costuras soltas, avaliação e reforço dos trilhos na residência se necessário e **garantia de ajuste de bainha** no próprio ateliê caso o tecido sofra encolhimento na lavagem.
-- **Escopo e cidades atendidas:** atende **exclusivamente cortinas de tecido (de pano)** — não realiza lavagem de persianas (Romana, Rolô, Double Vision, Vertical ou Horizontal). Disponível em 6 cidades: **Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral**.
+- **Escopo e cidades atendidas:** atende **exclusivamente cortinas de tecido (de pano)** e não realiza lavagem de persianas (Romana, Rolô, Double Vision, Vertical ou Horizontal). Disponível em 6 cidades: **Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral**.
 
 ## Diferenciais técnicos
 - **Medição a laser** e confecção sob medida para caimento preciso.
@@ -47,7 +47,7 @@ O forro é a camada atrás do tecido decorativo e é ele que define luz e privac
 - **Varões e Tubo Suíço:** varões de **19 mm e 28 mm** em alumínio (mais indicado), inox e madeira, simples ou duplos. Acima de **2,00 m de largura**, é indispensável suporte central; por isso a preferência técnica é pelo **tubo suíço** (trilho embutido em tubo), no qual a cortina desliza livremente por baixo sem esbarrar no suporte do meio.
 - **Automação IoT e Motorização:** motores elétricos ou **motores a bateria** (autonomia média de **6 meses**, faixa de 3 a 9 meses conforme uso), compatíveis com Alexa, Google Home e Apple Home, com garantia de **até 5 anos** (1 ano para modelos não motorizados). Na **cortina motorizada de tecido**, há função **Touch Motion** (leve puxão aciona o motor) e abertura manual se faltar energia; nas **persianas motorizadas Rolô, Romana e Horizontal de alumínio**, o freio mecânico trava a peça sem energia (exceto Painel e Vertical).
 - **Indicação de persianas por ambiente:** Varanda/sacada = Tela Solar (Rolô); Escritório/home office = Double Vision e Romana; Quarto = Romana e Rolô; Banheiro = Rolô ou Horizontal de 16 mm; Cozinha = Rolô Tela Solar ou Horizontal de Alumínio; Grandes vãos e portas de correr = Vertical; Destaque de sofisticação = Horizontal de 50 mm (madeira ou alumínio). A Shine não recomenda persiana solta para dividir ambientes (indica drywall/parede).
-- **Forro blackout de tecido — relato de campo do fundador:** Isani relata reduções de temperatura do ambiente de aproximadamente 5 a 6 °C, comparando antes e depois de instalações com esse forro. Não é uma promessa de redução para qualquer ambiente nem um ensaio controlado descrito neste registro.
+- **Forro blackout de tecido (relato de campo do fundador):** Isani relata reduções de temperatura do ambiente de aproximadamente 5 a 6 °C, comparando antes e depois de instalações com esse forro. Não é uma promessa de redução para qualquer ambiente nem um ensaio controlado descrito neste registro.
 - **Persianas com fibra de vidro:** a referência de redução térmica de até cerca de 11 °C informada pelo fundador se refere ao contexto dessas persianas, com Screen (tela solar) e Pinpoint citados como exemplos de materiais com fibra de vidro. Controle térmico e bloqueio luminoso são características distintas; tela solar não é sinônimo de blackout 100%.
 - **Instalação impecável:** equipe própria, sem improvisos.
 
@@ -117,7 +117,7 @@ Casos reais executados pela ShineCortinas:
 
 ## Prova social
 - 297 avaliações no Google com nota média 4,9 (Perfil da Empresa). O site marca no JSON-LD (`LocalBusiness`) o `AggregateRating` (4,9 / 297 avaliações) e avaliações reais e públicas do Google (5 na home e 1 em cada página de cidade).
-- Horário de atendimento: segunda a sexta, 08:00–17:00 (sábado e domingo fechado). Consultoria em domicílio agendada pelo WhatsApp.
+- Horário de atendimento: segunda a sexta, das 08:00 às 17:00 (sábado e domingo fechado). Consultoria em domicílio agendada pelo WhatsApp.
 
 ## Outros
 - [Sitemap](https://www.shinecortinas.com/sitemap.xml)

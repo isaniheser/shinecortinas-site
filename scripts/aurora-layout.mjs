@@ -13,7 +13,7 @@ const entries = [
 const extra = [['/#diagnostico-isani','✦ Consultor Isani'],['/#obras-reais','▶ Obras em Vídeo'],['/cortina-motorizada/','Automação'],['/lavagem-de-cortinas/','Lavagem'],['/metodo/','Como funciona'],['/cidades-atendidas/','Cidades']];
 
 export function auroraHeader() {
-  return `<header class="sl-header"><div class="sl-wrap sl-header__in"><a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="70" height="70" decoding="async"></a><a class="sl-header__cta" data-wa="conversar" href="${WA_MENU}" target="_blank" rel="noopener noreferrer">Orçar no WhatsApp →</a></div></header>
+  return `<header class="sl-header"><div class="sl-wrap sl-header__in"><a href="/" class="sl-logo" aria-label="ShineCortinas, início"><img src="/logo-shine.avif" alt="ShineCortinas" width="70" height="70" decoding="async"></a><a class="sl-header__cta" data-wa="conversar" href="${WA_MENU}" target="_blank" rel="noopener noreferrer">Orçar no WhatsApp →</a></div></header>
   <nav class="sl-nav-fallback" aria-label="Navegação principal"><a href="/">Início</a>${entries.map(([name,,url])=>`<a href="${url}">${name}</a>`).join('')}${extra.map(([url,name])=>`<a href="${url}">${name}</a>`).join('')}</nav>`;
 }
 
@@ -30,5 +30,12 @@ export function auroraMenu() {
 }
 
 export function auroraHead(head) {
-  return head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-aurora\.css[^"\n]*">/g,'').replace('</head>', `  ${AURORA_CSS}\n</head>`);
+  const clean = head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-aurora\.css[^"\n]*">/g, '');
+  if (clean.includes('/assets/shine-leve.css')) {
+    return clean.replace(/(<link rel="stylesheet" href="\/assets\/shine-leve\.css[^"\n]*">)/, `$1\n  ${AURORA_CSS}`);
+  }
+  if (clean.includes('<script type="application/ld+json">')) {
+    return clean.replace('<script type="application/ld+json">', `${AURORA_CSS}\n  <script type="application/ld+json">`);
+  }
+  return clean.replace('</head>', `  ${AURORA_CSS}\n</head>`);
 }

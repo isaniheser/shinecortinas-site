@@ -19,9 +19,15 @@ const CITIES = [
   ['vassouras', 'Vassouras'], ['paulo-de-frontin', 'Engenheiro Paulo de Frontin'], ['miguel-pereira', 'Miguel Pereira'],
 ];
 
+const heroSrcset = (img) => {
+  if (img === '/hero-sala.avif') return ' srcset="/hero-sala-800.avif 800w, /hero-sala.avif 1920w" sizes="100vw"';
+  if (img === '/linha-puro.avif') return ' srcset="/linha-puro-800.avif 760w, /linha-puro.avif 1696w" sizes="100vw"';
+  return '';
+};
+
 const heroInterna = (kicker, h1, lead, img, alt, crumbs) => `
   <section class="sl-hero sl-hero--interna">
-    <div class="sl-hero__img"><img src="${img}" alt="${esc(alt)}" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
+    <div class="sl-hero__img"><img src="${img}"${heroSrcset(img)} alt="${esc(alt)}" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
     <div class="sl-wrap"><div class="sl-hero__in">
       <nav aria-label="Breadcrumb"><ol class="sl-crumbs">${crumbs}</ol></nav>
       <p class="sl-kicker">${kicker}</p>
@@ -79,7 +85,7 @@ ${s.itens.map(([q, a]) => `        <details><summary>${esc(q)}</summary><div>${e
       </div>
     </div></section>`).join('\n');
 
-  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['FAQ', `${BASE}/faq/`]] });
+  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['FAQ', `${BASE}/faq/`]], preloadImg: '/hero-sala.avif' });
   const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de perguntas frequentes">
 ${header('/faq/')}${heroInterna('Perguntas frequentes',
     'As respostas que a gente <em>mais dá</em> no WhatsApp',
@@ -104,7 +110,9 @@ function buildVideos() {
   const cards = JSON.parse(readFileSync(join(ROOT, 'videos', 'videos.json'), 'utf8'));
   const grid = cards.map((c) => `        <a class="sl-card" href="${c.href}"><div class="sl-media sl-media--video"><img src="${c.img}" alt="${esc(c.alt)}" width="800" height="450" loading="lazy" decoding="async"><span class="sl-play" aria-hidden="true">▶</span></div><div class="sl-card__body"><span>Vídeo</span><h3>${esc(c.titulo)}</h3><p>${esc(c.resumo)}</p><em>Assistir →</em></div></a>`).join('\n');
 
-  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['Vídeos', `${BASE}/videos/`]] });
+  let rawHead = src.split('<body')[0];
+  rawHead = rawHead.replace(/Cortina Motorizada Wave de Alto Padrão em Resende RJ/g, 'Cortina Motorizada Wave em Resende RJ');
+  const head = cleanHead(rawHead, { crumbs: [['Início', `${BASE}/`], ['Vídeos', `${BASE}/videos/`]], preloadImg: '/hero-sala.avif' });
   const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de vídeos">
 ${header('/videos/')}${heroInterna('Vídeos',
     'Projetos entregues, <em>em movimento</em>',
@@ -114,6 +122,10 @@ ${header('/videos/')}${heroInterna('Vídeos',
 ${cityChip(null)}${strip()}
   <main>
     <section class="sl-section sl-reveal"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:28px">
+        <p class="sl-kicker sl-kicker--center">Acervo em movimento · Sul Fluminense</p>
+        <h2 class="sl-h2">Bastidores, instalações e <em>obras reais em vídeo</em></h2>
+      </div>
       <div class="sl-cards">
 ${grid}
       </div>
@@ -130,7 +142,7 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
 function buildHub() {
   const file = join(ROOT, 'cidades-atendidas', 'index.html');
   const src = readFileSync(file, 'utf8');
-  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['Cidades', `${BASE}/cidades-atendidas/`]] });
+  const head = cleanHead(src.split('<body')[0], { crumbs: [['Início', `${BASE}/`], ['Cidades', `${BASE}/cidades-atendidas/`]], preloadImg: '/hero-sala.avif' });
   const cards = CITIES.map(([s, n]) => `        <a class="sl-citycard" href="/cidades/${s}/"><h3>${n}</h3><span>Ver a página de ${n} →</span></a>`).join('\n');
   const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de cidades atendidas">
 ${header('/cidades-atendidas/')}${heroInterna('Cidades atendidas',
@@ -141,6 +153,10 @@ ${header('/cidades-atendidas/')}${heroInterna('Cidades atendidas',
 ${strip()}
   <main>
     <section class="sl-section sl-reveal"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:28px">
+        <p class="sl-kicker sl-kicker--center">Cobertura regional · Equipe própria</p>
+        <h2 class="sl-h2">Escolha a sua cidade para ver <em>projetos e atendimento local</em></h2>
+      </div>
       <div class="sl-citygrid">
 ${cards}
       </div>
@@ -162,7 +178,7 @@ function buildBlogIndex() {
   let rawHead = src.split('<body')[0];
   rawHead = rawHead.replace(/<title>[\s\S]*?<\/title>/, '<title>Guias de Cortinas e Persianas Sob Medida | ShineCortinas</title>');
   rawHead = rawHead.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Guias práticos da ShineCortinas sobre tecidos, forros, blackout, altura de cortina, bainha, varão, persianas e automação para você escolher sem erro.">');
-  const head = cleanHead(rawHead, { crumbs: [['Início', `${BASE}/`], ['Blog', `${BASE}/blog/`]] });
+  const head = cleanHead(rawHead, { crumbs: [['Início', `${BASE}/`], ['Blog', `${BASE}/blog/`]], preloadImg: '/linha-puro.avif' });
   const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="o blog">
 ${header('/blog/')}${heroInterna('Blog',
     'Guias para escolher <em>sem erro</em>',
@@ -172,6 +188,10 @@ ${header('/blog/')}${heroInterna('Blog',
 ${cityChip(null)}
   <main>
     <section class="sl-section sl-reveal"><div class="sl-wrap">
+      <div class="sl-center" style="margin-bottom:28px">
+        <p class="sl-kicker sl-kicker--center">Acervo técnico · Isani Oliveira</p>
+        <h2 class="sl-h2">Todos os guias práticos sobre <em>cortinas, persianas e automação</em></h2>
+      </div>
       <div class="sl-posts sl-posts--index">
 ${lista}
       </div>
@@ -204,19 +224,71 @@ const VIDEO_META = {
   'cortina-cabana-chale-vassouras': ['Cortina Sob Medida em Chalé A-Frame Vassouras | ShineCortinas', 'Projeto sob medida em chalé A-Frame em Vassouras: cortina que acompanha o vão inclinado da cabana, garantindo conforto térmico, caimento e privacidade.'],
   'cortina-motorizada-wave-resende': ['Cortina Motorizada Wave em Resende RJ | ShineCortinas', null],
   'cortina-screen-motorizada-mangaratiba': ['Cortina Tela Solar Motorizada em Mangaratiba | ShineCortinas', null],
+  'cortina-wave-linho-barra-do-pirai': ['Cortina Wave em Linho Natural em Barra do Piraí | ShineCortinas', null],
   'experiencia-tecidos-alfaiataria': ['Mostruário em Domicílio e Tecidos Sob Medida | ShineCortinas', null],
   'instalacao-sul-fluminense': ['Instalação de Cortinas no Sul Fluminense | ShineCortinas', null],
   'persiana-horizontal-madeira-barra-mansa': ['Persiana de Madeira 50mm em Barra Mansa | ShineCortinas', null],
 };
 
+const VIDEO_CONTEXT = {
+  'cortina-motorizada-wave-resende': `<div class="sl-video-context">
+        <h2 class="sl-h2">Ficha técnica da obra em Resende e guias relacionados</h2>
+        <p>Este projeto de <a href="/cortina-motorizada/">cortina motorizada</a> no sistema <a href="/cortina-wave/">Cortina Wave</a> foi medido a laser e instalado pela nossa equipe própria em <a href="/cidades/resende/"><strong>Resende (RJ)</strong></a>. O trilho motorizado silencioso conta com função Touch Motion (abre ao dar um leve puxão no tecido) e funciona manualmente se faltar energia.</p>
+        <p>Para aprofundar nos detalhes técnicos antes da sua visita, leia nossos guias sobre <a href="/blog/por-que-escolher-cortina-motorizada/">por que escolher cortina motorizada</a> e <a href="/blog/quantidade-de-tecido-para-cortina-wave/">como calcular a quantidade de tecido para Cortina Wave</a>.</p>
+      </div>`,
+  'cortina-cabana-chale-vassouras': `<div class="sl-video-context">
+        <h2 class="sl-h2">Ficha técnica da obra em Vassouras e guias relacionados</h2>
+        <p>Projeto desenvolvido sob medida para chalé A-Frame em <a href="/cidades/vassouras/"><strong>Vassouras (Vale do Café)</strong></a>, combinando engenharia de trilho para vão inclinado com <a href="/blackout-e-forros/">forro de conforto térmico e privacidade</a>.</p>
+        <p>Veja também nossos guias técnicos sobre <a href="/blog/tipos-de-forro-para-cortina/">tipos de forro para cortina</a> e <a href="/blog/como-escurecer-quarto-sala-tv/">como escurecer quarto e sala de TV</a>.</p>
+      </div>`,
+  'cortina-wave-linho-barra-do-pirai': `<div class="sl-video-context">
+        <h2 class="sl-h2">Ficha técnica da obra em Barra do Piraí e guias relacionados</h2>
+        <p>Obra entregue pela nossa equipe em <a href="/cidades/barra-do-pirai/"><strong>Barra do Piraí</strong></a> utilizando <a href="/cortina-wave/">Cortina Wave</a> em tecido encorpado com toque de linho (&gt;170 g/m²) e forro sob medida para proteger o ambiente do sol e eliminar o eco da sala.</p>
+        <p>Consulte nossos guias práticos sobre <a href="/blog/linho-para-cortinas/">linho para cortinas e gramatura ideal</a> e <a href="/blog/quantidade-de-tecido-para-cortina-wave/">proporção de tecido para Cortina Wave</a>.</p>
+      </div>`,
+  'persiana-horizontal-madeira-barra-mansa': `<div class="sl-video-context">
+        <h2 class="sl-h2">Ficha técnica da obra em Barra Mansa e guias relacionados</h2>
+        <p>Instalação milimétrica de <a href="/persianas/">persiana horizontal de madeira 50 mm</a> executada pela nossa equipe em <a href="/cidades/barra-mansa/"><strong>Barra Mansa</strong></a>, unindo controle de luminosidade, conforto térmico e acabamento natural.</p>
+        <p>Saiba mais nos guias do Isani sobre <a href="/blog/persiana-vertical-ou-horizontal/">persiana vertical ou horizontal 50 mm</a> e <a href="/blog/persiana-ideal-para-cada-ambiente/">qual a persiana ideal para cada ambiente</a>.</p>
+      </div>`,
+  'instalacao-sul-fluminense': `<div class="sl-video-context">
+        <h2 class="sl-h2">Padrão de instalação no Sul Fluminense e guias técnicos</h2>
+        <p>Nossa equipe própria atende <a href="/cidades/volta-redonda/"><strong>Volta Redonda</strong></a>, <a href="/cidades/barra-mansa/">Barra Mansa</a>, <a href="/cidades/resende/">Resende</a> e todas as <a href="/cidades-atendidas/">15 cidades do Sul Fluminense</a> com instalação limpa, aspirador e vaporização vertical.</p>
+        <p>Leia também nossos artigos sobre <a href="/blog/varao-para-cortina/">varão, tubo suíço e trilhos</a> e <a href="/blog/qual-cortina-escolher-para-sala/">qual cortina escolher para a sala</a>.</p>
+      </div>`,
+  'experiencia-tecidos-alfaiataria': `<div class="sl-video-context">
+        <h2 class="sl-h2">Consultoria com mostruário em casa e guias de tecidos</h2>
+        <p>Levamos o mostruário completo de <a href="/cortinas/">cortinas sob medida</a> até a sua casa em <a href="/cidades/volta-redonda/"><strong>Volta Redonda</strong></a>, <a href="/cidades/penedo/">Penedo</a>, <a href="/cidades/itatiaia/">Itatiaia</a> e em todo o <a href="/cidades-atendidas/">Sul Fluminense</a> para você testar gramatura (&gt;170 g/m²) e textura na luz real da sua janela.</p>
+        <p>Confira os guias técnicos sobre <a href="/blog/linho-para-cortinas/">como escolher linho para cortinas</a> e <a href="/blog/tipos-de-forro-para-cortina/">tipos de forro e redução térmica</a>.</p>
+      </div>`,
+  'ajuste-bainha-em-casa-alfaiataria': `<div class="sl-video-context">
+        <h2 class="sl-h2">Ateliê próprio no Sul Fluminense e guias de conservação</h2>
+        <p>Com ateliê próprio em <a href="/cidades/volta-redonda/"><strong>Volta Redonda</strong></a> e atendimento em <a href="/cidades/barra-mansa/">Barra Mansa</a>, <a href="/cidades/resende/">Resende</a> e <a href="/cidades/barra-do-pirai/">Barra do Piraí</a>, garantimos caimento milimétrico na instalação e no nosso serviço de <a href="/lavagem-de-cortinas/">lavagem de cortinas de tecido</a>.</p>
+        <p>Veja o guia completo de <a href="/blog/lavagem-de-cortinas-sob-medida/">lavagem de cortinas com secagem vertical e revisão de bainha</a> e <a href="/blog/qual-cortina-escolher-para-sala/">como escolher a cortina ideal para a sala</a>.</p>
+      </div>`,
+  'cortina-screen-motorizada-mangaratiba': `<div class="sl-video-context">
+        <h2 class="sl-h2">Automação de proteção solar e guias relacionados</h2>
+        <p>Projetamos e instalamos <a href="/persianas/">persianas rolô tela solar</a> e <a href="/cortina-motorizada/">sistemas motorizados</a> em <a href="/cidades/volta-redonda/"><strong>Volta Redonda</strong></a>, <a href="/cidades/resende/">Resende</a> e nas <a href="/cidades-atendidas/">cidades atendidas no Sul Fluminense</a>.</p>
+        <p>Entenda todos os detalhes nos guias sobre <a href="/blog/como-funciona-persiana-motorizada/">como funciona a persiana motorizada (elétrica ou a bateria)</a> e <a href="/blog/persiana-ideal-para-cada-ambiente/">qual persiana usar em cada ambiente</a>.</p>
+      </div>`,
+};
+
 // --------------------------------------------- posts do blog (visual apenas)
 // O texto atual é mantido; a reescrita de copy é etapa separada (docs/fila-de-conteudo.md).
 // Mantém head, header, rodapé e tail sincronizados mesmo nas páginas já migradas.
-function sincronizaCss(file, src, sectionPath = '/blog/', crumbs, metaFix) {
+function sincronizaCss(file, src, sectionPath = '/blog/', crumbs, metaFix, contextHtml = '') {
   let [rawHead, rest] = src.split('<body');
   if (!rest) return;
-  if (metaFix && metaFix[0]) rawHead = rawHead.replace(/<title>[\s\S]*?<\/title>/, `<title>${metaFix[0]}</title>`);
-  if (metaFix && metaFix[1]) rawHead = rawHead.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${metaFix[1]}">`);
+  if (metaFix && metaFix[0]) {
+    rawHead = rawHead.replace(/<title>[\s\S]*?<\/title>/, `<title>${metaFix[0]}</title>`);
+    rawHead = rawHead.replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${metaFix[0]}$2`);
+    rawHead = rawHead.replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${metaFix[0]}$2`);
+  }
+  if (metaFix && metaFix[1]) {
+    rawHead = rawHead.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${metaFix[1]}">`);
+    rawHead = rawHead.replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${metaFix[1]}$2`);
+    rawHead = rawHead.replace(/(<meta name="twitter:description" content=")[^"]*(")/, `$1${metaFix[1]}$2`);
+  }
   rawHead = rawHead.replace(/Por que escolher cortina motorizada em projetos de alto padrão/g, 'Por que escolher cortina motorizada em projetos sob medida');
   rawHead = rawHead.replace(/Cortina Motorizada Wave de Alto Padrão em Resende RJ/g, 'Cortina Motorizada Wave Sob Medida em Resende RJ');
   rawHead = rawHead.replace(/levamos o mostruário de alto padrão até sua obra/g, 'levamos o mostruário completo até a sua casa');
@@ -227,6 +299,10 @@ function sincronizaCss(file, src, sectionPath = '/blog/', crumbs, metaFix) {
   body = body.replace(/Por que escolher cortina motorizada em projetos de alto padrão/g, 'Por que escolher cortina motorizada em projetos sob medida');
   body = body.replace(/Cortina Motorizada Wave de Alto Padrão em Resende RJ/g, 'Cortina Motorizada Wave Sob Medida em Resende RJ');
   body = body.replace(/levamos o mostruário de alto padrão até sua obra/g, 'levamos o mostruário completo até a sua casa');
+  if (contextHtml) {
+    body = body.replace(/\s*<div class="sl-video-context">[\s\S]*?<\/div>\s*(?=<div class="sl-cta-inline">)/, '');
+    body = body.replace('<div class="sl-cta-inline">', `${contextHtml}\n      <div class="sl-cta-inline">`);
+  }
   body = body.replace(/<header class="(?:pv-header|sl-header)"[\s\S]*?<\/header>(?:\s*<nav class="sl-nav-fallback"[\s\S]*?<\/nav>)*/, header(sectionPath).trim());
   body = body.replace(/<footer class="sl-footer">[\s\S]*?<\/html>\s*$/, `${footer().trimStart()}${waFloat()}${bar('single')}${tail()}`);
   writeFileSync(file, head + body);
@@ -301,7 +377,8 @@ function buildVideoPages() {
     const file = join(dir, f, 'index.html'); // /videos/<slug>/index.html → URL /videos/<slug>/
     const src = readFileSync(file, 'utf8');
     const crumbs = [['Início', `${BASE}/`], ['Vídeos', `${BASE}/videos/`], ['Projeto', `${BASE}/videos/${f}/`]];
-    if (src.includes('shine-leve.css')) { sincronizaCss(file, src, '/videos/', crumbs, VIDEO_META[f]); continue; }
+    const contextBlock = VIDEO_CONTEXT[f] || '';
+    if (src.includes('shine-leve.css')) { sincronizaCss(file, src, '/videos/', crumbs, VIDEO_META[f], contextBlock); continue; }
     const h1 = dec((src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, ''])[1].replace(/<[^>]+>/g, '').trim());
     const iframe = (src.match(/<iframe[\s\S]*?<\/iframe>/) || [''])[0]
       .replace(/ class="[^"]*"/, '').replace('<iframe', '<iframe class="sl-embed"');
@@ -328,6 +405,7 @@ ${cityChip(null)}
       ${lead ? `<p class="sl-lead">${esc(lead)}</p>` : ''}
       <div class="sl-videobox">${iframe}</div>
 ${extra}
+      ${contextBlock}
       <div class="sl-cta-inline">
         <h3>Quer um projeto assim na sua casa?</h3>
         <p>O consultor vai até você com o mostruário e mede a laser. Gratuito e sem compromisso.</p>

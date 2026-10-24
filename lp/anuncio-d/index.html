@@ -23,11 +23,16 @@
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <link rel="preload" as="image" href="/assets/lp/anuncio-d/projeto-real-sala.avif" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+</noscript>
 
 <style>
 body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; color: #2A2A28; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -69,7 +74,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
     </div>
     <h1 style="font-family:'Playfair Display',serif;font-weight:500;color:#fff;font-size:clamp(32px,9vw,48px);line-height:1.12;margin:0 0 18px;text-wrap:pretty">Na foto, quase toda cortina parece bonita. <span style="font-style:italic;color:#DFBD69">O acabamento conta outra história.</span></h1>
     <div style="height:1px;background:rgba(223,189,105,0.28);margin:0 0 20px"></div>
-    <p style="color:rgba(255,255,255,0.82);font-size:clamp(15px,4.1vw,17px);line-height:1.7;margin:0 0 10px;text-wrap:pretty">Medida, tecido e confecção determinam se o seu ambiente terá este resultado — ou uma surpresa difícil de corrigir.</p>
+    <p style="color:rgba(255,255,255,0.82);font-size:clamp(15px,4.1vw,17px);line-height:1.7;margin:0 0 10px;text-wrap:pretty">Medida, tecido e confecção determinam se o seu ambiente terá este resultado: ou uma surpresa difícil de corrigir.</p>
     <p style="color:rgba(255,255,255,0.5);font-size:10px;line-height:1.6;margin:0 0 24px;text-transform:uppercase;letter-spacing:0.12em">Projeto real executado pela ShineCortinas</p>
     <a href="#video" style="display:flex;align-items:center;justify-content:space-between;gap:14px;border-top:1px solid rgba(255,255,255,0.2);border-bottom:1px solid rgba(255,255,255,0.2);padding:18px 2px;color:#fff;font-size:13px;font-weight:600">
       <span>Entenda antes de escolher</span>
@@ -81,9 +86,9 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
 <section id="video" style="padding:clamp(48px,12vw,68px) 22px;background:#F3F1EB">
   <span style="display:block;color:#C6A868;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;margin-bottom:12px">Veja antes de escolher</span>
   <h2 style="font-family:'Playfair Display',serif;font-weight:500;color:#16302A;font-size:clamp(26px,7vw,36px);line-height:1.18;margin:0 0 14px;text-wrap:pretty">Há detalhes que uma fotografia de loja não consegue mostrar.</h2>
-  <p style="color:#5A605A;font-size:15px;line-height:1.72;margin:0 0 26px;text-wrap:pretty">Neste vídeo, abrimos uma cortina pronta e mostramos o que observar na entretela, nas costuras e no acabamento. Assista completo — são 1 minuto e 17 segundos.</p>
+  <p style="color:#5A605A;font-size:15px;line-height:1.72;margin:0 0 26px;text-wrap:pretty">Neste vídeo, abrimos uma cortina pronta e mostramos o que observar na entretela, nas costuras e no acabamento. Assista completo: são 1 minuto e 17 segundos.</p>
   <div style="max-width:340px;margin:0 auto;border-radius:5px;overflow:hidden;background:#0B1916;box-shadow:0 18px 40px rgba(22,48,42,0.18);aspect-ratio:9/16">
-    <video id="sc-video" controls playsinline preload="metadata" poster="/assets/lp/anuncio-d/projeto-real-sala.avif" style="width:100%;height:100%;object-fit:cover;display:block;background:#0B1916">
+    <video id="sc-video" controls playsinline preload="none" width="540" height="960" poster="/assets/lp/anuncio-d/projeto-real-sala.avif" style="width:100%;height:100%;object-fit:cover;display:block;background:#0B1916">
       <source src="/assets/lp/anuncio-d/video-completo-cortina-internet.mp4" type="video/mp4">
       Seu navegador não conseguiu reproduzir o vídeo.
     </video>
@@ -152,7 +157,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
         <p style="font-family:'Playfair Display',serif;font-style:italic;color:#16302A;font-size:clamp(18px,4.9vw,22px);line-height:1.45;margin:0 0 18px;text-wrap:pretty">"Chegou torta."</p>
         <div style="height:1px;background:#EFECE4;margin:0 0 16px"></div>
         <span style="display:block;color:#C6A868;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px">Por que acontece</span>
-        <p style="color:#5A605A;font-size:14px;line-height:1.75;margin:0;text-wrap:pretty">Trilho instalado sem conferência de nível. Teto e parede quase nunca estão retos, e a cortina denuncia cada milímetro de desalinho. Nenhuma foto de site mostra isso — só a instalação feita com prumo resolve.</p>
+        <p style="color:#5A605A;font-size:14px;line-height:1.75;margin:0;text-wrap:pretty">Trilho instalado sem conferência de nível. Teto e parede quase nunca estão retos, e a cortina denuncia cada milímetro de desalinho. Nenhuma foto de site mostra isso: só a instalação feita com prumo resolve.</p>
       </div>
     
       <div style="background:#fff;border:1px solid #E7E3DA;border-radius:3px;padding:24px 22px">
@@ -173,7 +178,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
         <p style="font-family:'Playfair Display',serif;font-style:italic;color:#16302A;font-size:clamp(18px,4.9vw,22px);line-height:1.45;margin:0 0 18px;text-wrap:pretty">"Sobrou pano arrastando no chão."</p>
         <div style="height:1px;background:#EFECE4;margin:0 0 16px"></div>
         <span style="display:block;color:#C6A868;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px">Por que acontece</span>
-        <p style="color:#5A605A;font-size:14px;line-height:1.75;margin:0;text-wrap:pretty">Bainha calculada sem considerar o piso e o caimento do tecido depois de assentar. Ajustar depois exige costureira, desmontagem e nova instalação — três contas para consertar uma.</p>
+        <p style="color:#5A605A;font-size:14px;line-height:1.75;margin:0;text-wrap:pretty">Bainha calculada sem considerar o piso e o caimento do tecido depois de assentar. Ajustar depois exige costureira, desmontagem e nova instalação: três contas para consertar uma.</p>
       </div>
     
   </div>
@@ -182,7 +187,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
 <section style="margin:clamp(52px,12vw,72px) 0 0;background:#16302A;padding:clamp(48px,12vw,68px) 24px">
   <span style="display:block;color:#DFBD69;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;margin-bottom:16px">E ainda falta a pior parte</span>
   <h2 style="font-family:'Playfair Display',serif;font-weight:500;color:#fff;font-size:clamp(26px,7.2vw,37px);line-height:1.16;margin:0 0 20px;text-wrap:pretty">Depois de tudo isso, você vai abrir a porta da sua casa para <span style="font-style:italic;color:#DFBD69">um estranho</span>.</h2>
-  <p style="color:rgba(255,255,255,0.72);font-size:clamp(15px,4.1vw,17px);line-height:1.75;margin:0 0 14px;text-wrap:pretty">Um instalador que você achou num anúncio, que não conhece o produto que chegou na sua caixa e que não responde por ele. Furando a parede do seu quarto, subindo em escada na sua sala. Se ele errar a altura do trilho, ninguém assume — nem ele, nem quem te vendeu.</p>
+  <p style="color:rgba(255,255,255,0.72);font-size:clamp(15px,4.1vw,17px);line-height:1.75;margin:0 0 14px;text-wrap:pretty">Um instalador que você achou num anúncio, que não conhece o produto que chegou na sua caixa e que não responde por ele. Furando a parede do seu quarto, subindo em escada na sua sala. Se ele errar a altura do trilho, ninguém assume: nem ele, nem quem te vendeu.</p>
   <p style="color:rgba(255,255,255,0.52);font-size:clamp(14px,3.9vw,16px);line-height:1.75;margin:0 0 30px;text-wrap:pretty">Depois você ainda procura uma costureira para ajustar a bainha que ficou arrastando.</p>
   <div style="border-left:2px solid #DFBD69;padding:2px 0 2px 18px">
     <span style="display:block;color:#DFBD69;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:9px">Na Shine</span>
@@ -195,7 +200,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
   <h2 style="font-family:'Playfair Display',serif;font-weight:500;color:#16302A;font-size:clamp(27px,7.4vw,38px);line-height:1.16;margin:0 0 18px;text-wrap:pretty">Na Shine, a medida não é problema seu.</h2>
   <p style="color:#5A605A;font-size:clamp(16px,4.4vw,19px);line-height:1.7;margin:0 0 26px;text-wrap:pretty">O consultor vai à sua casa, faz a medição técnica e assume a medida. Você toca nos tecidos, sente o caimento e vê o projeto montado antes de decidir qualquer coisa.</p>
   <div style="position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;background:#16302A">
-    <video id="video-medicao" muted loop playsinline preload="metadata" poster="/assets/lp/anuncio-d/medicao-consultor-poster.avif" aria-label="Consultor da Shine realizando a medição técnica de uma janela" style="width:100%;height:100%;object-fit:cover;object-position:center 46%;display:block;background:#16302A">
+    <video id="video-medicao" muted loop playsinline preload="none" width="540" height="960" poster="/assets/lp/anuncio-d/medicao-consultor-poster.avif" aria-label="Consultor da Shine realizando a medição técnica de uma janela" style="width:100%;height:100%;object-fit:cover;object-position:center 46%;display:block;background:#16302A">
       <source src="/assets/lp/anuncio-d/medicao-consultor.mp4" type="video/mp4">
     </video>
     <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;gap:9px;padding:10px 12px;background:rgba(11,25,22,0.82);backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,0.14);border-radius:3px;pointer-events:none">
@@ -264,7 +269,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
 </section>
 
 <section style="padding:clamp(52px,12vw,72px) 22px 0">
-  <span style="display:block;color:#C6A868;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;margin-bottom:12px">Do contato à instalação</span>
+  <span style="display:block;color:#C6A868;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;margin-bottom:12px">Da medição a laser à instalação final</span>
   <h2 style="font-family:'Playfair Display',serif;font-weight:500;color:#16302A;font-size:clamp(25px,6.8vw,34px);line-height:1.2;margin:0 0 30px">Como funciona</h2>
   <div style="display:flex;flex-direction:column;gap:26px">
     <div style="display:flex;gap:16px;align-items:flex-start">
@@ -285,7 +290,7 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
       <div style="width:34px;height:34px;border-radius:9999px;background:#16302A;color:#DFBD69;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>
       <div>
         <h3 style="font-size:15px;font-weight:600;color:#16302A;margin:0 0 6px">Se fizer sentido, fazemos a visita e o orçamento final</h3>
-        <p style="color:#6B7069;font-size:14px;line-height:1.7;margin:0">O especialista faz a medição técnica, leva amostras e finaliza o projeto. Você não assume o risco da medida — essa responsabilidade é da Shine.</p>
+        <p style="color:#6B7069;font-size:14px;line-height:1.7;margin:0">O especialista faz a medição técnica, leva amostras e finaliza o projeto. Você não assume o risco da medida: essa responsabilidade é da Shine, da medição a laser à instalação final.</p>
       </div>
     </div>
     <div style="display:flex;gap:16px;align-items:flex-start">

@@ -152,7 +152,8 @@ function limpaInternos() {
   const env = process.env;
   if (!(env.CF_PAGES === '1' || env.CF_PAGES_COMMIT_SHA || env.CI === 'true')) return;
   for (const rel of ['docs', 'scripts', 'CLAUDE.md', 'README.md', 'build.sh', '.gitignore', '.node-version', '.claude',
-                     'cidades/cidades.json', 'blog/posts.json', 'videos/videos.json']) {
+                     'cidades/cidades.json', 'blog/posts.json', 'videos/videos.json',
+                     'app/index.html', 'app/manifest.json', 'instagram-feed.json']) {
     fs.rmSync(path.join(BUILD_DIR, rel), { recursive: true, force: true });
   }
   console.log('Arquivos internos removidos do deploy.');
