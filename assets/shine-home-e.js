@@ -142,6 +142,19 @@ const blogArticles = {
   }
 };
 
+const IS_MOBILE_WA = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+function setWaBtnHref(el, text) {
+  if (!el) return;
+  if (IS_MOBILE_WA) {
+    el.removeAttribute('target');
+    el.href = 'whatsapp://send?phone=5524993298763&text=' + encodeURIComponent(text);
+  } else {
+    el.href = 'https://wa.me/5524993298763?text=' + encodeURIComponent(text);
+  }
+}
+
 function openArticleSheet(id) {
   const art = blogArticles[id];
   if (!art) return;
@@ -155,7 +168,7 @@ function openArticleSheet(id) {
   if (fullLink && art.fullUrl) {
     fullLink.href = art.fullUrl;
   }
-  document.getElementById('art-wa-btn').href = 'https://wa.me/5524993298763?text=' + encodeURIComponent(art.wa);
+  setWaBtnHref(document.getElementById('art-wa-btn'), art.wa);
   const modal = document.getElementById('article-sheet-modal');
   const popup = modal.querySelector('.d-case-sheet-popup');
   if (popup) popup.scrollTop = 0;
@@ -471,9 +484,7 @@ function setIsaniDiag(type, val) {
 
   const msg = `Olá! Vi a indicação do Isani no site para ${r.name} (${v.name}: ${r.title}) e quero agendar minha consultoria gratuita em casa.`;
   const waBtn = document.getElementById('isani-diag-wa');
-  if (waBtn) {
-    waBtn.href = 'https://wa.me/5524993298763?text=' + encodeURIComponent(msg);
-  }
+  setWaBtnHref(waBtn, msg);
 
   let pageLink = document.getElementById('isani-diag-page-link');
   if (!pageLink && box) {
@@ -517,9 +528,7 @@ function openCaseSheet(id) {
   document.getElementById('sheet-title').textContent = item.title;
   document.getElementById('sheet-prob').textContent = item.prob;
   document.getElementById('sheet-sol').textContent = item.sol;
-  document.getElementById('sheet-wa-btn').href =
-    'https://wa.me/5524993298763?text=' +
-    encodeURIComponent('Olá! Gostei da referência "' + item.refTitle + '" no site da Shine e quero orçar.');
+  setWaBtnHref(document.getElementById('sheet-wa-btn'), 'Olá! Gostei da referência "' + item.refTitle + '" no site da Shine e quero orçar.');
   const pageLink = document.getElementById('sheet-page-link');
   if (pageLink) {
     if (item.pageUrl) {
@@ -630,9 +639,7 @@ function updateSelectionUI() {
     selTitle.textContent = '📋 Sua pasta de referências (0 salvas)';
     selDesc.textContent = 'Toque no ♡ nas fotos acima para salvar seus projetos preferidos e enviar pelo WhatsApp.';
     selBtn.textContent = 'Enviar Minha Seleção pelo WhatsApp →';
-    selBtn.href =
-      'https://wa.me/5524993298763?text=' +
-      encodeURIComponent('Olá! Estava navegando pelo portfólio da Shine e gostaria de agendar uma consultoria gratuita em casa.');
+    setWaBtnHref(selBtn, 'Olá! Estava navegando pelo portfólio da Shine e gostaria de agendar uma consultoria gratuita em casa.');
   } else {
     selBar.classList.remove('is-empty');
     selTitle.textContent = '📋 ' + count + (count === 1 ? ' referência salva' : ' referências salvas') + ' para a visita:';
@@ -643,7 +650,7 @@ function updateSelectionUI() {
       'Olá! Naveguei pelo acervo da Shine e salvei estas referências para a minha casa:\n\n' +
       list.map((item, idx) => idx + 1 + '. ' + item).join('\n') +
       '\n\nGostaria de agendar a consultoria gratuita com o mostruário.';
-    selBtn.href = 'https://wa.me/5524993298763?text=' + encodeURIComponent(msg);
+    setWaBtnHref(selBtn, msg);
   }
 }
 
@@ -838,8 +845,7 @@ function openVideoModal(title, videoIdOrUrl, waText, pageUrl) {
       escapeHtml(title) +
       '"></iframe>';
   }
-  document.getElementById('video-modal-wa').href =
-    'https://wa.me/5524993298763?text=' + encodeURIComponent('Olá! ' + waText);
+  setWaBtnHref(document.getElementById('video-modal-wa'), 'Olá! ' + waText);
   document.getElementById('video-modal-wa').textContent = '💬 Quero orçar um projeto igual →';
   const vPage = document.getElementById('video-modal-page');
   if (vPage) {

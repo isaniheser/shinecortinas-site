@@ -58,13 +58,48 @@
     return 'Olá, vim do site da Shine.' + where + ' Quero falar com um consultor sobre cortinas e persianas (vi: ' + ctx + ').';
   }
 
-  function isWa(a) { return a && /wa\.me\//.test(a.getAttribute('href') || ''); }
+  var IS_MOBILE = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  function isWa(a) {
+    if (!a) return false;
+    var h = a.getAttribute('href') || '';
+    return /wa\.me\/|api\.whatsapp\.com\/|whatsapp:\/\/send/.test(h);
+  }
+
+  function extractTextParam(href) {
+    try {
+      var m = String(href || '').match(/[?&]text=([^&#]*)/);
+      return m ? decodeURIComponent(m[1].replace(/\+/g, '%20')) : '';
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function applyWaHref(a) {
+    var kind = a.getAttribute('data-wa') || 'conversar';
+    var txt = '';
+    if (!a.hasAttribute('data-wa-custom')) {
+      txt = message(kind);
+    } else {
+      txt = extractTextParam(a.getAttribute('href'));
+      if (!txt) txt = message(kind);
+    }
+    if (IS_MOBILE) {
+      a.removeAttribute('target');
+      a.setAttribute('href', 'whatsapp://send?phone=' + NUMBER + (txt ? '&text=' + encodeURIComponent(txt) : ''));
+    } else {
+      a.setAttribute('href', 'https://wa.me/' + NUMBER + (txt ? '?text=' + encodeURIComponent(txt) : ''));
+    }
+    return kind;
+  }
 
   function trackWa(kind) {
     var dados = {
       origem_link: kind,
       pagina: location.pathname,
-      contexto: context()
+      contexto: context(),
+      destino: IS_MOBILE ? 'app_direto' : 'web'
     };
     var c = cityName();
     if (c && state.source !== 'ip') dados.cidade = c;
@@ -85,15 +120,30 @@
     window.dataLayer.push(d);
   }
 
-  document.addEventListener('click', function (ev) {
-    var a = ev.target.closest && ev.target.closest('a');
+  document.addEventListener('pointerdown', function (ev) {
+    var a = ev.target && ev.target.closest && ev.target.closest('a');
     if (!isWa(a)) return;
-    var kind = a.getAttribute('data-wa') || 'conversar';
-    if (!a.hasAttribute('data-wa-custom')) {
-      a.setAttribute('href', 'https://wa.me/' + NUMBER + '?text=' + encodeURIComponent(message(kind)));
-    }
+    applyWaHref(a);
+  }, true);
+
+  document.addEventListener('touchstart', function (ev) {
+    var a = ev.target && ev.target.closest && ev.target.closest('a');
+    if (!isWa(a)) return;
+    applyWaHref(a);
+  }, { capture: true, passive: true });
+
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest && ev.target.closest('a');
+    if (!isWa(a)) return;
+    var kind = applyWaHref(a);
     trackWa(kind);
   }, true);
+
+  if (IS_MOBILE) {
+    document.querySelectorAll('a').forEach(function (a) {
+      if (isWa(a)) applyWaHref(a);
+    });
+  }
 
   /* etiqueta "Atendendo em X · trocar" */
   function renderChips() {
