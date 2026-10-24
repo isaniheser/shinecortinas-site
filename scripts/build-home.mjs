@@ -16,7 +16,7 @@ import {
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const FILE = join(ROOT, 'index.html');
 const BASE = 'https://www.shinecortinas.com';
-const TODAY = '2026-10-23';
+const TODAY = '2026-10-24';
 
 const HOME_TITLE =
   'Cortinas, Persianas e Cortina Motorizada em Volta Redonda, Resende e Sul Fluminense | ShineCortinas';
@@ -66,35 +66,35 @@ const REVIEWS = [
   {
     initials: 'MR',
     name: 'Marcio Rocha',
-    datePublished: '2026-03',
+    datePublished: '2026-03-15',
     tag: '🛡️ Pós-Venda e Compromisso',
     body: 'Atendimento ágil, entrega rápida e cortinas impecáveis. Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!'
   },
   {
     initials: 'AR',
     name: 'Amanda Rocha da Silva',
-    datePublished: '2026-04',
+    datePublished: '2026-04-10',
     tag: '⏱️ Pontualidade e Visita em Casa',
     body: 'EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente. Atendimento nota mil do início ao fim. Produtos da mais alta qualidade! Indico de olhos fechados!'
   },
   {
     initials: 'MS',
     name: 'Marcio Soares',
-    datePublished: '2026-06',
+    datePublished: '2026-06-12',
     tag: '✨ Cliente Recorrente',
     body: 'Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente. Parabéns a toda a equipe pelo profissionalismo e dedicação. Com certeza continuarei recomendando!'
   },
   {
     initials: 'LF',
     name: 'Luan Ferreira',
-    datePublished: '2026-04',
+    datePublished: '2026-04-18',
     tag: '🌟 Atendimento Nota 10',
     body: 'Experiência excelente com a Shine Cortinas! Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo.'
   },
   {
     initials: 'VF',
     name: 'Vitória Fernandes',
-    datePublished: '2026-04',
+    datePublished: '2026-04-22',
     tag: '🏠 Pontualidade e Qualidade',
     body: 'Trabalho de excelência, pontuais e ótimos profissionais. Fiquei muito satisfeita, recomendo.'
   }
@@ -138,6 +138,16 @@ const FAQ = [
 
 const VIDEO_STORIES = [
   {
+    city: 'V. Redonda',
+    sub: 'Bainha 1 cm',
+    title: '📍 Volta Redonda · Ajuste de Bainha a 1 cm do Piso',
+    videoId: 'c9058bc905c6e533b7a31c6013677fbe',
+    poster: '/poster-ajuste-bainha-em-casa-alfaiataria.avif',
+    alt: 'Vídeo de ajuste de bainha a 1 cm do piso em Volta Redonda RJ',
+    pageUrl: '/videos/ajuste-bainha-em-casa-alfaiataria/',
+    wa: 'Vi o vídeo do acabamento de bainha a 1 cm do piso e quero agendar visita.'
+  },
+  {
     city: 'Resende',
     sub: 'Wave Motor',
     title: '📍 Resende · Cortina Wave Motorizada',
@@ -148,16 +158,6 @@ const VIDEO_STORIES = [
     wa: 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.'
   },
   {
-    city: 'Vassouras',
-    sub: 'Chalé A-Frame',
-    title: '📍 Vassouras · Chalé A-Frame Inclinado',
-    videoId: '7ca4a561d6c2b83619fe8f61a3938f85',
-    poster: '/poster-cortina-cabana-chale-vassouras.avif',
-    alt: 'Vídeo de cortina sob medida para Chalé A-Frame em Vassouras RJ',
-    pageUrl: '/videos/cortina-cabana-chale-vassouras/',
-    wa: 'Vi a obra do Chalé em Vassouras e tenho um vão especial para orçar.'
-  },
-  {
     city: 'B. Mansa',
     sub: 'Madeira 50mm',
     title: '📍 Barra Mansa · Persiana Madeira 50 mm',
@@ -166,6 +166,16 @@ const VIDEO_STORIES = [
     alt: 'Vídeo de Persiana Horizontal de Madeira 50 mm em Barra Mansa RJ',
     pageUrl: '/videos/persiana-horizontal-madeira-barra-mansa/',
     wa: 'Vi a Persiana de Madeira 50 mm instalada em Barra Mansa e quero orçar.'
+  },
+  {
+    city: 'Vassouras',
+    sub: 'Chalé A-Frame',
+    title: '📍 Vassouras · Chalé A-Frame Inclinado',
+    videoId: '7ca4a561d6c2b83619fe8f61a3938f85',
+    poster: '/poster-cortina-cabana-chale-vassouras.avif',
+    alt: 'Vídeo de cortina sob medida para Chalé A-Frame em Vassouras RJ',
+    pageUrl: '/videos/cortina-cabana-chale-vassouras/',
+    wa: 'Vi a obra do Chalé em Vassouras e tenho um vão especial para orçar.'
   },
   {
     city: 'B. do Piraí',
@@ -186,16 +196,6 @@ const VIDEO_STORIES = [
     alt: 'Vídeo de Persiana Rolô Screen motorizada instalada em Mangaratiba RJ',
     pageUrl: '/videos/cortina-screen-motorizada-mangaratiba/',
     wa: 'Vi a Persiana Screen motorizada instalada em Mangaratiba e quero orçar.'
-  },
-  {
-    city: 'V. Redonda',
-    sub: 'Bainha 1 cm',
-    title: '📍 Volta Redonda · Ajuste de Bainha a 1 cm do Piso',
-    videoId: 'c9058bc905c6e533b7a31c6013677fbe',
-    poster: '/poster-ajuste-bainha-em-casa-alfaiataria.avif',
-    alt: 'Vídeo de ajuste de bainha a 1 cm do piso em Volta Redonda RJ',
-    pageUrl: '/videos/ajuste-bainha-em-casa-alfaiataria/',
-    wa: 'Vi o vídeo do acabamento de bainha a 1 cm do piso e quero agendar visita.'
   },
   {
     city: 'Mostruário',
@@ -222,36 +222,36 @@ const VIDEO_STORIES = [
 // 16 Cards do Bento Grid com 16 fotos 100% únicas (zero duplicação na página)
 const BENTO_ITEMS = [
   {
-    id: 'wave',
-    cats: 'tecido wave',
-    img: '/cortina-sob-medida.avif',
-    alt: 'Imagem de referência de Cortina Prega Wave sob medida para sala',
-    pos: 'center 65%',
-    tag: '✦ Referência · Wave',
-    title: 'Cortina Wave · Sala',
-    sub: 'Toque de linho · Ver ficha',
-    initialClass: 'bento-pos-0'
-  },
-  {
     id: 'duplo',
     cats: 'tecido wave pedireitoduplo motorizada insta',
     img: '/hall-wave-volta-redonda.avif',
     alt: 'Obra real de Cortina Wave em pé-direito alto instalada em Volta Redonda RJ',
     pos: 'center 45%',
-    tag: '🟢 Obra Real',
-    title: 'Pé-Direito Duplo',
-    sub: 'Volta Redonda · Ver ficha',
+    tag: '🟢 Obra Real · Volta Redonda',
+    title: 'Pé-Direito Duplo · Wave',
+    sub: '▶ Vídeo real · Ver ficha',
+    initialClass: 'bento-pos-0'
+  },
+  {
+    id: 'resende_real',
+    cats: 'tecido wave pedireitoduplo motorizada insta',
+    img: '/poster-cortina-motorizada-wave-resende.avif',
+    alt: 'Obra real de Cortina Wave motorizada instalada em Resende RJ',
+    pos: 'center 50%',
+    tag: '🟢 Obra Real · Resende',
+    title: 'Wave Motorizada · Resende',
+    sub: '▶ Vídeo real · Ver ficha',
     initialClass: 'bento-pos-1'
   },
   {
-    id: 'blackout',
-    cats: 'tecido wave blackout',
-    img: '/blackouts-tecnicos.avif',
-    alt: 'Imagem de referência de Cortina com Forro Blackout 100% para quarto e sala de TV',
-    pos: 'center 55%',
-    tag: '✦ Referência',
-    title: 'Blackout 100%',
-    sub: 'Bloqueio de luz · Ver ficha',
+    id: 'madeira',
+    cats: 'persiana horizontal madeira insta',
+    img: '/madeira-sq.avif',
+    alt: 'Obra real de Persiana Horizontal de Madeira 50 mm em Barra Mansa RJ',
+    pos: 'center 50%',
+    tag: '🟢 Obra Real · Barra Mansa',
+    title: 'Persiana Madeira 50 mm',
+    sub: '▶ Vídeo real · Ver ficha',
     initialClass: 'bento-pos-2'
   },
   {
@@ -266,24 +266,35 @@ const BENTO_ITEMS = [
     initialClass: 'bento-pos-3'
   },
   {
-    id: 'resende_real',
-    cats: 'tecido wave pedireitoduplo motorizada insta',
-    img: '/poster-cortina-motorizada-wave-resende.avif',
-    alt: 'Obra real de Cortina Wave motorizada instalada em Resende RJ',
-    pos: 'center 50%',
-    tag: '🟢 Obra Real · Resende',
-    title: 'Wave Motorizada · Resende',
-    sub: '▶ Vídeo real · Ver ficha',
+    id: 'wave',
+    cats: 'tecido wave',
+    img: '/cortina-sob-medida.avif',
+    alt: 'Imagem de referência de Cortina Prega Wave sob medida para sala',
+    pos: 'center 65%',
+    tag: '✦ Referência · Wave',
+    title: 'Cortina Wave · Sala',
+    sub: 'Toque de linho · Ver ficha',
     initialClass: 'is-hidden'
   },
   {
-    id: 'madeira',
-    cats: 'persiana horizontal madeira insta',
-    img: '/madeira-sq.avif',
-    alt: 'Obra real de Persiana Horizontal de Madeira 50 mm em Barra Mansa RJ',
-    pos: 'center 50%',
-    tag: '🟢 Obra Real · Barra Mansa',
-    title: 'Persiana Madeira 50 mm',
+    id: 'blackout',
+    cats: 'tecido wave blackout',
+    img: '/blackouts-tecnicos.avif',
+    alt: 'Imagem de referência de Cortina com Forro Blackout 100% para quarto e sala de TV',
+    pos: 'center 55%',
+    tag: '✦ Referência · Blackout',
+    title: 'Blackout 100%',
+    sub: 'Bloqueio de luz · Ver ficha',
+    initialClass: 'is-hidden'
+  },
+  {
+    id: 'vassouras',
+    cats: 'tecido wave pedireitoduplo blackout insta',
+    img: '/poster-cortina-cabana-chale-vassouras.avif',
+    alt: 'Obra real de cortina sob medida em Chalé A-Frame em Vassouras RJ',
+    pos: 'center 45%',
+    tag: '🟢 Obra Real · Vassouras',
+    title: 'Chalé A-Frame · Vão Alto',
     sub: '▶ Vídeo real · Ver ficha',
     initialClass: 'is-hidden'
   },
@@ -296,17 +307,6 @@ const BENTO_ITEMS = [
     tag: '✦ Referência · Alumínio',
     title: 'Persiana de Alumínio 25 mm',
     sub: 'Fácil limpeza · Ver ficha',
-    initialClass: 'is-hidden'
-  },
-  {
-    id: 'vassouras',
-    cats: 'tecido wave pedireitoduplo blackout insta',
-    img: '/poster-cortina-cabana-chale-vassouras.avif',
-    alt: 'Obra real de cortina sob medida em Chalé A-Frame em Vassouras RJ',
-    pos: 'center 45%',
-    tag: '🟢 Obra Real · Vassouras',
-    title: 'Chalé A-Frame · Vão Alto',
-    sub: '▶ Vídeo real · Ver ficha',
     initialClass: 'is-hidden'
   },
   {
@@ -675,7 +675,7 @@ const html = `<!DOCTYPE html>
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   </noscript>
-  <link rel="stylesheet" href="/assets/shine-home-e.css?v=5">
+  <link rel="stylesheet" href="/assets/shine-home-e.css?v=6">
 
   <script type="application/ld+json">
 ${JSON.stringify(schemaJson, null, 2)}
@@ -719,7 +719,7 @@ ${JSON.stringify(schemaJson, null, 2)}
         <div class="d-hero__grid">
           <div>
             <h1>
-              <span class="d-hero-kicker">Cortinas e Persianas Sob Medida · Sul Fluminense</span>
+              <span class="d-hero-kicker" data-city-chip>Cortinas e Persianas Sob Medida · <span data-city-label>Atendemos todo o Sul Fluminense</span></span>
               Sabe aquela sala que faz a visita parar na porta? <em>O segredo nunca é só o sofá.</em>
             </h1>
             <p class="d-hero__lead">
@@ -753,10 +753,10 @@ ${JSON.stringify(schemaJson, null, 2)}
           </div>
 
           <div class="d-hero__stage">
-            <div class="d-hero__single-frame">
+            <div class="d-hero__single-frame" style="cursor: pointer;" onclick="openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
               <span class="d-frame-pill">Pé-Direito Duplo · Do Teto ao Piso</span>
               <img src="/duplo.avif" alt="Cortina Prega Wave sob medida do teto ao piso em pé-direito duplo no Sul Fluminense" width="800" height="500" fetchpriority="high" decoding="async">
-              <button type="button" class="d-hero-video-trigger" onclick="openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
+              <button type="button" class="d-hero-video-trigger" onclick="event.stopPropagation(); openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
                 <span>▶ Ver vídeo de obra real em Resende</span>
                 <span>0:15</span>
               </button>
@@ -845,7 +845,7 @@ ${VIDEO_STORIES.map(
                 <span id="isani-diag-vao-text">Pedimos vão livre mínimo de 15 × 15 cm no gesso para a onda correr livre (18 a 20 cm para trilho duplo), com acabamento a 1 cm do piso e bainha dupla nos tecidos leves.</span>
               </div>
 
-              <a id="isani-diag-wa" class="d-gold-btn" data-wa="consultor" data-wa-custom="1" style="width: 100%;" href="https://wa.me/5524993298763?text=Ol%C3%A1%21%20Vi%20a%20indica%C3%A7%C3%A3o%20do%20Isani%20para%20Sala%20de%20Estar%20e%20quero%20agendar%20minha%20consultoria%20gratuita." target="_blank" rel="noopener">
+              <a id="isani-diag-wa" class="d-gold-btn" data-wa="consultor" data-wa-custom="1" style="width: 100%;" href="https://wa.me/5524993298763?text=Ol%C3%A1%21%20Vi%20a%20indica%C3%A7%C3%A3o%20do%20Isani%20no%20site%20para%20Sala%20de%20Estar%20%28Com%20Gesso%3A%20Cortina%20Wave%20em%20Tecido%20Encorpado%29%20e%20quero%20agendar%20minha%20consultoria%20gratuita%20em%20casa." target="_blank" rel="noopener">
                 💬 Ver Amostras Dessa Solução em Casa →
               </a>
             </div>
@@ -1276,11 +1276,11 @@ ${FAQ.map(
 
     <!-- BARRA FLUTUANTE INFERIOR ESTILO APP -->
     <nav class="d-ig-tabbar" aria-label="Menu inferior rápido">
-      <a href="#top" class="d-ig-tab" data-nav-sec="top">
+      <a href="#top" class="d-ig-tab is-highlight" data-nav-sec="top">
         <strong>⌂</strong>
         <span>Início</span>
       </a>
-      <a href="#diagnostico-isani" class="d-ig-tab is-highlight" data-nav-sec="diagnostico-isani">
+      <a href="#diagnostico-isani" class="d-ig-tab" data-nav-sec="diagnostico-isani">
         <strong>✦</strong>
         <span>Consultor</span>
       </a>
@@ -1473,7 +1473,7 @@ ${FAQ.map(
     </div>
   </div>
 
-  <script data-cfasync="false" src="/assets/shine-home-e.js?v=6" defer></script>
+  <script data-cfasync="false" src="/assets/shine-home-e.js?v=7" defer></script>
   <script data-cfasync="false" src="/assets/shine-wa.js?v=6" defer></script>
   <script type="speculationrules">
   {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}

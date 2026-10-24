@@ -5,7 +5,7 @@ import {auroraHeader,auroraMenu,auroraHead,AURORA_V} from './aurora-layout.mjs';
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 export const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
 export const CSS_V = '15';
-export const JS_V = '4';
+export const JS_V = '6';
 export const FOUNDED_YEAR = 2009;
 export const CURRENT_YEAR = new Date().getFullYear();
 export const YEARS_ACTIVE = CURRENT_YEAR - FOUNDED_YEAR;
@@ -174,11 +174,11 @@ export function header(currentPath) { return auroraHeader(currentPath); }
 export function cityChip(cityName) {
   const label = cityName ? `Atendendo em ${cityName}` : 'Atendemos todo o Sul Fluminense';
   return `
-  <div class="sl-citybar"><div class="sl-wrap"><span class="sl-chip" data-city-chip>
+  <div class="sl-citybar"><div class="sl-wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;"><span class="sl-chip" data-city-chip>
     <span data-city-label>${label}</span>
     <button type="button" class="sl-chip__btn" popovertarget="city-pop">${cityName ? 'trocar' : 'minha cidade'}</button>
     <div id="city-pop" popover class="sl-citypop"><p>Escolha a sua cidade</p><div class="sl-citypop__list" data-city-list></div></div>
-  </span></div></div>
+  </span><a href="/#diagnostico-isani" class="sl-chip" style="text-decoration:none;background:linear-gradient(135deg,#DDBB6E 0%,#C9A252 55%,#B38A3B 100%);color:#08130F;font-weight:700;border-color:#C9A252;">✦ Simular Meu Ambiente</a><a href="/#obras-reais" class="sl-chip" style="text-decoration:none;font-weight:600;">▶ Obras em Vídeo</a></div></div>
 `;
 }
 
@@ -238,6 +238,15 @@ export function compare() {
 export function footer() {
   return `
   <footer class="sl-footer"><div class="sl-wrap">
+    <div style="background:#08130F;color:#FAF6EE;border:1.5px solid rgba(201,162,82,0.45);border-radius:18px;padding:24px 20px;margin-bottom:32px;text-align:center;">
+      <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:#DDBB6E;margin:0 0 6px;">✦ Ferramenta Interativa · Consultor do Isani</p>
+      <h3 style="font-family:var(--serif);font-size:clamp(21px,3vw,28px);color:#FAF6EE;margin:0 0 8px;font-weight:600;">Qual modelo o Isani indicaria para o <em>seu ambiente hoje?</em></h3>
+      <p style="font-size:13.5px;color:rgba(250,246,238,0.82);max-width:540px;margin:0 auto 16px;">Toque no seu cômodo (Sala, Quarto, Varanda, Cozinha ou Pé-Direito Duplo) e veja na hora a especificação técnica e vídeos de obras reais filmadas na região.</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
+        <a href="/#diagnostico-isani" style="display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;background:linear-gradient(135deg,#DDBB6E 0%,#C9A252 55%,#B38A3B 100%);color:#08130F;font-weight:700;font-size:13px;text-decoration:none;">✦ Testar Consultor por Ambiente →</a>
+        <a href="/#obras-reais" style="display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;border:1px solid rgba(201,162,82,0.55);background:rgba(255,255,255,0.06);color:#FAF6EE;font-weight:600;font-size:13px;text-decoration:none;">▶ Assistir Obras em Vídeo →</a>
+      </div>
+    </div>
     <div class="sl-footer__grid">
       <div>
         <a href="/" class="sl-logo" aria-label="ShineCortinas — início"><img src="/logo-shine.avif" alt="ShineCortinas" width="56" height="56" loading="lazy" decoding="async"></a>
