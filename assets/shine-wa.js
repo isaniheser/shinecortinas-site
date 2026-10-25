@@ -94,6 +94,23 @@
     return kind;
   }
 
+  function getUtmDetails() {
+    var saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem('shine.utm') || 'null'); } catch (e) {}
+    try {
+      var qs = new URLSearchParams(location.search);
+      var src = qs.get('utm_source');
+      var med = qs.get('utm_medium');
+      var cmp = qs.get('utm_campaign');
+      if (src || med || cmp) {
+        saved = { source: src || '', medium: med || '', campaign: cmp || '' };
+        sessionStorage.setItem('shine.utm', JSON.stringify(saved));
+      }
+    } catch (e) {}
+    return saved;
+  }
+  getUtmDetails();
+
   function trackWa(kind) {
     var dados = {
       origem_link: kind,
@@ -103,6 +120,10 @@
     };
     var c = cityName();
     if (c && state.source !== 'ip') dados.cidade = c;
+    var utm = getUtmDetails();
+    if (utm && utm.source) dados.utm_source = utm.source;
+    if (utm && utm.medium) dados.utm_medium = utm.medium;
+    if (utm && utm.campaign) dados.utm_campaign = utm.campaign;
     var jd = getJourneyDetails();
     if (jd.consultor) dados.jornada_consultor = jd.consultor;
     if (jd.obras.length) dados.jornada_obras = jd.obras.join(' | ');

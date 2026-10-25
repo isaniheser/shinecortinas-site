@@ -28,6 +28,10 @@
 /portfolio.html /portfolio/ 301
 /app/ / 301
 /app/index.html / 301
+/insta /?utm_source=instagram&utm_medium=bio 302
+/insta/ /?utm_source=instagram&utm_medium=bio 302
+/instagram /?utm_source=instagram&utm_medium=bio 302
+/instagram/ /?utm_source=instagram&utm_medium=bio 302
 /artigo-blackout.html /blog/o-que-e-blackout/ 301
 /artigo-blackout /blog/o-que-e-blackout/ 301
 /artigo-motorizacao.html /blog/por-que-escolher-cortina-motorizada/ 301
