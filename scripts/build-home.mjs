@@ -61,35 +61,35 @@ const AREA_SERVED_NAMES = [
   'Costa Verde'
 ];
 
-// 5 avaliações 100% integrais conforme docs/dados-google/avaliacoes.json
+// 5 avaliações do Google. Texto literal de docs/dados-google/avaliacoes.json (conferido pela esteira em tests/estatico.mjs).
 const REVIEWS = [
   {
     initials: 'MR',
     name: 'Marcio Rocha',
     datePublished: '2026-03-15',
     tag: '🛡️ Pós-Venda e Compromisso',
-    body: 'Atendimento ágil, entrega rápida e cortinas impecáveis. Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!'
+    body: 'Atendimento ágil, entrega rápida e cortinas impecáveis. Obrigado à Shine Cortinas pelo excelente trabalho! Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!!!!'
   },
   {
     initials: 'AR',
     name: 'Amanda Rocha da Silva',
     datePublished: '2026-04-10',
     tag: '⏱️ Pontualidade e Visita em Casa',
-    body: 'EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente. Atendimento nota mil do início ao fim. Produtos da mais alta qualidade! Indico de olhos fechados!'
+    body: 'EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente.'
   },
   {
     initials: 'MS',
     name: 'Marcio Soares',
     datePublished: '2026-06-12',
     tag: '✨ Cliente Recorrente',
-    body: 'Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente. Parabéns a toda a equipe pelo profissionalismo e dedicação. Com certeza continuarei recomendando!'
+    body: 'Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente. Obrigada pelo profissionalismo, dedicação e atenção em cada detalhe'
   },
   {
     initials: 'LF',
     name: 'Luan Ferreira',
     datePublished: '2026-04-18',
     tag: '🌟 Atendimento Nota 10',
-    body: 'Experiência excelente com a Shine Cortinas! Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo.'
+    body: 'Experiência excelente com a Shine Cortinas! O trabalho deles é simplesmente sensacional. Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo.'
   },
   {
     initials: 'VF',
@@ -667,7 +667,7 @@ const html = `<!DOCTYPE html>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <link rel="preload" as="image" href="/duplo.avif" imagesrcset="/duplo-800.avif 760w, /duplo.avif 1696w" imagesizes="(max-width: 960px) calc(100vw - 28px), 580px" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="/duplo.avif" imagesrcset="/duplo-800.avif 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w" imagesizes="(max-width: 960px) calc(100vw - 28px), 580px" fetchpriority="high" type="image/avif">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
@@ -675,7 +675,7 @@ const html = `<!DOCTYPE html>
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   </noscript>
-  <link rel="stylesheet" href="/assets/shine-home-e.css?v=6">
+  <link rel="stylesheet" href="/assets/shine-home-e.css?v=7">
 
   <script type="application/ld+json">
 ${JSON.stringify(schemaJson, null, 2)}
@@ -755,7 +755,7 @@ ${JSON.stringify(schemaJson, null, 2)}
           <div class="d-hero__stage">
             <div class="d-hero__single-frame" style="cursor: pointer;" onclick="openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
               <span class="d-frame-pill">Pé-Direito Duplo · Do Teto ao Piso</span>
-              <img src="/duplo.avif" srcset="/duplo-800.avif 760w, /duplo.avif 1696w" sizes="(max-width: 960px) calc(100vw - 28px), 580px" alt="Cortina Prega Wave sob medida do teto ao piso em pé-direito duplo no Sul Fluminense" width="800" height="500" fetchpriority="high" decoding="async">
+              <img src="/duplo.avif" srcset="/duplo-800.avif 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w" sizes="(max-width: 960px) calc(100vw - 28px), 580px" alt="Cortina Prega Wave sob medida do teto ao piso em pé-direito duplo no Sul Fluminense" width="800" height="500" fetchpriority="high" decoding="async">
               <button type="button" class="d-hero-video-trigger" onclick="event.stopPropagation(); openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
                 <span>▶ Ver vídeo de obra real em Resende</span>
                 <span>0:15</span>
@@ -878,7 +878,7 @@ ${VIDEO_STORIES.map(
           </div>
 
           <div class="d-intent-bar">
-            <div class="d-intent-filters" id="main-group-filters" role="tablist" aria-label="Filtrar projetos por categoria">
+            <div class="d-intent-filters" id="main-group-filters" role="group" aria-label="Filtrar projetos por categoria">
               <button type="button" class="d-filter-btn is-active" id="filter-btn-all" data-group="all" onclick="selectMainGroup('all', this)">✦ Todos (${BENTO_ITEMS.length})</button>
               <button type="button" class="d-filter-btn" id="filter-btn-insta" data-group="insta" onclick="selectMainGroup('insta', this)">🟢 Obras Reais (6)</button>
               <button type="button" class="d-filter-btn" data-group="tecido" onclick="selectMainGroup('tecido', this)">Cortinas de Tecido ▾</button>
@@ -908,10 +908,10 @@ ${BENTO_ITEMS.map(
                 <span class="d-ig-tag">${esc(item.tag)}</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('${item.id}')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>${esc(item.title)}</strong>
                 <span>${esc(item.sub)}</span>
-              </div>
+              </button>
             </div>`
 ).join('\n')}
           </div>
@@ -1053,7 +1053,7 @@ ${BENTO_ITEMS.map(
             </div>
           </div>
 
-          <div class="d-reviews-grid" id="reviews-carousel">
+          <div class="d-reviews-grid" id="reviews-carousel" tabindex="0" role="region" aria-label="Avaliações de clientes no Google">
 ${REVIEWS.map(
   (r) => `            <div class="d-review-card">
               <div>
@@ -1473,8 +1473,8 @@ ${FAQ.map(
     </div>
   </div>
 
-  <script data-cfasync="false" src="/assets/shine-home-e.js?v=7" defer></script>
-  <script data-cfasync="false" src="/assets/shine-wa.js?v=6" defer></script>
+  <script data-cfasync="false" src="/assets/shine-home-e.js?v=8" defer></script>
+  <script data-cfasync="false" src="/assets/shine-wa.js?v=8" defer></script>
   <script type="speculationrules">
   {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}
   </script>

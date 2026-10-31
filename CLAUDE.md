@@ -230,6 +230,16 @@ Ambientes/Aurora nas páginas internas e de cidades:
   verde) → FAQ com as 6 perguntas do schema visíveis → CTA final (faixa verde)
   → links internos + cidades próximas → rodapé claro → barra fixa (celular).
 
+## Esteira de qualidade (GitHub Actions, out/2026) — `tests/README.md`
+
+Todo PR passa por `tests/estatico.mjs` (SEO, schema, links, fatos e linguagem deste arquivo,
+`_redirects`, versão de cache), `tests/geradores.mjs` (HTML = gerador) e `tests/navegador.mjs`
+(celular real: JS, acessibilidade axe, velocidade, gavetas, WhatsApp). Depois de cada merge e toda
+madrugada, `tests/ao-vivo.mjs` confere o site no ar e abre/fecha a issue "Site no ar com problema".
+**Antes de commitar, rodar `node tests/estatico.mjs`.** Regra nova de fato/linguagem que o Isani
+passar entra também em `tests/regras-conteudo.mjs`. Não silenciar erro da esteira: corrigir na fonte;
+pendência que depende do Isani vai para `tests/pendencias-conhecidas.json` com o motivo.
+
 ## Cidades atendidas (15)
 
 barra-do-pirai, barra-mansa, itatiaia, maromba, miguel-pereira, paulo-de-frontin,

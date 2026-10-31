@@ -24,7 +24,7 @@ export default {
   ],
   hero: {
     eyebrow: 'O olhar de quem instala',
-    h1: 'Cortina ou persiana<br>na cozinha:',
+    h1: 'Cortina ou persiana <br>na cozinha:',
     h1em: 'qual não dá dor de cabeça na limpeza.',
     lead: `<p>Quando o cliente me pergunta se deve colocar cortina ou <a href="/persianas/">persiana na cozinha</a>, a primeira coisa que nós olhamos juntos é a rotina daquele ambiente: na cozinha tem vapor de panela, gordura de fritura no ar e respingo de água na bancada da pia.</p>
       <p>Por isso, para a janela da cozinha e da área gourmet, a escolha técnica mais segura e prática é a <strong>persiana</strong>, especialmente a <strong>Rolô em Tela Solar</strong> e a <strong>Horizontal de Alumínio</strong> (de 50 mm em janelas amplas ou 16 mm em vãos menores).</p>`,
@@ -55,9 +55,9 @@ export default {
                 <path d="M68 28Q84 34 100 28Q116 34 132 28V144Q116 148 100 144Q84 148 68 144Z" fill="#e5dccb" stroke="#8c7b65" stroke-width="1.5"/>
                 <circle cx="92" cy="86" r="6" fill="#8c5820" opacity="0.45"/>
                 <circle cx="112" cy="106" r="8" fill="#8c5820" opacity="0.45"/>
-                <text x="192" y="84" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#8c3b2b" text-anchor="middle">Absorve vapor e</text>
-                <text x="192" y="100" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#8c3b2b" text-anchor="middle">gordura do fogão</text>
-                <text x="140" y="168" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#8c3b2b" text-anchor="middle">Exige retirar do trilho para lavar sempre</text>
+                <text x="192" y="84" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#8c3b2b" text-anchor="middle">Absorve vapor e</text>
+                <text x="192" y="100" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#8c3b2b" text-anchor="middle">gordura do fogão</text>
+                <text x="140" y="168" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#8c3b2b" text-anchor="middle">Exige retirar do trilho para lavar sempre</text>
               </svg>
               <p>O tecido comum absorve a umidade da pia e a gordura do ar, pedindo lavagens constantes.</p>
             </div>
@@ -68,8 +68,8 @@ export default {
                 <rect x="52" y="28" width="176" height="12" rx="3" fill="#16302a"/>
                 <rect x="58" y="40" width="164" height="98" fill="#dfd5c0" stroke="#75562b" stroke-width="1.5"/>
                 <line x1="54" y1="138" x2="226" y2="138" stroke="#16302a" stroke-width="2.5"/>
-                <text x="140" y="92" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Basta um pano úmido com detergente neutro</text>
-                <text x="140" y="168" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Não impregna cheiro e fica acima da bancada</text>
+                <text x="140" y="92" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Basta um pano úmido com detergente neutro</text>
+                <text x="140" y="168" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Não impregna cheiro e fica acima da bancada</text>
               </svg>
               <p>Material lavável que fica protegido acima da bancada e limpa em poucos minutos sem desmontar.</p>
             </div>

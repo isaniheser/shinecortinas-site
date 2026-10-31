@@ -63,7 +63,7 @@ ${b.items.map((i) => `        <div class="sl-card"><div class="sl-media"><img sr
   table: (b) => `
     <section class="sl-section sl-reveal"><div class="sl-wrap">
       <div class="sl-center" style="margin-bottom:26px"><h2 class="sl-h2">${b.h2}</h2>${b.sub ? `<p class="sl-sub">${b.sub}</p>` : ''}</div>
-      <div class="sl-tablewrap" style="max-width:860px;margin:0 auto"><table>
+      <div class="sl-tablewrap" tabindex="0" role="region" aria-label="Tabela comparativa (role para o lado)" style="max-width:860px;margin:0 auto"><table>
         <thead><tr>${b.head.map((h) => `<th>${h}</th>`).join('')}</tr></thead>
         <tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
       </table></div>

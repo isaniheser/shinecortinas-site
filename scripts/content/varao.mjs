@@ -91,7 +91,7 @@ export default {
                 <rect x="112" y="51" width="9" height="22" rx="3" fill="none" stroke="#16302a" stroke-width="2.2"/>
                 <circle cx="140" cy="62" r="9" fill="#8c3b2b"/>
                 <path d="M136 58L144 66M144 58L136 66" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                <text x="140" y="186" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#75562b" text-anchor="middle">Argola ou ilhós trava no suporte central</text>
+                <text x="140" y="186" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#75562b" text-anchor="middle">Argola ou ilhós trava no suporte central</text>
               </svg>
               <p>O anel envolve o tubo por fora. Onde entra o suporte do meio, a cortina bate e não passa.</p>
             </div>
@@ -112,7 +112,7 @@ export default {
                 <path d="M52 73Q64 80 76 73Q88 80 100 73Q112 80 124 73Q136 80 148 73Q160 80 172 73Q184 80 196 73Q208 80 220 73V164Q208 168 196 164Q184 168 172 164Q160 168 148 164Q136 168 124 164Q112 168 100 164Q88 168 76 164Q64 168 52 164Z" fill="url(#vr-curt2)" stroke="#8c7b65" stroke-width="1.5"/>
                 <path d="M76 75V163M100 75V163M124 75V163M148 75V163M172 75V163M196 75V163" stroke="#b5a489" stroke-width="1.2"/>
                 <path d="M90 116H190" stroke="#16302a" stroke-width="2" stroke-linecap="round" marker-end="url(#vr-arr)"/>
-                <text x="140" y="186" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">Flutua livre por baixo do suporte central</text>
+                <text x="140" y="186" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">Flutua livre por baixo do suporte central</text>
               </svg>
               <p>O suporte segura o tubo por cima e os deslizantes correm no trilho embutido embaixo do tubo.</p>
             </div>
@@ -139,7 +139,7 @@ export default {
               <rect x="16" y="14" width="328" height="222" rx="8" fill="#fbfaf7" stroke="#ddd6c8"/>
               <rect x="44" y="28" width="18" height="194" fill="#d9d3c4" stroke="#8c7b65" stroke-width="1.5"/>
               <rect x="56" y="96" width="10" height="96" fill="#cfe0dc" stroke="#647368" stroke-width="1.5"/>
-              <text x="36" y="130" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#45584e" text-anchor="middle" transform="rotate(-90 36 130)">Parede e janela</text>
+              <text x="36" y="130" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#45584e" text-anchor="middle" transform="rotate(-90 36 130)">Parede e janela</text>
               <rect x="62" y="54" width="8" height="24" rx="2" fill="#16302a"/>
               <line x1="70" y1="66" x2="236" y2="66" stroke="#16302a" stroke-width="4.5" stroke-linecap="round"/>
               <circle cx="136" cy="66" r="13" fill="#647368" stroke="#16302a" stroke-width="2"/>
@@ -149,8 +149,8 @@ export default {
               <path d="M216 81Q206 118 220 154Q230 186 216 214" fill="none" stroke="#8c6d43" stroke-width="2" stroke-linecap="round"/>
               <circle cx="136" cy="38" r="12" fill="#16302a"/><text x="136" y="43" text-anchor="middle" fill="#fff" font-size="13" font-weight="600" font-family="Arial">1</text>
               <circle cx="216" cy="38" r="12" fill="#9b713a"/><text x="216" y="43" text-anchor="middle" fill="#fff" font-size="13" font-weight="600" font-family="Arial">2</text>
-              <text x="286" y="148" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">Lado do</text>
-              <text x="286" y="164" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">ambiente</text>
+              <text x="286" y="148" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">Lado do</text>
+              <text x="286" y="164" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">ambiente</text>
             </svg>
             <div class="sl-ed-legend">
               <p><b><span>1</span> Tubo traseiro (forro ou blackout)</b>Fica mais próximo da parede e da janela para segurar a claridade e proteger o tecido da frente.</p>

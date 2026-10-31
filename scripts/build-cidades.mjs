@@ -16,11 +16,11 @@ const SERRA_SLUGS = new Set(['penedo', 'visconde-de-maua', 'maromba', 'itatiaia'
 
 function cityFaqs(d) {
   const base = [...(d.faq || [])];
-  const hasMotor = base.some((f) => /motorizad/i.test(f.q));
+  const hasMotor = base.some((f) => /motoriz/i.test(f.q));
   if (!hasMotor) {
     base.push({
       q: `Vocês instalam cortina motorizada e persiana motorizada em ${d.city}?`,
-      a: `Sim. Projetamos e instalamos cortina motorizada em trilho suíço Wave ou prega e persiana motorizada (rolô, tela solar, romana e blackout) em ${d.city}. O trilho motorizado silencioso conta com a função Touch Motion (abre ou fecha ao dar um leve puxão no tecido) e permite manuseio manual normal se faltar luz. Já na persiana motorizada, trabalhamos com versão elétrica ou a bateria recarregável (duração média de 6 meses por carga, sem quebrar parede), integração com Alexa e Google Home e garantia de até 5 anos.`,
+      a: `Sim. Projetamos e instalamos cortina motorizada em trilho suíço Wave ou prega e persiana motorizada (rolô, tela solar, romana e blackout) em ${d.city}. O trilho motorizado silencioso conta com a função Touch Motion (abre ou fecha ao dar um leve puxão no tecido) e permite manuseio manual normal se faltar luz. Já na persiana motorizada, trabalhamos com versão elétrica ou, para alguns modelos e mediante consulta, a bateria recarregável (duração média de 6 meses por carga, sem quebrar parede), integração com Alexa e Google Home e garantia de até 5 anos.`,
     });
   }
   if (LAUNDRY_SLUGS.has(d.slug) && !base.some((f) => /lavagem|lavar/i.test(f.q))) {
@@ -37,7 +37,7 @@ function cityBlogBridge(d) {
   if (SERRA_SLUGS.has(d.slug)) {
     posts = [
       ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro para cortina: blackout 100%, 70% e térmico', 'Veja como o bolsão de ar entre o tecido e o forro reduz de 5 a 6 °C a troca de calor com o vidro nos quartos da serra.'],
-      ['/blog/como-escurecer-quarto-sala-tv/', 'Como escurecer quarto e sala de TV sem frestas de luz', 'O cálculo de transpasse lateral, altura até o teto e diferença real entre blackout 100% e 70% para dormir no escuro total.'],
+      ['/blog/como-escurecer-quarto-sala-tv/', 'Como escurecer quarto e sala de TV sem frestas de luz', 'O cálculo de transpasse lateral, altura até o teto e diferença real entre blackout 100% e 70% para escurecer o quarto de verdade.'],
       ['/blog/linho-para-cortinas/', 'Linho para cortinas: gramatura acima de 170 g/m² e caimento', 'Por que indicamos tecido peletizado com até 10% de fibra natural para ter textura de linho sem mofar na umidade.'],
     ];
   } else if (LAUNDRY_SLUGS.has(d.slug)) {
@@ -77,7 +77,7 @@ function citySolutions(d) {
         <p class="sl-sub">Do linho com forro blackout 100% à automação residencial compatível com Alexa e Google Home: conheça os sistemas que medimos a laser e instalamos em ${d.city}.</p>
       </div>
       <div class="sl-cards">
-        <div class="sl-card"><div class="sl-media"><img src="/automacao-sq.avif" alt="${esc(`Cortina motorizada sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Automação residencial</span><h3>Cortina e persiana motorizada</h3><p>Trilho motorizado silencioso e persiana rolô motorizada em ${d.city}, com versão a bateria recarregável sem obra ou elétrica e comando por controle, celular e voz. <a href="/cortina-motorizada/">Ver cortina motorizada →</a></p></div></div>
+        <div class="sl-card"><div class="sl-media"><img src="/automacao-sq.avif" alt="${esc(`Cortina motorizada sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Automação residencial</span><h3>Cortina e persiana motorizada</h3><p>Trilho motorizado silencioso e persiana rolô motorizada em ${d.city}, com versão elétrica ou, em alguns modelos e mediante consulta, a bateria recarregável sem obra, e comando por controle, celular e voz. <a href="/cortina-motorizada/">Ver cortina motorizada →</a></p></div></div>
         <div class="sl-card"><div class="sl-media"><img src="/duplo-sq.avif" alt="${esc(`Cortina Wave em linho e voil sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Alfaiataria têxtil</span><h3>Cortina Wave em linho e voil</h3><p>Ondas simétricas em trilho suíço de alumínio, prega americana ou prega macho, confeccionadas ao milímetro para salas e suítes em ${d.city}. <a href="/cortina-wave/">Ver cortina Wave →</a></p></div></div>
         <div class="sl-card"><div class="sl-media"><img src="/tela-solar-sq.avif" alt="${esc(`Persiana rolô tela solar e madeira sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Controle solar</span><h3>Persianas rolô, tela solar e madeira</h3><p>Tela solar 1%, 3% e 5% para varandas gourmet, Double Vision, romana e madeira natural instaladas por equipe própria em ${d.city}. <a href="/persianas/">Ver persianas →</a></p></div></div>
         <div class="sl-card"><div class="sl-media"><img src="/blackout-sq.avif" alt="${esc(`Cortina blackout 100% sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Conforto térmico e escuro real</span><h3>Blackout 100%, 70% e forros</h3><p>Forro blackout acoplado ou em trilho duplo para bloquear luz e calor em quartos, suítes e salas de TV em ${d.city}. <a href="/blackout-e-forros/">Ver blackout e forros →</a></p></div></div>

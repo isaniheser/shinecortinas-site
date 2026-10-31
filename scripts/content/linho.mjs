@@ -62,7 +62,7 @@ export default {
                 <path d="M62 30 L52 82 L68 118 L48 150 L228 148 L212 114 L226 78 L214 30 Z" fill="#e5dccb" stroke="#8c7b65" stroke-width="1.5"/>
                 <path d="M74 62L112 74M148 58L192 72M82 104L134 94M154 118L202 106M92 134L142 140" stroke="#8c5820" stroke-width="1.6" stroke-linecap="round"/>
                 <path d="M140 152V168" stroke="#8c3b2b" stroke-width="2"/>
-                <text x="140" y="186" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#8c3b2b" text-anchor="middle">Fica armado, amarrota fácil e pode encolher</text>
+                <text x="140" y="186" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#8c3b2b" text-anchor="middle">Fica armado, amarrota fácil e pode encolher</text>
               </svg>
               <p>Acima de 10% de linho a fibra arma, cria vincos difíceis de tirar e corre risco de encolher ao lavar.</p>
             </div>
@@ -77,7 +77,7 @@ export default {
                 <line x1="30" y1="170" x2="250" y2="170" stroke="#16302a" stroke-width="2"/>
                 <path d="M56 30Q70 36 84 30Q98 36 112 30Q126 36 140 30Q154 36 168 30Q182 36 196 30Q210 36 224 30V168Q210 172 196 168Q182 172 168 168Q154 172 140 168Q126 172 112 168Q98 172 84 168Q70 172 56 168Z" fill="url(#ln-good)" stroke="#8c7b65" stroke-width="1.5"/>
                 <path d="M84 32V167M112 32V167M140 32V167M168 32V167M196 32V167" stroke="#b5a489" stroke-width="1.3"/>
-                <text x="140" y="186" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Caimento sedoso, não amassa e não encolhe</text>
+                <text x="140" y="186" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Caimento sedoso, não amassa e não encolhe</text>
               </svg>
               <p>O poliéster que imita linho preserva o visual rústico ou natural com caimento macio e zero susto na manutenção.</p>
             </div>
@@ -126,8 +126,8 @@ export default {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 205" role="img" aria-label="Tecido com gramatura abaixo de 170 g/m² perdendo o prumo por falta de peso">
                 <rect x="12" y="12" width="256" height="180" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <path d="M80 34 C68 74 102 112 74 156 L196 156 C172 114 206 74 190 34 Z" fill="#efeae0" stroke="#9c8c72" stroke-width="1.4" stroke-dasharray="3 2"/>
-                <text x="140" y="98" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#75562b" text-anchor="middle">Trama leve: falta peso na descida</text>
-                <text x="140" y="180" font-family="Montserrat, Arial, sans-serif" font-size="11" fill="#45584e" text-anchor="middle">Salvo se for tecido peletizado (escovado e fechado)</text>
+                <text x="140" y="98" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#75562b" text-anchor="middle">Trama leve: falta peso na descida</text>
+                <text x="140" y="180" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" fill="#45584e" text-anchor="middle">Salvo se for tecido peletizado (escovado e fechado)</text>
               </svg>
               <p>Sem peso próprio, o tecido não estica a onda até a barra, a menos que seja um tecido peletizado bem sedoso.</p>
             </div>
@@ -140,7 +140,7 @@ export default {
                 <rect x="12" y="12" width="256" height="180" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <path d="M64 30Q82 38 100 30Q118 38 136 30Q154 38 172 30Q190 38 208 30V162Q190 168 172 162Q154 168 136 162Q118 168 100 162Q82 168 64 162Z" fill="url(#gr-heavy)" stroke="#75562b" stroke-width="2"/>
                 <path d="M100 33V162M136 33V162M172 33V162" stroke="#9b713a" stroke-width="1.6"/>
-                <text x="140" y="182" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">Mais corpo, caimento prumo e resistência ao sol</text>
+                <text x="140" y="182" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">Mais corpo, caimento prumo e resistência ao sol</text>
               </svg>
               <p>Acima de 170 g/m² a cortina ganha peso, fica mais elegante e vestida e resiste muito melhor quando o sol bate.</p>
             </div>

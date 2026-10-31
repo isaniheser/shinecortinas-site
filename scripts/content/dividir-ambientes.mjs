@@ -24,7 +24,7 @@ export default {
   ],
   hero: {
     eyebrow: 'A verdade de quem trabalha com isso desde 2009',
-    h1: 'Persiana para<br>dividir ambientes:',
+    h1: 'Persiana para <br>dividir ambientes:',
     h1em: 'por que eu sou contra.',
     lead: `<p>Muitas vezes o cliente me chama perguntando se dá para instalar uma persiana descendo do teto no meio da sala ou do escritório para dividir um ambiente em dois. Eu prefiro ser 100% sincero logo no primeiro minuto: <strong>eu sou contra utilizar persiana para separar espaços</strong>.</p>
       <p>Se você quer separar um espaço de verdade, o caminho certo é fazer um <strong>drywall</strong>, uma parede de gesso. Persiana foi feita para decorar e controlar a luz nas janelas, bem como a cortina também.</p>`,
@@ -64,9 +64,9 @@ export default {
                 <path d="M134 28 Q154 90 122 152" fill="none" stroke="#8c3b2b" stroke-width="5" stroke-linecap="round"/>
                 <circle cx="122" cy="152" r="5" fill="#8c3b2b"/>
                 <path d="M84 96H126M118 90L126 96L118 102" fill="none" stroke="#8c3b2b" stroke-width="2" stroke-linecap="round"/>
-                <text x="74" y="82" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="600" fill="#8c3b2b" text-anchor="middle">Esbarra na passagem</text>
-                <text x="204" y="98" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="600" fill="#8c3b2b" text-anchor="middle">Não veda som</text>
-                <text x="140" y="182" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#8c3b2b" text-anchor="middle">Eu não indico: fica improvisado e estraga fácil</text>
+                <text x="74" y="82" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" font-weight="600" fill="#8c3b2b" text-anchor="middle">Esbarra na passagem</text>
+                <text x="204" y="98" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" font-weight="600" fill="#8c3b2b" text-anchor="middle">Não veda som</text>
+                <text x="140" y="182" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#8c3b2b" text-anchor="middle">Eu não indico: fica improvisado e estraga fácil</text>
               </svg>
               <p>Persiana e cortina foram feitas para vestir e decorar janelas, não para substituir parede.</p>
             </div>
@@ -81,9 +81,9 @@ export default {
                 <line x1="48" y1="64" x2="94" y2="64" stroke="#9b713a" stroke-width="1.5"/>
                 <line x1="48" y1="82" x2="94" y2="82" stroke="#9b713a" stroke-width="1.5"/>
                 <line x1="48" y1="100" x2="94" y2="100" stroke="#9b713a" stroke-width="1.5"/>
-                <text x="71" y="140" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="600" fill="#9b713a" text-anchor="middle">Persiana na janela</text>
-                <text x="202" y="96" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">Drywall divide o espaço</text>
-                <text x="140" y="182" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Quer separar espaço? Faça um drywall bem feito</text>
+                <text x="71" y="140" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" font-weight="600" fill="#9b713a" text-anchor="middle">Persiana na janela</text>
+                <text x="202" y="96" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">Drywall divide o espaço</text>
+                <text x="140" y="182" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Quer separar espaço? Faça um drywall bem feito</text>
               </svg>
               <p>Para dividir ambientes de verdade, o caminho é o drywall. A persiana entra para decorar a janela.</p>
             </div>

@@ -58,7 +58,7 @@ export default {
                 <circle cx="140" cy="96" r="44" fill="none" stroke="#b5a489" stroke-width="1.4" stroke-dasharray="4 3"/>
                 <path d="M108 82Q128 60 152 86Q174 112 136 124Q104 118 118 92Q144 74 162 102" fill="none" stroke="#8c7b65" stroke-width="3.2" stroke-linecap="round"/>
                 <path d="M116 106L164 78M122 72L156 120" stroke="#8c3b2b" stroke-width="1.6" stroke-dasharray="3 2"/>
-                <text x="140" y="178" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#8c3b2b" text-anchor="middle">Torção desmancha os vincos e o caimento</text>
+                <text x="140" y="178" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#8c3b2b" text-anchor="middle">Torção desmancha os vincos e o caimento</text>
               </svg>
               <p>O tecido bate embolado, cria vincos quebrados, força a costura e perde a memória das ondas.</p>
             </div>
@@ -72,7 +72,7 @@ export default {
                 <line x1="48" y1="34" x2="232" y2="34" stroke="#16302a" stroke-width="4" stroke-linecap="round"/>
                 <path d="M64 38Q78 46 92 38Q106 46 120 38Q134 46 148 38Q162 46 176 38Q190 46 204 38Q212 43 216 38V154Q204 160 190 154Q176 160 162 154Q148 160 134 154Q120 160 106 154Q92 160 78 154Q70 158 64 154Z" fill="url(#lv-curt)" stroke="#8c7b65" stroke-width="1.6"/>
                 <path d="M92 40V154M120 40V154M148 40V154M176 40V154M204 40V154" stroke="#9b713a" stroke-width="1.4"/>
-                <text x="140" y="178" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">Mantém os vincos, as dobras e o DNA do tecido</text>
+                <text x="140" y="178" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">Mantém os vincos, as dobras e o DNA do tecido</text>
               </svg>
               <p>O processo respeita o sentido do fio e preserva o desenho das ondas e o peso da barra.</p>
             </div>

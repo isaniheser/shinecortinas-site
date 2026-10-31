@@ -1,0 +1,16 @@
+{
+  "name": "shinecortinas-esteira",
+  "private": true,
+  "description": "Esteira de qualidade do site (não vai ao ar). Ver tests/README.md.",
+  "type": "module",
+  "scripts": {
+    "estatico": "node estatico.mjs",
+    "geradores": "node geradores.mjs",
+    "navegador": "node navegador.mjs",
+    "ao-vivo": "node ao-vivo.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.0",
+    "playwright": "1.63.0"
+  }
+}

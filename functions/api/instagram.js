@@ -86,12 +86,11 @@ export function sanitizeBrandText(raw = '') {
     .replace(/capa de revista/gi, 'arquitetura residencial')
     .replace(/não é luxo/gi, 'não é supérfluo')
     .replace(/\bluxo\b/gi, 'alto padrão')
-    .replace(/\bluxuos[oa]s?\b/gi, 'sofisticad$1')
+    .replace(/\bluxuos([oa]s?)\b/gi, 'sofisticad$1')
     .replace(/\bpremium\b/gi, 'sob medida')
     .replace(/\bQuietLuxury\b/gi, '')
     .replace(/\bluxury\b/gi, 'alto padrão')
-    .replace(/\btotal\b/gi, 'completo')
-    .replace(/\b16 anos\b/gi, '17 anos')
+    .replace(/\b16 anos\b/gi, `${new Date().getFullYear() - 2009} anos`)
     .replace(/instala(mos)? em um dia/gi, 'instala com hora marcada')
     .replace(/\s+,/g, ',')
     .replace(/,\s*,+/g, ', ')
@@ -253,10 +252,10 @@ export function extractMetadataFromCaption(caption = '') {
   const title = firstSentence.length > 44 ? firstSentence.slice(0, 42).trim() + '…' : firstSentence;
 
   const isPinned =
-    lower.includes('#acervoshine') ||
-    lower.includes('#nosite') ||
-    lower.includes('#acervo') ||
-    lower.includes('#site');
+    hasTag(lower, 'acervoshine') ||
+    hasTag(lower, 'nosite') ||
+    hasTag(lower, 'acervo') ||
+    hasTag(lower, 'site');
 
   return {
     city,
@@ -267,14 +266,19 @@ export function extractMetadataFromCaption(caption = '') {
   };
 }
 
+// Hashtag exata: '#site' não pode casar com '#sitedobem' nem '#acervo' com '#acervoxyz'.
+function hasTag(lower, tag) {
+  return new RegExp(`#${tag}(?![\\p{L}\\p{N}_])`, 'u').test(lower);
+}
+
 export function isApprovedWorkPost(caption = '') {
   const lower = caption.toLowerCase();
   if (
-    lower.includes('#acervoshine') ||
-    lower.includes('#nosite') ||
-    lower.includes('#acervo') ||
-    lower.includes('#site') ||
-    lower.includes('#obrasrealizadas')
+    hasTag(lower, 'acervoshine') ||
+    hasTag(lower, 'nosite') ||
+    hasTag(lower, 'acervo') ||
+    hasTag(lower, 'site') ||
+    hasTag(lower, 'obrasrealizadas')
   ) {
     return true;
   }

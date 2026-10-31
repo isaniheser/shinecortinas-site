@@ -60,6 +60,9 @@
 
   var IS_MOBILE = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  // No iPhone/iPad o wa.me já é link universal (abre o app direto e, sem app, a página web).
+  // whatsapp:// só no Android, onde abre o app sem a página intermediária.
+  var APP_SCHEME = /Android/i.test(navigator.userAgent);
 
   function isWa(a) {
     if (!a) return false;
@@ -85,8 +88,8 @@
       txt = extractTextParam(a.getAttribute('href'));
       if (!txt) txt = message(kind);
     }
-    if (IS_MOBILE) {
-      a.removeAttribute('target');
+    if (IS_MOBILE) a.removeAttribute('target');
+    if (APP_SCHEME) {
       a.setAttribute('href', 'whatsapp://send?phone=' + NUMBER + (txt ? '&text=' + encodeURIComponent(txt) : ''));
     } else {
       a.setAttribute('href', 'https://wa.me/' + NUMBER + (txt ? '?text=' + encodeURIComponent(txt) : ''));
@@ -116,7 +119,7 @@
       origem_link: kind,
       pagina: location.pathname,
       contexto: context(),
-      destino: IS_MOBILE ? 'app_direto' : 'web'
+      destino: APP_SCHEME ? 'app_direto' : (IS_MOBILE ? 'link_universal' : 'web')
     };
     var c = cityName();
     if (c && state.source !== 'ip') dados.cidade = c;
@@ -158,7 +161,33 @@
     if (!isWa(a)) return;
     var kind = applyWaHref(a);
     trackWa(kind);
+    if (!ev.defaultPrevented) fallbackToWeb(a);
   }, true);
+
+  /* whatsapp:// (Android) abre o app direto, mas sem o app instalado o toque não faz nada.
+     Se a página continuar visível e com foco 3 s depois do toque, o app não abriu: vai para wa.me.
+     Diálogo de "abrir app?" (navegador do Instagram/Facebook) tira o foco da janela e cancela. */
+  var fallbackTimer = null;
+  function fallbackToWeb(a) {
+    if (!APP_SCHEME) return;
+    var h = a.getAttribute('href') || '';
+    var m = h.match(/^whatsapp:\/\/send\?phone=(\d+)(?:&text=(.*))?$/);
+    if (!m) return;
+    var web = 'https://wa.me/' + m[1] + (m[2] ? '?text=' + m[2] : '');
+    var left = false;
+    function gone() { left = true; }
+    clearTimeout(fallbackTimer);
+    document.addEventListener('visibilitychange', gone, { once: true });
+    window.addEventListener('pagehide', gone, { once: true });
+    window.addEventListener('blur', gone, { once: true });
+    fallbackTimer = setTimeout(function () {
+      document.removeEventListener('visibilitychange', gone);
+      window.removeEventListener('pagehide', gone);
+      window.removeEventListener('blur', gone);
+      if (!left && !document.hidden && document.hasFocus()) location.href = web;
+    }, 3000);
+  }
+
 
   if (IS_MOBILE) {
     document.querySelectorAll('a').forEach(function (a) {

@@ -157,7 +157,7 @@ export const PAGINAS = [
         ['/blog/persiana-ideal-para-cada-ambiente/', 'Guia por cômodo', 'A persiana ideal para cada ambiente da casa', 'Por que indicamos Champion na varanda, Double Vision e Romana no escritório e 16 mm no banheiro.'],
         ['/blog/persiana-vertical-ou-horizontal/', 'Comparativo', 'Persiana vertical ou horizontal: 50 mm em madeira, bambu e alumínio', 'Quando usar a vertical em portas de correr e quando apostar na horizontal de 50 mm.'],
         ['/blog/cortina-ou-persiana-na-cozinha/', 'Cozinha e área gourmet', 'Cortina ou persiana na cozinha: Tela Solar 5% e limpeza', 'Por que o tecido comum acumula gordura e como a tela solar 5% e o alumínio facilitam o dia a dia.'],
-        ['/blog/como-funciona-persiana-motorizada/', 'Automação', 'Como funciona a persiana motorizada: elétrica e bateria', 'Autonomia média de 6 meses nos motores a bateria e como o freio mecânico atua na falta de luz.'],
+        ['/blog/como-funciona-persiana-motorizada/', 'Automação', 'Como funciona a persiana motorizada: elétrica e bateria', 'Autonomia média de 6 meses nos motores a bateria (alguns modelos, mediante consulta) e como o freio mecânico atua na falta de luz.'],
         ['/blog/persiana-para-dividir-ambientes/', 'Opinião sincera', 'Persiana para dividir ambientes vale a pena?', 'Por que somos contra improvisar persiana como parede divisória e quando cada modelo brilha na janela.'],
         ['/videos/persiana-horizontal-madeira-barra-mansa/', 'Vídeo real', 'Persiana horizontal 50 mm em Barra Mansa', 'Veja em vídeo o acabamento das lâminas de 50 mm com fita decorativa instaladas pela nossa equipe.'],
       ] },
@@ -412,10 +412,10 @@ export const PAGINAS = [
       { t: 'table', h2: 'Qual estrutura escolher para a sua janela', sub: 'Comparativo técnico entre as soluções de fixação e acionamento da Shine.', head: ['Sistema de fixação', 'Medida / Especificação técnica', 'Onde entrega o melhor resultado'], rows: [
         ['Trilho dentro do cortineiro', 'Cortineiro mínimo de 15 x 15 cm', 'Esconde toda a ferragem e o cabeçote, ideal para cortina Wave com forro'],
         ['Trilho suíço direto na laje', 'Perfil de alumínio fixado no teto', 'Ambientes sem rebaixo de gesso que pedem cortina do teto ao chão sem vazar luz'],
-        ['Trilho triplo com transpasse', 'Sobreposição central de 15 cm no blackout', 'Quartos e suítes que exigem vedação total da fresta central entre os panos'],
+        ['Trilho triplo com transpasse', 'Sobreposição central de 15 cm no blackout', 'Quartos e suítes, quando o cliente pede mais escuro na fresta central entre os panos'],
         ['Varão aparente de 19 mm', 'Tubo de 19 mm (suporte central acima de 2 m)', 'Janelas compactas com cortinas leves de voil ou linho sem forro pesado'],
         ['Varão aparente de 28 mm / Tubo Suíço', 'Tubo reforçado de 28 mm', 'Cortinas pesadas, duplas ou vãos largos que precisam de firmeza sem selar'],
-        ['Trilho motorizado com Touch Motion', 'Elétrico ou a bateria (garantia até 5 anos)', 'Pés-direitos duplos, grandes vãos de sala e automação residencial'],
+        ['Trilho motorizado com Touch Motion', 'Elétrico ou, em alguns modelos e mediante consulta, a bateria (garantia até 5 anos)', 'Pés-direitos duplos, grandes vãos de sala e automação residencial'],
       ] },
       { t: 'guides', kicker: 'Guias técnicos de instalação', h2: 'Leia os artigos do Isani sobre <em>trilhos, varões e medidas</em>', sub: 'Veja na prática como planejar o cortineiro e escolher a ferragem certa.', items: [
         ['/blog/varao-para-cortina/', 'Varão ou trilho', 'Varão para cortina: medidas de 19 mm e 28 mm e suporte central', 'Quando usar varão aparente, tubo suíço deslizante ou trilho fixado direto no teto.'],
@@ -614,7 +614,7 @@ export const PAGINAS = [
     faq: [
       ['Como funciona o serviço de lavagem de cortinas da Shine?', 'A equipe própria da Shine vai até a sua casa, retira as cortinas de tecido, leva para a nossa lavanderia especializada, faz a lavagem e a secagem na vertical mantendo os vincos e as dobras, passa, revisa deslizantes, costuras, trilhos e bainha, e entrega a cortina reinstalada no lugar.'],
       ['Por que vocês utilizam lavagem e secagem vertical?', 'Porque se você lavar e secar uma cortina sob medida de outra forma, batendo embolada em tambor, o tecido perde o DNA dele e perde o caimento. Na lavagem e secagem vertical nós preservamos os vincos e as ondas originais da cortina sem danificar a fibra.'],
-      ['Vocês dão garantia de ajuste se a cortina encolher?', 'Sim. Tem tecido que encolhe na lavagem. Por termos ateliê próprio de costura, se a sua cortina precisar de ajuste de bainha após a lavagem, nós fazemos esse ajuste com garantia total, o que nenhuma lavanderia comum faz.'],
+      ['Vocês dão garantia de ajuste se a cortina encolher?', 'Sim. Tem tecido que encolhe na lavagem. Por termos ateliê próprio de costura, se a sua cortina precisar de ajuste de bainha após a lavagem, nós fazemos esse ajuste com garantia da Shine, o que nenhuma lavanderia comum faz.'],
       ['O que vocês revisam na cortina e no trilho?', 'Durante o serviço analisamos se tem algum deslizante solto e recolocamos, ajustamos se tiver alguma costura solta, conferimos e reforçamos os trilhos na sua casa se precisar e fazemos ajuste de bainha quando necessário.'],
       ['Vocês lavam persiana Rolô, Romana ou Double Vision?', 'Não. Nosso serviço de lavanderia atende exclusivamente cortinas de tecido (de pano). Não mexemos com lavagem de persiana Romana, Rolô, Double Vision, Vertical ou Horizontal.'],
       ['Em quais cidades vocês atendem a lavagem de cortinas?', 'No momento atendemos o serviço de lavagem de cortinas em 6 cidades do Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral.'],

@@ -24,7 +24,7 @@ export default {
   ],
   hero: {
     eyebrow: 'O olhar de quem instala',
-    h1: 'Como escurecer o quarto<br>e a sala de TV:',
+    h1: 'Como escurecer o quarto <br>e a sala de TV:',
     h1em: 'o tecido, a cor e a instalação.',
     lead: `<p>Quando um cliente me chama para escurecer um ambiente, a primeira coisa que eu pergunto é como ele usa aquele espaço. Dormir durante o dia no quarto pede um resultado. Tirar o reflexo da televisão na sala pede outro.</p>
       <p>Na sala de TV, eu prefiro trabalhar com <strong>cortina de tecido</strong>, porque ela deixa o ambiente mais clássico e veda melhor nas bordas. Já no quarto de quem precisa de escuro total, o <strong>blackout 100%</strong> tem que trabalhar junto com a instalação, desde o trilho lá em cima até a barra beijando o chão.</p>`,
@@ -73,22 +73,22 @@ export default {
                   <marker id="esc-arr-in1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#a67b30"/></marker>
                 </defs>
                 <rect x="12" y="14" width="256" height="82" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
-                <text x="24" y="32" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e">Branco / Off-white (100%)</text>
+                <text x="24" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e">Branco / Off-white (100%)</text>
                 <circle cx="36" cy="60" r="10" fill="#ead9ad" stroke="#a67b30" stroke-width="1.8"/>
                 <path d="M54 50H112M54 60H112M54 70H112" stroke="#a67b30" stroke-width="2" stroke-linecap="round" marker-end="url(#esc-arr-in1)"/>
                 <path d="M122 38Q129 42 136 38V86Q129 90 122 86Z" fill="#f5f2ea" stroke="#8c7b65" stroke-width="1.5"/>
                 <path d="M140 38V86" stroke="#16302a" stroke-width="3.5" stroke-linecap="round"/>
                 <rect x="152" y="40" width="102" height="44" rx="5" fill="#e6e9e2"/>
-                <text x="203" y="66" font-family="Montserrat, Arial, sans-serif" font-size="12" font-weight="600" fill="#16302a" text-anchor="middle">Veda 100%</text>
+                <text x="203" y="66" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" font-weight="600" fill="#16302a" text-anchor="middle">Veda 100%</text>
 
                 <rect x="12" y="106" width="256" height="82" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
-                <text x="24" y="124" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e">Areia / Bege / Escuro (100%)</text>
+                <text x="24" y="124" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e">Areia / Bege / Escuro (100%)</text>
                 <circle cx="36" cy="152" r="10" fill="#ead9ad" stroke="#a67b30" stroke-width="1.8"/>
                 <path d="M54 142H112M54 152H112M54 162H112" stroke="#a67b30" stroke-width="2" stroke-linecap="round" marker-end="url(#esc-arr-in1)"/>
                 <path d="M122 130Q129 134 136 130V178Q129 182 122 178Z" fill="#b8a78e" stroke="#6e5f4b" stroke-width="1.5"/>
                 <path d="M140 130V178" stroke="#16302a" stroke-width="3.5" stroke-linecap="round"/>
                 <rect x="152" y="132" width="102" height="44" rx="5" fill="#e6e9e2"/>
-                <text x="203" y="158" font-family="Montserrat, Arial, sans-serif" font-size="12" font-weight="600" fill="#16302a" text-anchor="middle">Veda 100%</text>
+                <text x="203" y="158" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" font-weight="600" fill="#16302a" text-anchor="middle">Veda 100%</text>
               </svg>
               <p><strong>A cor não altera o bloqueio.</strong> Branco, off-white, areia ou bege vedam a luz na trama exatamente da mesma forma.</p>
             </div>
@@ -100,7 +100,7 @@ export default {
                   <marker id="esc-arr-out2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#b38d45"/></marker>
                 </defs>
                 <rect x="12" y="14" width="256" height="82" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
-                <text x="24" y="32" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e">Tom mais claro (70%)</text>
+                <text x="24" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e">Tom mais claro (70%)</text>
                 <circle cx="36" cy="60" r="10" fill="#ead9ad" stroke="#a67b30" stroke-width="1.8"/>
                 <path d="M54 50H112M54 60H112M54 70H112" stroke="#a67b30" stroke-width="2" stroke-linecap="round" marker-end="url(#esc-arr-in2)"/>
                 <path d="M122 38Q129 42 136 38V86Q129 90 122 86Z" fill="#f2ece1" stroke="#8c7b65" stroke-width="1.5"/>
@@ -108,7 +108,7 @@ export default {
                 <path d="M154 52H228M154 62H228M154 72H228" stroke="#b38d45" stroke-width="2.2" stroke-linecap="round" opacity="0.85" marker-end="url(#esc-arr-out2)"/>
 
                 <rect x="12" y="106" width="256" height="82" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
-                <text x="24" y="124" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e">Tom mais escuro (70%)</text>
+                <text x="24" y="124" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e">Tom mais escuro (70%)</text>
                 <circle cx="36" cy="152" r="10" fill="#ead9ad" stroke="#a67b30" stroke-width="1.8"/>
                 <path d="M54 142H112M54 152H112M54 162H112" stroke="#a67b30" stroke-width="2" stroke-linecap="round" marker-end="url(#esc-arr-in2)"/>
                 <path d="M122 130Q129 134 136 130V178Q129 182 122 178Z" fill="#8d806e" stroke="#5e5243" stroke-width="1.5"/>
@@ -148,8 +148,8 @@ export default {
                 <rect x="204" y="46" width="10" height="124" fill="#f2c14e" opacity="0.9"/>
                 <rect x="66" y="164" width="148" height="7" fill="#f2c14e" opacity="0.9"/>
                 <line x1="28" y1="196" x2="252" y2="196" stroke="#16302a" stroke-width="2"/>
-                <text x="140" y="108" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Trama veda 100%</text>
-                <text x="140" y="186" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#8c5820" text-anchor="middle">Claridade vaza nas frestas laterais</text>
+                <text x="140" y="108" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Trama veda 100%</text>
+                <text x="140" y="186" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#8c5820" text-anchor="middle">Claridade vaza nas frestas laterais</text>
               </svg>
               <p>A luz não passa pela trama da rolô, mas contorna o tecido pelas frestas laterais da janela.</p>
             </div>

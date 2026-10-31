@@ -24,7 +24,7 @@ export default {
   ],
   hero: {
     eyebrow: 'O olhar de quem instala',
-    h1: 'Persiana vertical<br>ou horizontal:',
+    h1: 'Persiana vertical <br>ou horizontal:',
     h1em: 'quando indicar cada modelo.',
     lead: `<p>Quando o cliente me pergunta se deve colocar <a href="/persianas/">persiana vertical ou horizontal</a>, a resposta começa pelo formato do vão e pelo estilo do ambiente. A <strong>persiana vertical</strong> eu indico para <strong>porta de correr e vãos mais largos</strong>, porque ela recolhe para a lateral junto com a passagem.</p>
       <p>Já para projetos sofisticados em salas e escritórios, eu gosto de indicar a <strong>persiana horizontal de 50 mm</strong>, tanto a de <strong>madeira</strong> quanto a de <strong>alumínio</strong>. Essa medida de lâmina traz mais imponência, mais presença e mais elegância para a janela.</p>`,
@@ -61,8 +61,8 @@ export default {
                 <rect x="120" y="36" width="16" height="118" fill="#e5dccb" stroke="#8c7b65" stroke-width="1.2"/>
                 <rect x="138" y="36" width="102" height="118" fill="#eef4f0" stroke="#9bafa8" stroke-width="1.2"/>
                 <path d="M156 96H220M164 89L156 96L164 103" fill="none" stroke="#16302a" stroke-width="2" stroke-linecap="round"/>
-                <text x="188" y="82" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="600" fill="#16302a" text-anchor="middle">Passagem livre</text>
-                <text x="140" y="178" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Acompanha a abertura lateral da porta</text>
+                <text x="188" y="82" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" font-weight="600" fill="#16302a" text-anchor="middle">Passagem livre</text>
+                <text x="140" y="178" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Acompanha a abertura lateral da porta</text>
               </svg>
               <p>Ideal para portas de correr e vãos mais largos, porque abre para o lado liberando a passagem.</p>
             </div>
@@ -78,7 +78,7 @@ export default {
                 <rect x="48" y="130" width="184" height="16" rx="2" fill="#b88b58" stroke="#75562b" stroke-width="1.2"/>
                 <rect x="78" y="36" width="6" height="114" fill="#16302a" opacity="0.8"/>
                 <rect x="196" y="36" width="6" height="114" fill="#16302a" opacity="0.8"/>
-                <text x="140" y="178" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Lâmina de 50 mm veste a janela com imponência</text>
+                <text x="140" y="178" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Lâmina de 50 mm veste a janela com imponência</text>
               </svg>
               <p>A lâmina de 50 mm (em madeira ou alumínio) traz presença, requinte e força decorativa.</p>
             </div>
@@ -106,8 +106,8 @@ export default {
                 <rect x="46" y="42" width="188" height="24" rx="3" fill="#c49a68" stroke="#75562b" stroke-width="1.5"/>
                 <rect x="46" y="76" width="188" height="24" rx="3" fill="#b88b58" stroke="#75562b" stroke-width="1.5"/>
                 <rect x="46" y="110" width="188" height="24" rx="3" fill="#c49a68" stroke="#75562b" stroke-width="1.5"/>
-                <text x="140" y="58" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Lâmina larga de 50 mm (5 cm)</text>
-                <text x="140" y="158" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Madeira ou Alumínio: destaque na decoração</text>
+                <text x="140" y="58" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Lâmina larga de 50 mm (5 cm)</text>
+                <text x="140" y="158" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Madeira ou Alumínio: destaque na decoração</text>
               </svg>
               <p>Proporção imponente que valoriza janelas de salas, quartos e escritórios.</p>
             </div>
@@ -124,7 +124,7 @@ export default {
                   <rect x="56" y="108" width="168" height="8" rx="1.5"/>
                   <rect x="56" y="122" width="168" height="8" rx="1.5"/>
                 </g>
-                <text x="140" y="158" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Lâmina fina de 16 mm: discreta e resistente à água</text>
+                <text x="140" y="158" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Lâmina fina de 16 mm: discreta e resistente à água</text>
               </svg>
               <p>Ideal para banheiros e vãos menores que pedem controle de privacidade resistente ao vapor.</p>
             </div>

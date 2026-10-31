@@ -1003,6 +1003,7 @@ body.is-mobile-sim #site-viewport {
   border: 1px solid rgba(255, 255, 255, 0.16);
 }
 .d-ig-heart {
+  flex-shrink: 0;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -2362,3 +2363,23 @@ body.is-mobile-sim .d-ig-tab {
   position: relative;
 }
 body.is-mobile-sim .d-ig-tab.is-highlight { color: var(--gold-mid); }
+
+/* Título do cartão do acervo como botão: o cartão abre pelo teclado (Enter/Espaço) sem mudar o visual. */
+button.d-ig-open {
+  border: 0;
+  margin: 0;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+button.d-ig-open:focus-visible {
+  outline: 3px solid #DDBB6E;
+  outline-offset: -3px;
+}
+.d-case-sheet-popup:focus:not(:focus-visible),
+.d-video-player:focus:not(:focus-visible) {
+  outline: none;
+}

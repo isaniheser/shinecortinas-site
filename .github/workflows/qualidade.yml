@@ -1,0 +1,58 @@
+# Esteira de qualidade do site: roda em todo pull request e em cada push na main.
+# Camada 1 (estático + geradores) e camada 2 (navegador) — ver tests/README.md.
+name: Qualidade do site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: qualidade-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  estatico:
+    name: "1 · SEO, schema, conteúdo e _redirects"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - name: Verificações estáticas
+        env:
+          BASE_REF: origin/${{ github.base_ref || 'main' }}
+        run: node tests/estatico.mjs
+      - name: Páginas geradas batem com os geradores
+        if: always()
+        env:
+          CI: 'true'
+        run: node tests/geradores.mjs
+
+  navegador:
+    name: "2 · Navegador no celular (JS, acessibilidade, velocidade)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: tests/package-lock.json
+      - name: Instalar Playwright e axe
+        working-directory: tests
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Testes no navegador
+        working-directory: tests
+        run: node navegador.mjs

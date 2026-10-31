@@ -24,7 +24,7 @@ export default {
   ],
   hero: {
     eyebrow: 'O olhar de quem instala',
-    h1: 'Persiana ideal para<br>cada ambiente:',
+    h1: 'Persiana ideal para <br>cada ambiente:',
     h1em: 'varanda, escritório, quarto e banheiro.',
     lead: `<p>Escolher <a href="/persianas/">persiana sob medida</a> fica muito mais simples quando a gente olha o que cada cômodo da casa exige de controle de sol, privacidade e resistência à umidade.</p>
       <p>Na minha prática atendendo casas e apartamentos em todo o Sul Fluminense, eu tenho as minhas campeãs para cada espaço: para <strong>varanda e sacada</strong>, a campeã é a <strong>Tela Solar</strong>. Para <strong>escritório e home office</strong>, indico a <strong>Double Vision e a Romana</strong>. Para o <strong>quarto</strong>, a <strong>Romana e a Rolô</strong>. E para o <strong>banheiro</strong>, a <strong>Rolô ou a Horizontal de 16 mm</strong>.</p>`,
@@ -54,7 +54,7 @@ export default {
                 <rect x="28" y="20" width="104" height="10" rx="3" fill="#16302a"/>
                 <rect x="32" y="30" width="96" height="58" fill="#dfd5c0" opacity="0.8" stroke="#9b713a" stroke-width="1.5"/>
                 <circle cx="108" cy="48" r="9" fill="#d9a441" opacity="0.65"/>
-                <text x="80" y="103" font-family="Montserrat, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Corta o sol e mantém a vista</text>
+                <text x="80" y="103" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Corta o sol e mantém a vista</text>
               </svg>
               <p class="sl-ed-card-value">Rolô Tela Solar</p>
             </div>
@@ -68,7 +68,7 @@ export default {
                 <rect x="32" y="52" width="96" height="12" fill="#c8bca6"/>
                 <rect x="32" y="64" width="96" height="10" fill="#f3EFE6"/>
                 <rect x="32" y="74" width="96" height="12" fill="#c8bca6"/>
-                <text x="80" y="103" font-family="Montserrat, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Luz controlada sem reflexo</text>
+                <text x="80" y="103" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Luz controlada sem reflexo</text>
               </svg>
               <p class="sl-ed-card-value">Double Vision e Romana</p>
             </div>
@@ -79,7 +79,7 @@ export default {
                 <rect x="32" y="22" width="96" height="64" rx="2" fill="#284b40" stroke="#16302a" stroke-width="1.5"/>
                 <line x1="32" y1="42" x2="128" y2="42" stroke="#fbfaf7" stroke-width="1.2" opacity="0.55"/>
                 <line x1="32" y1="62" x2="128" y2="62" stroke="#fbfaf7" stroke-width="1.2" opacity="0.55"/>
-                <text x="80" y="103" font-family="Montserrat, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Gomos clássicos ou Rolô</text>
+                <text x="80" y="103" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Gomos clássicos ou Rolô</text>
               </svg>
               <p class="sl-ed-card-value">Romana e Rolô</p>
             </div>
@@ -94,7 +94,7 @@ export default {
                   <rect x="34" y="62" width="92" height="7" rx="1"/>
                   <rect x="34" y="74" width="92" height="7" rx="1"/>
                 </g>
-                <text x="80" y="103" font-family="Montserrat, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Resiste ao vapor e à água</text>
+                <text x="80" y="103" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Resiste ao vapor e à água</text>
               </svg>
               <p class="sl-ed-card-value">Rolô ou Horizontal 16 mm</p>
             </div>
