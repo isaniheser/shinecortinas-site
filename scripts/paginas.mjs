@@ -415,7 +415,7 @@ export const PAGINAS = [
         ['Trilho triplo com transpasse', 'Sobreposição central de 15 cm no blackout', 'Quartos e suítes, quando o cliente pede mais escuro na fresta central entre os panos'],
         ['Varão aparente de 19 mm', 'Tubo de 19 mm (suporte central acima de 2 m)', 'Janelas compactas com cortinas leves de voil ou linho sem forro pesado'],
         ['Varão aparente de 28 mm / Tubo Suíço', 'Tubo reforçado de 28 mm', 'Cortinas pesadas, duplas ou vãos largos que precisam de firmeza sem selar'],
-        ['Trilho motorizado com Touch Motion', 'Elétrico ou a bateria (garantia até 5 anos)', 'Pés-direitos duplos, grandes vãos de sala e automação residencial'],
+        ['Trilho motorizado com Touch Motion', 'Elétrico ou, em alguns modelos e mediante consulta, a bateria (garantia até 5 anos)', 'Pés-direitos duplos, grandes vãos de sala e automação residencial'],
       ] },
       { t: 'guides', kicker: 'Guias técnicos de instalação', h2: 'Leia os artigos do Isani sobre <em>trilhos, varões e medidas</em>', sub: 'Veja na prática como planejar o cortineiro e escolher a ferragem certa.', items: [
         ['/blog/varao-para-cortina/', 'Varão ou trilho', 'Varão para cortina: medidas de 19 mm e 28 mm e suporte central', 'Quando usar varão aparente, tubo suíço deslizante ou trilho fixado direto no teto.'],

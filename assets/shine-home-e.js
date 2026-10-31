@@ -142,8 +142,8 @@ const blogArticles = {
   }
 };
 
-const IS_MOBILE_WA = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+// whatsapp:// só no Android; no iPhone/iPad o wa.me é link universal e abre o app direto.
+const IS_MOBILE_WA = /Android/i.test(navigator.userAgent);
 
 function setWaBtnHref(el, text) {
   if (!el) return;
@@ -928,7 +928,13 @@ window.addEventListener('popstate', function () {
     clearTimeout(closeTimer);
     closeTimer = setTimeout(function () {
       const still = modals.find(isOpen);
-      if (still) return;
+      if (still) {
+        still.removeAttribute('inert');
+        const p = still.querySelector('.d-case-sheet-popup, .d-video-player') || still;
+        if (!p.hasAttribute('tabindex')) p.setAttribute('tabindex', '-1');
+        p.focus({ preventScroll: true });
+        return;
+      }
       modals.forEach((o) => o.removeAttribute('inert'));
       setBackgroundInert(false);
       if (opener && document.contains(opener) && typeof opener.focus === 'function') opener.focus({ preventScroll: true });

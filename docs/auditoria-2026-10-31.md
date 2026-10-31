@@ -27,15 +27,15 @@ Correções autorizadas pelo Isani na mesma conversa ("Sim pode corrigir").
 | Dourado `#C6A868` como texto em fundo claro (2,2:1); notas/rótulos 3,2:1 | `--gold-ink` nos rótulos; `--muted` em `.sl-note`/`.sl-label`; `--muted` #646962 | `assets/shine-leve.css` |
 | Páginas internas com Montserrat + Cinzel (fora da identidade; Cinzel nem era usado) | Plus Jakarta Sans no corpo; Playfair mantida nos títulos | `scripts/partials.mjs` (FONTS), `shine-leve.css`, HTML |
 | Gavetas da Home sem foco; cartões do acervo só com mouse; `role=tablist` errado; "voltar" vazio | foco entra e volta, fundo `inert`, cartão com `<button>`, `role=group`, X/Esc desfazem o histórico | `assets/shine-home-e.js`, `.css`, `scripts/build-home.mjs` |
-| `whatsapp://` sem plano B (iPad/sem app: toque morto) | se a página segue visível 2 s após o toque, abre `wa.me` | `assets/shine-wa.js` |
+| `whatsapp://` sem plano B (iPad/sem app: toque morto) | iPhone/iPad usam `wa.me` (link universal abre o app); Android mantém `whatsapp://` e cai em `wa.me` se a página seguir visível e com foco 3 s após o toque | `assets/shine-wa.js`, `shine-home-e.js` |
 | Home: LCP 3,6 s (celular DPR 3 baixava `duplo.avif` de 1696 px, 223 KB) | `duplo-1100.avif` (82 KB) no `srcset` e no preload | `scripts/build-home.mjs` |
 | LP com CLS 0,177 pela troca de fonte | `display=optional` | `lp/anuncio-d/index.html` |
 | Sem CSP | CSP estrutural (frame-ancestors, base-uri, object-src, form-action, upgrade) sem restringir scripts, para não afetar a medição injetada pelo Cloudflare | `_headers` |
 | Itatiaia: mesma resposta em 3 perguntas do FAQ (inclusive a de investimento) | resposta própria para investimento; pergunta duplicada trocada por garantia | `cidades/cidades.json` |
 | "5 a 6 °C" atribuído à Wave/tecido >170 g/m² sem forro blackout | número amarrado ao forro blackout de tecido, como relato medido pelo Isani | `cidades.json` (Porto Real, Miguel Pereira, Volta Redonda, Vassouras, Resende, Piraí) |
-| Motor a bateria sem "alguns modelos, mediante consulta" | ressalva no FAQ e no cartão gerados | `scripts/build-cidades.mjs` |
+| Motor a bateria sem "alguns modelos, mediante consulta" | ressalva no FAQ e no cartão gerados e na tabela de trilhos | `scripts/build-cidades.mjs`, `scripts/paginas.mjs` |
 | "Melhor loja" e motorização com o mesmo texto nas cidades (também no FAQPage) | resposta própria por cidade | `cidades/cidades.json` |
-| Depoimentos de Valença e Vassouras com texto do Google alterado (marcados como Review) | transcrição literal | `cidades/cidades.json` |
+| Depoimentos de Valença, Vassouras, Piraí, Porto Real e Resende com texto do Google alterado (em Piraí o trecho cortado era a crítica) | transcrição literal | `cidades/cidades.json` |
 | "visita à domicílio" (9 cidades), "garantia total", "escuro total", "vedação total da fresta" | corrigidos | `cidades.json`, `build-cidades.mjs`, `paginas.mjs`, HTML |
 | Ponto e vírgula visível; H1 do blog lido como "alturaideal" | corrigidos | `blog/posts.json`, `scripts/content/*`, HTML do blog |
 | 404 de endereços antigos (`/cortina-voil`, `/persiana-rolo`, 2 variações de artigo, `/blog/tags/*`) | 301 | `_redirects` |
