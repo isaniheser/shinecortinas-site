@@ -24,7 +24,7 @@ export default {
   ],
   hero: {
     eyebrow: 'O olhar de quem instala',
-    h1: 'Quantidade de tecido<br>para cortina Wave:',
+    h1: 'Quantidade de tecido <br>para cortina Wave:',
     h1em: 'proporções, forro e cortineiro.',
     lead: `<p>O que deixa a <a href="/cortina-wave/">cortina Wave</a> com aquelas ondas bonitas e alinhadas do teto ao chão não é apenas o trilho. É a combinação entre a proporção de tecido, a medida do cordão espaçador e o espaço disponível dentro do cortineiro.</p>
       <p>Aqui na Shine a cortina Wave é confeccionada nas proporções <strong>2:1, 2,5:1 e 3:1</strong>, usando cordão espaçador de <strong>0,4, 0,5 e 0,8</strong> com uma técnica que aproxima as ondas. E para tudo isso trabalhar com folga, eu peço um cortineiro de no mínimo <strong>15 por 15 centímetros</strong>.</p>`,
@@ -77,7 +77,7 @@ export default {
                 <line x1="26" y1="68" x2="194" y2="68" stroke="#16302a" stroke-width="2" stroke-dasharray="3 3"/>
                 <path d="M26 68 Q47 46 68 68 T110 68 T152 68 T194 68" fill="none" stroke="#9b713a" stroke-width="4" stroke-linecap="round"/>
                 <circle cx="47" cy="57" r="3" fill="#16302a"/><circle cx="89" cy="79" r="3" fill="#16302a"/><circle cx="131" cy="57" r="3" fill="#16302a"/><circle cx="173" cy="79" r="3" fill="#16302a"/>
-                <text x="110" y="122" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">2 m de pano por 1 m</text>
+                <text x="110" y="122" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">2 m de pano por 1 m</text>
               </svg>
               <p class="sl-ed-card-value">Onda mais leve e enxuta</p>
             </div>
@@ -88,7 +88,7 @@ export default {
                 <line x1="26" y1="68" x2="194" y2="68" stroke="#16302a" stroke-width="2" stroke-dasharray="3 3"/>
                 <path d="M26 68 Q43 36 60 68 T94 68 T128 68 T162 68 T194 68" fill="none" stroke="#9b713a" stroke-width="4.2" stroke-linecap="round"/>
                 <circle cx="43" cy="52" r="3" fill="#16302a"/><circle cx="77" cy="84" r="3" fill="#16302a"/><circle cx="111" cy="52" r="3" fill="#16302a"/><circle cx="145" cy="84" r="3" fill="#16302a"/><circle cx="178" cy="52" r="3" fill="#16302a"/>
-                <text x="110" y="122" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">2,5 m de pano por 1 m</text>
+                <text x="110" y="122" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">2,5 m de pano por 1 m</text>
               </svg>
               <p class="sl-ed-card-value">Curva marcante e clássica</p>
             </div>
@@ -98,7 +98,7 @@ export default {
                 <rect x="10" y="12" width="200" height="140" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <line x1="26" y1="68" x2="194" y2="68" stroke="#16302a" stroke-width="2" stroke-dasharray="3 3"/>
                 <path d="M26 68 Q38 28 50 68 T74 68 T98 68 T122 68 T146 68 T170 68 T194 68" fill="none" stroke="#16302a" stroke-width="4.2" stroke-linecap="round"/>
-                <text x="110" y="122" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">3 m de pano (cordão 0,4 · 0,5 · 0,8)</text>
+                <text x="110" y="122" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#16302a" text-anchor="middle">3 m de pano (cordão 0,4 · 0,5 · 0,8)</text>
               </svg>
               <p class="sl-ed-card-value">Ondas próximas e profundas</p>
             </div>
@@ -142,13 +142,13 @@ export default {
                 <path d="M48 28H176V96H236" fill="none" stroke="#16302a" stroke-width="3.5"/>
                 <line x1="48" y1="28" x2="48" y2="176" stroke="#16302a" stroke-width="3.5"/>
                 <path d="M52 42H172" stroke="#9b713a" stroke-width="1.5"/>
-                <text x="112" y="39" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#9b713a" text-anchor="middle">15 cm de profundidade</text>
+                <text x="112" y="39" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#9b713a" text-anchor="middle">15 cm de profundidade</text>
                 <path d="M188 30V94" stroke="#9b713a" stroke-width="1.5"/>
-                <text x="224" y="66" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#9b713a" text-anchor="middle">15 cm altura</text>
+                <text x="224" y="66" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#9b713a" text-anchor="middle">15 cm altura</text>
                 <line x1="74" y1="48" x2="74" y2="170" stroke="#647368" stroke-width="5" stroke-linecap="round"/>
                 <path d="M126 48Q148 80 118 112Q92 142 128 170" fill="none" stroke="#9b713a" stroke-width="6" stroke-linecap="round"/>
-                <text x="74" y="184" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#45584e" text-anchor="middle">Forro Slim/Prega</text>
-                <text x="148" y="184" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">Cortina Wave</text>
+                <text x="74" y="184" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#45584e" text-anchor="middle">Forro Slim/Prega</text>
+                <text x="148" y="184" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">Cortina Wave</text>
               </svg>
               <p>Com 15 cm de profundidade e 15 cm de altura, a onda da frente e o forro de trás correm livres.</p>
             </div>
@@ -156,13 +156,13 @@ export default {
               <h3>Quando o forro também é Wave (11 cm entre trilhos)</h3>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 205" role="img" aria-label="Vista superior mostrando 11 cm de distância entre a cortina da frente e o forro em modelo Wave atrás">
                 <rect x="12" y="12" width="256" height="180" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
-                <text x="140" y="30" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e" text-anchor="middle">Vista superior: 2 trilhos em Wave</text>
+                <text x="140" y="30" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#45584e" text-anchor="middle">Vista superior: 2 trilhos em Wave</text>
                 <path d="M36 62 Q62 38 88 62 T140 62 T192 62 T244 62" fill="none" stroke="#647368" stroke-width="4" stroke-linecap="round"/>
                 <path d="M36 132 Q62 108 88 132 T140 132 T192 132 T244 132" fill="none" stroke="#9b713a" stroke-width="4.5" stroke-linecap="round"/>
                 <path d="M140 66V128" stroke="#16302a" stroke-width="2" stroke-dasharray="3 2"/>
                 <rect x="96" y="85" width="88" height="22" rx="4" fill="#16302a"/>
-                <text x="140" y="100" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">11 cm de distância</text>
-                <text x="140" y="172" font-family="Montserrat, Arial, sans-serif" font-size="11" fill="#45584e" text-anchor="middle">Evita que as ondas da frente toquem nas de trás</text>
+                <text x="140" y="100" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">11 cm de distância</text>
+                <text x="140" y="172" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" fill="#45584e" text-anchor="middle">Evita que as ondas da frente toquem nas de trás</text>
               </svg>
               <p>Para o forro também ser Wave, exige-se 11 cm entre um trilho e outro para as ondas não se tocarem.</p>
             </div>

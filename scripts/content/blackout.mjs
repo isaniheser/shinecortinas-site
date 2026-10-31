@@ -31,7 +31,7 @@ export default {
   ],
   hero: {
     eyebrow: 'Uma escolha que muda a luz da casa',
-    h1: 'O que é blackout<br>para cortina?',
+    h1: 'O que é blackout <br>para cortina?',
     h1em: 'Entenda o 70% e o 100%.',
     lead: `<p><strong>Blackout é o material usado na cortina ou no forro para reduzir ou bloquear a passagem da luz.</strong> Nas opções com que trabalho, o <strong>semi blackout 70%</strong> deixa alguma claridade. O <strong>blackout 100%</strong> bloqueia a luz pelo material, mas depende da instalação para escurecer o cômodo.</p>
       <p>Antes de indicar um deles, eu preciso entender como você quer usar o ambiente. Assistir a um filme com aquela sensação de tardezinha é uma coisa, e dormir durante o dia querendo o quarto escuro é outra.</p>`,

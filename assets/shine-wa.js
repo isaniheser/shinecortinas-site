@@ -158,7 +158,27 @@
     if (!isWa(a)) return;
     var kind = applyWaHref(a);
     trackWa(kind);
+    fallbackToWeb(a);
   }, true);
+
+  /* whatsapp:// abre o app direto, mas sem o app instalado (iPad, celular sem WhatsApp) o toque
+     não faz nada. Se a página continuar visível 2 s depois do toque, o app não abriu: vai para wa.me. */
+  function fallbackToWeb(a) {
+    if (!IS_MOBILE) return;
+    var h = a.getAttribute('href') || '';
+    var m = h.match(/^whatsapp:\/\/send\?phone=(\d+)(?:&text=(.*))?$/);
+    if (!m) return;
+    var web = 'https://wa.me/' + m[1] + (m[2] ? '?text=' + m[2] : '');
+    var left = false;
+    function gone() { left = true; }
+    document.addEventListener('visibilitychange', gone, { once: true });
+    window.addEventListener('pagehide', gone, { once: true });
+    setTimeout(function () {
+      document.removeEventListener('visibilitychange', gone);
+      window.removeEventListener('pagehide', gone);
+      if (!left && !document.hidden) location.href = web;
+    }, 2000);
+  }
 
   if (IS_MOBILE) {
     document.querySelectorAll('a').forEach(function (a) {

@@ -412,7 +412,7 @@ export const PAGINAS = [
       { t: 'table', h2: 'Qual estrutura escolher para a sua janela', sub: 'Comparativo técnico entre as soluções de fixação e acionamento da Shine.', head: ['Sistema de fixação', 'Medida / Especificação técnica', 'Onde entrega o melhor resultado'], rows: [
         ['Trilho dentro do cortineiro', 'Cortineiro mínimo de 15 x 15 cm', 'Esconde toda a ferragem e o cabeçote, ideal para cortina Wave com forro'],
         ['Trilho suíço direto na laje', 'Perfil de alumínio fixado no teto', 'Ambientes sem rebaixo de gesso que pedem cortina do teto ao chão sem vazar luz'],
-        ['Trilho triplo com transpasse', 'Sobreposição central de 15 cm no blackout', 'Quartos e suítes que exigem vedação total da fresta central entre os panos'],
+        ['Trilho triplo com transpasse', 'Sobreposição central de 15 cm no blackout', 'Quartos e suítes, quando o cliente pede mais escuro na fresta central entre os panos'],
         ['Varão aparente de 19 mm', 'Tubo de 19 mm (suporte central acima de 2 m)', 'Janelas compactas com cortinas leves de voil ou linho sem forro pesado'],
         ['Varão aparente de 28 mm / Tubo Suíço', 'Tubo reforçado de 28 mm', 'Cortinas pesadas, duplas ou vãos largos que precisam de firmeza sem selar'],
         ['Trilho motorizado com Touch Motion', 'Elétrico ou a bateria (garantia até 5 anos)', 'Pés-direitos duplos, grandes vãos de sala e automação residencial'],
@@ -614,7 +614,7 @@ export const PAGINAS = [
     faq: [
       ['Como funciona o serviço de lavagem de cortinas da Shine?', 'A equipe própria da Shine vai até a sua casa, retira as cortinas de tecido, leva para a nossa lavanderia especializada, faz a lavagem e a secagem na vertical mantendo os vincos e as dobras, passa, revisa deslizantes, costuras, trilhos e bainha, e entrega a cortina reinstalada no lugar.'],
       ['Por que vocês utilizam lavagem e secagem vertical?', 'Porque se você lavar e secar uma cortina sob medida de outra forma, batendo embolada em tambor, o tecido perde o DNA dele e perde o caimento. Na lavagem e secagem vertical nós preservamos os vincos e as ondas originais da cortina sem danificar a fibra.'],
-      ['Vocês dão garantia de ajuste se a cortina encolher?', 'Sim. Tem tecido que encolhe na lavagem. Por termos ateliê próprio de costura, se a sua cortina precisar de ajuste de bainha após a lavagem, nós fazemos esse ajuste com garantia total, o que nenhuma lavanderia comum faz.'],
+      ['Vocês dão garantia de ajuste se a cortina encolher?', 'Sim. Tem tecido que encolhe na lavagem. Por termos ateliê próprio de costura, se a sua cortina precisar de ajuste de bainha após a lavagem, nós fazemos esse ajuste com garantia da Shine, o que nenhuma lavanderia comum faz.'],
       ['O que vocês revisam na cortina e no trilho?', 'Durante o serviço analisamos se tem algum deslizante solto e recolocamos, ajustamos se tiver alguma costura solta, conferimos e reforçamos os trilhos na sua casa se precisar e fazemos ajuste de bainha quando necessário.'],
       ['Vocês lavam persiana Rolô, Romana ou Double Vision?', 'Não. Nosso serviço de lavanderia atende exclusivamente cortinas de tecido (de pano). Não mexemos com lavagem de persiana Romana, Rolô, Double Vision, Vertical ou Horizontal.'],
       ['Em quais cidades vocês atendem a lavagem de cortinas?', 'No momento atendemos o serviço de lavagem de cortinas em 6 cidades do Sul Fluminense: Volta Redonda, Barra Mansa, Resende, Barra do Piraí, Piraí e Pinheiral.'],

@@ -5,7 +5,7 @@
 # Formato: origem destino código (301/302/303/307/308). Nunca '301!' nem 410. Origem com acento
 # percent-encoded; destino com barra final. Depois de publicar, testar no site ao vivo (curl -I).
 
-# --- regras estáticas (sem curinga): 205 ---
+# --- regras estáticas (sem curinga): 220 ---
 /CLAUDE.md / 301
 /.node-version / 301
 /.gitignore / 301
@@ -221,6 +221,11 @@
 /produtos-cidade/persiana-vertical-em-vassouras /cidades/vassouras/ 301
 /produtos-cidade/persiana-vertical-em-volta-redonda /cidades/volta-redonda/ 301
 /cortina-voil-e-blackout /cortinas/ 301
+/cortina-voil /cortinas/ 301
+/persiana-rolo /persianas/ 301
+/blog/qual-a-altura-ideal-da-cortina/ /blog/altura-ideal-da-cortina/ 301
+/blog/7-tipos-de-forro-de-cortina-escolha-o-ideal-para-o-seu-ambiente/ /blog/tipos-de-forro-para-cortina/ 301
+/.agents/rules/isani-estilo-criativo.md / 301
 
 # --- curingas e domínio: SEMPRE por último ---
 https://shinecortinas.com/* https://www.shinecortinas.com/:splat 301
@@ -228,6 +233,9 @@ http://shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 /docs/* / 301
 /scripts/* / 301
+/.agents/* / 301
+/blog/tags/* /blog/ 301
+/blog/hashtags/* /blog/ 301
 /produtos-cidade/* /cidades-atendidas/ 301
 /portfolio-collections/* /portfolio/ 301
 /blog/categories/* /blog/ 301

@@ -22,6 +22,8 @@ import { WA, esc, cleanHead, header, cityChip, footer, waFloat, bar, tail, CSS_V
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://www.shinecortinas.com';
+// WhatsApp e Facebook não exibem AVIF na prévia do link: a imagem social é a versão JPG 1200x630 em /og/.
+const ogJpg = (src) => src.replace(/^\/([a-z0-9-]+)\.avif$/, '/og/$1.jpg');
 const TODAY = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' }); // data do Brasil, não UTC
 
 const POSTS = [
@@ -54,7 +56,7 @@ const POSTS = [
     related: [['/blog/altura-ideal-da-cortina/', 'Altura ideal da cortina'], ['/blog/bainha-de-cortina/', 'Bainha de cortina'], ['/blog/o-que-e-blackout/', 'O que é blackout'], ['/blog/como-escurecer-quarto-sala-tv/', 'Como escurecer o quarto'], ['/blackout-e-forros/', 'Blackout e forros'], ['/persianas/', 'Persianas sob medida'], ['/cidades/volta-redonda/', 'Cortinas em Volta Redonda'], ['/cidades/resende/', 'Cortinas em Resende'], ['/cidades/barra-mansa/', 'Cortinas em Barra Mansa']],
     hero: {
       eyebrow: 'O olhar de quem instala',
-      h1: "Tipos de forro<br>para cortina:", h1em: "qual escolher?",
+      h1: "Tipos de forro <br>para cortina:", h1em: "qual escolher?",
       lead: "<p>O <strong>translúcido</strong> dá privacidade mantendo a claridade. O <strong>semi blackout 70%</strong> deixa aquela penumbra aconchegante. O <strong>blackout 100%</strong> bloqueia a luz pelo material, mas precisa de uma instalação bem resolvida para escurecer o ambiente.</p><p>Quando eu ajudo um cliente a escolher, preciso entender o que ele quer resolver. Nessa conversa entram o caimento, o investimento e a facilidade de limpeza.</p><p>O forro também protege o tecido decorativo, aquele que você escolheu para aparecer na frente da cortina.</p>",
       readTo: "qual-escolher", readText: "Compare os forros por objetivo",
       photo: "/isani-consultoria.avif", photoSrcset: "/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w", photoWidth: 1108, photoHeight: 1484, photoAlt: "Isani Oliveira conferindo o caimento de uma cortina durante uma consultoria",
@@ -78,7 +80,7 @@ const POSTS = [
     <path d="M128 38Q135 42 142 38V147Q135 151 128 147Z" fill="#DAD9C7" stroke="#647368" stroke-width="1.5"/>
     <path d="M134 40V148" stroke="#FBFAF7" opacity=".45"/>
 <g stroke="#B38D45" stroke-width="3" stroke-linecap="round" opacity="0.75"><path d="M150 67H206M150 100H206M150 133H206"/><path d="M200 63L206 67L200 71M200 96L206 100L200 104M200 129L206 133L200 137" fill="none"/></g>
-    <g fill="#4D5B52" font-size="13" font-family="Montserrat, sans-serif" text-anchor="middle"><text x="58" y="166">janela</text><text x="135" y="166">forro</text></g>
+    <g fill="#4D5B52" font-size="13" font-family="Plus Jakarta Sans, sans-serif" text-anchor="middle"><text x="58" y="166">janela</text><text x="135" y="166">forro</text></g>
   </svg>
       <p><strong>Claridade e privacidade.</strong> Filtra parte da luz e mantém o ambiente claro.</p>
     </div>
@@ -94,7 +96,7 @@ const POSTS = [
     <path d="M128 38Q135 42 142 38V147Q135 151 128 147Z" fill="#AFB9A9" stroke="#647368" stroke-width="1.5"/>
     <path d="M134 40V148" stroke="#FBFAF7" opacity=".45"/>
 <g stroke="#B38D45" stroke-width="3" stroke-linecap="round" opacity="0.28"><path d="M150 67H206M150 100H206M150 133H206"/><path d="M200 63L206 67L200 71M200 96L206 100L200 104M200 129L206 133L200 137" fill="none"/></g>
-    <g fill="#4D5B52" font-size="13" font-family="Montserrat, sans-serif" text-anchor="middle"><text x="58" y="166">janela</text><text x="135" y="166">forro</text></g>
+    <g fill="#4D5B52" font-size="13" font-family="Plus Jakarta Sans, sans-serif" text-anchor="middle"><text x="58" y="166">janela</text><text x="135" y="166">forro</text></g>
   </svg>
       <p><strong>Sensação de tardezinha.</strong> Reduz a claridade e deixa uma penumbra aconchegante.</p>
     </div>
@@ -110,7 +112,7 @@ const POSTS = [
     <path d="M128 38Q135 42 142 38V147Q135 151 128 147Z" fill="#284B40" stroke="#647368" stroke-width="1.5"/>
     <path d="M134 40V148" stroke="#FBFAF7" opacity=".45"/>
 
-    <g fill="#4D5B52" font-size="13" font-family="Montserrat, sans-serif" text-anchor="middle"><text x="58" y="166">janela</text><text x="135" y="166">forro</text></g>
+    <g fill="#4D5B52" font-size="13" font-family="Plus Jakarta Sans, sans-serif" text-anchor="middle"><text x="58" y="166">janela</text><text x="135" y="166">forro</text></g>
   </svg>
       <p><strong>Bloqueio pelo material.</strong> Para escurecer o cômodo, a instalação também precisa resolver as frestas.</p>
     </div>
@@ -173,16 +175,16 @@ const POSTS = [
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 428" role="img" aria-labelledby="sl-ed-fr-rod-title sl-ed-fr-rod-desc">
     <title id="sl-ed-fr-rod-title">Corte lateral de um varão duplo: forro atrás e cortina à frente</title>
     <desc id="sl-ed-fr-rod-desc">Parede à esquerda e interior do cômodo à direita. Os dois tubos são vistos como círculos na mesma altura, acima da janela. O traseiro sustenta o forro verde, que se acomoda contra a face da parede antes da verga e segue até beijar o piso. O dianteiro sustenta a cortina decorativa dourada. Esquema sem escala, com suportes omitidos para destacar o caminho dos tecidos.</desc>
-    <g font-family="Montserrat, sans-serif" font-size="14" fill="#4D5B52"><text x="27" y="22">Parede</text><text x="243" y="22">Interior →</text></g>
+    <g font-family="Plus Jakarta Sans, sans-serif" font-size="14" fill="#4D5B52"><text x="27" y="22">Parede</text><text x="243" y="22">Interior →</text></g>
     <!-- A face interna da parede é x=82. O forro toca essa face, sem cruzá-la. -->
     <path d="M30 34H82V198H30ZM30 322H82V388H30Z" fill="#DCD9CF"/>
     <path d="M82 34V198H30M30 322H82V388" fill="none" stroke="#7F887B" stroke-width="2"/>
     <rect x="48" y="202" width="9" height="116" fill="#E6EEEA" stroke="#9BAFA8" stroke-width="1.5"/>
     <path d="M52.5 207V313" stroke="#B5C4BB"/>
-    <text x="35" y="284" transform="rotate(-90 35 284)" fill="#56685B" font-size="14" font-family="Montserrat, sans-serif">Janela</text>
+    <text x="35" y="284" transform="rotate(-90 35 284)" fill="#56685B" font-size="14" font-family="Plus Jakarta Sans, sans-serif">Janela</text>
     <path d="M30 388H334" stroke="#16302A" stroke-width="2"/>
     <path d="M30 393H334" stroke="#D9D4C8"/>
-    <text x="298" y="413" fill="#4D5B52" font-size="14" font-family="Montserrat, sans-serif">Piso</text>
+    <text x="298" y="413" fill="#4D5B52" font-size="14" font-family="Plus Jakarta Sans, sans-serif">Piso</text>
     <!-- Dois tubos vistos de perfil, à mesma altura. -->
     <circle cx="132" cy="78" r="13" fill="#FBFAF7" stroke="#647368" stroke-width="3"/>
     <circle cx="222" cy="78" r="13" fill="#FBFAF7" stroke="#9B713A" stroke-width="3"/>
@@ -191,10 +193,10 @@ const POSTS = [
     <!-- A cortina decorativa permanece à frente do forro. -->
     <path d="M235 78Q237 94 224 98C218 124 227 165 224 212S221 294 225 338Q227 365 225 385.5" fill="none" stroke="#AF8B54" stroke-width="5" stroke-linecap="round"/>
     <path d="M89 198H106" stroke="#7F887B" stroke-width="1.2"/>
-    <text x="111" y="203" fill="#4D5B52" font-size="14" font-family="Montserrat, sans-serif">Verga</text>
+    <text x="111" y="203" fill="#4D5B52" font-size="14" font-family="Plus Jakarta Sans, sans-serif">Verga</text>
     <!-- Os números remetem às legendas HTML abaixo, legíveis no celular. -->
     <g stroke="#6C786B" stroke-width="1.2" fill="none"><path d="M121 43L128 62"/><path d="M248 44L231 64"/><path d="M156 152H105L88 157"/><path d="M151 365L92 384"/></g>
-    <g font-family="Montserrat, sans-serif" font-size="15" font-weight="600" text-anchor="middle">
+    <g font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="600" text-anchor="middle">
       <circle cx="116" cy="36" r="13" fill="#284B40"/><text x="116" y="41" fill="#FFF">1</text>
       <circle cx="255" cy="36" r="13" fill="#8D6C3A"/><text x="255" y="41" fill="#FFF">2</text>
       <circle cx="169" cy="152" r="13" fill="#284B40"/><text x="169" y="157" fill="#FFF">3</text>
@@ -262,7 +264,7 @@ const POSTS = [
     related: [['/blog/bainha-de-cortina/', 'Bainha de cortina'], ['/blog/varao-para-cortina/', 'Varão para cortina'], ['/blog/tipos-de-forro-para-cortina/', 'Tipos de forro'], ['/trilhos-e-acionamentos/', 'Trilhos e acionamentos'], ['/cortinas/', 'Cortinas sob medida'], ['/videos/ajuste-bainha-em-casa-alfaiataria/', 'Vídeo: ajuste de bainha em casa'], ['/cidades/volta-redonda/', 'Cortinas em Volta Redonda'], ['/cidades/resende/', 'Cortinas em Resende'], ['/cidades/barra-mansa/', 'Cortinas em Barra Mansa']],
     hero: {
       eyebrow: 'O olhar de quem instala',
-      h1: 'Qual a altura<br>ideal da cortina?', h1em: 'Do chão ao teto.',
+      h1: 'Qual a altura <br>ideal da cortina?', h1em: 'Do chão ao teto.',
       lead: '<p><strong>Cortina de tecido vai até o chão.</strong> A barra pode terminar de três jeitos: a <strong>1 cm do chão</strong>, <strong>beijando o chão</strong> (o pé de bailarina) ou com o tecido <strong>sobrando no piso</strong> (efeito poodle). A escolha depende do ambiente, do uso e da luz.</p><p>Em cima, com varão na parede, eu divido ao meio o espaço entre a janela e o teto. Com cortineiro, o trilho vai dentro dele. E na hora de anotar a medida, largura primeiro, altura depois. Abaixo eu explico cada ponto, com desenho.</p>',
       readTo: 'chao', readText: 'Veja os três acabamentos',
       photo: '/hall-wave-volta-redonda.avif', photoSrcset: '/hall-wave-volta-redonda-800.avif 800w, /hall-wave-volta-redonda.avif 1216w', photoWidth: 1216, photoHeight: 1632, photoAlt: 'Cortina wave off-white em hall com pé-direito duplo, projeto ShineCortinas em Volta Redonda',
@@ -641,7 +643,9 @@ function build(post) {
   <meta property="og:title" content="${esc(post.seoTitle)}">
   <meta property="og:description" content="${esc(post.description)}">
   <meta property="og:url" content="${url}">
-  <meta property="og:image" content="${BASE}${post.ogImage || '/blackouts-tecnicos.avif'}">
+  <meta property="og:image" content="${BASE}${ogJpg(post.ogImage || '/blackouts-tecnicos.avif')}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@shinecortinas">
   <link rel="preconnect" href="https://fonts.googleapis.com">

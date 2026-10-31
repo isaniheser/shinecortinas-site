@@ -25,7 +25,7 @@ export const comparison = `
         <g fill="none" stroke="#ad925b" stroke-width="1.8" stroke-linecap="round" opacity=".72" marker-end="url(#sb-semi-out-arrow)">
           <path d="M164 68H246M164 95H246M164 122H246"/>
         </g>
-        <g font-family="Montserrat, Arial, sans-serif" font-size="12" fill="#45584e" text-anchor="middle">
+        <g font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" fill="#45584e" text-anchor="middle">
           <text x="73" y="177">Luz</text><text x="207" y="177">Ambiente</text>
         </g>
       </svg>
@@ -50,14 +50,14 @@ export const comparison = `
         <rect x="128" y="31" width="27" height="127" rx="3" fill="url(#sb-full-weave)"/>
         <path d="M136 33V156M149 33V156" stroke="#c1b49a" stroke-width="2"/>
         <path d="M159 58V132" stroke="#16302a" stroke-width="3" stroke-linecap="round"/>
-        <g font-family="Montserrat, Arial, sans-serif" font-size="12" fill="#45584e" text-anchor="middle">
+        <g font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" fill="#45584e" text-anchor="middle">
           <text x="73" y="177">Luz</text><text x="207" y="177">Ambiente</text>
         </g>
       </svg>
       <p><strong>A luz não atravessa o material.</strong> Para deixar o quarto escuro, eu também preciso cuidar dos caminhos por onde ela pode contornar o forro.</p>
     </div>
   </div>
-  <figcaption>Esquemas qualitativos, sem escala de luminosidade. As cores apenas ajudam a leitura do desenho; não representam cores de produtos nem um resultado medido no ambiente.</figcaption>
+  <figcaption>Esquemas qualitativos, sem escala de luminosidade. As cores apenas ajudam a leitura do desenho e não representam cores de produtos nem um resultado medido no ambiente.</figcaption>
 </figure>`;
 
 export const lightGaps = `
@@ -97,7 +97,7 @@ export const lightGaps = `
       <g fill="#16302a" stroke="#f7f3e9" stroke-width="3">
         <circle cx="240" cy="32" r="18"/><circle cx="446" cy="177" r="18"/><circle cx="292" cy="227" r="18"/><circle cx="240" cy="372" r="18"/>
       </g>
-      <g fill="#fff" font-family="Montserrat, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="middle">
+      <g fill="#fff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="19" font-weight="600" text-anchor="middle">
         <text x="240" y="39">1</text><text x="446" y="184">2</text><text x="292" y="234">3</text><text x="240" y="379">4</text>
       </g>
     </svg>

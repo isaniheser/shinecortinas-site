@@ -40,7 +40,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <link rel="preload" as="image" href="/duplo.avif" imagesrcset="/duplo-800.avif 760w, /duplo.avif 1696w" imagesizes="(max-width: 960px) calc(100vw - 28px), 580px" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="/duplo.avif" imagesrcset="/duplo-800.avif 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w" imagesizes="(max-width: 960px) calc(100vw - 28px), 580px" fetchpriority="high" type="image/avif">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
@@ -48,7 +48,7 @@
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   </noscript>
-  <link rel="stylesheet" href="/assets/shine-home-e.css?v=6">
+  <link rel="stylesheet" href="/assets/shine-home-e.css?v=7">
 
   <script type="application/ld+json">
 {
@@ -666,7 +666,7 @@
           <div class="d-hero__stage">
             <div class="d-hero__single-frame" style="cursor: pointer;" onclick="openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
               <span class="d-frame-pill">Pé-Direito Duplo · Do Teto ao Piso</span>
-              <img src="/duplo.avif" srcset="/duplo-800.avif 760w, /duplo.avif 1696w" sizes="(max-width: 960px) calc(100vw - 28px), 580px" alt="Cortina Prega Wave sob medida do teto ao piso em pé-direito duplo no Sul Fluminense" width="800" height="500" fetchpriority="high" decoding="async">
+              <img src="/duplo.avif" srcset="/duplo-800.avif 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w" sizes="(max-width: 960px) calc(100vw - 28px), 580px" alt="Cortina Prega Wave sob medida do teto ao piso em pé-direito duplo no Sul Fluminense" width="800" height="500" fetchpriority="high" decoding="async">
               <button type="button" class="d-hero-video-trigger" onclick="event.stopPropagation(); openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
                 <span>▶ Ver vídeo de obra real em Resende</span>
                 <span>0:15</span>
@@ -878,7 +878,7 @@
           </div>
 
           <div class="d-intent-bar">
-            <div class="d-intent-filters" id="main-group-filters" role="tablist" aria-label="Filtrar projetos por categoria">
+            <div class="d-intent-filters" id="main-group-filters" role="group" aria-label="Filtrar projetos por categoria">
               <button type="button" class="d-filter-btn is-active" id="filter-btn-all" data-group="all" onclick="selectMainGroup('all', this)">✦ Todos (16)</button>
               <button type="button" class="d-filter-btn" id="filter-btn-insta" data-group="insta" onclick="selectMainGroup('insta', this)">🟢 Obras Reais (6)</button>
               <button type="button" class="d-filter-btn" data-group="tecido" onclick="selectMainGroup('tecido', this)">Cortinas de Tecido ▾</button>
@@ -907,10 +907,10 @@
                 <span class="d-ig-tag">🟢 Obra Real · Volta Redonda</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('duplo')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Pé-Direito Duplo · Wave</strong>
                 <span>▶ Vídeo real · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile bento-pos-1" data-cat="tecido wave pedireitoduplo motorizada insta" data-id="resende_real" onclick="openCaseSheet('resende_real')">
               <img src="/poster-cortina-motorizada-wave-resende.avif" alt="Obra real de Cortina Wave motorizada instalada em Resende RJ" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 50%;">
@@ -918,10 +918,10 @@
                 <span class="d-ig-tag">🟢 Obra Real · Resende</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('resende_real')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Wave Motorizada · Resende</strong>
                 <span>▶ Vídeo real · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile bento-pos-2" data-cat="persiana horizontal madeira insta" data-id="madeira" onclick="openCaseSheet('madeira')">
               <img src="/madeira-sq.avif" alt="Obra real de Persiana Horizontal de Madeira 50 mm em Barra Mansa RJ" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 50%;">
@@ -929,10 +929,10 @@
                 <span class="d-ig-tag">🟢 Obra Real · Barra Mansa</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('madeira')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Persiana Madeira 50 mm</strong>
                 <span>▶ Vídeo real · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile bento-pos-3" data-cat="estruturada rolo persiana" data-id="solar" onclick="openCaseSheet('solar')">
               <img src="/tela-solar-sq.avif" alt="Imagem de referência de Persiana Rolô Tela Solar corta-calor para varanda" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 55%;">
@@ -940,10 +940,10 @@
                 <span class="d-ig-tag">✦ Referência · Tela Solar</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('solar')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Persiana Rolô · Tela Solar</strong>
                 <span>Corta-calor UV · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="tecido wave" data-id="wave" onclick="openCaseSheet('wave')">
               <img src="/cortina-sob-medida.avif" alt="Imagem de referência de Cortina Prega Wave sob medida para sala" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 65%;">
@@ -951,10 +951,10 @@
                 <span class="d-ig-tag">✦ Referência · Wave</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('wave')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Cortina Wave · Sala</strong>
                 <span>Toque de linho · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="tecido wave blackout" data-id="blackout" onclick="openCaseSheet('blackout')">
               <img src="/blackouts-tecnicos.avif" alt="Imagem de referência de Cortina com Forro Blackout 100% para quarto e sala de TV" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 55%;">
@@ -962,10 +962,10 @@
                 <span class="d-ig-tag">✦ Referência · Blackout</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('blackout')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Blackout 100%</strong>
                 <span>Bloqueio de luz · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="tecido wave pedireitoduplo blackout insta" data-id="vassouras" onclick="openCaseSheet('vassouras')">
               <img src="/poster-cortina-cabana-chale-vassouras.avif" alt="Obra real de cortina sob medida em Chalé A-Frame em Vassouras RJ" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 45%;">
@@ -973,10 +973,10 @@
                 <span class="d-ig-tag">🟢 Obra Real · Vassouras</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('vassouras')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Chalé A-Frame · Vão Alto</strong>
                 <span>▶ Vídeo real · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="persiana horizontal aluminio" data-id="aluminio" onclick="openCaseSheet('aluminio')">
               <img src="/persiana-motorizada-sq.avif" alt="Imagem de referência de Persiana Horizontal de Alumínio 25 mm" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 50%;">
@@ -984,10 +984,10 @@
                 <span class="d-ig-tag">✦ Referência · Alumínio</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('aluminio')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Persiana de Alumínio 25 mm</strong>
                 <span>Fácil limpeza · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="tecido wave insta" data-id="barradopirai" onclick="openCaseSheet('barradopirai')">
               <img src="/poster-cortina-wave-linho-barra-do-pirai.avif" alt="Obra real de Cortina Wave com toque de linho instalada em Barra do Piraí RJ" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 50%;">
@@ -995,10 +995,10 @@
                 <span class="d-ig-tag">🟢 Obra Real · Barra do Piraí</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('barradopirai')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Wave Toque de Linho</strong>
                 <span>▶ Vídeo real · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="estruturada rolo motorizada insta" data-id="mangaratiba" onclick="openCaseSheet('mangaratiba')">
               <img src="/poster-cortina-screen-motorizada-mangaratiba.avif" alt="Obra real de Persiana Rolô Screen motorizada em Mangaratiba RJ" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 50%;">
@@ -1006,10 +1006,10 @@
                 <span class="d-ig-tag">🟢 Obra Real · Mangaratiba</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('mangaratiba')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Rolô Screen Motorizada</strong>
                 <span>▶ Vídeo real · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="tecido pregafemea pregamacho franzida" data-id="pregamacho" onclick="openCaseSheet('pregamacho')">
               <img src="/linha-puro.avif" alt="Imagem de referência de Cortina Prega Fêmea, Prega Macho e Franzida em tecido toque de linho" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 50%;">
@@ -1017,10 +1017,10 @@
                 <span class="d-ig-tag">✦ Referência · Alfaiataria</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('pregamacho')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Prega Fêmea, Macho e Franzida</strong>
                 <span>Costura própria · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="motorizada tecido wave" data-id="motor" onclick="openCaseSheet('motor')">
               <img src="/automacao-sq.avif" alt="Imagem de referência de Cortina Motorizada com controle remoto e Alexa" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 75%;">
@@ -1028,10 +1028,10 @@
                 <span class="d-ig-tag">✦ Referência · Automação</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('motor')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Motorizada · Alexa e Controle</strong>
                 <span>Até 5 anos garantia · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="tecido wave insta" data-id="bainha" onclick="openCaseSheet('bainha')">
               <img src="/poster-ajuste-bainha-em-casa-alfaiataria.avif" alt="Obra real mostrando ajuste de bainha a 1 cm do piso em Volta Redonda RJ" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 50%;">
@@ -1039,10 +1039,10 @@
                 <span class="d-ig-tag">🟢 Obra Real · Volta Redonda</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('bainha')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Bainha a 1 cm do Piso</strong>
                 <span>▶ Vídeo real · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="lavagem" data-id="lavagem" onclick="openCaseSheet('lavagem')">
               <img src="/lavagem-vertical-cortinas-800.avif" alt="Serviço de lavagem e secagem vertical de cortinas de tecido" width="400" height="400" loading="lazy" decoding="async" style="object-position: 50% 68%;">
@@ -1050,10 +1050,10 @@
                 <span class="d-ig-tag">🟢 Serviço · 6 Cidades</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('lavagem')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Lavagem de Cortinas de Tecido</strong>
                 <span>Retirada em casa · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="estruturada romana doublevision persiana" data-id="romana" onclick="openCaseSheet('romana')">
               <img src="/blackout-sq.avif" alt="Imagem de referência de Persiana Romana e Double Vision sob medida" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 50%;">
@@ -1061,10 +1061,10 @@
                 <span class="d-ig-tag">✦ Referência · Romana &amp; Double</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('romana')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Romana &amp; Double Vision</strong>
                 <span>Gomos estruturados · Ver ficha</span>
-              </div>
+              </button>
             </div>
             <div class="d-ig-tile is-hidden" data-cat="persiana vertical estruturada painel" data-id="vertical" onclick="openCaseSheet('vertical')">
               <img src="/hero-sala.avif" alt="Imagem de referência de Persiana Vertical e Cortina Painel para grandes vãos" width="400" height="400" loading="lazy" decoding="async" style="object-position: center 50%;">
@@ -1072,10 +1072,10 @@
                 <span class="d-ig-tag">✦ Referência · Grandes Vãos</span>
                 <button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef('vertical')">♡</button>
               </div>
-              <div class="d-ig-tile__bottom">
+              <button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">
                 <strong>Persiana Vertical &amp; Painel</strong>
                 <span>Giro 180° e folhas largas · Ver ficha</span>
-              </div>
+              </button>
             </div>
           </div>
 
@@ -1746,8 +1746,8 @@
     </div>
   </div>
 
-  <script data-cfasync="false" src="/assets/shine-home-e.js?v=7" defer></script>
-  <script data-cfasync="false" src="/assets/shine-wa.js?v=7" defer></script>
+  <script data-cfasync="false" src="/assets/shine-home-e.js?v=8" defer></script>
+  <script data-cfasync="false" src="/assets/shine-wa.js?v=8" defer></script>
   <script type="speculationrules">
   {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}
   </script>

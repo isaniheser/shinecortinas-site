@@ -3,9 +3,9 @@ import {auroraHeader,auroraMenu,auroraHead,AURORA_V} from './aurora-layout.mjs';
 // Usados por build-cidades.mjs e build-home.mjs. Alterar aqui muda todas as páginas geradas.
 
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
-export const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
-export const CSS_V = '16';
-export const JS_V = '6';
+export const FONTS = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
+export const CSS_V = '17';
+export const JS_V = '8';
 export const FOUNDED_YEAR = 2009;
 export const CURRENT_YEAR = new Date().getFullYear();
 export const YEARS_ACTIVE = CURRENT_YEAR - FOUNDED_YEAR;

@@ -24,7 +24,7 @@ export default {
   ],
   hero: {
     eyebrow: 'O olhar de quem instala',
-    h1: 'Como funciona a<br>persiana motorizada:',
+    h1: 'Como funciona a <br>persiana motorizada:',
     h1em: 'energia, bateria e falta de luz.',
     lead: `<p>Muita gente acha que toda <a href="/cortina-motorizada/">persiana motorizada</a> funciona igual a uma cortina de tecido no trilho, mas a mecânica por dentro é bem diferente. Nas persianas que sobem enrolando, como a Rolô, a Romana e a Horizontal, o motor fica embutido dentro do tubo superior e segura todo o peso da peça.</p>
       <p>Aqui você vai entender quando dá para usar motor a bateria recarregável (que dura em média 6 meses por carga) e por que, quando acaba a energia elétrica, as persianas que enrolam na horizontal não podem ser abertas com a mão, exceto os modelos Painel e Vertical.</p>`,
@@ -58,9 +58,9 @@ export default {
                 <rect x="48" y="72" width="38" height="26" rx="4" fill="#e8e2d5" stroke="#16302a" stroke-width="1.5"/>
                 <circle cx="61" cy="85" r="2.5" fill="#16302a"/><circle cx="73" cy="85" r="2.5" fill="#16302a"/>
                 <path d="M67 72V60" stroke="#9b713a" stroke-width="2.5"/>
-                <text x="162" y="84" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Ligado direto no cortineiro</text>
-                <text x="162" y="102" font-family="Montserrat, Arial, sans-serif" font-size="10.5" fill="#45584e" text-anchor="middle">Força total para grandes vãos</text>
-                <text x="140" y="180" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Zero preocupação com recarga</text>
+                <text x="162" y="84" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Ligado direto no cortineiro</text>
+                <text x="162" y="102" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" fill="#45584e" text-anchor="middle">Força total para grandes vãos</text>
+                <text x="140" y="180" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Zero preocupação com recarga</text>
               </svg>
               <p>Quando já existe ponto elétrico próximo ao cortineiro, o motor fica alimentado direto na rede.</p>
             </div>
@@ -74,9 +74,9 @@ export default {
                 <rect x="92" y="84" width="24" height="24" rx="2" fill="#284b40"/>
                 <rect x="120" y="84" width="24" height="24" rx="2" fill="#284b40"/>
                 <rect x="148" y="84" width="24" height="24" rx="2" fill="#9b713a"/>
-                <text x="140" y="138" font-family="Montserrat, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#16302a" text-anchor="middle">Dura em média 6 meses por carga</text>
-                <text x="140" y="155" font-family="Montserrat, Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">(varia de 3 a 9 meses conforme uso e tamanho)</text>
-                <text x="140" y="180" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#9b713a" text-anchor="middle">Sem quebrar parede (consultar modelos)</text>
+                <text x="140" y="138" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11.5" font-weight="700" fill="#16302a" text-anchor="middle">Dura em média 6 meses por carga</text>
+                <text x="140" y="155" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">(varia de 3 a 9 meses conforme uso e tamanho)</text>
+                <text x="140" y="180" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#9b713a" text-anchor="middle">Sem quebrar parede (consultar modelos)</text>
               </svg>
               <p>Disponível para modelos específicos sob consulta. Instala sem obra elétrica e recarrega por cabo.</p>
             </div>
@@ -105,9 +105,9 @@ export default {
                 <circle cx="72" cy="40" r="7" fill="#9b713a"/>
                 <rect x="58" y="50" width="164" height="82" fill="#dfd5c0" stroke="#8c7b65" stroke-width="1.5"/>
                 <line x1="54" y1="132" x2="226" y2="132" stroke="#16302a" stroke-width="3"/>
-                <text x="140" y="94" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Freio da engrenagem segura o pano</text>
-                <text x="140" y="160" font-family="Montserrat, Arial, sans-serif" font-size="10.5" fill="#8c3b2b" font-weight="600" text-anchor="middle">Se ficasse solta, desceria de uma vez</text>
-                <text x="140" y="180" font-family="Montserrat, Arial, sans-serif" font-size="10.5" fill="#45584e" text-anchor="middle">Por isso não abre na mão sem luz</text>
+                <text x="140" y="94" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Freio da engrenagem segura o pano</text>
+                <text x="140" y="160" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" fill="#8c3b2b" font-weight="600" text-anchor="middle">Se ficasse solta, desceria de uma vez</text>
+                <text x="140" y="180" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" fill="#45584e" text-anchor="middle">Por isso não abre na mão sem luz</text>
               </svg>
               <p>Como funcionam enrolando na horizontal, a engrenagem trava a peça para ela não despencar.</p>
             </div>
@@ -120,8 +120,8 @@ export default {
                 <rect x="92" y="40" width="44" height="106" fill="#dfd5c0" stroke="#8c7b65" stroke-width="1.5"/>
                 <rect x="130" y="40" width="44" height="106" fill="#e6decb" stroke="#8c7b65" stroke-width="1.5"/>
                 <path d="M186 92H228M220 85L228 92L220 99" fill="none" stroke="#16302a" stroke-width="2.2" stroke-linecap="round"/>
-                <text x="140" y="168" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Correm para os lados sem peso de queda</text>
-                <text x="140" y="184" font-family="Montserrat, Arial, sans-serif" font-size="10.5" fill="#45584e" text-anchor="middle">Permitem abertura manual se faltar energia</text>
+                <text x="140" y="168" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Correm para os lados sem peso de queda</text>
+                <text x="140" y="184" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" fill="#45584e" text-anchor="middle">Permitem abertura manual se faltar energia</text>
               </svg>
               <p>Por correrem na lateral em vez de enrolar para cima, o Painel e a Vertical podem ser abertos.</p>
             </div>

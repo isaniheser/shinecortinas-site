@@ -892,6 +892,56 @@ window.addEventListener('popstate', function () {
   }
 });
 
+// Gavetas acessíveis: ao abrir, o fundo fica inerte e o foco entra na gaveta; ao fechar, o foco
+// volta para quem abriu. Fechar pelo X ou Esc também desfaz a entrada criada no histórico, para o
+// "voltar" do celular não ficar vazio. O setTimeout deixa uma gaveta abrir a outra (ficha → vídeo)
+// sem voltar o histórico no meio da troca.
+(function () {
+  const modals = Array.from(document.querySelectorAll('.d-case-modal, .d-video-modal'));
+  if (!modals.length || !window.MutationObserver) return;
+  let opener = null;
+  const isOpen = (m) => m.classList.contains('is-open');
+  function setBackgroundInert(on) {
+    Array.from(document.body.children).forEach((el) => {
+      if (modals.includes(el) || el.tagName === 'SCRIPT') return;
+      if (on) el.setAttribute('inert', '');
+      else el.removeAttribute('inert');
+    });
+  }
+  const wasOpen = new Set();
+  let closeTimer = null;
+  function onChange(m) {
+    // classList.remove() gera registro de mutação mesmo sem mudar nada: só age em transição real.
+    if (isOpen(m) === wasOpen.has(m)) return;
+    if (isOpen(m)) wasOpen.add(m);
+    else wasOpen.delete(m);
+    if (isOpen(m)) {
+      if (!opener && document.activeElement && !m.contains(document.activeElement)) opener = document.activeElement;
+      modals.forEach((o) => { if (o !== m) o.setAttribute('inert', ''); });
+      m.removeAttribute('inert');
+      setBackgroundInert(true);
+      const popup = m.querySelector('.d-case-sheet-popup, .d-video-player') || m;
+      if (!popup.hasAttribute('tabindex')) popup.setAttribute('tabindex', '-1');
+      popup.focus({ preventScroll: true });
+      return;
+    }
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(function () {
+      const still = modals.find(isOpen);
+      if (still) return;
+      modals.forEach((o) => o.removeAttribute('inert'));
+      setBackgroundInert(false);
+      if (opener && document.contains(opener) && typeof opener.focus === 'function') opener.focus({ preventScroll: true });
+      opener = null;
+      try {
+        if (history.state && history.state.shineModal) history.back();
+      } catch (_) {}
+    }, 0);
+  }
+  const mo = new MutationObserver((list) => list.forEach((r) => onChange(r.target)));
+  modals.forEach((m) => mo.observe(m, { attributes: true, attributeFilter: ['class'] }));
+})();
+
 // SINCRONIZADOR AUTOMÁTICO COM /api/instagram (FILTRADO POR #acervoshine)
 let isSyncingInstagram = false;
 let hasSyncedCurated = false;
@@ -961,14 +1011,14 @@ async function syncInstagramHashtagFeed(includeAllApproved = false) {
         safeId +
         '\')">♡</button>' +
         '</div>' +
-        '<div class="d-ig-tile__bottom">' +
+        '<button type="button" class="d-ig-tile__bottom d-ig-open" aria-haspopup="dialog">' +
         '<strong>' +
         escapeHtml(title) +
         '</strong>' +
         '<span>' +
         (isReel ? '▶ Vídeo real · Toque para assistir' : 'Obra real · Ver ficha') +
         '</span>' +
-        '</div>';
+        '</button>';
 
       if (post.isPinned) {
         grid.insertBefore(tile, grid.firstChild);

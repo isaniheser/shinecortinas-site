@@ -24,7 +24,7 @@ export default {
   ],
   hero: {
     eyebrow: 'O olhar de quem instala',
-    h1: 'Qual cortina escolher<br>para a sala:',
+    h1: 'Qual cortina escolher <br>para a sala:',
     h1em: 'modelos de prega e combinação de cores.',
     lead: `<p>Quando eu entro na sala de um cliente para ajudar a escolher a <a href="/cortinas/">cortina sob medida</a>, eu sempre começo lembrando qual é o papel dela no ambiente: a cortina faz a <strong>transição dos itens decorativos da sala</strong> e funciona como um grande pano de fundo, uma base para toda a decoração.</p>
       <p>Na parte de confecção, nós trabalhamos com os modelos <strong>Wave, prega fêmea, prega macho, franzido, prega americana e prega tombada</strong>. E na hora de definir a cor, a regra para não errar é fazer a cortina conversar com o <strong>estofado ou com o tapete</strong>, ou apostar nos <strong>tons neutros e pastéis</strong> se você ainda estiver montando a sala.</p>`,
@@ -61,7 +61,7 @@ export default {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 110" role="img" aria-label="Desenho do modelo de cortina Wave com ondas contínuas">
                 <rect x="6" y="6" width="168" height="98" rx="5" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <path d="M22 52 Q40 24 58 52 T94 52 T130 52 T158 52" fill="none" stroke="#9b713a" stroke-width="4" stroke-linecap="round"/>
-                <text x="90" y="88" font-family="Montserrat, Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Ondas contínuas no trilho</text>
+                <text x="90" y="88" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Ondas contínuas no trilho</text>
               </svg>
               <p class="sl-ed-card-value">Curva suave e moderna</p>
             </div>
@@ -70,7 +70,7 @@ export default {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 110" role="img" aria-label="Desenho da Prega Fêmea com dobras voltadas para dentro">
                 <rect x="6" y="6" width="168" height="98" rx="5" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <path d="M20 58 H48 L54 34 L60 58 H84 L90 34 L96 58 H120 L126 34 L132 58 H160" fill="none" stroke="#16302a" stroke-width="3.5" stroke-linejoin="round"/>
-                <text x="90" y="88" font-family="Montserrat, Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Dobras para dentro</text>
+                <text x="90" y="88" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Dobras para dentro</text>
               </svg>
               <p class="sl-ed-card-value">Frente limpa e alinhada</p>
             </div>
@@ -79,7 +79,7 @@ export default {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 110" role="img" aria-label="Desenho da Prega Macho com volume saliente para a frente">
                 <rect x="6" y="6" width="168" height="98" rx="5" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <path d="M20 38 H46 V60 H62 V38 H82 V60 H98 V38 H118 V60 H134 V38 H160" fill="none" stroke="#16302a" stroke-width="3.5" stroke-linejoin="round"/>
-                <text x="90" y="88" font-family="Montserrat, Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Dobra para a frente</text>
+                <text x="90" y="88" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Dobra para a frente</text>
               </svg>
               <p class="sl-ed-card-value">Volume clássico</p>
             </div>
@@ -88,7 +88,7 @@ export default {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 110" role="img" aria-label="Desenho da Prega Americana com três dobras unidas">
                 <rect x="6" y="6" width="168" height="98" rx="5" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <path d="M44 62L36 30M44 62L44 28M44 62L52 30 M90 62L82 30M90 62L90 28M90 62L98 30 M136 62L128 30M136 62L136 28M136 62L144 30" stroke="#9b713a" stroke-width="2.8" stroke-linecap="round"/>
-                <text x="90" y="88" font-family="Montserrat, Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Três pregas em leque</text>
+                <text x="90" y="88" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Três pregas em leque</text>
               </svg>
               <p class="sl-ed-card-value">Presença tradicional</p>
             </div>
@@ -97,7 +97,7 @@ export default {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 110" role="img" aria-label="Desenho da Prega Tombada deitada na mesma direção">
                 <rect x="6" y="6" width="168" height="98" rx="5" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <path d="M22 54 L46 34 V54 L76 34 V54 L106 34 V54 L136 34 V54 L158 40" fill="none" stroke="#16302a" stroke-width="3.5" stroke-linejoin="round"/>
-                <text x="90" y="88" font-family="Montserrat, Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Dobras na mesma direção</text>
+                <text x="90" y="88" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Dobras na mesma direção</text>
               </svg>
               <p class="sl-ed-card-value">Ritmo contínuo</p>
             </div>
@@ -106,7 +106,7 @@ export default {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 110" role="img" aria-label="Desenho do Modelo Franzido com micro-dobras cheias">
                 <rect x="6" y="6" width="168" height="98" rx="5" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <path d="M20 46 Q25 30 30 46 T40 46 T50 46 T60 46 T70 46 T80 46 T90 46 T100 46 T110 46 T120 46 T130 46 T140 46 T150 46 T160 46" fill="none" stroke="#9b713a" stroke-width="3" stroke-linecap="round"/>
-                <text x="90" y="88" font-family="Montserrat, Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Franzimento bem cheio</text>
+                <text x="90" y="88" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#45584e" text-anchor="middle">Franzimento bem cheio</text>
               </svg>
               <p class="sl-ed-card-value">Caimento encorpado</p>
             </div>
@@ -131,12 +131,12 @@ export default {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 205" role="img" aria-label="Esquema mostrando a cortina como pano de fundo conversando com o sofá e o tapete">
                 <rect x="12" y="12" width="256" height="180" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <rect x="44" y="26" width="192" height="110" rx="4" fill="#e8dfd0" stroke="#9b713a" stroke-width="1.5"/>
-                <text x="140" y="50" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">1. Cortina (Pano de fundo da sala)</text>
+                <text x="140" y="50" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">1. Cortina (Pano de fundo da sala)</text>
                 <rect x="68" y="88" width="144" height="44" rx="6" fill="#cfc3b0" stroke="#16302a" stroke-width="1.5"/>
-                <text x="140" y="114" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">2. Estofado (Sofá / Poltronas)</text>
+                <text x="140" y="114" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">2. Estofado (Sofá / Poltronas)</text>
                 <rect x="34" y="142" width="212" height="22" rx="3" fill="#dcd2c0" stroke="#8c7b65" stroke-width="1.5"/>
-                <text x="140" y="157" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">3. Tapete (Base do ambiente)</text>
-                <text x="140" y="182" font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#9b713a" text-anchor="middle">Os três conversam na mesma família de tons</text>
+                <text x="140" y="157" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#16302a" text-anchor="middle">3. Tapete (Base do ambiente)</text>
+                <text x="140" y="182" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="600" fill="#9b713a" text-anchor="middle">Os três conversam na mesma família de tons</text>
               </svg>
               <p>A cortina faz a transição dos itens da sala, conversando com o sofá e o tapete.</p>
             </div>
@@ -145,15 +145,15 @@ export default {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 205" role="img" aria-label="Paleta de tons neutros e pastéis para quem ainda vai definir estofado e tapete">
                 <rect x="12" y="12" width="256" height="180" rx="6" fill="#fbfaf7" stroke="#ddd6c8"/>
                 <circle cx="62" cy="86" r="24" fill="#fbf9f3" stroke="#b5a489" stroke-width="1.5"/>
-                <text x="62" y="124" font-family="Montserrat, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Off-white</text>
+                <text x="62" y="124" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Off-white</text>
                 <circle cx="114" cy="86" r="24" fill="#efe6d5" stroke="#b5a489" stroke-width="1.5"/>
-                <text x="114" y="124" font-family="Montserrat, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Cru / Areia</text>
+                <text x="114" y="124" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Cru / Areia</text>
                 <circle cx="166" cy="86" r="24" fill="#dfd2bc" stroke="#b5a489" stroke-width="1.5"/>
-                <text x="166" y="124" font-family="Montserrat, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Bege suave</text>
+                <text x="166" y="124" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Bege suave</text>
                 <circle cx="218" cy="86" r="24" fill="#dce0dc" stroke="#8a968e" stroke-width="1.5"/>
-                <text x="218" y="124" font-family="Montserrat, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Pastel neutro</text>
-                <text x="140" y="42" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Paleta curinga para quem ainda vai mobiliar</text>
-                <text x="140" y="168" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Combina com qualquer estofado que vier depois</text>
+                <text x="218" y="124" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#16302a" text-anchor="middle">Pastel neutro</text>
+                <text x="140" y="42" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Paleta curinga para quem ainda vai mobiliar</text>
+                <text x="140" y="168" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#16302a" text-anchor="middle">Combina com qualquer estofado que vier depois</text>
               </svg>
               <p>Para quem ainda vai definir os móveis, os tons neutros e pastéis servem como base sem erro.</p>
             </div>
