@@ -157,7 +157,7 @@ export const PAGINAS = [
         ['/blog/persiana-ideal-para-cada-ambiente/', 'Guia por cômodo', 'A persiana ideal para cada ambiente da casa', 'Por que indicamos Champion na varanda, Double Vision e Romana no escritório e 16 mm no banheiro.'],
         ['/blog/persiana-vertical-ou-horizontal/', 'Comparativo', 'Persiana vertical ou horizontal: 50 mm em madeira, bambu e alumínio', 'Quando usar a vertical em portas de correr e quando apostar na horizontal de 50 mm.'],
         ['/blog/cortina-ou-persiana-na-cozinha/', 'Cozinha e área gourmet', 'Cortina ou persiana na cozinha: Tela Solar 5% e limpeza', 'Por que o tecido comum acumula gordura e como a tela solar 5% e o alumínio facilitam o dia a dia.'],
-        ['/blog/como-funciona-persiana-motorizada/', 'Automação', 'Como funciona a persiana motorizada: elétrica e bateria', 'Autonomia média de 6 meses nos motores a bateria e como o freio mecânico atua na falta de luz.'],
+        ['/blog/como-funciona-persiana-motorizada/', 'Automação', 'Como funciona a persiana motorizada: elétrica e bateria', 'Autonomia média de 6 meses nos motores a bateria (alguns modelos, mediante consulta) e como o freio mecânico atua na falta de luz.'],
         ['/blog/persiana-para-dividir-ambientes/', 'Opinião sincera', 'Persiana para dividir ambientes vale a pena?', 'Por que somos contra improvisar persiana como parede divisória e quando cada modelo brilha na janela.'],
         ['/videos/persiana-horizontal-madeira-barra-mansa/', 'Vídeo real', 'Persiana horizontal 50 mm em Barra Mansa', 'Veja em vídeo o acabamento das lâminas de 50 mm com fita decorativa instaladas pela nossa equipe.'],
       ] },

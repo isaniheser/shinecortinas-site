@@ -61,35 +61,35 @@ const AREA_SERVED_NAMES = [
   'Costa Verde'
 ];
 
-// 5 avaliações 100% integrais conforme docs/dados-google/avaliacoes.json
+// 5 avaliações do Google. Texto literal de docs/dados-google/avaliacoes.json (conferido pela esteira em tests/estatico.mjs).
 const REVIEWS = [
   {
     initials: 'MR',
     name: 'Marcio Rocha',
     datePublished: '2026-03-15',
     tag: '🛡️ Pós-Venda e Compromisso',
-    body: 'Atendimento ágil, entrega rápida e cortinas impecáveis. Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!'
+    body: 'Atendimento ágil, entrega rápida e cortinas impecáveis. Obrigado à Shine Cortinas pelo excelente trabalho! Senhor Isani empresário sério. Fiz uma escolha errada e ele resolveu meu problema sem nenhuma burocracia! Espetacular!!!!'
   },
   {
     initials: 'AR',
     name: 'Amanda Rocha da Silva',
     datePublished: '2026-04-10',
     tag: '⏱️ Pontualidade e Visita em Casa',
-    body: 'EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente. Atendimento nota mil do início ao fim. Produtos da mais alta qualidade! Indico de olhos fechados!'
+    body: 'EXCELÊNCIA! Desde a visita técnica inicial, passando pelo orçamento, cumprimento de prazo de entrega, instalação e pós venda, tudo feito com muita excelência, empatia e compromisso com a satisfação e necessidade do cliente.'
   },
   {
     initials: 'MS',
     name: 'Marcio Soares',
     datePublished: '2026-06-12',
     tag: '✨ Cliente Recorrente',
-    body: 'Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente. Parabéns a toda a equipe pelo profissionalismo e dedicação. Com certeza continuarei recomendando!'
+    body: 'Gostaria de agradecer mais uma vez pelo excelente trabalho realizado. Essa já é a segunda vez que escolho a empresa, e novamente fiquei muito satisfeita com o atendimento, cuidado e qualidade do serviço prestado. As cortinas ficaram impecáveis e fizeram toda a diferença no ambiente. Obrigada pelo profissionalismo, dedicação e atenção em cada detalhe'
   },
   {
     initials: 'LF',
     name: 'Luan Ferreira',
     datePublished: '2026-04-18',
     tag: '🌟 Atendimento Nota 10',
-    body: 'Experiência excelente com a Shine Cortinas! Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo.'
+    body: 'Experiência excelente com a Shine Cortinas! O trabalho deles é simplesmente sensacional. Fiquei muito impressionado com a qualidade impecável do produto e o atendimento foi nota 10 do início ao fim. Recomendo de olhos fechados para quem busca sofisticação e profissionalismo.'
   },
   {
     initials: 'VF',

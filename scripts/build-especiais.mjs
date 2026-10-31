@@ -269,7 +269,7 @@ const VIDEO_CONTEXT = {
   'cortina-screen-motorizada-mangaratiba': `<div class="sl-video-context">
         <h2 class="sl-h2">Automação de proteção solar e guias relacionados</h2>
         <p>Projetamos e instalamos <a href="/persianas/">persianas rolô tela solar</a> e <a href="/cortina-motorizada/">sistemas motorizados</a> em <a href="/cidades/volta-redonda/"><strong>Volta Redonda</strong></a>, <a href="/cidades/resende/">Resende</a> e nas <a href="/cidades-atendidas/">cidades atendidas no Sul Fluminense</a>.</p>
-        <p>Entenda todos os detalhes nos guias sobre <a href="/blog/como-funciona-persiana-motorizada/">como funciona a persiana motorizada (elétrica ou a bateria)</a> e <a href="/blog/persiana-ideal-para-cada-ambiente/">qual persiana usar em cada ambiente</a>.</p>
+        <p>Entenda todos os detalhes nos guias sobre <a href="/blog/como-funciona-persiana-motorizada/">como funciona a persiana motorizada (elétrica ou, em alguns modelos, a bateria)</a> e <a href="/blog/persiana-ideal-para-cada-ambiente/">qual persiana usar em cada ambiente</a>.</p>
       </div>`,
 };
 

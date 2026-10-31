@@ -234,6 +234,8 @@ http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 /docs/* / 301
 /scripts/* / 301
 /.agents/* / 301
+/tests/* / 301
+/.github/* / 301
 /blog/tags/* /blog/ 301
 /blog/hashtags/* /blog/ 301
 /produtos-cidade/* /cidades-atendidas/ 301
