@@ -328,7 +328,7 @@ function buildPosts() {
                .replace(/<p><strong>Atualizado em:<\/strong>[\s\S]*?<\/p>/, '')
                .replace(/ class="[^"]*"/g, '')
                .replace(/<div>\s*<h2>/g, '<h2>').replace(/<section[^>]*>/g, '').replace(/<\/section>/g, '')
-               .replace(/<table>/g, '<div class="sl-tablewrap"><table>').replace(/<\/table>/g, '</table></div>')
+               .replace(/<table>/g, '<div class="sl-tablewrap" tabindex="0" role="region" aria-label="Tabela comparativa (role para o lado)"><table>').replace(/<\/table>/g, '</table></div>')
                .trim();
     const lead = (main.match(/<p>([\s\S]*?)<\/p>/) || [, ''])[1];
     main = main.replace(/<p>[\s\S]*?<\/p>/, '');

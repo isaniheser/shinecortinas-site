@@ -3,3 +3,7 @@
 # Cloudflare local secrets
 .dev.vars
 novo-index-candidato.html
+
+# Esteira de qualidade
+tests/node_modules/
+tests/resultados/

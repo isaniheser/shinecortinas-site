@@ -1053,7 +1053,7 @@ ${BENTO_ITEMS.map(
             </div>
           </div>
 
-          <div class="d-reviews-grid" id="reviews-carousel">
+          <div class="d-reviews-grid" id="reviews-carousel" tabindex="0" role="region" aria-label="Avaliações de clientes no Google">
 ${REVIEWS.map(
   (r) => `            <div class="d-review-card">
               <div>

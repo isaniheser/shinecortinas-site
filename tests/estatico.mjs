@@ -222,7 +222,8 @@ R.passou('Arquivos internos');
 const baseRef = process.env.BASE_REF;
 if (baseRef) {
   try {
-    const mudou = execSync(`git diff --name-only ${baseRef}...HEAD -- assets`, { cwd: ROOT, encoding: 'utf8' })
+    const mb = execSync(`git merge-base ${baseRef} HEAD`, { cwd: ROOT, encoding: 'utf8' }).trim();
+    const mudou = execSync(`git diff --name-only ${mb} -- assets`, { cwd: ROOT, encoding: 'utf8' })
       .split('\n').filter((f) => /\.(css|js)$/.test(f));
     for (const f of mudou) {
       const nome = f.split('/').pop().replace(/[.]/g, '\\.');

@@ -1,0 +1,9 @@
+{
+  "_leia": "Violações de acessibilidade (axe) já conhecidas. Aparecem como AVISO só nas páginas listadas. Ao corrigir, apague o item: a regra volta a bloquear.",
+  "regras": {
+    "color-contrast": {
+      "paginas": ["/lp/"],
+      "motivo": "Landing de anúncio com paleta própria (docs/landing-pages-trafego-pago.md); textos em #C6A868/#FFF0C6 com contraste baixo. Corrigir junto com a próxima revisão da LP."
+    }
+  }
+}

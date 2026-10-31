@@ -41,7 +41,7 @@
 .pv-journal h3{font-size:26px;margin-top:10px}
 .pv-journal b{position:absolute;right:0;top:40px;font-size:24px}
 [data-concept=ambientes]{--pv-paper:#e8ede5;--pv-ink:#153b30;--pv-accent:#8c7048;--pv-muted:#52685b;--pv-line:#bfcebf}
-[data-concept=ambientes] h1,[data-concept=ambientes] h2,[data-concept=ambientes] h3{font-family:var(--sans);font-weight:600;letter-spacing:-.06em}
+[data-concept=ambientes] h1,[data-concept=ambientes] h2,[data-concept=ambientes] h3{font-family:var(--sans);font-weight:600;letter-spacing:-.025em}
 [data-concept=ambientes] h1 em,[data-concept=ambientes] h2 em{font-family:var(--serif);letter-spacing:-.03em}
 .pv-explore-hero{padding:44px 0 30px}
 .pv-explore-intro{padding:0 24px;max-width:1120px;margin:0 auto 28px}

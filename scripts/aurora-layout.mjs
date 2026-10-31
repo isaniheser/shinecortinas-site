@@ -1,5 +1,5 @@
 // Navegação aprovada: HTML real para links, com aprimoramento progressivo no navegador.
-export const AURORA_V = '5';
+export const AURORA_V = '6';
 export const AURORA_CSS = `<link rel="stylesheet" href="/assets/shine-aurora.css?v=${AURORA_V}">`;
 const WA_MENU = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 const entries = [
@@ -26,7 +26,7 @@ export function auroraMenu() {
   <a class="pv-curtain-wa" data-wa="conversar" href="${WA_MENU}" target="_blank" rel="noopener noreferrer">Falar com um consultor no WhatsApp <span aria-hidden="true">↗</span></a>
   <footer>${extra.map(([url,name])=>`<a href="${url}">${name}</a>`).join('')}</footer><p class="pv-curtain-signature">Sob medida para o seu jeito de viver.</p></div>
   <div class="pv-curtain-wing pv-curtain-wing--left" aria-hidden="true"></div><div class="pv-curtain-wing pv-curtain-wing--right" aria-hidden="true"></div></dialog>
-  <button type="button" class="pv-curtain-pull" aria-haspopup="dialog" aria-controls="pv-curtain-menu" aria-expanded="false" aria-label="Explorar a Shine: toque ou puxe para cima"><span class="pv-pull-handle" aria-hidden="true"></span><span>Explore a Shine <b aria-hidden="true">↑</b></span><small>Toque ou puxe</small></button>`;
+  <button type="button" class="pv-curtain-pull" aria-haspopup="dialog" aria-controls="pv-curtain-menu" aria-expanded="false" aria-label="Explore a Shine: toque ou puxe para abrir o menu"><span class="pv-pull-handle" aria-hidden="true"></span><span>Explore a Shine <b aria-hidden="true">↑</b></span><small>Toque ou puxe</small></button>`;
 }
 
 export function auroraHead(head) {

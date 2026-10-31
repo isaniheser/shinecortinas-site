@@ -6,7 +6,7 @@
   --ground:#FBFAF7; --sand:#F3F1EB; --sand-2:#EFECE4; --line:#E7E3DA; --line-2:#DDD8CC;
   --green:#16302A; --green-2:#1E3A32; --green-3:#2F5248; --green-ink:#0B1916;
   --gold:#C6A868; --gold-light:#DFBD69; --gold-pale:#FFF0C6; --gold-ink:#7F6636; /* dourado para TEXTO em fundo claro: 5,2:1 (o #C6A868 dá 2,2:1) */
-  --ink:#2A2A28; --muted:#646962; --muted-2:#8A8F88;
+  --ink:#2A2A28; --muted:#646962; --muted-2:#666B64;
   --serif:'Playfair Display',Georgia,serif; --sans:'Plus Jakarta Sans',-apple-system,'Segoe UI',sans-serif;
   --wrap:1120px; --radius:4px;
 }
@@ -79,7 +79,7 @@ p{margin:0;text-wrap:pretty}
 .sl-h1 em{font-style:italic;color:var(--gold-light)}
 .sl-hero__rule{height:1px;background:rgba(223,189,105,.3);margin:0 0 20px;max-width:520px}
 .sl-lede{color:rgba(255,255,255,.84);font-size:clamp(16px,1.4vw,19px);line-height:1.65;max-width:56ch;margin-bottom:26px}
-.sl-hero .sl-note{color:rgba(255,255,255,.5)}
+.sl-hero .sl-note{color:rgba(255,255,255,.66)}
 
 /* faixa de confiança */
 .sl-strip{background:var(--sand);border-bottom:1px solid var(--line)}
@@ -150,7 +150,7 @@ p{margin:0;text-wrap:pretty}
 .sl-quote-by{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light)}
 .sl-quote-by small{display:block;color:rgba(255,255,255,.5);font-weight:500;letter-spacing:.06em;text-transform:none;margin-top:3px;font-size:12px}
 .sl-band .sl-sub{color:rgba(255,255,255,.75)}
-.sl-band .sl-note{color:rgba(255,255,255,.45)}
+.sl-band .sl-note{color:rgba(255,255,255,.66)}
 
 /* FAQ */
 .sl-faq{max-width:760px;margin:0 auto}
@@ -534,3 +534,6 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold-ink);outline-
   .sl-ed-fr-consult .sl-btn{width:100%}
 }
 
+
+/* Link dentro de parágrafo precisa ser reconhecível sem depender só da cor (WCAG 1.4.1). */
+main p a:not([class]){text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
