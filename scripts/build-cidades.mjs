@@ -16,7 +16,7 @@ const SERRA_SLUGS = new Set(['penedo', 'visconde-de-maua', 'maromba', 'itatiaia'
 
 function cityFaqs(d) {
   const base = [...(d.faq || [])];
-  const hasMotor = base.some((f) => /motorizad/i.test(f.q));
+  const hasMotor = base.some((f) => /motoriz/i.test(f.q));
   if (!hasMotor) {
     base.push({
       q: `Vocês instalam cortina motorizada e persiana motorizada em ${d.city}?`,
