@@ -152,7 +152,7 @@ function limpaInternos() {
   const env = process.env;
   if (!(env.CF_PAGES === '1' || env.CF_PAGES_COMMIT_SHA || env.CI === 'true')) return;
   // Nota: instagram-feed.json permanece no pacote pois functions/api/instagram.js o usa via env.ASSETS como fallback resiliente.
-  for (const rel of ['docs', 'scripts', 'CLAUDE.md', 'README.md', 'build.sh', '.gitignore', '.node-version', '.claude',
+  for (const rel of ['docs', 'scripts', 'CLAUDE.md', 'README.md', 'build.sh', '.gitignore', '.node-version', '.claude', '.agents',
                      'cidades/cidades.json', 'blog/posts.json', 'videos/videos.json',
                      'app/index.html', 'app/manifest.json']) {
     fs.rmSync(path.join(BUILD_DIR, rel), { recursive: true, force: true });

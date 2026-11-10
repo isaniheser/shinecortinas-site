@@ -3,17 +3,39 @@ import {auroraHeader,auroraMenu,auroraHead,AURORA_V} from './aurora-layout.mjs';
 // Usados por build-cidades.mjs e build-home.mjs. Alterar aqui muda todas as páginas geradas.
 
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
-export const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
-export const CSS_V = '16';
-export const JS_V = '7';
-export const HOME_CSS_V = '8';
-export const HOME_JS_V = '9';
+export const FONTS = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap';
+export const CSS_V = '17';
+export const JS_V = '8';
+export const HOME_CSS_V = '9';
+export const HOME_JS_V = '10';
+export const TODAY_BR = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
 export const FOUNDED_YEAR = 2009;
 export const CURRENT_YEAR = new Date().getFullYear();
 export const YEARS_ACTIVE = CURRENT_YEAR - FOUNDED_YEAR;
 export const GOOGLE_RATING = '4.9';
 export const GOOGLE_RATING_PT = '4,9';
 export const GOOGLE_REVIEWS = '297';
+
+export function mapOgImageToJpg(urlOrPath = '', fallbackHero = '') {
+  const BASE = 'https://www.shinecortinas.com';
+  const raw = String(urlOrPath || '').trim();
+  if (/\.(?:jpe?g|png)(?:\?.*)?$/i.test(raw) && !/logo-shine/i.test(raw)) {
+    return raw.startsWith('http') ? raw : `${BASE}${raw.startsWith('/') ? '' : '/'}${raw}`;
+  }
+  const ref = `${fallbackHero || ''} ${raw}`.toLowerCase();
+  if (ref.includes('cortina-sob-medida')) return `${BASE}/og-cortina-sob-medida.jpg`;
+  if (ref.includes('persiana-motorizada')) return `${BASE}/og-persiana-motorizada.jpg`;
+  if (ref.includes('automacao') || ref.includes('motorizada')) return `${BASE}/og-automacao.jpg`;
+  if (ref.includes('blackout')) return `${BASE}/og-blackouts-tecnicos.jpg`;
+  if (ref.includes('lavagem')) return `${BASE}/og-lavagem-vertical.jpg`;
+  if (ref.includes('isani') || ref.includes('ceo-shine') || ref.includes('equipe-shine')) return `${BASE}/og-isani-consultoria.jpg`;
+  if (ref.includes('hall-wave') || ref.includes('resende') || ref.includes('instalacao') || ref.includes('bainha')) return `${BASE}/og-hall-wave.jpg`;
+  if (ref.includes('tela-solar') || ref.includes('screen')) return `${BASE}/og-tela-solar.jpg`;
+  if (ref.includes('madeira')) return `${BASE}/og-madeira.jpg`;
+  if (ref.includes('linha-puro') || ref.includes('linho') || ref.includes('tecidos') || ref.includes('vassouras')) return `${BASE}/og-linha-puro.jpg`;
+  if (ref.includes('hero-sala')) return `${BASE}/og-hero-sala.jpg`;
+  return `${BASE}/og-cover.jpg`;
+}
 
 export const syncBrandFacts = (s) => String(s)
   .replace(/\b29[0-9] avaliações/g, `${GOOGLE_REVIEWS} avaliações`)
@@ -77,12 +99,23 @@ export function normalizaJsonLd(head, crumbs) {
     if (t === 'VideoObject') {
       n.name = title;
       if (desc) n.description = desc;
+      if (n.publisher && typeof n.publisher === 'object') {
+        n.publisher['@id'] = 'https://www.shinecortinas.com/#org';
+        n.publisher.name = 'ShineCortinas';
+        n.publisher.url = 'https://www.shinecortinas.com/';
+        n.publisher.logo = 'https://www.shinecortinas.com/logo-shine.png';
+      }
+    }
+    if (t === 'Article' || t === 'BlogPosting') {
+      if (typeof n.image === 'string' && /\.avif(?:\?.*)?$/i.test(n.image)) {
+        n.image = mapOgImageToJpg(n.image);
+      }
     }
     if (t === 'Organization' || (Array.isArray(t) && t.includes('Organization'))) {
       n['@id'] = 'https://www.shinecortinas.com/#org';
       n.name = 'ShineCortinas';
       n.url = 'https://www.shinecortinas.com/';
-      if (!n.logo) n.logo = 'https://www.shinecortinas.com/logo-shine.avif';
+      n.logo = 'https://www.shinecortinas.com/logo-shine.png';
       n.sameAs = SAME_AS;
       n.contactPoint = [
         { '@type': 'ContactPoint', telephone: '+5524993298763', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
@@ -143,7 +176,7 @@ export function normalizaJsonLd(head, crumbs) {
     wp.name = title;
     if (desc) wp.description = desc;
   }
-  if (!wp.dateModified) wp.dateModified = existingMod || '2026-09-14';
+  wp.dateModified = TODAY_BR;
   if (Array.isArray(crumbs) && crumbs.length && !graph.some((n) => n && n['@type'] === 'BreadcrumbList')) {
     graph.push({ '@type': 'BreadcrumbList', itemListElement: crumbs.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })) });
   }
@@ -162,16 +195,30 @@ export function cleanHead(head, opts = {}) {
   head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/cidades\.css[^"]*">/g, '');
   head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-leve\.css[^"]*">/g, '');
   head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-aurora\.css[^"]*">/g, '');
+  head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-home-e\.css[^"]*">/g, '');
   head = head.replace(/href="\/assets\/blog-bainha\.css(?:\?v=[^"]*)?"/g, `href="/assets/blog-bainha.css?v=${CSS_V}"`);
   head = head.replace(/\s*<style>[\s\S]*?<\/style>/g, '');
-  head = head.replace('content="#000000"', 'content="#16302A"');
+  head = head.replace(/<meta name="theme-color" content="[^"]*">/, '<meta name="theme-color" content="#08130F">');
+  if (!/<meta name="theme-color"/.test(head)) {
+    head = head.replace(/(<meta name="viewport"[^>]*>)/, () => `$1\n  <meta name="theme-color" content="#08130F">`).replace('$1', () => {
+      const vm = head.match(/<meta name="viewport"[^>]*>/);
+      return vm ? vm[0] : '';
+    });
+  }
   head = head.replace(/\s*<noscript>\s*<link[^>]*fonts\.googleapis\.com[^>]*>\s*<\/noscript>/g, '');
   head = head.replace(/\s*<link[^>]*fonts\.(?:googleapis|gstatic)\.com[^>]*>/g, '');
   head = head.replace(/<link rel="preload" as="image" href="hero-sala\.avif"/, '<link rel="preload" as="image" href="/hero-sala.avif"');
 
   const autoSrcset = (img) => {
-    if (img === '/hero-sala.avif') return ['imagesrcset="/hero-sala-800.avif 800w, /hero-sala.avif 1920w"', 'imagesizes="100vw"'];
+    if (img === '/hero-sala.avif') return ['imagesrcset="/hero-sala-800.avif 800w, /hero-sala-1200.avif 1200w, /hero-sala.avif 1920w"', 'imagesizes="100vw"'];
+    if (img === '/duplo.avif') return ['imagesrcset="/duplo-800.avif 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w"', 'imagesizes="100vw"'];
     if (img === '/linha-puro.avif') return ['imagesrcset="/linha-puro-800.avif 760w, /linha-puro.avif 1696w"', 'imagesizes="100vw"'];
+    if (img === '/automacao.avif') return ['imagesrcset="/automacao-800.avif 760w, /automacao.avif 1696w"', 'imagesizes="100vw"'];
+    if (img === '/isani-consultoria.avif') return ['imagesrcset="/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w"', 'imagesizes="100vw"'];
+    if (img === '/hall-wave-volta-redonda.avif') return ['imagesrcset="/hall-wave-volta-redonda-800.avif 800w, /hall-wave-volta-redonda.avif 1216w"', 'imagesizes="100vw"'];
+    if (img === '/lavagem-vertical-cortinas.avif') return ['imagesrcset="/lavagem-vertical-cortinas-800.avif 800w, /lavagem-vertical-cortinas.avif 1376w"', 'imagesizes="100vw"'];
+    if (img === '/tela-solar.avif') return ['imagesrcset="/tela-solar-800.avif 760w, /tela-solar.avif 1536w"', 'imagesizes="100vw"'];
+    if (img === '/madeira.avif') return ['imagesrcset="/madeira-800.avif 760w, /madeira.avif 1696w"', 'imagesizes="100vw"'];
     return ['', ''];
   };
 
@@ -185,9 +232,26 @@ export function cleanHead(head, opts = {}) {
     const [autoSet, autoSz] = autoSrcset(pImg);
     const exSet = existingPreload && (existingPreload[0].match(/imagesrcset="([^"]+)"/) || [])[1];
     const exSz = existingPreload && (existingPreload[0].match(/imagesizes="([^"]+)"/) || [])[1];
-    const pSrcset = opts.preloadSrcset ? `imagesrcset="${opts.preloadSrcset}"` : (exSet ? `imagesrcset="${exSet}"` : autoSet);
-    const pSizes = opts.preloadSizes ? `imagesizes="${opts.preloadSizes}"` : (opts.preloadSrcset ? 'imagesizes="100vw"' : (exSz ? `imagesizes="${exSz}"` : autoSz));
+    const pSrcset = opts.preloadSrcset ? `imagesrcset="${opts.preloadSrcset}"` : (autoSet || (exSet ? `imagesrcset="${exSet}"` : ''));
+    const pSizes = opts.preloadSizes ? `imagesizes="${opts.preloadSizes}"` : (opts.preloadSrcset ? 'imagesizes="100vw"' : (autoSz || (exSz ? `imagesizes="${exSz}"` : '')));
     preloadTag = `<link rel="preload" as="image" href="${pImg}"${pSrcset ? ' ' + pSrcset : ''}${pSizes ? ' ' + pSizes : ''} fetchpriority="high">`;
+  }
+
+  // Garante og:image e twitter:image em JPG 1200x630 compatível com WhatsApp, Meta e iOS
+  const exOgM = head.match(/<meta property="og:image" content="([^"]*)"[^>]*>/);
+  const ogJpg = mapOgImageToJpg(exOgM ? exOgM[1] : '', pImg);
+  head = head.replace(/\s*<meta property="og:image(?::width|:height)?"[^>]*>/g, '');
+  head = head.replace(/\s*<meta name="twitter:image"[^>]*>/g, '');
+  const ogBlock = `<meta property="og:image" content="${ogJpg}">\n  <meta property="og:image:width" content="1200">\n  <meta property="og:image:height" content="630">`;
+  if (/<meta property="og:url"[^>]*>/.test(head)) {
+    head = head.replace(/(<meta property="og:url"[^>]*>)/, (m) => `${m}\n  ${ogBlock}`);
+  } else if (/<link rel="canonical"[^>]*>/.test(head)) {
+    head = head.replace(/(<link rel="canonical"[^>]*>)/, (m) => `${m}\n  ${ogBlock}`);
+  }
+  if (/<meta name="twitter:card"[^>]*>/.test(head)) {
+    head = head.replace(/(<meta name="twitter:card"[^>]*>)/, () => `<meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:image" content="${ogJpg}">`);
+  } else if (opts.semSchema !== true) {
+    head = head.replace(/(<meta property="og:image:height" content="630">)/, (m) => `${m}\n  <meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:image" content="${ogJpg}">`);
   }
 
   const hasSitemap = /rel="sitemap"/.test(head);
@@ -233,7 +297,7 @@ export function cityChip(cityName) {
     <span data-city-label>${label}</span>
     <button type="button" class="sl-chip__btn" popovertarget="city-pop">${cityName ? 'trocar' : 'minha cidade'}</button>
     <div id="city-pop" popover class="sl-citypop"><p>Escolha a sua cidade</p><div class="sl-citypop__list" data-city-list></div></div>
-  </span><a href="/#diagnostico-isani" class="sl-chip" style="text-decoration:none;background:linear-gradient(135deg,#DDBB6E 0%,#C9A252 55%,#B38A3B 100%);color:#08130F;font-weight:700;border-color:#C9A252;">✦ Simular Meu Ambiente</a><a href="/#obras-reais" class="sl-chip" style="text-decoration:none;font-weight:600;">▶ Obras em Vídeo</a></div></div>
+  </span><button type="button" data-open-consultor class="sl-chip" style="cursor:pointer;font-family:var(--sans);background:linear-gradient(135deg,#DDBB6E 0%,#C9A252 55%,#B38A3B 100%);color:#08130F;font-weight:700;border-color:#C9A252;">✦ Simular Meu Ambiente</button></div></div>
 `;
 }
 
@@ -296,10 +360,10 @@ export function footer() {
     <div style="background:#08130F;color:#FAF6EE;border:1.5px solid rgba(201,162,82,0.45);border-radius:18px;padding:24px 20px;margin-bottom:32px;text-align:center;">
       <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:#DDBB6E;margin:0 0 6px;">✦ Ferramenta Interativa · Consultor do Isani</p>
       <h3 style="font-family:var(--serif);font-size:clamp(21px,3vw,28px);color:#FAF6EE;margin:0 0 8px;font-weight:600;">Qual modelo o Isani indicaria para o <em>seu ambiente hoje?</em></h3>
-      <p style="font-size:13.5px;color:rgba(250,246,238,0.82);max-width:540px;margin:0 auto 16px;">Toque no seu cômodo (Sala, Quarto, Varanda, Cozinha ou Pé-Direito Duplo) e veja na hora a especificação técnica e vídeos de obras reais filmadas na região.</p>
+      <p style="font-size:13.5px;color:rgba(250,246,238,0.82);max-width:540px;margin:0 auto 16px;">Toque no seu cômodo (Sala, Quarto, Varanda, Cozinha ou Pé-Direito Duplo) e veja na hora a especificação técnica sem sair desta página.</p>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
-        <a href="/#diagnostico-isani" style="display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;background:linear-gradient(135deg,#DDBB6E 0%,#C9A252 55%,#B38A3B 100%);color:#08130F;font-weight:700;font-size:13px;text-decoration:none;">✦ Testar Consultor por Ambiente →</a>
-        <a href="/#obras-reais" style="display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;border:1px solid rgba(201,162,82,0.55);background:rgba(255,255,255,0.06);color:#FAF6EE;font-weight:600;font-size:13px;text-decoration:none;">▶ Assistir Obras em Vídeo →</a>
+        <button type="button" data-open-consultor style="cursor:pointer;font-family:var(--sans);border:0;display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;background:linear-gradient(135deg,#DDBB6E 0%,#C9A252 55%,#B38A3B 100%);color:#08130F;font-weight:700;font-size:13px;">✦ Testar Consultor por Ambiente →</button>
+        <a href="/videos/" style="display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;border:1px solid rgba(201,162,82,0.55);background:rgba(255,255,255,0.06);color:#FAF6EE;font-weight:600;font-size:13px;text-decoration:none;">▶ Assistir Obras em Vídeo →</a>
       </div>
     </div>
     <div class="sl-footer__grid">
@@ -315,8 +379,8 @@ export function footer() {
       <div>
         <h4>Soluções e guias</h4>
         <p style="line-height:1.7"><a href="/cortinas/">Cortinas</a> · <a href="/cortina-wave/">Cortina Wave</a> · <a href="/persianas/">Persianas</a> · <a href="/cortina-motorizada/">Cortina Motorizada</a> · <a href="/blackout-e-forros/">Blackout e Forros</a> · <a href="/trilhos-e-acionamentos/">Trilhos e Acionamentos</a> · <a href="/lavagem-de-cortinas/">Lavagem de Cortinas</a> · <a href="/portfolio/">Portfólio</a> · <a href="/videos/">Vídeos</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · <a href="/cidades-atendidas/">Cidades Atendidas</a></p>
-        <h4 style="margin-top:16px">Redes</h4>
-        <p><a href="https://www.instagram.com/shinecortinas/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://www.facebook.com/shinecortinas" rel="me noopener" target="_blank">Facebook</a> · <a href="https://www.youtube.com/@shinecortinas" rel="me noopener" target="_blank">YouTube</a><br><a href="https://www.tiktok.com/@shinecortinas" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.pinterest.com/shinecortinas" rel="me noopener" target="_blank">Pinterest</a></p>
+        <h4 style="margin-top:16px">Cobertura regional</h4>
+        <p><a href="/cidades/volta-redonda/">Volta Redonda</a> · <a href="/cidades/resende/">Resende</a> · <a href="/cidades/barra-mansa/">Barra Mansa</a><br><a href="/cidades/penedo/">Penedo</a> · <a href="/cidades/itatiaia/">Itatiaia</a> · <a href="/cidades-atendidas/">15 cidades no Sul Fluminense</a></p>
       </div>
     </div>
     <div class="sl-footer__bottom"><span>© <span data-current-year>${CURRENT_YEAR}</span> ShineCortinas · <a href="/politica-de-privacidade/" style="color:inherit;text-decoration:underline;">Política de Privacidade</a></span><span>Google ${GOOGLE_RATING_PT} ★★★★★ · ${GOOGLE_REVIEWS} avaliações</span></div>

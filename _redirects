@@ -228,6 +228,8 @@ http://shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 http://www.shinecortinas.com/* https://www.shinecortinas.com/:splat 301
 /docs/* / 301
 /scripts/* / 301
+/.agents/* / 301
+/.claude/* / 301
 /produtos-cidade/* /cidades-atendidas/ 301
 /portfolio-collections/* /portfolio/ 301
 /blog/categories/* /blog/ 301

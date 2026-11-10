@@ -5,11 +5,11 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync , statSync} from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { WA, CSS_V, esc, syncBrandFacts, cleanHead, normalizaCanonical, header, cityChip, strip, footer, waFloat, bar, tail } from './partials.mjs';
+import { WA, CSS_V, esc, syncBrandFacts, cleanHead, normalizaCanonical, header, cityChip, strip, footer, waFloat, bar, tail, TODAY_BR } from './partials.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://www.shinecortinas.com';
-const TODAY = new Date().toISOString().slice(0, 10);
+const TODAY = TODAY_BR;
 const dec = (s) => s.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ');
 
 const CITIES = [
@@ -20,7 +20,7 @@ const CITIES = [
 ];
 
 const heroSrcset = (img) => {
-  if (img === '/hero-sala.avif') return ' srcset="/hero-sala-800.avif 800w, /hero-sala.avif 1920w" sizes="100vw"';
+  if (img === '/hero-sala.avif') return ' srcset="/hero-sala-800.avif 800w, /hero-sala-1200.avif 1200w, /hero-sala.avif 1920w" sizes="100vw"';
   if (img === '/linha-puro.avif') return ' srcset="/linha-puro-800.avif 760w, /linha-puro.avif 1696w" sizes="100vw"';
   return '';
 };
@@ -148,7 +148,7 @@ function buildHub() {
 ${header('/cidades-atendidas/')}${heroInterna('Cidades atendidas',
     'Atendemos <em>15 cidades</em> do Sul Fluminense',
     'O consultor vai até a sua casa, na sua cidade, com o mostruário completo. Cada cidade tem a sua própria página, com as perguntas e o conteúdo de lá.',
-    '/hero-sala.avif', 'Cortinas sob medida no Sul Fluminense — ShineCortinas',
+    '/hero-sala.avif', 'Cortinas sob medida no Sul Fluminense, ShineCortinas',
     '<li><a href="/">Início</a></li><li aria-hidden="true">/</li><li aria-current="page">Cidades</li>')}
 ${strip()}
   <main>
@@ -224,7 +224,7 @@ const VIDEO_META = {
   'cortina-cabana-chale-vassouras': ['Cortina Sob Medida em Chalé A-Frame Vassouras | ShineCortinas', 'Projeto sob medida em chalé A-Frame em Vassouras: cortina que acompanha o vão inclinado da cabana, garantindo conforto térmico, caimento e privacidade.'],
   'cortina-motorizada-wave-resende': ['Cortina Motorizada Wave em Resende RJ | ShineCortinas', null],
   'cortina-screen-motorizada-mangaratiba': ['Cortina Tela Solar Motorizada em Mangaratiba | ShineCortinas', null],
-  'cortina-wave-linho-barra-do-pirai': ['Cortina Wave em Linho Natural em Barra do Piraí | ShineCortinas', null],
+  'cortina-wave-linho-barra-do-pirai': ['Cortina Wave Toque de Linho em Barra do Piraí | ShineCortinas', null],
   'experiencia-tecidos-alfaiataria': ['Mostruário em Domicílio e Tecidos Sob Medida | ShineCortinas', null],
   'instalacao-sul-fluminense': ['Instalação de Cortinas no Sul Fluminense | ShineCortinas', null],
   'persiana-horizontal-madeira-barra-mansa': ['Persiana de Madeira 50mm em Barra Mansa | ShineCortinas', null],
@@ -307,8 +307,8 @@ function sincronizaCss(file, src, sectionPath = '/blog/', crumbs, metaFix, conte
     body = body.replace(/\s*<div class="sl-video-context">[\s\S]*?<\/div>\s*(?=<div class="sl-cta-inline">)/, '');
     body = body.replace('<div class="sl-cta-inline">', `${contextHtml}\n      <div class="sl-cta-inline">`);
   }
-  body = body.replace(/<header class="(?:pv-header|sl-header)"[\s\S]*?<\/header>(?:\s*<nav class="sl-nav-fallback"[\s\S]*?<\/nav>)*/, header(sectionPath).trim());
-  body = body.replace(/<footer class="sl-footer">[\s\S]*?<\/html>\s*$/, `${footer().trimStart()}${waFloat()}${bar('single')}${tail()}`);
+  body = body.replace(/<header class="(?:pv-header|sl-header|sa-header)"[\s\S]*?<\/header>(?:\s*<nav class="sl-nav-fallback"[\s\S]*?<\/nav>)*/, () => header(sectionPath).trim());
+  body = body.replace(/<footer class="sl-footer">[\s\S]*?<\/html>\s*$/, () => `${footer().trimStart()}${waFloat()}${bar('single')}${tail()}`);
   writeFileSync(file, head + body);
 }
 
@@ -457,7 +457,7 @@ function buildPrivacidade() {
     const ld = {
       '@context': 'https://schema.org',
       '@graph': [
-        { '@type': 'Organization', '@id': `${BASE}/#org`, name: 'ShineCortinas', url: `${BASE}/`, logo: `${BASE}/logo-shine.avif` },
+        { '@type': 'Organization', '@id': `${BASE}/#org`, name: 'ShineCortinas', url: `${BASE}/`, logo: `${BASE}/logo-shine.png` },
         { '@type': 'WebPage', '@id': `${BASE}/politica-de-privacidade/`, url: `${BASE}/politica-de-privacidade/`, name: 'Política de Privacidade e Proteção de Dados | ShineCortinas', inLanguage: 'pt-BR', dateModified: TODAY }
       ]
     };

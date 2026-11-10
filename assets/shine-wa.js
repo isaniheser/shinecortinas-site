@@ -1,10 +1,13 @@
-/* ShineCortinas — memória de cidade + WhatsApp com contexto.
+/* ShineCortinas — memória de cidade + atribuição Google/Meta Ads + WhatsApp com fallback seguro.
    - Numa página /cidades/<slug>/ grava a cidade no navegador (primeira parte, sem identificar ninguém).
-   - Em qualquer página, ao tocar num link wa.me, monta a mensagem com cidade + contexto da página.
-   - Se não houver memória, pede um palpite a /api/geo (cidade pelo IP, via Cloudflare) e só sugere.
-   - A etiqueta [data-city-chip] mostra "Atendendo em X" e permite trocar. */
+   - Preserva UTMs e click IDs (gclid, gbraid, wbraid, gad_source, fbclid) por 30 dias em localStorage.
+   - Em celulares, abre direto no app (whatsapp://send) com fallback automático para wa.me se o WebView bloquear;
+     em iPads, tablets e computadores, usa https://wa.me direto sem travar. */
 (function () {
   var KEY = 'shine.cidade';
+  var UTM_KEY = 'shine.utm.v2';
+  var UTM_TTL = 30 * 24 * 60 * 60 * 1000;
+  var VISITOR_KEY = 'sc_visitante_id';
   var CITIES = {
     'volta-redonda': 'Volta Redonda', 'barra-mansa': 'Barra Mansa', 'resende': 'Resende', 'porto-real': 'Porto Real',
     'itatiaia': 'Itatiaia', 'penedo': 'Penedo', 'visconde-de-maua': 'Visconde de Mauá', 'maromba': 'Maromba',
@@ -12,6 +15,37 @@
     'vassouras': 'Vassouras', 'paulo-de-frontin': 'Engenheiro Paulo de Frontin', 'miguel-pereira': 'Miguel Pereira'
   };
   var NUMBER = '5524993298763';
+
+  function uuid() {
+    try { if (window.crypto && crypto.randomUUID) return crypto.randomUUID(); } catch (e) {}
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0;
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  }
+
+  var visitorId = '';
+  try {
+    visitorId = localStorage.getItem(VISITOR_KEY) || '';
+    if (!visitorId) {
+      visitorId = uuid();
+      localStorage.setItem(VISITOR_KEY, visitorId);
+    }
+  } catch (e) {
+    visitorId = uuid();
+  }
+
+  (function syncZarazVisitor() {
+    var tries = 0;
+    (function applyId() {
+      tries += 1;
+      if (window.zaraz && typeof window.zaraz.set === 'function') {
+        try { window.zaraz.set('external_id', visitorId); } catch (e) {}
+        return;
+      }
+      if (tries < 16) window.setTimeout(applyId, 300);
+    })();
+  })();
 
   function read() { try { var v = JSON.parse(localStorage.getItem(KEY) || 'null'); return v && CITIES[v.slug] ? v : null; } catch (e) { return null; } }
   function save(slug, source) { try { localStorage.setItem(KEY, JSON.stringify({ slug: slug, source: source, t: Date.now() })); } catch (e) {} }
@@ -38,8 +72,13 @@
     }
     var favs = [];
     try {
-      var rawFavs = JSON.parse(localStorage.getItem('shine.favoritos') || '[]');
-      if (Array.isArray(rawFavs)) favs = rawFavs;
+      var savedV2 = JSON.parse(localStorage.getItem('shine_saved_cases_v2') || '[]');
+      if (Array.isArray(savedV2) && savedV2.length) {
+        favs = savedV2.map(function (it) { return it && (it.title || it.id) ? String(it.title || it.id) : ''; }).filter(Boolean);
+      } else {
+        var rawFavs = JSON.parse(localStorage.getItem('shine.favoritos') || '[]');
+        if (Array.isArray(rawFavs)) favs = rawFavs;
+      }
     } catch (e) {}
     return {
       consultor: j && j.consultor ? String(j.consultor) : null,
@@ -51,15 +90,15 @@
   }
 
   function message(kind) {
-    var c = cityName(); var where = (c && state.source !== 'ip') ? ' Atendimento em ' + c + '.' : ''; // cidade por IP é só palpite: não vira afirmação
+    var c = cityName(); var where = (c && state.source !== 'ip') ? ' Atendimento em ' + c + '.' : '';
     var ctx = context();
     if (kind === 'agendar') return 'Olá, vim do site da Shine.' + where + ' Quero agendar a consultoria gratuita em casa.';
     if (kind === 'estimativa') return 'Olá, vim do site da Shine.' + where + ' Quero uma estimativa para o meu ambiente (vi: ' + ctx + ').';
     return 'Olá, vim do site da Shine.' + where + ' Quero falar com um consultor sobre cortinas e persianas (vi: ' + ctx + ').';
   }
 
-  var IS_MOBILE = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  // Apenas smartphones reais usam esquema nativo whatsapp://send; iPads/tablets e computadores usam wa.me.
+  var IS_PHONE = /Android.*Mobile|iPhone|iPod/i.test(navigator.userAgent || '');
 
   function isWa(a) {
     if (!a) return false;
@@ -78,23 +117,42 @@
 
   function getUtmDetails() {
     var saved = null;
-    try { saved = JSON.parse(sessionStorage.getItem('shine.utm') || 'null'); } catch (e) {}
+    var now = Date.now();
+    try {
+      var rawV2 = JSON.parse(localStorage.getItem(UTM_KEY) || 'null');
+      if (rawV2 && (!rawV2.ts || (now - rawV2.ts) < UTM_TTL)) saved = rawV2;
+    } catch (e) {}
+    if (!saved) {
+      try { saved = JSON.parse(sessionStorage.getItem('shine.utm') || 'null'); } catch (e) {}
+    }
     try {
       var qs = new URLSearchParams(location.search);
       var src = qs.get('utm_source');
       var med = qs.get('utm_medium');
       var cmp = qs.get('utm_campaign');
+      var cnt = qs.get('utm_content');
+      var trm = qs.get('utm_term');
       var gclid = qs.get('gclid');
+      var gbraid = qs.get('gbraid');
+      var wbraid = qs.get('wbraid');
+      var gadSource = qs.get('gad_source');
       var fbclid = qs.get('fbclid');
-      if (src || med || cmp || gclid || fbclid) {
+      if (src || med || cmp || cnt || trm || gclid || gbraid || wbraid || gadSource || fbclid) {
         saved = {
           source: src || (saved && saved.source) || '',
           medium: med || (saved && saved.medium) || '',
           campaign: cmp || (saved && saved.campaign) || '',
+          content: cnt || (saved && saved.content) || '',
+          term: trm || (saved && saved.term) || '',
           gclid: gclid || (saved && saved.gclid) || '',
-          fbclid: fbclid || (saved && saved.fbclid) || ''
+          gbraid: gbraid || (saved && saved.gbraid) || '',
+          wbraid: wbraid || (saved && saved.wbraid) || '',
+          gad_source: gadSource || (saved && saved.gad_source) || '',
+          fbclid: fbclid || (saved && saved.fbclid) || '',
+          ts: now
         };
-        sessionStorage.setItem('shine.utm', JSON.stringify(saved));
+        try { localStorage.setItem(UTM_KEY, JSON.stringify(saved)); } catch (e) {}
+        try { sessionStorage.setItem('shine.utm', JSON.stringify(saved)); } catch (e) {}
       }
     } catch (e) {}
     return saved;
@@ -104,50 +162,109 @@
   function utmSuffix() {
     var u = getUtmDetails();
     if (!u || typeof u !== 'object') return '';
-    var tag = u.campaign || u.utm_campaign || u.source || u.utm_source || (u.gclid ? 'Google Ads' : u.fbclid ? 'Instagram/Meta' : '');
+    var isGoogleAds = Boolean(u.gclid || u.gbraid || u.wbraid || u.gad_source);
+    var tag = u.campaign || u.utm_campaign || u.source || u.utm_source || (isGoogleAds ? 'Google Ads' : u.fbclid ? 'Instagram/Meta' : '');
     return tag ? ' [anúncio: ' + tag + ']' : '';
   }
 
-  function applyWaHref(a) {
+  window.getShineUtmDetails = getUtmDetails;
+  window.getShineUtmSuffix = utmSuffix;
+
+  function buildWaUrls(txt) {
+    var q = txt ? encodeURIComponent(txt) : '';
+    return {
+      app: 'whatsapp://send?phone=' + NUMBER + (q ? '&text=' + q : ''),
+      web: 'https://wa.me/' + NUMBER + (q ? '?text=' + q : '')
+    };
+  }
+
+  function resolveWaText(a) {
     var kind = a.getAttribute('data-wa') || 'conversar';
     var txt = '';
     if (!a.hasAttribute('data-wa-custom')) {
       txt = message(kind);
     } else {
-      txt = extractTextParam(a.getAttribute('href'));
+      txt = a.getAttribute('data-wa-raw-text') || extractTextParam(a.getAttribute('href'));
+      if (txt && !a.hasAttribute('data-wa-raw-text')) {
+        a.setAttribute('data-wa-raw-text', txt.replace(/\s*\[anúncio:[^\]]*\]\s*$/, ''));
+        txt = a.getAttribute('data-wa-raw-text');
+      }
       if (!txt) txt = message(kind);
     }
     var suf = utmSuffix();
     if (txt && suf && txt.indexOf('[anúncio:') === -1) {
       txt = txt + suf;
     }
-    if (IS_MOBILE) {
+    return { kind: kind, text: txt };
+  }
+
+  function applyWaHref(a) {
+    var res = resolveWaText(a);
+    var urls = buildWaUrls(res.text);
+    a.setAttribute('data-wa-web-fallback', urls.web);
+    if (IS_PHONE) {
       a.removeAttribute('target');
-      a.setAttribute('href', 'whatsapp://send?phone=' + NUMBER + (txt ? '&text=' + encodeURIComponent(txt) : ''));
+      a.setAttribute('href', urls.app);
     } else {
-      a.setAttribute('href', 'https://wa.me/' + NUMBER + (txt ? '?text=' + encodeURIComponent(txt) : ''));
+      a.setAttribute('href', urls.web);
     }
-    return kind;
+    return res.kind;
+  }
+
+  function scheduleWebFallback(webUrl) {
+    if (!IS_PHONE || !webUrl) return;
+    var cancelled = false;
+    var cancel = function () {
+      cancelled = true;
+      document.removeEventListener('visibilitychange', onVis);
+      window.removeEventListener('pagehide', cancel);
+      window.removeEventListener('blur', cancel);
+    };
+    var onVis = function () {
+      if (document.hidden) cancel();
+    };
+    document.addEventListener('visibilitychange', onVis);
+    window.addEventListener('pagehide', cancel, { once: true });
+    window.addEventListener('blur', cancel, { once: true });
+    window.setTimeout(function () {
+      document.removeEventListener('visibilitychange', onVis);
+      window.removeEventListener('pagehide', cancel);
+      window.removeEventListener('blur', cancel);
+      if (!cancelled && !document.hidden) {
+        window.location.href = webUrl;
+      }
+    }, 1800);
   }
 
   function trackWa(kind) {
     var dados = {
+      event_id: uuid(),
+      external_id: visitorId,
       origem_link: kind,
       pagina: location.pathname,
       contexto: context(),
-      destino: IS_MOBILE ? 'app_direto' : 'web'
+      destino: IS_PHONE ? 'app_direto' : 'web'
     };
     var c = cityName();
     if (c && state.source !== 'ip') dados.cidade = c;
     var utm = getUtmDetails();
-    if (utm && utm.source) dados.utm_source = utm.source;
-    if (utm && utm.medium) dados.utm_medium = utm.medium;
-    if (utm && utm.campaign) dados.utm_campaign = utm.campaign;
+    if (utm) {
+      if (utm.source) dados.utm_source = utm.source;
+      if (utm.medium) dados.utm_medium = utm.medium;
+      if (utm.campaign) dados.utm_campaign = utm.campaign;
+      if (utm.content) dados.utm_content = utm.content;
+      if (utm.term) dados.utm_term = utm.term;
+      if (utm.gclid) dados.gclid = utm.gclid;
+      if (utm.gbraid) dados.gbraid = utm.gbraid;
+      if (utm.wbraid) dados.wbraid = utm.wbraid;
+      if (utm.gad_source) dados.gad_source = utm.gad_source;
+      if (utm.fbclid) dados.fbclid = utm.fbclid;
+    }
     var jd = getJourneyDetails();
     if (jd.consultor) dados.jornada_consultor = jd.consultor;
-    if (jd.obras.length) dados.jornada_obras = jd.obras.join(' | ');
-    if (jd.favoritos.length) dados.jornada_favoritos = jd.favoritos.join(' | ');
-    if (jd.videos.length) dados.jornada_videos = jd.videos.join(' | ');
+    if (jd.obras.length) dados.jornada_obras = jd.obras.slice(0, 8).join(' | ');
+    if (jd.favoritos.length) dados.jornada_favoritos = jd.favoritos.slice(0, 8).join(' | ');
+    if (jd.videos.length) dados.jornada_videos = jd.videos.slice(0, 8).join(' | ');
     try {
       if (window.zaraz && typeof window.zaraz.track === 'function') {
         window.zaraz.track('Contact', dados);
@@ -177,9 +294,12 @@
     if (!isWa(a)) return;
     var kind = applyWaHref(a);
     trackWa(kind);
+    if (IS_PHONE) {
+      scheduleWebFallback(a.getAttribute('data-wa-web-fallback'));
+    }
   }, true);
 
-  if (IS_MOBILE) {
+  if (IS_PHONE) {
     document.querySelectorAll('a').forEach(function (a) {
       if (isWa(a)) applyWaHref(a);
     });

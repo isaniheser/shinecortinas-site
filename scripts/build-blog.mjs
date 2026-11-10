@@ -18,7 +18,7 @@ import lavagem from './content/lavagem.mjs';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { WA, esc, cleanHead, header, cityChip, footer, waFloat, bar, tail, CSS_V, FONTS } from './partials.mjs';
+import { WA, esc, cleanHead, header, cityChip, footer, waFloat, bar, tail, CSS_V, FONTS, mapOgImageToJpg } from './partials.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://www.shinecortinas.com';
@@ -516,6 +516,11 @@ function editorialBody(post) {
   const nn = (i) => String(i + 1).padStart(2, '0');
   const toc = secs.map((sec, i) => `<li><a href="#${sec.id}"><span>${nn(i)}</span>${sec.toc || sec.h2}</a></li>`).join('\n            ');
   const faqEd = post.faq.map(([q, a]) => `          <details class="sl-ed-faq"><summary>${q}</summary><div><p>${a}</p></div></details>`).join('\n');
+  const midCta = `          <div class="sl-cta-inline sl-ed-midcta">
+            <h3>Quer aplicar esta orientação na sua janela?</h3>
+            <p>O consultor vai até a sua casa com o mostruário completo e mede cada vão a laser. Gratuito e sem compromisso.</p>
+            <a class="sl-btn" data-wa="estimativa" href="${WA}" target="_blank" rel="noopener noreferrer">Agendar consultoria gratuita em casa →</a>
+          </div>`;
   const sections = secs.map((sec, i) => {
     if (sec.closing) {
       return `          <section id="${sec.id}" class="sl-ed-sec sl-ed-closing">
@@ -528,23 +533,39 @@ function editorialBody(post) {
           </section>`;
     }
     const html = sec.faq ? sec.html + '\n' + faqEd : sec.html;
+    const extraMid = (i === 1 && !sec.html.includes('sl-ed-fr-consult')) ? `\n${midCta}` : '';
     return `          <section id="${sec.id}" class="sl-ed-sec">
             <div class="sl-ed-label">${nn(i)} / ${sec.label || post.sectionLabel || 'Guia de medidas'}</div>
             <h2>${sec.h2}</h2>
 ${html}
-          </section>`;
+          </section>${extraMid}`;
   }).join('\n');
   const h = post.hero;
+  const seenHref = new Set();
+  const continueLinks = [
+    ...(post.related || []),
+    ['/cidades/volta-redonda/', 'Cortinas em Volta Redonda'],
+    ['/cidades/resende/', 'Cortinas em Resende'],
+    ['/cidades/barra-mansa/', 'Cortinas em Barra Mansa'],
+    ['/blog/', 'Todos os artigos'],
+    ['/portfolio/', 'Projetos reais'],
+    ['/metodo/', 'Como funciona'],
+    ['/cidades-atendidas/', 'Cidades atendidas'],
+  ].filter(([hh]) => {
+    if (seenHref.has(hh)) return false;
+    seenHref.add(hh);
+    return true;
+  }).map(([hh, t]) => `<a href="${hh}">${t}</a>`).join('');
+
   return `<body data-concept="ambientes" data-logo-finish="aurora" class="${post.bodyClass || ''}" data-wa-context="o artigo sobre ${esc(post.kicker.toLowerCase())}">
 ${header('/blog/')}
-${cityChip(null)}
   <main>
     <section class="sl-ed-hero">
       <div>
         <nav aria-label="Breadcrumb" class="sl-ed-crumbs"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>${post.kicker}</span></nav>
         <p class="sl-ed-eyebrow">${h.eyebrow}</p>
         <h1 class="sl-ed-h1" id="topo">${h.h1} <em>${h.h1em}</em></h1>
-        <div class="sl-ed-author"><span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/isani-autor.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="lazy" decoding="async"></span><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
+        <div class="sl-ed-author"><span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="lazy" decoding="async"></span><div><strong>Por Isani Oliveira</strong><span>Fundador da ShineCortinas e especialista em cortinas sob medida · Atualizado em ${post.modified.split('-').reverse().join('/')}</span></div></div>
         <div class="sl-ed-lead">${h.lead}</div>
         <a class="sl-ed-readlink" href="#${h.readTo}">${h.readText} <span aria-hidden="true">↓</span></a>
       </div>
@@ -572,7 +593,7 @@ ${cityChip(null)}
 ${sections}
         </article>
         <div class="sl-ed-authorend">
-          <span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/isani-autor.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="lazy" decoding="async"></span>
+          <span style="display:block;width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0"><img src="/ceo-shine.avif" alt="Isani Oliveira, fundador da ShineCortinas" width="48" height="48" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:0" loading="lazy" decoding="async"></span>
           <p><strong>Conhecimento de quem está no projeto.</strong><br>Orientações de Isani Oliveira, fundador da ShineCortinas e especialista em cortinas sob medida, desde 2009 no Sul Fluminense. <a href="/sobre/">Conheça a Shine</a>.</p>
         </div>
       </div>
@@ -581,8 +602,7 @@ ${sections}
     <section class="sl-section sl-section--tight"><div class="sl-wrap">
       <p class="sl-label">Continue no site</p>
       <div class="sl-links">
-${(post.related || []).map(([hh, t]) => `<a href="${hh}">${t}</a>`).join('')}
-        <a href="/cidades/volta-redonda/">Cortinas em Volta Redonda</a><a href="/cidades/resende/">Cortinas em Resende</a><a href="/cidades/barra-mansa/">Cortinas em Barra Mansa</a><a href="/blog/">Todos os artigos</a><a href="/portfolio/">Projetos reais</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas/">Cidades atendidas</a>
+        ${continueLinks}
       </div>
     </div></section>
   </main>
@@ -598,6 +618,7 @@ ${footer()}${waFloat()}${bar('single')}${tail()}`;
 
 function build(post) {
   const url = `${BASE}/blog/${post.slug}/`;
+  const ogJpg = mapOgImageToJpg(post.ogImage || '/blackouts-tecnicos.avif', post.hero?.photo || '');
   const faqHtml = post.faq.map(([q, a]) => `        <details><summary>${q}</summary><div>${a}</div></details>`).join('\n');
   const defaultSpeakable = post.layout === 'editorial'
     ? ['/html/body//h1', '/html/body//div[@class="sl-ed-lead"]/p[1]']
@@ -605,13 +626,13 @@ function build(post) {
   const ld = {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Organization', '@id': `${BASE}/#org`, name: 'ShineCortinas', url: BASE, logo: `${BASE}/logo-shine.avif`,
+      { '@type': 'Organization', '@id': `${BASE}/#org`, name: 'ShineCortinas', url: `${BASE}/`, logo: `${BASE}/logo-shine.png`,
         sameAs: ['https://www.instagram.com/shinecortinas/', 'https://www.facebook.com/shinecortinas', 'https://www.tiktok.com/@shinecortinas', 'https://www.youtube.com/@shinecortinas', 'https://www.pinterest.com/shinecortinas'] },
       { '@type': 'Person', '@id': `${BASE}/#isani`, name: 'Isani Oliveira', jobTitle: 'Fundador e especialista em cortinas e persianas sob medida', description: 'Fundador da ShineCortinas, à frente da empresa desde 2009. Designer de interiores por formação prática, projeta cortinas e persianas sob medida para residências do Sul Fluminense.', url: `${BASE}/sobre/`, image: `${BASE}/isani-consultoria.avif`, worksFor: { '@id': `${BASE}/#org` } },
       { '@type': 'Article', '@id': `${url}#article`, headline: post.title, description: post.description,
-        datePublished: post.published, dateModified: post.modified,
+        datePublished: post.published, dateModified: TODAY,
         author: { '@id': `${BASE}/#isani` }, publisher: { '@id': `${BASE}/#org` },
-        ...(post.ogImage ? { image: `${BASE}${post.ogImage}` } : {}),
+        image: ogJpg,
         mainEntityOfPage: { '@id': url }, inLanguage: 'pt-BR',
         about: post.about || ['forro para cortina', 'blackout', 'semi blackout', 'cortinas sob medida'] },
       { '@type': 'FAQPage', '@id': `${url}#faq`,
@@ -621,17 +642,33 @@ function build(post) {
         { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE}/blog/` },
         { '@type': 'ListItem', position: 3, name: post.kicker, item: url } ] },
       { '@type': 'WebPage', '@id': url, url, name: post.seoTitle, inLanguage: 'pt-BR',
-        breadcrumb: { '@id': `${url}#breadcrumb` }, dateModified: post.modified,
+        breadcrumb: { '@id': `${url}#breadcrumb` }, dateModified: TODAY,
         speakable: { '@type': 'SpeakableSpecification', xpath: post.speakableXPath || defaultSpeakable } },
     ],
   };
+
+  const seenStdHref = new Set();
+  const stdContinueLinks = [
+    ...(post.related || [['/blog/o-que-e-blackout/', 'O que é blackout'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/blackout-e-forros/', 'Blackout e forros']]),
+    ['/cidades/volta-redonda/', 'Cortinas em Volta Redonda'],
+    ['/cidades/resende/', 'Cortinas em Resende'],
+    ['/cidades/barra-mansa/', 'Cortinas em Barra Mansa'],
+    ['/blog/', 'Todos os artigos'],
+    ['/portfolio/', 'Projetos reais'],
+    ['/metodo/', 'Como funciona'],
+    ['/cidades-atendidas/', 'Cidades atendidas'],
+  ].filter(([hh]) => {
+    if (seenStdHref.has(hh)) return false;
+    seenStdHref.add(hh);
+    return true;
+  }).map(([h, t]) => `<a href="${h}">${t}</a>`).join('');
 
   const head = `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#16302A">
+  <meta name="theme-color" content="#08130F">
   <title>${esc(post.seoTitle)}</title>
   <meta name="description" content="${esc(post.description)}">
   <meta name="robots" content="index, follow">
@@ -641,9 +678,13 @@ function build(post) {
   <meta property="og:title" content="${esc(post.seoTitle)}">
   <meta property="og:description" content="${esc(post.description)}">
   <meta property="og:url" content="${url}">
-  <meta property="og:image" content="${BASE}${post.ogImage || '/blackouts-tecnicos.avif'}">
+  <meta property="og:image" content="${ogJpg}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@shinecortinas">
+  <meta name="twitter:image" content="${ogJpg}">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   ${post.hero && post.hero.photo ? `<link rel="preload" as="image" href="${post.hero.photo}"${post.hero.photoSrcset ? ` imagesrcset="${post.hero.photoSrcset}" imagesizes="(max-width: 960px) 100vw, 44vw"` : ''} fetchpriority="high">\n  ` : ''}<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="${FONTS}">
@@ -676,7 +717,6 @@ ${header('/blog/')}
       <p class="sl-postmeta"><span>Por <a href="/sobre/">Isani Oliveira</a>, fundador da ShineCortinas e especialista em cortinas sob medida</span><span>Atualizado em ${post.modified.split('-').reverse().join('/')}</span></p>
     </div></div>
   </section>
-${cityChip(null)}
   <main>
     <article class="sl-section"><div class="sl-wrap">
       <div class="sl-article">
@@ -711,8 +751,7 @@ ${faqHtml}
     <section class="sl-section sl-section--tight"><div class="sl-wrap">
       <p class="sl-label">Continue no site</p>
       <div class="sl-links">
-${(post.related || [['/blog/o-que-e-blackout/', 'O que é blackout'], ['/cortinas/', 'Cortinas sob medida'], ['/persianas/', 'Persianas técnicas'], ['/blackout-e-forros/', 'Blackout e forros']]).map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}
-        <a href="/cidades/volta-redonda/">Cortinas em Volta Redonda</a><a href="/cidades/resende/">Cortinas em Resende</a><a href="/cidades/barra-mansa/">Cortinas em Barra Mansa</a><a href="/blog/">Todos os artigos</a><a href="/portfolio/">Projetos reais</a><a href="/metodo/">Como funciona</a><a href="/cidades-atendidas/">Cidades atendidas</a>
+        ${stdContinueLinks}
       </div>
     </div></section>
   </main>

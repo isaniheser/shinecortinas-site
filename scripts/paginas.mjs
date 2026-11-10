@@ -43,17 +43,17 @@ export const PAGINAS = [
     description: 'Cortinas sob medida em Volta Redonda, Resende e Sul Fluminense: Wave, pregas de alfaiataria e motorizada. Tecidos acima de 170 g/m² e medição a laser.',
     kicker: 'Cortinas sob medida',
     h1: 'Cortinas sob medida, com o <em>caimento</em> que a foto de loja não mostra',
-    lead: 'Imagine entrar na sua sala no fim da tarde, ver a luz dourada filtrada por ondas de linho que descem do teto até beijar o piso, sentir o toque macio de um tecido encorpado acima de 170 g/m² e notar como o ambiente fica na hora mais silencioso e acolhedor, sem aquele eco frio de porcelanato. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense levando o mostruário até a sua casa, com medição a laser e confecção de alfaiataria na nossa própria oficina.',
+    lead: 'Imagine entrar na sua sala no fim da tarde, ver a luz dourada filtrada por ondas com toque de linho que descem do teto até beijar o piso, sentir o toque macio de um tecido encorpado acima de 170 g/m² e notar como o ambiente fica na hora mais silencioso e acolhedor, sem aquele eco frio de porcelanato. Atendemos Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense levando o mostruário até a sua casa, com medição a laser e confecção de alfaiataria na nossa própria oficina.',
     hero: '/cortina-sob-medida.avif',
-    heroAlt: 'Sala com cortina de linho sob medida instalada pela ShineCortinas',
+    heroAlt: 'Sala com cortina toque de linho sob medida instalada pela ShineCortinas',
     blocos: [
       { t: 'prose', h2: 'O que define uma cortina bem resolvida', p: [
         'Uma cortina de alto padrão transforma a sala antes mesmo de você reparar na costura: ela veste a parede inteira, suaviza o brilho nos olhos, envolve a mão com textura agradável e absorve a reverberação da voz e da TV em ambientes amplos ou de pé-direito duplo. Para entregar essa sensação todos os dias, três decisões trabalham juntas: o <strong>tecido decorativo</strong> da frente (com até 10% de linho ou 100% poliéster toque de linho acima de 170 g/m²), o <strong>forro</strong> que corre por trás protegendo a fibra do sol e dosando a claridade, e o <strong>sistema de prega e trilho</strong> (manual ou <a href="/cortina-motorizada/">motorizado com Touch Motion</a>) que mantém o prumo impecável do teto ao chão.',
         'É por isso que não indicamos escolher tecido por foto de celular. Na consultoria gratuita em domicílio em <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/resende/">Resende</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a>, <a href="/cidades/penedo/">Penedo</a>, <a href="/cidades/vassouras/">Vassouras</a> e toda a região, levamos o mostruário completo até a sua casa para você sentir o toque na mão e ver como a trama reage contra a luz da sua própria janela.',
       ] },
       { t: 'cards', h2: 'Tecidos e composições que trabalhamos', sub: 'Priorizamos tecidos com gramatura acima de 170 g/m² para garantir peso, prumo e resistência ao sol.', items: [
-        { tag: 'Caimento e textura', h: 'Linho técnico e misto (até 10%)', p: 'Trabalhamos com 100% poliéster que imita o linho com perfeição ou tecidos com no máximo 10% de linho natural. Assim a cortina tem caimento sedoso, não fica armada, não amarrota fácil e não encolhe na lavagem.', img: '/linha-puro.avif', alt: 'Tecido de linho do mostruário ShineCortinas' },
-        { tag: 'Leveza e luz', h: 'Voil e tramas leves', p: 'Tecidos translúcidos que filtram a claridade e mantêm a sala iluminada com privacidade. Muito utilizados na frente de um forro slim ou de um blackout.', img: '/duplo.avif', alt: 'Sala com cortina dupla de voil e linho, projeto ShineCortinas' },
+        { tag: 'Caimento e textura', h: 'Toque de linho técnico e misto (até 10%)', p: 'Trabalhamos com 100% poliéster que imita o linho com perfeição ou tecidos com no máximo 10% de linho natural. Assim a cortina tem caimento sedoso, não fica armada, não amarrota fácil e não encolhe na lavagem.', img: '/linha-puro.avif', alt: 'Tecido toque de linho do mostruário ShineCortinas' },
+        { tag: 'Leveza e luz', h: 'Voil e tramas leves', p: 'Tecidos translúcidos que filtram a claridade e mantêm a sala iluminada com privacidade. Muito utilizados na frente de um forro slim ou de um blackout.', img: '/duplo.avif', alt: 'Sala com cortina dupla de voil e toque de linho, projeto ShineCortinas' },
         { tag: 'Peso e presença', h: 'Tecidos peletizados e encorpados', p: 'Tecidos peletizados, escovados ou de alta gramatura que entregam volume nobre, conforto acústico e maior resistência contra a queima pelo sol.', img: '/cortina-sob-medida.avif', alt: 'Sala com cortina sob medida, projeto ShineCortinas', ref: true },
         { tag: 'Escurecimento', h: 'Blackout 70% e 100%', p: 'Pode entrar como forro costurado ou em trilho separado atrás do tecido principal. O 70% deixa uma penumbra suave para a TV e o 100% veda toda a luz para dormir.', img: '/blackouts-tecnicos.avif', alt: 'Home theater escurecido com blackout, projeto ShineCortinas' },
       ] },
@@ -214,7 +214,7 @@ export const PAGINAS = [
       ),
       { t: 'table', h2: 'Qual forro escolher para o seu objetivo', sub: 'Comparativo direto entre as opções que levamos na consultoria em domicílio.', head: ['Seu objetivo no ambiente', 'Forro indicado pela Shine', 'Resultado na prática'], rows: [
         ['Privacidade de dia mantendo a sala clara', 'Forro translúcido (gabardine, cetim, tergal ou microfibra)', 'Luz natural difusa, sem ninguém ver de fora para dentro'],
-        ['Proteger o linho da frente contra o sol', 'Forro translúcido ou semi blackout 70%', 'Preserva a fibra do tecido nobre por muitos anos'],
+        ['Proteger o tecido da frente contra o sol', 'Forro translúcido ou semi blackout 70%', 'Preserva a fibra do tecido nobre por muitos anos'],
         ['Cortar o reflexo na TV sem breu total', 'Semi blackout 70%', 'Penumbra aconchegante e conforto térmico'],
         ['Quarto escuro para dormir de dia', 'Blackout 100% + sobras laterais e finalizadores', 'Bloqueio completo da luz pelo tecido e redução térmica de cerca de 5 a 6 °C'],
         ['Eliminar o risco de luz no meio da cortina', 'Blackout 100% em trilho triplo com transpasse de 15 cm', 'Sobreposição central de 15 cm sem fresta entre os dois panos'],
@@ -246,7 +246,7 @@ export const PAGINAS = [
     h1: 'Cortina wave: a onda que fica <em>regular</em> do teto ao chão',
     lead: 'Olhe para o topo da parede e veja curvas simétricas, profundas e encorpadas descendo do cortineiro até beijar o piso com a precisão de uma escultura têxtil, enquanto o tecido acima de 170 g/m² absorve o eco da sala e desliza em silêncio ao menor toque da sua mão. Na cortina Wave da Shine, as ondas não dependem da sorte: são guiadas por cordões espaçadores dentro do trilho e calculadas na nossa oficina nas proporções 2:1, 2,5:1 ou 3:1 para projetos em Volta Redonda, Resende, Barra Mansa, Penedo e todo o Sul Fluminense.',
     hero: '/cortina-sob-medida.avif',
-    heroAlt: 'Cortina wave em linho com ondas regulares, projeto ShineCortinas',
+    heroAlt: 'Cortina wave toque de linho com ondas regulares, projeto ShineCortinas',
     blocos: [
       { t: 'prose', h2: 'Proporções 2:1, 2,5:1 e 3:1 e o cordão espaçador (0,4, 0,5 e 0,8)', p: [
         'Quando você entra em uma sala com pé-direito duplo e porcelanato, uma cortina Wave encorpada muda imediatamente a atmosfera: o olhar acompanha a cadência contínua das ondas verticais, o toque sente a maciez do tecido com textura de linho e o ouvido percebe o conforto acústico de uma sala vestida que não ecoa. O segredo técnico dessa presença em residências de <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/resende/">Resende</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a> e <a href="/cidades/penedo/">Penedo</a> está na proporção de tecido por metro de trilho: confeccionamos a Wave em <strong>2:1</strong> (onda mais suave), <strong>2,5:1</strong> (equilíbrio clássico de profundidade) e <strong>3:1</strong> (onda profunda e imponente).',
@@ -413,7 +413,7 @@ export const PAGINAS = [
         ['Trilho dentro do cortineiro', 'Cortineiro mínimo de 15 x 15 cm', 'Esconde toda a ferragem e o cabeçote, ideal para cortina Wave com forro'],
         ['Trilho suíço direto na laje', 'Perfil de alumínio fixado no teto', 'Ambientes sem rebaixo de gesso que pedem cortina do teto ao chão sem vazar luz'],
         ['Trilho triplo com transpasse', 'Sobreposição central de 15 cm no blackout', 'Quartos e suítes que exigem vedação total da fresta central entre os panos'],
-        ['Varão aparente de 19 mm', 'Tubo de 19 mm (suporte central acima de 2 m)', 'Janelas compactas com cortinas leves de voil ou linho sem forro pesado'],
+        ['Varão aparente de 19 mm', 'Tubo de 19 mm (suporte central acima de 2 m)', 'Janelas compactas com cortinas leves de voil ou toque de linho sem forro pesado'],
         ['Varão aparente de 28 mm / Tubo Suíço', 'Tubo reforçado de 28 mm', 'Cortinas pesadas, duplas ou vãos largos que precisam de firmeza sem selar'],
         ['Trilho motorizado com Touch Motion', 'Elétrico ou a bateria (garantia até 5 anos)', 'Pés-direitos duplos, grandes vãos de sala e automação residencial'],
       ] },
@@ -445,7 +445,7 @@ export const PAGINAS = [
     h1: 'Do primeiro contato à instalação, <em>sem surpresa</em>',
     lead: 'A Shine trabalha com consultoria em domicílio: o consultor vai até a sua casa com o mostruário completo, mede cada janela a laser e apresenta as opções no seu próprio ambiente. Você decide com calma, sem sair de casa e sem pressão.',
     hero: '/isani-consultoria.avif', heroSrcset: '/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w', heroW: 1108, heroH: 1484, heroPessoa: true,
-    heroAlt: 'Isani Oliveira conferindo o caimento de uma cortina de linho durante a instalação, com a equipe ShineCortinas ao fundo',
+    heroAlt: 'Isani Oliveira conferindo o caimento de uma cortina toque de linho durante a instalação, com a equipe ShineCortinas ao fundo',
     blocos: [
       { t: 'steps6' },
       { t: 'prose', h2: 'Por que a medição é responsabilidade nossa', p: [
@@ -475,7 +475,7 @@ export const PAGINAS = [
     h1: 'O que 9.000 janelas medidas desde 2009 <em>nos ensinaram</em> sobre a sua casa',
     lead: 'Antes de indicar qualquer tecido ou motor, Isani Oliveira olha para o que a maioria ignora: o ângulo do sol da tarde na sua parede, o eco do porcelanato na sala e a folga exata do cortineiro. Fundada em 2009 em Volta Redonda, a ShineCortinas atende 15 cidades do Sul Fluminense com oficina e equipe 100% próprias, do consultor que leva o mostruário até você ao instalador que entrega a barra beijando o piso.',
     hero: '/isani-consultoria.avif', heroSrcset: '/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w', heroW: 1108, heroH: 1484, heroPessoa: true,
-    heroAlt: 'Isani Oliveira conferindo o caimento de uma cortina de linho durante a instalação, com a equipe ShineCortinas ao fundo',
+    heroAlt: 'Isani Oliveira conferindo o caimento de uma cortina toque de linho durante a instalação, com a equipe ShineCortinas ao fundo',
     blocos: [
       { t: 'proof' },
       { t: 'ceo' },
@@ -507,10 +507,10 @@ export const PAGINAS = [
     h1: 'Por que estas salas parecem mais altas, silenciosas e <em>bem vestidas?</em>',
     lead: 'Repare no encontro da barra com o piso, na profundidade regular das ondas e na forma como a luz entra macia sem ofuscar. Cada projeto abaixo foi medido a laser, confeccionado na nossa oficina sob a supervisão de Isani Oliveira e instalado pela equipe própria da Shine em mais de 9.000 ambientes entregues desde 2009 no Sul Fluminense.',
     hero: '/hero-sala.avif',
-    heroSrcset: '/hero-sala-800.avif 800w, /hero-sala.avif 1920w',
+    heroSrcset: '/hero-sala-800.avif 800w, /hero-sala-1200.avif 1200w, /hero-sala.avif 1920w',
     heroAlt: 'Sala com cortina sob medida instalada pela ShineCortinas',
     blocos: [
-      { t: 'gallery' },
+      { t: 'bentoPortfolio' },
       { t: 'prose', h2: 'Quer ver em movimento?', p: [
         'A página de <a href="/videos/">vídeos</a> reúne instalações e projetos entregues, incluindo cortina wave toque de linho em Barra do Piraí, screen motorizada e cortina motorizada wave em Resende.',
       ] },
@@ -534,7 +534,7 @@ export const PAGINAS = [
     h1: 'Qual detalhe da sua janela está tirando <em>o conforto da sua casa hoje?</em>',
     lead: 'Sol forte na TV, quarto claro às 6h da manhã, eco na sala nova ou dúvida entre dois tecidos: depois de mais de 9.000 janelas medidas desde 2009 sob a direção de Isani Oliveira, nossa conversa começa ouvindo o seu ambiente. Chame no WhatsApp, fale direto com um especialista humano em minutos e receba o mostruário completo na sua casa sem compromisso.',
     hero: '/cortina-sob-medida.avif',
-    heroAlt: 'Sala com cortina de linho sob medida, projeto ShineCortinas',
+    heroAlt: 'Sala com cortina toque de linho sob medida, projeto ShineCortinas',
     blocos: [
       { t: 'contato' },
       { t: 'prose', h2: 'Como funciona o primeiro contato', p: [
@@ -595,7 +595,7 @@ export const PAGINAS = [
         'Aqui na Shine nós damos essa garantia: quando fazemos a lavagem, conferimos todas as medidas e, <strong>se precisar fazer ajuste de bainha por encolhimento do tecido, o nosso ateliê faz</strong>. Assim a sua cortina volta beijando o piso exatamente como deve ser.',
       ] },
       { t: 'table', h2: 'O que lavamos e quais cidades atendemos', sub: 'Trabalhamos exclusivamente com cortinas de tecido nas 6 cidades abaixo.', head: ['Item', 'Como funciona na Lavanderia Shine'], rows: [
-        ['O que lavamos', 'Apenas cortinas de tecido (de pano): Wave, prega fêmea, macho, americana, tombada, franzida, voil, linho e forros de tecido ou blackout costurado'],
+        ['O que lavamos', 'Apenas cortinas de tecido (de pano): Wave, prega fêmea, macho, americana, tombada, franzida, voil, toque de linho e forros de tecido ou blackout costurado'],
         ['O que não lavamos', 'Não lavamos persianas (não fazemos lavagem de Rolô, Romana, Double Vision, Vertical nem Horizontal)'],
         ['Retirada e entrega', 'Feitas pela equipe própria da Shine na casa do cliente, com reinstalação completa'],
         ['Revisão inclusa', 'Recolocação de deslizantes soltos, reparo de costuras soltas, reforço de trilhos e ajuste de bainha se necessário'],

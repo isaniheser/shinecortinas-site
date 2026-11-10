@@ -5,18 +5,19 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { WA, esc, cleanHead, header, cityChip, strip, proof, compare, footer, waFloat, bar, tail } from './partials.mjs';
+import { WA, esc, cleanHead, header, cityChip, strip, proof, compare, footer, waFloat, bar, tail, HOME_CSS_V, HOME_JS_V, TODAY_BR } from './partials.mjs';
 import { PAGINAS } from './paginas.mjs';
+import { renderBentoSection, renderBentoModals } from './bento-data.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://www.shinecortinas.com';
-const TODAY = new Date().toISOString().slice(0, 10);
+const TODAY = TODAY_BR;
 
 const GALERIA = [
   ['/automacao-sq.avif', 'Automação', 'Cortina motorizada', 'Cortina motorizada em sala de estar, projeto ShineCortinas'],
   ['/blackout-sq.avif', 'Blackout', 'Forro blackout 100%', 'Tecido blackout do mostruário ShineCortinas'],
   ['/persiana-motorizada-sq.avif', 'Persiana', 'Persiana motorizada', 'Persiana rolô motorizada em sala de estar, projeto ShineCortinas'],
-  ['/duplo-sq.avif', 'Duplo', 'Voil + linho', 'Sala com cortina dupla de voil e linho, projeto ShineCortinas'],
+  ['/duplo-sq.avif', 'Duplo', 'Voil + toque de linho', 'Sala com cortina dupla de voil e toque de linho, projeto ShineCortinas'],
   ['/tela-solar-sq.avif', 'Tela solar', 'Vista livre, sol controlado', 'Sala envidraçada com rolô screen, projeto ShineCortinas'],
   ['/madeira-sq.avif', 'Madeira', 'Persiana de madeira', 'Ambiente com persiana horizontal de madeira, projeto ShineCortinas'],
 ];
@@ -133,6 +134,7 @@ ${PASSOS.map(([h, p], i) => `        <div class="sl-step"><div class="sl-step__n
       </div>
     </div></section>`,
 
+  bentoPortfolio: () => renderBentoSection({ isPortfolioPage: true }),
   proof: () => proof(null),
   compare: () => compare(),
 };
@@ -141,6 +143,9 @@ function render(p) {
   const corpo = p.blocos.map((b) => bloco[b.t](b)).join('\n');
   const faq = p.faq.map(([q, a]) => `        <details><summary>${q}</summary><div>${a}</div></details>`).join('\n');
   const links = p.links.map(([h, t]) => `<a href="${h}">${t}</a>`).join('');
+  const portfolioExtras = p.dir === 'portfolio'
+    ? `\n${renderBentoModals({ includeArticleModal: false, includeMenuModal: false })}\n  <script data-cfasync="false" src="/assets/shine-home-e.js?v=${HOME_JS_V}" defer></script>`
+    : '';
   return `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de ${esc(p.kicker.toLowerCase())}">
 ${header('/' + p.dir + '/')}
   <section class="sl-hero sl-hero--interna${p.heroPessoa ? ' sl-hero--pessoa' : ''}">
@@ -185,16 +190,19 @@ ${faq}
       <div class="sl-links">${links}</div>
     </div></section>
   </main>
-${footer()}${waFloat()}${bar('single')}${tail()}`;
+${footer()}${waFloat()}${bar('single')}${portfolioExtras}${tail()}`;
 }
 
 // Atualiza title/description e sincroniza o FAQPage do JSON-LD com a FAQ visível.
 function ajustaHead(head, p) {
   const url = `${BASE}/${p.dir}/`;
-  head = head.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(p.title)}</title>`);
-  head = head.replace(/(<meta name="description" content=")[^"]*(")/, `$1${esc(p.description)}$2`);
-  head = head.replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${esc(p.title)}$2`);
-  head = head.replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${esc(p.description)}$2`);
+  head = head.replace(/<title>[\s\S]*?<\/title>/, () => `<title>${esc(p.title)}</title>`);
+  head = head.replace(/(<meta name="description" content=")[^"]*(")/, (_, a, b) => `${a}${esc(p.description)}${b}`);
+  head = head.replace(/(<meta property="og:title" content=")[^"]*(")/, (_, a, b) => `${a}${esc(p.title)}${b}`);
+  head = head.replace(/(<meta property="og:description" content=")[^"]*(")/, (_, a, b) => `${a}${esc(p.description)}${b}`);
+  if (p.dir === 'portfolio') {
+    head = head.replace(/(<link rel="stylesheet" href="\/assets\/shine-leve\.css[^"\n]*">)/, (m) => `${m}\n  <link rel="stylesheet" href="/assets/shine-home-e.css?v=${HOME_CSS_V}">`);
+  }
   const m = head.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
   if (m) {
     const ld = JSON.parse(m[1]);

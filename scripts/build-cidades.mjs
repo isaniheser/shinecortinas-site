@@ -74,11 +74,11 @@ function citySolutions(d) {
       <div class="sl-center" style="margin-bottom:30px">
         <p class="sl-kicker sl-kicker--center">Soluções sob medida · ${d.city}</p>
         <h2 class="sl-h2">Cortina motorizada, Wave e persianas <em>em ${d.city}</em></h2>
-        <p class="sl-sub">Do linho com forro blackout 100% à automação residencial compatível com Alexa e Google Home: conheça os sistemas que medimos a laser e instalamos em ${d.city}.</p>
+        <p class="sl-sub">Do tecido toque de linho com forro blackout 100% à automação residencial compatível com Alexa e Google Home: conheça os sistemas que medimos a laser e instalamos em ${d.city}.</p>
       </div>
       <div class="sl-cards">
         <div class="sl-card"><div class="sl-media"><img src="/automacao-sq.avif" alt="${esc(`Cortina motorizada sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Automação residencial</span><h3>Cortina e persiana motorizada</h3><p>Trilho motorizado silencioso e persiana rolô motorizada em ${d.city}, com versão a bateria recarregável sem obra ou elétrica e comando por controle, celular e voz. <a href="/cortina-motorizada/">Ver cortina motorizada →</a></p></div></div>
-        <div class="sl-card"><div class="sl-media"><img src="/duplo-sq.avif" alt="${esc(`Cortina Wave em linho e voil sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Alfaiataria têxtil</span><h3>Cortina Wave em linho e voil</h3><p>Ondas simétricas em trilho suíço de alumínio, prega americana ou prega macho, confeccionadas ao milímetro para salas e suítes em ${d.city}. <a href="/cortina-wave/">Ver cortina Wave →</a></p></div></div>
+        <div class="sl-card"><div class="sl-media"><img src="/duplo-sq.avif" alt="${esc(`Cortina Wave toque de linho e voil sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Alfaiataria têxtil</span><h3>Cortina Wave toque de linho e voil</h3><p>Ondas simétricas em trilho suíço de alumínio, prega americana ou prega macho, confeccionadas ao milímetro para salas e suítes em ${d.city}. <a href="/cortina-wave/">Ver cortina Wave →</a></p></div></div>
         <div class="sl-card"><div class="sl-media"><img src="/tela-solar-sq.avif" alt="${esc(`Persiana rolô tela solar e madeira sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Controle solar</span><h3>Persianas rolô, tela solar e madeira</h3><p>Tela solar 1%, 3% e 5% para varandas gourmet, Double Vision, romana e madeira natural instaladas por equipe própria em ${d.city}. <a href="/persianas/">Ver persianas →</a></p></div></div>
         <div class="sl-card"><div class="sl-media"><img src="/blackout-sq.avif" alt="${esc(`Cortina blackout 100% sob medida em ${d.city}, ShineCortinas`)}" width="800" height="600" loading="lazy" decoding="async"></div><div class="sl-card__body"><span>Conforto térmico e escuro real</span><h3>Blackout 100%, 70% e forros</h3><p>Forro blackout acoplado ou em trilho duplo para bloquear luz e calor em quartos, suítes e salas de TV em ${d.city}. <a href="/blackout-e-forros/">Ver blackout e forros →</a></p></div></div>
       </div>${isLaundry ? `
@@ -95,7 +95,7 @@ function body(d) {
   return `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a página de ${d.city}">
 ${header('/cidades-atendidas/')}
   <section class="sl-hero">
-    <div class="sl-hero__img"><img src="/hero-sala.avif" srcset="/hero-sala-800.avif 800w, /hero-sala.avif 1920w" sizes="100vw" alt="${esc(d.hero_alt)}" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
+    <div class="sl-hero__img"><img src="/hero-sala.avif" srcset="/hero-sala-800.avif 800w, /hero-sala-1200.avif 1200w, /hero-sala.avif 1920w" sizes="100vw" alt="${esc(d.hero_alt)}" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
     <div class="sl-wrap"><div class="sl-hero__in">
       <nav aria-label="Breadcrumb"><ol class="sl-crumbs">
         <li><a href="/">Início</a></li><li aria-hidden="true">/</li>
@@ -219,7 +219,7 @@ function withReview(head, d) {
       const offers = [
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: `Cortina Motorizada Sob Medida em ${d.city}`, url: `${BASE}/cortina-motorizada/` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: `Persiana Motorizada em ${d.city}`, url: `${BASE}/cortina-motorizada/` } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: `Cortina Wave em Linho e Voil em ${d.city}`, url: `${BASE}/cortina-wave/` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: `Cortina Wave Toque de Linho e Voil em ${d.city}`, url: `${BASE}/cortina-wave/` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: `Persiana Rolô Tela Solar e Madeira em ${d.city}`, url: `${BASE}/persianas/` } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: `Cortina Blackout 100% em ${d.city}`, url: `${BASE}/blackout-e-forros/` } },
       ];
@@ -289,11 +289,11 @@ const CITY_DESCS = {
   'porto-real': 'Cortinas sob medida, motorizadas, Wave e persianas em Porto Real. Consultoria gratuita na sua casa com medição a laser e instalação própria em até 12x.',
   'miguel-pereira': 'Cortinas sob medida, motorizadas, blackout térmico e persianas em Miguel Pereira. Visita agendada em domicílio, medição a laser e instalação em até 12x.',
   'paulo-de-frontin': 'Cortinas sob medida, blackout térmico e persianas em Engenheiro Paulo de Frontin. Consultoria gratuita em casa, medição a laser e instalação em até 12x.',
-  'visconde-de-maua': 'Cortinas sob medida, blackout térmico, linho e persianas em Visconde de Mauá para chalés, casas de serra e pousadas. Medição a laser e instalação própria.',
+  'visconde-de-maua': 'Cortinas sob medida, blackout térmico, toque de linho e persianas em Visconde de Mauá para chalés, casas de serra e pousadas. Medição a laser e instalação.',
   'maromba': 'Cortinas sob medida, blackout térmico e persianas em Maromba e Maringá para chalés e pousadas da serra. Visita agendada com mostruário e instalação própria.',
 };
 
-const HERO_PRELOAD = '<link rel="preload" as="image" href="/hero-sala.avif" imagesrcset="/hero-sala-800.avif 800w, /hero-sala.avif 1920w" imagesizes="100vw" fetchpriority="high">';
+const HERO_PRELOAD = '<link rel="preload" as="image" href="/hero-sala.avif" imagesrcset="/hero-sala-800.avif 800w, /hero-sala-1200.avif 1200w, /hero-sala.avif 1920w" imagesizes="100vw" fetchpriority="high">';
 
 let n = 0;
 for (const slug of readdirSync(join(ROOT, 'cidades'), { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name)) {

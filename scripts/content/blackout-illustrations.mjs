@@ -35,7 +35,7 @@ export const comparison = `
       <h3>Blackout 100%</h3>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 185" role="img" aria-labelledby="sb-full-title sb-full-desc">
         <title id="sb-full-title">O blackout 100% bloqueia a luz pelo material</title>
-        <desc id="sb-full-desc">A mesma luz chega pela esquerda e para no material. Nenhuma seta atravessa para a direita. O desenho trata do material; as frestas da instalação são explicadas separadamente.</desc>
+        <desc id="sb-full-desc">A mesma luz chega pela esquerda e para no material. Nenhuma seta atravessa para a direita. O desenho trata do material, e as frestas da instalação são explicadas separadamente.</desc>
         <defs>
           <marker id="sb-full-in-arrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0 0L6 3L0 6Z" fill="#a67b30"/></marker>
           <pattern id="sb-full-weave" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M0 0H7M0 0V7" fill="none" stroke="#a49b87" stroke-width=".6"/></pattern>
@@ -57,7 +57,7 @@ export const comparison = `
       <p><strong>A luz não atravessa o material.</strong> Para deixar o quarto escuro, eu também preciso cuidar dos caminhos por onde ela pode contornar o forro.</p>
     </div>
   </div>
-  <figcaption>Esquemas qualitativos, sem escala de luminosidade. As cores apenas ajudam a leitura do desenho; não representam cores de produtos nem um resultado medido no ambiente.</figcaption>
+  <figcaption>Esquemas qualitativos, sem escala de luminosidade. As cores apenas ajudam a leitura do desenho e não representam cores de produtos nem um resultado medido no ambiente.</figcaption>
 </figure>`;
 
 export const lightGaps = `
