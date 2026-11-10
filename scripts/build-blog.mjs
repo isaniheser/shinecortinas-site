@@ -644,13 +644,15 @@ function build(post) {
   <meta property="og:image" content="${BASE}${post.ogImage || '/blackouts-tecnicos.avif'}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@shinecortinas">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  ${post.hero && post.hero.photo ? `<link rel="preload" as="image" href="${post.hero.photo}"${post.hero.photoSrcset ? ` imagesrcset="${post.hero.photoSrcset}" imagesizes="(max-width: 960px) 100vw, 44vw"` : ''} fetchpriority="high">\n  ` : ''}<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="${FONTS}" rel="stylesheet">
+  <link rel="preload" as="style" href="${FONTS}">
+  <link rel="stylesheet" href="${FONTS}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="${FONTS}"></noscript>
   <script type="application/ld+json">
 ${JSON.stringify(ld, null, 2)}
   </script>
-  <link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">${post.stylesheet ? `\n  <link rel="stylesheet" href="${esc(post.stylesheet)}">` : ''}
+  <link rel="stylesheet" href="/assets/shine-leve.css?v=${CSS_V}">${post.stylesheet ? `\n  <link rel="stylesheet" href="${esc(post.stylesheet).replace(/\?v=.*$/, '')}?v=${CSS_V}">` : ''}
   ${AURORA_CSS}
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

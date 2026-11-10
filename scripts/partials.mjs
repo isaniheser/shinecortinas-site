@@ -5,7 +5,9 @@ import {auroraHeader,auroraMenu,auroraHead,AURORA_V} from './aurora-layout.mjs';
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 export const FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap';
 export const CSS_V = '16';
-export const JS_V = '6';
+export const JS_V = '7';
+export const HOME_CSS_V = '8';
+export const HOME_JS_V = '9';
 export const FOUNDED_YEAR = 2009;
 export const CURRENT_YEAR = new Date().getFullYear();
 export const YEARS_ACTIVE = CURRENT_YEAR - FOUNDED_YEAR;
@@ -160,19 +162,32 @@ export function cleanHead(head, opts = {}) {
   head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/cidades\.css[^"]*">/g, '');
   head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-leve\.css[^"]*">/g, '');
   head = head.replace(/\s*<link rel="stylesheet" href="\/assets\/shine-aurora\.css[^"]*">/g, '');
+  head = head.replace(/href="\/assets\/blog-bainha\.css(?:\?v=[^"]*)?"/g, `href="/assets/blog-bainha.css?v=${CSS_V}"`);
   head = head.replace(/\s*<style>[\s\S]*?<\/style>/g, '');
   head = head.replace('content="#000000"', 'content="#16302A"');
   head = head.replace(/\s*<noscript>\s*<link[^>]*fonts\.googleapis\.com[^>]*>\s*<\/noscript>/g, '');
   head = head.replace(/\s*<link[^>]*fonts\.(?:googleapis|gstatic)\.com[^>]*>/g, '');
   head = head.replace(/<link rel="preload" as="image" href="hero-sala\.avif"/, '<link rel="preload" as="image" href="/hero-sala.avif"');
 
+  const autoSrcset = (img) => {
+    if (img === '/hero-sala.avif') return ['imagesrcset="/hero-sala-800.avif 800w, /hero-sala.avif 1920w"', 'imagesizes="100vw"'];
+    if (img === '/linha-puro.avif') return ['imagesrcset="/linha-puro-800.avif 760w, /linha-puro.avif 1696w"', 'imagesizes="100vw"'];
+    return ['', ''];
+  };
+
   let preloadTag = '';
   const existingPreload = head.match(/<link rel="preload" as="image"[^>]*>/);
   if (existingPreload) {
-    preloadTag = existingPreload[0];
     head = head.replace(/\s*<link rel="preload" as="image"[^>]*>/g, '');
-  } else if (opts.preloadImg) {
-    preloadTag = `<link rel="preload" as="image" href="${opts.preloadImg}" fetchpriority="high">`;
+  }
+  const pImg = opts.preloadImg || (existingPreload && (existingPreload[0].match(/href="([^"]+)"/) || [])[1]) || '';
+  if (pImg) {
+    const [autoSet, autoSz] = autoSrcset(pImg);
+    const exSet = existingPreload && (existingPreload[0].match(/imagesrcset="([^"]+)"/) || [])[1];
+    const exSz = existingPreload && (existingPreload[0].match(/imagesizes="([^"]+)"/) || [])[1];
+    const pSrcset = opts.preloadSrcset ? `imagesrcset="${opts.preloadSrcset}"` : (exSet ? `imagesrcset="${exSet}"` : autoSet);
+    const pSizes = opts.preloadSizes ? `imagesizes="${opts.preloadSizes}"` : (opts.preloadSrcset ? 'imagesizes="100vw"' : (exSz ? `imagesizes="${exSz}"` : autoSz));
+    preloadTag = `<link rel="preload" as="image" href="${pImg}"${pSrcset ? ' ' + pSrcset : ''}${pSizes ? ' ' + pSizes : ''} fetchpriority="high">`;
   }
 
   const hasSitemap = /rel="sitemap"/.test(head);

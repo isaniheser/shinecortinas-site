@@ -292,7 +292,11 @@ function sincronizaCss(file, src, sectionPath = '/blog/', crumbs, metaFix, conte
   rawHead = rawHead.replace(/Por que escolher cortina motorizada em projetos de alto padrão/g, 'Por que escolher cortina motorizada em projetos sob medida');
   rawHead = rawHead.replace(/Cortina Motorizada Wave de Alto Padrão em Resende RJ/g, 'Cortina Motorizada Wave Sob Medida em Resende RJ');
   rawHead = rawHead.replace(/levamos o mostruário de alto padrão até sua obra/g, 'levamos o mostruário completo até a sua casa');
-  const head = cleanHead(rawHead, { crumbs });
+  const heroMatch = rest.match(/<img\s+[^>]*fetchpriority="high"[^>]*>/);
+  const heroSrc = heroMatch && (heroMatch[0].match(/\bsrc="([^"]+)"/) || [])[1];
+  const heroSet = heroMatch && (heroMatch[0].match(/\bsrcset="([^"]+)"/) || [])[1];
+  const heroSz = heroMatch && (heroMatch[0].match(/\bsizes="([^"]+)"/) || [])[1];
+  const head = cleanHead(rawHead, { crumbs, preloadImg: heroSrc, preloadSrcset: heroSet, preloadSizes: heroSz });
   let body = '<body' + rest;
   body = body.replace(/acabamento de alto padrão\./g, 'acabamento sob medida.');
   body = body.replace(/Em projetos de alto padrão, o material/g, 'Em projetos sob medida, o material');
@@ -443,5 +447,52 @@ ${footer()}${waFloat()}${tail()}`;
   writeFileSync(file, head + body);
 }
 
+// ------------------------------------------------ /politica-de-privacidade/
+function buildPrivacidade() {
+  const file = join(ROOT, 'politica-de-privacidade', 'index.html');
+  if (!existsSync(file)) return;
+  let src = readFileSync(file, 'utf8');
+  let rawHead = src.split('<body')[0];
+  if (!/application\/ld\+json/.test(rawHead)) {
+    const ld = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'Organization', '@id': `${BASE}/#org`, name: 'ShineCortinas', url: `${BASE}/`, logo: `${BASE}/logo-shine.avif` },
+        { '@type': 'WebPage', '@id': `${BASE}/politica-de-privacidade/`, url: `${BASE}/politica-de-privacidade/`, name: 'Política de Privacidade e Proteção de Dados | ShineCortinas', inLanguage: 'pt-BR', dateModified: TODAY }
+      ]
+    };
+    rawHead = rawHead.replace('</head>', `  <script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n  </script>\n</head>`);
+  }
+  const head = cleanHead(rawHead, { crumbs: [['Início', `${BASE}/`], ['Política de Privacidade', `${BASE}/politica-de-privacidade/`]] });
+  const body = `<body data-concept="ambientes" data-logo-finish="aurora" data-wa-context="a Política de Privacidade">
+${header('/politica-de-privacidade/')}
+  <main id="conteudo" class="sl-wrap" style="max-width: 820px; margin: 0 auto; padding: 48px 20px 80px;">
+    <p><a href="/" style="color: #16302A; font-weight: 600; text-decoration: none;">← Voltar para o início</a></p>
+    <h1 style="margin-top: 16px; font-size: clamp(26px, 4vw, 38px);">Política de Privacidade (LGPD)</h1>
+    <p style="color: #4E5E57; margin-bottom: 28px;">Última atualização: 24 de outubro de 2026</p>
+
+    <section style="display: grid; gap: 18px; line-height: 1.7; font-size: 16px;">
+      <p>A <strong>ShineCortinas</strong> (sediada em Volta Redonda, RJ, com atendimento em domicílio em todo o Sul Fluminense) respeita a sua privacidade e trata os seus dados pessoais em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018).</p>
+
+      <h2 style="font-size: 20px; margin-top: 10px;">1. Quais informações coletamos</h2>
+      <p>Nosso site não possui formulários de cadastro obrigatório nem área de login. Os dados tratados limitam-se a:</p>
+      <ul style="padding-left: 20px; display: grid; gap: 8px;">
+        <li><strong>Contato voluntário via WhatsApp:</strong> quando você clica em um botão de atendimento para conversar pelo WhatsApp <code>(24) 99329-8763</code>, recebemos seu número de telefone, nome de perfil e a mensagem enviada (incluindo o ambiente ou projeto que você selecionou na página) exclusivamente para prestar a consultoria e elaborar o seu orçamento.</li>
+        <li><strong>Memória local de navegação (localStorage):</strong> quando você seleciona sua cidade ou salva referências de cortinas com o ícone de coração, essa preferência fica guardada apenas no navegador do seu próprio aparelho para facilitar sua navegação.</li>
+        <li><strong>Medição de tráfego e campanhas:</strong> utilizamos ferramentas de análise de audiência e medição de anúncios (Google Analytics 4, Google Ads e Meta Pixel gerenciados via Cloudflare Zaraz) e estimativa aproximada de cidade por IP para entender quais páginas são mais úteis e medir o resultado de nossas campanhas publicitárias.</li>
+      </ul>
+
+      <h2 style="font-size: 20px; margin-top: 10px;">2. Finalidade do uso dos dados</h2>
+      <p>Utilizamos as informações de contato fornecidas por você no WhatsApp única e exclusivamente para agendar visitas técnicas em domicílio, enviar propostas comerciais solicitadas, acompanhar a confecção e instalação do seu pedido e prestar suporte de garantia e pós-venda. Não vendemos nem compartilhamos sua lista de contato com terceiros.</p>
+
+      <h2 style="font-size: 20px; margin-top: 10px;">3. Seus direitos como titular (Art. 18 da LGPD)</h2>
+      <p>Você pode, a qualquer momento, solicitar a confirmação da existência de tratamento, o acesso, a correção ou a exclusão dos seus dados de contato do nosso histórico de atendimento enviando uma mensagem direta para o nosso WhatsApp oficial <a href="https://wa.me/5524993298763" target="_blank" rel="noopener">(24) 99329-8763</a>.</p>
+    </section>
+  </main>
+${footer()}${waFloat()}${tail()}`;
+  writeFileSync(file, head + body);
+}
+
 build404();
-console.log(`build-especiais: /faq (${buildFaq()} perguntas), /videos (${buildVideos()} vídeos), hub (${buildHub()} cidades), /blog (${buildBlogIndex()} posts), posts migrados: ${buildPosts()}, vídeos individuais: ${buildVideoPages()}, 404 ok`);
+buildPrivacidade();
+console.log(`build-especiais: /faq (${buildFaq()} perguntas), /videos (${buildVideos()} vídeos), hub (${buildHub()} cidades), /blog (${buildBlogIndex()} posts), posts migrados: ${buildPosts()}, vídeos individuais: ${buildVideoPages()}, 404 + privacidade ok`);

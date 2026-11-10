@@ -84,7 +84,7 @@ export default {
       h2: 'As duas melhores persianas para cozinha: Rolô Tela Solar e Horizontal de Alumínio',
       html: `<p>Dentro da linha de persianas, existem dois modelos que resolvem a cozinha e a área gourmet com nota dez:</p>
         <ul>
-          <li><strong>Persiana Rolô em Tela Solar:</strong> é a nossa campeã tanto para varandas gourmet quanto para cozinhas ensolaradas. O tecido técnico de tela solar (composto por poliéster revestido de PVC ou fibra de vidro) bloqueia o calor do sol que bate na bancada, mantém a cozinha clara e ventilada e pode ser limpo diretamente no lugar com um pano macio umedecido em água e detergente neutro.</li>
+          <li><strong>Persiana Rolô em Tela Solar:</strong> é a nossa campeã tanto para varandas gourmet quanto para cozinhas ensolaradas. O tecido de trama técnica lavável (com opção em fibra de vidro) bloqueia o calor do sol que bate na bancada, mantém a cozinha clara e ventilada e pode ser limpo diretamente no lugar com um pano macio umedecido em água e detergente neutro.</li>
           <li><strong>Persiana Horizontal de Alumínio (50 mm ou 16 mm):</strong> o alumínio não enferruja, não absorve umidade e permite girar as lâminas para direcionar a ventilação. Em cozinhas amplas e modernas, a <a href="/blog/persiana-vertical-ou-horizontal/">horizontal de 50 mm em alumínio</a> traz bastante imponência e elegância. Já em janelas menores acima da pia, a de 16 mm encaixa com perfeição.</li>
         </ul>
         <h3>Quando a cortina de tecido pode entrar perto da cozinha?</h3>

@@ -76,6 +76,38 @@
     }
   }
 
+  function getUtmDetails() {
+    var saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem('shine.utm') || 'null'); } catch (e) {}
+    try {
+      var qs = new URLSearchParams(location.search);
+      var src = qs.get('utm_source');
+      var med = qs.get('utm_medium');
+      var cmp = qs.get('utm_campaign');
+      var gclid = qs.get('gclid');
+      var fbclid = qs.get('fbclid');
+      if (src || med || cmp || gclid || fbclid) {
+        saved = {
+          source: src || (saved && saved.source) || '',
+          medium: med || (saved && saved.medium) || '',
+          campaign: cmp || (saved && saved.campaign) || '',
+          gclid: gclid || (saved && saved.gclid) || '',
+          fbclid: fbclid || (saved && saved.fbclid) || ''
+        };
+        sessionStorage.setItem('shine.utm', JSON.stringify(saved));
+      }
+    } catch (e) {}
+    return saved;
+  }
+  getUtmDetails();
+
+  function utmSuffix() {
+    var u = getUtmDetails();
+    if (!u || typeof u !== 'object') return '';
+    var tag = u.campaign || u.utm_campaign || u.source || u.utm_source || (u.gclid ? 'Google Ads' : u.fbclid ? 'Instagram/Meta' : '');
+    return tag ? ' [anúncio: ' + tag + ']' : '';
+  }
+
   function applyWaHref(a) {
     var kind = a.getAttribute('data-wa') || 'conversar';
     var txt = '';
@@ -85,6 +117,10 @@
       txt = extractTextParam(a.getAttribute('href'));
       if (!txt) txt = message(kind);
     }
+    var suf = utmSuffix();
+    if (txt && suf && txt.indexOf('[anúncio:') === -1) {
+      txt = txt + suf;
+    }
     if (IS_MOBILE) {
       a.removeAttribute('target');
       a.setAttribute('href', 'whatsapp://send?phone=' + NUMBER + (txt ? '&text=' + encodeURIComponent(txt) : ''));
@@ -93,23 +129,6 @@
     }
     return kind;
   }
-
-  function getUtmDetails() {
-    var saved = null;
-    try { saved = JSON.parse(sessionStorage.getItem('shine.utm') || 'null'); } catch (e) {}
-    try {
-      var qs = new URLSearchParams(location.search);
-      var src = qs.get('utm_source');
-      var med = qs.get('utm_medium');
-      var cmp = qs.get('utm_campaign');
-      if (src || med || cmp) {
-        saved = { source: src || '', medium: med || '', campaign: cmp || '' };
-        sessionStorage.setItem('shine.utm', JSON.stringify(saved));
-      }
-    } catch (e) {}
-    return saved;
-  }
-  getUtmDetails();
 
   function trackWa(kind) {
     var dados = {

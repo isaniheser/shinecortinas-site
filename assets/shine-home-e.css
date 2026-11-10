@@ -1925,6 +1925,44 @@ body.is-mobile-sim #site-viewport {
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
+  z-index: 3;
+}
+.d-sheet-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(8, 19, 15, 0.84);
+  color: #FAF6EE;
+  border: 1px solid rgba(201, 162, 82, 0.65);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+.d-sheet-nav--prev {
+  left: 10px;
+}
+.d-sheet-nav--next {
+  right: 10px;
+}
+.d-sheet-counter {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(8, 19, 15, 0.86);
+  color: #FAF6EE;
+  border: 1px solid rgba(201, 162, 82, 0.55);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  z-index: 3;
 }
 .d-sheet-content {
   padding: 16px 18px 22px;
@@ -1950,9 +1988,12 @@ body.is-mobile-sim #site-viewport {
   padding: 12px 14px;
   display: grid;
   gap: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   font-size: 13px;
-  line-height: 1.48;
+  line-height: 1.54;
+  max-height: 215px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .d-sheet-details div strong {
   color: var(--bg-forest);
@@ -1960,6 +2001,11 @@ body.is-mobile-sim #site-viewport {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+#sheet-sol {
+  display: block;
+  white-space: pre-line;
 }
 .d-sheet-page-link {
   display: inline-block;

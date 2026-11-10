@@ -79,12 +79,116 @@ function persistSavedReferences() {
 }
 
 function escapeHtml(str) {
-  return String(str || '')
+  return cleanUnicodeText(str)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function stripLoneSurrogates(str) {
+  return String(str || '').replace(
+    /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g,
+    ''
+  );
+}
+
+function cleanUnicodeText(str) {
+  const safe = stripLoneSurrogates(str);
+  try {
+    return safe
+      .replace(/[\u{2100}-\u{214F}\u{1D400}-\u{1D7FF}]+/gu, (m) => m.normalize('NFKC'))
+      .normalize('NFC');
+  } catch (_) {
+    return safe;
+  }
+}
+
+function safeTruncateCodePoints(str, maxChars) {
+  const limit = maxChars || 48;
+  const clean = cleanUnicodeText(str).trim();
+  const chars = Array.from(clean);
+  if (chars.length <= limit) return clean;
+  const sliced = chars.slice(0, limit - 1).join('');
+  const lastSpace = sliced.lastIndexOf(' ');
+  const cut = lastSpace >= limit - 15 ? sliced.slice(0, lastSpace) : sliced;
+  return cut.replace(/[,:;.\s]+$/, '') + '…';
+}
+
+function safeEncodeURIComponent(str) {
+  const safe = cleanUnicodeText(str);
+  try {
+    return encodeURIComponent(safe);
+  } catch (_) {
+    return encodeURIComponent(
+      Array.from(safe)
+        .filter((ch) => {
+          const cp = ch.codePointAt(0);
+          return cp < 0xd800 || cp > 0xdfff;
+        })
+        .join('')
+    );
+  }
+}
+
+function formatInstagramCaption(rawCaption) {
+  let text = cleanUnicodeText(rawCaption || '')
+    .replace(/\r\n/g, '\n')
+    .replace(/#[a-zA-Z0-9_\u00C0-\u017F]+/g, '')
+    .replace(/\b1[6-9]\s*anos\b/gi, '17 anos')
+    .replace(/\b29[0-9]\s*avaliações\b/gi, '297 avaliações');
+
+  // Se o texto veio em linha única (ex: cache antigo), devolve quebras de linha antes de marcadores e seções
+  text = text
+    .replace(/\s+(?=[✔✅▫▪•💡👉])/gu, '\n')
+    .replace(/\s+(?=(?:PROJEÇÃO|ENTREGA REAL|O ANTES|O DEPOIS)\s*[:|])/gi, '\n\n')
+    .replace(/([.!?])\s*✨\s+/g, '$1 ✨\n\n')
+    .replace(
+      /([.!?])\s+(?=(?:Quando fomos|Nossa solução|A nossa solução|Para completar|Mais do que vender|O resultado|Por que essa escolha)\b)/g,
+      '$1\n\n'
+    );
+
+  const lines = text
+    .split('\n')
+    .map((line) =>
+      line
+        .replace(
+          /[^.!?\n]*\b(link\s+na\s+bio|link\s+da\s+bio|chame\s+no\s+direct|mande\s+um\s+direct|comente\s+aqui|arrasta\s+pro\s+lado)[^.!?\n]*[.!?]?/gi,
+          ''
+        )
+        .replace(/[ \t]{2,}/g, ' ')
+        .trim()
+    )
+    .filter((line) => {
+      if (!line) return true;
+      const lower = line.toLowerCase();
+      if (
+        line.length < 130 &&
+        (lower.includes('solicite seu orçamento') ||
+          lower.includes('agende sua visita') ||
+          lower.includes('fale com nossa equipe') ||
+          lower.includes('link da bio') ||
+          lower.includes('link na bio'))
+      ) {
+        return false;
+      }
+      return true;
+    });
+
+  return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
+function deriveCleanInstaTitle(rawTitle, cleanCap) {
+  const firstSentence = String(cleanCap || '')
+    .split(/[.!?\n]/)[0]
+    .replace(/^[✨🌿🏡☀️🤍🖤💫🔥👏•▪▫✔✅]+\s*/u, '')
+    .trim();
+  if (firstSentence && firstSentence.length >= 8) {
+    return safeTruncateCodePoints(firstSentence, 48);
+  }
+  const cleanedTitle = cleanUnicodeText(rawTitle || '').trim();
+  return cleanedTitle ? safeTruncateCodePoints(cleanedTitle, 48) : 'Obra Real @shinecortinas';
 }
 
 function getFallbackImageForCats(catsStr) {
@@ -145,13 +249,30 @@ const blogArticles = {
 const IS_MOBILE_WA = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
   (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
+function getUtmSuffix() {
+  try {
+    const raw = sessionStorage.getItem('shine.utm');
+    if (!raw) return '';
+    const u = JSON.parse(raw);
+    if (!u || typeof u !== 'object') return '';
+    const tag = u.campaign || u.utm_campaign || u.source || u.utm_source || (u.gclid ? 'Google Ads' : u.fbclid ? 'Instagram/Meta' : '');
+    return tag ? ' [anúncio: ' + tag + ']' : '';
+  } catch (_) {
+    return '';
+  }
+}
+
 function setWaBtnHref(el, text) {
   if (!el) return;
+  const baseText = cleanUnicodeText(text || '');
+  const suffix = getUtmSuffix();
+  const fullText = suffix && baseText.indexOf('[anúncio:') === -1 ? baseText + suffix : baseText;
+  const encoded = safeEncodeURIComponent(fullText);
   if (IS_MOBILE_WA) {
     el.removeAttribute('target');
-    el.href = 'whatsapp://send?phone=5524993298763&text=' + encodeURIComponent(text);
+    el.href = 'whatsapp://send?phone=5524993298763&text=' + encoded;
   } else {
-    el.href = 'https://wa.me/5524993298763?text=' + encodeURIComponent(text);
+    el.href = 'https://wa.me/5524993298763?text=' + encoded;
   }
 }
 
@@ -262,12 +383,12 @@ const caseCatalog = {
     pageUrl: '/videos/persiana-horizontal-madeira-barra-mansa/'
   },
   aluminio: {
-    refTitle: 'Persiana Horizontal de Alumínio 25 mm Sob Medida',
+    refTitle: 'Persiana Horizontal de Alumínio 50 mm e 16 mm Sob Medida',
     kicker: '✦ Referência da Solução · Persiana de Alumínio',
     title: 'Persiana Horizontal de Alumínio com fácil limpeza',
     img: '/persiana-motorizada-sq.avif',
     prob: 'Cozinha, banheiro e home office precisavam de controle de claridade durável e resistente à umidade.',
-    sol: 'Persiana Horizontal em lâminas de alumínio sob medida, prática de higienizar e resistente ao vapor.',
+    sol: 'Persiana Horizontal em lâminas de alumínio (50 mm e 16 mm) sob medida, prática de higienizar e resistente ao vapor.',
     pageUrl: '/persianas/'
   },
   vassouras: {
@@ -410,7 +531,7 @@ const isaniRooms = {
     kind: 'estruturada',
     img: '/persiana-motorizada-sq.avif',
     title: 'Persiana Rolô Tela Solar 5% ou Alumínio',
-    quote: '"Na cozinha, onde há gordura e vapor do preparo, indico a Persiana Rolô em Tela Solar 5% (lavável com pano úmido) ou a Horizontal de Alumínio 25 mm pela facilidade de limpeza."',
+    quote: '"Na cozinha, onde há gordura e vapor do preparo, indico a Persiana Rolô em Tela Solar 5% (lavável com pano úmido) ou a Horizontal de Alumínio (50 mm ou 16 mm) pela facilidade de limpeza."',
     pageUrl: '/persianas/',
     pageLabel: 'Ver detalhes técnicos sobre Persianas Sob Medida →'
   },
@@ -418,8 +539,8 @@ const isaniRooms = {
     name: 'Banheiro',
     kind: 'estruturada',
     img: '/persiana-motorizada-sq.avif',
-    title: 'Persiana Horizontal de Alumínio ou PVC',
-    quote: '"Para janela de banheiro e área com vapor direto do chuveiro, trabalhamos com Persiana Horizontal em Alumínio ou PVC, materiais que não absorvem umidade nem mofam."',
+    title: 'Persiana Rolô ou Horizontal de Alumínio 16 mm',
+    quote: '"Para janela de banheiro e área com vapor e umidade, indico a Persiana Rolô ou a Horizontal de Alumínio de 16 mm, materiais laváveis que secam rápido e são fáceis de higienizar."',
     pageUrl: '/persianas/',
     pageLabel: 'Ver detalhes técnicos sobre Persianas Sob Medida →'
   }
@@ -507,8 +628,36 @@ function setIsaniDiag(type, val) {
   }
 }
 
+let currentSheetGalleryIdx = 0;
+
+function syncSheetGalleryUI(item) {
+  const gallery = item && Array.isArray(item.gallery) && item.gallery.length > 0 ? item.gallery : [item.img];
+  const prevBtn = document.getElementById('sheet-prev-btn');
+  const nextBtn = document.getElementById('sheet-next-btn');
+  const counterEl = document.getElementById('sheet-counter');
+  const sheetImg = document.getElementById('sheet-img');
+  if (sheetImg && gallery[currentSheetGalleryIdx]) {
+    sheetImg.src = gallery[currentSheetGalleryIdx];
+  }
+  const hasMultiple = gallery.length > 1;
+  if (prevBtn) prevBtn.style.display = hasMultiple ? 'inline-flex' : 'none';
+  if (nextBtn) nextBtn.style.display = hasMultiple ? 'inline-flex' : 'none';
+  if (counterEl) {
+    counterEl.style.display = hasMultiple ? 'inline-block' : 'none';
+    counterEl.textContent = (currentSheetGalleryIdx + 1) + ' / ' + gallery.length;
+  }
+}
+
+function stepSheetGallery(delta) {
+  const item = caseCatalog[currentSheetId];
+  if (!item || !Array.isArray(item.gallery) || item.gallery.length <= 1) return;
+  currentSheetGalleryIdx = (currentSheetGalleryIdx + delta + item.gallery.length) % item.gallery.length;
+  syncSheetGalleryUI(item);
+}
+
 function openCaseSheet(id) {
   currentSheetId = id;
+  currentSheetGalleryIdx = 0;
   const item = caseCatalog[id];
   if (!item) return;
   addUniqueRecent(shineJourney.obras, item.refTitle, 3);
@@ -521,11 +670,22 @@ function openCaseSheet(id) {
   const sheetImg = document.getElementById('sheet-img');
   sheetImg.onerror = function () {
     this.onerror = null;
-    this.src = '/cortina-sob-medida.avif';
+    this.src = item.fallbackImg || '/cortina-sob-medida.avif';
   };
-  sheetImg.src = item.img;
+  syncSheetGalleryUI(item);
   document.getElementById('sheet-kicker').textContent = item.kicker;
   document.getElementById('sheet-title').textContent = item.title;
+
+  const probRow = document.getElementById('sheet-prob-row');
+  const solLabel = document.getElementById('sheet-sol-label');
+  if (item.isInsta) {
+    if (probRow) probRow.style.display = 'none';
+    if (solLabel) solLabel.textContent = '📸 Legenda publicada no @shinecortinas:';
+  } else {
+    if (probRow) probRow.style.display = 'block';
+    if (solLabel) solLabel.textContent = 'Solução sob medida Shine:';
+  }
+
   document.getElementById('sheet-prob').textContent = item.prob;
   document.getElementById('sheet-sol').textContent = item.sol;
   setWaBtnHref(document.getElementById('sheet-wa-btn'), 'Olá! Gostei da referência "' + item.refTitle + '" no site da Shine e quero orçar.');
@@ -679,9 +839,9 @@ const groupTaxonomy = {
     title: 'Escolha o modelo ou material da Persiana:',
     subgroups: [
       { cat: 'persiana', label: 'Todas Persianas', rule: '✦ Controle preciso de claridade e ventilação com giro de lâminas.' },
-      { cat: 'horizontal', label: 'Persiana Horizontal', rule: '✦ Inclui todas as nossas Persianas Horizontais em Madeira Natural 50 mm e Alumínio 25 mm.' },
+      { cat: 'horizontal', label: 'Persiana Horizontal', rule: '✦ Inclui todas as nossas Persianas Horizontais em Madeira Natural 50 mm e Alumínio 50 mm e 16 mm.' },
       { cat: 'madeira', label: 'Persiana de Madeira', rule: '✦ Persiana Horizontal em lâminas naturais de 50 mm para salas e escritórios.' },
-      { cat: 'aluminio', label: 'Persiana de Alumínio', rule: '✦ Persiana Horizontal em lâminas de 25 mm resistente à umidade para cozinhas e banheiros.' },
+      { cat: 'aluminio', label: 'Persiana de Alumínio', rule: '✦ Persiana Horizontal em lâminas de 50 mm e 16 mm resistente à umidade para cozinhas e banheiros.' },
       { cat: 'vertical', label: 'Persiana Vertical', rule: '✦ Lâminas verticais com giro de 180° e recolhimento lateral para grandes vãos.' }
     ]
   }
@@ -895,10 +1055,143 @@ window.addEventListener('popstate', function () {
 // SINCRONIZADOR AUTOMÁTICO COM /api/instagram (FILTRADO POR #acervoshine)
 let isSyncingInstagram = false;
 let hasSyncedCurated = false;
+let hasSyncedAllApproved = false;
+let pendingIncludeAllApproved = false;
+let cachedInstagramItems = null;
+
+function injectInstagramItemsIntoDOM(items, includeAllApproved) {
+  const grid = document.querySelector('.d-ig-grid');
+  if (!grid || !Array.isArray(items) || items.length === 0) return;
+
+  const postsToInject = includeAllApproved
+    ? items
+    : items.filter((p) => p && p.isPinned === true);
+
+  const firstStaticTile = Array.from(grid.children).find(
+    (el) => !String(el.getAttribute('data-id') || '').startsWith('ig_live_')
+  ) || null;
+  const anchorTile = grid.children[3] || null;
+
+  postsToInject.forEach((post, i) => {
+    if (!post || !post.image) return;
+    const safeId = 'ig_live_' + String(post.id || i).replace(/[^a-zA-Z0-9_-]/g, '');
+    if (caseCatalog[safeId]) return;
+
+    const isReel = post.type === 'VIDEO' && post.video;
+    const city = cleanUnicodeText(post.city || 'Sul Fluminense');
+    const formattedCaption =
+      formatInstagramCaption(post.cleanCaption || post.caption || '') ||
+      'Confeccionada sob medida no ateliê da Shine com instalação própria.';
+    const title = deriveCleanInstaTitle(post.title, formattedCaption);
+    const cats = Array.isArray(post.cats) ? post.cats.join(' ') : 'insta tecido wave';
+    const fallbackImg = getFallbackImageForCats(cats);
+    const gallery =
+      Array.isArray(post.children) && post.children.length > 0
+        ? post.children.map((c) => c && c.image).filter(Boolean)
+        : [post.image];
+
+    caseCatalog[safeId] = {
+      refTitle: (isReel ? 'Reel @shine: ' : 'Obra @shine: ') + title + ' (' + city + ')',
+      kicker: (isReel ? '▶ Reel @shinecortinas · ' : '🟢 Obra @shinecortinas · ') + city,
+      title: title,
+      img: post.image,
+      fallbackImg: fallbackImg,
+      gallery: gallery.length > 0 ? gallery : [post.image],
+      isInsta: true,
+      prob: 'Projeto real publicado no nosso Instagram oficial @shinecortinas (' + city + ').',
+      sol: formattedCaption,
+      videoId: isReel ? post.video : null,
+      pageUrl: '/portfolio/'
+    };
+
+    const subtitleText = isReel
+      ? '▶ Vídeo real · Toque para assistir'
+      : gallery.length > 1
+        ? '📸 ' + gallery.length + ' fotos · Ver legenda'
+        : 'Obra real · Ver legenda';
+
+    const shortTagLabel = city && city !== 'Sul Fluminense' ? city : '@shinecortinas';
+
+    const tile = document.createElement('div');
+    tile.className = 'd-ig-tile is-hidden';
+    tile.setAttribute('data-id', safeId);
+    tile.setAttribute('data-cat', cats);
+    tile.onclick = function () {
+      openCaseSheet(safeId);
+    };
+    tile.innerHTML =
+      '<img src="' +
+      escapeHtml(post.image) +
+      '" alt="' +
+      escapeHtml(title) +
+      '" width="400" height="400" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=\'' +
+      fallbackImg +
+      '\'">' +
+      '<div class="d-ig-tile__top">' +
+      '<span class="d-ig-tag d-ig-tag--live">' +
+      (isReel ? '▶ ' : '🟢 ') +
+      escapeHtml(shortTagLabel) +
+      '</span>' +
+      '<button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef(\'' +
+      safeId +
+      '\')">♡</button>' +
+      '</div>' +
+      '<div class="d-ig-tile__bottom">' +
+      '<strong>' +
+      escapeHtml(title) +
+      '</strong>' +
+      '<span>' +
+      subtitleText +
+      '</span>' +
+      '</div>';
+
+    if (post.isPinned && firstStaticTile) {
+      grid.insertBefore(tile, firstStaticTile);
+    } else if (post.isPinned) {
+      grid.insertBefore(tile, grid.firstChild);
+    } else if (i === 0 && anchorTile) {
+      grid.insertBefore(tile, anchorTile);
+    } else {
+      grid.appendChild(tile);
+    }
+  });
+
+  hasSyncedCurated = true;
+  if (includeAllApproved) hasSyncedAllApproved = true;
+  syncSavedTilesDOM();
+
+  const allTiles = Array.from(document.querySelectorAll('.d-ig-tile'));
+  const instaTiles = allTiles.filter((t) => (t.getAttribute('data-cat') || '').split(/\s+/).includes('insta'));
+  const btnAll = document.getElementById('filter-btn-all');
+  const btnInsta = document.getElementById('filter-btn-insta');
+  if (btnAll) btnAll.textContent = '✦ Todos (' + allTiles.length + ')';
+  if (btnInsta) btnInsta.textContent = '🟢 Obras Reais (' + instaTiles.length + ')';
+
+  document.querySelectorAll('#sub-group-list .d-sub-btn').forEach((sbtn) => {
+    const cat = sbtn.getAttribute('data-subcat');
+    const lbl = sbtn.getAttribute('data-sublabel');
+    if (cat && lbl) {
+      sbtn.textContent = lbl + ' (' + countTilesForCat(cat) + ')';
+    }
+  });
+
+  renderBentoGrid();
+}
 
 async function syncInstagramHashtagFeed(includeAllApproved = false) {
-  if (isSyncingInstagram) return;
+  if (hasSyncedAllApproved) return;
   if (hasSyncedCurated && !includeAllApproved) return;
+
+  if (cachedInstagramItems) {
+    injectInstagramItemsIntoDOM(cachedInstagramItems, includeAllApproved);
+    return;
+  }
+
+  if (isSyncingInstagram) {
+    if (includeAllApproved) pendingIncludeAllApproved = true;
+    return;
+  }
+
   isSyncingInstagram = true;
   try {
     const res = await fetch('/api/instagram');
@@ -906,98 +1199,10 @@ async function syncInstagramHashtagFeed(includeAllApproved = false) {
     const data = await res.json();
     if (!data || !Array.isArray(data.items) || data.items.length === 0) return;
 
-    const grid = document.querySelector('.d-ig-grid');
-    if (!grid) return;
-
-    // Por padrão no carregamento do acervo, injeta apenas posts marcados explicitamente com #acervoshine / #nosite (isPinned === true).
-    const postsToInject = includeAllApproved
-      ? data.items
-      : data.items.filter((p) => p && p.isPinned === true);
-
-    const anchorTile = grid.children[3] || null;
-    postsToInject.forEach((post, i) => {
-      if (!post.image) return;
-      const safeId = 'ig_live_' + String(post.id || i).replace(/[^a-zA-Z0-9_-]/g, '');
-      if (caseCatalog[safeId]) return;
-
-      const isReel = post.type === 'VIDEO' && post.video;
-      const city = post.city || 'Sul Fluminense';
-      const title = post.title || 'Obra Real @shinecortinas';
-      const cats = Array.isArray(post.cats) ? post.cats.join(' ') : 'insta tecido wave';
-      const fallbackImg = getFallbackImageForCats(cats);
-
-      caseCatalog[safeId] = {
-        refTitle: (isReel ? 'Reel @shine: ' : 'Obra @shine: ') + title + ' (' + city + ')',
-        kicker: (isReel ? '▶ Reel @shinecortinas · ' : '🟢 Obra @shinecortinas · ') + city,
-        title: title,
-        img: post.image,
-        prob: 'Projeto real publicado no nosso Instagram oficial @shinecortinas (' + city + ').',
-        sol: post.cleanCaption || post.caption || 'Confeccionada sob medida no ateliê da Shine com instalação própria.',
-        videoId: isReel ? post.video : null,
-        pageUrl: '/portfolio/'
-      };
-
-      const tile = document.createElement('div');
-      tile.className = 'd-ig-tile is-hidden';
-      tile.setAttribute('data-id', safeId);
-      tile.setAttribute('data-cat', cats);
-      tile.onclick = function () {
-        openCaseSheet(safeId);
-      };
-      tile.innerHTML =
-        '<img src="' +
-        escapeHtml(post.image) +
-        '" alt="' +
-        escapeHtml(title) +
-        '" width="400" height="400" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=\'' +
-        fallbackImg +
-        '\'">' +
-        '<div class="d-ig-tile__top">' +
-        '<span class="d-ig-tag d-ig-tag--live">' +
-        (isReel ? '▶ Reel · ' : '🟢 @shine · ') +
-        escapeHtml(city) +
-        '</span>' +
-        '<button type="button" class="d-ig-heart" aria-label="Salvar projeto na pasta de referências" onclick="event.stopPropagation(); toggleTileRef(\'' +
-        safeId +
-        '\')">♡</button>' +
-        '</div>' +
-        '<div class="d-ig-tile__bottom">' +
-        '<strong>' +
-        escapeHtml(title) +
-        '</strong>' +
-        '<span>' +
-        (isReel ? '▶ Vídeo real · Toque para assistir' : 'Obra real · Ver ficha') +
-        '</span>' +
-        '</div>';
-
-      if (post.isPinned) {
-        grid.insertBefore(tile, grid.firstChild);
-      } else if (i === 0 && anchorTile) {
-        grid.insertBefore(tile, anchorTile);
-      } else {
-        grid.appendChild(tile);
-      }
-    });
-
-    hasSyncedCurated = true;
-    syncSavedTilesDOM();
-
-    const allTiles = Array.from(document.querySelectorAll('.d-ig-tile'));
-    const instaTiles = allTiles.filter((t) => (t.getAttribute('data-cat') || '').split(/\s+/).includes('insta'));
-    const btnAll = document.getElementById('filter-btn-all');
-    const btnInsta = document.getElementById('filter-btn-insta');
-    if (btnAll) btnAll.textContent = '✦ Todos (' + allTiles.length + ')';
-    if (btnInsta) btnInsta.textContent = '🟢 Obras Reais (' + instaTiles.length + ')';
-
-    document.querySelectorAll('#sub-group-list .d-sub-btn').forEach((sbtn) => {
-      const cat = sbtn.getAttribute('data-subcat');
-      const lbl = sbtn.getAttribute('data-sublabel');
-      if (cat && lbl) {
-        sbtn.textContent = lbl + ' (' + countTilesForCat(cat) + ')';
-      }
-    });
-
-    renderBentoGrid();
+    cachedInstagramItems = data.items;
+    const shouldIncludeAll = includeAllApproved || pendingIncludeAllApproved;
+    pendingIncludeAllApproved = false;
+    injectInstagramItemsIntoDOM(cachedInstagramItems, shouldIncludeAll);
   } catch (_) {
     // Mantém o acervo curado caso /api/instagram esteja offline
   } finally {

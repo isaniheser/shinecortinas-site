@@ -55,9 +55,9 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
 <div style="max-width:600px;margin:0 auto;background:#FBFAF7;box-shadow:0 0 80px rgba(30,58,50,0.07)">
 
 <header style="background:#16302A;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;position:sticky;top:0;z-index:50">
-  <div style="display:flex;align-items:center;gap:9px">
-    <div style="width:33px;height:33px;display:flex;align-items:center;justify-content:center;border-radius:9999px;border:1.5px solid #C6A868;flex-shrink:0"><span style="font-family:'Cinzel',serif;font-size:15px;font-weight:700;color:#DFBD69;padding-top:2px">S</span></div>
-    <span style="font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#fff;letter-spacing:0.16em">SHINE</span>
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="/logo-shine.avif" alt="ShineCortinas" width="36" height="36" decoding="async" style="border-radius:8px;flex-shrink:0">
+    <span style="font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#fff;letter-spacing:0.16em">SHINECORTINAS</span>
   </div>
   <span style="color:rgba(255,255,255,0.5);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;text-align:right;line-height:1.6">Desde 2009<br>Sul Fluminense</span>
 </header>
@@ -432,9 +432,9 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
 </section>
 
 <footer style="background:#F3F1EB;border-top:1px solid #E7E3DA;padding:34px 22px 30px">
-  <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
-    <div style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:9999px;border:1.5px solid #C6A868;background:#16302A"><span style="font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#DFBD69;padding-top:2px">S</span></div>
-    <span style="font-family:'Cinzel',serif;font-size:17px;color:#16302A;letter-spacing:0.16em">SHINE</span>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+    <img src="/logo-shine.avif" alt="ShineCortinas" width="36" height="36" loading="lazy" decoding="async" style="border-radius:8px;flex-shrink:0">
+    <span style="font-family:'Cinzel',serif;font-size:17px;color:#16302A;letter-spacing:0.16em">SHINECORTINAS</span>
   </div>
   <p style="color:#6B7069;font-size:13px;line-height:1.8;margin:0 0 20px">Volta Redonda, RJ · Atendemos todo o Sul Fluminense.<br>Sofisticação sob medida para cada ambiente.</p>
   <p style="color:#16302A;font-size:17px;font-weight:700;margin:0 0 4px">(24) 99329-8763</p>
@@ -521,9 +521,18 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
 
   function origem() {
     var o = { lp: LP };
-    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function (k) {
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(function (k) {
       if (qs.get(k)) o[k] = qs.get(k);
     });
+    try {
+      sessionStorage.setItem('shine.utm', JSON.stringify({
+        source: o.utm_source || 'lp-anuncio-d',
+        medium: o.utm_medium || '',
+        campaign: o.utm_campaign || LP,
+        gclid: o.gclid || '',
+        fbclid: o.fbclid || ''
+      }));
+    } catch (e) {}
     return o;
   }
   function com(extra) {
@@ -553,9 +562,13 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
   }
 
   if (wa) {
+    var orig = origem();
+    var tag = orig.utm_campaign || orig.utm_source || LP;
     var texto = new URL(wa.href).searchParams.get('text') || '';
-    var parametros = 'phone=5524993298763&text=' + encodeURIComponent(texto);
-    wa.href = celular ? 'whatsapp://send?' + parametros : 'https://web.whatsapp.com/send?' + parametros;
+    if (tag && texto.indexOf('[anúncio:') === -1) texto += ' [anúncio: ' + tag + ']';
+    wa.href = celular
+      ? 'whatsapp://send?phone=5524993298763&text=' + encodeURIComponent(texto)
+      : 'https://wa.me/5524993298763?text=' + encodeURIComponent(texto);
     wa.addEventListener('click', function () {
       if (celular && ajuda) ajuda.hidden = false;
       // Não impedir nem atrasar a navegação nativa: o toque deve chegar ao app.

@@ -273,7 +273,7 @@ for (const p of PAGINAS) {
   const file = join(ROOT, p.dir, 'index.html');
   if (!existsSync(file)) throw new Error(`página não existe: ${p.dir}/`);
   const src = readFileSync(file, 'utf8');
-  writeFileSync(file, ajustaHead(cleanHead(src.split('<body')[0]), p) + render(p));
+  writeFileSync(file, ajustaHead(cleanHead(src.split('<body')[0], { preloadImg: p.hero, preloadSrcset: p.heroSrcset }), p) + render(p));
   n++;
 }
 console.log(`build-paginas: ${n} páginas geradas`);

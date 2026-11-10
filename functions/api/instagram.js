@@ -45,8 +45,35 @@ const CITY_MAP = [
   { match: ['paulo de frontin', 'paulodefrontin'], label: 'Eng. Paulo de Frontin' },
 ];
 
+export function stripLoneSurrogates(str = '') {
+  return String(str || '').replace(
+    /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g,
+    ''
+  );
+}
+
+export function normalizeInstagramText(raw = '') {
+  const clean = stripLoneSurrogates(String(raw || ''));
+  try {
+    return clean
+      .replace(/[\u{2100}-\u{214F}\u{1D400}-\u{1D7FF}]+/gu, (m) => m.normalize('NFKC'))
+      .normalize('NFC');
+  } catch (_) {
+    return clean;
+  }
+}
+
+export function safeTruncateCodePoints(str = '', maxChars = 48) {
+  const chars = Array.from(stripLoneSurrogates(String(str || '').trim()));
+  if (chars.length <= maxChars) return chars.join('');
+  const sliced = chars.slice(0, maxChars - 1).join('');
+  const lastSpace = sliced.lastIndexOf(' ');
+  const cut = lastSpace >= maxChars - 15 ? sliced.slice(0, lastSpace) : sliced;
+  return cut.replace(/[,:;.\s]+$/, '') + '…';
+}
+
 export function sanitizeBrandText(raw = '') {
-  const cleanedLines = String(raw)
+  const cleanedLines = normalizeInstagramText(raw)
     .replace(/\u2800+/g, '')
     .split('\n')
     .map((line) => line.replace(/#[A-Za-z0-9_À-ÿ]+/g, '').trim())
@@ -54,55 +81,90 @@ export function sanitizeBrandText(raw = '') {
       if (!line) return false;
       const lower = line.toLowerCase();
       if (
-        lower.includes('clique no link da bio') ||
-        lower.includes('link da bio') ||
-        lower.includes('comenta aqui') ||
-        lower.includes('salve esse post') ||
         lower.includes('volta redonda - barra mansa') ||
         lower.includes('volta redonda, barra mansa') ||
         lower.startsWith('📍')
       ) {
         return false;
       }
-      // Remove linhas finais compostas apenas por tags CamelCase sem '#' (ex: CortinaDeTecido PeDireitoAlto)
+      // Se for uma linha curta apenas de chamada para ação (CTA de rede social), remove a linha inteira.
+      // Se for um parágrafo longo que apenas termina com CTA, preserva o parágrafo e limpa só a frase final abaixo.
+      if (
+        line.length < 140 &&
+        (lower.includes('clique no link da bio') ||
+          lower.includes('toque no link da bio') ||
+          lower.includes('link da bio') ||
+          lower.includes('link na bio') ||
+          lower.includes('está na nossa bio') ||
+          lower.includes('comenta aqui') ||
+          lower.includes('comenta ') ||
+          lower.includes('comente ') ||
+          lower.includes('pelo direct') ||
+          lower.includes('no direct') ||
+          lower.includes('salve esse post') ||
+          lower.includes('salva esse vídeo') ||
+          lower.startsWith('👉') ||
+          lower.startsWith('🔗') ||
+          lower.startsWith('📲'))
+      ) {
+        return false;
+      }
+      // Remove linhas finais compostas apenas por tags CamelCase ou tags coladas sem '#' (ex: CortinaDeTecido ou arquiteturadeinteriores)
       const tokens = line.split(/\s+/).filter(Boolean);
       const camelCount = tokens.filter((t) => /^[A-ZÀ-Ý][a-zà-ÿ]+[A-ZÀ-Ý][A-Za-z0-9À-ÿ]*$/.test(t)).length;
       if (tokens.length >= 2 && camelCount / tokens.length >= 0.5) {
         return false;
       }
+      const hasPunctuation = /[.,!?:;()]/.test(line);
+      const slugTagCount = tokens.filter((t) => /^[a-z0-9]{12,}$/.test(t)).length;
+      if (!hasPunctuation && tokens.length >= 2 && slugTagCount / tokens.length >= 0.5) {
+        return false;
+      }
       return true;
     });
 
-  return cleanedLines
-    .join(' ')
-    .replace(/\b([A-ZÀ-Ý][a-zà-ÿ]+[A-ZÀ-Ý][A-Za-z0-9À-ÿ]*\s*){2,}/g, ' ')
-    .replace(/[—–]/g, ', ')
-    .replace(/;/g, '.')
-    .replace(/hotel de luxo/gi, 'hotel cinco estrelas')
-    .replace(/quartos?\s+vip/gi, 'suítes sob medida')
-    .replace(/\bvip\b/gi, 'exclusivo')
-    .replace(/cabe no (seu )?bolso/gi, 'tem excelente custo-benefício')
-    .replace(/pagando caro/gi, 'investindo sem orientação técnica')
-    .replace(/capa de revista/gi, 'arquitetura residencial')
-    .replace(/não é luxo/gi, 'não é supérfluo')
-    .replace(/\bluxo\b/gi, 'alto padrão')
-    .replace(/\bluxuos[oa]s?\b/gi, 'sofisticad$1')
-    .replace(/\bpremium\b/gi, 'sob medida')
-    .replace(/\bQuietLuxury\b/gi, '')
-    .replace(/\bluxury\b/gi, 'alto padrão')
-    .replace(/\btotal\b/gi, 'completo')
-    .replace(/\b16 anos\b/gi, '17 anos')
-    .replace(/instala(mos)? em um dia/gi, 'instala com hora marcada')
-    .replace(/\s+,/g, ',')
-    .replace(/,\s*,+/g, ', ')
-    .replace(/\.\s*\.+/g, '.')
-    .replace(/\s+/g, ' ')
-    .replace(/^[.,\s…]+/, '')
-    .trim();
+  return stripLoneSurrogates(
+    cleanedLines
+      .join('\n')
+      .replace(/\b([A-ZÀ-Ý][a-zà-ÿ]+[A-ZÀ-Ý][A-Za-z0-9À-ÿ]*\s*){2,}/g, ' ')
+      .replace(/[—–]/g, ', ')
+      .replace(/;/g, '.')
+      .replace(/hotel de luxo/gi, 'hotel cinco estrelas')
+      .replace(/quartos?\s+vip/gi, 'suítes sob medida')
+      .replace(/\bvip\b/gi, 'exclusivo')
+      .replace(/cabe no (seu )?bolso/gi, 'tem excelente custo-benefício')
+      .replace(/pagando caro/gi, 'investindo sem orientação técnica')
+      .replace(/capa de revista/gi, 'arquitetura residencial')
+      .replace(/não é luxo/gi, 'não é supérfluo')
+      .replace(/\bluxo\b/gi, 'alto padrão')
+      .replace(/\bluxuos[oa]s?\b/gi, 'sofisticad$1')
+      .replace(/\bpremium\b/gi, 'sob medida')
+      .replace(/\bQuietLuxury\b/gi, '')
+      .replace(/\bluxury\b/gi, 'alto padrão')
+      .replace(/\btotal\b/gi, 'completo')
+      .replace(/\b16 anos\b/gi, '17 anos')
+      .replace(/instala(mos)? em um dia/gi, 'instala com hora marcada')
+      .replace(/(?:👉|📲|🔗|💬)\s*(?:Agende|Toque|Clique|Salva|Salve|Solicite|Orçamento|O link)[^.!?\n]*[.!?]?/gi, '')
+      .replace(/\b(?:Toque|Clique)\s+no\s+link\s+[nd]a\s+bio[^.!?\n]*[.!?]?/gi, '')
+      .replace(/\bO\s+link\s+de\s+contato\s+está\s+na\s+nossa\s+bio[^.!?\n]*[.!?]?/gi, '')
+      .replace(/\bComent[ae]s?\s+[^.!?\n]*[.!?]?/gi, '')
+      .replace(/\bpelo Direct\s+ou\s+/gi, '')
+      .replace(/(?:\s+\b[a-z0-9]{11,}\b){2,}\s*\.?\s*$/gi, '')
+      .replace(/[ \t]+,/g, ',')
+      .replace(/,\s*,+/g, ', ')
+      .replace(/([!?])\s*\.+/g, '$1')
+      .replace(/\.\s*\.+/g, '.')
+      .replace(/[ \t]+/g, ' ')
+      .replace(/\n{3,}/g, '\n\n')
+      .replace(/^[.,\s…]+/, '')
+      .replace(/[\s.👇]+$/, (m) => (m.includes('.') ? '.' : ''))
+      .trim()
+  );
 }
 
 export function extractMetadataFromCaption(caption = '') {
-  const lower = caption.toLowerCase();
+  const normalizedCaption = normalizeInstagramText(caption);
+  const lower = normalizedCaption.toLowerCase();
 
   // Remove rodapé genérico de lista de cidades ("Volta Redonda, Barra Mansa, Resende...") para detectar apenas a cidade real da obra
   const bodyWithoutFooter = lower
@@ -198,7 +260,12 @@ export function extractMetadataFromCaption(caption = '') {
     catSet.add('persiana');
     catSet.add('horizontal');
   }
-  if (lower.includes('#persianademadeira') || lower.includes('persiana de madeira') || lower.includes('madeira 50')) {
+  if (
+    lower.includes('#persianademadeira') ||
+    lower.includes('persiana de madeira') ||
+    lower.includes('persiana horizontal de madeira') ||
+    lower.includes('madeira 50')
+  ) {
     catSet.add('persiana');
     catSet.add('horizontal');
     catSet.add('madeira');
@@ -206,7 +273,10 @@ export function extractMetadataFromCaption(caption = '') {
   if (
     lower.includes('#persianadealuminio') ||
     lower.includes('persiana de alumínio') ||
-    lower.includes('persiana de aluminio')
+    lower.includes('persiana de aluminio') ||
+    lower.includes('persiana horizontal de alumínio') ||
+    lower.includes('persiana horizontal de aluminio') ||
+    (catSet.has('persiana') && (lower.includes('alumínio') || lower.includes('aluminio')))
   ) {
     catSet.add('persiana');
     catSet.add('horizontal');
@@ -227,6 +297,7 @@ export function extractMetadataFromCaption(caption = '') {
     lower.includes('#cortinamotorizada') ||
     lower.includes('#persianamotorizada') ||
     lower.includes('motorizada') ||
+    lower.includes('motorizado') ||
     lower.includes('automação') ||
     lower.includes('automacao')
   ) {
@@ -250,7 +321,7 @@ export function extractMetadataFromCaption(caption = '') {
   // 3. Sanitiza o texto da legenda conforme regras estritas do CLAUDE.md
   const cleanText = sanitizeBrandText(caption);
   const firstSentence = (cleanText.split(/[.!?\n]/)[0] || 'Obra Real ShineCortinas').trim();
-  const title = firstSentence.length > 44 ? firstSentence.slice(0, 42).trim() + '…' : firstSentence;
+  const title = safeTruncateCodePoints(firstSentence, 48);
 
   const isPinned =
     lower.includes('#acervoshine') ||
@@ -268,7 +339,7 @@ export function extractMetadataFromCaption(caption = '') {
 }
 
 export function isApprovedWorkPost(caption = '') {
-  const lower = caption.toLowerCase();
+  const lower = normalizeInstagramText(caption).toLowerCase();
   if (
     lower.includes('#acervoshine') ||
     lower.includes('#nosite') ||
@@ -316,7 +387,7 @@ export async function onRequest(context) {
   }
 
   const cache = caches.default;
-  const cacheKey = new Request('https://shine.cache/instagram-feed-v4-brand-clean');
+  const cacheKey = new Request('https://shine.cache/instagram-feed-v5-unicode-safe');
   let cached = await cache.match(cacheKey);
   if (cached) return cached;
 

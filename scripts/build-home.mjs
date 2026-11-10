@@ -9,6 +9,9 @@ import {
   GOOGLE_RATING,
   GOOGLE_RATING_PT,
   GOOGLE_REVIEWS,
+  JS_V,
+  HOME_CSS_V,
+  HOME_JS_V,
   waIcon,
   esc
 } from './partials.mjs';
@@ -302,10 +305,10 @@ const BENTO_ITEMS = [
     id: 'aluminio',
     cats: 'persiana horizontal aluminio',
     img: '/persiana-motorizada-sq.avif',
-    alt: 'Imagem de referência de Persiana Horizontal de Alumínio 25 mm',
+    alt: 'Imagem de referência de Persiana Horizontal de Alumínio 50 mm e 16 mm',
     pos: 'center 50%',
     tag: '✦ Referência · Alumínio',
-    title: 'Persiana de Alumínio 25 mm',
+    title: 'Persiana de Alumínio 50 mm e 16 mm',
     sub: 'Fácil limpeza · Ver ficha',
     initialClass: 'is-hidden'
   },
@@ -675,7 +678,7 @@ const html = `<!DOCTYPE html>
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   </noscript>
-  <link rel="stylesheet" href="/assets/shine-home-e.css?v=6">
+  <link rel="stylesheet" href="/assets/shine-home-e.css?v=${HOME_CSS_V}">
 
   <script type="application/ld+json">
 ${JSON.stringify(schemaJson, null, 2)}
@@ -861,7 +864,7 @@ ${VIDEO_STORIES.map(
               <p><strong>• Sala de TV e Suítes:</strong> Cortina de tecido na frente com forro Blackout 100% (reduz de 5 a 6 °C na temperatura do ambiente e veda a luz mesmo em tecidos claros como branco ou areia) ou Blackout 70% (semi blackout para penumbra). Opção de transpasse central de 15 cm quando solicitado.</p>
               <p><strong>• Varanda Gourmet e Sacada:</strong> Persiana Rolô em Tela Solar (Screen) ou Pinpoint com fibra de vidro, que filtra os raios UV e reduz o calor em até cerca de 11 °C mantendo a vista externa.</p>
               <p><strong>• Escritório e Home Office:</strong> Persiana Horizontal de Madeira 50 mm, Persiana Romana ou Double Vision para controle preciso de reflexo nas telas.</p>
-              <p><strong>• Cozinha vs. Banheiro:</strong> Na cozinha indicamos Persiana Rolô Tela Solar 5% ou Horizontal de Alumínio 25 mm. No banheiro (área com vapor direto do chuveiro) indicamos exclusivamente Persiana Horizontal de Alumínio ou PVC.</p>
+              <p><strong>• Cozinha vs. Banheiro:</strong> Na cozinha indicamos Persiana Rolô Tela Solar 5% ou Horizontal de Alumínio (50 mm ou 16 mm). No banheiro (área com vapor e umidade) indicamos Persiana Rolô ou Horizontal de Alumínio de 16 mm, materiais laváveis que secam rápido e são fáceis de higienizar.</p>
               <p><strong>• Cortineiro de Gesso, Tubo Suíço e Motorização:</strong> Cortineiro mínimo de 15 × 15 cm (18 a 20 cm para cortina dupla e 11 cm de distância entre trilhos caso o forro traseiro também seja Wave). Sem gesso em vãos acima de 2,00 m utilizamos Tubo Suíço para a cortina correr sem travar no suporte central. Na motorização, o trilho de cortina de tecido permite abertura manual na falta de luz e acionamento por leve toque, enquanto nas persianas motorizadas Rolô, Romana e Horizontal o freio do motor trava a abertura manual (exceto Painel e Vertical).</p>
             </div>
           </details>
@@ -1307,18 +1310,21 @@ ${FAQ.map(
       <div class="d-sheet-media">
         <img id="sheet-img" src="/cortina-sob-medida.avif" alt="Projeto ShineCortinas" width="400" height="400" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/cortina-sob-medida.avif'">
         <button type="button" class="d-sheet-close" onclick="closeCaseSheet()">Fechar ✕</button>
+        <button type="button" class="d-sheet-nav d-sheet-nav--prev" id="sheet-prev-btn" aria-label="Foto anterior" onclick="stepSheetGallery(-1)" style="display:none;">‹</button>
+        <button type="button" class="d-sheet-nav d-sheet-nav--next" id="sheet-next-btn" aria-label="Próxima foto" onclick="stepSheetGallery(1)" style="display:none;">›</button>
+        <span class="d-sheet-counter" id="sheet-counter" style="display:none;">1 / 1</span>
         <button type="button" id="sheet-video-btn" style="display:none; position:absolute; left:12px; bottom:12px; background:rgba(8,19,15,0.92); color:#FAF6EE; border:1.5px solid #C9A252; border-radius:99px; padding:8px 14px; font-size:12px; font-weight:700; cursor:pointer;">▶ Assistir Vídeo Real</button>
       </div>
       <div class="d-sheet-content">
         <div class="d-sheet-kicker" id="sheet-kicker">✦ Referência da Solução · Cortina Wave</div>
         <h3 id="sheet-title">Sala vestida do teto ao piso com luz suave</h3>
         <div class="d-sheet-details">
-          <div>
+          <div id="sheet-prob-row">
             <strong>O que o ambiente pedia:</strong>
             <span id="sheet-prob">A sala parecia vazia e a claridade direta incomodava no sofá à tarde.</span>
           </div>
           <div>
-            <strong>Solução sob medida Shine:</strong>
+            <strong id="sheet-sol-label">Solução sob medida Shine:</strong>
             <span id="sheet-sol">Cortina Prega Wave em tecido toque de linho com forro translúcido independente e acabamento a 1 cm do piso.</span>
           </div>
         </div>
@@ -1327,7 +1333,7 @@ ${FAQ.map(
           <button type="button" class="d-sheet-save-btn" id="sheet-save-btn" onclick="toggleTileRef(currentSheetId)">
             ♡ Salvar referência
           </button>
-          <a class="d-gold-btn" id="sheet-wa-btn" data-wa="modal-acervo" data-wa-custom="1" style="padding: 14px 10px; font-size: 12.5px; border-radius: 14px;" href="https://wa.me/5524993298763" target="_blank" rel="noopener">
+          <a class="d-gold-btn" id="sheet-wa-btn" data-wa="modal-acervo" data-wa-custom="1" style="padding: 14px 10px; font-size: 12.5px; border-radius: 14px;" href="https://wa.me/5524993298763?text=Ol%C3%A1%21%20Vi%20um%20projeto%20no%20acervo%20da%20Shine%20e%20quero%20or%C3%A7ar." target="_blank" rel="noopener">
             💬 Orçar igual →
           </a>
         </div>
@@ -1347,7 +1353,7 @@ ${FAQ.map(
         <h3 id="art-title" style="font-size:22px; margin-bottom:12px;">Qual a medida ideal do cortineiro de gesso?</h3>
         <div class="d-sheet-details" id="art-body" style="font-size:13px; line-height:1.6;"></div>
         <a id="art-full-link" href="/blog/altura-ideal-da-cortina/" class="d-sheet-page-link">Abrir artigo completo no Blog ↗</a>
-        <a class="d-gold-btn" id="art-wa-btn" data-wa="modal-blog" data-wa-custom="1" style="width:100%; font-size:12.5px; padding:14px 12px;" href="https://wa.me/5524993298763" target="_blank" rel="noopener">
+        <a class="d-gold-btn" id="art-wa-btn" data-wa="modal-blog" data-wa-custom="1" style="width:100%; font-size:12.5px; padding:14px 12px;" href="https://wa.me/5524993298763?text=Ol%C3%A1%21%20Estava%20lendo%20o%20guia%20t%C3%A9cnico%20no%20site%20da%20Shine%20e%20quero%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">
           💬 Tirar dúvida com o Isani no WhatsApp →
         </a>
       </div>
@@ -1465,7 +1471,7 @@ ${FAQ.map(
       </div>
       <div class="d-video-player__box" id="video-modal-box"></div>
       <div class="d-video-player__foot">
-        <a id="video-modal-wa" class="d-gold-btn" data-wa="modal-video" data-wa-custom="1" style="width: 100%; font-size: 12.5px;" href="https://wa.me/5524993298763" target="_blank" rel="noopener">
+        <a id="video-modal-wa" class="d-gold-btn" data-wa="modal-video" data-wa-custom="1" style="width: 100%; font-size: 12.5px;" href="https://wa.me/5524993298763?text=Ol%C3%A1%21%20Assistindo%20ao%20v%C3%ADdeo%20de%20obra%20real%20no%20site%20da%20Shine%2C%20quero%20um%20projeto%20igual%20na%20minha%20janela." target="_blank" rel="noopener">
           💬 Quero um projeto igual na minha janela →
         </a>
         <a id="video-modal-page" href="/videos/" class="d-video-page-link">Ver ficha técnica completa deste vídeo ↗</a>
@@ -1473,8 +1479,8 @@ ${FAQ.map(
     </div>
   </div>
 
-  <script data-cfasync="false" src="/assets/shine-home-e.js?v=7" defer></script>
-  <script data-cfasync="false" src="/assets/shine-wa.js?v=6" defer></script>
+  <script data-cfasync="false" src="/assets/shine-home-e.js?v=${HOME_JS_V}" defer></script>
+  <script data-cfasync="false" src="/assets/shine-wa.js?v=${JS_V}" defer></script>
   <script type="speculationrules">
   {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/lp/*"}},{"not":{"href_matches":"/app/*"}}]},"eagerness":"moderate"}]}
   </script>
