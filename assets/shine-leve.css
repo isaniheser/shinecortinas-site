@@ -230,6 +230,8 @@ p{margin:0;text-wrap:pretty}
 @media(min-width:900px){.sl-citybar .sl-wrap{justify-content:flex-start}}
 .sl-chip{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line-2);border-radius:9999px;padding:6px 6px 6px 14px;background:#fff;font-size:12.5px;color:var(--green);font-weight:500;position:relative}
 .sl-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0}
+button.sl-chip{padding:8px 16px;gap:6px;justify-content:center}
+button.sl-chip::before{display:none}
 .sl-chip__btn{border:0;background:var(--sand);color:var(--green);font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:9999px;cursor:pointer}
 .sl-chip__btn:hover{background:var(--line)}
 @supports not selector(:popover-open){.sl-chip__btn,.sl-citypop{display:none}}

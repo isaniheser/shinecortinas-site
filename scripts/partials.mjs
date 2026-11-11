@@ -4,7 +4,7 @@ import {auroraHeader,auroraMenu,auroraHead,AURORA_V} from './aurora-layout.mjs';
 
 export const WA = 'https://wa.me/5524993298763?text=Ol%C3%A1%2C%20eu%20vim%20do%20site%20da%20Shine%20e%20quero%20agendar%20uma%20consultoria%20gratuita%20em%20casa.';
 export const FONTS = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap';
-export const CSS_V = '17';
+export const CSS_V = '18';
 export const JS_V = '8';
 export const HOME_CSS_V = '9';
 export const HOME_JS_V = '10';
