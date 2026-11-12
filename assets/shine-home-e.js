@@ -295,10 +295,8 @@ function setWaBtnHref(el, text) {
   const encoded = safeEncodeURIComponent(fullText);
   if (IS_PHONE_WA) {
     el.removeAttribute('target');
-    el.href = 'whatsapp://send?phone=5524993298763&text=' + encoded;
-  } else {
-    el.href = 'https://wa.me/5524993298763?text=' + encoded;
   }
+  el.href = 'https://wa.me/5524993298763?text=' + encoded;
 }
 
 function openArticleSheet(id) {

@@ -146,9 +146,7 @@
     var suffix = getUtmSuffix();
     var full = suffix && msg.indexOf('[anúncio:') === -1 ? msg + suffix : msg;
     var encoded = encodeURIComponent(full);
-    return IS_PHONE
-      ? 'whatsapp://send?phone=5524993298763&text=' + encoded
-      : 'https://wa.me/5524993298763?text=' + encoded;
+    return 'https://wa.me/5524993298763?text=' + encoded;
   }
 
   function updateConsultorUI() {

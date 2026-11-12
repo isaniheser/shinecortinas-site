@@ -570,14 +570,20 @@ body { margin: 0; font-family: 'Montserrat', sans-serif; background: #FBFAF7; co
     var texto = new URL(wa.href).searchParams.get('text') || '';
     if (tag && texto.indexOf('[anúncio:') === -1) texto += ' [anúncio: ' + tag + ']';
     var webUrl = 'https://wa.me/5524993298763?text=' + encodeURIComponent(texto);
+    var appUrl = 'whatsapp://send?phone=5524993298763&text=' + encodeURIComponent(texto);
     if (alternativa) alternativa.href = webUrl;
-    wa.href = celular
-      ? 'whatsapp://send?phone=5524993298763&text=' + encodeURIComponent(texto)
-      : webUrl;
-    wa.addEventListener('click', function () {
+    wa.href = webUrl;
+    if (celular) wa.removeAttribute('target');
+    document.addEventListener('click', function (ev) {
+      var alvo = ev.target && ev.target.closest && ev.target.closest('#sc-wa');
+      if (!alvo) return;
       if (celular && ajuda) ajuda.hidden = false;
       registraContato(celular ? 'app' : 'web');
-    });
+      if (celular && !ev.defaultPrevented && ev.button === 0 && !ev.metaKey && !ev.ctrlKey) {
+        ev.preventDefault();
+        window.location.href = appUrl;
+      }
+    }, false);
   }
   if (alternativa) {
     alternativa.addEventListener('click', function () { registraContato('link_alternativo'); });

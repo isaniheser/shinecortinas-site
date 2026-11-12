@@ -198,17 +198,33 @@
     return { kind: kind, text: txt };
   }
 
-  function applyWaHref(a) {
+  function syncWaWebHref(a) {
     var res = resolveWaText(a);
     var urls = buildWaUrls(res.text);
+    // Mantém SEMPRE https://wa.me/... no atributo href para que o gatilho nativo
+    // do Cloudflare Zaraz (a[href*="wa.me"] -> whatsapp_click no GA4/Google Ads)
+    // escute 100% dos cliques em smartphones, tablets e computadores.
+    a.setAttribute('href', urls.web);
+    a.setAttribute('data-wa-app-url', urls.app);
     a.setAttribute('data-wa-web-fallback', urls.web);
     if (IS_PHONE) {
       a.removeAttribute('target');
-      a.setAttribute('href', urls.app);
-    } else {
-      a.setAttribute('href', urls.web);
     }
-    return res.kind;
+    return { kind: res.kind, app: urls.app, web: urls.web };
+  }
+
+  function fulfilDynamicZarazWaClick(a) {
+    if (!a || a.__shineInitialWaMe) return;
+    try {
+      if (window.zaraz && typeof window.zaraz.fulfilTrigger === 'function') {
+        var attrs = { textContent: a.textContent || '' };
+        for (var i = 0; i < a.attributes.length; i += 1) {
+          var at = a.attributes[i];
+          attrs[at.nodeName] = at.nodeValue;
+        }
+        window.zaraz.fulfilTrigger('LaIT', 'kdXw', attrs);
+      }
+    } catch (e) {}
   }
 
   function scheduleWebFallback(webUrl) {
@@ -277,33 +293,37 @@
     window.dataLayer.push(d);
   }
 
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) {
+    a.__shineInitialWaMe = true;
+    if (IS_PHONE) a.removeAttribute('target');
+  });
+
   document.addEventListener('pointerdown', function (ev) {
     var a = ev.target && ev.target.closest && ev.target.closest('a');
     if (!isWa(a)) return;
-    applyWaHref(a);
+    syncWaWebHref(a);
   }, true);
 
   document.addEventListener('touchstart', function (ev) {
     var a = ev.target && ev.target.closest && ev.target.closest('a');
     if (!isWa(a)) return;
-    applyWaHref(a);
+    syncWaWebHref(a);
   }, { capture: true, passive: true });
 
+  // Fase de borbulhamento (false) para que o listener nativo do Zaraz anexado
+  // diretamente ao elemento <a> dispare whatsapp_click ANTES do redirecionamento app.
   document.addEventListener('click', function (ev) {
     var a = ev.target && ev.target.closest && ev.target.closest('a');
     if (!isWa(a)) return;
-    var kind = applyWaHref(a);
-    trackWa(kind);
-    if (IS_PHONE) {
-      scheduleWebFallback(a.getAttribute('data-wa-web-fallback'));
+    var info = syncWaWebHref(a);
+    fulfilDynamicZarazWaClick(a);
+    trackWa(info.kind);
+    if (IS_PHONE && !ev.defaultPrevented && ev.button === 0 && !ev.metaKey && !ev.ctrlKey && !ev.shiftKey && !ev.altKey) {
+      ev.preventDefault();
+      scheduleWebFallback(info.web);
+      window.location.href = info.app;
     }
-  }, true);
-
-  if (IS_PHONE) {
-    document.querySelectorAll('a').forEach(function (a) {
-      if (isWa(a)) applyWaHref(a);
-    });
-  }
+  }, false);
 
   /* etiqueta "Atendendo em X · trocar" */
   function renderChips() {
