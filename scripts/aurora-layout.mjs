@@ -1,6 +1,6 @@
 // Moldura mobile-first unificada da ShineCortinas (mesma identidade em vidro escuro da Home,
 // barra flutuante inferior de 5 atalhos e gavetas rápidas do Consultor Isani e Menu Completo).
-export const AURORA_V = '6';
+export const AURORA_V = '7';
 export const AURORA_CSS = `<link rel="stylesheet" href="/assets/shine-aurora.css?v=${AURORA_V}">`;
 
 const WA_MENU =

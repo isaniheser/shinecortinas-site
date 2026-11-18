@@ -2036,6 +2036,13 @@ body.is-mobile-sim #site-viewport {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
+  position: sticky;
+  bottom: 0;
+  margin: 8px -18px -22px;
+  padding: 12px 18px calc(16px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(180deg, rgba(250, 247, 242, 0.92) 0%, #FAF7F2 22%);
+  border-top: 1px solid rgba(8, 19, 15, 0.08);
+  z-index: 6;
 }
 .d-sheet-save-btn {
   cursor: pointer;
@@ -2235,7 +2242,7 @@ body.is-mobile-sim #site-viewport {
     width: 46px;
     height: 46px;
     right: 14px;
-    bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px));
     z-index: 390;
   }
 
@@ -2388,7 +2395,7 @@ body.is-mobile-sim .sl-wa {
   width: 46px;
   height: 46px;
   right: 14px;
-  bottom: 76px;
+  bottom: 88px;
   z-index: 390;
 }
 body.is-mobile-sim .d-ig-tabbar {

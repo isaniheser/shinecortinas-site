@@ -355,6 +355,32 @@ export function isApprovedWorkPost(caption = '') {
   return lower.includes('#shinecortinas') || /\bshinecortinas\b/.test(lower.split('\n').slice(-3).join(' '));
 }
 
+function isValidSignedMediaUrl(url) {
+  if (!url || typeof url !== 'string') return false;
+  if (url.startsWith('/')) return true;
+  if (/cdninstagram\.com|fbcdn\.net/i.test(url)) {
+    const match = url.match(/[?&]oe=([0-9a-fA-F]+)/);
+    if (match) {
+      const expSec = parseInt(match[1], 16);
+      if (!Number.isFinite(expSec) || expSec <= Math.floor(Date.now() / 1000) + 60) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+function getFallbackImageForCats(cats = []) {
+  const c = Array.isArray(cats) ? cats.join(' ') : String(cats || '');
+  if (c.includes('madeira')) return '/madeira-sq.avif';
+  if (c.includes('aluminio') || c.includes('persiana')) return '/persiana-motorizada-sq.avif';
+  if (c.includes('rolo') || c.includes('romana') || c.includes('doublevision')) return '/tela-solar-sq.avif';
+  if (c.includes('pedireitoduplo')) return '/duplo-sq.avif';
+  if (c.includes('blackout')) return '/blackouts-tecnicos.avif';
+  if (c.includes('lavagem')) return '/lavagem-vertical-cortinas-800.avif';
+  return '/cortina-sob-medida.avif';
+}
+
 async function serveFallbackFeed(request, env) {
   try {
     if (env && env.ASSETS) {
@@ -387,7 +413,7 @@ export async function onRequest(context) {
   }
 
   const cache = caches.default;
-  const cacheKey = new Request('https://shine.cache/instagram-feed-v5-unicode-safe');
+  const cacheKey = new Request('https://shine.cache/instagram-feed-v6-verified-media');
   let cached = await cache.match(cacheKey);
   if (cached) return cached;
 
@@ -415,16 +441,27 @@ export async function onRequest(context) {
     const rawItems = (data.data || []).filter((m) => isApprovedWorkPost(m.caption || ''));
 
     const items = rawItems.map((m) => {
-      const children =
+      const meta = extractMetadataFromCaption(m.caption || '');
+      const fallbackImg = getFallbackImageForCats(meta.cats);
+      const validChildren =
         m.media_type === 'CAROUSEL_ALBUM' && m.children && m.children.data
-          ? m.children.data.map((c) => ({
-              type: c.media_type,
-              image: cover(c),
-              video: c.media_type === 'VIDEO' ? c.media_url || null : null,
-            }))
+          ? m.children.data
+              .map((c) => {
+                const cImg = cover(c);
+                const cVid = c.media_type === 'VIDEO' ? c.media_url || null : null;
+                return {
+                  type: c.media_type,
+                  image: isValidSignedMediaUrl(cImg) ? cImg : null,
+                  video: isValidSignedMediaUrl(cVid) ? cVid : null,
+                };
+              })
+              .filter((c) => Boolean(c.image))
           : [];
 
-      const meta = extractMetadataFromCaption(m.caption || '');
+      const rawCover = cover(m) || (validChildren[0] && validChildren[0].image) || null;
+      const hasValidCover = isValidSignedMediaUrl(rawCover);
+      const rawVideo = m.media_type === 'VIDEO' ? m.media_url || null : null;
+      const hasValidVideo = isValidSignedMediaUrl(rawVideo);
 
       return {
         id: m.id,
@@ -432,13 +469,13 @@ export async function onRequest(context) {
         title: meta.title,
         city: meta.city,
         cats: meta.cats,
-        isPinned: meta.isPinned,
+        isPinned: hasValidCover ? meta.isPinned : false,
         type: m.media_type,
-        image: cover(m) || (children[0] && children[0].image) || null,
-        video: m.media_type === 'VIDEO' ? m.media_url || null : null,
+        image: hasValidCover ? rawCover : fallbackImg,
+        video: hasValidVideo ? rawVideo : null,
         permalink: m.permalink,
         timestamp: m.timestamp,
-        children,
+        children: validChildren,
       };
     });
 
@@ -452,7 +489,7 @@ export async function onRequest(context) {
     const response = new Response(body, {
       headers: {
         'content-type': 'application/json',
-        'cache-control': 'public, max-age=3600, stale-while-revalidate=86400',
+        'cache-control': 'public, max-age=1800',
         'access-control-allow-origin': 'https://www.shinecortinas.com',
       },
     });

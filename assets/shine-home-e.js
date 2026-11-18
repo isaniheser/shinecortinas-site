@@ -202,6 +202,21 @@ function getFallbackImageForCats(catsStr) {
   return '/cortina-sob-medida.avif';
 }
 
+function isUsableInstagramUrl(url) {
+  if (!url || typeof url !== 'string') return false;
+  if (url.startsWith('/')) return true;
+  if (/cdninstagram\.com|fbcdn\.net/i.test(url)) {
+    const match = url.match(/[?&]oe=([0-9a-fA-F]+)/);
+    if (match) {
+      const expSec = parseInt(match[1], 16);
+      if (!Number.isFinite(expSec) || expSec <= Math.floor(Date.now() / 1000) + 60) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
 function pushModalHistoryState() {
   try {
     if (!history.state || !history.state.shineModal) {
@@ -663,6 +678,7 @@ let currentSheetGalleryIdx = 0;
 
 function syncSheetGalleryUI(item) {
   const gallery = item && Array.isArray(item.gallery) && item.gallery.length > 0 ? item.gallery : [item.img];
+  if (currentSheetGalleryIdx >= gallery.length) currentSheetGalleryIdx = 0;
   const prevBtn = document.getElementById('sheet-prev-btn');
   const nextBtn = document.getElementById('sheet-next-btn');
   const counterEl = document.getElementById('sheet-counter');
@@ -702,8 +718,19 @@ function openCaseSheet(id) {
   });
   const sheetImg = document.getElementById('sheet-img');
   sheetImg.onerror = function () {
-    this.onerror = null;
-    this.src = item.fallbackImg || '/cortina-sob-medida.avif';
+    const curItem = caseCatalog[currentSheetId];
+    const fallback = (curItem && curItem.fallbackImg) || '/cortina-sob-medida.avif';
+    if (curItem && Array.isArray(curItem.gallery) && curItem.gallery.length > 1) {
+      curItem.gallery.splice(currentSheetGalleryIdx, 1);
+      if (currentSheetGalleryIdx >= curItem.gallery.length) {
+        currentSheetGalleryIdx = 0;
+      }
+      syncSheetGalleryUI(curItem);
+      return;
+    }
+    if (this.getAttribute('src') !== fallback) {
+      this.src = fallback;
+    }
   };
   syncSheetGalleryUI(item);
   document.getElementById('sheet-kicker').textContent = item.kicker;
@@ -1015,6 +1042,9 @@ function toggleMoreProjects() {
       visiveis: Math.min(visibleBentoLimit, matching.length),
       total: matching.length
     });
+    if (!hasSyncedAllApproved) {
+      syncInstagramHashtagFeed(true);
+    }
   } else {
     visibleBentoLimit = 4;
     const p = document.getElementById('portfolio');
@@ -1112,49 +1142,69 @@ let hasSyncedCurated = false;
 let hasSyncedAllApproved = false;
 let pendingIncludeAllApproved = false;
 let cachedInstagramItems = null;
+let cachedInstagramIsFallback = false;
 
-function injectInstagramItemsIntoDOM(items, includeAllApproved) {
+function injectInstagramItemsIntoDOM(items, includeAllApproved, isStaticFallback) {
   const grid = document.querySelector('.d-ig-grid');
   if (!grid || !Array.isArray(items) || items.length === 0) return;
-
-  const postsToInject = includeAllApproved
-    ? items
-    : items.filter((p) => p && p.isPinned === true);
 
   const firstStaticTile = Array.from(grid.children).find(
     (el) => !String(el.getAttribute('data-id') || '').startsWith('ig_live_')
   ) || null;
-  const anchorTile = grid.children[3] || null;
 
-  postsToInject.forEach((post, i) => {
-    if (!post || !post.image) return;
-    const safeId = 'ig_live_' + String(post.id || i).replace(/[^a-zA-Z0-9_-]/g, '');
+  const preparedPosts = [];
+  items.forEach((post, i) => {
+    if (!post) return;
+    const cats = Array.isArray(post.cats) ? post.cats.join(' ') : 'insta tecido wave';
+    const fallbackImg = getFallbackImageForCats(cats);
+    const hasLiveImg = isUsableInstagramUrl(post.image);
+    const resolvedImg = hasLiveImg ? post.image : fallbackImg;
+    const isPinnedLive = !isStaticFallback && hasLiveImg && post.isPinned === true;
+    const resolvedVideo = post.type === 'VIDEO' && isUsableInstagramUrl(post.video) ? post.video : null;
+    const validChildren =
+      Array.isArray(post.children) && post.children.length > 0
+        ? post.children.map((c) => c && c.image).filter((u) => isUsableInstagramUrl(u))
+        : [];
+    const gallery = validChildren.length > 0 ? validChildren : [resolvedImg];
+
+    preparedPosts.push({
+      post,
+      idx: i,
+      cats,
+      fallbackImg,
+      resolvedImg,
+      isPinnedLive,
+      resolvedVideo,
+      gallery
+    });
+  });
+
+  const postsToInject = includeAllApproved
+    ? preparedPosts
+    : preparedPosts.filter((entry) => entry.isPinnedLive);
+
+  postsToInject.forEach(({ post, idx, cats, fallbackImg, resolvedImg, isPinnedLive, resolvedVideo, gallery }) => {
+    const safeId = 'ig_live_' + String(post.id || idx).replace(/[^a-zA-Z0-9_-]/g, '');
     if (caseCatalog[safeId]) return;
 
-    const isReel = post.type === 'VIDEO' && post.video;
+    const isReel = Boolean(resolvedVideo);
     const city = cleanUnicodeText(post.city || 'Sul Fluminense');
     const formattedCaption =
       formatInstagramCaption(post.cleanCaption || post.caption || '') ||
       'Confeccionada sob medida no ateliê da Shine com instalação própria.';
     const title = deriveCleanInstaTitle(post.title, formattedCaption);
-    const cats = Array.isArray(post.cats) ? post.cats.join(' ') : 'insta tecido wave';
-    const fallbackImg = getFallbackImageForCats(cats);
-    const gallery =
-      Array.isArray(post.children) && post.children.length > 0
-        ? post.children.map((c) => c && c.image).filter(Boolean)
-        : [post.image];
 
     caseCatalog[safeId] = {
       refTitle: (isReel ? 'Reel @shine: ' : 'Obra @shine: ') + title + ' (' + city + ')',
       kicker: (isReel ? '▶ Reel @shinecortinas · ' : '🟢 Obra @shinecortinas · ') + city,
       title: title,
-      img: post.image,
+      img: resolvedImg,
       fallbackImg: fallbackImg,
-      gallery: gallery.length > 0 ? gallery : [post.image],
+      gallery: gallery,
       isInsta: true,
       prob: 'Projeto real publicado no nosso Instagram oficial @shinecortinas (' + city + ').',
       sol: formattedCaption,
-      videoId: isReel ? post.video : null,
+      videoId: resolvedVideo,
       pageUrl: '/portfolio/'
     };
 
@@ -1178,7 +1228,7 @@ function injectInstagramItemsIntoDOM(items, includeAllApproved) {
     };
     tile.innerHTML =
       '<img src="' +
-      escapeHtml(post.image) +
+      escapeHtml(resolvedImg) +
       '" alt="' +
       escapeHtml(title) +
       '" width="400" height="400" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=\'' +
@@ -1202,12 +1252,10 @@ function injectInstagramItemsIntoDOM(items, includeAllApproved) {
       '</span>' +
       '</div>';
 
-    if (post.isPinned && firstStaticTile) {
+    if (isPinnedLive && firstStaticTile) {
       grid.insertBefore(tile, firstStaticTile);
-    } else if (post.isPinned) {
+    } else if (isPinnedLive) {
       grid.insertBefore(tile, grid.firstChild);
-    } else if (i === 0 && anchorTile) {
-      grid.insertBefore(tile, anchorTile);
     } else {
       grid.appendChild(tile);
     }
@@ -1240,7 +1288,7 @@ async function syncInstagramHashtagFeed(includeAllApproved = false) {
   if (hasSyncedCurated && !includeAllApproved) return;
 
   if (cachedInstagramItems) {
-    injectInstagramItemsIntoDOM(cachedInstagramItems, includeAllApproved);
+    injectInstagramItemsIntoDOM(cachedInstagramItems, includeAllApproved, cachedInstagramIsFallback);
     return;
   }
 
@@ -1254,13 +1302,15 @@ async function syncInstagramHashtagFeed(includeAllApproved = false) {
   try {
     const res = await fetch('/api/instagram');
     if (!res.ok) return;
+    const isStaticFallback = res.headers.get('x-shine-fallback') === 'static-json';
     const data = await res.json();
     if (!data || !Array.isArray(data.items) || data.items.length === 0) return;
 
     cachedInstagramItems = data.items;
+    cachedInstagramIsFallback = isStaticFallback;
     const shouldIncludeAll = includeAllApproved || pendingIncludeAllApproved;
     pendingIncludeAllApproved = false;
-    injectInstagramItemsIntoDOM(cachedInstagramItems, shouldIncludeAll);
+    injectInstagramItemsIntoDOM(cachedInstagramItems, shouldIncludeAll, cachedInstagramIsFallback);
   } catch (_) {
     // Mantém o acervo curado caso /api/instagram esteja offline
   } finally {
