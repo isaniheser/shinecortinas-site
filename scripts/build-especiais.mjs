@@ -21,7 +21,7 @@ const CITIES = [
 
 const heroSrcset = (img) => {
   if (img === '/hero-sala.avif') return ' srcset="/hero-sala-800.avif 800w, /hero-sala-1200.avif 1200w, /hero-sala.avif 1920w" sizes="100vw"';
-  if (img === '/linha-puro.avif') return ' srcset="/linha-puro-800.avif 760w, /linha-puro.avif 1696w" sizes="100vw"';
+  if (img === '/linha-puro.avif') return ' srcset="/linha-puro-800.avif?v=2 760w, /linha-puro.avif 1696w" sizes="100vw"';
   return '';
 };
 

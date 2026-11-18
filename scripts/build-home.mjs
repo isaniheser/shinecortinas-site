@@ -497,7 +497,7 @@ const html = `<!DOCTYPE html>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <link rel="preload" as="image" href="/duplo.avif" imagesrcset="/duplo-800.avif 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w" imagesizes="(max-width: 960px) calc(100vw - 28px), 580px" fetchpriority="high" type="image/avif">
+  <link rel="preload" as="image" href="/duplo.avif" imagesrcset="/duplo-800.avif?v=2 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w" imagesizes="(max-width: 960px) calc(100vw - 28px), 580px" fetchpriority="high" type="image/avif">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="${FONTS}">
@@ -586,7 +586,7 @@ ${JSON.stringify(schemaJson, null, 2)}
           <div class="d-hero__stage">
             <div class="d-hero__single-frame" role="button" tabindex="0" style="cursor: pointer;" onclick="openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
               <span class="d-frame-pill">Pé-Direito Duplo · Do Teto ao Piso</span>
-              <img src="/duplo.avif" srcset="/duplo-800.avif 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w" sizes="(max-width: 960px) calc(100vw - 28px), 580px" alt="Cortina Prega Wave sob medida do teto ao piso em pé-direito duplo no Sul Fluminense" width="800" height="500" fetchpriority="high" decoding="async">
+              <img src="/duplo.avif" srcset="/duplo-800.avif?v=2 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w" sizes="(max-width: 960px) calc(100vw - 28px), 580px" alt="Cortina Prega Wave sob medida do teto ao piso em pé-direito duplo no Sul Fluminense" width="800" height="500" fetchpriority="high" decoding="async">
               <button type="button" class="d-hero-video-trigger" onclick="event.stopPropagation(); openVideoModal('📍 Resende · Cortina Wave Motorizada', 'bf8afe030678afeb1e9bb2ebc369d4c4', 'Quero orçar uma Cortina Wave Motorizada como a da obra de Resende.', '/videos/cortina-motorizada-wave-resende/')">
                 <span>▶ Ver vídeo de obra real em Resende</span>
                 <span>0:15</span>

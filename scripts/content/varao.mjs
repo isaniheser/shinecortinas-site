@@ -205,7 +205,7 @@ export default {
       h2: 'Escolha o varão, a cor e o tecido vendo tudo na sua parede',
       html: `<p>Na consultoria em domicílio, nós levamos o mostruário até a sua casa, medimos o vão a laser e definimos com você se o seu projeto pede trilho, varão padrão ou tubo suíço, na cor exata do seu ambiente.</p><p>Atendemos Volta Redonda, Resende, Barra Mansa e todo o Sul Fluminense. Gratuito e sem compromisso.</p>`,
       cta: 'Agendar consultoria em casa →',
-      img: '/hall-wave-volta-redonda-800.avif',
+      img: '/hall-wave-volta-redonda-800.avif?v=2',
       imgAlt: 'Cortina sob medida instalada pela ShineCortinas em Volta Redonda',
     },
   ],

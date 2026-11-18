@@ -211,14 +211,14 @@ export function cleanHead(head, opts = {}) {
 
   const autoSrcset = (img) => {
     if (img === '/hero-sala.avif') return ['imagesrcset="/hero-sala-800.avif 800w, /hero-sala-1200.avif 1200w, /hero-sala.avif 1920w"', 'imagesizes="100vw"'];
-    if (img === '/duplo.avif') return ['imagesrcset="/duplo-800.avif 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w"', 'imagesizes="100vw"'];
-    if (img === '/linha-puro.avif') return ['imagesrcset="/linha-puro-800.avif 760w, /linha-puro.avif 1696w"', 'imagesizes="100vw"'];
-    if (img === '/automacao.avif') return ['imagesrcset="/automacao-800.avif 760w, /automacao.avif 1696w"', 'imagesizes="100vw"'];
+    if (img === '/duplo.avif') return ['imagesrcset="/duplo-800.avif?v=2 760w, /duplo-1100.avif 1100w, /duplo.avif 1696w"', 'imagesizes="100vw"'];
+    if (img === '/linha-puro.avif') return ['imagesrcset="/linha-puro-800.avif?v=2 760w, /linha-puro.avif 1696w"', 'imagesizes="100vw"'];
+    if (img === '/automacao.avif') return ['imagesrcset="/automacao-800.avif?v=2 760w, /automacao.avif 1696w"', 'imagesizes="100vw"'];
     if (img === '/isani-consultoria.avif') return ['imagesrcset="/isani-consultoria-800.avif 800w, /isani-consultoria.avif 1108w"', 'imagesizes="100vw"'];
-    if (img === '/hall-wave-volta-redonda.avif') return ['imagesrcset="/hall-wave-volta-redonda-800.avif 800w, /hall-wave-volta-redonda.avif 1216w"', 'imagesizes="100vw"'];
+    if (img === '/hall-wave-volta-redonda.avif') return ['imagesrcset="/hall-wave-volta-redonda-800.avif?v=2 800w, /hall-wave-volta-redonda.avif 1216w"', 'imagesizes="100vw"'];
     if (img === '/lavagem-vertical-cortinas.avif') return ['imagesrcset="/lavagem-vertical-cortinas-800.avif 800w, /lavagem-vertical-cortinas.avif 1376w"', 'imagesizes="100vw"'];
     if (img === '/tela-solar.avif') return ['imagesrcset="/tela-solar-800.avif 760w, /tela-solar.avif 1536w"', 'imagesizes="100vw"'];
-    if (img === '/madeira.avif') return ['imagesrcset="/madeira-800.avif 760w, /madeira.avif 1696w"', 'imagesizes="100vw"'];
+    if (img === '/madeira.avif') return ['imagesrcset="/madeira-800.avif?v=2 760w, /madeira.avif 1696w"', 'imagesizes="100vw"'];
     return ['', ''];
   };
 

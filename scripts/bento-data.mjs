@@ -8,8 +8,8 @@ export const BENTO_ITEMS = [
   {
     id: 'duplo',
     cats: 'tecido wave pedireitoduplo motorizada insta',
-    img: '/hall-wave-volta-redonda-800.avif',
-    srcset: '/hall-wave-volta-redonda-800.avif 800w, /hall-wave-volta-redonda.avif 1216w',
+    img: '/hall-wave-volta-redonda-800.avif?v=2',
+    srcset: '/hall-wave-volta-redonda-800.avif?v=2 800w, /hall-wave-volta-redonda.avif 1216w',
     alt: 'Obra real de Cortina Wave em pé-direito alto instalada em Volta Redonda RJ',
     pos: 'center 45%',
     tag: '🟢 Obra Real · Volta Redonda',
@@ -119,8 +119,8 @@ export const BENTO_ITEMS = [
   {
     id: 'pregamacho',
     cats: 'tecido pregafemea pregamacho franzida',
-    img: '/linha-puro-800.avif',
-    srcset: '/linha-puro-800.avif 760w, /linha-puro.avif 1696w',
+    img: '/linha-puro-800.avif?v=2',
+    srcset: '/linha-puro-800.avif?v=2 760w, /linha-puro.avif 1696w',
     alt: 'Imagem de referência de Cortina Prega Fêmea, Prega Macho e Franzida em tecido toque de linho',
     pos: 'center 50%',
     tag: '✦ Referência · Alfaiataria',

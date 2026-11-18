@@ -265,7 +265,7 @@ const POSTS = [
       h1: 'Qual a altura<br>ideal da cortina?', h1em: 'Do chão ao teto.',
       lead: '<p><strong>Cortina de tecido vai até o chão.</strong> A barra pode terminar de três jeitos: a <strong>1 cm do chão</strong>, <strong>beijando o chão</strong> (o pé de bailarina) ou com o tecido <strong>sobrando no piso</strong> (efeito poodle). A escolha depende do ambiente, do uso e da luz.</p><p>Em cima, com varão na parede, eu divido ao meio o espaço entre a janela e o teto. Com cortineiro, o trilho vai dentro dele. E na hora de anotar a medida, largura primeiro, altura depois. Abaixo eu explico cada ponto, com desenho.</p>',
       readTo: 'chao', readText: 'Veja os três acabamentos',
-      photo: '/hall-wave-volta-redonda.avif', photoSrcset: '/hall-wave-volta-redonda-800.avif 800w, /hall-wave-volta-redonda.avif 1216w', photoWidth: 1216, photoHeight: 1632, photoAlt: 'Cortina wave off-white em hall com pé-direito duplo, projeto ShineCortinas em Volta Redonda',
+      photo: '/hall-wave-volta-redonda.avif', photoSrcset: '/hall-wave-volta-redonda-800.avif?v=2 800w, /hall-wave-volta-redonda.avif 1216w', photoWidth: 1216, photoHeight: 1632, photoAlt: 'Cortina wave off-white em hall com pé-direito duplo, projeto ShineCortinas em Volta Redonda',
       photoTag: 'Projeto ShineCortinas', photoCaption: 'Hall com pé-direito duplo · Volta Redonda · cortina wave em tecido de 170 g/m²',
     },
     sections: [
@@ -489,7 +489,7 @@ const POSTS = [
 
       { id: 'consultoria', toc: 'Consultoria em casa', label: 'Converse com a Shine', closing: true, h2: 'A bainha certa começa na medição',
         html: `<p>Pé-direito, gramatura do tecido e o acabamento que você quer para a barra: as três coisas se decidem juntas, e na sua casa. Na consultoria em domicílio, eu ou alguém da equipe mede a laser, mostra o tecido no seu ambiente e define a bainha com você.</p><p>Atendemos <a href="/cidades/volta-redonda/">Volta Redonda</a>, <a href="/cidades/resende/">Resende</a>, <a href="/cidades/barra-mansa/">Barra Mansa</a> e todo o Sul Fluminense. Gratuito e sem compromisso.</p>`,
-        cta: 'Agendar consultoria em casa →', img: '/hall-wave-volta-redonda-800.avif', imgAlt: 'Cortina wave com barra de acabamento em hall de pé-direito duplo, projeto ShineCortinas em Volta Redonda' },
+        cta: 'Agendar consultoria em casa →', img: '/hall-wave-volta-redonda-800.avif?v=2', imgAlt: 'Cortina wave com barra de acabamento em hall de pé-direito duplo, projeto ShineCortinas em Volta Redonda' },
     ],
     faq: [
       ['O que é a bainha da cortina?',
